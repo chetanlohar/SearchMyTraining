@@ -1,0 +1,284 @@
+body{
+	
+overflow-x: hidden;
+}
+
+.Log_container{
+	width: 100%;
+	height:100%;
+
+	
+	overflow: hidden;
+  
+}
+.Log_container .Log_warapar{
+	width: 100%;
+	height: 100%;
+
+	overflow: hidden;
+}
+.Log_container .Log_warapar .Registration_Feature{
+	width: 60%;
+	height: 100%;
+	float: left;
+
+	overflow: hidden;
+
+	
+}
+.Log_container .Log_warapar .log_wrap{
+	width: 30%;
+	height: 100%;
+	float: left;
+
+	overflow: hidden;
+
+	
+	
+}
+.Log_container .Log_warapar .Registration_Feature .Infowrap{
+	
+	width: 100%;
+	height: 500px;
+	
+	overflow: hidden;
+}
+.Log_container .Log_warapar .Registration_Feature .Infowrap .Detail_info{
+	width: 700px;
+	height: 450px;
+	margin: 25px 20px;
+	border: 2px solid #2AABE1;
+	border-radius:20px; 
+}
+
+.Log_container .Log_warapar .Registration_Feature .Infowrap .Detail_info h1{
+	color: #66CCFF;
+	font-family: arial;
+	font-size: 20px;
+	font-weight:bold;
+	margin:20px 20px;
+	
+}
+
+.Log_container .Log_warapar .Registration_Feature .Infowrap .Detail_info table {
+	width: 90%;
+	cellpadding:0px;
+	cellspacing:0px;
+	margin: 10px 30px;
+	font-family: arial;
+}
+
+.Log_container .Log_warapar .Registration_Feature .Infowrap .Detail_info table td{
+	vertical-align: top;
+    font-size: 18px;
+    padding-bottom: 15px;
+	
+}
+
+.Log_container .Log_warapar .Registration_Feature .Infowrap .Detail_info table td p{
+	font-size: 12px;
+	line-height: 20px;
+}
+
+.Log_container .Log_warapar .tab_wrapar{
+ background: #fff;
+  margin: 50px auto;
+  padding: 1em;
+  width: 80%;
+  height: 100%;
+}
+.Log_container .Log_warapar .tab_wrapar ul.tabs {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.Log_container .Log_warapar .tab_wrapar ul.tabs li {
+  border: gray solid 1px;
+  border-bottom: none;
+  float: left;
+  margin: 0 .25em 0 0;
+  padding: .25em .5em;
+}
+.Log_container .Log_warapar .tab_wrapar ul.tabs li a {
+  color: gray;
+  font-weight: bold;
+  text-decoration: none;
+}
+.Log_container .Log_warapar ul.tabs li.active {
+ background: #a9e4f7; /* Old browsers */
+background: -moz-linear-gradient(top,  #a9e4f7 0%, #0fb4e7 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a9e4f7), color-stop(100%,#0fb4e7)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #a9e4f7 0%,#0fb4e7 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #a9e4f7 0%,#0fb4e7 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #a9e4f7 0%,#0fb4e7 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #a9e4f7 0%,#0fb4e7 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a9e4f7', endColorstr='#0fb4e7',GradientType=0 ); /* IE6-9 */
+
+}
+.Log_container .Log_warapar ul.tabs li.active a {
+  color: white;
+}
+.clr {
+  clear: both;
+}
+.Log_container .Log_warapar div{
+  padding: 0 0.1em;
+}
+.Log_container .Log_warapar .tab_block >div{
+	
+border: 1px solid #ccc;
+	
+}
+.Log_container .Log_warapar .tab_block p {
+	width: 100%; 
+	font-family: arial;
+	margin-top: 10px;
+	margin-left: 5px;
+}
+.Log_container .Log_warapar p label {
+	padding: 0px 20px 0px 0px;
+}	
+.Log_container .Log_warapar p input[type=text] {
+	width: 250px;
+	height: 30px;
+	
+}
+.Log_container .Log_warapar p input[type=password] {
+	width: 250px;
+	height: 30px;
+	
+}
+.Log_container .Log_warapar p input[type=email] {
+	width: 250px;
+	height: 30px;
+	
+}
+.Log_container .Log_warapar p input[type=text]:FOCUS,input[type=email]:FOCUS,input[type=password]:FOCUS{
+	border: 1px solid #40A9DF;
+	box-shadow: 0 0 3px #40A9DF;
+	-webkit-box-shadow: 0 0 3px #40A9DF;
+	-o-box-shadow: 0 0 3px #40A9DF;
+	-moz-box-shadow: 0 0 3px #40A9DF;
+}
+.Log_container .Log_warapar input[type=button] {
+	width: 100px;
+	height: 40px;
+	border:none;
+	font-size:14px;
+	color:#fff;
+	border-radius:20px;
+	margin: 20px 100px;
+	background: #0080ff;
+	
+}
+
+.Fpass_wrapar{
+	
+	width: 100%;
+	height: 500px;
+	overflow: hidden;
+	background-color: #e0e3dd;
+}
+.Fpass_wrapar .Fpass_container{
+	
+	width: 800px;
+	height: 300px;
+	margin: 30px auto;
+	background-color: #f4f4f4;
+	
+	
+}
+.Fpass_wrapar .Fpass_container .title{
+	width: 100%;
+	height: 30px;
+	font-family: arial;
+	text-align: center;
+	background: #00b7ea; /* Old browsers */
+background: -moz-linear-gradient(top,  #00b7ea 0%, #009ec3 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#00b7ea), color-stop(100%,#009ec3)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #00b7ea 0%,#009ec3 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #00b7ea 0%,#009ec3 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #00b7ea 0%,#009ec3 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #00b7ea 0%,#009ec3 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b7ea', endColorstr='#009ec3',GradientType=0 ); /* IE6-9 */
+	
+}
+.Fpass_wrapar .Fpass_container .title h1{
+	
+	font-size: 22px;
+	line-height: 25px;
+	color: #fff;
+}
+.Fpass_wrapar .Fpass_container .textmsg{
+	width: 100%;
+	height: 20px;
+	text-align: center;
+	font-family: arial;
+	margin-top: 10px;
+	font-size: 14px;
+}
+.Fpass_wrapar .Fpass_container .Containt{
+	width: 100%;
+	height: 80px;
+	font-family: arial;
+	margin-top:30px;
+
+}
+.Fpass_wrapar .Fpass_container .Containt label {
+	margin: 50px 0px 0px 120px;
+	width: 100%;
+	font-weight: bold;
+}
+.Fpass_wrapar .Fpass_container .Containt input[type='text'] {
+	height: 35px;
+	width: 300px;
+	box-shadow: inset 0 1px 1px 0 rgba(0,0,0,.1);
+	border: 1px solid #D9D9D9;
+	border-top: 1px solid #C0C0C0;
+	border-radius: 2px;
+}
+.Fpass_wrapar .Fpass_container .Containt input[type='text']:focus {
+	
+		border: 1px solid #40A9DF;
+	box-shadow: 0 0 3px #40A9DF;
+	-webkit-box-shadow: 0 0 3px #40A9DF;
+	-o-box-shadow: 0 0 3px #40A9DF;
+	-moz-box-shadow: 0 0 3px #40A9DF;
+}
+.Fpass_wrapar .Fpass_container .Gpass{
+	width: 100%;
+	height: 40px;
+	
+	overflow: hidden;
+	
+}
+.Fpass_wrapar .Fpass_container .Gpass input[type='button'] {
+	height:40px; 	
+	width:100px;
+	font-family:arial;
+	font-size:18px;
+	margin: 0px 340px;
+	border: none;
+	color:#fff;
+	background: #4096ee; /* Old browsers */
+background: -moz-linear-gradient(top,  #4096ee 0%, #4096ee 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4096ee), color-stop(100%,#4096ee)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #4096ee 0%,#4096ee 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #4096ee 0%,#4096ee 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #4096ee 0%,#4096ee 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #4096ee 0%,#4096ee 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4096ee', endColorstr='#4096ee',GradientType=0 ); /* IE6-9 */
+	
+	
+}
+.Fpass_wrapar .Fpass_container .Gpass input[type='button']:HOVER {
+	background: #3071B9;
+}
+.Fpass_wrapar .Fpass_container a{
+	text-decoration: none;
+	margin-left: 10px;
+	color:#4096ee; 
+}
+
+
+

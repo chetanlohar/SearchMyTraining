@@ -1,0 +1,368 @@
+body {
+	overflow-x: hidden;
+}
+
+.acord {
+	width: 90%;
+}
+
+.acord .acord_head {
+	cursor: pointer;
+	padding: 10px 25px;
+	margin: 3px 0 0 0;
+	background-color: #f5f5f5;
+	font-size: 17px;
+	color: #000;
+	position: relative;
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+	background: #ffffff; /* Old browsers */
+	background: -moz-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%);
+	/* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff),
+		color-stop(47%, #f6f6f6), color-stop(100%, #ededed));
+	/* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%);
+	/* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%);
+	/* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%);
+	/* IE10+ */
+	background: linear-gradient(to bottom, #ffffff 0%, #f6f6f6 47%, #ededed 100%);
+	/* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff',
+		endColorstr='#ededed', GradientType=0); /* IE6-9 */
+}
+
+.acord .acord_head:hover {
+	background-color: #cecece;
+}
+
+.acord .acordUp span, .acord .acordDown span {
+	background: url(../i/acordSprite.png) no-repeat;
+	width: 7px;
+	height: 7px;
+	top: 17px;
+	left: 10px;
+	position: absolute;
+}
+
+.acord .acordUp span {
+	background-position: 0px -7px;
+}
+
+.acord .acordDown span {
+	background-position: 0px 0px;
+}
+
+.acord .plus span, .acord .minus span {
+	background: url(../i/acordSprite2.png) no-repeat;
+	width: 8px;
+	height: 8px;
+	top: 17px;
+	left: 10px;
+	position: absolute;
+}
+
+.acord .minus span {
+	background-position: 0px -9px;
+}
+
+.acord .plus span {
+	background-position: 0px 0px;
+}
+
+.acord .acord_cont {
+	padding: 2.5em 2.2em;
+	border-top: 0;
+	overflow: auto;
+	display: none;
+	border: solid #ccc;
+	border-width: 1px; 
+	height: auto;
+}
+
+.acord .acord_cont .name {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
+	/*background: red;*/
+}
+
+.acord .acord_cont form input[type=submit] {
+	border: none;
+	width: 80px;
+	font-size: 18px;
+	height: 30px;
+	color: #FFFFFF;
+	margin-left: 300px;
+	border-radius:5px;
+	background: rgb(135, 224, 253); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(135, 224, 253, 1) 0%,
+		rgba(83, 203, 241, 1) 40%, rgba(5, 171, 224, 1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(135,
+		224, 253, 1)), color-stop(40%, rgba(83, 203, 241, 1)),
+		color-stop(100%, rgba(5, 171, 224, 1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(135, 224, 253, 1) 0%,
+		rgba(83, 203, 241, 1) 40%, rgba(5, 171, 224, 1) 100%);
+	/* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(135, 224, 253, 1) 0%,
+		rgba(83, 203, 241, 1) 40%, rgba(5, 171, 224, 1) 100%);
+	/* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(135, 224, 253, 1) 0%,
+		rgba(83, 203, 241, 1) 40%, rgba(5, 171, 224, 1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(135, 224, 253, 1) 0%,
+		rgba(83, 203, 241, 1) 40%, rgba(5, 171, 224, 1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd',
+		endColorstr='#05abe0', GradientType=0); /* IE6-9 */
+}
+
+.acord .acord_cont form input[type=reset] {
+	border: none;
+	width: 80px;
+	height: 30px;
+	font-size: 18px;
+	color: #FFFFFF;
+	margin-left: 10px;
+	border-radius:5px;
+	background: rgb(135, 224, 253); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(135, 224, 253, 1) 0%,
+		rgba(83, 203, 241, 1) 40%, rgba(5, 171, 224, 1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(135,
+		224, 253, 1)), color-stop(40%, rgba(83, 203, 241, 1)),
+		color-stop(100%, rgba(5, 171, 224, 1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(135, 224, 253, 1) 0%,
+		rgba(83, 203, 241, 1) 40%, rgba(5, 171, 224, 1) 100%);
+	/* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(135, 224, 253, 1) 0%,
+		rgba(83, 203, 241, 1) 40%, rgba(5, 171, 224, 1) 100%);
+	/* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(135, 224, 253, 1) 0%,
+		rgba(83, 203, 241, 1) 40%, rgba(5, 171, 224, 1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(135, 224, 253, 1) 0%,
+		rgba(83, 203, 241, 1) 40%, rgba(5, 171, 224, 1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd',
+		endColorstr='#05abe0', GradientType=0); /* IE6-9 */
+}
+
+.acord .acord_cont .contact {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
+	/*background: red;*/
+}
+
+.acord .acord_cont #achiv {
+	height: auto;
+	margin: 0px 0px 10px 0px;
+	width: 100%;
+	float: left;
+	/*background: red;*/
+}
+
+.acord .acord_cont #association {
+	height: auto;
+	margin: 0px 0px 10px 0px;
+	width: 100%;
+	float: left;
+}
+
+.acord .acord_cont #client {
+	height: auto;
+	margin: 0px 0px 10px 0px;
+	width: 100%;
+	float: left;
+}
+input[type="button"] {
+	margin-left: 530px;
+	cursor: pointer;
+	border-radius:5px;
+	height: 30px;
+	width: 30px;
+	font-size: 20px;
+	color:dimgray;
+	margin-bottom: 20px;
+}
+/*===========================================Award achivement style==============================================================*/
+.acord .acord_cont #achiv2 {
+	height: auto;
+	margin: 0px 0px 10px 0px;
+	width: 100%;
+	float: left;
+	/*background: black;*/
+}
+
+.acord .acord_cont #achiv2 p {
+	/*background:  red;*/
+	
+}
+
+.acord .acord_cont #achiv2 span {
+	font-size: 15px;
+}
+
+.acord .acord_cont #achiv2 input[type=text] {
+	width: 200px;
+}
+.acord .acord_cont #achiv2 input[type="button"]{
+	margin-left: 800px;
+	cursor: pointer;
+	border-radius:5px;
+	height: 30px;
+	width: 30px;
+	font-size: 20px;
+	color:dimgray;
+	margin-bottom: 20px;
+}
+/*==============================================================================================*/
+.acord .acord_cont #achiv p input[type=text] {
+	width: 215px;
+	height: 33px;
+}
+
+.acord .acord_cont .multi .add {
+	margin-left: 520px;
+	/*margin-top: -30px;*/
+}
+/*.acord .acord_cont #achiv p a { 
+    color:#999;
+    text-decoration: none;
+    font-size: 15px;
+    margin-left: 5px;
+}*/
+p a {
+	color: #999;
+	text-decoration: none;
+	font-size: 15px;
+	margin-left: 5px;
+}
+
+p a img {
+	/*background: red;*/
+	
+}
+
+.acord .acord_cont #year {
+	height: 30px;
+	width: 55%;
+	margin: 0px 0px 20px 0px;
+}
+
+.acord .acord_cont .methodology {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
+}
+
+.acord .acord_cont .history {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
+}
+
+.acord .acord_cont .history textarea {
+	resize: none;
+	padding-left: 10px;
+	height: 90px;
+	width: 300px;
+}
+
+.acord .acord_cont .w-days {
+	height: 30px;
+	margin: 70px 0px 20px 0px;
+}
+
+.acord .acord_cont form label {
+	font-size: 16px;
+	width: 250px;
+	float: left;
+	text-align: right;
+	color: #000;
+	clear: left;
+	margin: 6px 4px 0px 0px;
+	padding: 0px;
+}
+
+.acord .acord_cont form a {
+	line-height: 30px;
+	color: dimgray;
+	text-decoration: none;
+	/*float: left;*/
+}
+
+.acord .acord_cont form a:hover {
+	text-decoration: underline;
+}
+
+.acord .acord_cont form h3 {
+	font-size: 15px;
+	color: #999;
+	margin: 6px 4px 0px 0px;
+	padding: 0px;
+}
+
+input[type=checkbox] {
+	/*margin-top: 2px;*/
+	height: 14px;
+	width: 14px;
+	margin: 7px;
+}
+
+input[type=text] {
+	padding-left: 10px;
+	height: 30px;
+	width: 300px;
+	font-size: 13px;
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+}
+
+textarea:focus, input[type=text]:focus {
+	border: 1px solid #0094FF;
+	box-shadow: 0px 0px 2px #0094FF;
+}
+
+button {
+	height: 28px;
+	width: 80px;
+	cursor: pointer;
+	margin-left: 5px;
+}
+
+#image {
+	float: left;
+	height: 15px;
+	margin-left: 15px;
+	background-color: #999;
+	padding: 8px 12px;
+	float: left;
+	/*font-weight: bold;*/
+	color: black;
+}
+
+#image:hover {
+	background-color: dimgray;
+	color: white;
+	cursor: pointer;
+}
+
+.acord .acord_cont form select {
+	font-family: Georgia;
+	font-size: 12px;
+	/*float:left;*/
+	width: 80px;
+	border: 1px solid #cccccc;
+	margin: 0px 4px 2px 2px;
+	color: #999;
+	height: 30px;
+	padding: 3px;
+	/*  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+      -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+      -webkit-border-radius: 1px;
+      -moz-border-radius: 1px;  */
+}
+
+.acord .active {
+	display: block;
+}
+
+.acord .disable {
+	background-color: #C0C0C0;
+}

@@ -1,0 +1,226 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	overflow-x: hidden;
+}
+
+.container{
+    width: 100%;
+    height:100%;
+    background: #fff;
+    overflow: hidden;
+}
+.container .container-form-wrapar{
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    background: #f4f4f4;
+    overflow: hidden;
+    box-shadow: 0 0 35px rgba(0,0,0,.4);
+    -moz-box-shadow: 0 0 35px rgba(0,0,0,.4);
+    -webkit-box-shadow: 0 0 35px rgba(0,0,0,.4);
+}
+
+.container .container-form-wrapar .space{
+    width: 100%;
+    height: 200px;
+    background: none;
+}
+
+.acord {
+	width: 90%;
+}
+
+.acord .acord_head {
+	cursor: pointer;
+	padding: 10px 25px;
+	margin: 3px 0 0 0;
+	background-color: #f5f5f5;
+	font-size: 17px;
+	color: #000;
+	position: relative;
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+}
+
+.acord .acord_head:hover {
+	background-color: #cecece;
+}
+
+.acord .acord_cont {
+	padding: 2.5em 2.2em;
+	border-top: 0;
+	overflow: auto;
+	display: none;
+	border: solid #ccc;
+	border-width: 1px;
+	width: 85%;
+}
+
+
+
+.acord .acord_cont h3 {
+	margin-left: 520px;
+	font-family: calibri;
+}
+
+
+
+
+.acord .acord_cont form label {
+	font-size: 16px;
+	width: 250px;
+	float: left;
+	text-align: right;
+	color: #000;
+	clear: left;
+	margin: 6px 4px 0px 0px;
+	font-family: calibri;
+}
+
+input[type="button"] {
+	margin-left: 530px;
+	cursor: pointer;
+	border-radius: 5px;
+	height: 30px;
+	width: 30px;
+	font-size: 20px;
+	color: dimgray;
+	margin-bottom: 20px;
+}
+
+input[type=text] {
+	padding-left: 10px;
+	height: 30px;
+	width: 300px;
+	font-size: 13px;
+}
+
+input[type=text]:FOCUS{
+	border: 1px solid #40A9DF;
+	box-shadow: 0 0 3px #40A9DF;
+	-webkit-box-shadow: 0 0 3px #40A9DF;
+	-o-box-shadow: 0 0 3px #40A9DF;
+	-moz-box-shadow: 0 0 3px #40A9DF;
+}
+
+input[type=password] {
+	padding-left: 10px;
+	height: 30px;
+	width: 300px;
+	font-size: 13px;
+}
+
+input[type=password]:FOCUS{
+border:1px solid #40A9DF;
+box-shadow:0 0 3px #40A9DF;
+-webkit-box-shadow:0 0 3px #40A9DF;
+-o-box-shadow:0 0 3px #40A9DF;
+-moz-box-shadow:0 0 3px #40A9DF;
+}
+
+.acord .acord_cont form .save {
+	height: 30px;
+	margin: 0px 0px 30px 0px;
+}
+
+.acord .acord_cont .btn {
+	float: left;
+	height: 20px;
+	width: 5%;
+	cursor:pointer;
+	margin-left: 15px;
+}
+
+.acord .acord_cont .oldpass {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
+}
+
+.acord .acord_cont .newpass {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
+}
+
+.acord .acord_cont .conpass {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
+}
+
+.acord .active {
+	display: block;
+}
+
+.acord .disable {
+	background-color: #C0C0C0;
+}
+.acord .acord_cont span{
+	color: red;
+	font-family: arial;
+	font-size: 12px;
+	line-height: 30px;
+	margin-left: 10px;
+}
+
+.acord .acord_cont input[type="button"] {
+	float: left;
+	border: none;
+	width:80px;
+	font-size: 18px;
+	height: 30px;
+	color: #FFFFFF;
+	margin-left: 300px;
+	margin-top:20px;
+	border-radius: 5px;
+	cursor: pointer;
+	background: rgb(135, 224, 253); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(135, 224, 253, 1) 0%,
+		rgba(83, 203, 241, 1) 40%, rgba(5, 171, 224, 1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(135,
+		224, 253, 1)), color-stop(40%, rgba(83, 203, 241, 1)),
+		color-stop(100%, rgba(5, 171, 224, 1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(135, 224, 253, 1) 0%,
+		rgba(83, 203, 241, 1) 40%, rgba(5, 171, 224, 1) 100%);
+	/* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(135, 224, 253, 1) 0%,
+		rgba(83, 203, 241, 1) 40%, rgba(5, 171, 224, 1) 100%);
+	/* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(135, 224, 253, 1) 0%,
+		rgba(83, 203, 241, 1) 40%, rgba(5, 171, 224, 1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(135, 224, 253, 1) 0%,
+		rgba(83, 203, 241, 1) 40%, rgba(5, 171, 224, 1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd',
+		endColorstr='#05abe0', GradientType=0);
+	border: none; /* IE6-9 */
+}
+.acord .acord_cont input[type="reset"] {
+	float: left;
+	border: none;
+	width:80px;
+	font-size: 18px;
+	height: 30px;
+	color: #FFFFFF;
+	margin-left: 20px;
+	margin-top:20px;
+	border-radius: 5px;
+	cursor: pointer;
+	background: rgb(135, 224, 253); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(135, 224, 253, 1) 0%,
+		rgba(83, 203, 241, 1) 40%, rgba(5, 171, 224, 1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(135,
+		224, 253, 1)), color-stop(40%, rgba(83, 203, 241, 1)),
+		color-stop(100%, rgba(5, 171, 224, 1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(135, 224, 253, 1) 0%,
+		rgba(83, 203, 241, 1) 40%, rgba(5, 171, 224, 1) 100%);
+	/* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(135, 224, 253, 1) 0%,
+		rgba(83, 203, 241, 1) 40%, rgba(5, 171, 224, 1) 100%);
+	/* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(135, 224, 253, 1) 0%,
+		rgba(83, 203, 241, 1) 40%, rgba(5, 171, 224, 1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(135, 224, 253, 1) 0%,
+		rgba(83, 203, 241, 1) 40%, rgba(5, 171, 224, 1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd',
+		endColorstr='#05abe0', GradientType=0);
+	border: none; /* IE6-9 */
+}
+

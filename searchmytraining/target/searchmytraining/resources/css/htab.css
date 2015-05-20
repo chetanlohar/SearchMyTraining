@@ -1,0 +1,250 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 11, 2015, 1:16:08 PM
+    Author     :prashant
+*/
+html {
+	overflow-y: scroll;
+}
+
+br {
+	display: block;
+	line-height: 1.6em;
+}
+
+article, aside, details, figcaption, figure, footer, hgroup, menu, nav,
+	section {
+	display: block;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+input, textarea {
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	outline: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+
+strong {
+	font-weight: bold;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+img {
+	border: 0;
+	max-width: 100%;
+}
+
+h1 {
+	font-family: 'Cantora One', Arial, sans-serif;
+	font-size: 1.0em;
+	line-height: 0.5em;
+	margin-bottom: 10px;
+	color: #787878;
+}
+
+#t p {
+	font-size: 1.4em;
+	line-height: 1.25em;
+	color: #575757;
+	font-weight: normal;
+	margin-bottom: 10px;
+}
+
+/* main page */
+.section_wrapar .middle_part #t {
+	display: block;
+	width: 100%;
+	height: 76%;
+	margin-top: 10px;
+	overflow: hidden;
+	-webkit-box-shadow: rgba(50, 50, 50, 0.45098) 5px 0px 3px 0px;
+	box-shadow: rgba(50, 50, 50, 0.45098) 0px 0px 9px 0px;
+}
+
+.section_wrapar .middle_part #tabcontent {
+	display: block;
+	background: whitesmoke;
+	padding: 0px 0px;
+	margin-top: 45px;
+	min-height: 600px;
+	width: 100%;
+}
+
+.section_wrapar .middle_part #tabcontent .top-institute {
+	height: 530px;
+	width: 30%;
+	float: left;
+	margin-left: 10px;
+	margin-top: 15px;
+}
+
+.section_wrapar .middle_part #tabcontent .top-institute ul li {
+	list-style: none;
+}
+
+.section_wrapar .middle_part #tabcontent .top-institute ul li a {
+	text-decoration: none;
+	color: #666;
+	font-family: roboto, arial;
+	font-size: 13px;
+	line-height: 25px;
+	margin-left: 20px;
+}
+
+.contentblock {
+	display: block;
+	padding: 15px 20px;
+}
+
+.contentblock.hidden {
+	display: none;
+}
+
+/* side navigation */
+#tabmenu {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	float: left;
+	background: #e8e8e8;
+	border-right: 1px solid #c9c9c9;
+	-webkit-box-shadow: rgba(50, 50, 50, 0.45098) 2px 0px 2px 0px;
+	box-shadow: rgba(50, 50, 50, 0.45098) 0px 0px 2px 0px;
+}
+
+#tabmenu li {
+	float: left;
+	margin: 0px;
+	width: 175px;
+	border-left: solid 1px #dedede;
+	line-height: 43px;
+	background: #FFFFFF;
+}
+
+#tabmenu li :first-child {
+	border-left: none;
+}
+#tabmenu li  a {
+	text-decoration: none;
+	text-align: center;
+	/*   padding: 0px 40px; */
+	color: #666;
+	font-family: roboto, arial;
+	font-size: 16px;
+	margin: auto;
+}
+#tabmenu li:first-child a,#tabmenu li:nth-child(2) a {
+	margin-left: 50px;
+}
+#tabmenu li:nth-child(3) a {
+	margin-left: 40px;
+}
+#tabmenu li:last-child a {
+	margin-left: 27px;
+}
+#tabmenu li a.open {
+	/*width: 96%;*/
+	
+}
+
+.hvr-underline-reveal {
+	display: inline-block;
+	vertical-align: middle;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
+	position: relative;
+	overflow: hidden;
+}
+
+.hvr-underline-reveal:before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #0fa1e0;
+	height: 5px;
+	-webkit-transform: translateY(5px);
+	transform: translateY(5px);
+	-webkit-transition-property: transform;
+	transition-property: transform;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-timing-function: ease-out;
+	transition-timing-function: ease-out;
+}
+
+.hvr-underline-reveal:hover:before, .hvr-underline-reveal:focus:before,
+	.hvr-underline-reveal:active:before {
+	-webkit-transform: translateY(0);
+	transform: translateY(0);
+}
+
+/* extra styles */
+.bigtxtfield {
+	display: block;
+	width: 350px;
+	color: #555;
+	padding: 4px 6px;
+	margin-bottom: 15px;
+}
+
+.bigtxtarea {
+	display: block;
+	width: 440px;
+	height: 90px;
+	padding: 5px 9px;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	color: #555;
+	font-size: 1.2em;
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+.clearfix {
+	display: inline-block;
+}
+
+html[xmlns] .clearfix {
+	display: block;
+}
+
+* html .clearfix {
+	height: 1%;
+}

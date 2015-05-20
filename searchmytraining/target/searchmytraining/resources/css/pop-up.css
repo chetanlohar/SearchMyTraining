@@ -1,0 +1,1630 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+ 
+    Created on : Mar 28, 2015, 1:51:47 PM
+    Author     : Tejashri Pawar
+*/
+/*=============================Training Enquiry Css Starts=====================================*/
+#pop_up_box {
+	background-color: #fff;
+	border-radius: 5px;
+	color: #000;
+	display: none;
+	padding: 20px;
+	min-width: 400px;
+	min-height: 520px;
+	margin-top: 50px;
+	background: #ECF0F3;
+}
+
+.b-close {
+	cursor: pointer;
+	margin-right: -23px;
+	margin-top: -23px;
+}
+
+#pop_up_box .reg_form {
+	height: 580px;
+	width: 400px;
+	border-radius: 10px;
+	background: #FFFFFF;
+	padding: 30px 0px;
+}
+
+#pop_up_box .reg_form .head {
+	position: absolute;
+	margin-left: 120px;
+	margin-top: -75px;
+}
+
+#pop_up_box .reg_form .head img {
+	height: 90px;
+	width: 90px;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-o-border-radius: 50%;
+	-moz-border-radius: 50%;
+	margin-left: 30px;
+}
+
+#pop_up_box form {
+	width: 80%;
+	height: 280px;
+	margin: 0px auto;
+	padding-top: 35px;
+}
+
+#pop_up_box form h2 {
+	line-height: 50px;
+	width: 100%;
+	text-align: center;
+	font-family: calibri;
+	font-size: 24px;
+	color: #3e3e3e;
+	text-shadow: rgb(224, 224, 224) 1px 1px 0px;
+	font-weight: bold;
+}
+
+#pop_up_box form input[type="text"] {
+	color: #858282;
+	font-size: 15px;
+	padding-left: 10px;
+	outline: none;
+	background: none;
+	height: 40px;
+	width: 300px;
+	border: 1px solid #C0C0C0;
+	margin: 7px 5px;
+	border-radius: 3px;
+	-webkit-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	-moz-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	-ms-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	-o-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+}
+
+#pop_up_box form input[type="text"]:focus, #pop_up_box form textarea:focus
+	{
+	border: 1px solid #40A9DF;
+	box-shadow: 0 0 3px #40A9DF;
+	-webkit-box-shadow: 0 0 3px #40A9DF;
+	-o-box-shadow: 0 0 3px #40A9DF;
+	-moz-box-shadow: 0 0 3px #40A9DF;
+}
+
+#pop_up_box form textarea {
+	color: #858282;
+	font-size: 18px;
+	padding: 10px 0px 0px 10px;
+	outline: none;
+	height: 120px;
+	width: 300px;
+	background: none;
+	border: none;
+	border: 1px solid #C0C0C0;
+	margin: 7px 5px;
+	border-radius: 3px;
+	resize: none;
+	font-family: calibri;
+	-webkit-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	-moz-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	-ms-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	-o-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+}
+
+#pop_up_box form .sign input {
+	cursor: pointer;
+	font-size: 20px;
+	font-family: calibri;
+	text-shadow: 2px whitesmoke;
+	width: 90px;
+	height: 40px;
+	margin-top: 10px;
+	border: none;
+	margin-left: 15px;
+	border-radius: 5px;
+	color: #FFFFFF;
+	text-shadow: 0px -1px 0px rgba(0, 0, 0, .7);
+	background: #3e3e3e;
+	box-shadow: 1px 1px 1px rgba(10, 10, 10, 0.8);
+}
+
+#pop_up_box form .sign input:hover {
+	box-shadow: none;
+	background: #000;
+}
+
+#pop_up_box form .sign input[type="submit"] {
+	margin-left: 50px;
+	margin-right: 10px;
+}
+/*=============================Training Enquiry Css Ends=====================================*/
+
+/*==============================Group Training Request Css Starts====================================*/
+#pop_up_box_1 {
+	border-radius: 5px;
+	display: none;
+	padding: 20px;
+	min-width: 400px;
+	min-height: 650px;
+	margin-top: 30px;
+	background: #ECF0F3;
+}
+
+.b-close {
+	cursor: pointer;
+	position: relative;
+	right: 0px;
+	top: 0px;
+}
+
+#pop_up_box_1 .reg_form {
+	height: 655px;
+	width: 400px;
+	border-radius: 10px;
+	background: #FFFFFF;
+	padding-top: 35px;
+}
+
+#pop_up_box_1 .reg_form .head {
+	position: absolute;
+	margin-left: 120px;
+	margin-top: -75px;
+}
+
+#pop_up_box_1 .reg_form .head img {
+	height: 90px;
+	width: 90px;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-o-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border: 3px solid lightgray;
+	margin-left: 30px;
+}
+
+#pop_up_box_1 form {
+	width: 80%;
+	height: 280px;
+	margin: 30px auto;
+}
+
+#pop_up_box_1 form h2 {
+	margin-top: 5px;
+	line-height: 50px;
+	width: 100%;
+	text-align: center;
+	font-family: calibri;
+	font-size: 24px;
+	color: #3e3e3e;
+	font-weight: bold;
+	text-shadow: rgb(224, 224, 224) 1px 1px 0px;
+}
+
+#pop_up_box_1 form input[type="text"] {
+	color: #858282;
+	font-size: 15px;
+	padding: 0px 0px 0px 10px;
+	outline: none;
+	background: none;
+	border: none;
+	height: 40px;
+	width: 300px;
+	border: 1px solid #C0C0C0;
+	margin: 7px 5px;
+	border-radius: 3px;
+	-webkit-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	-moz-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	-ms-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	-o-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+}
+
+#pop_up_box_1 form input[type="text"]:focus, #pop_up_box_1 form .req textarea:focus
+	{
+	border: 1px solid #40A9DF;
+	box-shadow: 0 0 3px #40A9DF;
+	-webkit-box-shadow: 0 0 3px #40A9DF;
+	-o-box-shadow: 0 0 3px #40A9DF;
+	-moz-box-shadow: 0 0 3px #40A9DF;
+}
+
+#pop_up_box_1 form .req textarea {
+	color: #858282;
+	font-size: 18px;
+	padding: 10px 0px 0px 10px;
+	outline: none;
+	height: 120px;
+	width: 300px;
+	background: none;
+	border: none;
+	border: 1px solid #C0C0C0;
+	margin: 7px 5px;
+	border-radius: 3px;
+	resize: none;
+	font-family: calibri;
+	-webkit-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	-moz-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	-ms-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	-o-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+}
+
+#pop_up_box_1 form .sign input {
+	cursor: pointer;
+	font-size: 20px;
+	font-family: calibri;
+	text-shadow: 2px whitesmoke;
+	width: 90px;
+	height: 40px;
+	margin-top: 10px;
+	border: none;
+	margin-left: 15px;
+	border-radius: 5px;
+	color: #FFFFFF;
+	text-shadow: 0px -1px 0px rgba(0, 0, 0, .7);
+	background: #3e3e3e;
+	box-shadow: 1px 1px 1px rgba(10, 10, 10, 0.8);
+}
+
+#pop_up_box_1 form .sign input:hover {
+	box-shadow: none;
+	background: #000;
+}
+
+#pop_up_box_1 form .sign input[type="submit"] {
+	margin-left: 50px;
+	margin-right: 10px;
+}
+/*=============================Group Training Css Ends=====================================*/
+
+/*=============================Trainee Registration Css Starts=====================================*/
+#pop_up_box_2 {
+	background-color: #fff;
+	border-radius: 5px;
+	color: #000;
+	display: none;
+	padding: 20px;
+	min-width: 400px;
+	min-height: 520px;
+	margin-top: 40px;
+	background: #ECF0F3;
+}
+.b-close {
+	cursor: pointer;
+	position: absolute;
+	right: 10px;
+	top: 5px;
+}
+#pop_up_box_2 .reg_form {
+	height: auto;
+	width: 390px;
+	margin: 5px auto 5px;
+	border-radius: 10px;
+	background: #FFFFFF;
+	overflow: hidden;
+}
+#pop_up_box_2 .reg_form form {
+	height: auto;
+	width: 90%;
+	margin: 50px auto;
+	/*background: red;*/
+	margin-top: 60px;
+}
+#pop_up_box_2 .reg_form .head {
+	position: absolute;
+	margin-left: 120px;
+	margin-top: -45px;
+}
+#pop_up_box_2 .reg_form .head img {
+	height: 90px;
+	width: 90px;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-o-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border: 3px solid lightgray;
+	margin-left: 30px;
+}
+#pop_up_box_2 form h2 {
+	line-height: 40px;
+	width: 100%;
+	text-align: center;
+	font-family: arial;
+	font-size: 22px;
+	color: #3e3e3e;
+	font-weight: bold;
+	text-shadow: rgb(224, 224, 224) 1px 1px 0px;
+}
+#pop_up_box_2 form .type{
+	height: 40px;
+	width: 270px;
+	margin:5px 40px;
+	}
+#pop_up_box_2 form select {
+	font-family: calibri;
+	font-size: 17px;
+	width: 270px;
+	border: 1px solid #cccccc;
+	margin: 0px 4px 2px 0px;
+	color: #999;
+	height: 36px;
+	padding: 3px;
+	-webkit-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	-moz-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	-ms-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	-o-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+}
+#pop_up_box_2 form label{
+	color: #858282;
+	font-size: 19px;
+	font-family: calibri;
+	line-height: 40px;
+}
+#pop_up_box_2 form input[type="text"], #pop_up_box_2 form input[type="password"]
+	{
+	color: #858282;
+	font-size: 15px;
+	padding: 0px 0px 0px 40px;
+	outline: none;
+	background: none;
+	border: none;
+	height: 40px;
+	width: 270px;
+	border: 1px solid #C0C0C0;
+	margin: 10px 40px;
+	border-radius: 3px;
+	-webkit-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	-moz-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	-ms-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	-o-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+}
+
+#pop_up_box_2 form input[type="text"]:focus, #pop_up_box_2 form input[type="password"]:focus
+	{
+	border: 1px solid #40A9DF;
+	box-shadow: 0 0 3px #40A9DF;
+	-webkit-box-shadow: 0 0 3px #40A9DF;
+	-o-box-shadow: 0 0 3px #40A9DF;
+	-moz-box-shadow: 0 0 3px #40A9DF;
+}
+
+#pop_up_box_2 form .name input {
+	background: url('/resources/images/user1.png') no-repeat;
+	background-position: left center;
+	background-position-x: 2px;
+	background-position-y: 5px;
+}
+
+#pop_up_box_2 form .city input {
+	background: url('/resources/images/location_ico.png') no-repeat;
+	background-position: left center;
+	background-position-x: 2px;
+	background-position-y: 5px;
+}
+
+#pop_up_box_2 form .contact input {
+	background: url('/resources/images/icons_phone_iconWhite.png') no-repeat;
+	background-position: left center;
+	background-position-x: 4px;
+	background-position-y: 8px;
+}
+
+#pop_up_box_2 form .mailto input {
+	background: url('/resources/images/mail1.png') no-repeat;
+	background-position: left center;
+	background-position-x: 2px;
+	background-position-y: 9px;
+}
+
+#pop_up_box_2 form .password input {
+	background: url('/resources/images/icon-password.png') no-repeat;
+	background-position: left center;
+	background-position-x: 4px;
+	background-position-y: 8px;
+}
+
+#pop_up_box_2 form .sign input {
+	cursor: pointer;
+	font-size: 20px;
+	font-family: calibri;
+	text-shadow: 2px whitesmoke;
+	width: 90px;
+	height: 40px;
+	margin-top: 10px;
+	border: none;
+	margin-left: 15px;
+	border-radius: 5px;
+	color: #FFFFFF;
+	text-shadow: 0px -1px 0px rgba(0, 0, 0, .7);
+	background: #3e3e3e;
+	box-shadow: 1px 1px 1px rgba(10, 10, 10, 0.8);
+}
+
+#pop_up_box_2 form .sign input:hover {
+	box-shadow: none;
+	background: #000;
+}
+
+#pop_up_box_2 form .sign input[type="submit"] {
+	margin-left: 75px;
+	/*margin-right: 2px;*/
+}
+/*=============================REgistration Css Ends=====================================*/
+
+/*=============================Login Css Starts=====================================*/
+#pop_up_box_3 {
+	background-color: #fff;
+	border-radius: 5px;
+	color: #000;
+	display: none;
+	padding: 20px;
+	min-width: 400px;
+	min-height: 360px;
+	margin-top: 40px;
+	background: #ECF0F3;
+}
+
+.b-close {
+	cursor: pointer;
+	position: absolute;
+	right: 10px;
+	top: 5px;
+}
+
+#pop_up_box_3 .reg_form {
+	height: 350px;
+	width: 390px;
+	margin: 5px auto 5px;
+	border-radius: 10px;
+	background: #FFFFFF;
+	overflow: hidden;
+}
+
+#pop_up_box_3 .reg_form .head {
+	position: absolute;
+	margin-left: 120px;
+	margin-top: -45px;
+}
+
+#pop_up_box_3 .reg_form .head img {
+	height: 90px;
+	width: 90px;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-o-border-radius: 50%;
+	-moz-border-radius: 50%;
+	margin-left: 30px;
+	border: 3px solid lightgray;
+}
+
+#pop_up_box_3 form {
+	width: 80%;
+	height: 320px;
+	margin: 50px auto;
+}
+
+#pop_up_box_3 form a {
+	float: right;
+	font-size: 18px;
+	margin-top: 10px;
+	text-decoration: none;
+	color: #000000;
+	font-family: calibri;
+}
+
+#pop_up_box_3 form a:hover {
+	text-decoration: underline;
+}
+
+#pop_up_box_3 form h2 {
+	line-height: 30px;
+	width: 100%;
+	text-align: center;
+	font-family: arial;
+	font-size: 22px;
+	color: #3e3e3e;
+	font-weight: bold;
+	text-shadow: rgb(224, 224, 224) 1px 1px 0px;
+	padding-top: 15px;
+}
+
+#pop_up_box_3 form input[type="password"], #pop_up_box_3 form input[type="email"]
+	{
+	color: #858282;
+	font-size: 15px;
+	padding: 0px 0px 0px 40px;
+	outline: none;
+	background: none;
+	border: none;
+	height: 40px;
+	width: 270px;
+	border: 1px solid #C0C0C0;
+	margin-top: 20px;
+	margin-left: 20px;
+	border-radius: 3px;
+	-webkit-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	-moz-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	-ms-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	-o-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+}
+
+#pop_up_box_3 form input[type="email"]:focus, #pop_up_box_3 form input[type="password"]:focus
+	{
+	border: 1px solid #40A9DF;
+	box-shadow: 0 0 3px #40A9DF;
+	-webkit-box-shadow: 0 0 3px #40A9DF;
+	-o-box-shadow: 0 0 3px #40A9DF;
+	-moz-box-shadow: 0 0 3px #40A9DF;
+}
+
+#pop_up_box_3 form .password input {
+	background: url('/resources/images/icon-password.png') no-repeat;
+	background-position: left center;
+	background-position-x: 4px;
+	background-position-y: 8px;
+}
+
+#pop_up_box_3 form .mailto input {
+	background: url('/resources/images/user1.png') no-repeat;
+	background-position: left center;
+	background-position-x: 2px;
+	background-position-y: 9px;
+}
+
+#pop_up_box_3 form .sign input {
+	cursor: pointer;
+	font-size: 20px;
+	font-family: calibri;
+	text-shadow: 2px whitesmoke;
+	width: 90px;
+	height: 40px;
+	margin-top: 5px;
+	border: none;
+	margin-left: 15px;
+	border-radius: 5px;
+	color: #FFFFFF;
+	text-shadow: 0px -1px 0px rgba(0, 0, 0, .7);
+	background: #3e3e3e;
+	box-shadow: 1px 1px 1px rgba(10, 10, 10, 0.8);
+}
+
+#pop_up_box_3 form .sign input:hover {
+	box-shadow: none;
+	background: #000;
+}
+
+#pop_up_box_3 form .sign input[type="submit"] {
+	margin-left: 55px;
+	margin-right: 10px;
+}
+
+.p-container  .checkbox input {
+	position: absolute;
+	left: -9999px;
+}
+
+.p-container.checkbox i {
+	border-color: #fff;
+	transition: border-color 0.3s;
+	-o-transition: border-color 0.3s;
+	-ms-transition: border-color 0.3s;
+	-moz-transition: border-color 0.3s;
+	-webkit-transition: border-color 0.3s;
+}
+
+.p-container.checkbox i:hover {
+	border-color: red;
+}
+
+.p-container  i:before {
+	background-color: #2da5da;
+}
+
+.p-container  .checkbox input+i:after {
+	position: absolute;
+	opacity: 0;
+	transition: opacity 0.1s;
+	-o-transition: opacity 0.1s;
+	-ms-transition: opacity 0.1s;
+	-moz-transition: opacity 0.1s;
+	-webkit-transition: opacity 0.1s;
+}
+
+.p-container .checkbox input+i:after {
+	content: url("/resources/images/tick.png") no-repeat 7px 1px;
+	top: -15px;
+	left: 1px;
+	width: 15px;
+	height: 15px;
+}
+
+.p-container  .checkbox {
+	float: left;
+	margin-right: 30px;
+	margin-left: 17px;
+}
+
+.p-container .checkbox {
+	padding-left: 40px;
+	font-size: 14px;
+	line-height: 60px;
+	color: #858282;
+	cursor: pointer;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.p-container  .checkbox {
+	position: relative;
+	display: block;
+}
+
+.p-container  .checkbox i {
+	position: absolute;
+	top: 18px;
+	left: 5px;
+	display: block;
+	width: 22px;
+	height: 22px;
+	outline: none;
+	border: 1px solid #999;
+	background: #fff;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-o-border-radius: 4px;
+}
+
+.p-container  .checkbox input+i:after {
+	position: absolute;
+	opacity: 0;
+	transition: opacity 0.1s;
+	-o-transition: opacity 0.1s;
+	-ms-transition: opacity 0.1s;
+	-moz-transition: opacity 0.1s;
+	-webkit-transition: opacity 0.1s;
+}
+
+.p-container .checkbox input+i:after {
+	color: #2da5da;
+}
+
+.p-container .checkbox input:checked+i, .p-container .input:checked+i {
+	border-color: #2da5da;
+}
+
+.p-container .rating input:checked ~ label {
+	color: #2da5da;
+}
+
+.p-container .checkbox input:checked+i:after {
+	opacity: 1;
+}
+
+/*=============================Login Css Ends=====================================*/
+/*=============================Provider Registration Css Starts=====================================*/
+#pop_up_box_4 {
+	background-color: #fff;
+	border-radius: 5px;
+	color: #000;
+	display: none;
+	padding: 20px;
+	min-width: 400px;
+	min-height: 605px;
+	margin-top: 40px;
+	background: #ECF0F3;
+}
+
+.b-close {
+	cursor: pointer;
+	position: absolute;
+	right: 10px;
+	top: 5px;
+}
+
+#pop_up_box_4 .reg_form {
+	height: 595px;
+	width: 390px;
+	margin: 5px auto 5px;
+	border-radius: 10px;
+	background: #FFFFFF;
+	overflow: hidden;
+}
+
+#pop_up_box_4 .reg_form .head {
+	position: absolute;
+	margin-left: 120px;
+	margin-top: -45px;
+}
+
+#pop_up_box_4 .reg_form .head img {
+	height: 90px;
+	width: 90px;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-o-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border: 3px solid lightgray;
+	margin-left: 30px;
+}
+
+#pop_up_box_4 form {
+	width: 80%;
+	height: 580px;
+	margin: 50px auto;
+}
+
+#pop_up_box_4 form h2 {
+	line-height: 30px;
+	padding: 15px 0px 10px 0px;
+	width: 100%;
+	text-align: center;
+	font-family: arial;
+	font-size: 22px;
+	color: #3e3e3e;
+	font-weight: bold;
+	text-shadow: rgb(224, 224, 224) 1px 1px 0px;
+}
+
+#pop_up_box_4 form input[type="text"], #pop_up_box_4 form input[type="password"]
+	{
+	color: #858282;
+	font-size: 15px;
+	padding: 0px 0px 0px 40px;
+	outline: none;
+	background: none;
+	border: none;
+	height: 40px;
+	width: 270px;
+	border: 1px solid #C0C0C0;
+	margin: 10px 20px;
+	border-radius: 3px;
+	-webkit-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	-moz-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	-ms-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	-o-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+}
+
+#pop_up_box_4 form input[type="text"]:focus, #pop_up_box_4 form input[type="password"]:focus
+	{
+	border: 1px solid #40A9DF;
+	box-shadow: 0 0 3px #40A9DF;
+	-webkit-box-shadow: 0 0 3px #40A9DF;
+	-o-box-shadow: 0 0 3px #40A9DF;
+	-moz-box-shadow: 0 0 3px #40A9DF;
+}
+
+#pop_up_box_4 form .name input {
+	background: url('/resources/images/user1.png') no-repeat;
+	background-position: left center;
+	background-position-x: 2px;
+	background-position-y: 5px;
+}
+
+#pop_up_box_4 form .city input {
+	background: url('/resources/images/location_ico.png') no-repeat;
+	background-position: left center;
+	background-position-x: 2px;
+	background-position-y: 5px;
+}
+
+#pop_up_box_4 form .contact input {
+	background: url('/resources/images/icons_phone_iconWhite.png') no-repeat;
+	background-position: left center;
+	background-position-x: 4px;
+	background-position-y: 8px;
+}
+
+#pop_up_box_4 form .mailto input {
+	background: url('/resources/images/mail1.png') no-repeat;
+	background-position: left center;
+	background-position-x: 2px;
+	background-position-y: 9px;
+}
+
+#pop_up_box_4 form .password input {
+	background: url('/resources/images/icon-password.png') no-repeat;
+	background-position: left center;
+	background-position-x: 4px;
+	background-position-y: 8px;
+}
+
+#pop_up_box_4 form .sign input {
+	cursor: pointer;
+	font-size: 20px;
+	font-family: calibri;
+	text-shadow: 2px whitesmoke;
+	width: 90px;
+	height: 40px;
+	margin-top: 10px;
+	border: none;
+	margin-left: 15px;
+	border-radius: 5px;
+	color: #FFFFFF;
+	text-shadow: 0px -1px 0px rgba(0, 0, 0, .7);
+	background: #3e3e3e;
+	box-shadow: 1px 1px 1px rgba(10, 10, 10, 0.8);
+}
+
+#pop_up_box_4 form .sign input:hover {
+	box-shadow: none;
+	background: #000;
+}
+
+#pop_up_box_4 form .sign input[type="submit"] {
+	margin-left: 50px;
+	margin-right: 10px;
+}
+/*=============================REgistration Css Ends=====================================*/
+
+/*=============================Provider Login Css Starts=====================================*/
+#pop_up_box_5 {
+	background-color: #fff;
+	border-radius: 5px;
+	color: #000;
+	display: none;
+	padding: 20px;
+	min-width: 400px;
+	min-height: 360px;
+	margin-top: 40px;
+	background: #ECF0F3;
+}
+
+.b-close {
+	cursor: pointer;
+	position: absolute;
+	right: 10px;
+	top: 5px;
+}
+
+#pop_up_box_5 .reg_form {
+	height: 350px;
+	width: 390px;
+	margin: 5px auto 5px;
+	border-radius: 10px;
+	background: #FFFFFF;
+	overflow: hidden;
+}
+
+#pop_up_box_5 .reg_form .head {
+	position: absolute;
+	margin-left: 120px;
+	margin-top: -65px;
+}
+
+#pop_up_box_5 .reg_form .head img {
+	height: 90px;
+	width: 90px;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-o-border-radius: 50%;
+	-moz-border-radius: 50%;
+	margin-left: 30px;
+}
+
+#pop_up_box_5 form {
+	width: 80%;
+	height: 280px;
+	margin: 30px auto;
+}
+
+#pop_up_box_5 form h2 {
+	line-height: 30px;
+	width: 100%;
+	text-align: center;
+	font-family: arial;
+	font-size: 22px;
+	color: #3e3e3e;
+	font-weight: bold;
+	text-shadow: rgb(224, 224, 224) 1px 1px 0px;
+	padding-top: 15px;
+}
+
+#pop_up_box_5 form input[type="password"], #pop_up_box_5 form input[type="email"]
+	{
+	color: #858282;
+	font-size: 15px;
+	padding: 0px 0px 0px 40px;
+	outline: none;
+	background: none;
+	border: none;
+	height: 40px;
+	width: 270px;
+	border: 1px solid #C0C0C0;
+	margin-top: 25px;
+	border-radius: 3px;
+	margin-left: 20px;
+	-webkit-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	-moz-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	-ms-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	-o-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+}
+
+#pop_up_box_5 form input[type="email"]:focus, #pop_up_box_5 form input[type="password"]:focus
+	{
+	border: 1px solid #40A9DF;
+	box-shadow: 0 0 3px #40A9DF;
+	-webkit-box-shadow: 0 0 3px #40A9DF;
+	-o-box-shadow: 0 0 3px #40A9DF;
+	-moz-box-shadow: 0 0 3px #40A9DF;
+}
+
+#pop_up_box_5 form .password input {
+	background: url('/resources/images/icon-password.png') no-repeat;
+	background-position: left center;
+	background-position-x: 4px;
+	background-position-y: 8px;
+}
+
+#pop_up_box_5 form .mailto input {
+	background: url('/resources/images/user1.png') no-repeat;
+	background-position: left center;
+	background-position-x: 2px;
+	background-position-y: 9px;
+}
+
+#pop_up_box_5 form .sign input {
+	cursor: pointer;
+	font-size: 20px;
+	font-family: calibri;
+	text-shadow: 2px whitesmoke;
+	width: 90px;
+	height: 40px;
+	margin-top: 5px;
+	border: none;
+	margin-left: 15px;
+	border-radius: 5px;
+	color: #FFFFFF;
+	text-shadow: 0px -1px 0px rgba(0, 0, 0, .7);
+	background: #3e3e3e;
+	box-shadow: 1px 1px 1px rgba(10, 10, 10, 0.8);
+}
+
+#pop_up_box_5 form .sign input:hover {
+	box-shadow: none;
+	background: #000;
+}
+
+#pop_up_box_5 form .sign input[type="submit"] {
+	margin-left: 50px;
+}
+
+#pop_up_box_5 form a {
+	float: right;
+	font-size: 18px;
+	line-height: 40px;
+	text-decoration: none;
+	color: #000000;
+	font-family: calibri;
+}
+
+#pop_up_box_5 form a:hover {
+	text-decoration: underline;
+}
+
+.p-container {
+	/*margin-top:2em;*/
+	
+}
+
+.p-container  .checkbox input {
+	position: absolute;
+	left: -9999px;
+}
+
+.p-container.checkbox i {
+	border-color: #fff;
+	transition: border-color 0.3s;
+	-o-transition: border-color 0.3s;
+	-ms-transition: border-color 0.3s;
+	-moz-transition: border-color 0.3s;
+	-webkit-transition: border-color 0.3s;
+}
+
+.p-container.checkbox i:hover {
+	border-color: red;
+}
+
+.p-container  i:before {
+	background-color: #2da5da;
+}
+
+.p-container  .checkbox input+i:after {
+	position: absolute;
+	opacity: 0;
+	transition: opacity 0.1s;
+	-o-transition: opacity 0.1s;
+	-ms-transition: opacity 0.1s;
+	-moz-transition: opacity 0.1s;
+	-webkit-transition: opacity 0.1s;
+}
+
+.p-container .checkbox input+i:after {
+	content: url("/resources/images/tick.png") no-repeat 7px 1px;
+	top: -15px;
+	left: 1px;
+	width: 15px;
+	height: 15px;
+}
+
+.p-container  .checkbox {
+	float: left;
+	margin-right: 30px;
+}
+
+.p-container .checkbox {
+	padding-left: 40px;
+	font-size: 14px;
+	line-height: 60px;
+	color: #858282;
+	cursor: pointer;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.p-container  .checkbox {
+	position: relative;
+	display: block;
+}
+
+.p-container  .checkbox i {
+	position: absolute;
+	top: 18px;
+	left: 5px;
+	display: block;
+	width: 22px;
+	height: 22px;
+	outline: none;
+	border: 1px solid #999;
+	background: #fff;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-o-border-radius: 4px;
+}
+
+.p-container  .checkbox input+i:after {
+	position: absolute;
+	opacity: 0;
+	transition: opacity 0.1s;
+	-o-transition: opacity 0.1s;
+	-ms-transition: opacity 0.1s;
+	-moz-transition: opacity 0.1s;
+	-webkit-transition: opacity 0.1s;
+}
+
+.p-container .checkbox input+i:after {
+	color: #2da5da;
+}
+
+.p-container .checkbox input:checked+i, .p-container .input:checked+i {
+	border-color: #2da5da;
+}
+
+.p-container .rating input:checked ~ label {
+	color: #2da5da;
+}
+
+.p-container .checkbox input:checked+i:after {
+	opacity: 1;
+}
+/*==========================================Login Css Ends===========================================*/
+
+/*=========================================Sign Up Css Starts========================================*/
+#pop_up_box_6 {
+	background-color: #fff;
+	border-radius: 5px;
+	color: #000;
+	display: none;
+	padding: 20px;
+	width: 520px;
+	height: 300px;
+	margin-top: 40px;
+	background: #ECF0F3;
+}
+
+.b-close {
+	cursor: pointer;
+	position: absolute;
+	right: 2px;
+	top: 2px;
+}
+
+#pop_up_box_6 .reg_form {
+	height: 290px;
+	width: 510px;
+	/*background:  #0A0;*/
+	margin: 5px;
+	/*border: 3px lightgray solid;*/
+	/*border-radius: 20px;*/
+	background: #FFFFFF;
+}
+
+#pop_up_box_6 .reg_form form {
+	width: 100%;
+	height: 280px;
+}
+
+#pop_up_box_6 .reg_form .head {
+	width: 100%;
+	height: 90px;
+	/*border-radius: 15px 15px 0px 0px;*/
+	background: #ECF0F3;
+	/*background: #fff;*/
+	overflow: hidden;
+}
+
+#pop_up_box_6 .reg_form .head h2 {
+	text-align: center;
+	text-transform: capitalize;
+	text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.7);
+	margin-top: 30px;
+	font-size: 30px;
+	line-height: 30px;
+	color: #3e3e3e;
+	font-weight: bold;
+	text-shadow: rgb(225, 225, 225) 1px 1px 0px;
+	font-family: calibri;
+}
+
+#pop_up_box_6 .reg_form form .sign-in {
+	height: 220px;
+	width: 100%;
+	margin: 0px auto;
+	overflow: hidden;
+}
+
+#pop_up_box_6 .reg_form form .sign-in .sub-login {
+	height: 150px;
+	width: 27%;
+	margin: 20px 15px;
+	background: #F4F4F4;
+	float: left;
+	box-shadow: 2px 2px 2px 1px lightgray;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+#pop_up_box_6 .reg_form form .sign-in .sub-login a {
+	text-decoration: none;
+}
+
+#pop_up_box_6 .reg_form form .sign-in .sub-login:hover {
+	border: 2px solid #0194F6;
+}
+
+#pop_up_box_6 .reg_form form .sign-in .sub-login img {
+	height: 100px;
+	width: 70%;
+	margin-left: 20px;
+	margin-top: 15px;
+}
+
+#pop_up_box_6 .reg_form form .sign-in .sub-login h2 {
+	text-align: center;
+	color: dimgray;
+	font-size: 20px;
+	margin-top: 10px;
+}
+
+#pop_up_box_6 .reg_form form .sign-in .sub-login1 h2 {
+	text-align: center;
+	color: dimgray;
+	font-size: 20px;
+	margin-top: 10px;
+}
+
+/*=============================Sign Up Css Ends=====================================*/
+
+/* ==========================Freelancer Login starts=========================================== */
+#pop_up_box_7 {
+	background-color: #fff;
+	border-radius: 5px;
+	color: #000;
+	display: none;
+	padding: 20px;
+	min-width: 400px;
+	min-height: 360px;
+	margin-top: 40px;
+	background: #ECF0F3;
+}
+
+.b-close {
+	cursor: pointer;
+	position: absolute;
+	right: 10px;
+	top: 5px;
+}
+
+#pop_up_box_7 .reg_form {
+	height: 350px;
+	width: 390px;
+	margin: 5px auto 5px;
+	border-radius: 10px;
+	background: #FFFFFF;
+	overflow: hidden;
+}
+
+#pop_up_box_7 .reg_form .head {
+	position: absolute;
+	margin-left: 120px;
+	margin-top: -45px;
+}
+
+#pop_up_box_7 .reg_form .head img {
+	height: 90px;
+	width: 90px;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-o-border-radius: 50%;
+	-moz-border-radius: 50%;
+	margin-left: 30px;
+	border: 3px solid lightgray;
+}
+
+#pop_up_box_7 form {
+	width: 80%;
+	height: 320px;
+	margin: 50px auto;
+}
+
+#pop_up_box_7 form a {
+	float: right;
+	font-size: 18px;
+	margin-top: 10px;
+	text-decoration: none;
+	color: #000000;
+	font-family: calibri;
+}
+
+#pop_up_box_7 form a:hover {
+	text-decoration: underline;
+}
+
+#pop_up_box_7 form h2 {
+	line-height: 30px;
+	width: 100%;
+	text-align: center;
+	font-family: arial;
+	font-size: 22px;
+	color: #3e3e3e;
+	font-weight: bold;
+	text-shadow: rgb(224, 224, 224) 1px 1px 0px;
+	padding-top: 15px;
+}
+
+#pop_up_box_7 form input[type="password"], #pop_up_box_7 form input[type="email"]
+	{
+	color: #858282;
+	font-size: 15px;
+	padding: 0px 0px 0px 40px;
+	outline: none;
+	background: none;
+	border: none;
+	height: 40px;
+	width: 270px;
+	border: 1px solid #C0C0C0;
+	margin-top: 20px;
+	margin-left: 20px;
+	border-radius: 3px;
+	-webkit-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	-moz-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	-ms-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	-o-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+}
+
+#pop_up_box_7 form input[type="email"]:focus, #pop_up_box_7 form input[type="password"]:focus
+	{
+	border: 1px solid #40A9DF;
+	box-shadow: 0 0 3px #40A9DF;
+	-webkit-box-shadow: 0 0 3px #40A9DF;
+	-o-box-shadow: 0 0 3px #40A9DF;
+	-moz-box-shadow: 0 0 3px #40A9DF;
+}
+
+#pop_up_box_7 form .password input {
+	background: url('/resources/images/icon-password.png') no-repeat;
+	background-position: left center;
+	background-position-x: 4px;
+	background-position-y: 8px;
+}
+
+#pop_up_box_7 form .mailto input {
+	background: url('/resources/images/user1.png') no-repeat;
+	background-position: left center;
+	background-position-x: 2px;
+	background-position-y: 9px;
+}
+
+#pop_up_box_7 form .sign input {
+	cursor: pointer;
+	font-size: 20px;
+	font-family: calibri;
+	text-shadow: 2px whitesmoke;
+	width: 90px;
+	height: 40px;
+	margin-top: 5px;
+	border: none;
+	margin-left: 15px;
+	border-radius: 5px;
+	color: #FFFFFF;
+	text-shadow: 0px -1px 0px rgba(0, 0, 0, .7);
+	background: #3e3e3e;
+	box-shadow: 1px 1px 1px rgba(10, 10, 10, 0.8);
+}
+
+#pop_up_box_7 form .sign input:hover {
+	box-shadow: none;
+	background: #000;
+}
+
+#pop_up_box_7 form .sign input[type="submit"] {
+	margin-left: 55px;
+	margin-right: 10px;
+}
+
+.p-container  .checkbox input {
+	position: absolute;
+	left: -9999px;
+}
+
+.p-container.checkbox i {
+	border-color: #fff;
+	transition: border-color 0.3s;
+	-o-transition: border-color 0.3s;
+	-ms-transition: border-color 0.3s;
+	-moz-transition: border-color 0.3s;
+	-webkit-transition: border-color 0.3s;
+}
+
+.p-container.checkbox i:hover {
+	border-color: red;
+}
+
+.p-container  i:before {
+	background-color: #2da5da;
+}
+
+.p-container  .checkbox input+i:after {
+	position: absolute;
+	opacity: 0;
+	transition: opacity 0.1s;
+	-o-transition: opacity 0.1s;
+	-ms-transition: opacity 0.1s;
+	-moz-transition: opacity 0.1s;
+	-webkit-transition: opacity 0.1s;
+}
+
+.p-container .checkbox input+i:after {
+	content: url(/resources/images/tick.png) no-repeat 7px 1px;
+	top: -15px;
+	left: 1px;
+	width: 15px;
+	height: 15px;
+}
+
+.p-container  .checkbox {
+	float: left;
+	margin-right: 30px;
+	margin-left: 17px;
+}
+
+.p-container .checkbox {
+	padding-left: 40px;
+	font-size: 14px;
+	line-height: 60px;
+	color: #858282;
+	cursor: pointer;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.p-container  .checkbox {
+	position: relative;
+	display: block;
+}
+
+.p-container  .checkbox i {
+	position: absolute;
+	top: 18px;
+	left: 5px;
+	display: block;
+	width: 22px;
+	height: 22px;
+	outline: none;
+	border: 1px solid #999;
+	background: #fff;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-o-border-radius: 4px;
+}
+
+.p-container  .checkbox input+i:after {
+	position: absolute;
+	opacity: 0;
+	transition: opacity 0.1s;
+	-o-transition: opacity 0.1s;
+	-ms-transition: opacity 0.1s;
+	-moz-transition: opacity 0.1s;
+	-webkit-transition: opacity 0.1s;
+}
+
+.p-container .checkbox input+i:after {
+	color: #2da5da;
+}
+
+.p-container .checkbox input:checked+i, .p-container .input:checked+i {
+	border-color: #2da5da;
+}
+
+.p-container .rating input:checked ~ label {
+	color: #2da5da;
+}
+
+.p-container .checkbox input:checked+i:after {
+	opacity: 1;
+}
+/* ==========================Freelancer Login ends=========================================== */
+/*=============================Freelancer Registration Css Starts=====================================*/
+#pop_up_box_8 {
+	background-color: #fff;
+	border-radius: 5px;
+	color: #000;
+	display: none;
+	padding: 20px;
+	min-width: 400px;
+	min-height: 605px;
+	margin-top: 40px;
+	background: #ECF0F3;
+}
+
+.b-close {
+	cursor: pointer;
+	position: absolute;
+	right: 10px;
+	top: 5px;
+}
+
+#pop_up_box_8 .reg_form {
+	height: 595px;
+	width: 390px;
+	margin: 5px auto 5px;
+	border-radius: 10px;
+	background: #FFFFFF;
+	overflow: hidden;
+}
+
+#pop_up_box_8 .reg_form .head {
+	position: absolute;
+	margin-left: 120px;
+	margin-top: -45px;
+}
+
+#pop_up_box_8 .reg_form .head img {
+	height: 90px;
+	width: 90px;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-o-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border: 3px solid lightgray;
+	margin-left: 30px;
+}
+
+#pop_up_box_8 form {
+	width: 80%;
+	height: 580px;
+	margin: 50px auto;
+}
+
+#pop_up_box_8 form h2 {
+	line-height: 30px;
+	padding: 15px 0px 10px 0px;
+	width: 100%;
+	text-align: center;
+	font-family: arial;
+	font-size: 22px;
+	color: #3e3e3e;
+	font-weight: bold;
+	text-shadow: rgb(224, 224, 224) 1px 1px 0px;
+}
+
+#pop_up_box_8 form input[type="text"], #pop_up_box_8 form input[type="password"]
+	{
+	color: #858282;
+	font-size: 15px;
+	padding: 0px 0px 0px 40px;
+	outline: none;
+	background: none;
+	border: none;
+	height: 40px;
+	width: 270px;
+	border: 1px solid #C0C0C0;
+	margin: 10px 20px;
+	border-radius: 3px;
+	-webkit-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	-moz-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	-ms-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	-o-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+}
+
+#pop_up_box_8 form input[type="text"]:focus, #pop_up_box_8 form input[type="password"]:focus
+	{
+	border: 1px solid #40A9DF;
+	box-shadow: 0 0 3px #40A9DF;
+	-webkit-box-shadow: 0 0 3px #40A9DF;
+	-o-box-shadow: 0 0 3px #40A9DF;
+	-moz-box-shadow: 0 0 3px #40A9DF;
+}
+
+#pop_up_box_8 form .name input {
+	background: url('../images/user1.png') no-repeat;
+	background-position: left center;
+	background-position-x: 2px;
+	background-position-y: 5px;
+}
+
+#pop_up_box_8 form .city input {
+	background: url('../images/location_ico.png') no-repeat;
+	background-position: left center;
+	background-position-x: 2px;
+	background-position-y: 5px;
+}
+
+#pop_up_box_8 form .contact input {
+	background: url('../images/icons_phone_iconWhite.png') no-repeat;
+	background-position: left center;
+	background-position-x: 4px;
+	background-position-y: 8px;
+}
+
+#pop_up_box_8 form .mailto input {
+	background: url('../images/mail1.png') no-repeat;
+	background-position: left center;
+	background-position-x: 2px;
+	background-position-y: 9px;
+}
+
+#pop_up_box_8 form .password input {
+	background: url('../images/icon-password.png') no-repeat;
+	background-position: left center;
+	background-position-x: 4px;
+	background-position-y: 8px;
+}
+
+#pop_up_box_8 form .sign input {
+	cursor: pointer;
+	font-size: 20px;
+	font-family: calibri;
+	text-shadow: 2px whitesmoke;
+	width: 90px;
+	height: 40px;
+	margin-top: 10px;
+	border: none;
+	margin-left: 15px;
+	border-radius: 5px;
+	color: #FFFFFF;
+	text-shadow: 0px -1px 0px rgba(0, 0, 0, .7);
+	background: #3e3e3e;
+	box-shadow: 1px 1px 1px rgba(10, 10, 10, 0.8);
+}
+
+#pop_up_box_8 form .sign input:hover {
+	box-shadow: none;
+	background: #000;
+}
+
+#pop_up_box_8 form .sign input[type="submit"] {
+	margin-left: 50px;
+	margin-right: 10px;
+}
+/*=============================Freelancer REgistration Css Ends=====================================*/

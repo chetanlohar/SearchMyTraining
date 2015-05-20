@@ -1,0 +1,81 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 10, 2015, 12:09:03 PM
+    Author     : Softinfology
+*/
+
+#feedback{
+    position: fixed;
+    top:450px;
+    left:-362px;
+    background: #f4f4f4;
+}
+#feedback form{
+    float: left;
+    border: 1px solid #999;
+    padding: 10px;
+    border-radius:5px;
+}
+#feedback form p{
+    margin-bottom: 5px;
+}
+#feedback form label{
+    display: block;
+    float: left;
+    text-align:right;
+    margin-right:20px;
+    width:70px;
+    font-weight:bold;
+    color: #019AC6;
+    font-size:14px;
+}
+#feedback a{
+    background:url("../images/feedback.png") no-repeat center left;
+    display: block;
+    width:40px;
+    height:175px;
+    float: left;
+    text-indent:-9999em;
+    position: absolute;
+    top:140px;
+    right:-40px;
+}
+
+#feedback form .btn{
+    float: right;
+    /*text-indent:-9999em;*/
+    width:80px;
+    height:28px;
+    border:1px solid #fff;
+    color: #fff;
+    background: rgb(135,224,253); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(135,224,253,1) 0%, rgba(83,203,241,1) 40%, rgba(5,171,224,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(135,224,253,1)), color-stop(40%,rgba(83,203,241,1)), color-stop(100%,rgba(5,171,224,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(135,224,253,1) 0%,rgba(83,203,241,1) 40%,rgba(5,171,224,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(135,224,253,1) 0%,rgba(83,203,241,1) 40%,rgba(5,171,224,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(135,224,253,1) 0%,rgba(83,203,241,1) 40%,rgba(5,171,224,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(135,224,253,1) 0%,rgba(83,203,241,1) 40%,rgba(5,171,224,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', endColorstr='#05abe0',GradientType=0 ); /* IE6-9 */
+}
+
+#feedback form textarea{
+    width:250px;
+    height:90px;
+    border: 1px solid #019AC6;
+    resize: none;
+}
+#feedback form input[type="text"]{
+    width:250px;
+    height:30px;
+    border: 1px solid #019AC6;
+}
+#feedback h2{
+    text-align:center;
+    color: #019AC6;
+    text-shadow:0.2px 0.3px 0.3px #000;
+    font-size:22px;
+}
