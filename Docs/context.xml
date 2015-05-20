@@ -28,3 +28,5 @@
 		auth="Container" name="jdbc/SMTDB" />
 
 </Context>
+
+<!-- Copy the Resource tag and paste it in your context.xml file -->
