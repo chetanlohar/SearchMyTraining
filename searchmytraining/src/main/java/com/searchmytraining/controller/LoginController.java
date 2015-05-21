@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 	 
 	@RequestMapping(value="/login", method = RequestMethod.GET)
 	public String login(ModelMap model) {
-	System.out.println("hi...");
+	System.out.println("hi...by prashant");
 	return "login_page";
 	 
 	}
