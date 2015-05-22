@@ -1,7 +1,10 @@
 $(document).ready(function() {
 
-
-
+	var from = $("#Fdate").val();
+	var to = $("#Tdate").val();
+	
+	
+	
 $(function() {
     $("#Fdate").datepicker({
         dateFormat: "yy-mm-dd",
@@ -174,6 +177,8 @@ $("#Tdate").datepicker({
         $("#Fdate").datepicker("option", "maxDate", dt);
     }
 });
+
+
 
 
 });
