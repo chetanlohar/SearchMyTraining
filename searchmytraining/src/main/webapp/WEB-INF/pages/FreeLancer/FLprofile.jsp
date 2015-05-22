@@ -9,6 +9,7 @@
 	src="<%=request.getContextPath()%>/resources/js/AddDel.js"></script>
 <script
 	src="<%=request.getContextPath()%>/resources/js/Validations/FreeLProfile.js"></script>
+<script	src="<%=request.getContextPath()%>/resources/js/work/categories.js"></script>
 <script type="text/javascript">
 $('#acord1').accordion({
 	collapsible : true
@@ -30,59 +31,7 @@ jQuery(document).ready(function () {
 
     });
 }); 
-function freelContactDetails() {
-		try {
-			 alert('Buliding No '+$('#builNo').val()+" Street Name "+$('#streetName').val()+" landmark "+$('#landmark').val()+" pin "+$('#pin').val()+" country "+$('#country').val()+" state "+$('#state').val()); 
-			$.ajax({
 
-				url : '<%=request.getContextPath()%>/updateFreeLocationdetails',
-
-				type : 'post',
-				
-				dataType : 'json',
-
-				data : JSON.stringify({
-
-					"builNo" : $('#builNo').val(),
-
-					"streetName" : $('#streetName').val(),
-
-					"landmark" : $('#landmark').val(),
-					
-					"pin" : $('#pin').val(),
-					
-					"country" : $('#country').val(),
-					
-					"state" : $('#state').val(),
-					
-					"city" : $('#city').val(),
-					
-					"contactType" : $('#contactType').val(),
-					
-					"contactNo" : $('#contactNo').val(),
-					
-					"web" : $('#web').val(),
-					
-					
-
-				}),
-
-				contentType : "application/json",
-				
-				success : function(response) {
-					alert("Thank you for Your Registration, Please Update Your Profile:");
-					window.location.href="<%=request.getContextPath()%>/freelancer_updateprofile";
-					
-				}
-			});
-
-		} catch (ex) {
-
-			alert(ex);
-
-		}
-
-	}
 <%-- function freeEduDetails() {
 	try {
 		alert('Hi Jumanji');
@@ -163,7 +112,7 @@ function freelContactDetails() {
 </script>
 </head>
 <body>
-<input id="userid" type="hidden" name="userid" value="${userid}">
+<input id="userid" type="hidden" value="${sessionScope.userid}">
 	<div id="acord1" class="acord">
 		<h3 class="acord_head">Profile Details</h3>
 		<div class="acord_cont">
@@ -174,17 +123,18 @@ function freelContactDetails() {
 				<c:set var="string2" value="${fn:split(string1, ' ')}" />
 
 				<div class="name">
-					<label>First Name :</label> <input type="text" id="fname61"
-						name="fname61" value='${string2[0]}' onkeypress="return validateFLName(event);"/> <span id="error61"></span>
+					<label>Full Name :</label> 
+					<input type="text" id="fname61"	name="fname61" value='${freelancerDto.name12}' onkeypress="return validateFLName(event);"/> 
+					<span id="error61"></span>
 				</div>
-				<div class="name">
+				<%-- <div class="name">
 					<label>Middle Name :</label> <input type="text" id="mname62"
 						name="mname62" value="${string2[1]}" onkeypress="return validateFLName(event);"/> <span id="error62"></span>
 				</div>
 				<div class="name">
 					<label>Last Name :</label> <input type="text" name="lname63"
 						id="lname63" value="${string2[2]}" onkeypress="return validateFLName(event);"/> <span id="error63"></span>
-				</div>
+				</div> --%>
 				<div class="Email">
 					<label>Email(Login Id) :</label> <input type="email" id="email64"
 						name="email64" value="${requestScope.freelancerDto.email12}" /> <span
@@ -220,32 +170,27 @@ function freelContactDetails() {
 				<span id="error68"></span>
 				</div>
 				<div class="country">
-					<label>Country :</label> <select id="flcountry">
-						<option value="0" name="country"
-							id="country">--Country--</option>
-						<option value="India">India</option>
-						<!-- <option value="con2">B</option>
-											<option value="con3">C</option> -->
+					<label>Country :</label> 
+					<select id="countryid">
+						<option value="0">--Select--</option>
+						<c:forEach var="country" items="${countries}">
+							<option value="${country.countryId}" onclick="getStates(${country.countryId},'<%=request.getContextPath()%>');">${country.countryName}</option>
+						</c:forEach>
 					</select>
 				</div>
 				<span id="errorflcountry"></span>
+				
 				<div class="state">
-					<label>State :</label> <select id="flstate">
-						<option value="0" name="state"
-							id="state">--State--</option>
-						<option value="1">Maharashtra</option>
-						<!-- <option value="state2">MP</option>
-											<option value="state3">UP</option> -->
+					<label>State :</label> 
+					<select id="stateid" onchange="getCities('<%=request.getContextPath()%>')">
+						<option value="0">--Select--</option>
 					</select>
-				</div>
+	     		</div>
 				<span id="errorflstate"></span>
 				<div class="city">
-					<label>City :</label> <select id="flcity">
-						<option value="0" name="city"
-							id="city">--City--</option>
-						<option value="1">Pune</option>
-						<option value="2">Mumbai</option>
-						<option value="3">Nagpur</option>
+					<label>City :</label> 
+					<select id="cityid">
+						<option value="0">--Select--</option>
 					</select>
 				</div>
 				<span id="errorflcity"></span>
@@ -253,10 +198,8 @@ function freelContactDetails() {
 				<br>
 
 			</form>
-			<input class="skipbtn10" type="button" value="Save & Continue" name="save"
-				form="freeLocation" onclick="freelContactDetails(); freeLancerValidate2();" /> <input
-				class="skip" type="button" id="skip1" value="Skip" name="skip" />
-
+			<input class="skipbtn10" type="button" value="Save & Continue" name="save" form="freeLocation" onclick="freelLocDetails('<%=request.getContextPath()%>');" /> 
+			<input class="skip" type="button" id="skip1" value="Skip" name="skip" />
 		</div>
 
 		<h3 class="acord_head">Contact Information</h3>
@@ -264,13 +207,13 @@ function freelContactDetails() {
 			<form action="" class="multi" id="frmLocDetails">
 				<div id="cont">
 					<p>
-						<label>Contact No : </label> <select name="contactType"
-							id="contactType">
-							<option value="0">--Contact--</option>
-							<option value="1">Phone</option>
-							<option value="2">Land Line</option>
-							<option value="3">Fax</option>
-						</select> <input type="text" name="contactNo69" id="contactNo69" onkeypress="return validate14(event)">
+						<label>Contact No : </label> 
+						<select id="phonetypeid1">
+							<option value="0">--Select--</option>
+							<option value="3">PERSONAL-MOBILE</option>
+							<option value="4">PERSONAL-LANDLINE</option>
+						</select> 
+						<input type="text" name="contactNo69" id="phonevalue1" onkeypress="return validate14(event)" value="${freelancerDto.contact12}"/>
 					    <input type="button" value="+" id="addcontact">
 					</p>
 				<br>
@@ -282,9 +225,8 @@ function freelContactDetails() {
 					<span id="error70"></span>
 				</div>
 			</form>
-			<input class="skipbtn11" type="button" value="Save & Continue" name="save"
-				onclick="freeLancerValidate3(); freelContactDetails1();" /> <input class="skip"
-				type="button" id="skip1" value="Skip" name="skip" />
+			<input class="skipbtn11" type="button" value="Save & Continue" name="save" onclick="flContactDet('<%=request.getContextPath()%>');" /> 
+			<input class="skip" type="button" id="skip1" value="Skip" name="skip"/>
 		</div>
 
 		<h3 class="acord_head">Education Details</h3>

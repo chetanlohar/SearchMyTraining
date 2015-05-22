@@ -86,7 +86,7 @@ public class ProfileController {
 		contactinfoservice.updateContactInfoDet(contactdto);
 	}
 	
-	@RequestMapping(value="/updateinstlocinfo",method = RequestMethod.POST, produces={"application/json"}, consumes={"application/json"})
+	@RequestMapping(value="/updatelocinfo",method = RequestMethod.POST, produces={"application/json"}, consumes={"application/json"})
 	@ResponseBody
 	public void updateLocInfo(@RequestBody LocationDTO instlocdto)
 	{
@@ -115,8 +115,6 @@ public class ProfileController {
 		System.out.println("In UpdateFreeDetails "+obj.getClass());
 		/*instituteservice.updateClientDetails(clientdetailsdto);	*/
 	}
-	
-	
 
 	@RequestMapping("/getIndustryCategory")
 	@ResponseBody
