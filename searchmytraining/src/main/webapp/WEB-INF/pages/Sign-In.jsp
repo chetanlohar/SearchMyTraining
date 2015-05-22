@@ -12,9 +12,8 @@
 <script src="<%=request.getContextPath()%>/resources/js/popup-box.js"></script>
 </head>
 <body>
-<%@include file="Trainee/TraineeLogin.jsp"%>
-<%@include file="TrainingProvider/TrainingProviderLogin.jsp"%>
-<%@include file="FreeLancer/FreelancerLogin.jsp" %>
+
+<%@include file="HomePageLogin.jsp" %>
 	<div id="pop_up_box_6">
 		<a class="b-close"><img
 			src="<%=request.getContextPath()%>/resources/images/images.png"

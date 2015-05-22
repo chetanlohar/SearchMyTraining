@@ -493,43 +493,63 @@ input[type=password]:focus {
 }
 /* =====================================edit calender of trianing provider================================================================ */
 
-.acord .acord_cont .add_calender{
-	width: 100%;
-	height: 50px;
-	margin-bottom: 20px;
-	font-family: arial;
+.acord .acord_cont .title {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
 }
-.acord .acord_cont .add_calender input[type=text]{
-	height: 30px !important;
-	width: 100px !important;
-	float: left;
+.acord .acord_cont .fdate {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
+}
+.acord .acord_cont .Tdate {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
+}
+.acord .acord_cont .Industry {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
+}
+.acord .acord_cont .Industry select{
+	width: 300px;
+}
+.acord .acord_cont .Ctype {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
+}
+.acord .acord_cont .Ctype select{
+	width: 300px;
+}
+.acord .acord_cont .price {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
+}
+.acord .acord_cont .description {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
+}
+.acord .acord_cont .keyCode {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
+}
+.acord .acord_cont .browse {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
+}
+.acord .acord_cont .submit {
+	height: 30px;
+	margin: 0px 20px 20px 0px;
+}
 
-	margin-left: 5px;
-}
-.acord .acord_cont .add_calender input[type=date]{
-	height: 30px !important;
-	width: 150px !important;
-	float: left;
-	
-		margin-left: 5px;
-}
-.acord .acord_cont .add_calender select{
-	height: 30px !important;
-	width: 100px !important;
-	float: left;
-
-		margin-left: 5px;
-}
-.acord .acord_cont .add_calender  input[type="button"] {
+.acord .acord_cont .submit  input[type="submit"] {
 	float: left;
 	border: none;
-	width: 150px !important;
+	width: 150px ;
 	font-size: 18px;
 	height: 30px;
 	color: #FFFFFF;
 	margin-right:10px;
-	margin-left:0px !important;
-	margin-bottom: 10px !important;
+	margin-left:250px ;
+	margin-top: 20px ;
 	border-radius: 5px;
 	cursor: pointer;
 	background: rgb(135, 224, 253); /* Old browsers */
@@ -552,17 +572,18 @@ input[type=password]:focus {
 		endColorstr='#05abe0', GradientType=0);
 	border: none; /* IE6-9 */
 }
-.acord .acord_cont .add_calender .fileUpload {
+.acord .acord_cont  .fileUpload {
     position: relative;
     overflow: hidden;
     margin-left: 5px;
     float: left;
 }
-.acord .acord_cont .add_calender .fileUpload span{
+.acord .acord_cont  .fileUpload span{
 	
 	 color: #fff !important;
+	 margin: 0px 0px;
 }
-.acord .acord_cont .add_calender .fileUpload input.upload {
+.acord .acord_cont  .fileUpload input.upload {
     position: absolute;
     top: 0;
     right: 0;
@@ -573,12 +594,12 @@ input[type=password]:focus {
     opacity: 0;
     filter: alpha(opacity=0);
 }
-.acord .acord_cont .add_calender .btn-primary {
+.acord .acord_cont  .btn-primary {
   color: #fff;
   background-color: #337ab7;
   border-color: #2e6da4;
 }
-.acord .acord_cont .add_calender .btn {
+.acord .acord_cont  .btn {
   display: inline-block;
   padding: 6px 12px;
   margin-bottom: 0;
@@ -640,143 +661,4 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4f5fc', end
 
 
 /* ===========================Edit calender for FreeLancer================================================================================================= */
-
-
-.acord .acord_cont .add_calender{
-	width: 100%;
-	height: 50px;
-	margin-bottom: 20px;
-	font-family: arial;
-}
-.acord .acord_cont .add_calender input[type=text]{
-	height: 30px !important;
-	width: 115px !important;
-	float: left;
-
-	margin-left: 5px;
-}
-
-.acord .acord_cont .add_calender select{
-	height: 30px !important;
-	width: 100px !important;
-	float: left;
-
-		margin-left: 5px;
-}
-.acord .acord_cont .add_calender  input[type="submit"] {
-	float: left;
-	border: none;
-	width: 80px !important;
-	font-size: 15px;
-	height: 30px;
-	color: #FFFFFF;
-	margin-right:0px;
-	margin-left:2px !important;
-	margin-bottom: 10px !important;
-	border-radius: 5px;
-	cursor: pointer;
-	background: rgb(135, 224, 253); /* Old browsers */
-	background: -moz-linear-gradient(top, rgba(135, 224, 253, 1) 0%,
-		rgba(83, 203, 241, 1) 40%, rgba(5, 171, 224, 1) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(135,
-		224, 253, 1)), color-stop(40%, rgba(83, 203, 241, 1)),
-		color-stop(100%, rgba(5, 171, 224, 1))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, rgba(135, 224, 253, 1) 0%,
-		rgba(83, 203, 241, 1) 40%, rgba(5, 171, 224, 1) 100%);
-	/* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, rgba(135, 224, 253, 1) 0%,
-		rgba(83, 203, 241, 1) 40%, rgba(5, 171, 224, 1) 100%);
-	/* Opera 11.10+ */
-	background: -ms-linear-gradient(top, rgba(135, 224, 253, 1) 0%,
-		rgba(83, 203, 241, 1) 40%, rgba(5, 171, 224, 1) 100%); /* IE10+ */
-	background: linear-gradient(to bottom, rgba(135, 224, 253, 1) 0%,
-		rgba(83, 203, 241, 1) 40%, rgba(5, 171, 224, 1) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd',
-		endColorstr='#05abe0', GradientType=0);
-	border: none; /* IE6-9 */
-}
-.acord .acord_cont .add_calender .fileUpload {
-    position: relative;
-    overflow: hidden;
-    margin-left: 5px;
-    float: left;
-}
-.acord .acord_cont .add_calender .fileUpload span{
-	
-	 color: #fff !important;
-}
-.acord .acord_cont .add_calender .fileUpload input.upload {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 0;
-    padding: 0;
-    font-size: 20px;
-    cursor: pointer;
-    opacity: 0;
-    filter: alpha(opacity=0);
-}
-.acord .acord_cont .add_calender .btn-primary {
-  color: #fff;
-  background-color: #337ab7;
-  border-color: #2e6da4;
-}
-.acord .acord_cont .add_calender .btn {
-  display: inline-block;
-  padding: 0px 9px;
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: normal;
-  line-height: 1.42857143;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
-}
-.acord .acord_cont .Acalender{
-	width: 100%;
-    border: 1px solid gray;
-    text-align: center;
-	font-family: arial;
-}
-.acord .acord_cont .Acalender thead tr{
-    padding: 5px;
-    height: 30px;
-    text-align: center; 
-	line-height: 15px;
-	border: none;
-	font-size: 18px;
-	color:#006699;
-	background: #e4f5fc; /* Old browsers */
-background: -moz-linear-gradient(top,  #e4f5fc 0%, #bfe8f9 39%, #9fd8ef 58%, #2ab0ed 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e4f5fc), color-stop(39%,#bfe8f9), color-stop(58%,#9fd8ef), color-stop(100%,#2ab0ed)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  #e4f5fc 0%,#bfe8f9 39%,#9fd8ef 58%,#2ab0ed 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  #e4f5fc 0%,#bfe8f9 39%,#9fd8ef 58%,#2ab0ed 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  #e4f5fc 0%,#bfe8f9 39%,#9fd8ef 58%,#2ab0ed 100%); /* IE10+ */
-background: linear-gradient(to bottom,  #e4f5fc 0%,#bfe8f9 39%,#9fd8ef 58%,#2ab0ed 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4f5fc', endColorstr='#2ab0ed',GradientType=0 ); /* IE6-9 */
-	
-}
-
-.acord .acord_cont .Acalender td{
-	border: 1px solid gray;
-	text-align: center;
-	line-height: 25px;
-	border: none;
-}
-
-
-
-.acord .acord_cont .Acalender tbody tr:nth-child(even){
-   background: #B2D1E0;
-}
 
