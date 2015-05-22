@@ -262,9 +262,7 @@ function validationTProf() {
 		            
 		            $nextContent.show()
 		        });
-		  
 	}
-
 }
 
 function tProf2(){
@@ -320,8 +318,8 @@ function tProf2(){
 		       
 		            $nextContent.show()
 		        });
+		        return true;
 		        jQuery(".acord .acord_cont").hasClass().next().slideDown("fast", function () {
-		            
 		            $nextContent.show()
 		        });
 		   
@@ -364,8 +362,6 @@ function tProf4(){
 		  }
 	 
 	else{
-		
-			  
 		        var $nextContent = jQuery('.skipbtn2').parent().next().next();
 		        jQuery(".acord .acord_cont").slideUp("fast", function () {
 		       
@@ -380,21 +376,21 @@ function tProf4(){
 	
 }
 function tProf3(){
+	console.log("in traineeContactDet");
 	var Cmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 	var mail = $("#smail60").val();
 	var reg=/^\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/;
 	
-       if($("#traineecontact").val() == '0' || $("#traineecontact").val() == ' ') {
-		 
-	     $("#traineecontact").focus();
+       if($("#traineecontact1").val() == '0' || $("#traineecontact1").val() == ' ') {
+	     $("#traineecontact1").focus();
 	    
-	     $("#errortcontact").html("Please Select Type of Contact")
+	     $("#errortcontact1").html("Please Select Type of Contact")
 	     return false;
     }
-       else if($("#contdetails58").val() == "" || $("#contdetails58").val().length < 10)
+       else if($("#traineephone1").val() == "" || $("#traineephone1").val().length < 10)
 	 {
 		 $("#error58").html("")
-		 $("#contdetails58").focus();
+		 $("#traineephone1").focus();
 		 $("#error58").html("Please Enter Contact Number")
 		 
 		 return false;
@@ -412,6 +408,7 @@ function tProf3(){
 		
 		return false;		
 	} 
+    return true;
 }
 
 function updateempdet(path) {
@@ -455,4 +452,85 @@ function updateempdet(path) {
 	} catch (ex) {
 		console.log(ex);
 	}
+}
+
+function saveTraineeLocationDetails(path) {
+	console.log("In saveInstituteLocationDetails()...");
+	var flag = tProf2();
+	console.log(flag);
+	if (flag) {
+
+		try {
+			$.ajax({
+				url : path + '/updateinstlocinfo',
+				type : 'post',
+				dataType : 'json',
+				data : JSON.stringify({
+					"bldng_flatno" : $('#flatno54').val(),
+					"street" : $('#street55').val(),
+					"landmark" : $('#landm56').val(),
+					"pincode" : $('#pin57').val(),
+					"country" : $('#countryid').val(),
+					"state" : $('#stateid').val(),
+					"city" : $('#cityid').val(),
+					"userid" : $('#userid').val()
+				}),
+				contentType : "application/json",
+				success : function(response) {
+					/* alert("hey... you are in success congratz :-)"); */
+				},
+				error : function() {
+					console.log("in error msg...");
+				}
+			});
+		} catch (ex) {
+			alert(ex);
+		}
+	}
+	else
+		console.log("in else...");
+}
+
+function traineeContactDet(path)
+{
+	
+	var flag = tProf3();
+	console.log("in traineeContactDet... flag:"+flag);
+	if (flag) {
+		
+		var phones = [];
+		var phonetypeids = [];
+		for (i = 1; i <= 5; i++) {
+			if ($('#traineephoneid' + i).val())
+				phonetypeids.push($('#traineephoneid' + i).val());
+			if ($('#traineephone' + i).val())
+				phones.push($('#traineephone' + i).val());
+		}
+		try {
+			$.ajax({
+				url : path + '/updatecontactinfo',
+				type : 'post',
+				dataType : 'json',
+				data : JSON.stringify({
+					"userid" : $('#userid').val(),
+					"email" : $('#smail60').val(),
+					"website" : $('#web59').val(),
+					"contactpersonname" : $('#name').val(),
+					"phonetypeid" : phonetypeids,
+					"phone" : phones
+				}),
+				contentType : "application/json",
+				success : function(response) {
+					 alert("hey... you are in success congratz :-)"); 
+				},
+				error : function() {
+					console.log("in error msg...");
+				}
+			});
+		} catch (ex) {
+			alert(ex);
+		}
+	}
+	else
+		console.log("in else...");
 }

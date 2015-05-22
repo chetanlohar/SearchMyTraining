@@ -29,10 +29,12 @@ import com.searchmytraining.entity.IndustrySubCategoryEntity;
 import com.searchmytraining.entity.StateEntity;
 import com.searchmytraining.entity.UserEntity;
 import com.searchmytraining.service.ICityService;
+import com.searchmytraining.service.IContactInfoService;
 import com.searchmytraining.service.IEmploymentService;
 import com.searchmytraining.service.IIndustryCategoryService;
 import com.searchmytraining.service.IIndustrySubCategoryService;
 import com.searchmytraining.service.IInstituteServiceDetails;
+import com.searchmytraining.service.ILocationService;
 import com.searchmytraining.service.IStateService;
 import com.searchmytraining.wrapper.RespnoseWrapper;
 
@@ -46,6 +48,8 @@ public class ProfileController {
 	
 	@Autowired
 	public IIndustryCategoryService industrycatservice;
+	@Autowired
+	public ILocationService locservice;
 	
 	@Autowired
 	public IIndustrySubCategoryService industrysubcatservice;
@@ -58,6 +62,9 @@ public class ProfileController {
 	
 	@Autowired
 	public IEmploymentService emplservice;
+	
+	@Autowired
+	public IContactInfoService contactinfoservice;
 	
 	@RequestMapping(value="/updateinstitutedetails",method = RequestMethod.POST, produces={"application/json"}, consumes={"application/json"})
 	@ResponseBody
@@ -72,19 +79,19 @@ public class ProfileController {
 		/*return institutedto;*/
 	}
 	
-	@RequestMapping(value="/updateinstcontactinfo",method = RequestMethod.POST, produces={"application/json"}, consumes={"application/json"})
+	@RequestMapping(value="/updatecontactinfo",method = RequestMethod.POST, produces={"application/json"}, consumes={"application/json"})
 	@ResponseBody
-	public void updateInstituteContactInfo(@RequestBody ContactDTO instcontactdto)
+	public void updateContactInfo(@RequestBody @Valid ContactDTO contactdto)
 	{
-		System.out.println("phonetypeid: "+instcontactdto.getPhonetypeid());
-		instituteservice.updateInstituteContactInfo(instcontactdto);
+		contactinfoservice.updateContactInfoDet(contactdto);
 	}
 	
 	@RequestMapping(value="/updateinstlocinfo",method = RequestMethod.POST, produces={"application/json"}, consumes={"application/json"})
 	@ResponseBody
-	public void updateInstituteLocInfo(@RequestBody LocationDTO instlocdto)
+	public void updateLocInfo(@RequestBody LocationDTO instlocdto)
 	{
-		instituteservice.updateInstituteLocationInfo(instlocdto);
+		System.out.println("in updateLocInfo...");
+		locservice.updateLocationInfo(instlocdto);
 	}
 	
 	@RequestMapping(value="/updateassociationinfo",method = RequestMethod.POST, produces={"application/json"}, consumes={"application/json"})

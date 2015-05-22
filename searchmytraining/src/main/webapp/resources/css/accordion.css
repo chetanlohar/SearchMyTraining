@@ -650,18 +650,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4f5fc', end
 }
 .acord .acord_cont .add_calender input[type=text]{
 	height: 30px !important;
-	width: 100px !important;
+	width: 115px !important;
 	float: left;
 
 	margin-left: 5px;
 }
-.acord .acord_cont .add_calender input[type=date]{
-	height: 30px !important;
-	width: 150px !important;
-	float: left;
-	
-		margin-left: 5px;
-}
+
 .acord .acord_cont .add_calender select{
 	height: 30px !important;
 	width: 100px !important;
@@ -669,15 +663,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4f5fc', end
 
 		margin-left: 5px;
 }
-.acord .acord_cont .add_calender  input[type="button"] {
+.acord .acord_cont .add_calender  input[type="submit"] {
 	float: left;
 	border: none;
-	width: 150px !important;
-	font-size: 18px;
+	width: 80px !important;
+	font-size: 15px;
 	height: 30px;
 	color: #FFFFFF;
-	margin-right:10px;
-	margin-left:0px !important;
+	margin-right:0px;
+	margin-left:2px !important;
 	margin-bottom: 10px !important;
 	border-radius: 5px;
 	cursor: pointer;
@@ -729,7 +723,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4f5fc', end
 }
 .acord .acord_cont .add_calender .btn {
   display: inline-block;
-  padding: 6px 12px;
+  padding: 0px 9px;
   margin-bottom: 0;
   font-size: 14px;
   font-weight: normal;

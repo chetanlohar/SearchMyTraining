@@ -18,6 +18,8 @@ and open the template in the editor.
 <script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/jquery/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/jquery/jquery-ui-1.10.4.custom.js"></script>
 <!--color-->
+<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/jquery/jssor.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/jquery/jssor.slider.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/jquery/jquery.iconmenu.js"></script>
 
 <script src="<%=request.getContextPath()%>/resources/js/my_js1.js"></script>
@@ -48,6 +50,16 @@ $(window).scroll(function(){
     }
 });
 
+ jQuery(document).ready(function ($) {
+    var options = {
+
+        $AutoPlay: true,                                   //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+        $DragOrientation: 1                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
+    };
+
+    var jssor_slider1 = new $JssorSlider$("slider1_container", options);
+});
+ 
 </script>
  
 </head>
@@ -527,6 +539,8 @@ $(window).scroll(function(){
 		<div class="right_part">
 
 			<div class="top_cat_box">
+			 <div id="slider1_container" style=" width: 290px; height: 300px;">
+			  <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 290px; height: 300px; overflow: hidden;">
 				<div>
 					<img src="<%=request.getContextPath()%>/resources/images/first.png"
 						alt="a">
@@ -555,8 +569,8 @@ $(window).scroll(function(){
 						alt="f">
 				</div>
 
-
-
+                    </div>
+                     </div>
 			</div>
 			<div class="bottom_ban_box">
 				<!--<img src="images/sem.gif" alt="a">-->

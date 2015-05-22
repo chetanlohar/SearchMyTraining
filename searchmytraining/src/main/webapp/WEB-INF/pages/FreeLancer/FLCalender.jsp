@@ -10,28 +10,12 @@
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/FreeLancerProfile.css"
 	type="text/css">
+<script type="text/javascript"
+	src="<%=request.getContextPath()%>/resources/js/datepicker/date.js"></script>
 <script type="text/javascript">
-
 $('#acord2').accordion({
 	collapsible : true
 });
-
-
-jQuery(document).ready(function () {
-	
-    jQuery(".acord .skip").click(function () {
-        var $nextContent = jQuery(this).parent().next().next();
-        jQuery(".acord .acord_cont").slideUp("fast", function () {
-       
-            $nextContent.show()
-        });
-        jQuery(".acord ").next().slideDown("fast", function () {
-            
-            $nextContent.show()
-        });
-
-    });
-}); 
 function freelAddCalender(path) {
 	try {
 		 alert('ctitle '+$('#ctitle').val()+" Fdate "+$('#Fdate').val()+" Tdate "+$('#Tdate').val()+" Ctype "+$('#Ctype').val()+" cPrice "+$('#cPrice').val()+" CDesc "+$('#CDesc').val()+" Ckey "+$('#Ckey').val()+"file "+$('#file').val()); 
@@ -82,9 +66,10 @@ function freelAddCalender(path) {
 
 	}
 </script>
+
 <script language="JavaScript">
 	function Validate() {
-		var image = document.getElementById("image").value;
+		var image = document.getElementById("file").value;
 		if (image == '') {
 			alert("Please enter Image Path");
 			document.getElementById("image").focus();
@@ -100,35 +85,28 @@ function freelAddCalender(path) {
 		<h3 class="acord_head">ADD Calender</h3>
 		<div class="acord_cont">
 			<form id="Add_calender" name="frm" method="post"
-				enctype="multipart/form-data" action="uploadFile" onSubmit="return Validate();">
-				
+				enctype="multipart/form-data" action="uploadFile"
+				onSubmit="return Validate();">
+
 				<!-- hidden For filed -->
-				<input id="userid" type="hidden" name="" value='36'/>
-				
 				<div id="addC" class="add_calender">
-					<input type="text" id="ctitle" name="ctitle"
-						placeholder="Title" />
-					<input type="date" id="Fdate" name="Fdate"
-						placeholder="Start Date" />
-					<input type="date" id="Tdate" name="Tdate"
-						placeholder="End Date" />
+					<input type="text" id="ctitle" name="ctitle" placeholder="Title" />
+					<input type="text" id="Fdate" name="Fdate" placeholder="Start Date" />
+					<input type="text" id="Tdate" name="Tdate" placeholder="End Date" />
 					<select path="Ctype" id="Ctype" name="Ctype">
 						<option value="Seminar">Seminar</option>
 						<option value="Workshop">Workshop</option>
 						<option value="Etc">Etc</option>
-					</select>
-					<input type="text" id="cPrice" name="cPrice"
-						placeholder="price" />
+					</select> <input type="text" id="cPrice" name="cPrice" placeholder="price" />
 					<input type="text" id="CDesc" name="CDesc"
-						placeholder="Description" />
-					<input type="text" id="Ckey" name="Ckey"
-						placeholder="Keyword" />
+						placeholder="Description" /> <input type="text" id="Ckey"
+						name="Ckey" placeholder="Keyword" />
 					<div class="fileUpload btn btn-primary">
-						<span>Upload</span> <input type="file" id="file" name="fileUpload" class="upload" />
+						<span>Upload</span> <input type="file" id="file" name="fileUpload"
+							class="upload" />
 					</div>
-					<input type="submit"
-						style="width: 70px; float: right; margin-right: 20px;" id="Cadd"
-						value="Add" /><%-- onclick="freelAddCalender('<%=request.getContextPath()%>');"/> --%>
+					<input type="submit" style="float: right;" id="Cadd" value="Add" />
+					<%-- onclick="freelAddCalender('<%=request.getContextPath()%>');"/> --%>
 				</div>
 			</form>
 			<table id="calender_data" class="Acalender">

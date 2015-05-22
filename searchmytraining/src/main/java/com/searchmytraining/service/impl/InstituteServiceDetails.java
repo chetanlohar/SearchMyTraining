@@ -24,11 +24,8 @@ import com.searchmytraining.dto.LocationDTO;
 import com.searchmytraining.dto.ProfessionalAssociationDTO;
 import com.searchmytraining.entity.CityEntity;
 import com.searchmytraining.entity.ClientEntity;
-import com.searchmytraining.entity.ContactInfoEntity;
 import com.searchmytraining.entity.InstituteEntity;
 import com.searchmytraining.entity.LocationEntity;
-import com.searchmytraining.entity.PhoneEntity;
-import com.searchmytraining.entity.PhoneTypeEntity;
 import com.searchmytraining.entity.ProfessionalAssociationEntity;
 import com.searchmytraining.entity.UserEntity;
 import com.searchmytraining.service.IInstituteServiceDetails;
@@ -76,7 +73,7 @@ public class InstituteServiceDetails implements IInstituteServiceDetails {
 	@Transactional
 	public void updateInstituteContactInfo(ContactDTO instcontactdto) {
 
-		ContactInfoEntity contactinfoentity = mapper.map(instcontactdto, ContactInfoEntity.class);
+		/*ContactInfoEntity contactinfoentity = mapper.map(instcontactdto, ContactInfoEntity.class);
 		UserEntity user = userdao.getUser(instcontactdto.getUserid());
 		contactinfoentity.setUser(user);
 		
@@ -92,7 +89,7 @@ public class InstituteServiceDetails implements IInstituteServiceDetails {
 		phoneentity.setUser(user);
 		
 		// insertion of Phone Details
-		phonedao.insertPhoneDetails(phoneentity);
+		phonedao.insertPhoneDetails(phoneentity);*/
 	}
 
 	@Override

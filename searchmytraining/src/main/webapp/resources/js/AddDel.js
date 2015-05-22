@@ -56,9 +56,16 @@
      var i = $('#cont p').size() + 1;
      
      $('#addcontact1').live('click', function() {
-         $('<p style="margin-left:253px;height:30px;"><select><option disabled selected style="display: none;">--Select--</option><option value="Phone">Phone</option><option value="Land-Line">Land-Line</option><option value="Fax">Fax</option></select><input type="text" id="p_scnt' + i +'" size="20" name="p_scnt_' + i +'" onkeypress="return validate13(event)"/><a href="#" id="remScnt"><img style="margin-top:5px;float:left;" src="resources/images/Cancel-128.png"></a><input style="margin-left:10px;" type="button" id="addcontact1" value="+"/></p>').appendTo(scntDiv);
+         $('<p style="margin-left:253px;height:30px;"><select id="traineephoneid' + i +'" required><option value="0">--Select--</option><option value="1">OFFICE-MOBILE</option><option value="2">OFFICE-LANDLINE</option><option value="3">PERSONAL-MOBILE</option><option value="4">PERSONAL-LANDLINE</option></select><input type="text" id="traineephone' + i +'"  required size="20" name="traineephone' + i +'" onkeypress="return validate13(event)"/><a href="#" id="remScnt"><img style="margin-top:5px;float:left;" src="resources/images/Cancel-128.png"></a><input style="margin-left:10px;" type="button" id="addcontact1" value="+"/></p>').appendTo(scntDiv);
          i++; 
         
+         
+			
+			
+			
+			
+         
+         
             $(this).hide();
            
            

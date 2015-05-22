@@ -206,7 +206,7 @@ function validate12(key)
 var keycode = (key.which) ? key.which : key.keyCode;
 
 //comparing pressed keycodes
-if (!(keycode==8 || keycode==46)&&(keycode < 48 || keycode > 57))
+if (!(keycode==8 || keycode==9 || keycode==46)&&(keycode < 48 || keycode > 57))
 {
 return false;
 }

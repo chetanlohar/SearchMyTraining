@@ -17,8 +17,9 @@
 <script type="text/javascript">
 	 function freelancerRegistration(path) {
 		var flag = validation12();
+		//alert('flag '+flag);
 		if(flag){
-			alert("")
+			
 		try {
 
 			$.ajax({

@@ -20,14 +20,18 @@ and open the template in the editor.
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/form.css"
 	type="text/css">
-<link rel="stylesheet"
+	<link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/tabs.css"
 	type="text/css">
 
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/accordion.css"
 	type="text/css">
-	<link rel="stylesheet"href="<%=request.getContextPath()%>/resources/css/tooltip.css"type="text/css">
+	
+	
+	
+	
+	 <link rel="stylesheet"href="<%=request.getContextPath()%>/resources/css/tooltip.css"type="text/css"> 
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/js/jquery/jquery-1.10.2.js"></script>
 <script type="text/javascript"

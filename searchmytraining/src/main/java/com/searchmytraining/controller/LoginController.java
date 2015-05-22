@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 	 
 	@Controller
 	public class LoginController {
-		
+		@Value("${name}")
+		String name;
 	 
 	@RequestMapping(value="/main", method = RequestMethod.GET)
 	public String printWelcome(ModelMap model, Principal principal ) {
@@ -24,7 +25,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 	 
 	@RequestMapping(value="/login", method = RequestMethod.GET)
 	public String login(ModelMap model) {
-	/*System.out.println("hi...by prashant then by chetan");*/
+	 System.out.println(name);
 	return "login_page";
 	 
 	}

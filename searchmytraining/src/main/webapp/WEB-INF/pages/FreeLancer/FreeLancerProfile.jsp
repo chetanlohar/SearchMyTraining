@@ -32,6 +32,11 @@ and open the template in the editor.
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/form.css"
 	type="text/css">
+
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/css/tooltip.css"
+	type="text/css">	
+
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/js/jquery/jquery-1.10.2.js"></script>
 <script type="text/javascript"
@@ -45,6 +50,8 @@ and open the template in the editor.
 	src="<%=request.getContextPath()%>/resources/js/accordion.js"></script>
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/js/AddDel.js"></script>
+	<script type="text/javascript"
+	src="<%=request.getContextPath()%>/resources/js/datepicker/date.js"></script>
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/js/jquery/jquery.iconmenu.js"></script>
 <script type="text/javascript"

@@ -114,9 +114,11 @@ public class RegistrationController {
 	@RequestMapping(value = "/freelaancer_reg", method = RequestMethod.POST, produces = { "application/json" }, consumes = { "application/json" })
 	@ResponseBody
 	public FreelancerDTO freelaancerRegistration(
-			@RequestBody FreelancerDTO freelancerDto) throws Exception {
+			@RequestBody FreelancerDTO freelancerDto,HttpSession session) throws Exception {
+		
 		this.freelancerDto1 = freelancerDto;
 		userid = freelancerservice.registerFreelancer(freelancerDto);
+		session.setAttribute("userid", userid);
 		return freelancerDto;
 
 	}

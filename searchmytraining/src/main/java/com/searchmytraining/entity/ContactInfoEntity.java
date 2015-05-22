@@ -65,4 +65,10 @@ public class ContactInfoEntity implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+	@Override
+	public String toString() {
+		return "ContactInfoEntity [contctinfoId=" + contctinfoId + ", emailId="
+				+ emailId + ", website=" + website + ", cntcPersName="
+				+ cntcPersName + ", user=" + user + "]";
+	}
 }

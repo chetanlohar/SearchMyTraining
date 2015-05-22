@@ -112,13 +112,12 @@
 					<p>
 						<label>Institute Contact: </label> <select id="phonetypeid">
 							<option value="0" name="contact">--Select--</option>
-                            <option value="7">Office-Landline</option>
-							<option value="1">Office-Mobile</option>
-							<option value="2">Personal-Mobile</option>
-							
-							<option value="4">personal-Landline</option>
-							<option value="5">Fax</option>
-							<option value="6">Toll-Free</option>
+							<option value="1">OFFICE-MOBILE</option>
+							<option value="2">OFFICE-LANDLINE</option>
+							<option value="3">PERSONAL-MOBILE</option>
+							<option value="4">PERSONAL-LANDLINE</option>
+							<option value="5">FAX</option>
+							<option value="6">TOLL FREE</option>
 						</select> <input id="institutecontact85" type="text" name="institutecontact85" onkeypress="return validate15(event)"
 							value="${trainerdto.contact}">
 					<input type="button" value="+" class="addScnt">
@@ -189,15 +188,13 @@
 						<option value="Nashik">Nashik</option>
 					</select>
 				</div>
-				
 				<span id="errortpcity"></span>
 			</form>
 			<input class="skipbtn6" type="button" value="Save & Continue"
 				form="InstituteLocationForm"
-				onclick="trainingProValidate2();saveInstituteLocationDetails('<%=request.getContextPath()%>');" />
+				onclick="saveLocationDetails('<%=request.getContextPath()%>');" />
 			<input class="skip" id="skip3" type="button" value="Skip" name="skip" />
 		</div>
-
 		<h3 class="acord_head">Achievement</h3>
 		<div class="acord_cont">
 			<form action="#" class="multi">
@@ -212,14 +209,11 @@
 							type="text" name="year" /> <input type="file" />
 				          <input type="button" class="addAward" value="+">
 					</p>
-					
 				</div>
-				
 			</form>
 			<input class="skip" type="button" value="Save & Continue" name="save" />
 			<input class="skip" id="skip3" type="button" value="Skip" name="skip" />
 		</div>
-
 		<h3 class="acord_head">Professional Association</h3>
 		<div class="acord_cont">
 			<form id="professinalassociationform" method="post" class="multi">
@@ -232,7 +226,6 @@
 					&nbsp;&nbsp;&nbsp;&nbsp;
 				<span id="error86"></span>
 				</div>
-				
 				<br>
 			</form>
 			<br> <br> <input class="skipbtn8"

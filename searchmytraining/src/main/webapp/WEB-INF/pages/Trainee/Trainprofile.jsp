@@ -118,7 +118,6 @@ $('#acord1').accordion({
 					<textarea id="jobprofileid" type="text" name="jobprof"></textarea>
 					<span id="errorjobprofile"></span>
 				</div>
-
 			</form>
 			<input class="skipbtn2" type="button" value="Save & Continue" name="save" onclick="tProf4('<%=request.getContextPath()%>')"/>
 			<input class="skip" type="button" value="Skip" name="skip" id="skip1"/>
@@ -173,22 +172,23 @@ $('#acord1').accordion({
 				<span id="errorcity"></span>
                                
 			</form>
-			<input class="skipbtn3" type="button" value="Save & Continue" name="save" onclick="return tProf2();"/>
+			<input class="skipbtn3" type="button" value="Save & Continue" name="save" onclick="saveTraineeLocationDetails('<%=request.getContextPath()%>');"/>
 			<input class="skip" type="button" value="Skip" name="skip" id="skip1"/>
 
 		</div>
 
 		<h3 class="acord_head">Contact Details</h3>
 		<div class="acord_cont">
-			<form action="#">
+			<form name="traineecontactdet">
 				<div id="cont">
 					<p>
-						<label>Contact No : </label> <select id="traineecontact">
+						<label>Contact No : </label> <select id="traineephoneid1">
 							<option value="0">--Select--</option>
-							<option value="Phone">Phone</option>
-							<option value="Phone">Land Line</option>
-							<option value="Phone">Fax</option>
-						</select> <input type="text" name="contdetails58" id="contdetails58" onkeypress="return validate13(event)">
+							<option value="1">OFFICE-MOBILE</option>
+							<option value="2">OFFICE-LANDLINE</option>
+							<option value="3">PERSONAL-MOBILE</option>
+							<option value="4">PERSONAL-LANDLINE</option>
+						</select> <input type="text" name="contdetails58" id="traineephone1" onkeypress="return validate13(event)" value="${traineedto.contact}">
 					<input class="details1" type="button" value="+" id="addcontact1">
 					
 					</p>
@@ -196,8 +196,6 @@ $('#acord1').accordion({
 				<span id="error58"></span>
 
 				</div>
-				 
-
 				<div class="website">
 					<label>Website :</label> <input type="text" id="web59" name="web59" />
 					<span id="error59"></span>
@@ -209,13 +207,9 @@ $('#acord1').accordion({
 						name="smail60" /> <span id="error60"></span>
 				</div>
 				<br></br>
-
 			</form>
-			<input type="button" value="Save & Continue" name="save" onclick="return tProf3();"/>
-
+			<input type="button" form="traineecontactdet" value="Save & Continue" name="save" onclick="traineeContactDet('<%=request.getContextPath()%>');"/>
 		</div>
 	</div>
-
-
 </body>
 </html>

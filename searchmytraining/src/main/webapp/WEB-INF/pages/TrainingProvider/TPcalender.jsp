@@ -4,49 +4,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<script type="text/javascript"
+	src="<%=request.getContextPath()%>/resources/js/datepicker/date.js"></script>
 
 <script type="text/javascript">
 
 $('#acord2').accordion({
 	collapsible : true
 });
-
-
-jQuery(document).ready(function () {
-	  
-    jQuery(".acord .skip").click(function () {
-        var $nextContent = jQuery(this).parent().next().next();
-        jQuery(".acord .acord_cont").slideUp("fast", function () {
-       
-            $nextContent.show()
-        });
-        jQuery(".acord .acord_cont").hasClass().next().slideDown("fast", function () {
-            
-            $nextContent.show()
-        });
-     
-
-    });
-})
-
-$("form #Cadd").click(function() {
-   var title =$('#ctitle').val();
-   var From =$('#Fdate').val();
-   var To =$('#Tdate').val();
-   var sele =$('#Ctype').val();
-   var price =$('#cPrice').val();
-   var dec =$('#CDesc').val();
-   var key =$('#Ckey').val();
-   
-    var new_row = "<tr><td>" + title + "</td><td>" + From + "</td><td>" + To + "</td><td>" + sele + "</td><td>" + price + "</td><td>" + dec + "</td><td>" + key + "</td></tr>";
-    $("table tbody").append(new_row);
-    return false;
-});
-
-
 </script>
-
-
 </head>
 <body>
  <div id="acord2" class="acord">
@@ -55,8 +21,8 @@ $("form #Cadd").click(function() {
                         	<form id="Add_calender">
                         	<div id="addC" class="add_calender">
                         	<input type="text" id="ctitle" placeholder="Title"/>
-                        	<input type = "date" id ="Fdate" placeholder="Start Date"/>
-                        	<input type = "date" id ="Tdate" placeholder="End Date"/>
+                        	<input type = "text" id ="Fdate" placeholder="Start Date"/>
+                        	<input type = "text" id ="Tdate" placeholder="End Date"/>
                         	<select id ="Ctype">
                         	 <option>Seminar</option>
                         	 <option>Workshop</option>
@@ -66,10 +32,10 @@ $("form #Cadd").click(function() {
                         	<input type="text"   id = "CDesc" placeholder="Description"/>
                         	<input type="text"   id = "Ckey" placeholder="Keyword"/>
                         	<div class="fileUpload btn btn-primary">
-                                     <span>Upload</span>
-                                      <input type="file" class="upload" />
+                                     <span>Brouchure</span>
+                                      <input type="file" class="upload" id="fileupload" name="fileupload"/>
                               </div>
-                        	<input type="button" style="width: 70px; float: right; margin-right: 20px;" id="Cadd"  value="Add">
+                        	<input type="submit" style="width: 70px; float: right; margin-right: 20px;" id="Cadd"  value="Add">
                         	</div>
                         	</form>
                         	  <table id="calender_data" class="Acalender">

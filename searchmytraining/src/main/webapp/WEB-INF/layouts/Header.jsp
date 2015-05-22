@@ -6,6 +6,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/header.css"> 
+
+<script type="text/javascript">
+$(document).ready(function(){
+	
+
+$('#dropM').on('click',function(e){
+	$('#coolMenu').slideToggle();
+
+})
+	
+})
+
+</script>
 </head>
 <body>
   <div class="header">
@@ -19,7 +32,7 @@
                 </div>
             </div>
             <div id='cssmenu'>
-
+                        <span class="menubtn" id ="dropM"></span>
                 <ul id="coolMenu">
                     <li class='active has-sub'><a href='#'><span>Browse</span></a>
                         <ul>
