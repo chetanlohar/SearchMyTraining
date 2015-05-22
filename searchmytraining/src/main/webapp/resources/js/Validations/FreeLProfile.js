@@ -472,3 +472,39 @@ function flContactDet(path)
 	else
 		console.log("in else...");
 }
+
+function freelCertificationAwardDet(path) {
+
+	console.log("in freelcontactdetails...");
+	var flag = freeLancerValidate2();
+	console.log("flag: " + flag);
+	if (flag) {
+		try {
+			$.ajax({
+				url : path + '/updatelocinfo',
+				type : 'post',
+				dataType : 'json',
+				data : JSON.stringify({
+					"bldng_flatno" : $('#builNo65').val(),
+					"street" : $('#streetName66').val(),
+					"landmark" : $('#landmark67').val(),
+					"pincode" : $('#pin68').val(),
+					"country" : $('#countryid').val(),
+					"state" : $('#stateid').val(),
+					"city" : $('#cityid').val(),
+					"userid" : $('#userid').val()
+				}),
+				contentType : "application/json",
+				success : function(response) {
+
+				},
+				error : function() {
+					console.log("in error msg...");
+				}
+			});
+		} catch (ex) {
+			alert(ex);
+		}
+	} else
+		console.log("in else...");
+}

@@ -28,7 +28,6 @@ jQuery(document).ready(function () {
             $nextContent.show()
         });
      
-
     });
 }); 
 
@@ -117,11 +116,9 @@ jQuery(document).ready(function () {
 		<h3 class="acord_head">Profile Details</h3>
 		<div class="acord_cont">
 			<form action="#" name="">
-
 				<!-- Splitting the name into Three parts first second and third -->
 				<c:set var="string1" value="${requestScope.freelancerDto.name12}" />
 				<c:set var="string2" value="${fn:split(string1, ' ')}" />
-
 				<div class="name">
 					<label>Full Name :</label> 
 					<input type="text" id="fname61"	name="fname61" value='${freelancerDto.name12}' onkeypress="return validateFLName(event);"/> 
@@ -140,16 +137,13 @@ jQuery(document).ready(function () {
 						name="email64" value="${requestScope.freelancerDto.email12}" /> <span
 						id="error64"></span>
 				</div>
-
 			</form>
 			<input class="skipbtn9" type="button" value="Save & Continue" name="save" onclick="return freeLancerValidate();"/>
 			<input class="skip" type="button" id="skip1" value="Skip" name="skip" />
 		</div>
-
 		<h3 class="acord_head">Location Details</h3>
 		<div class="acord_cont">
 			<form name="" class="multi" id="freeContact">
-
 				<div class="flatNo">
 					<label>Building No./Flat No./Society No. :</label> <input
 						type="text" name="builNo65" id="builNo65" />
@@ -179,7 +173,6 @@ jQuery(document).ready(function () {
 					</select>
 				</div>
 				<span id="errorflcountry"></span>
-				
 				<div class="state">
 					<label>State :</label> 
 					<select id="stateid" onchange="getCities('<%=request.getContextPath()%>')">
@@ -304,8 +297,7 @@ jQuery(document).ready(function () {
 					
 				</div><br><br>
                      <h3>(Max 250 characters)</h3>
-				<input class="skipbtn13" type="button" value="Save" name="save" form="frmCerfDetails"
-					onclick="freeCrtfctDetails();" />
+				<input class="skipbtn13" type="button" value="Save" name="save" form="frmCerfDetails" onclick="freeCrtfctDetails();" />
 			</form>
 
 		</div>

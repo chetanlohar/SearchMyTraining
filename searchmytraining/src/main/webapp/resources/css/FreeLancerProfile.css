@@ -116,7 +116,7 @@ body {
 .acord .acord_cont #client {
 	height: auto;
 	margin-left: 30px;
-	width: 90%;
+	width: 100%;
 	float: left;
 }
 
@@ -136,10 +136,11 @@ body {
 	height: 100px;
 	width: 300px;
 	padding: 5px 10px;
+	font-family: calibri;
 }
 
 .acord .acord_cont h3 {
-	margin-left: 520px;
+	margin-left: 445px;
 	font-family: calibri;
 }
 
