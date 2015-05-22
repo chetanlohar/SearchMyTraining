@@ -27,31 +27,28 @@ public class CalenderService implements ICalenderService
 	@Override
 	public List<CalenderEntity> getRecentelyAdded(Integer userId,
 			Timestamp timestamp) {
-		
 		return daoObj.getRecentelyAdded(userId, timestamp);
 	}
 
 	@Override
 	public List<CalenderEntity> getUserCalender(Integer userId) {
-		// TODO Auto-generated method stub
-		return null;
+		return daoObj.getUserCalender(userId);
 	}
 
 	@Override
 	public List<CalenderEntity> getAllCalender() {
-		// TODO Auto-generated method stub
-		return null;
+		return daoObj.getAllCalender();
 	}
 
 	@Override
 	public String updateCalender(CalenderEntity entity) {
 		// TODO Auto-generated method stub
-		return null;
+		return daoObj.updateCalender(entity);
 	}
 
 	@Override
 	public void removeCalender(long calenderId) {
-		// TODO Auto-generated method stub
+		daoObj.removeCalender(calenderId);
 		
 	}
 

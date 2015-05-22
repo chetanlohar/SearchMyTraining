@@ -25,22 +25,20 @@ public class CalenderDaoImpl extends AbstractJpaDAO<CalenderEntity> implements
 	@Override
 	public List<CalenderEntity> getRecentelyAdded(Integer userId,
 			Timestamp timestamp) {
-		String query = "SELECT trngId,CODE,title,keywords,start_date,end_date,price,brochure,TYPE,STATUS,createdOn,createdBy,updatedOn,updatedBy,userId,description,contenttype FROM tbl_trngcalender WHERE userId="
-				+ userId + " and DATE(createdOn)=" + timestamp.toString().substring(0, 11).trim();
+
+		String query = "from CalenderEntity calender where calender.user.userId='"+userId+"' and SUBSTRING(calender.createdOn,1,11)='" + timestamp.toString().substring(0, 11).trim()+"'";
+		
 		entityManager = getEntityManager();
-		TypedQuery<CalenderEntity> query1 = entityManager.createQuery(query,
-				CalenderEntity.class);
+		TypedQuery<CalenderEntity> query1 = entityManager.createQuery(query,CalenderEntity.class);
 		List<CalenderEntity> l = query1.getResultList();
 		return l;
 	}
 
 	@Override
 	public List<CalenderEntity> getUserCalender(Integer userId) {
-		String query = "SELECT trngId,CODE,title,keywords,start_date,end_date,price,brochure,TYPE,STATUS,createdOn,createdBy,updatedOn,updatedBy,userId,description,contenttype FROM tbl_trngcalender WHERE userId="
-				+ userId;
+		String query = "from CalenderEntity calender where calender.user.userId="+userId;
 		entityManager = getEntityManager();
-		TypedQuery<CalenderEntity> query1 = entityManager.createQuery(query,
-				CalenderEntity.class);
+		TypedQuery<CalenderEntity> query1 = entityManager.createQuery(query,CalenderEntity.class);
 		List<CalenderEntity> l = query1.getResultList();
 		return l;
 	}

@@ -84,4 +84,9 @@ public class MyController {
 	{
 		return "pages/admin/ManageCareer";
 	}
+	@RequestMapping("/downlodCal")
+	public String GetCalenderDownload()
+	{
+		return "pages/downlodCalender";
+	}
 }
