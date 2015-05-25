@@ -37,5 +37,10 @@ public class AdminController
 	{
 		return "pages/admin/ManageCareer";
 	}
+	@RequestMapping("/admin")
+	public String getAdminLogin()
+	{
+		return "pages/AdminLogin";
+	}
 
 }
