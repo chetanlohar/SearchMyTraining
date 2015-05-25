@@ -26,6 +26,9 @@ and open the template in the editor.
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/FreeLancerProfile.css"
 	type="text/css">
+	<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/css/accordion.css"
+	type="text/css">
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/tabs.css"
 	type="text/css">
@@ -35,8 +38,10 @@ and open the template in the editor.
 
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/tooltip.css"
+	type="text/css">
+	<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/css/tagmanager.css"
 	type="text/css">	
-
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/js/jquery/jquery-1.10.2.js"></script>
 <script type="text/javascript"
@@ -56,6 +61,11 @@ and open the template in the editor.
 	src="<%=request.getContextPath()%>/resources/js/jquery/jquery.iconmenu.js"></script>
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/js/include.js"></script>
+	<script type="text/javascript"
+	src="<%=request.getContextPath()%>/resources/js/tagmanager.js"></script>
+	<script type="text/javascript"
+	src="<%=request.getContextPath()%>/resources/js/datepicker/date.js"></script>
+	
 
 <script type="text/javascript">
 jQuery(document).ready(function () {
@@ -69,11 +79,14 @@ jQuery(document).ready(function () {
         jQuery(".acord .acord_cont").hasClass().next().slideDown("fast", function () {
             
             $nextContent.show()
-        });
      
+    });
 
     });
+  
 });
+
+
 
 </script>
 

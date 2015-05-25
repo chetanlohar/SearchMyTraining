@@ -462,7 +462,7 @@ function saveTraineeLocationDetails(path) {
 
 		try {
 			$.ajax({
-				url : path + '/updateinstlocinfo',
+				url : path + '/updatelocinfo',
 				type : 'post',
 				dataType : 'json',
 				data : JSON.stringify({
@@ -493,11 +493,9 @@ function saveTraineeLocationDetails(path) {
 
 function traineeContactDet(path)
 {
-	
 	var flag = tProf3();
 	console.log("in traineeContactDet... flag:"+flag);
 	if (flag) {
-		
 		var phones = [];
 		var phonetypeids = [];
 		for (i = 1; i <= 5; i++) {

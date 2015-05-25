@@ -54,34 +54,10 @@ public class MyController {
 	{
 		return "index";
 	}
-	@RequestMapping("/AdminPages")
-	public String adminPage()
-	{		
-		return "pages/admin/AdminPages";		
-	}
-	@RequestMapping("/accountSetting")
-	public String acntSetting()
-	{		
-		return "pages/admin/AccountSetting";		
-	}
-	@RequestMapping("/manageCalender")
-	public String magCalender()
-	{		
-		return "pages/admin/ManageCalender";		
-	}
-	@RequestMapping("/manageTrainings")
-	public String manTraining()
+	@RequestMapping("/downlodCal")
+	public String GetCalenderDownload()
 	{
-		return "pages/admin/ManageTrainings";
+		return "pages/downlodCalender";
 	}
-	@RequestMapping("/manageServices")
-	public String manServices()
-	{
-		return "pages/admin/ManageServices";
-	}
-	@RequestMapping("/manageCareer")
-	public String manCareer()
-	{
-		return "pages/admin/ManageCareer";
-	}
+	
 }

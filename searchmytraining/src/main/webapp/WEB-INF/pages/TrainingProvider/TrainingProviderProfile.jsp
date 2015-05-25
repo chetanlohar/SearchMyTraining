@@ -27,6 +27,9 @@ and open the template in the editor.
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/accordion.css"
 	type="text/css">
+	<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/css/tagmanager.css"
+	type="text/css">
 	
 	
 	
@@ -48,7 +51,8 @@ and open the template in the editor.
 	src="<%=request.getContextPath()%>/resources/js/AddDel.js"></script>
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/js/tabBar.js"></script>
-
+<script type="text/javascript"
+	src="<%=request.getContextPath()%>/resources/js/tagmanager.js"></script>
 <script>
 	$(document).ready(function() {
 		$('#icon-menu').iconmenu();

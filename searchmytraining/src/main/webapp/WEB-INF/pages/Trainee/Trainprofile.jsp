@@ -162,7 +162,6 @@ $('#acord1').accordion({
 					</select>
 	     		</div>
 	     		<span id="errorstate"></span>
-	     		
 				<div class="city">
 					<label>City :</label> 
 					<select id="cityid">

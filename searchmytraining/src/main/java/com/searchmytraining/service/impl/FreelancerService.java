@@ -11,7 +11,6 @@ import com.searchmytraining.dao.StatusDAO;
 import com.searchmytraining.dao.UserDAO;
 import com.searchmytraining.dto.FreelancerDTO;
 import com.searchmytraining.entity.FreelancerEntity;
-import com.searchmytraining.entity.RoleEntity;
 import com.searchmytraining.entity.StatusEntity;
 import com.searchmytraining.entity.UserEntity;
 import com.searchmytraining.service.IFreelancerService;

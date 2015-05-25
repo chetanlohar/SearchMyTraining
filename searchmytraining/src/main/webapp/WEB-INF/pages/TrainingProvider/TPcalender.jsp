@@ -12,68 +12,90 @@
 $('#acord2').accordion({
 	collapsible : true
 });
+jQuery(".tm-input").tagsManager();
+$('#fdate,#Tdate').datepicker();
 </script>
+
+
 </head>
 <body>
  <div id="acord2" class="acord">
                         	<h3 class="acord_head">ADD Calender</h3>
                         	<div class="acord_cont">
                         	<form id="Add_calender">
-                        	<div id="addC" class="add_calender">
+                        	
+                        	<div class="title">
+                        	<label>Title:</label>
                         	<input type="text" id="ctitle" placeholder="Title"/>
-                        	<input type = "text" id ="Fdate" placeholder="Start Date"/>
-                        	<input type = "text" id ="Tdate" placeholder="End Date"/>
+                        	</div>
+                        	<div class="fdate">
+                        	<label>From Date:</label>
+                        	<input type = "text"  id ="Fdate" placeholder="Start Date"/>
+                        	<span><img src="<%=request.getContextPath()%>/resources/images/calender/calendar.png"/></span>
+                        	</div>
+                        	<div class="Tdate">
+                        	<label>To Date:</label>
+                        	<input type = "text"  id ="Tdate" placeholder="End Date"/>
+                        	<span><img src="<%=request.getContextPath()%>/resources/images/calender/calendar.png"/></span>
+                        	</div>
+                        	<div class="Industry">
+                        	<label>Industry Type:</label>
+                        	<select id ="Itype">
+                        	 <option>Industry Types</option>
+                        	 <option>Information Technology</option>
+                        	  <option>Business & Management</option>
+                        	  <option>Engineering & Manufacturing</option>
+                        	  <option>Health & Safety</option>
+                        	  <option>Art & Craft & Sports</option>
+                        	  <option>Certifications</option>
+                        	  <option>Other</option>
+                        	</select>
+                        	</div>
+                        	<div class="Ctype">
+                        	<label>Type Of Calendar:</label>
                         	<select id ="Ctype">
+                        	 <option>Calendar Type</option>
                         	 <option>Seminar</option>
                         	 <option>Workshop</option>
                         	  <option>Etc</option>
                         	</select>
+                        	</div>
+                        	<div class="price">
+                        	<label>Price:</label>
                         	<input type="text"   id = "cPrice" placeholder="price"/>   
+                        	</div>
+                        	<div class="description">
+                        	<label>Description:</label>
                         	<input type="text"   id = "CDesc" placeholder="Description"/>
-                        	<input type="text"   id = "Ckey" placeholder="Keyword"/>
+                        	</div>
+                        	<div class="keyCode">
+                        	<label>KeyCode:</label>
+                        	<input type="text" name="tags" placeholder="Tags" class="tm-input"/>
+                        	</div>
+                        	<div class="browse">
+                        	<label>Upload Calender:</label>
                         	<div class="fileUpload btn btn-primary">
                                      <span>Brouchure</span>
                                       <input type="file" class="upload" id="fileupload" name="fileupload"/>
                               </div>
-                        	<input type="submit" style="width: 70px; float: right; margin-right: 20px;" id="Cadd"  value="Add">
+                              </div>
+                             <div class="submit">
+                        	<input type="submit"  id="Cadd"  value="Add">
                         	</div>
                         	</form>
-                        	  <table id="calender_data" class="Acalender">
-                        	     <thead>
-                        	      <tr>
-                        	      <td>Title</td>
-                        	      <td>From Date</td>
-                        	      <td>To Date</td>
-                        	      <td>Type</td>
-                        	      <td>Price</td>
-                        	      <td>Description</td>
-                        	      <td>Keyword</td>
-                        	      <td>Brochure</td>
-                        	      <td>Edit/Delete</td>
-                        	      </tr>
-                        	     </thead>
-                        	     <tbody>
-                        	     <tr>
-                        	     <td>Web Design</td>
-                        	      <td>5/5/2015</td>
-                        	      <td>10/5/2015</td>
-                        	      <td>Seminar</td>
-                        	      <td>5000 $</td>
-                        	      <td>Brochure</td>
-                        	      <td>Description</td>
-                        	      <td>Web123</td>
-                        	      <td>Edit/Delete</td>
-                        	     
-                        	     </tr>
-                        	     </tbody>
-                        
-                        	  </table> 
-                    
+                        	 </div>
+                        	 
+                     <h3 class="acord_head">View Calendar</h3>
+                        	 <div class="acord_cont">
+                        	 <h1>hello</h1>
+                        	 </div>
+                        	 
+                        	 
                       </div>
                       
                       
                       
                      
-					</div>
+					
 </body>
 </html>

@@ -125,17 +125,15 @@ public class RegistrationController {
 
 	@RequestMapping("/freelancer_updateprofile")
 	public String freelancerProfileMapping(ModelMap model) {
-		userid = userservice.getMaxUserId("userId");
-		user = userservice.getUser(userid);
 		model.addAttribute("freelancerDto", this.freelancerDto1);
-		model.addAttribute("user", user);
 		return "pages/FreeLancer/FreeLancerProfile";
 	}
 
 	@RequestMapping("/FLprofile")
-	public String freeLancerProfile(ModelMap model) {
+	public String freeLancerProfile(ModelMap model, HttpSession session) {
+		System.out.println("from /Flprofile userid: "+session.getAttribute("userid"));
 		model.addAttribute("freelancerDto", this.freelancerDto1);
-		model.addAttribute("user_id", userid);
+		model.addAttribute("countries",countrydao.getAllCountries());
 		return "pages/FreeLancer/FLprofile";
 	}
 

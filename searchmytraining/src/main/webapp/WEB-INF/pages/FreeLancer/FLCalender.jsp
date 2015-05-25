@@ -12,6 +12,7 @@
 	type="text/css">
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/js/datepicker/date.js"></script>
+		
 <script type="text/javascript">
 $('#acord2').accordion({
 	collapsible : true
@@ -68,6 +69,9 @@ function freelAddCalender(path) {
 </script>
 
 <script language="JavaScript">
+$(document).ready(function() {
+	
+
 	function Validate() {
 		var image = document.getElementById("file").value;
 		if (image == '') {
@@ -76,72 +80,88 @@ function freelAddCalender(path) {
 			return false;
 		}
 	}
+	jQuery(".tm-input").tagsManager();
+	$('#Fdate,#Tdate').datepicker();
+});
 </script>
 </head>
 <body>
-
-	<div id="acord2" class="acord">
-
-		<h3 class="acord_head">ADD Calender</h3>
-		<div class="acord_cont">
-			<form id="Add_calender" name="frm" method="post"
+<div id="acord2" class="acord">
+                        	<h3 class="acord_head">ADD Calender</h3>
+                        	<div class="acord_cont">
+                        	<form id="Add_calender" name="frm" method="post"
 				enctype="multipart/form-data" action="uploadFile"
 				onSubmit="return Validate();">
-
-				<!-- hidden For filed -->
-				<div id="addC" class="add_calender">
-					<input type="text" id="ctitle" name="ctitle" placeholder="Title" />
-					<input type="text" id="Fdate" name="Fdate" placeholder="Start Date" />
-					<input type="text" id="Tdate" name="Tdate" placeholder="End Date" />
-					<select path="Ctype" id="Ctype" name="Ctype">
-						<option value="Seminar">Seminar</option>
-						<option value="Workshop">Workshop</option>
-						<option value="Etc">Etc</option>
-					</select> <input type="text" id="cPrice" name="cPrice" placeholder="price" />
-					<input type="text" id="CDesc" name="CDesc"
-						placeholder="Description" /> <input type="text" id="Ckey"
-						name="Ckey" placeholder="Keyword" />
-					<div class="fileUpload btn btn-primary">
-						<span>Upload</span> <input type="file" id="file" name="fileUpload"
-							class="upload" />
-					</div>
-					<input type="submit" style="float: right;" id="Cadd" value="Add" />
-					<%-- onclick="freelAddCalender('<%=request.getContextPath()%>');"/> --%>
-				</div>
-			</form>
-			<table id="calender_data" class="Acalender">
-				<thead>
-					<tr>
-						<td>Title</td>
-						<td>From Date</td>
-						<td>To Date</td>
-						<td>Type</td>
-						<td>Price</td>
-						<td>Description</td>
-						<td>Keyword</td>
-						<td>Brochure</td>
-						<td>Edit/Delete</td>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Web Design</td>
-						<td>5/5/2015</td>
-						<td>10/5/2015</td>
-						<td>Seminar</td>
-						<td>5000 $</td>
-						<td>Brochure</td>
-						<td>Description</td>
-						<td>Web123</td>
-						<td>Edit/Delete</td>
-
-					</tr>
-				</tbody>
-
-			</table>
-		</div>
-
-
-	</div>
+                        	
+                        	<div class="title">
+                        	<label>Title:</label>
+                        	<input type="text" id="ctitle" placeholder="Title" autocomplete="off"/>
+                        	</div>
+                          	<div class="fdate">
+                        	<label>From Date:</label>
+                        	<input type = "text"  id ="Fdate" placeholder="Start Date" autocomplete="off"/>
+                        	<span><img src="<%=request.getContextPath()%>/resources/images/calender/calendar.png"/></span>
+                        	
+                        	</div>
+                        	<div class="Tdate">
+                        	<label>To Date:</label>
+                        	<input type = "text"  id ="Tdate" placeholder="End Date" autocomplete="off"/>
+                        	<span><img src="<%=request.getContextPath()%>/resources/images/calender/calendar.png"/></span>
+                        	</div>
+                        	<div class="Industry">
+                        	<label>Industry Type:</label>
+                        	<select id ="Itype">
+                        	 <option>Industry Types</option>
+                        	 <option> Technology</option>
+                        	  <option>Business & Management</option>
+                        	  <option>Engineering & Manufacturing</option>
+                        	  <option>Health & Safety</option>
+                        	  <option>Art & Craft & Sports</option>
+                        	  <option>Certifications</option>
+                        	  <option>Other</option>
+                        	</select>
+                        	</div>
+                        	<div class="Ctype">
+                        	<label>Type Of Calendar:</label>
+                        	<select id ="Ctype">
+                        	 <option>Calendar Type</option>
+                        	 <option>Seminar</option>
+                        	 <option>Workshop</option>
+                        	  <option>Etc</option>
+                        	</select>
+                        	</div>
+                        	<div class="price">
+                        	<label>Price:</label>
+                        	<input type="text"   id = "cPrice" placeholder="price" autocomplete="off"/>   
+                        	</div>
+                        	<div class="description">
+                        	<label>Description:</label>
+                        	<input type="text"   id = "CDesc" placeholder="Description" autocomplete="off"/>
+                        	</div>
+                        	<div class="keyCode">
+                        	<label>KeyCode:</label>
+                        	<input type="text" name="tags" placeholder="Tags" class="tm-input" autocomplete="off"/>
+                        	</div>
+                        	<div class="browse">
+                        	<label>Upload Calender:</label>
+                        	<div class="fileUpload btn btn-primary">
+                                     <span>Brouchure</span>
+                                      <input type="file" class="upload" id="fileupload" name="fileupload"/>
+                              </div>
+                              </div>
+                             <div class="submit">
+                        	<input type="submit"  id="Cadd"  value="Add">
+                        	</div>
+                        	</form>
+                        	 </div>
+                        	 
+                     <h3 class="acord_head">View Calendar</h3>
+                        	 <div class="acord_cont">
+                        	 
+     </div>
+                        	 
+     </div>
+                      
+                      
 </body>
 </html>
