@@ -150,6 +150,7 @@ function TNSload(){
 
 				$('#acord2').accordion({
 					collapsible : true
+					
 				});
 			</script>
 

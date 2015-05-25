@@ -278,7 +278,25 @@ function trainingProValidate(){
 function trainingProValidate1(){
 	var Cmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 	var mail     =  $("#instituteEmail").val();
-	var i = 2;
+	var i=2;
+	var k=document.getElementById("rowtot").value;
+	
+	k=k-1;
+	for(var j=0; j<=k; j++){
+			while(k!=0){
+			if($("#phonetypeid"+j).val() == "" || $("#phonetypeid"+j).val() == '0') {	
+			
+				 $("#phonetypeid"+j).focus();
+				 $("#errortpContact"+j).html("Please Select Type of Contact Number")
+				
+				 return false;
+				 }
+			k--;
+		}
+		
+		
+	 
+}
 	
 	if($("#instituteEmail").val() == "" || !Cmail.test(mail)){
 		 $("#instituteEmail").focus();
@@ -297,11 +315,7 @@ function trainingProValidate1(){
 		return false;
 	}
 	
-	 else if($("#phonetypeid").val() == "" || $("#phonetypeid").val() == '0') {			
-		 $("#phonetypeid").focus();
-		 $("#errorphonetypeid").html("Please Select Type of Contact Number")
-		 return false;
-	 }
+	 
 	
 	
 	else if ($("#institutecontact85").val() == "" || $("#institutecontact85").val().length < 10) {
@@ -310,17 +324,18 @@ function trainingProValidate1(){
 		return false;
 	}
 	
-	 else if($("#tpContact").val() == "" || $("#tpContact").val() == '0') {			
+	/* else if($("#tpContact").val() == "" || $("#tpContact").val() == '0') {			
 		 $("#tpContact").focus();
 		 $("#errortpContact").html("Please Select Type of Contact Number")
 		 return false;
-	 }
+	 }*/
 	else if ($("#p_scnt").val() == "" ) {
 		$("#p_scnt").focus();
 		$("#error '+ i +").html("Please Enter Contact No.")
 		i++;
 		return false;
 	}
+
 	else{
 		
 			var $nextContent = jQuery('.skipbtn5').parent().next()
@@ -337,6 +352,7 @@ function trainingProValidate1(){
 							});
 
 	}
+	
 }
 
 function trainingProValidate2(){
