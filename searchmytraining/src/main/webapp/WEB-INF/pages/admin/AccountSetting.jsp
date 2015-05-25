@@ -33,7 +33,10 @@ jQuery(document).ready(function () {
 <body>
 
 	          <div id="acord1" class="acord">
-		       <h3 class="acord_head">Training Provider</h3>
+		      <div class="acord_head">
+							<h3>Change Password</h3>
+							<img src="<%=request.getContextPath()%>/resources/images/array_down.png" alt="downarrow"/>
+							</div>
 							<div class="acord_cont">
 								<form action="#">
 									<div class="oldpass">
@@ -56,51 +59,9 @@ jQuery(document).ready(function () {
 								</form>
 							</div>
 
-		          <h3 class="acord_head">Trainee</h3>
-							<div class="acord_cont">
-								<form action="#">
-									<div class="oldpass">
-										<label>Current Password :</label> <input type="password"
-											name="name" />
-									</div>
-									<div class="newpass">
-										<label>New Password :</label> <input type="password"
-											name="name" />
-									</div>
-									<div class="conpass">
-										<label>Confirm New Password :</label> <input type="password"
-											name="name" />
-									</div>
+		         
 
-									<div class=save>
-										<input type="button" value="Save" name="save" /> <input
-											type="reset" value="Reset" name="Edit" />
-									</div>
-								</form>
-							</div>
-
-	            <h3 class="acord_head">Freelancer</h3>
-							<div class="acord_cont">
-								<form action="#">
-									<div class="oldpass">
-										<label>Current Password :</label> <input type="password"
-											name="name" />
-									</div>
-									<div class="newpass">
-										<label>New Password :</label> <input type="password"
-											name="name" />
-									</div>
-									<div class="conpass">
-										<label>Confirm New Password :</label> <input type="password"
-											name="name" />
-									</div>
-
-									<div class=save>
-										<input type="button" value="Save" name="save" /> <input
-											type="reset" value="Reset" name="Edit" />
-									</div>
-								</form>
-							</div>
+	          
 		
 	</div>
 </body>

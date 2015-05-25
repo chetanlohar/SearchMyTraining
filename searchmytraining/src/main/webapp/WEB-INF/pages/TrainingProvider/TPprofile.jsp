@@ -110,7 +110,8 @@
 				<!--<div class="seperate">-->
 				<div id="achiv">
 					<p>
-						<label>Institute Contact: </label> <select id="phonetypeid">
+						<label>Institute Contact: </label> 
+						<select id="phonetypeid0">
 							<option value="0" name="contact">--Select--</option>
 							<option value="1">OFFICE-MOBILE</option>
 							<option value="2">OFFICE-LANDLINE</option>
@@ -121,8 +122,9 @@
 						</select> <input id="institutecontact85" type="text" name="institutecontact85" onkeypress="return validate15(event)"
 							value="${trainerdto.contact}">
 					<input type="button" value="+" class="addScnt">
+					<input type="hidden" id="rowtot" name="rowtot" value="1">
 					</p>
-					<span id="errorphonetypeid""></span>
+					<span id="errorphonetypeid0"></span>
 					<span id="error85"></span>
 				</div>
 				<%-- <input class="skip" type="button" value="Save & Continue" onclick="saveInstituteContactDetails('<%=request.getContextPath() %>');"/> --%>

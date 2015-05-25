@@ -10,6 +10,7 @@
             icons: {
                 "header": "acordUp",
                 "activeHeader": "acordDown"
+                	
             }
         }
 

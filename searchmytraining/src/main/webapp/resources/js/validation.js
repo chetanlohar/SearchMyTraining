@@ -177,14 +177,14 @@ $("#email").on('keyup',function(e){
 
 function validate02(key)
 {
-//getting key code of pressed key
-var keycode = (key.which) ? key.which : key.keyCode;
+    //getting key code of pressed key
+    var keycode = (key.which) ? key.which : key.keyCode;
 
-//comparing pressed keycodes
-if (!(keycode==8 || keycode==46)&&(keycode < 48 || keycode > 57))
-{
-return false;
-}
+    //comparing pressed keycodes
+    if (!(keycode==8 || keycode==9) && !(keycode == 37 || keycode == 39) &&(keycode < 48 || keycode > 57))
+    {
+    return false;
+    }
 }
 
 

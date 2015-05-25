@@ -274,7 +274,7 @@ input[type="button"] {
 	margin: 0px 0px 20px 0px;
 	overflow: hidden;
 }
-.acord .acord_cont input#addcontact1 {
+.acord .acord_cont #cont input.addcontact2 {
 	height: 25px;
 	width: 25px;
 	border-radius:50%;
