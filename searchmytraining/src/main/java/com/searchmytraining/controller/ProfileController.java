@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.searchmytraining.dto.CertificationAwardDTO;
 import com.searchmytraining.dto.ClientDetailsDTO;
 import com.searchmytraining.dto.ContactDTO;
 import com.searchmytraining.dto.EmploymentDTO;
@@ -31,6 +32,7 @@ import com.searchmytraining.entity.UserEntity;
 import com.searchmytraining.service.ICityService;
 import com.searchmytraining.service.IContactInfoService;
 import com.searchmytraining.service.IEmploymentService;
+import com.searchmytraining.service.IFreeLancerServiceDetails;
 import com.searchmytraining.service.IIndustryCategoryService;
 import com.searchmytraining.service.IIndustrySubCategoryService;
 import com.searchmytraining.service.IInstituteServiceDetails;
@@ -65,6 +67,9 @@ public class ProfileController {
 	
 	@Autowired
 	public IContactInfoService contactinfoservice;
+	
+	@Autowired
+	public IFreeLancerServiceDetails freelanceservice;
 	
 	@RequestMapping(value="/updateinstitutedetails",method = RequestMethod.POST, produces={"application/json"}, consumes={"application/json"})
 	@ResponseBody
@@ -179,6 +184,15 @@ public class ProfileController {
 			emplservice.updateEmpldet(empldto);
 			return responsewrapper;
 		}
+	}
+	
+	@RequestMapping(value="/freelcertiawardDet",method=RequestMethod.POST)
+	@ResponseBody
+	public RespnoseWrapper updateCertifactionAwrdDet(@RequestBody CertificationAwardDTO certidto, ModelMap model)
+	{
+		System.out.println(certidto.getAwrdDetails());
+		freelanceservice.updateCertiAndAwardInfo(certidto);
+		return null;
 	}
 	
 }

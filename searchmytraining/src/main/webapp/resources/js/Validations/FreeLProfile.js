@@ -474,29 +474,22 @@ function flContactDet(path)
 }
 
 function freelCertificationAwardDet(path) {
-
-	console.log("in freelcontactdetails...");
-	var flag = freeLancerValidate2();
+	console.log("in freelCertificationAwardDet...");
+	var flag = true; 	//freeCrtfctDetails();
 	console.log("flag: " + flag);
 	if (flag) {
 		try {
 			$.ajax({
-				url : path + '/updatelocinfo',
+				url : path + '/freelcertiawardDet',
 				type : 'post',
 				dataType : 'json',
 				data : JSON.stringify({
-					"bldng_flatno" : $('#builNo65').val(),
-					"street" : $('#streetName66').val(),
-					"landmark" : $('#landmark67').val(),
-					"pincode" : $('#pin68').val(),
-					"country" : $('#countryid').val(),
-					"state" : $('#stateid').val(),
-					"city" : $('#cityid').val(),
+					"awrdDetails" : $('#awrdDetails').val(),
 					"userid" : $('#userid').val()
 				}),
 				contentType : "application/json",
 				success : function(response) {
-
+					console.log("in success msg...");
 				},
 				error : function() {
 					console.log("in error msg...");

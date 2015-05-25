@@ -166,6 +166,19 @@
 			<b>userid</b>
 		</field-exclude>
 	</mapping>
+	
+	<mapping>
+		<class-a>com.searchmytraining.dto.CertificationAwardDTO</class-a>
+		<class-b>com.searchmytraining.entity.CertificationAwardEntity</class-b>
+		<field>
+			<a>awrdDetails</a>
+			<b>certfctName</b>
+		</field>
+		<field-exclude>
+			<a>userid</a>
+			<b>userid</b>
+		</field-exclude>
+	</mapping>
 
 
 </mappings> 

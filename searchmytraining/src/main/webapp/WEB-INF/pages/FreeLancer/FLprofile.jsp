@@ -297,7 +297,7 @@ jQuery(document).ready(function () {
 					
 				</div><br><br>
                      <h3>(Max 250 characters)</h3>
-				<input class="skipbtn13" type="button" value="Save" name="save" form="frmCerfDetails" onclick="freeCrtfctDetails();" />
+				<input class="skipbtn13" type="button" value="Save" name="save" form="frmCerfDetails" onclick="freelCertificationAwardDet('<%=request.getContextPath()%>');" />
 			</form>
 
 		</div>

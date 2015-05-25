@@ -1,8 +1,5 @@
 package com.searchmytraining.service.impl;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-
 import org.dozer.DozerBeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,31 +8,23 @@ import org.springframework.transaction.annotation.Transactional;
 import com.searchmytraining.dao.CityDAO;
 import com.searchmytraining.dao.IClientDAO;
 import com.searchmytraining.dao.IContactInfoDAO;
+import com.searchmytraining.dao.IFreeeLCertificationAwrdDAO;
 import com.searchmytraining.dao.ILocationInfoDAO;
 import com.searchmytraining.dao.IPhoneDAO;
 import com.searchmytraining.dao.IPhoneTypeDAO;
 import com.searchmytraining.dao.IProfessionalAssociationDAO;
 import com.searchmytraining.dao.InstituteDAO;
 import com.searchmytraining.dao.UserDAO;
-import com.searchmytraining.dto.ClientDetailsDTO;
-import com.searchmytraining.dto.ContactDTO;
-import com.searchmytraining.dto.InstituteDTO;
+import com.searchmytraining.dto.CertificationAwardDTO;
 import com.searchmytraining.dto.LocationDTO;
-import com.searchmytraining.dto.ProfessionalAssociationDTO;
+import com.searchmytraining.entity.CertificationAwardEntity;
 import com.searchmytraining.entity.CityEntity;
-import com.searchmytraining.entity.ClientEntity;
-import com.searchmytraining.entity.ContactInfoEntity;
-import com.searchmytraining.entity.InstituteEntity;
 import com.searchmytraining.entity.LocationEntity;
-import com.searchmytraining.entity.PhoneEntity;
-import com.searchmytraining.entity.PhoneTypeEntity;
-import com.searchmytraining.entity.ProfessionalAssociationEntity;
 import com.searchmytraining.entity.UserEntity;
-import com.searchmytraining.service.IFreeServiceDetails;
-import com.searchmytraining.service.IInstituteServiceDetails;
+import com.searchmytraining.service.IFreeLancerServiceDetails;
 
 @Service
-public class FreeServiceDetails implements IFreeServiceDetails {
+public class FreeServiceDetails implements IFreeLancerServiceDetails {
 	@Autowired
 	public InstituteDAO institutedao;
 	@Autowired
@@ -56,6 +45,8 @@ public class FreeServiceDetails implements IFreeServiceDetails {
 	public IProfessionalAssociationDAO assocdao;
 	@Autowired
 	public IClientDAO clientdao;
+	@Autowired
+	public IFreeeLCertificationAwrdDAO certidao;
 	
 	@Override
 	@Transactional
@@ -67,8 +58,14 @@ public class FreeServiceDetails implements IFreeServiceDetails {
 		locentity.setUser(user);
 		locentity.setCity(city);
 		locationdao.insertLocation(locentity);
-		
+	}
 
+	@Override
+	@Transactional
+	public void updateCertiAndAwardInfo(CertificationAwardDTO certidto) {
+		CertificationAwardEntity certientity = mapper.map(certidto, CertificationAwardEntity.class);
+		certientity.setUser(userdao.getUser(certidto.getUserid()));
+		certidao.updateCertificationAwrdDet(certientity);
 	}
 
 }
