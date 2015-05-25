@@ -1,7 +1,7 @@
 package com.searchmytraining.entity;
 
 public class TrainingEntity {
-	
+	 
 	private String title;
 	private String keyWords;
 	private String description;
