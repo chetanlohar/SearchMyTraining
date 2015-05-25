@@ -89,4 +89,10 @@ public class MyController {
 	{
 		return "pages/downlodCalender";
 	}
+	
+	@RequestMapping("/admin")
+	public String getdminPage()
+	{
+		return "pages/AdminLogin";
+	}
 }

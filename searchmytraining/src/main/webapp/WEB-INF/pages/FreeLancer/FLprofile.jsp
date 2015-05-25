@@ -108,6 +108,24 @@ jQuery(document).ready(function () {
 		}
 
 	} --%>
+	
+	function changeImage(input) {
+	    if (input.files && input.files[0]) {
+	        var reader = new FileReader();
+
+	        reader.onload = function(e) {
+	            $('#profilepic').attr('src', e.target.result);
+	        };
+
+	        reader.readAsDataURL(input.files[0]);
+	    }
+	}
+	
+	
+	
+	
+	
+	
 </script>
 </head>
 <body>
@@ -137,6 +155,15 @@ jQuery(document).ready(function () {
 						name="email64" value="${requestScope.freelancerDto.email12}" /> <span
 						id="error64"></span>
 				</div>
+				<div class="photo">
+				<img src="<%=request.getContextPath()%>/resources/images/avtar.jpg" id="profilepic" name="profilepic" width="140" height="160" border="0" alt="PROFILE PICTURE" onError="this.src= <%=request.getContextPath()%>/resources/images/avtar.jpg ;" />
+				
+				<div class="fileUpload btn btn-primary">
+                    <span>Upload Photo</span>
+                        <input type="file" id="fileupload"  class="upload" name="picture" style="visibility: visible" onchange="changeImage(this);"/>         
+                      </div>
+				</div>
+				
 			</form>
 			<input class="skipbtn9" type="button" value="Save & Continue" name="save" onclick="return freeLancerValidate();"/>
 			<input class="skip" type="button" id="skip1" value="Skip" name="skip" />
@@ -297,7 +324,7 @@ jQuery(document).ready(function () {
 					
 				</div><br><br>
                      <h3>(Max 250 characters)</h3>
-				<input class="skipbtn13" type="button" value="Save" name="save" form="frmCerfDetails" onclick="freelCertificationAwardDet('<%=request.getContextPath()%>');" />
+				<input class="skipbtn13" type="button" value="Save" name="save" form="frmCerfDetails" onclick="freeCrtfctDetails();" />
 			</form>
 
 		</div>

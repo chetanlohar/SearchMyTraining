@@ -12,6 +12,7 @@
 	type="text/css">
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/js/datepicker/date.js"></script>
+		
 <script type="text/javascript">
 $('#acord2').accordion({
 	collapsible : true
@@ -80,7 +81,7 @@ $(document).ready(function() {
 		}
 	}
 	jQuery(".tm-input").tagsManager();
-	$('#fdate,#Tdate').datepicker();
+	$('#Fdate,#Tdate').datepicker();
 });
 </script>
 </head>
@@ -96,7 +97,7 @@ $(document).ready(function() {
                         	<label>Title:</label>
                         	<input type="text" id="ctitle" placeholder="Title" autocomplete="off"/>
                         	</div>
-                        	<div class="fdate">
+                          	<div class="fdate">
                         	<label>From Date:</label>
                         	<input type = "text"  id ="Fdate" placeholder="Start Date" autocomplete="off"/>
                         	<span><img src="<%=request.getContextPath()%>/resources/images/calender/calendar.png"/></span>
@@ -111,7 +112,7 @@ $(document).ready(function() {
                         	<label>Industry Type:</label>
                         	<select id ="Itype">
                         	 <option>Industry Types</option>
-                        	 <option>Information Technology</option>
+                        	 <option> Technology</option>
                         	  <option>Business & Management</option>
                         	  <option>Engineering & Manufacturing</option>
                         	  <option>Health & Safety</option>
@@ -156,11 +157,10 @@ $(document).ready(function() {
                         	 
                      <h3 class="acord_head">View Calendar</h3>
                         	 <div class="acord_cont">
-                        	 <h1>hello</h1>
-                        	 </div>
                         	 
+     </div>
                         	 
-                      </div>
+     </div>
                       
                       
 </body>

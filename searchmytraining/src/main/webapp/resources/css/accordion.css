@@ -645,18 +645,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4f5fc', end
 	
 }
 
-.acord .acord_cont .Acalender td{
-	border: 1px solid gray;
-	text-align: center;
-	line-height: 25px;
-	border: none;
-}
 
-
-
-.acord .acord_cont .Acalender tbody tr:nth-child(even){
-   background: #B2D1E0;
-}
 
 
 
