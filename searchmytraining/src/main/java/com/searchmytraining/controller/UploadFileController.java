@@ -1,4 +1,5 @@
 package com.searchmytraining.controller;
+
 import org.apache.catalina.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,87 +22,102 @@ import javax.servlet.http.HttpSession;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import com.searchmytraining.entity.CalenderEntity;
+import com.searchmytraining.entity.IndustrySubCategoryEntity;
+import com.searchmytraining.entity.KeywordEntity;
 import com.searchmytraining.entity.UserEntity;
 import com.searchmytraining.service.ICalenderService;
+import com.searchmytraining.service.IKeywordService;
 
 @Controller
 @RequestMapping("/uploadFile")
 public class UploadFileController {
 	@Autowired
 	ICalenderService calnderService;
-	
+
+	@Autowired
+	IKeywordService keywordService;
+
 	@RequestMapping(method = RequestMethod.POST)
-	public String create(HttpServletRequest request, 
-			@RequestParam CommonsMultipartFile fileUpload,HttpSession session) throws Exception {
-		
+	public String create(HttpServletRequest request,
+			@RequestParam CommonsMultipartFile fileUpload, HttpSession session)
+			throws Exception {
+
+		System.out.println("origional file name: "
+				+ fileUpload.getOriginalFilename());
+
 		CalenderEntity entity = new CalenderEntity();
-		UserEntity usrEntity=new UserEntity();
+		UserEntity usrEntity = new UserEntity();
+		IndustrySubCategoryEntity industrySubCat = new IndustrySubCategoryEntity();
+
 		Calendar calendar = Calendar.getInstance();
 		Timestamp currentTime = new Timestamp(calendar.getTime().getTime());
-		System.out.println("Date from timestamp "+currentTime.toString().substring(0, 11).trim());
-		System.out.println("from create method: "+session.getAttribute("userid"));
+		System.out.println("Date from timestamp "
+				+ currentTime.toString().substring(0, 11).trim());
+		System.out.println("from create method: "
+				+ session.getAttribute("userid"));
 		try {
-			/*System.out.println(fileUpload.getOriginalFilename());*/
-		/*	
-			byte[] buffer = new byte[1024];
-			FileOutputStream fos = new FileOutputStream("C:\\SearchMT\\" 
-						+ fileUpload.getOriginalFilename());
-    		ZipOutputStream zos = new ZipOutputStream(fos);
-    		ZipEntry ze= new ZipEntry(fileUpload.getOriginalFilename());
-    		zos.putNextEntry(ze);
-    		FileInputStream in = new FileInputStream("C:\\SearchMT\\" 
-					+ fileUpload.getOriginalFilename());
- 
-    		int len=0;
-    		while ((len = in.read(buffer)) > 0) {
-    			zos.write(buffer, 0, len);
-    		}
- 
-    		in.close();
-    		zos.closeEntry();
- 
-    		//remember close it
-    		zos.close();
- 
-    		System.out.println("Done");*/
-			
-			
-			String ctitle= request.getParameter("ctitle");
-			String Fdate= request.getParameter("Fdate");
+
+			String ctitle = request.getParameter("ctitle");
+			String Fdate = request.getParameter("Fdate");
 			String Tdate = request.getParameter("Tdate");
 			String Ctype = request.getParameter("Ctype");
 			Double cPrice = Double.parseDouble(request.getParameter("cPrice"));
 			String CDesc = request.getParameter("CDesc");
 			String Ckey = request.getParameter("Ckey");
-			Integer userid= Integer.parseInt(session.getAttribute("userid").toString());
-			usrEntity.setUserId(userid);
-			if(fileUpload.getContentType().equals("application/pdf")){
-				System.out.println("same");
-				
+			String keyCode = request.getParameter("tags");
+			String[] keywords = keyCode.split(" ");
+			for (String keyword : keywords) {
+				int i = 0;
+				System.out.println("keyword " + keyword);
 			}
-		/*	System.out.println("\nctitle "+ctitle+"\nFdate "+Fdate+"\nTdate "+Tdate+"Ctype "+Ctype+"\ncPrice "+cPrice+"\nCDesc "+CDesc+"\nCkey "+Ckey+"\nuserid "+userid);*/
-			
-			entity.setBrochure("C:\\SearchMT\\" 
+			Integer userid = Integer.parseInt(session.getAttribute("userid")
+					.toString());
+			Integer trnIndstrSubCatId = Integer.parseInt(request
+					.getParameter("Itype"));
+			usrEntity.setUserId(userid);
+			industrySubCat.setTrnIndstrSubCatId(trnIndstrSubCatId);
+
+			if (fileUpload.getContentType().equals("application/pdf")) {
+				System.out.println("same");
+
+			}
+
+			entity.setBrochure("C:\\SearchMT\\"
 					+ fileUpload.getOriginalFilename());
 			entity.setTitle(ctitle);
-			entity.setCode("aaa");
-			entity.setContenttype(""+fileUpload.getContentType());
+			entity.setCode("keyCode");
+			entity.setContenttype("" + fileUpload.getContentType());
 			entity.setCreatedBy("aaa");
 			entity.setCreatedOn(currentTime);
 			entity.setDescription(CDesc);
 			entity.setStart_date(Fdate);
 			entity.setEnd_date(Tdate);
-			entity.setKeywords(Ckey);
 			entity.setStatus("New");
+
+			// Mapping Entity
 			entity.setUser(usrEntity);
+			entity.setIndstrySubcat(industrySubCat);
+
 			entity.setType(Ctype);
 			entity.setPrice(cPrice);
 			entity.setTitle(ctitle);
 			entity.setUpdatedBy("");
+			entity.setRank(0);
+			entity.setvFlag("Not Varified");
 			entity.setUpdatedOn(currentTime);
-			System.out.println("path "+entity.getBrochure());
+			System.out.println("path " + entity.getBrochure());
 			calnderService.addCalender(entity);
-			if(fileUpload.getSize()<1000000000){
+
+			  for(String element:keywords){ 
+				  	KeywordEntity keywordEntity = new KeywordEntity();
+				  	keywordEntity.setUser(usrEntity);
+			  		keywordEntity.setUser(usrEntity);
+			  		keywordEntity.setKeword(element);
+			  		keywordService.addKeyWords(keywordEntity);
+			  	}
+			 
+
+			if (fileUpload.getSize() < 1000000000) {
 				System.out.println("File is less than the capacity!!!!");
 			}
 			InputStream inputStream = null;
@@ -109,25 +125,27 @@ public class UploadFileController {
 			if (fileUpload.getSize() > 0) {
 				inputStream = fileUpload.getInputStream();
 				// File realUpload = new File("C:/");
-				outputStream = new FileOutputStream("C:\\SearchMT\\" 
+				outputStream = new FileOutputStream("C:\\SearchMT\\"
 						+ fileUpload.getOriginalFilename());
-				/*System.out.println("====22=========");
-				System.out.println(fileUpload.getOriginalFilename());
-				System.out.println("=============");*/
+				/*
+				 * System.out.println("====22=========");
+				 * System.out.println(fileUpload.getOriginalFilename());
+				 * System.out.println("=============");
+				 */
 				int readBytes = 0;
 				byte[] buffer = new byte[10000];
 				while ((readBytes = inputStream.read(buffer, 0, 10000)) != -1) {
-					//System.out.println("===ddd=======");
+					// System.out.println("===ddd=======");
 					outputStream.write(buffer, 0, readBytes);
 				}
 				outputStream.close();
 				inputStream.close();
-			
+
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-/*		session.setAttribute("userid", session.getAttribute("userid"));*/
+		/* session.setAttribute("userid", session.getAttribute("userid")); */
 		return "pages/FreeLancer/FreeLancerProfile";
 	}
 }

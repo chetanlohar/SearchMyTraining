@@ -70,7 +70,6 @@ public class CalenderController {
 	public void deleteCalenderById(Long calId) {
 
 		iCalnder.removeCalender(calId);
-		;
 	}
 
 }

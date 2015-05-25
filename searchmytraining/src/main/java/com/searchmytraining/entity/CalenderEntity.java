@@ -27,9 +27,6 @@ public class CalenderEntity implements Serializable {
 	@Column(name = "title")
 	private String title;
 
-	@Column(name = "keywords")
-	private String keywords;
-
 	@Column(name = "start_date")
 	private String start_date;
 
@@ -44,32 +41,42 @@ public class CalenderEntity implements Serializable {
 
 	@Column(name = "type")
 	private String type;
-	
+
 	@Column(name = "status")
 	private String status;
-	
+
 	@Column(name = "createdOn")
 	private Timestamp createdOn;
-	
+
 	@Column(name = "createdBy")
 	private String createdBy;
-	
+
 	@Column(name = "updatedOn")
 	private Timestamp updatedOn;
-	
+
 	@Column(name = "updatedBy")
 	private String updatedBy;
-	
+
 	@Column(name = "description")
 	private String description;
-	
+
 	@Column(name = "contenttype")
 	private String contenttype;
-	
-	@ManyToOne(fetch=FetchType.EAGER,targetEntity=UserEntity.class)
-	@JoinColumn(name="userId")
+
+	@Column(name = "rank")
+	private Integer rank;
+
+	@Column(name = "vFlag")
+	private String vFlag;
+
+	@ManyToOne(fetch = FetchType.EAGER, targetEntity = UserEntity.class)
+	@JoinColumn(name = "userId")
 	private UserEntity user;
-	
+
+	@ManyToOne(fetch = FetchType.EAGER, targetEntity = IndustrySubCategoryEntity.class)
+	@JoinColumn(name = "trnIndstrSubCatId")
+	private IndustrySubCategoryEntity indstrySubcat;
+
 	public Integer getTrngId() {
 		return trngId;
 	}
@@ -92,14 +99,6 @@ public class CalenderEntity implements Serializable {
 
 	public void setTitle(String title) {
 		this.title = title;
-	}
-
-	public String getKeywords() {
-		return keywords;
-	}
-
-	public void setKeywords(String keywords) {
-		this.keywords = keywords;
 	}
 
 	public String getStart_date() {
@@ -201,7 +200,32 @@ public class CalenderEntity implements Serializable {
 	public UserEntity getUser() {
 		return user;
 	}
+
+	public Integer getRank() {
+		return rank;
+	}
+
+	public void setRank(Integer rank) {
+		this.rank = rank;
+	}
+
+	public String getvFlag() {
+		return vFlag;
+	}
+
+	public void setvFlag(String vFlag) {
+		this.vFlag = vFlag;
+	}
+
 	public void setUser(UserEntity user) {
 		this.user = user;
+	}
+
+	public IndustrySubCategoryEntity getIndstrySubcat() {
+		return indstrySubcat;
+	}
+
+	public void setIndstrySubcat(IndustrySubCategoryEntity indstrySubcat) {
+		this.indstrySubcat = indstrySubcat;
 	}
 }

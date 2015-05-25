@@ -95,35 +95,35 @@ $(document).ready(function() {
                         	
                         	<div class="title">
                         	<label>Title:</label>
-                        	<input type="text" id="ctitle" placeholder="Title" autocomplete="off"/>
+                        	<input type="text" id="ctitle" placeholder="Title" autocomplete="off" name="ctitle"/>
                         	</div>
                           	<div class="fdate">
                         	<label>From Date:</label>
-                        	<input type = "text"  id ="Fdate" placeholder="Start Date" autocomplete="off"/>
+                        	<input type = "text"  id ="Fdate" placeholder="Start Date" autocomplete="off" name="Fdate"/>
                         	<span><img src="<%=request.getContextPath()%>/resources/images/calender/calendar.png"/></span>
                         	
                         	</div>
                         	<div class="Tdate">
                         	<label>To Date:</label>
-                        	<input type = "text"  id ="Tdate" placeholder="End Date" autocomplete="off"/>
+                        	<input type = "text"  id ="Tdate" placeholder="End Date" autocomplete="off" name="Tdate"/>
                         	<span><img src="<%=request.getContextPath()%>/resources/images/calender/calendar.png"/></span>
                         	</div>
                         	<div class="Industry">
                         	<label>Industry Type:</label>
-                        	<select id ="Itype">
-                        	 <option>Industry Types</option>
-                        	 <option> Technology</option>
-                        	  <option>Business & Management</option>
-                        	  <option>Engineering & Manufacturing</option>
-                        	  <option>Health & Safety</option>
-                        	  <option>Art & Craft & Sports</option>
-                        	  <option>Certifications</option>
-                        	  <option>Other</option>
+                        	<select id ="Itype" name="Itype">
+                        	  <option value="1">Industry Types</option>
+                        	  <option value="1"> Technology</option>
+                        	  <option value="2">Business & Management</option>
+                        	  <option value="3">Engineering & Manufacturing</option>
+                        	  <option value="4">Health & Safety</option>
+                        	  <option value="5">Art & Craft & Sports</option>
+                        	  <option value="6">Certifications</option>
+                        	  <option value="7">Other</option>
                         	</select>
                         	</div>
                         	<div class="Ctype">
                         	<label>Type Of Calendar:</label>
-                        	<select id ="Ctype">
+                        	<select id ="Ctype" name="Ctype">
                         	 <option>Calendar Type</option>
                         	 <option>Seminar</option>
                         	 <option>Workshop</option>
@@ -132,21 +132,21 @@ $(document).ready(function() {
                         	</div>
                         	<div class="price">
                         	<label>Price:</label>
-                        	<input type="text"   id = "cPrice" placeholder="price" autocomplete="off"/>   
+                        	<input type="text"   id = "cPrice" placeholder="price" autocomplete="off" name="cPrice"/>   
                         	</div>
                         	<div class="description">
                         	<label>Description:</label>
-                        	<input type="text"   id = "CDesc" placeholder="Description" autocomplete="off"/>
+                        	<input type="text"   id = "CDesc" placeholder="Description" autocomplete="off" name="CDesc"/>
                         	</div>
                         	<div class="keyCode">
                         	<label>KeyCode:</label>
-                        	<input type="text" name="tags" placeholder="Tags" class="tm-input" autocomplete="off"/>
+                        	<input type="text" name="tags" placeholder="Tags" class="tm-input" autocomplete="off" value="java spring jsp servlet jdbc"/>
                         	</div>
                         	<div class="browse">
                         	<label>Upload Calender:</label>
                         	<div class="fileUpload btn btn-primary">
                                      <span>Brouchure</span>
-                                      <input type="file" class="upload" id="fileupload" name="fileupload"/>
+                                      <input type="file" class="upload" id="fileupload" name="fileUpload"/>
                               </div>
                               </div>
                              <div class="submit">
