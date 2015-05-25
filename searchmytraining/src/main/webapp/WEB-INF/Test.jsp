@@ -29,6 +29,7 @@ function show_checked()
 <body>
 <h1>SearchMyTraining</h1> 
 <h2>SMT123</h2>
+<h3>Test</h3>
 <form>
 	<input type="checkbox" name="Question1" id="Answer1" value="Answer1" onclick="show_checked()"/><label for="Answer1">Answer 1</label><br/>
 	<input type="checkbox" name="Question1" id="Answer2" value="Answer2" onclick="show_checked()"/><label for="Answer2">Answer 2</label><br/>
