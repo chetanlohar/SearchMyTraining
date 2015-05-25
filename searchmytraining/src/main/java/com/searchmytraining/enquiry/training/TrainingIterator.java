@@ -46,7 +46,7 @@ public class TrainingIterator implements InputIterator {
             throw new Error("Couldn't convert to UTF-8");
         }
 	}
-
+ 
 	public boolean hasPayloads() {
 		return true;
 	}

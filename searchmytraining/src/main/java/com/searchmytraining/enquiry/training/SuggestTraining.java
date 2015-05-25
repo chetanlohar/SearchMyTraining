@@ -17,7 +17,7 @@ import org.apache.lucene.util.BytesRef;
 import org.apache.lucene.util.Version;
 
 import com.searchmytraining.entity.TrainingEntity;
-
+ 
 public class SuggestTraining {
 	
     private List<String> initLookup(AnalyzingInfixSuggester suggester, String name, String addlParam) {
