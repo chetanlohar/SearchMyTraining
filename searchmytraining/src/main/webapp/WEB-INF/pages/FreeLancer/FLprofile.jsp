@@ -190,12 +190,16 @@ jQuery(document).ready(function () {
 					<label>Pincode :</label> <input type="text" name="pin68" id="pin68" onkeypress="return validate14(event)"/>
 				<span id="error68"></span>
 				</div>
+				
+				<c:set var="cntid"/>
+				
 				<div class="country">
 					<label>Country :</label> 
-					<select id="countryid">
+					<select id="countryid" onchange="getStates('<%=request.getContextPath()%>')">
 						<option value="0">--Select--</option>
 						<c:forEach var="country" items="${countries}">
-							<option value="${country.countryId}" onclick="getStates(${country.countryId},'<%=request.getContextPath()%>');">${country.countryName}</option>
+							<option value="${country.countryId}">${country.countryName}</option><!-- onclick="getStates(${country.countryId},'<%=request.getContextPath()%>');" -->
+							<c:set var="cntid" value="${country.countryId}"/>
 						</c:forEach>
 					</select>
 				</div>
@@ -260,15 +264,14 @@ jQuery(document).ready(function () {
 						<option value="Graduate">Graduate</option>
 						<option value="Post Graduate">Post Graduate</option>
 					</select>
-					
 				</div>
 				<span id="errorfldegreetype"></span> 
-				<br><br>
-				<div class="qua">
+				
+				<!-- <div class="qua">
 					<label>Qualification :</label> <input type="text"
 						name="qualification71" id="qualification71">
 						<span id="error71"></span>
-				</div><br><br>
+				</div><br><br> -->
 				
 				<div class="spec">
 					<label>Specification :</label> <select id="flspec">

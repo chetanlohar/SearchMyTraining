@@ -84,11 +84,10 @@ $('#acord1').accordion({
 				</div>
 				<div class="industry">
 					<label> Industry :</label> 
-					<select id="tindustry">
+					<select id="tindustry" onchange="industryCategory('<%=request.getContextPath()%>')">
 						<option value="0">--Select--</option>
 						<c:forEach var="industry" items="${industries}">
-							<option value="${industry.trnIndstrId}"
-								onclick="industryCategory(${industry.trnIndstrId},'<%=request.getContextPath()%>');">${industry.indstrName}</option>
+							<option value="${industry.trnIndstrId}">${industry.indstrName}</option>
 						</c:forEach>
 					</select>
 					<span id="errorindustry"></span>

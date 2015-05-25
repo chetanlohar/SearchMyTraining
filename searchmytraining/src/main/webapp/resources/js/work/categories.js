@@ -1,4 +1,7 @@
-function industryCategory(id, path) {
+function industryCategory(path) {
+	var id = $("#tindustry").val();
+	console.log("in getstates method...id: "+id);
+	console.log(id);
 	$.ajax({
 		type : "POST",
 		url : path + "/getIndustryCategory",
@@ -43,8 +46,10 @@ function industrySubCategory(path)
 	});
 }
 
-function getStates(countryid, path)
+function getStates(path)
 {
+	var countryid=$("#countryid").val();
+	console.log("in getstates method...cntid: "+countryid);
 	$.ajax({
 		type : "POST",
 		url : path + "/getstates",
@@ -83,4 +88,11 @@ function getCities(path)
 			});
 		},
 	});
+}
+
+function getDegreeType(path)
+{
+	
+
+
 }
