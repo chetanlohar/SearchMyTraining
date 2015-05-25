@@ -10,9 +10,9 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/reset.css" type="text/css">
 </head>
 <body>
-
+<%@include file="../layouts/Header.jsp"%>
  <div class="container">
- <div class="header"><h1>SearchMyTraining</h1></div>
+ <!-- <div class="header"><h1>SearchMyTraining</h1></div> -->
      <div class="Apanel">
        <div class="AdminTitle">
           <h1>Administration</h1>
@@ -50,7 +50,8 @@
     
    
  </div>
- 
+ <br>
+ <%@include file="../layouts/footer.jsp"%>
 
 
 </body>
