@@ -16,10 +16,6 @@ and open the template in the editor.
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<script src="http://code.jquery.com/jquery-latest.min.js"
-	type="text/javascript"></script>
-<script type="text/javascript"
-	src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/reset.css"
 	type="text/css">
@@ -64,8 +60,6 @@ jQuery(document).ready(function () {
             
             $nextContent.show()
         });
-     
-
     });
 });
 
@@ -83,7 +77,6 @@ function FLPload() {
 	        });
 	
 }
-
 
 function FLCload() {
 	$("#home-content").load("<%=request.getContextPath()%>/manageCalender", function(responseText, statusText, xhr)

@@ -16,7 +16,20 @@ body {
 	position: relative;
 	font-family: Helvetica, Arial, Verdana, sans-serif;
 }
-
+.acord .plus span, .acord .minus span {
+	background: url(../../resources/images/acordSprite2.png) no-repeat; 
+	width: 8px; 
+	height: 8px; 
+	top: 17px; 
+	left: 10px; 
+	position: absolute; 
+}
+.acord .minus span { 
+	background-position: 0px -9px; 
+}
+.acord .plus span {
+	background-position: 0px 0px; 
+}
 .acord .acord_head:hover {
 	background-color: #cecece;
 }

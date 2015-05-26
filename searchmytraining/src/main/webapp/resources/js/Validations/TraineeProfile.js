@@ -156,19 +156,19 @@ $("#cityid").on('change',function(e){
 		});
 
 var number = /([0-9])/;
-					$("#contdetails58").on('keyup', function(e) {
+					$("#traineephone1").on('keyup', function(e) {
 
-						if ($("#contdetails58").val()== "" ) {
+						if ($("#traineephone1").val()== "" ) {
 							$("#error58").html("Please Enter Contact Number")
 							return true
 						} else {
-							$("contdetails58").focus()
+							$("traineephone1").focus()
 							$("#error58").html("")
 						}
 					});
                   
-					$("#traineecontact").on('change',function(e){
-						if($("#traineecontact").val() != '0'){
+					$("#traineephoneid1").on('change',function(e){
+						if($("#traineephoneid1").val() != '0'){
 						$("#errortcontact").html('');
 							return true;
 						}
@@ -381,10 +381,10 @@ function tProf3(){
 	var mail = $("#smail60").val();
 	var reg=/^\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/;
 	
-       if($("#traineecontact1").val() == '0' || $("#traineecontact1").val() == ' ') {
-	     $("#traineecontact1").focus();
+       if($("#traineephoneid1").val() == '0' || $("#traineephoneid1").val() == ' ') {
+	     $("#traineephoneid1").focus();
 	    
-	     $("#errortcontact1").html("Please Select Type of Contact")
+	     $("#errortcontact").html("Please Select Type of Contact")
 	     return false;
     }
        else if($("#traineephone1").val() == "" || $("#traineephone1").val().length < 10)
@@ -410,6 +410,7 @@ function tProf3(){
 	} 
     return true;
 }
+
 
 function updateempdet(path) {
 

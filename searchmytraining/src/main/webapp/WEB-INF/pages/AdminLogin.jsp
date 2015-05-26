@@ -14,9 +14,9 @@
  <div class="container">
  <!-- <div class="header"><h1>SearchMyTraining</h1></div> -->
      <div class="Apanel">
-       <div class="AdminTitle">
+      <!--  <div class="AdminTitle">
           <h1>Administration</h1>
-       </div>
+       </div> -->
        <div class="logcontainer">
           <div class="Subhead">
            <h1>Administration Login</h1>
@@ -25,7 +25,7 @@
              <p>Use valid username and password to gain access to administration Panel.</p>
              <br>
               <a href="#">Go to Site home page</a>
-              <img alt="Admin Login" src="<%=request.getContextPath()%>/resources/images/adminlogin.jpg">
+              <img alt="Admin Login" src="<%=request.getContextPath()%>/resources/images/adminlogin.jpg"/>
           </div>
        <div class="logbar">
        <div class="panel">
@@ -36,19 +36,11 @@
           <input type="password"  id="apass" value="" placeholder="Password" >
           <input type="submit" value="Log In">
        
-       </form>
-       
-       </div>
-       
-       </div>
-       
-       
-       </div>
-    
-     
-     </div>
-    
-   
+       </form>     
+       </div>      
+       </div>  
+       </div>   
+     </div>  
  </div>
  <br>
  <%@include file="../layouts/footer.jsp"%>

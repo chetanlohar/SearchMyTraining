@@ -119,7 +119,7 @@ function TNSload(){
 					<li><a href="" onclick="TNPload();" class="open"><strong>Profile</strong></a>
 					</li>
 
-					<li><a href="" onclick="TNPload();"><strong>Insights</strong></a></li>
+					<li><a href="" onclick="TNIload();"><strong>Insights</strong></a></li>
 
 					<li><a href="" onclick="TNSload();"><strong>Settings</strong></a></li>
 

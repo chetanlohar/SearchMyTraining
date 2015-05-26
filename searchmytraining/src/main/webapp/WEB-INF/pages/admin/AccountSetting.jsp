@@ -33,10 +33,10 @@ jQuery(document).ready(function () {
 <body>
 
 	          <div id="acord1" class="acord">
-		      <div class="acord_head">
-							<h3>Change Password</h3>
-							<img src="<%=request.getContextPath()%>/resources/images/array_down.png" alt="downarrow"/>
-							</div>
+		      <h3 class="acord_head">
+		      <span></span>
+			  Change Password</h3>
+							
 							<div class="acord_cont">
 								<form action="#">
 									<div class="oldpass">

@@ -47,7 +47,9 @@
 <body>
 	<input id="userid" type="hidden" name="userid" value="${user.userId}">
 	<div id="acord1" class="acord">
-		<h3 class="acord_head">Institute Information</h3>
+		<h3 class="acord_head plus">
+		<span></span>
+		Institute Information</h3>
 		<div class="acord_cont">
 			<form action="#" method="post" id="form1">
 				<div class="name">
@@ -84,13 +86,15 @@
 				</div>
 				<%-- <input class="skip" type="button" value="Save & Continue" onclick="saveInstituteDetails('<%=request.getContextPath() %>');" />	 --%>
 			</form>
-			<input class="skipbtn4" type="button" value="Save & Continue" name="save"
+			<input class="skipbtn4 plus" type="button" value="Save & Continue" name="save"
 				form="form1"
 				onclick="saveInstituteDetails('<%=request.getContextPath()%>'); trainingProValidate();" />
-			<input class="skip" id="skip3" type="button" value="Skip" name="skip" />
+			<input class="skip plus" id="skip3" type="button" value="Skip" name="skip" />
 		</div>
 
-		<h3 class="acord_head">Institute Contact Details</h3>
+		<h3 class="acord_head">
+		<span></span>
+		Institute Contact Details</h3>
 		<div class="acord_cont">
 			<form class="multi" id="ContactDetailsForm">
 				<div class="name">
@@ -134,7 +138,9 @@
 				onclick="saveInstituteContactDetails('<%=request.getContextPath()%>');trainingProValidate1();" />
 			<input class="skip" id="skip3" type="button" value="Skip" name="skip" />
 		</div>
-		<h3 class="acord_head">Institute Locations</h3>
+		<h3 class="acord_head">
+		<span></span>
+		Institute Locations</h3>
 		<div class="acord_cont" id="InstituteLocationForm">
 			<form action="#">
 				<div class="name">
@@ -197,7 +203,9 @@
 				onclick="saveLocationDetails('<%=request.getContextPath()%>');" />
 			<input class="skip" id="skip3" type="button" value="Skip" name="skip" />
 		</div>
-		<h3 class="acord_head">Achievement</h3>
+		<h3 class="acord_head">
+		<span></span>
+		Achievement</h3>
 		<div class="acord_cont">
 			<form action="#" class="multi">
 				<div id="achiv2">
@@ -216,7 +224,9 @@
 			<input class="skip" type="button" value="Save & Continue" name="save" />
 			<input class="skip" id="skip3" type="button" value="Skip" name="skip" />
 		</div>
-		<h3 class="acord_head">Professional Association</h3>
+		<h3 class="acord_head">
+		<span></span>
+		Professional Association</h3>
 		<div class="acord_cont">
 			<form id="professinalassociationform" method="post" class="multi">
 				<div id="association">
@@ -238,7 +248,9 @@
 		</div>
 
 
-		<h3 class="acord_head">Client Details</h3>
+		<h3 class="acord_head">
+		<span></span>
+		Client Details</h3>
 		<div class="acord_cont">
 			<form id="clientdetailsform" class="multi" method="post">
 

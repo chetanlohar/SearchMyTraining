@@ -39,15 +39,16 @@ jQuery(document).ready(function () {
     });
 }); 
 
-
+	
 </script>
 </head>
 <body>
 	          <div id="acord1" class="acord">
-		       <div class="acord_head">
-		       <h3>Industrywise Calender Selection </h3>
-		       <img class="accordDown" src="<%=request.getContextPath()%>/resources/images/array_down.png" alt="downarrow"/>
-		       </div>
+		       <h3 class="acord_head plus">
+		       <span></span>
+		       Industrywise Calender Selection
+		        </h3>
+		       
 							<div class="acord_cont">
 								<form action="#">
 									<div class="selectCalender">
@@ -60,36 +61,34 @@ jQuery(document).ready(function () {
 									  <option>E</option>
 									  <option>F</option>
 									  </select>
-									</div>
-									
-									
+									</div>									
 								</form>
 							</div>
 
-		          <div class="acord_head">
-		          <h3>Recently Added Calenders</h3>
-		           <img class="accordDown1" src="<%=request.getContextPath()%>/resources/images/array_down.png" alt="downarrow"/>
-		          </div>
+		          <h3 class="acord_head">
+		          <span></span>
+		          Recently Added Calenders</h3>
+		           
 							<div class="acord_cont">
 								<form action="#">
 									
 								</form>
 							</div>
 
-	            <div class="acord_head">
-		          <h3>Ranking As Per Industry</h3>
-		           <img class="accordDown2" src="<%=request.getContextPath()%>/resources/images/array_down.png" alt="downarrow"/>
-		          </div>
+	            <h3 class="acord_head" >
+	            <span></span>
+		          Ranking As Per Industry</h3>
+		           
 							<div class="acord_cont">
 								<form action="#">
-									
+									        
 								</form>
 							</div>
 							
-							<div class="acord_head">
-							<h3>Delete Calender</h3>
-							<img class="accordDown3" src="<%=request.getContextPath()%>/resources/images/array_down.png" alt="downarrow"/>
-							</div>
+							<h3 class="acord_head" >
+							<span></span>
+							Delete Calender</h3>
+							
 							<div class="acord_cont">
 								<form action="#">
 									

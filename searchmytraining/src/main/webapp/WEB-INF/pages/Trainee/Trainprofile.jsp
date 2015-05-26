@@ -37,11 +37,13 @@ $('#acord1').accordion({
 <body>
 	<input id="userid" type="hidden" value="${sessionScope.userid}">
 	<div id="acord1" class="acord">
-		<h3 class="acord_head">Personal Details</h3>
+		<h3 class="acord_head">
+		<span></span>
+		Personal Details</h3>
 		<div class="acord_cont">
 			<form action="#">
 				<div class="name">
-					<label>Full Name :</label> <input id="name" type="text" name="name"
+					<label>Full Name <text>*</text> :</label> <input id="name" type="text" name="name"
 						value="${traineedto.name}" onkeypress="return validateName(event);"/>
 						<span id="error51"></span>
 				</div>
@@ -53,12 +55,12 @@ $('#acord1').accordion({
 									</div>
  -->
 				<div class="email">
-					<label>Email Id :</label> <input id="email" type="text"
+					<label>Email Id <text>*</text> :</label> <input id="email" type="text"
 						name="email" value="${traineedto.email}" />
 						<span id="error52"></span>
 				</div>
 				<div class="contact">
-					<label>Phone No :</label> <input id="contact" type="text"
+					<label>Phone No <text>*</text> :</label> <input id="contact" type="text"
 						name="phone" value="${traineedto.contact}" onkeypress="return validate13(event);"/>
 				<span id="error53"></span>
 				</div>
@@ -68,7 +70,9 @@ $('#acord1').accordion({
 			<input class="skip" type="button" value="Skip" name="skip" id="skip1"/>
 		</div>
 
-		<h3 class="acord_head">Employment Details</h3>
+		<h3 class="acord_head">
+		<span></span>
+		Employment Details</h3>
 		<div class="acord_cont">
 			<form class="multi" name="employmentdet">
 				<div class="emptype">
@@ -124,7 +128,9 @@ $('#acord1').accordion({
 		</div>
 
 
-		<h3 class="acord_head">Location Details</h3>
+		<h3 class="acord_head">
+		<span></span>
+		Location Details</h3>
 		<div class="acord_cont">
 			<form action="" class="multi">
 				<div class="flatNo">
@@ -141,7 +147,7 @@ $('#acord1').accordion({
 					<span id="error56"></span>
 				</div>
 				<div class="pin">
-					<label>Pincode :</label> <input type="text" id="pin57" name="name" onkeypress="return validate13(event)"/>
+					<label>Pincode <text> * </text> :</label> <input type="text" id="pin57" name="name" onkeypress="return validate13(event)"/>
 				    <span id="error57"></span>
 				</div>
 				
@@ -176,7 +182,9 @@ $('#acord1').accordion({
 
 		</div>
 
-		<h3 class="acord_head">Contact Details</h3>
+		<h3 class="acord_head">
+		<span></span>
+		Contact Details</h3>
 		<div class="acord_cont">
 			<form name="traineecontactdet">
 				<div id="cont">
@@ -188,7 +196,7 @@ $('#acord1').accordion({
 							<option value="3">PERSONAL-MOBILE</option>
 							<option value="4">PERSONAL-LANDLINE</option>
 						</select> <input type="text" name="contdetails58" id="traineephone1" onkeypress="return validate13(event)" value="${traineedto.contact}">
-					<input class="details1" type="button" value="+" id="addcontact1">
+					<input class="addcontact1" type="button" value="+" >
 					
 					</p>
 					<span id="errortcontact"></span>

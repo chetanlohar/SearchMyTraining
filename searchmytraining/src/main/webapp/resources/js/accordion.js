@@ -8,8 +8,8 @@
             showHideSpeed: 'fast',
             openEvent: 'click',
             icons: {
-                "header": "acordUp",
-                "activeHeader": "acordDown"
+                "header": "plus",
+                "activeHeader": "minus"
                 	
             }
         }
