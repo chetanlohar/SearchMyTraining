@@ -1,0 +1,55 @@
+ol,
+ul { list-style: outside none none; }
+
+
+
+.tags {
+  background: none repeat scroll 0 0 #fff;
+  border: 1px solid #ccc;
+  display: table;
+  padding: 0.3em;
+  width: 80%;
+  background: red;
+  float: left;
+}
+
+.tags li.tagAdd,
+.tags li.addedTag {
+  float: left;
+  margin-left: 0.20em;
+  margin-right: 0.20em;
+}
+
+.tags li.addedTag {
+  background: none repeat scroll 0 0 #1ABC9C;
+  border-radius: 5px;
+  color: #fff;
+  padding: .5em;
+}
+
+.tags input,
+li.addedTag {
+  border: 1px solid transparent;
+  border-radius: 5px;
+  box-shadow: none;
+  display: block;
+  padding: 0.3em;
+}
+
+.tags input:hover { border: 1px solid #000; }
+
+span.tagRemove {
+  cursor: pointer;
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
+span.tagRemove:hover { color: #222222; }
+
+
+p { color: #ccc; }
+
+h1 {
+  color: #6b6b6b;
+  font-size: 1.0em;
+}

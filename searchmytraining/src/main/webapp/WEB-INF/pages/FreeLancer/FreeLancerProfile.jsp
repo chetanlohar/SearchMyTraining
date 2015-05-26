@@ -16,8 +16,6 @@ and open the template in the editor.
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<script src="http://code.jquery.com/jquery-latest.min.js"
-	type="text/javascript"></script>
 <script type="text/javascript"
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 <link rel="stylesheet"
@@ -26,9 +24,7 @@ and open the template in the editor.
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/FreeLancerProfile.css"
 	type="text/css">
-	<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/accordion.css"
-	type="text/css">
+
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/tabs.css"
 	type="text/css">
@@ -40,8 +36,11 @@ and open the template in the editor.
 	href="<%=request.getContextPath()%>/resources/css/tooltip.css"
 	type="text/css">
 	<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/tagmanager.css"
-	type="text/css">	
+	href="<%=request.getContextPath()%>/resources/css/screen.css"
+	type="text/css">
+	 <link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/css/tag-basic-style.css"
+	type="text/css"> 	
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/js/jquery/jquery-1.10.2.js"></script>
 <script type="text/javascript"
@@ -49,8 +48,7 @@ and open the template in the editor.
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/js/jquery/jquery-ui-1.10.4.custom.js"></script>
 <!--color-->
-<script type="text/javascript"
-	src="<%=request.getContextPath()%>/resources/js/jquery-1.10.2.min.js"></script>
+
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/js/accordion.js"></script>
 <script type="text/javascript"
@@ -61,11 +59,14 @@ and open the template in the editor.
 	src="<%=request.getContextPath()%>/resources/js/jquery/jquery.iconmenu.js"></script>
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/js/include.js"></script>
-	<script type="text/javascript"
-	src="<%=request.getContextPath()%>/resources/js/tagmanager.js"></script>
-	<script type="text/javascript"
-	src="<%=request.getContextPath()%>/resources/js/datepicker/date.js"></script>
 	
+	 <script type="text/javascript"
+	src="<%=request.getContextPath()%>/resources/js/tagging.js"></script>
+	
+	<script type="text/javascript"
+	src="<%=request.getContextPath()%>/resources/js/jquery/jquery.iconmenu.js"></script>
+	
+<script type="text/javascript">
 
 <script type="text/javascript">
 jQuery(document).ready(function () {

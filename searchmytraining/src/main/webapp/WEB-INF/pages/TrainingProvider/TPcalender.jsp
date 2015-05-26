@@ -6,14 +6,42 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/js/datepicker/date.js"></script>
+	<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/css/screen.css"
+	type="text/css">
 
 <script type="text/javascript">
 
 $('#acord2').accordion({
 	collapsible : true
 });
+
 jQuery(".tm-input").tagsManager();
 $('#fdate,#Tdate').datepicker();
+</script>
+<script>
+$(document).ready(function() {
+
+$('.tagRemove').click(function(event) {
+	           alert("see you")
+              event.preventDefault();
+              $(this).parent().remove();
+          });
+          $('ul.tags').click(function() {
+              $('#tags-field').focus();
+          });
+          $('#tags-field').keypress(function(event) {
+              if (event.which == '32') {
+				  	alert("welcome")
+                  if ($(this).val() != '') {
+                      $('<li class="addedTag">' + $(this).val() + '<span class="tagRemove" onclick="$(this).parent().remove();">x</span><input type="hidden" value="' + $(this).val() + '" name="tags[]"></li>').insertBefore('.tags .tagAdd');
+                      $(this).val('');
+                  }
+              }
+          });
+
+});
+
 </script>
 
 
@@ -51,6 +79,32 @@ $('#fdate,#Tdate').datepicker();
                         	  <option>Other</option>
                         	</select>
                         	</div>
+                        	<div class="Category">
+                        	<label>Category:</label>
+                        	<select id ="Catype">
+                        	 <option>Industry Types</option>
+                        	 <option> Technology</option>
+                        	  <option>Business & Management</option>
+                        	  <option>Engineering & Manufacturing</option>
+                        	  <option>Health & Safety</option>
+                        	  <option>Art & Craft & Sports</option>
+                        	  <option>Certifications</option>
+                        	  <option>Other</option>
+                        	</select>
+                        	</div>
+                        	<div class="SubCategory">
+                        	<label>SubCateogy:</label>
+                        	<select id ="subctype">
+                        	 <option>Industry Types</option>
+                        	 <option> Technology</option>
+                        	  <option>Business & Management</option>
+                        	  <option>Engineering & Manufacturing</option>
+                        	  <option>Health & Safety</option>
+                        	  <option>Art & Craft & Sports</option>
+                        	  <option>Certifications</option>
+                        	  <option>Other</option>
+                        	</select>
+                        	</div>
                         	<div class="Ctype">
                         	<label>Type Of Calendar:</label>
                         	<select id ="Ctype">
@@ -70,7 +124,20 @@ $('#fdate,#Tdate').datepicker();
                         	</div>
                         	<div class="keyCode">
                         	<label>KeyCode:</label>
-                        	<input type="text" name="tags" placeholder="Tags" class="tm-input"/>
+                        	 <ul class="tags">
+    <li class="addedTag">JavaScript<span onclick="$(this).parent().remove();" class="tagRemove">x</span>
+      <input type="hidden" name="tags[]" value="Web Deisgn">
+    </li>
+    <li class="addedTag">Html5<span onclick="$(this).parent().remove();" class="tagRemove">x</span>
+      <input type="hidden" name="tags[]" value="Web Develop">
+    </li>
+    <li class="addedTag">CSS3<span onclick="$(this).parent().remove();" class="tagRemove">x</span>
+      <input type="hidden" name="tags[]" value="SEO">
+    </li>
+    <li class="tagAdd taglist">
+      <input type="text" id="tags-field">
+    </li>
+  </ul>
                         	</div>
                         	<div class="browse">
                         	<label>Upload Calender:</label>

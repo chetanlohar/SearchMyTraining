@@ -12,7 +12,10 @@
 	type="text/css">
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/js/datepicker/date.js"></script>
-		
+	<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+	
+
 <script type="text/javascript">
 $('#acord2').accordion({
 	collapsible : true
@@ -70,7 +73,7 @@ function freelAddCalender(path) {
 
 <script language="JavaScript">
 $(document).ready(function() {
-	
+	alert(" addd")
 
 	function Validate() {
 		var image = document.getElementById("file").value;
@@ -79,9 +82,12 @@ $(document).ready(function() {
 			document.getElementById("image").focus();
 			return false;
 		}
+	
 	}
 	jQuery(".tm-input").tagsManager();
 	$('#Fdate,#Tdate').datepicker();
+	
+
 });
 </script>
 </head>
@@ -131,6 +137,7 @@ $(document).ready(function() {
                         	</select>
                         	</div>
                         	<div class="price">
+                        	
                         	<label>Price:</label>
                         	<input type="text"   id = "cPrice" placeholder="price" autocomplete="off" name="cPrice"/>   
                         	</div>
@@ -140,8 +147,13 @@ $(document).ready(function() {
                         	</div>
                         	<div class="keyCode">
                         	<label>KeyCode:</label>
-                        	<input type="text" name="tags" placeholder="Tags" class="tm-input" autocomplete="off" value="java spring jsp servlet jdbc"/>
+                        	
+                        
                         	</div>
+                        	
+                        	
+                        
+                        	
                         	<div class="browse">
                         	<label>Upload Calender:</label>
                         	<div class="fileUpload btn btn-primary">

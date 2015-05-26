@@ -82,8 +82,8 @@ body {
 
 
 .acord .acord_cont .photo img {
-	margin-left: 10px;
-	margin-bottom: 30px;
+	margin-left: 250px;
+	margin-bottom: 10px;
 
 
 }
@@ -93,8 +93,9 @@ body {
 .acord .acord_cont .photo .fileUpload {
     position: relative;
     overflow: hidden;
-    margin-left: 150px;
-    float: left;
+    margin-left: -120px;
+    margin-top:35px;
+    float: inherit;
 }
 .acord .acord_cont .photo .fileUpload span{
 	
@@ -292,6 +293,7 @@ input[type=text] {
 	height: 30px;
 	width: 300px;
 	font-size: 13px;
+	float: left;
 }
 
 input[type=text]:FOCUS, input[type=email]:FOCUS, textarea:FOCUS {
@@ -406,7 +408,7 @@ legend {
 .acord .acord_cont .country {
 	float: left;
 	height: 30px;
-	width: 290px;
+	width: 300px;
 	margin: 0px 0px 20px 0px;
 	height: 30px;
 }
@@ -651,37 +653,83 @@ margin-top: 20px;
 /* ==========================Edit calender======================================================== */
 
 
-.acord .acord_cont .add_calender{
-	width: 100%;
-	height: 50px;
-	margin-bottom: 20px;
-	font-family: arial;
+.acord .acord_cont .title {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
 }
-.acord .acord_cont .add_calender input[type=text]{
-	height: 30px !important;
-	width: 110px !important;
-	float: left;
-
-	margin-left: 5px;
+.acord .acord_cont .fdate {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
+}
+.acord .acord_cont .Tdate {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
+}
+.acord .acord_cont .Industry {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
+}
+.acord .acord_cont .Industry select{
+	width: 300px;
+}
+.acord .acord_cont .Ctype {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
+}
+.acord .acord_cont .Category {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
+}
+.acord .acord_cont .Category select{
+	width: 300px;
 }
 
-.acord .acord_cont .add_calender select{
-	height: 30px !important;
-	width: 100px !important;
-	float: left;
-
-		margin-left: 5px;
+.acord .acord_cont .SubCategory {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
 }
-.acord .acord_cont .add_calender  input[type="submit"] {
+.acord .acord_cont .SubCategory select{
+	width: 300px;
+}
+.acord .acord_cont .Ctype {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
+}
+.acord .acord_cont .Ctype select{
+	width: 300px;
+}
+.acord .acord_cont .price {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
+}
+.acord .acord_cont .description {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
+}
+.acord .acord_cont .keyCode {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
+
+}
+.acord .acord_cont .browse {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
+}
+.acord .acord_cont .submit {
+	height: 30px;
+	margin: 0px 20px 20px 0px;
+}
+
+.acord .acord_cont .submit  input[type="submit"] {
 	float: left;
 	border: none;
-	width: 60px !important;
-	font-size: 15px;
+	width: 150px ;
+	font-size: 18px;
 	height: 30px;
 	color: #FFFFFF;
-	margin-right:0px;
-	margin-left:2px !important;
-	margin-bottom: 10px !important;
+	margin-right:10px;
+	margin-left:250px ;
+	margin-top: 20px ;
 	border-radius: 5px;
 	cursor: pointer;
 	background: rgb(135, 224, 253); /* Old browsers */
@@ -704,18 +752,18 @@ margin-top: 20px;
 		endColorstr='#05abe0', GradientType=0);
 	border: none; /* IE6-9 */
 }
-.acord .acord_cont .add_calender .fileUpload {
+.acord .acord_cont  .fileUpload {
     position: relative;
     overflow: hidden;
-    margin-left: 10px;
+    margin-left: 5px;
     float: left;
 }
-.acord .acord_cont .add_calender .fileUpload span{
-	line-height: 20px !important;
-	margin-left: 3px !important;
+.acord .acord_cont  .fileUpload span{
+	
 	 color: #fff !important;
+	 margin: 0px 0px;
 }
-.acord .acord_cont .add_calender .fileUpload input.upload {
+.acord .acord_cont  .fileUpload input.upload {
     position: absolute;
     top: 0;
     right: 0;
@@ -726,18 +774,18 @@ margin-top: 20px;
     opacity: 0;
     filter: alpha(opacity=0);
 }
-.acord .acord_cont .add_calender .btn-primary {
+.acord .acord_cont  .btn-primary {
   color: #fff;
   background-color: #337ab7;
   border-color: #2e6da4;
 }
-.acord .acord_cont .add_calender .btn {
+.acord .acord_cont  .btn {
   display: inline-block;
   padding: 6px 12px;
   margin-bottom: 0;
   font-size: 14px;
   font-weight: normal;
-  line-height: 20px;
+  line-height: 1.42857143;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
@@ -752,42 +800,6 @@ margin-top: 20px;
   border: 1px solid transparent;
   border-radius: 4px;
 }
-.acord .acord_cont .Acalender{
-	width: 100%;
-    border: 1px solid gray;
-    text-align: center;
-	font-family: arial;
-}
-.acord .acord_cont .Acalender thead tr{
-    padding: 5px;
-    height: 30px;
-    text-align: center; 
-	line-height: 15px;
-	border: none;
-	font-size: 18px;
-	color:#006699;
-	background: #e4f5fc; /* Old browsers */
-background: -moz-linear-gradient(top,  #e4f5fc 0%, #bfe8f9 39%, #9fd8ef 58%, #2ab0ed 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e4f5fc), color-stop(39%,#bfe8f9), color-stop(58%,#9fd8ef), color-stop(100%,#2ab0ed)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  #e4f5fc 0%,#bfe8f9 39%,#9fd8ef 58%,#2ab0ed 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  #e4f5fc 0%,#bfe8f9 39%,#9fd8ef 58%,#2ab0ed 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  #e4f5fc 0%,#bfe8f9 39%,#9fd8ef 58%,#2ab0ed 100%); /* IE10+ */
-background: linear-gradient(to bottom,  #e4f5fc 0%,#bfe8f9 39%,#9fd8ef 58%,#2ab0ed 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4f5fc', endColorstr='#2ab0ed',GradientType=0 ); /* IE6-9 */
-	
-}
 
-.acord .acord_cont .Acalender td{
-	border: 1px solid gray;
-	text-align: center;
-	line-height: 25px;
-	border: none;
-}
-
-
-
-.acord .acord_cont .Acalender tbody tr:nth-child(even){
-   background: #B2D1E0;
-}
 
 
