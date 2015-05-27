@@ -10,7 +10,9 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/reset.css" type="text/css">
 </head>
 <body>
-<%@include file="../layouts/Header.jsp"%>
+<div class="head">
+<h1>SearchMyTraining</h1>
+</div>
  <div class="container">
  <!-- <div class="header"><h1>SearchMyTraining</h1></div> -->
      <div class="Apanel">
@@ -18,16 +20,14 @@
           <h1>Administration</h1>
        </div> -->
        <div class="logcontainer">
+      
           <div class="Subhead">
            <h1>Administration Login</h1>
           </div>
-          <div class="adinfo">
-             <p>Use valid username and password to gain access to administration Panel.</p>
-             <br>
-              <a href="#">Go to Site home page</a>
-              <img alt="Admin Login" src="<%=request.getContextPath()%>/resources/images/adminlogin.jpg"/>
-          </div>
-       <div class="logbar">
+       
+            <img style="margin-left: 30px;" alt="Admin-Login" src="<%=request.getContextPath()%>/resources/images/adminlogin.png"/>
+         
+       <div class="logbar"  >
        <div class="panel">
        <form action="">
           

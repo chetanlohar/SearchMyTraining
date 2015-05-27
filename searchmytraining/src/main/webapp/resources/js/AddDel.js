@@ -32,20 +32,18 @@
      var scntDiv = $('#cont');
      var i = $('#cont p').size() + 1;
      
-     $('#addcontact').live('click', function() {
-         $('<p style="margin-left:253px;"><select id="phonetypeid' + i +'" required><option value="0">--Select--</option><option value="3">PERSONAL-MOBILE</option><option value="4">PERSONAL-LANDLINE</option><input type="text" id="phonevalue'+i+'" size="20" name="phonevalue' + i +'"/> <a href="#" id="remScnt"><img style="margin-top:5px;float:left;margin-left:5px;" src="resources/images/Cancel-128.png"></a> <input type="button" value="+" id="addcontact"></p>').appendTo(scntDiv);
+     $('.addcontact').live('click', function() {
+         $('<p style="margin-left:253px;"><select id="phonetypeid' + i +'" required><option value="0">--Select--</option><option value="3">PERSONAL-MOBILE</option><option value="4">PERSONAL-LANDLINE</option><input type="text" id="phonevalue'+i+'" size="20" name="phonevalue' + i +'"/> <a href="#" id="remScnt"><img style="margin-top:5px;float:left;margin-left:5px;" src="resources/images/Cancel-128.png"></a> <input type="button" value="+" class="addcontact"></p>').appendTo(scntDiv);
              i++;
              $(this).hide();
      });
      $('#remScnt').live('click', function() { 
              if( i > 2 ) {
-                     $(this).parents('p').remove();
+                     $(this).closest('p').remove();
                      i--;
              }
-             if(i==2){
-            	 $('#addcontact').show();
-            }
-             return true;
+             $('#cont p').last().find('.addcontact').show();
+             return false;
      });
 });
 

@@ -131,14 +131,15 @@ jQuery(document).ready(function () {
 <body>
 <input id="userid" type="hidden" value="${sessionScope.userid}">
 	<div id="acord1" class="acord">
-		<h3 class="acord_head">Profile Details</h3>
+		<h3 class="acord_head">
+		Profile Details <span></span></h3>
 		<div class="acord_cont">
-			<form action="#" name="">
+			<form action="#" name="" id="flForm">
 				<!-- Splitting the name into Three parts first second and third -->
 				<c:set var="string1" value="${requestScope.freelancerDto.name12}" />
 				<c:set var="string2" value="${fn:split(string1, ' ')}" />
 				<div class="name">
-					<label>Full Name :</label> 
+					<label>Full Name <text>*</text> :</label> 
 					<input type="text" id="fname61"	name="fname61" value='${freelancerDto.name12}' onkeypress="return validateFLName(event);"/> 
 					<span id="error61"></span>
 				</div>
@@ -151,11 +152,11 @@ jQuery(document).ready(function () {
 						id="lname63" value="${string2[2]}" onkeypress="return validateFLName(event);"/> <span id="error63"></span>
 				</div> --%>
 				<div class="Email">
-					<label>Email(Login Id) :</label> <input type="email" id="email64"
+					<label>Email(Login Id) <text>*</text> :</label> <input type="email" id="email64"
 						name="email64" value="${requestScope.freelancerDto.email12}" /> <span
 						id="error64"></span>
 				</div>
-				<div class="photo">
+				 <div class="photo">
 				<img src="<%=request.getContextPath()%>/resources/images/avtar.jpg" id="profilepic" name="profilepic" width="140" height="160" border="0" alt="PROFILE PICTURE" onError="this.src= <%=request.getContextPath()%>/resources/images/avtar.jpg ;" />
 				
 				<div class="fileUpload btn btn-primary">
@@ -163,16 +164,18 @@ jQuery(document).ready(function () {
                         <input type="file" id="fileupload"  class="upload" name="picture" style="visibility: visible" onchange="changeImage(this);"/>         
                       </div>
 				</div>
-				
+				 
 			</form>
-			<input class="skipbtn9" type="button" value="Save & Continue" name="save" onclick="return freeLancerValidate();"/>
+			<input class="skipbtn9" type="button" value="Save & Continue" name="save" form="flForm" onclick="return freeLancerValidate();"/>
 			<input class="skip" type="button" id="skip1" value="Skip" name="skip" />
 		</div>
-		<h3 class="acord_head">Location Details</h3>
+		<h3 class="acord_head">
+		<span></span>
+		Location Details</h3>
 		<div class="acord_cont">
 			<form name="" class="multi" id="freeContact">
 				<div class="flatNo">
-					<label>Building No./Flat No./Society No. :</label> <input
+					<label>Building No./Flat No./Society No.<text>*</text> :</label> <input
 						type="text" name="builNo65" id="builNo65" />
 						<span id="error65"></span>
 				</div>
@@ -187,14 +190,14 @@ jQuery(document).ready(function () {
 						<span id="error67"></span>
 				</div>
 				<div class="pin">
-					<label>Pincode :</label> <input type="text" name="pin68" id="pin68" onkeypress="return validate14(event)"/>
+					<label>Pincode <text>*</text> :</label> <input type="text" name="pin68" id="pin68" onkeypress="return validate14(event)"/>
 				<span id="error68"></span>
 				</div>
 				
 				<c:set var="cntid"/>
 				
 				<div class="country">
-					<label>Country :</label> 
+					<label>Country <text>*</text> :</label> 
 					<select id="countryid" onchange="getStates('<%=request.getContextPath()%>')">
 						<option value="0">--Select--</option>
 						<c:forEach var="country" items="${countries}">
@@ -205,14 +208,14 @@ jQuery(document).ready(function () {
 				</div>
 				<span id="errorflcountry"></span>
 				<div class="state">
-					<label>State :</label> 
+					<label>State <text>*</text> :</label> 
 					<select id="stateid" onchange="getCities('<%=request.getContextPath()%>')">
 						<option value="0">--Select--</option>
 					</select>
 	     		</div>
 				<span id="errorflstate"></span>
 				<div class="city">
-					<label>City :</label> 
+					<label>City <text>*</text> :</label> 
 					<select id="cityid">
 						<option value="0">--Select--</option>
 					</select>
@@ -226,7 +229,9 @@ jQuery(document).ready(function () {
 			<input class="skip" type="button" id="skip1" value="Skip" name="skip" />
 		</div>
 
-		<h3 class="acord_head">Contact Information</h3>
+		<h3 class="acord_head">
+		<span></span>
+		Contact Information</h3>
 		<div class="acord_cont">
 			<form action="" class="multi" id="frmLocDetails">
 				<div id="cont">
@@ -238,7 +243,7 @@ jQuery(document).ready(function () {
 							<option value="4">PERSONAL-LANDLINE</option>
 						</select> 
 						<input type="text" name="contactNo69" id="phonevalue1" onkeypress="return validate14(event)" value="${freelancerDto.contact12}"/>
-					    <input type="button" value="+" id="addcontact">
+					    <input type="button" value="+" class="addcontact">
 					</p>
 				<br>
 				<span id="errorflcontact"></span>
@@ -253,7 +258,9 @@ jQuery(document).ready(function () {
 			<input class="skip" type="button" id="skip1" value="Skip" name="skip"/>
 		</div>
 
-		<h3 class="acord_head">Education Details</h3>
+		<h3 class="acord_head">
+		<span></span>
+		Education Details</h3>
 		<div class="acord_cont">
 			<form class="multi" id="frmEduDetails">
 				<div class="dtype">
@@ -264,8 +271,9 @@ jQuery(document).ready(function () {
 						<option value="Graduate">Graduate</option>
 						<option value="Post Graduate">Post Graduate</option>
 					</select>
+					<span id="errorfldegreetype"></span> 
 				</div>
-				<span id="errorfldegreetype"></span> 
+				
 				
 				<!-- <div class="qua">
 					<label>Qualification :</label> <input type="text"
@@ -281,15 +289,11 @@ jQuery(document).ready(function () {
 						<option value="B.E">B.E.</option>
 						<option value="B.Sc">B.Sc.</option>
 					</select>
+					<span id="errorflspec"></span> 
 				</div>
-				 <span id="errorflspec"></span> <br><br>
+				 
 				<!--<div class="seperate">-->
-				<div class="university">
-
-					<label>University: </label> <input type="text" name="university72"
-						id="university72" />
-						<span id="error72"></span>
-				</div>
+				
 <br><br>
 				<div class="year">
 
@@ -307,6 +311,12 @@ jQuery(document).ready(function () {
 					</select>
 					 <span id="errorflyearofpassing"></span> 
 
+				</div>
+				<div class="university">
+
+					<label>University: </label> <input type="text" name="university72"
+						id="university72" />
+						<span id="error72"></span>
 				</div>
 
 			</form>

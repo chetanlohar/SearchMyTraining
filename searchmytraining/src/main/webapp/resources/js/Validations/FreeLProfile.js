@@ -127,15 +127,15 @@ $(document).ready(
 				}
 			});
 
-			$("#flcity").on('change', function(e) {
-				if ($("#flcity").val() != '0') {
+			$("#cityid").on('change', function(e) {
+				if ($("#cityid").val() != '0') {
 					$("#errorflcity").html('');
 					return true;
 				}
 			});
 
-			$("#contactType").on('change', function(e) {
-				if ($("#contactType").val() != '0') {
+			$("#phonetypeid1").on('change', function(e) {
+				if ($("#phonetypeid1").val() != '0') {
 					$("#errorflcontact").html('');
 					return true;
 				}
@@ -235,19 +235,7 @@ function freeLancerValidate() {
 		$("#error61").html("Please Enter Valid FirstName.")
 
 		return false;
-	} else if ($("#mname62").val() == "") {
-		$("#mname62").focus();
-		$("#error62").html("Please Enter Valid Name.")
-
-		return false;
-	} else if ($("#lname63").val() == ""
-			|| $("#lname63").val().match(/([0-9])/)
-			|| $("#lname63").val().length < 3) {
-		$("#lname63").focus();
-		$("#error63").html("Please Enter Valid LastName.")
-
-		return false;
-	} else if ($("#email64").val() == "" || !Cmail.test(mail)) {
+	}  else if ($("#email64").val() == "" || !Cmail.test(mail)) {
 		$("#email64").focus();
 		$("#error64").html("Please Enter Email Id")
 		return false;
@@ -356,7 +344,7 @@ function freeLancerValidate4() {
 
 		$("#fldegreetype").focus();
 
-		$("#errorfldegreetype").html("Please Select Type of Contact Number.")
+		$("#errorfldegreetype").html("Please Select Your Degree Type.")
 		return false;
 	} else if ($("#qualification71").val() == "") {
 		$("#error71").html("")
@@ -368,7 +356,7 @@ function freeLancerValidate4() {
 
 		$("#flspec").focus();
 
-		$("#errorflspec").html("Please Select Type of Contact Number.")
+		$("#errorflspec").html("Please Select Your Specification.")
 		return false;
 	} else if ($("#flyearofpassing").val() == ""
 			|| $("#flyearofpassing").val() == '0') {
@@ -376,7 +364,7 @@ function freeLancerValidate4() {
 		$("#flyearofpassing").focus();
 
 		$("#errorflyearofpassing")
-				.html("Please Select Type of Contact Number.")
+				.html("Please Select Year Of Passing.")
 		return false;
 	} else if ($("#university72").val() == "") {
 		$("#university72").focus();

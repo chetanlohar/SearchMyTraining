@@ -192,7 +192,7 @@ var number = /([0-9])/;
 					
 $("#web59").on('keyup', function(e) {
 	var reg=/^\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/;
-	if ($("#web59").val() == "" || $("#web59").val().match(reg)) {
+	if ($("#web59").val() == " " || $("#web59").val().match(reg)) {
 		$("#web59").focus();
 
 		$("#error59").html("Please Enter Website")

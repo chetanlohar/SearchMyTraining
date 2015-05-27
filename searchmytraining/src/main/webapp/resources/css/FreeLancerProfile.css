@@ -36,39 +36,20 @@ body {
 	background-color: #cecece;
 }
 
-/* .acord .acordUp span, .acord .acordDown span {
-	background: url(../i/acordSprite.png) no-repeat;
-	width: 7px;
-	height: 7px;
-	top: 17px;
-	left: 10px;
-	position: absolute;
-}
-
-.acord .acordUp span {
-	background-position: 0px -7px;
-}
-
-.acord .acordDown span {
-	background-position: 0px 0px;
-}
-
 .acord .plus span, .acord .minus span {
-	background: url(../i/acordSprite2.png) no-repeat;
-	width: 8px;
-	height: 8px;
-	top: 17px;
-	left: 10px;
-	position: absolute;
-}
-
-.acord .minus span {
-	background-position: 0px -9px;
-}
-
+	background: url(../../resources/images/acordSprite2.png) no-repeat; 
+	width: 8px; 
+	height: 8px; 
+	top: 17px; 
+	left: 10px; 
+	position: absolute; 
+	}
+.acord .minus span { 
+	background-position: 0px -9px; 
+	}
 .acord .plus span {
-	background-position: 0px 0px;
-} */
+	background-position: 0px 0px; 
+	}
 
 .acord .acord_cont {
 	padding: 2.5em 2.2em;
@@ -79,16 +60,13 @@ body {
 	border-width: 1px;
 	width: 85%;
 }
-
-
+text{
+	color: red;
+}
 .acord .acord_cont .photo img {
 	margin-left: 250px;
 	margin-bottom: 10px;
-
-
 }
-
-
 
 .acord .acord_cont .photo .fileUpload {
     position: relative;
@@ -240,8 +218,9 @@ p a img {
 
 .acord .acord_cont .year {
 	height: 30px;
-	width: 400px;
-	margin: 20px 0px 20px 0px;
+	width: 700px;
+	float:left;
+	margin-bottom: 20px;
 }
 
 .acord .acord_cont .methodology {
@@ -458,7 +437,7 @@ legend {
 
 .acord .acord_cont #cont {
 	height: auto;
-	margin: 0px 0px 20px 0px;
+	
 	width: 100%;
 	float: left;
 }
@@ -518,19 +497,19 @@ margin-top: 20px;
 .acord .acord_cont .spec {
 	height: 30px;
 	margin-bottom: 20px;
-	width: 400px;
+	width: 700px;
 	float: left;
 }
 .acord .acord_cont .dtype {
 	height: 30px;
 	margin-bottom: 20px;
-	width: 400px;
+	width: 700px;
 	float: left;
 }
 .acord .acord_cont .university {
 	height: 30px;
-	
-	margin-top: 20px;
+	float:left;
+	margin-bottom: 20px;
 }
 
 .acord .acord_cont form select {
@@ -578,7 +557,7 @@ margin-top: 20px;
 	line-height: 30px;
 	margin-left: 10px;
 }
-.acord .acord_cont input#addcontact {
+.acord .acord_cont #cont input[type="button"].addcontact {
 	height: 25px;
 	width: 25px;
 	border-radius:50%;
