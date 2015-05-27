@@ -12,8 +12,7 @@
 	type="text/css">
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/js/datepicker/date.js"></script>
-	<script type="text/javascript"
-	src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+
 	
 
 <script type="text/javascript">
@@ -71,9 +70,9 @@ function freelAddCalender(path) {
 	}
 </script>
 
-<script language="JavaScript">
+<script type="text/javascript" >
 $(document).ready(function() {
-	alert(" addd")
+
 
 	function Validate() {
 		var image = document.getElementById("file").value;
@@ -84,14 +83,39 @@ $(document).ready(function() {
 		}
 	
 	}
-	jQuery(".tm-input").tagsManager();
+
 	$('#Fdate,#Tdate').datepicker();
 	
 
 });
 </script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+$('.tagRemove').click(function(event) {
+	           alert("see you")
+              event.preventDefault();
+              $(this).parent().remove();
+          });
+          $('ul.tags').click(function() {
+              $('#tags-field').focus();
+          });
+          $('#tags-field').keypress(function(event) {
+              if (event.which == '32') {
+				  	
+                  if ($(this).val() != '') {
+                      $('<li class="addedTag">' + $(this).val() + '<span class="tagRemove" onclick="$(this).parent().remove();">x</span><input type="hidden" value="' + $(this).val() + '" name="tags[]"></li>').insertBefore('.tags .tagAdd');
+                      $(this).val('');
+                     
+                  }
+              }
+          });
+
+});
+
+</script>
 </head>
-<body>
+<body >
 <div id="acord2" class="acord">
                         	<h3 class="acord_head">ADD Calender</h3>
                         	<div class="acord_cont">
@@ -147,19 +171,30 @@ $(document).ready(function() {
                         	</div>
                         	<div class="keyCode">
                         	<label>KeyCode:</label>
-                        	
+                        	 <ul class="tags">
+    
+                           <li class="tagAdd taglist">
+                          <input type="text" id="tags-field">
+                               </li>
+                                 </ul>
                         
                         	</div>
-                        	
-                        	
+                        	          	
                         
                         	
                         	<div class="browse">
                         	<label>Upload Calender:</label>
+                        	<input id="uploadFile" placeholder="Choose File" disabled="disabled" />
                         	<div class="fileUpload btn btn-primary">
                                      <span>Brouchure</span>
                                       <input type="file" class="upload" id="fileupload" name="fileUpload"/>
                               </div>
+                              <script type="text/javascript">
+                              document.getElementById("fileupload").onchange = function () {
+                            	    document.getElementById("uploadFile").value = this.value;};
+                              </script>
+    
+
                               </div>
                              <div class="submit">
                         	<input type="submit"  id="Cadd"  value="Add">

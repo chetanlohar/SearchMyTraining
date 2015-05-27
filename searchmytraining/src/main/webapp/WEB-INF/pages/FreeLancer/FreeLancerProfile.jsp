@@ -12,12 +12,11 @@ and open the template in the editor.
 <html lang=''>
 <head>
 <title>Free Lancer Profile</title>
-<meta charset='utf-8'>
+
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<script type="text/javascript"
-	src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/reset.css"
 	type="text/css">
@@ -60,8 +59,8 @@ and open the template in the editor.
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/js/include.js"></script>
 	
-	 <script type="text/javascript"
-	src="<%=request.getContextPath()%>/resources/js/tagging.js"></script>
+	<%--  <script type="text/javascript"
+	src="<%=request.getContextPath()%>/resources/js/tagging.js"></script> --%>
 	
 	<script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/js/jquery/jquery.iconmenu.js"></script>
