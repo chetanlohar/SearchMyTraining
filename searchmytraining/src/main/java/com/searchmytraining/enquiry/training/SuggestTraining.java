@@ -20,12 +20,12 @@ import com.searchmytraining.entity.TrainingEntity;
  
 public class SuggestTraining {
 	
-    private List<String> initLookup(AnalyzingInfixSuggester suggester, String name, String addlParam) {
+    private List<String> initLookup(AnalyzingInfixSuggester suggester, String name) {
     	List<String>  lstResults = new ArrayList<String>();
         try {
             List<Lookup.LookupResult> results;
             HashSet<BytesRef> contexts = new HashSet<BytesRef>();
-            contexts.add(new BytesRef(addlParam.getBytes("UTF8")));
+            //contexts.add(new BytesRef(addlParam.getBytes("UTF8")));
             // Do the actual lookup.  We ask for the top 10 results.
             results = suggester.lookup(name, contexts, 10, true, false);
             for (Lookup.LookupResult result : results) {
@@ -64,10 +64,10 @@ public class SuggestTraining {
     @PostConstruct
     public void init(){
     	index_dir = new RAMDirectory();
-        analyzer = new StandardAnalyzer(Version.LATEST);
+        analyzer = new StandardAnalyzer();
         ArrayList<TrainingEntity> trainings = new ArrayList<TrainingEntity>(); //This should be replaced with code to load all the traning from DB
         try {
-			suggester = new AnalyzingInfixSuggester(Version.LATEST, index_dir, analyzer);
+			suggester = new AnalyzingInfixSuggester(index_dir, analyzer);
 			suggester.build(new TrainingIterator(trainings.iterator()));
 		} catch (IOException e) {			
 			e.printStackTrace();
@@ -77,7 +77,7 @@ public class SuggestTraining {
 
     }
     
-    public List<String> doAutoSuggest(String inputStr, String addlParam) {           
-    	return initLookup(suggester, inputStr, addlParam);
+    public List<String> doAutoSuggest(String inputStr) {           
+    	return initLookup(suggester, inputStr);
     }	
 }
