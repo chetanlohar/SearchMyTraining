@@ -60,12 +60,8 @@ public class UploadFileController {
 			Double cPrice = Double.parseDouble(request.getParameter("cPrice"));
 			String CDesc = request.getParameter("CDesc");
 			String Ckey = request.getParameter("Ckey");
-			String keyCode = request.getParameter("tags");
-			String[] keywords = keyCode.split(" ");
-			for (String keyword : keywords) {
-				int i = 0;
-				System.out.println("keyword " + keyword);
-			}
+			String[] keyCode = request.getParameterValues("tags[]");
+
 			Integer userid = Integer.parseInt(session.getAttribute("userid")
 					.toString());
 			Integer trnIndstrSubCatId = Integer.parseInt(request
@@ -101,13 +97,12 @@ public class UploadFileController {
 			entity.setRank(0);
 			entity.setvFlag("Not Varified");
 			entity.setUpdatedOn(currentTime);
-			System.out.println("path " + entity.getBrochure());
+			
 			calnderService.addCalender(entity);
 
-			  for(String element:keywords){ 
+			  for(String element:keyCode){ 
 				  	KeywordEntity keywordEntity = new KeywordEntity();
 				  	keywordEntity.setUser(usrEntity);
-			  		keywordEntity.setUser(usrEntity);
 			  		keywordEntity.setKeword(element);
 			  		keywordService.addKeyWords(keywordEntity);
 			  	}
@@ -123,15 +118,11 @@ public class UploadFileController {
 				// File realUpload = new File("C:/");
 				outputStream = new FileOutputStream("C:\\SearchMT\\"
 						+ fileUpload.getOriginalFilename());
-				/*
-				 * System.out.println("====22=========");
-				 * System.out.println(fileUpload.getOriginalFilename());
-				 * System.out.println("=============");
-				 */
+				
+				 
 				int readBytes = 0;
 				byte[] buffer = new byte[10000];
 				while ((readBytes = inputStream.read(buffer, 0, 10000)) != -1) {
-					// System.out.println("===ddd=======");
 					outputStream.write(buffer, 0, readBytes);
 				}
 				outputStream.close();
@@ -141,7 +132,6 @@ public class UploadFileController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		/* session.setAttribute("userid", session.getAttribute("userid")); */
 		return "pages/FreeLancer/FreeLancerProfile";
 	}
 }
