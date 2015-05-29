@@ -21,23 +21,26 @@ and open the template in the editor.
 <script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/jquery/jssor.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/jquery/jssor.slider.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/jquery/jquery.iconmenu.js"></script>
-
 <script src="<%=request.getContextPath()%>/resources/js/my_js1.js"></script>
 <script src="<%=request.getContextPath()%>/resources/js/tabBar.js"></script>
 <script src="<%=request.getContextPath()%>/resources/js/toggle.js"></script>
 <script src="<%=request.getContextPath()%>/resources/js/combine.js"></script> 
 <script src="<%=request.getContextPath()%>/resources/js/work/calender.js"></script>
+<script src="<%=request.getContextPath()%>/resources/js/jquery/jquery-1.10.2.min.js"></script>
+<script src="<%=request.getContextPath()%>/resources/js/jquery/jquery.autocomplete.min.js"></script>
+<!-- <script async src="//code.jquery.com/ui/1.10.1/jquery-ui.min.js"></script> -->
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/main_auto.css" media="all" type="text/css">
 <script>
   function LoadPage(){
-    $.ajax({
+   <%--  $.ajax({
         url: "<%=request.getContextPath()%>/dosearch",  
-        type: "POST",            
+        type: "GET",            
         cache: false,
         success: function (html) {  
             //place servicecall.php's content to the content div
             $('#mid').html(html);   
         }       
-    });
+    }); --%>
     } 
 </script>
 <script type="text/javascript">
@@ -61,7 +64,8 @@ $(window).scroll(function(){
 });
  
 </script>
- 
+
+
 </head>
 <body>
 	<%@include file="layouts/Header.jsp"%>
@@ -116,7 +120,7 @@ $(window).scroll(function(){
 		<div class="search_bar">
 
 			<div class="course-name">
-				<input class="input-1" id="search_name" name="search_name" type="text" placeholder="Course Name" />
+				<input class="input-1" id="w-input-search" type="text" placeholder="Course Name" />
 			</div>
 			<div class="location">
 				<input class="input-2" type="text" placeholder="Location" />
@@ -129,6 +133,25 @@ $(window).scroll(function(){
 			</div>
 
 		</div>
+		
+		<script>
+			$(document).ready(function() {
+				console.log("in auto_complete..path: ${pageContext.request.contextPath}");
+				$('#w-input-search').autocomplete({
+					serviceUrl: '${pageContext.request.contextPath}/dosearch',
+					paramName: "tagName",
+					delimiter: ",",
+				    transformResult: function(response) {
+				        return {
+				            suggestions: $.map($.parseJSON(response), function(item) {
+				                /* return { value: item.tagName, data: item.id }; */
+				                return {value: item};
+				            })
+				        };
+				    }
+				});
+			});
+		</script>
 
 		<div class="brow_train">
 			<ul class="brow_obpt">

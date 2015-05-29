@@ -31,7 +31,8 @@ public class SuggestTraining {
             for (Lookup.LookupResult result : results) {
                 TrainingEntity trainEnt = getTraining(result);
                 if (trainEnt != null) {
-                    lstResults.add(trainEnt.getTitle() + ":" + trainEnt.getDescription() );
+                    /*lstResults.add(trainEnt.getTitle() + ":" + trainEnt.getDescription() );*/
+                	lstResults.add(trainEnt.getTitle());
                 }
             }
         } catch (IOException e) {
