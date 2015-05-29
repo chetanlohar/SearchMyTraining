@@ -30,8 +30,8 @@ and open the template in the editor.
 <script>
   function LoadPage(){
     $.ajax({
-        url: "<%=request.getContextPath()%>/calenderdiv",  
-        type: "GET",            
+        url: "<%=request.getContextPath()%>/dosearch",  
+        type: "POST",            
         cache: false,
         success: function (html) {  
             //place servicecall.php's content to the content div

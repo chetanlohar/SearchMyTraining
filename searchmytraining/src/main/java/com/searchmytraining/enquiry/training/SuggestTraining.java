@@ -66,18 +66,22 @@ public class SuggestTraining {
     	index_dir = new RAMDirectory();
         analyzer = new StandardAnalyzer();
         ArrayList<TrainingEntity> trainings = new ArrayList<TrainingEntity>(); //This should be replaced with code to load all the traning from DB
+        TrainingEntity training1 = new TrainingEntity("Spring Framework", "java,spring,framework,advance", "Spring Framework is a Java Framework and developed in java which is based on principle of IOC", "programming,technology", 1);
+        TrainingEntity training2 = new TrainingEntity("Hibernate", "hibernate,java,orm,orm tool,framework,database tool", "Hibernate is a java framework which is called as ORM tool that is Object Relational Mapping tool", "programming,technology", 2);
+        TrainingEntity training3 = new TrainingEntity("Personaliy Developement", "communication,speaking,personality,self developement", "In Personality Developement several things will taugh how to talk how to behave so you can develope your personality and impress all ur peoples around you", "communication", 3);
+        trainings.add(training1);
+        trainings.add(training2);
+        trainings.add(training3);
         try {
 			suggester = new AnalyzingInfixSuggester(index_dir, analyzer);
 			suggester.build(new TrainingIterator(trainings.iterator()));
 		} catch (IOException e) {			
 			e.printStackTrace();
 		}
-
-        
-
     }
     
-    public List<String> doAutoSuggest(String inputStr) {           
+    public List<String> doAutoSuggest(String inputStr) {
+    	init();
     	return initLookup(suggester, inputStr);
     }	
 }
