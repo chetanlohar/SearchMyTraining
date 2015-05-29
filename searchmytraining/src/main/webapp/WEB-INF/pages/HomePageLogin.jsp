@@ -24,6 +24,9 @@
 			</div>
 			<form action="#" name="myform" onsubmit="return (validation());">
 				<h2>Login</h2>
+				   <div class="errormsg">
+				   <span class="error_msg_auth" id="auth_err">your Password or Username is not correct</span>
+				   </div>
 
 				<div class="mailto">
 					<input type="email" autocomplete="off" name="Email" value=""
