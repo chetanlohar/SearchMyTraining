@@ -96,10 +96,10 @@ public class RegistrationController {
 
 	@RequestMapping("/trainingprovider_updateprofile")
 	public String TrainingProviderProfileMapping(ModelMap model) {
-		userid = userservice.getMaxUserId("userId");
+		/*userid = userservice.getMaxUserId("userId");
 		user = userservice.getUser(userid);
 		model.addAttribute("trainerdto", this.trainerdto1);
-		model.addAttribute("user", user);
+		model.addAttribute("user", user);*/
 		return "pages/TrainingProvider/TrainingProviderProfile";
 	}
 
