@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -43,7 +44,12 @@ $(function(){
 
 <body>
 	<%@include file="../layouts/Header.jsp"%>
+	<c:if test="${'true' eq param.logout}">
+		<div style="color: blue">
+			Logout successful!!!<br />
 
+		</div>
+	</c:if>
 	<div class="Log_container">
 		<div class="Log_warapar">
 			<div class="log_bar">
@@ -51,11 +57,11 @@ $(function(){
 					<h1>Sign In</h1>
 					<form action="#">
 						<div class="user">
-							<input type="text" name="" placeholder="  User or Email Address">
+							<input type="text" name="username" placeholder="  User or Email Address">
 
 						</div>
 						<div class="pass">
-							<input type="password" name="" placeholder="  Password">
+							<input type="password" name="password" placeholder="  Password">
 						</div>
 
 						<div class="submit">
@@ -88,7 +94,7 @@ $(function(){
 
 					<div class="Nuser">
 						<p>Not Account Yet ?</p>
-                        <a href="#">Sign Up</a>
+						<a href="#">Sign Up</a>
 					</div>
 
 				</div>

@@ -15,7 +15,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.client.HttpServerErrorException;
 
 @Controller
 @RequestMapping(value = "/rest/security")
@@ -27,12 +26,9 @@ public class AuthenticationController {
 		return headers;
 	}
 	@RequestMapping("/login")
-	public String TrainingProviderProfileMapping(ModelMap model) {
-		/*userid = userservice.getMaxUserId("userId");
-		user = userservice.getUser(userid);
-		model.addAttribute("trainerdto", this.trainerdto1);
-		model.addAttribute("user", user);*/
-		return "pages/LogIn";
+	public String login(ModelMap model) {
+		
+		return "pages/Login";
 		
 	}
 
