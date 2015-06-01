@@ -34,7 +34,7 @@ body{
     background: -ms-linear-gradient(top,  rgba(212,228,239,1) 4%,rgba(212,228,239,1) 15%,rgba(134,174,204,1) 100%); /* IE10+ */
     background: linear-gradient(to bottom,  rgba(212,228,239,1) 4%,rgba(212,228,239,1) 15%,rgba(134,174,204,1) 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4e4ef', endColorstr='#86aecc',GradientType=0 ); /* IE6-9 */
-    background: url("../images/bg_1.png") no-repeat;
+    background: url("../images/bg_2.png") no-repeat;
     background-size: 100% 100%;
     /*
             -webkit-box-shadow: 0 10px 6px -6px #777;

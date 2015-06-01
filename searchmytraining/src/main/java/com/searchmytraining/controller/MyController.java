@@ -59,5 +59,9 @@ public class MyController {
 	{
 		return "pages/downlodCalender";
 	}
-	
+	@RequestMapping("/LOG")
+	public String GeLOG()
+	{
+		return "pages/LogIn";
+	}
 }
