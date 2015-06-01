@@ -44,20 +44,22 @@ $(function(){
 
 <body>
 	<%@include file="../layouts/Header.jsp"%>
-	<c:if test="${'true' eq param.logout}">
-		<div style="color: blue">
-			Logout successful!!!<br />
 
-		</div>
-	</c:if>
 	<div class="Log_container">
 		<div class="Log_warapar">
 			<div class="log_bar">
 				<div class="form_container ">
 					<h1>Sign In</h1>
+					<c:if test="${'true' eq param.logout}">
+						<div style="color: blue">
+							Logout successful!!!<br />
+
+						</div>
+					</c:if>
 					<form action="#">
 						<div class="user">
-							<input type="text" name="username" placeholder="  User or Email Address">
+							<input type="text" name="username"
+								placeholder="  User or Email Address">
 
 						</div>
 						<div class="pass">
