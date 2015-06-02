@@ -1,2 +1,5 @@
-/com/
+# Compiled source #
+###################
 *.class
+
+/target

@@ -4,46 +4,42 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="tbl_rolemaster")
+@Table(name="user_roles")
 public class RoleEntity implements Serializable{
 
 	private static final long serialVersionUID = 1L;
-
 	@Id
-	private Integer roleId;
-	
-	@Column(name="roleType")
-	private String roleType;
-	
-	@Column(name="roleDescription")
-	private String roleDesc;
-
-	public Integer getRoleId() {
-		return roleId;
+	@GeneratedValue
+	private Integer USER_ROLE_ID;
+	@Column(name="ROLE")
+	private String ROLE;
+	@ManyToOne(fetch=FetchType.EAGER,targetEntity=UserEntity.class)
+	@JoinColumn(name="USERID")
+	private UserEntity user;
+	public Integer getUSER_ROLE_ID() {
+		return USER_ROLE_ID;
 	}
-
-	public void setRoleId(Integer roleId) {
-		this.roleId = roleId;
+	public void setUSER_ROLE_ID(Integer uSER_ROLE_ID) {
+		USER_ROLE_ID = uSER_ROLE_ID;
 	}
-
-	public String getRoleType() {
-		return roleType;
+	public String getROLE() {
+		return ROLE;
 	}
-
-	public void setRoleType(String roleType) {
-		this.roleType = roleType;
+	public void setROLE(String rOLE) {
+		ROLE = rOLE;
 	}
-
-	public String getRoleDesc() {
-		return roleDesc;
+	public UserEntity getUser() {
+		return user;
 	}
-
-	public void setRoleDesc(String roleDesc) {
-		this.roleDesc = roleDesc;
+	public void setUser(UserEntity user) {
+		this.user = user;
 	}
-	
 }

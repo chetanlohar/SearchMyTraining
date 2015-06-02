@@ -61,6 +61,9 @@
 
 	<bean id="persistenceExceptionTranslationPostProcessor"
 		class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+		
+	<bean id="userEntity" class="com.searchmytraining.entity.UserEntity" />
+	<bean id="roleEntity" class="com.searchmytraining.entity.RoleEntity" />
 
 	<bean id="mapper" class="org.dozer.DozerBeanMapper" scope="singleton">
 		<property name="mappingFiles">

@@ -26,9 +26,9 @@
 			logout-url="/j_spring_security_logout" />
 	</sec:http>
 
-	<beans:bean id="smtSuccessHandler"
+	<!-- <beans:bean id="smtSuccessHandler"
 		class="com.searchmytraining.security.SMTLoginSuccessHandler">
-	</beans:bean>
+	</beans:bean> -->
 
 	<beans:bean id="encoder"
 		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
