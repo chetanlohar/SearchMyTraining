@@ -441,7 +441,6 @@ $(window).scroll(function(){
 							<ul>
 								<li><h1>Training Institute3</h1></li>
 								<ul>
-								
 									<li><a href="#">Training Institute</a></li>
 									<li><a href="#">Training Institute</a></li>
 									<li><a href="#">Training Institute</a></li>
