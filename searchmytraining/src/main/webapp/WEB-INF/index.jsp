@@ -247,7 +247,7 @@ $(window).scroll(function(){
 					<div id="home-content" class="contentblock">
 						<div class="top-institute">
 							<ul>
-								<li><h1>Information Technologies</h1></li>
+								<li><h1>Information Technologies1</h1></li>
 								<ul>
 									<li><a href="#">Information Technologies</a></li>
 									<li><a href="#">Information Technologies</a></li>
@@ -273,7 +273,7 @@ $(window).scroll(function(){
 						</div>
 						<div class="top-institute">
 							<ul>
-								<li><h1>Information Technologies</h1></li>
+								<li><h1>Information Technologies1</h1></li>
 								<ul>
 									<li><a href="#">Information Technologies</a></li>
 									<li><a href="#">Information Technologies</a></li>
@@ -299,7 +299,7 @@ $(window).scroll(function(){
 						</div>
 						<div class="top-institute">
 							<ul>
-								<li><h1>Information Technologies</h1></li>
+								<li><h1>Information Technologies1</h1></li>
 								<ul>
 									<li><a href="#">Information Technologies</a></li>
 									<li><a href="#">Information Technologies</a></li>
@@ -332,7 +332,7 @@ $(window).scroll(function(){
 
 						<div class="top-institute">
 							<ul>
-								<li><h1>Training Institute</h1></li>
+								<li><h1>Training Institute2</h1></li>
 								<ul>
 									<li><a href="#">Training Institute</a></li>
 									<li><a href="#">Training Institute</a></li>
@@ -358,7 +358,7 @@ $(window).scroll(function(){
 						</div>
 						<div class="top-institute">
 							<ul>
-								<li><h1>Training Institute</h1></li>
+								<li><h1>Training Institute2</h1></li>
 								<ul>
 									<li><a href="#">Training Institute</a></li>
 									<li><a href="#">Training Institute</a></li>
@@ -384,7 +384,7 @@ $(window).scroll(function(){
 						</div>
 						<div class="top-institute">
 							<ul>
-								<li><h1>Training Institute</h1></li>
+								<li><h1>Training Institute2</h1></li>
 								<ul>
 									<li><a href="#">Training Institute</a></li>
 									<li><a href="#">Training Institute</a></li>
@@ -413,7 +413,7 @@ $(window).scroll(function(){
 					<div id="ideas-content" class="contentblock hidden">
 						<div class="top-institute">
 							<ul>
-								<li><h1>Training Institute</h1></li>
+								<li><h1>Training Institute3</h1></li>
 								<ul>
 									<li><a href="#">Training Institute</a></li>
 									<li><a href="#">Training Institute</a></li>
@@ -439,7 +439,7 @@ $(window).scroll(function(){
 						</div>
 						<div class="top-institute">
 							<ul>
-								<li><h1>Training Institute</h1></li>
+								<li><h1>Training Institute3</h1></li>
 								<ul>
 									<li><a href="#">Training Institute</a></li>
 									<li><a href="#">Training Institute</a></li>
@@ -465,7 +465,7 @@ $(window).scroll(function(){
 						</div>
 						<div class="top-institute">
 							<ul>
-								<li><h1>Training Institute</h1></li>
+								<li><h1>Training Institute3</h1></li>
 								<ul>
 									<li><a href="#">Training Institute</a></li>
 									<li><a href="#">Training Institute</a></li>
@@ -496,7 +496,7 @@ $(window).scroll(function(){
 					<div id="contact-content" class="contentblock hidden">
 						<div class="top-institute">
 							<ul>
-								<li><h1>Training Institute</h1></li>
+								<li><h1>Training Institute4</h1></li>
 								<ul>
 									<li><a href="#">Training Institute</a></li>
 									<li><a href="#">Training Institute</a></li>
@@ -522,7 +522,7 @@ $(window).scroll(function(){
 						</div>
 						<div class="top-institute">
 							<ul>
-								<li><h1>Training Institute</h1></li>
+								<li><h1>Training Institute4</h1></li>
 								<ul>
 									<li><a href="#"> Institute</a></li>
 									<li><a href="#"> Institute</a></li>
@@ -548,7 +548,7 @@ $(window).scroll(function(){
 						</div>
 						<div class="top-institute">
 							<ul>
-								<li><h1>Training Institute</h1></li>
+								<li><h1>Training Institute4</h1></li>
 								<ul>
 									<li><a href="#"> Institute</a></li>
 									<li><a href="#"> Institute</a></li>
@@ -624,7 +624,7 @@ $(window).scroll(function(){
 				<!--<img src="images/sem.gif" alt="a">-->
 				<h1>SEMINARS</h1>
 				<ul class="text_slide">
-					<marquee direction="up" behavior="scroll" scrollamount="3"
+					<marquee direction="up" behavior="scroll" scrollamount="3" onmouseover="this.stop()" onmouseout="this.start()"
 						height="305">
 
 						<li><a href="#" target="_blank">Seminar on Graphics
