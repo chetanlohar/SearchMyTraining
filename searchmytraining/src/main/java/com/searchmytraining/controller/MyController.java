@@ -64,4 +64,9 @@ public class MyController {
 	{
 		return "pages/LogIn";
 	}
+	@RequestMapping("/about")
+	public String About()
+	{
+		return "pages/AboutUs";
+	}
 }
