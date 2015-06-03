@@ -1,6 +1,1 @@
-# Compiled source #
-###################
-*.class
-
-/target
-/com/
+/com

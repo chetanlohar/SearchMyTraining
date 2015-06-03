@@ -13,5 +13,6 @@ public interface ICalenderService
 	public List<CalenderEntity> getAllCalender();
 	public String updateCalender(CalenderEntity entity);
 	public void removeCalender(long calenderId);
+	public List<CalenderEntity> getCalendersByKeyword(String kyeword); 
 
 }

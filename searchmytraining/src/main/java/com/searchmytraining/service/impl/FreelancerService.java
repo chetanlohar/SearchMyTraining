@@ -57,6 +57,7 @@ public class FreelancerService implements IFreelancerService
 		// Insertion of user in users table
 		userdao.addUser(user);
 		//Insertion of Role in user_roles table
+		RoleEntity role = new RoleEntity();
 		role.setROLE("TPF");
 		role.setUser(user);
 		roledao.setRoleToUser(role);
