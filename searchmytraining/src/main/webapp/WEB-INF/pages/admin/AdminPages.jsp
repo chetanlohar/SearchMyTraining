@@ -26,8 +26,17 @@ and open the template in the editor.
 	<link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/AdminPages.css"
 	type="text/css">
+	<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/css/tooltip.css"
+	type="text/css">
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/form.css"
+	type="text/css">
+	 <link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/css/tag-basic-style.css"
+	type="text/css"> 
+	<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/css/screen.css"
 	type="text/css">
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/js/jquery/jquery-1.10.2.js"></script>
@@ -44,6 +53,7 @@ and open the template in the editor.
 	src="<%=request.getContextPath()%>/resources/js/AddDel.js"></script>
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/js/jquery/jquery.iconmenu.js"></script>
+ 
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/js/include.js"></script>
 

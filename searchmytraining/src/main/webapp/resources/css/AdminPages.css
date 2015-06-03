@@ -118,10 +118,11 @@ input[type="button"] {
 }
 
 input[type=text] {
-	padding-left: 10px;
+	padding:0px 10px;
 	height: 30px;
 	width: 300px;
 	font-size: 13px;
+	border: 1px solid lightgray;
 }
 
 input[type=text]:FOCUS{
@@ -252,4 +253,179 @@ box-shadow:0 0 3px #40A9DF;
 		endColorstr='#05abe0', GradientType=0);
 	border: none; /* IE6-9 */
 }
+
+/* =====================================Calender Css=============================== */
+.acord .acord_cont .title {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
+}
+.acord .acord_cont .fdate {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
+	
+}
+ .tdate1{
+ background: url('../../resources/images/calender/calendar.png')no-repeat;
+background-position: right;
+margin-right: 10px;
+padding-right:10px;
+border:1px solid lightgray;
+ }
+.acord .acord_cont .Tdate {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
+}
+
+.acord .acord_cont .Industry {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
+}
+.acord .acord_cont .Industry select{
+	width: 300px;
+	height: 30px;
+	color: gray;
+	border: 1px solid lightgray;
+}
+.acord .acord_cont .Ctype {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
+}
+.acord .acord_cont .Category {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
+}
+.acord .acord_cont .Category select{
+	width: 300px;
+	height: 30px;
+	color: gray;
+	border: 1px solid lightgray;
+}
+
+.acord .acord_cont .SubCategory {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
+}
+.acord .acord_cont .SubCategory select{
+	width: 300px;
+}
+.acord .acord_cont .Ctype {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
+}
+.acord .acord_cont .Ctype select{
+	width: 300px;
+	height: 30px;
+	color: gray;
+	border: 1px solid lightgray;
+}
+.acord .acord_cont .price {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
+}
+.acord .acord_cont .description {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
+}
+.acord .acord_cont .keyCode {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
+
+}
+.acord .acord_cont .browse {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
+}
+.acord .acord_cont .browse input{
+	margin:3px 0px 0px 10px;
+	height: 30px;
+	width: 210px;
+}
+.acord .acord_cont .submit {
+	height: 30px;
+	margin: 0px 20px 20px 0px;
+}
+
+.acord .acord_cont .submit  input[type="submit"] {
+	float: left;
+	border: none;
+	width: 150px ;
+	font-size: 18px;
+	height: 30px;
+	color: #FFFFFF;
+	margin-right:10px;
+	margin-left:250px ;
+	margin-top: 20px ;
+	border-radius: 5px;
+	cursor: pointer;
+	background: rgb(135, 224, 253); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(135, 224, 253, 1) 0%,
+		rgba(83, 203, 241, 1) 40%, rgba(5, 171, 224, 1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(135,
+		224, 253, 1)), color-stop(40%, rgba(83, 203, 241, 1)),
+		color-stop(100%, rgba(5, 171, 224, 1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(135, 224, 253, 1) 0%,
+		rgba(83, 203, 241, 1) 40%, rgba(5, 171, 224, 1) 100%);
+	/* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(135, 224, 253, 1) 0%,
+		rgba(83, 203, 241, 1) 40%, rgba(5, 171, 224, 1) 100%);
+	/* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(135, 224, 253, 1) 0%,
+		rgba(83, 203, 241, 1) 40%, rgba(5, 171, 224, 1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(135, 224, 253, 1) 0%,
+		rgba(83, 203, 241, 1) 40%, rgba(5, 171, 224, 1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd',
+		endColorstr='#05abe0', GradientType=0);
+	border: none; /* IE6-9 */
+}
+.acord .acord_cont  .fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin-left: 5px;
+    float: left;
+}
+.acord .acord_cont  .fileUpload span{
+	
+	 color: #fff !important;
+	 margin: 0px 0px;
+}
+.acord .acord_cont  .fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+.acord .acord_cont  .btn-primary {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+.acord .acord_cont  .btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+
+
 

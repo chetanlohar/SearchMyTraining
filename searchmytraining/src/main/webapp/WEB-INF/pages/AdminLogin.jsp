@@ -12,6 +12,7 @@
 <body>
 <div class="head">
 <h1>SearchMyTraining</h1>
+
 </div>
  <div class="container">
  <!-- <div class="header"><h1>SearchMyTraining</h1></div> -->
