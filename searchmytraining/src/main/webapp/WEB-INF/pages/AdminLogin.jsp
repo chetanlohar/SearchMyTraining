@@ -34,6 +34,8 @@
           <input type="text"  id="auser" value="" placeholder="UserName" >
        
           <input type="password"  id="apass" value="" placeholder="Password" >
+          
+          <a href="#">Forgot Password???</a>
           <input type="submit" value="Log In">
        
        </form>     
