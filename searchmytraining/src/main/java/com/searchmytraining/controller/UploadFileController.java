@@ -1,24 +1,20 @@
 package com.searchmytraining.controller;
 
-import org.apache.catalina.Session;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.sql.Timestamp;
 import java.util.Calendar;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipOutputStream;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import com.searchmytraining.entity.CalenderEntity;
@@ -64,12 +60,8 @@ public class UploadFileController {
 			Double cPrice = Double.parseDouble(request.getParameter("cPrice"));
 			String CDesc = request.getParameter("CDesc");
 			String Ckey = request.getParameter("Ckey");
-			String keyCode = request.getParameter("tags");
-			String[] keywords = keyCode.split(" ");
-			for (String keyword : keywords) {
-				int i = 0;
-				System.out.println("keyword " + keyword);
-			}
+			String[] keyCode = request.getParameterValues("tags[]");
+
 			Integer userid = Integer.parseInt(session.getAttribute("userid")
 					.toString());
 			Integer trnIndstrSubCatId = Integer.parseInt(request
@@ -105,13 +97,12 @@ public class UploadFileController {
 			entity.setRank(0);
 			entity.setvFlag("Not Varified");
 			entity.setUpdatedOn(currentTime);
-			System.out.println("path " + entity.getBrochure());
+			
 			calnderService.addCalender(entity);
 
-			  for(String element:keywords){ 
+			  for(String element:keyCode){ 
 				  	KeywordEntity keywordEntity = new KeywordEntity();
 				  	keywordEntity.setUser(usrEntity);
-			  		keywordEntity.setUser(usrEntity);
 			  		keywordEntity.setKeword(element);
 			  		keywordService.addKeyWords(keywordEntity);
 			  	}
@@ -127,15 +118,11 @@ public class UploadFileController {
 				// File realUpload = new File("C:/");
 				outputStream = new FileOutputStream("C:\\SearchMT\\"
 						+ fileUpload.getOriginalFilename());
-				/*
-				 * System.out.println("====22=========");
-				 * System.out.println(fileUpload.getOriginalFilename());
-				 * System.out.println("=============");
-				 */
+				
+				 
 				int readBytes = 0;
 				byte[] buffer = new byte[10000];
 				while ((readBytes = inputStream.read(buffer, 0, 10000)) != -1) {
-					// System.out.println("===ddd=======");
 					outputStream.write(buffer, 0, readBytes);
 				}
 				outputStream.close();
@@ -145,7 +132,6 @@ public class UploadFileController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		/* session.setAttribute("userid", session.getAttribute("userid")); */
 		return "pages/FreeLancer/FreeLancerProfile";
 	}
 }

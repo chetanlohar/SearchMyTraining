@@ -51,7 +51,7 @@ $(function() {
     });
 });
 //=============================Form Page horizontal tab bar================================
-$(function() {
+/*$(function() {
     $('#topmenu a').on('click', function(e) {
         e.preventDefault();
 
@@ -71,4 +71,4 @@ $(function() {
             $(this).addClass('open');
         }
     });
-});
+});*/

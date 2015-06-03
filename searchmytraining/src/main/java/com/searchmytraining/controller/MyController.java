@@ -59,5 +59,20 @@ public class MyController {
 	{
 		return "pages/downlodCalender";
 	}
+	@RequestMapping("/LOG")
+	public String GeLOG()
+	{
+		return "pages/Login";
+	}
+	@RequestMapping("/about")
+	public String About()
+	{
+		return "pages/AboutUs";
+	}
+	@RequestMapping("/AdvSearch")
+	public String Advanc()
+	{
+		return "pages/AdvSearch";
+	}
 	
 }

@@ -26,13 +26,22 @@ body {
 
 .Log_container .Log_warapar .log_bar .form_container {
 	width: 80%;
-	height: 75%;
+	height: 85%;
 	background: #fff;
 	margin: 30px auto;
 	box-shadow: 1px 2px 3px 0px rgba(86, 86, 86, 0.75);
 	font-family: arial;
 }
 
+.Log_container .Log_warapar .log_bar .form_container .msg{
+	width: 300px;
+	height: 30px;
+	font-family: arial;
+	font-size: 14px;
+	background: red;
+	margin: 0 auto;
+	
+}
 .Log_container .Log_warapar .log_bar .form_container h1 {
 	font-family: arial;
 	font-size: 25px;

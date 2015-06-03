@@ -102,6 +102,7 @@
             );
             $('#pop_up_box_6').hide();
             
+            
         });
     });
 })(jQuery);
@@ -128,23 +129,4 @@
     });
 })(jQuery);
 //=========================================================================
-;(function($) {
-    $(function() {
-        $('#advsearch1').bind('click', function(e) {
-            e.preventDefault();
-            $('#pop_up_box_9').bPopup(
-            );
-        });
-    });
-})(jQuery);
 
-$('#pop_up_box_9').magnificPopup({
-	  delegate: 'a',
-	  removalDelay: 500, 
-	  callbacks: {
-	    beforeOpen: function() {
-	       this.st.mainClass = this.st.el.attr('data-effect');
-	    }
-	  },
-	  midClick: true
-	});

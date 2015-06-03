@@ -147,11 +147,7 @@
 			<artifactId>spring-core</artifactId>
 			<version>3.0.3.RELEASE</version>
 		</dependency> -->
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>2.3</version>
-		</dependency>
+		
 
 		<!--Start: Maven Dependency checked in by Vaibhav Khandelwal -->
 		
@@ -164,7 +160,7 @@
 		<dependency>
 			<groupId>org.apache.lucene</groupId>
 			<artifactId>lucene-suggest</artifactId>
-			<version>4.9.0</version>
+			<version>5.1.0</version>
 		</dependency>
 		
 		<dependency>
@@ -175,13 +171,14 @@
 		
 		<!-- End: Maven Dependency checked in by Vaibhav Khandelwal on 25 May -->
 		
-		<!-- Start: Gson Maven Dependency added by Prashant Nemade on 3rd june -->
+		<!-- Start: Maven Dependency(Gson) added by Prashant Nemade 1st June -->
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
 			<version>2.2.2</version>
 		</dependency>
-		<!-- End: Gson Maven Dependency added by Prashant Nemade on 3rd june -->
+		<!-- End: Maven Dependency(Gson) added by Prashant Nemade 1st June -->
+		
 	</dependencies>
 	<build>
 		<plugins>

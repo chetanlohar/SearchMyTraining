@@ -12,7 +12,6 @@
 <body>
 <div class="head">
 <h1>SearchMyTraining</h1>
-
 </div>
  <div class="container">
  <!-- <div class="header"><h1>SearchMyTraining</h1></div> -->
@@ -35,8 +34,6 @@
           <input type="text"  id="auser" value="" placeholder="UserName" >
        
           <input type="password"  id="apass" value="" placeholder="Password" >
-          
-          <a href="#">Forgot Password???</a>
           <input type="submit" value="Log In">
        
        </form>     

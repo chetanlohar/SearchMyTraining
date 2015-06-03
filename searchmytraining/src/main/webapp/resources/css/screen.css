@@ -8,8 +8,7 @@ ul { list-style: outside none none; }
   border: 1px solid #ccc;
   display: table;
   padding: 0.3em;
-  width: 80%;
-  background: red;
+  width: 70%;
   float: left;
 }
 
@@ -21,12 +20,14 @@ ul { list-style: outside none none; }
 }
 
 .tags li.addedTag {
-  background: none repeat scroll 0 0 #1ABC9C;
+  background: none repeat scroll 0 0 #08D7F9;
   border-radius: 5px;
   color: #fff;
-  padding: .5em;
+  padding: .1em;
 }
-
+.tags input[type='text']{
+	width: 150px;
+}
 .tags input,
 li.addedTag {
   border: 1px solid transparent;
@@ -53,3 +54,4 @@ h1 {
   color: #6b6b6b;
   font-size: 1.0em;
 }
+

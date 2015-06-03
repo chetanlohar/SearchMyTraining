@@ -1,5 +1,8 @@
 package com.searchmytraining.enquiry.training;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.Comparator;
 import java.util.HashSet;
@@ -34,7 +37,7 @@ public class TrainingIterator implements InputIterator {
 	}
 
 	public boolean hasContexts() {
-		return true;
+		return false;
 	}
 	
 	public Set<BytesRef> contexts() {
@@ -52,11 +55,18 @@ public class TrainingIterator implements InputIterator {
 	}
 
 	public BytesRef payload() {
-		try{
-			return new BytesRef(currTraining.getDescription().getBytes("UTF8"));
-		}catch(UnsupportedEncodingException ex){
-			throw new Error("Not able to convert to UTF8");
-		}
+		try {
+            ByteArrayOutputStream bos = new ByteArrayOutputStream();
+            ObjectOutputStream out = new ObjectOutputStream(bos);
+            out.writeObject(currTraining);
+            out.close();
+         //   System.out.println("inflated object:"+bos);
+            return new BytesRef(bos.toByteArray());
+        } catch (IOException e) {
+        	e.printStackTrace();
+            throw new Error("Well that's unfortunate.");
+            
+        }
 	}
 
 	public long weight() {

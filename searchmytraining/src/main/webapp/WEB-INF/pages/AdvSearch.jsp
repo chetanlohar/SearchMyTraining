@@ -4,16 +4,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" 	href="/resources/css/pop-up.css" type="text/css">
-<script src="<%=request.getContextPath()%>/resources/js/pop-up.js"></script>
+<%--<link rel="stylesheet" 	href="<%=request.getContextPath()%>/resources/css/pop-up.css" type="text/css">
+ <script src="<%=request.getContextPath()%>/resources/js/pop-up.js"></script>
 <script src="<%=request.getContextPath()%>/resources/js/popup-box.js"></script>
-<title>Advance Search</title>
+ --%><title>Advance Search</title>
 </head>
 <body>
 
-<div id="pop_up_box_9">
-<a class="b-close"><img id="close"
-		src="<%=request.getContextPath()%>/resources/images/images.png"></a>
+<div id="pop_up_box_9" style="width: 500px ;height: 400px;">
+
 <div id="pop-up-box-head">Advanced Search</div>
 <div id="pop-up-box-contents">
 <form action="">

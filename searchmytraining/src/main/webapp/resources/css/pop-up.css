@@ -1118,7 +1118,20 @@ and open the template in the editor.
 	text-shadow: rgb(224, 224, 224) 1px 1px 0px;
 	padding-top: 15px;
 }
+#pop_up_box_5 form .errormsg{
+	width: 320px;
+	height: 30px;
+	margin-left: 5px;
+	
 
+}
+#pop_up_box_5 form .errormsg span{
+	
+	line-height: 30px;
+	font-family: arial;
+	font-size: 13px;
+	color: red;
+}
 #pop_up_box_5 form input[type="password"], #pop_up_box_5 form input[type="email"]
 	{
 	color: #858282;
@@ -1925,14 +1938,13 @@ and open the template in the editor.
 }
 /*==================Freelancer REgistration Css Ends==================*/
 #pop_up_box_9 {
-	background-color: #fff;
 	border-radius: 5px;
 	color: #000;
 	display: none;
-	width: 500px;
-	height: 500px;
+	width: 400px;
+	height: 400px;
 	margin-top: 80px;
-	background: #fff;
+	background: red;
 	
 	
 }

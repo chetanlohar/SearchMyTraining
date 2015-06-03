@@ -10,9 +10,7 @@ import com.searchmytraining.entity.RoleEntity;
 public class RoleDaoImpl extends AbstractJpaDAO<RoleEntity> implements RoleDAO {
 
 	@Override
-	public RoleEntity getRole(Integer id) {
-		setClazz(RoleEntity.class);
-		return findOne(id);
+	public void setRoleToUser(RoleEntity role) {
+		create(role);
 	}
-
 }

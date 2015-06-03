@@ -525,6 +525,20 @@ input[type=password]:focus {
 .acord .acord_cont .Industry select{
 	width: 300px;
 }
+.acord .acord_cont .Category {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
+}
+.acord .acord_cont .Category select{
+	width: 300px;
+}
+.acord .acord_cont .SubCategory {
+	height: 30px;
+	margin: 0px 0px 20px 0px;
+}
+.acord .acord_cont .SubCategory select{
+	width: 300px;
+}
 .acord .acord_cont .Ctype {
 	height: 30px;
 	margin: 0px 0px 20px 0px;
@@ -541,7 +555,7 @@ input[type=password]:focus {
 	margin: 0px 0px 20px 0px;
 }
 .acord .acord_cont .keyCode {
-	height: 30px;
+	height: 80px;
 	margin: 0px 0px 20px 0px;
 }
 .acord .acord_cont .browse {

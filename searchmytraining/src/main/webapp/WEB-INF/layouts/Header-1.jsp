@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -57,13 +58,13 @@
 				<div class="u-info">
 				<h1>Welcome,</h1>
 				 <div class="u_name">
-				<h2>Tejashri Pawar</h2>
+				<h2>ABC XYZ</h2>
 				</div>
-				<div class=u_mailid><h3>tejashri.pawar@gmail.com</h3>
+				<div class=u_mailid><h3>abcabcabc@gmail.com</h3>
 				</div> 
 				</div><br></br>
 				 <div class="signout">
-				 <a href="#" >Sign-Out</a> 
+				 <a href="<c:url value="j_spring_security_logout" />" >Sign-Out</a> 
 				</div> 
 			</div>
 		</div>

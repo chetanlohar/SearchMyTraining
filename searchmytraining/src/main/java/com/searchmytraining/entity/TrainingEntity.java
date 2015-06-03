@@ -1,7 +1,20 @@
 package com.searchmytraining.entity;
 
-public class TrainingEntity {
-	 
+import java.io.Serializable;
+
+public class TrainingEntity implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+
+	public TrainingEntity(String title, String keyWords, String description,
+			String contentType, long priority) {
+		super();
+		this.title = title;
+		this.keyWords = keyWords;
+		this.description = description;
+		this.contentType = contentType;
+		this.priority = priority;
+	}
 	private String title;
 	private String keyWords;
 	private String description;

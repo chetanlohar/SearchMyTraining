@@ -596,7 +596,7 @@ margin-top: 20px;
 		endColorstr='#05abe0', GradientType=0);
 	border: none; /* IE6-9 */
 }
-.acord .acord_cont input.skip{
+.acord .acord_cont input#skip1{
 	float: left;
 	border: none;
 	width: 80px;

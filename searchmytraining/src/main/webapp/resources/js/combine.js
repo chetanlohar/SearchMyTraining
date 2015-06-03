@@ -5,32 +5,11 @@
  */
 
 
-            $(document).ready(function() {
-                $('#icon-menu').iconmenu();
+          $ (document).ready(function() {
+                $ ('#icon-menu').iconmenu();
             });
 //=========================================================================================
- //<!--Start of Zopim Live Chat Script-->
-            window.$zopim || (function(d, s) {
-                var z = $zopim = function(c) {
-                    z._.push(c)
-                }, $ = z.s =
-                        d.createElement(s), e = d.getElementsByTagName(s)[0];
-                z.set = function(o) {
-                    z.set.
-                            _.push(o)
-                };
-                z._ = [];
-                z.set._ = [];
-                $.async = !0;
-                $.setAttribute("charset", "utf-8");
-                $.src = "//v2.zopim.com/?2ue2Gf63YfZyqOyUJbShQi4IHJc52qsB";
-                z.t = +new Date;
-                $.
-                        type = "text/javascript";
-                e.parentNode.insertBefore($, e)
-            })(document, "script");
-     //   <!--End of Zopim Live Chat Script-->
-
+ 
 //==========================================Feedback Js==================================================
             $(document).ready(function() {
                 jQuery(".pull_feedback").toggle(function() {
@@ -67,41 +46,30 @@
           //=========================================================================================================
           
           //==========================================Vertical Scroll Images=================================
-                    window.verticalScroller = function($elem) {
-                        var top = parseInt($elem.css("top"));
-                        var temp = -1 * $('#verticalScroller > div').height();
-                        if (top < temp) {
-                            top = $('#verticalScroller').height()
-                            $elem.css("top", top);
-                        }
-                        $elem.animate({top: (parseInt(top) - 70)}, 900, 'linear', function() {
-                            window.verticalScroller($(this))
-                        });
+                window.verticalScroller = function($elem) {
+                    var top = parseInt($elem.css("top"));
+                    var temp = -1 * $('#verticalScroller > div').height();
+                    if (top < temp) {
+                        top = $('#verticalScroller').height()
+                        $elem.css("top", top);
                     }
-
-
-                    $(document).ready(function() {
-                        var i = 0;
-                        $("#verticalScroller > div").each(function() {
-                            $(this).css("top", i);
-                            i += 135;
-                            window.verticalScroller($(this));
-                        });
+                    $elem.animate({top: (parseInt(top) - 70)}, 900, 'linear', function() {
+                        window.verticalScroller($(this))
                     });
+                }
+
+
+                $(document).ready(function() {
+                    var i = 0;
+                    $("#verticalScroller > div").each(function() {
+                        $(this).css("top", i);
+                        i += 135;
+                        window.verticalScroller($(this));
+                    });
+                });
 //===================================================================================================
         
-//===================================Image Slider===================================================
 
-                       /* $(".top_cat_box > div:gt(0)").hide();
-
-                        setInterval(function() {
-                            $('.top_cat_box > div:first')
-                                    .fadeOut(1500)
-                                    .next()
-                                    .fadeIn(1500)
-                                    .end()
-                                    .appendTo('.top_cat_box');
-                        }, 2000);*/
 //=======================================================================================================
 
 //===============================garagedoor Image Slider====================================================

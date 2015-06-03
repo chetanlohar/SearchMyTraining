@@ -20,13 +20,16 @@ jQuery(document).ready(function () {
     jQuery(".acord .skip").click(function () {
         var $nextContent = jQuery(this).parent().next().next();
         jQuery(".acord .acord_cont").slideUp("fast", function () {
+       
             $nextContent.show()
         });
-        jQuery(".acord .acord_cont").hasClass().next().slideDown("fast", function () {
+        jQuery(".acord ").next().slideDown("fast", function () {
+            
             $nextContent.show()
         });
+     
     });
-});
+}); 
 
 <%-- function freeEduDetails() {
 	try {
@@ -40,7 +43,7 @@ jQuery(document).ready(function () {
 			
 			dataType : 'json',
 
-			data : JSON.string-ify({
+			data : JSON.stringify({
 
 				"degreeType" : $('#degreeType').val(),
 
@@ -164,7 +167,7 @@ jQuery(document).ready(function () {
 				 
 			</form>
 			<input class="skipbtn9" type="button" value="Save & Continue" name="save" form="flForm" onclick="return freeLancerValidate();"/>
-			<input class="skip" type="button" value="Skip" name="skip" />
+			<input class="skip" type="button" id="skip1" value="Skip" name="skip" />
 		</div>
 		<h3 class="acord_head">
 		<span></span>
@@ -223,7 +226,7 @@ jQuery(document).ready(function () {
 
 			</form>
 			<input class="skipbtn10" type="button" value="Save & Continue" name="save" form="freeLocation" onclick="freelLocDetails('<%=request.getContextPath()%>');" /> 
-			<input class="skip" type="button" value="Skip" name="skip" />
+			<input class="skip" type="button" id="skip1" value="Skip" name="skip" />
 		</div>
 
 		<h3 class="acord_head">
@@ -252,7 +255,7 @@ jQuery(document).ready(function () {
 				</div>
 			</form>
 			<input class="skipbtn11" type="button" value="Save & Continue" name="save" onclick="flContactDet('<%=request.getContextPath()%>');" /> 
-			<input class="skip" type="button" value="Skip" name="skip"/>
+			<input class="skip" type="button" id="skip1" value="Skip" name="skip"/>
 		</div>
 
 		<h3 class="acord_head">
@@ -319,7 +322,7 @@ jQuery(document).ready(function () {
 			</form>
 			<input class="skipbtn12" type="button" value="Save & Continue" name="save"
 				form="frmEduDetails" onclick="freeLancerValidate4();freeEduDetails();" /> <input
-				class="skip" type="button" value="Skip" name="skip" />
+				class="skip" type="button" id="skip1" value="Skip" name="skip" />
 		</div>
 
 
