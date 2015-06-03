@@ -11,6 +11,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+/**
+ * @author user
+ *
+ */
 @Entity
 @Table(name = "tbl_trngcalender")
 public class CalenderEntity implements Serializable {
@@ -68,6 +72,10 @@ public class CalenderEntity implements Serializable {
 
 	@Column(name = "vFlag")
 	private String vFlag;
+	
+	@Column(name = "keyword")
+	private String keyword;
+	
 
 	@ManyToOne(fetch = FetchType.EAGER, targetEntity = UserEntity.class)
 	@JoinColumn(name = "userId")
@@ -217,6 +225,14 @@ public class CalenderEntity implements Serializable {
 		this.vFlag = vFlag;
 	}
 
+	public String getKeyword() {
+		return keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+	}
+
 	public void setUser(UserEntity user) {
 		this.user = user;
 	}
@@ -228,4 +244,7 @@ public class CalenderEntity implements Serializable {
 	public void setIndstrySubcat(IndustrySubCategoryEntity indstrySubcat) {
 		this.indstrySubcat = indstrySubcat;
 	}
+
+	
+	
 }

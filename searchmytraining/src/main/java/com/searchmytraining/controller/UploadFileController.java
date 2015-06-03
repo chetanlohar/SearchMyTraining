@@ -30,8 +30,8 @@ public class UploadFileController {
 	@Autowired
 	ICalenderService calnderService;
 
-	@Autowired
-	IKeywordService keywordService;
+	/*@Autowired
+	IKeywordService keywordService;*/
 
 	@RequestMapping(method = RequestMethod.POST)
 	public String create(HttpServletRequest request,
@@ -61,6 +61,7 @@ public class UploadFileController {
 			String CDesc = request.getParameter("CDesc");
 			String Ckey = request.getParameter("Ckey");
 			String[] keyCode = request.getParameterValues("tags[]");
+			String keyword="";
 
 			Integer userid = Integer.parseInt(session.getAttribute("userid")
 					.toString());
@@ -74,6 +75,14 @@ public class UploadFileController {
 
 			}
 
+			
+			  for(String element:keyCode){ 
+				  	
+				  keyword=keyword+","+element.trim();
+			  	}
+			  System.out.println("keyword=========== "+keyword);
+			 
+			
 			entity.setBrochure("C:\\SearchMT\\"
 					+ fileUpload.getOriginalFilename());
 			entity.setTitle(ctitle);
@@ -97,17 +106,10 @@ public class UploadFileController {
 			entity.setRank(0);
 			entity.setvFlag("Not Varified");
 			entity.setUpdatedOn(currentTime);
+			entity.setKeyword(keyword);
 			
 			calnderService.addCalender(entity);
-
-			  for(String element:keyCode){ 
-				  	KeywordEntity keywordEntity = new KeywordEntity();
-				  	keywordEntity.setUser(usrEntity);
-			  		keywordEntity.setKeword(element);
-			  		keywordService.addKeyWords(keywordEntity);
-			  	}
-			 
-
+			
 			if (fileUpload.getSize() < 1000000000) {
 				System.out.println("File is less than the capacity!!!!");
 			}

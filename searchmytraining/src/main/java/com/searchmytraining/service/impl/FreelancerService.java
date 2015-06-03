@@ -46,6 +46,7 @@ public class FreelancerService implements IFreelancerService
 	public Integer registerFreelancer(FreelancerDTO freelancerDto) {
 		StatusEntity status = statusdao.getStatus(1);
 		FreelancerEntity entity = mapper.map(freelancerDto, FreelancerEntity.class);
+		UserEntity user = new UserEntity();
 		user.setUserName(entity.getEmail());
 		user.setPassword(encoder.encode(entity.getPassword()));
 		user.setEnabled(1);
