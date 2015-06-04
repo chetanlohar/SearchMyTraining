@@ -26,7 +26,7 @@ function show_checked()
 }
 </script>
 </head>
-<!-- Modiftied by chetan L
+<!-- Modiftied by chetan L on My machine only
 -->
 <body>
 <h1>SearchMyTraining</h1> 
