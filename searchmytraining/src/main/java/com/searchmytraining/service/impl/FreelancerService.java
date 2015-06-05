@@ -22,7 +22,6 @@ public class FreelancerService implements IFreelancerService
 {
 	@Autowired
 	public FreelancerDAO regdao;
-
 	@Autowired
 	public DozerBeanMapper mapper;
 
