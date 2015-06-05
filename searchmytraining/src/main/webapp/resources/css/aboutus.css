@@ -1,0 +1,117 @@
+@CHARSET "ISO-8859-1";
+body {
+	overflow-x: hidden;
+}
+#main{
+	height: 900px;
+}
+#main .about_banner{
+	height: 150px;
+	width: 100%;
+}
+#main .about_banner img{
+	height: 100%;
+	width: 100%;
+}
+.clear{
+	clear: both;
+}
+#main .about{
+	height: 700px;
+	width: 90%;
+	margin: 10px auto;
+}
+#main .left{
+	height: 100%;
+	width: 30%;
+	float:left;
+	background: blue;
+}
+#main .right{
+	height: 100%;
+	width: 70%;
+	float:left;
+	background: gray;
+}
+
+/* ====================================Contact Us=================================== */
+#contact{
+	height: 900px;
+	background: #ECF0F3;
+}
+#contact .contact_banner{
+	height: 150px;
+	width: 100%;
+}
+#contact .contact_banner img{
+	height: 100%;
+	width: 100%;
+}
+#contact h1{
+	margin-top: 20px;
+	text-transform:uppercase;
+	text-align: center;
+   color:gray;
+    line-height: 1.1;
+    font-size: 36px;
+}
+#contact .contact_info{
+	height: 400px;
+	width: 90%;
+	margin:20px auto;
+}
+#contact .contact_info .contact_form{
+	height: 100%;
+	width: 50%;
+	float:left;
+}
+#contact .contact_info .address_info{
+	height: 100%;
+	width: 50%;
+	float:left;
+}
+#contact .contact_info .contact_form input[type="text"]{
+	border: 0 none;
+    height: 45px;
+    width: 80%;
+    margin-top: 20px;
+    margin-left: 60px;
+    color: #555;
+    font-family: "Open Sans",sans-serif;
+    font-size: 16px;
+    padding: 0px 10px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    background: #fff;
+}
+#contact .contact_info .contact_form input:FOCUS {
+	
+}
+#contact .contact_info .contact_form textarea{
+	margin: 20px 0px 20px 60px;
+	border: 0 none;
+	resize:none;
+	color: #555;
+    font-family: "Open Sans",sans-serif;
+    font-size: 16px;
+    padding: 10px;
+}
+#contact .contact_info .contact_form input[type="button"]{
+	height:45px;
+	background: #4392e3 none repeat scroll 0 0;
+	border: 0 none;
+	color: #fff;
+	margin-left: 60px;
+	cursor: pointer;
+	font-size: 16px;
+}
+#contact .contact_info .contact_form input[type="button"]:HOVER {
+	background: #3C83CD;
+}
+#contact .address_info p{
+	margin-top:20px;
+	color: #7e7e7e;
+    font-family: "Open Sans",sans-serif;
+    font-size: 17px;
+    padding-bottom: 10px;
+    text-align: left;
+}
