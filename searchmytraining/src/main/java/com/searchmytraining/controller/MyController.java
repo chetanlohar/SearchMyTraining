@@ -67,12 +67,18 @@ public class MyController {
 	@RequestMapping("/about")
 	public String About()
 	{
-		return "pages/AboutUs";
+		return "pages/InternalPages/AboutUs";
+	}
+	@RequestMapping("/contact")
+	public String Contact()
+	{
+		return "pages/InternalPages/ContactUs";
 	}
 	@RequestMapping("/AdvSearch")
 	public String Advanc()
 	{
 		return "pages/AdvSearch";
 	}
+	
 	
 }
