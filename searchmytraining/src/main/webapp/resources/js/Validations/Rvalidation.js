@@ -253,7 +253,7 @@ function validation(path) {
 	 }
 	 else if($("#cnfpassword").val() == "" || $('#password').val() !== $('#cnfpassword').val()){
 		 $("#cnfpassword").focus();
-		 $("#error5").html(img).append(   "    Please Enter Password Same Above")
+		 $("#error5").html(img).append("Please Enter Password Same Above")
 		 return false;
 	 }
 	 return true;	 
@@ -261,7 +261,6 @@ function validation(path) {
 
 function trainerRegistration(path) {
 	if (validation(path)) {
-		alert("in trainerRegistration(path)...");
 		try {
 			$
 					.ajax({

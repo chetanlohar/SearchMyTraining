@@ -74,8 +74,7 @@ public class UploadFileController {
 				System.out.println("same");
 
 			}
-
-			
+		
 			  for(String element:keyCode){ 
 				  	
 				  keyword=keyword+","+element.trim();
@@ -106,7 +105,7 @@ public class UploadFileController {
 			entity.setRank(0);
 			entity.setvFlag("Not Varified");
 			entity.setUpdatedOn(currentTime);
-			entity.setKeyword(keyword);
+			entity.setKeyword(keyword.substring(1));
 			
 			calnderService.addCalender(entity);
 			
