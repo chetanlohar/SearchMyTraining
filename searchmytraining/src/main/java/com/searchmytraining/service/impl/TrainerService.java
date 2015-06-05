@@ -38,6 +38,7 @@ import com.searchmytraining.service.ITrainerService;
 	@Override
 	@Transactional
 	public Integer registerTrainer(TrainerDTO trainerdto) {
+		UserEntity user = new UserEntity();
 		StatusEntity status = statusdao.getStatus(1);
 		TrainerEntity entity = mapper.map(trainerdto, TrainerEntity.class);
 		user.setUserName(entity.getEmail());
@@ -49,6 +50,7 @@ import com.searchmytraining.service.ITrainerService;
 		user.setStatus(status);
 		userdao.addUser(user);
 		entity.setUser(user);
+		RoleEntity role = new RoleEntity();
 		role.setROLE("TPI");
 		role.setUser(user);
 		roledao.setRoleToUser(role);
