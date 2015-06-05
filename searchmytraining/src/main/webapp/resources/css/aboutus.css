@@ -83,8 +83,12 @@ body {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
     background: #fff;
 }
-#contact .contact_info .contact_form input:FOCUS {
+#contact .contact_info .contact_form input:FOCUS,#contact .contact_info .contact_form textarea:FOCUS {
 	
+	box-shadow: 0 0 2px #40A9DF;
+	-webkit-box-shadow: 0 0 2px #40A9DF;
+	-o-box-shadow: 0 0 2px #40A9DF;
+	-moz-box-shadow: 0 0 2px #40A9DF;
 }
 #contact .contact_info .contact_form textarea{
 	margin: 20px 0px 20px 60px;
@@ -114,4 +118,28 @@ body {
     font-size: 17px;
     padding-bottom: 10px;
     text-align: left;
+}
+#contact .content{
+	height: 200px;
+	width: 90%;
+	margin:0px auto;
+}
+#contact .content .left-content{
+	height: 100%;
+	width: 40%;
+	padding-top: 30px;
+}
+#contact .content .left-content p{
+	line-height:24px;
+	margin-left:150px;
+	
+	color: #7e7e7e;
+    font-family: "Open Sans",sans-serif;
+    font-size: 16px;
+    padding: 10px 0px;
+    text-align: left;
+}
+#contact .content .left-content p img{
+	height: 15px;
+	width: 15px;
 }
