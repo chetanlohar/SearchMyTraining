@@ -55,7 +55,6 @@
 		</p>
 		</div>
 		<div class="right-content">
-		
 		</div>
 		
 		</div>
