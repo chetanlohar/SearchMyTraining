@@ -8,6 +8,10 @@
 	<welcome-file-list>
 		<welcome-file>/WEB-INF/index.jsp</welcome-file>
 	</welcome-file-list>
+	
+	<listener>
+        <listener-class>com.searchmytraining.util.ApplicationStartUp</listener-class>
+    </listener>
 
 	<servlet>
 		<servlet-name>dispatcher</servlet-name>
@@ -29,8 +33,15 @@
 		<param-value>
 			classpath:spring/application.xml
 			classpath:spring/spring-security.xml
-		</param-value>
+		</param-value>		
 	</context-param>
+	<context-param>
+	
+		<param-name>LuceneIndexFilePath</param-name>
+		<param-value>C:\Workspace\SearchMyTraining\searchmytraining\src\main\resources\LuceneIndex</param-value>
+	
+	</context-param>
+	
 
 	<filter>
 		<filter-name>springSecurityFilterChain</filter-name>

@@ -34,7 +34,7 @@ public class SearchController {
 	
 	@RequestMapping(value = "/getCalendars", method = RequestMethod.POST)/*, produces = { "application/json" }, consumes = { "application/json" })*/
 	@ResponseBody
-	public List<CalenderEntity> getCalendars(@RequestParam("inputkeyword") String inputkeyword)
+	public List<CalenderEntity> getCalendars(@RequestParam("inputkeyword") String inputkeyword) throws Exception
 	{
 		List<CalenderEntity> calendars =calendarservice.getCalendersByKeyword(inputkeyword); 
 		System.out.println(calendars.size());

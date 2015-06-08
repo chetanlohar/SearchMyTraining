@@ -53,7 +53,7 @@ public class CalenderService implements ICalenderService
 	}
 
 	@Override
-	public List<CalenderEntity> getCalendersByKeyword(String kyeword) {
+	public List<CalenderEntity> getCalendersByKeyword(String kyeword) throws Exception{
 		return daoObj.getCalendersByKeyword(kyeword);
 	}
 
