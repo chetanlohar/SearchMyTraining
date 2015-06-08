@@ -70,7 +70,7 @@
 				<span id="error5"></span>
 				<div class="sign">
 					<input type="button" name="Submit" value="Submit" onclick="trainerRegistration('<%=request.getContextPath()%>'); " />
-					<input type="reset" name="Cancel" value="Cancel">
+					<input type="reset" name="Cancel" value="Cancel" class="cancel">
 				</div>
 
 			</form>

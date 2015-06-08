@@ -62,11 +62,11 @@
 				<span id="error27"></span>
 				<div class="req">
 					<textarea id="requirements21" name="requirements"
-						placeholder="Special Requirements"></textarea>
+						placeholder="Training Requirement Description"></textarea>
 				</div>
 				<div class="sign">
 					<input type="submit" name="Send" value="Send" onclick="validation21();"> <input
-						type="reset" name="Cancel" value="Cancel">
+						type="reset" name="Cancel" value="Cancel" class="cancel">
 				</div>
 			</form>
 		</div>

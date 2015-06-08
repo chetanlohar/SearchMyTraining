@@ -69,9 +69,12 @@
 					<li>
 						<h4>MEMBERS</h4>
 					</li>
-					<li><a href="#">Free Membership</a></li>
+					
+					<li><a href="#">Trainee</a></li>
+					<li><a href="#">Training Provider</a></li>
+					<li><a href="#">Freelancer</a></li>
 					<li><a href="#">User Login</a></li>
-					<!-- <li><a href="#">View Cart</a></li> -->
+			
 				</ul>
 
 				<ul>
@@ -87,7 +90,9 @@
 					</li>
 					<li><a href="#">About Us</a></li>
 					<li><a href="#">Meet Our Team</a></li>
-					<li><a href="#">SearchMyTraining News</a></li>
+					<li><a href="#">Career With Us</a></li>
+					<li><a href="#">Contact Us</a></li>
+					
 				</ul>
 			</div>
 		</div>
@@ -116,6 +121,7 @@
 								target="_blank">Facebook</a></li>
 							<li class="twitter social-slide"><a href="#" target="_blank">Twitter</a></li>
 							<li class="linked social-slide"><a href="#" target="_blank">IN</a></li>
+							
 						</ul>
 					</div>
 

@@ -20,6 +20,8 @@
 		<div id='cssmenu'>
 
 			<ul id="coolMenu">
+			<li class='active has-sub'><a href="javascript:void 0">Home</a>
+				</li>
 				<li class='active has-sub'><a href='#'><span>Browse</span></a>
 					<ul>
 						<li><a href='#'><span>All Training</span></a></li>

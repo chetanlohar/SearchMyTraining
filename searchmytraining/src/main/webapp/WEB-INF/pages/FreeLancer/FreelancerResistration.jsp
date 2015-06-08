@@ -120,7 +120,7 @@
 					<!-- <input type="button" name="Submit" value="Submit" onclick="freelancerRegistration();validation12();"> --> 
 					<input type="button" name="Submit" value="Submit" onclick="freelancerRegistration('<%=request.getContextPath()%>');">
 					<input
-						type="reset" name="Cancel" value="Cancel">
+						type="reset" name="Cancel" value="Cancel" class="cancel">
 				</div>
 
 			</form>

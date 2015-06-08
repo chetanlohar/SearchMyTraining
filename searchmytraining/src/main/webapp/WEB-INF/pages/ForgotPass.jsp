@@ -20,15 +20,16 @@
  <div class="textmsg">
  <p>Please Enter Your Email Below And We'll Send You New Password On Your Email Id.</p>
  </div>
- 
+ <form action="#">
  <div class ="Containt">
      <label for ="Email" class="remail"><em style="color: red;">*</em>Email Address:</label>
-     <input type="text" class="Femail" placeholder="Email Id">
+     <input type="email" class="Femail" placeholder="Email Id">
     
  </div>
 <div class="Gpass">
 <input type="button" name="" value="Submit" id="Spass">
 </div>
+</form>
  <span><a href="<%=request.getContextPath()%>/index"> Go Back</a></span>
  </div>
 

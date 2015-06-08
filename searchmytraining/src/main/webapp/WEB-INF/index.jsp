@@ -40,9 +40,6 @@ and open the template in the editor.
 <script src="<%=request.getContextPath()%>/resources/js/toggle.js"></script>
 <script src="<%=request.getContextPath()%>/resources/js/combine.js"></script>
 
-<script src="<%=request.getContextPath()%>/resources/js/jquery.dialogBox.js"></script>
-
-
 <script
 	src="<%=request.getContextPath()%>/resources/js/work/calender.js"></script>
 
@@ -172,7 +169,7 @@ $(function(){
 					onclick="LoadPage();" />
 			</div>
 			<div class="adv-search">
-				<a href="#" id="btn-type">Advance Search</a>
+				<a href="#" id="advsearch1">Advance Search</a>
 				<div id="type-dialogBox"></div>
 			</div>
 
@@ -688,33 +685,28 @@ $(function(){
 			<ul id="icon-menu" class="sti-menu">
 				<li data-hovercolor="#fff" class="box-shaddow-black"><a
 					href="<%=request.getContextPath()%>/resources/softeware-development.html">
-						<h2 data-type="mText" class="sti-item">Software makes your
-							business smart and speedup the working and only software
-							genuinely manage your organization.</h2>
+						<h2 data-type="mText" class="sti-item">Respect  The Training Honor The Commitment Cherish The Result.</h2>
 						<h3 data-type="sText" class="sti-item">Software Development »</h3>
 						<span data-type="icon" class="sti-icon sti-icon-branding sti-item"></span>
 				</a></li>
 				<li data-hovercolor="#fff" class="box-shaddow-black"><a
 					href="<%=request.getContextPath()%>/resources/ourwork.html">
-						<h2 data-type="mText" class="sti-item">Your website is
-							increasingly important and will dictate how a lot of your
-							customers will think about you as a company.</h2>
+						<h2 data-type="mText" class="sti-item">Sucess in Business
+							Require Training and Discipline and Hard Work
+					But If You're Not Frightened By These Things,The Opportunities are Just as Great Today as they ever were.</h2>
 						<h3 data-type="sText" class="sti-item">See Our Web Portfolio
 							»</h3> <span data-type="icon" class="sti-icon sti-icon-web sti-item"></span>
 				</a></li>
 				<li data-hovercolor="#fff" class="box-shaddow-black"><a
 					href="<%=request.getContextPath()%>/resources/seo.html">
-						<h2 data-type="mText" class="sti-item">Search Engine
-							Optimization is the most cost effective form of marketing you
-							will ever undertake to promote your business.</h2>
+						<h2 data-type="mText" class="sti-item">Practice Is The Hardest Part Of Learning, And Training  Is The Essence Of  Transformation.</h2>
 						<h3 data-type="sText" class="sti-item">SEO Company india »</h3> <span
 						data-type="icon" class="sti-icon sti-icon-seo sti-item"></span>
 				</a></li>
 				<li data-hovercolor="#fff" class="box-shaddow-black"><a
 					href="<%=request.getContextPath()%>/resources/graph-design.html">
-						<h2 data-type="mText" class="sti-item">Innovative project
-							ideas makes your carrier bright.Softinfology gives you help for
-							innovative project.</h2>
+						<h2 data-type="mText" class="sti-item">It Is Not Only Important To Be Powerfull, What's Really  Important
+						Is To Be Brave,Training Is Essential Because  Training Makes You Brave .</h2>
 						<h3 data-type="sText" class="sti-item">Search About Graphics
 							»</h3> <span data-type="icon" class="sti-icon sti-icon-print sti-item"></span>
 				</a></li>

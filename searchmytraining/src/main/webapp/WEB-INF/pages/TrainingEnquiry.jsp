@@ -30,7 +30,7 @@
                     </div>
                     <span id="error30"></span>
                     <div class="title">
-                        <input type="text" autocomplete="off" name="title" id="title22" placeholder="Training Title" >
+                        <input type="text" autocomplete="off" name="title" id="title22" placeholder="Subject / Title" >
                     </div>
                     <span id="error31"></span>
                     <div class="city">
@@ -46,12 +46,12 @@
                     </div>
                     <span id="error34"></span>
                     <div class="req">
-                        <textarea  name="requirements" id="requirements22" placeholder="Special Requirements"></textarea>
+                        <textarea  name="requirements" id="requirements22" placeholder="Requirement Description"></textarea>
                     </div>
                   
                     <div class="sign">
                         <input type="submit" name="Submit" value="Send" onclick="TEvalidate(); ">
-                        <input type="reset" name="Cancel" value="Cancel" >
+                        <input type="reset" name="Cancel" value="Cancel" class="cancel" >
                     </div>
 
                 </form>
