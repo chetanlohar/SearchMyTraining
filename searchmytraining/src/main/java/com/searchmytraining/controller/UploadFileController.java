@@ -29,11 +29,9 @@ import com.searchmytraining.service.ICalenderService;
 public class UploadFileController {
 	@Autowired
 	ICalenderService calnderService;
-
 	/*
 	 * @Autowired IKeywordService keywordService;
 	 */
-
 	@RequestMapping(method = RequestMethod.POST)
 	public String create(HttpServletRequest request,
 			@RequestParam CommonsMultipartFile fileUpload, HttpSession session)
