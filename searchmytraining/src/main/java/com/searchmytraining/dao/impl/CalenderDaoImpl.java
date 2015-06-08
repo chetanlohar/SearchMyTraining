@@ -1,16 +1,36 @@
 package com.searchmytraining.dao.impl;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
+import org.apache.lucene.analysis.core.StopAnalyzer;
+import org.apache.lucene.analysis.standard.StandardAnalyzer;
+import org.apache.lucene.document.Document;
+import org.apache.lucene.index.DirectoryReader;
+import org.apache.lucene.index.IndexReader;
+import org.apache.lucene.index.Term;
+import org.apache.lucene.queryparser.classic.QueryParser;
+import org.apache.lucene.search.BooleanQuery;
+import org.apache.lucene.search.FuzzyQuery;
+import org.apache.lucene.search.IndexSearcher;
+import org.apache.lucene.search.Query;
+import org.apache.lucene.search.ScoreDoc;
+import org.apache.lucene.search.TermQuery;
+import org.apache.lucene.search.TopDocs;
+import org.apache.lucene.store.Directory;
+import org.apache.lucene.store.FSDirectory;
 import org.springframework.stereotype.Repository;
 
 import com.searchmytraining.dao.AbstractJpaDAO;
 import com.searchmytraining.dao.CalenderDAO;
 import com.searchmytraining.entity.CalenderEntity;
+import com.searchmytraining.util.SearchUtil;
 
 @Repository
 public class CalenderDaoImpl extends AbstractJpaDAO<CalenderEntity> implements
@@ -62,11 +82,49 @@ public class CalenderDaoImpl extends AbstractJpaDAO<CalenderEntity> implements
 
 	@Override
 	public List<CalenderEntity> getCalendersByKeyword(String keyword) {
-		String query = "from CalenderEntity calender where calender.keyword like '%"+keyword+"%'";
-		entityManager = getEntityManager();
-		TypedQuery<CalenderEntity> query1 = entityManager.createQuery(query,CalenderEntity.class);
-		List<CalenderEntity> list = query1.getResultList();
+		
+		List<CalenderEntity> list = new ArrayList<CalenderEntity>();
+		CalenderEntity cal;
+		
+		try{
+			
+			Path path = Paths.get(SearchUtil.basePath);
+			Directory dir = FSDirectory.open(path);
+			
+			IndexReader reader = DirectoryReader.open(dir);
+			IndexSearcher searcher = new IndexSearcher(reader);
+			
+			QueryParser queryParser = new QueryParser("BasicSearchString",new StandardAnalyzer());
+			
+			Query query = queryParser.parse(keyword);
+			
+			TopDocs topDocs = searcher.search(query, 10);
+			
+			ScoreDoc[] scoreDosArray = topDocs.scoreDocs;
+			
+			for(ScoreDoc scoredoc: scoreDosArray){
+			      //Retrieve the matched document and show relevant details
+			      Document doc = searcher.doc(scoredoc.doc);
+			      
+			      System.out.println("\nKeyWord: "+doc.getField("KeyWord").stringValue());
+			      System.out.println("Description: "+doc.getField("Description").stringValue());
+			      System.out.println("Code: "+doc.getField("Code").stringValue());
+			      
+			      cal = new CalenderEntity();
+			      cal.setKeyword(doc.getField("KeyWord").stringValue());
+			      cal.setDescription(doc.getField("Description").stringValue());
+			      cal.setCode(doc.getField("Code").stringValue());
+			      list.add(cal);
+			      
+			   }
+			
+		}catch(Exception ex){
+			System.out.println("Exception::"+ex.getMessage());
+			ex.printStackTrace();
+		}
+		
 		return list;
+		
 	}
 
 }
