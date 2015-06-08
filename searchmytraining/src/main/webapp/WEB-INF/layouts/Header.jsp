@@ -67,11 +67,11 @@ $('#dropM').on('click',function(e){
 
                     <li class='active has-sub'><a href='#'><span>About Us</span></a>
                         <ul>
-                            <li><a href='#'><span>About Us</span></a></li>
+                            <li><a href="about"><span>About Us</span></a></li>
                             <li><a href='#'><span>Meet Our Team</span></a></li>
                             <li><a href='#'><span>SearchMyTraining News</span></a></li>
                              <li><a href='#'><span>Career With Us</span></a></li>
-                            <li><a href='#'><span>Contact Us</span></a></li>
+                            <li><a href="contact"><span>Contact Us</span></a></li>
                         </ul>
                     </li>
                     <li class='active has-sub'>

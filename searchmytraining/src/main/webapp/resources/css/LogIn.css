@@ -192,6 +192,7 @@ body {
 	height: 300px;
 	margin: 30px auto;
 	background-color: #f4f4f4;
+	font-family: arial;
 }
 
 .Fpass_wrapar .Fpass_container .title {
@@ -221,6 +222,42 @@ body {
 	line-height: 25px;
 	color: #fff;
 }
+
+.Fpass_wrapar .Fpass_container .textmsg p{
+	text-align:center;
+	line-height: 45px;
+}
+
+.Fpass_wrapar .Fpass_container .Containt{
+	width: 70%;
+	margin: 5px auto;
+}
+
+.Fpass_wrapar .Fpass_container form input[type=email]
+	{
+	width: 300px;
+	padding: 12px 6px;
+	border-radius: 0.2em;
+	border: 1px solid #c3c5c8; margin-left : 30px;
+	margin-left: 30px;
+	color: #ccc;
+}
+
+.Fpass_wrapar .Fpass_container form input[type=button]
+{
+    width: 100px;
+	height: 40px;
+	border: none;
+	font-size: 14px;
+	color: #fff;
+	border-radius: 2px;
+	margin: 20px 350px;
+	background: #0080ff;
+	
+}
+
+
+
 
 .Log_container .Log_warapar .log_bar .form_container form input[type='text']:focus,
 	input[type='password']:focus {

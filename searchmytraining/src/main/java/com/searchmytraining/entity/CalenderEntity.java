@@ -77,6 +77,9 @@ public class CalenderEntity implements Serializable {
 	private String keyword;
 	
 
+	@Column(name = "place")
+	private String place;
+	
 	@ManyToOne(fetch = FetchType.EAGER, targetEntity = UserEntity.class)
 	@JoinColumn(name = "userId")
 	private UserEntity user;
@@ -204,11 +207,7 @@ public class CalenderEntity implements Serializable {
 	public void setContenttype(String contenttype) {
 		this.contenttype = contenttype;
 	}
-
-	public UserEntity getUser() {
-		return user;
-	}
-
+	
 	public Integer getRank() {
 		return rank;
 	}
@@ -231,6 +230,17 @@ public class CalenderEntity implements Serializable {
 
 	public void setKeyword(String keyword) {
 		this.keyword = keyword;
+	}
+	public String getPlace() {
+		return place;
+	}
+
+	public void setPlace(String place) {
+		this.place = place;
+	}
+
+	public UserEntity getUser() {
+		return user;
 	}
 
 	public void setUser(UserEntity user) {

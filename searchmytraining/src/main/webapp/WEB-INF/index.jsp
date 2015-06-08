@@ -51,15 +51,17 @@ and open the template in the editor.
 	media="all" type="text/css">
 <script>
   function LoadPage(){
-   <%--  $.ajax({
-        url: "<%=request.getContextPath()%>/dosearch",  
-        type: "GET",            
-        cache: false,
-        success: function (html) {  
-            //place servicecall.php's content to the content div
-            $('#mid').html(html);   
+	 var inputkeyword=$("#w-input-search").val();
+     $.ajax({
+        url: '<%=request.getContextPath()%>/getCalendars',  
+        type: 'post',
+        dataType:'json',
+        data: 'inputkeyword='+inputkeyword,
+        cache: true,
+        success: function (response) {  
+            console.log("in success... of LoadPage()");
         }       
-    }); --%>
+    }); 
     } 
 </script>
 <script type="text/javascript">
@@ -187,6 +189,10 @@ $(function(){
 				                return {value: item};
 				            })
 				        };
+				    },
+				    select: function(event, ui)
+				    {
+				    	alert("selected...");
 				    }
 				});
 			});

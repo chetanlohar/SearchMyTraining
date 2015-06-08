@@ -303,7 +303,7 @@ and open the template in the editor.
 	border-radius: 5px;
 	color: #000;
 	display: none;
-	padding: 20px;
+	padding: 4px;
 	min-width: 400px;
 	min-height: 520px;
 	margin-top: 100px;
@@ -801,7 +801,7 @@ and open the template in the editor.
 	border-radius: 5px;
 	color: #000;
 	display: none;
-	padding: 20px;
+	padding: 4px;
 	min-width: 400px;
 	min-height: 585px;
 	margin-top: 40px;
@@ -1356,12 +1356,13 @@ and open the template in the editor.
 	border-radius: 5px;
 	color: #000;
 	display: none;
-	padding: 10px;
+	padding: 2px;
 	width: 520px;
 	height: 300px;
 	margin-top: 40px;
 	background: #ECF0F3;
 }
+
 
 .b-close {
 	cursor: pointer;
@@ -1408,7 +1409,7 @@ and open the template in the editor.
 }
 
 #pop_up_box_6 .reg_form form .sign-in {
-	height: 220px;
+	height: 200px;
 	width: 100%;
 	margin: 0px auto;
 	overflow: hidden;
@@ -1712,7 +1713,7 @@ and open the template in the editor.
 	border-radius: 5px;
 	color: #000;
 	display: none;
-	padding: 10px;
+	padding: 4px;
 	min-width: 400px;
 	min-height: 575px;
 	margin-top: 40px;
@@ -1941,13 +1942,12 @@ and open the template in the editor.
 	border-radius: 5px;
 	color: #000;
 	display: none;
-	width: 400px;
-	height: 400px;
+	min-width: 400px;
+	min-height: 500px;
 	margin-top: 80px;
-	background: red;
-	
-	
+	background: #ECF0F3;
 }
+
 #pop-up-box-head{
 	height:30px;
 	width:100%;

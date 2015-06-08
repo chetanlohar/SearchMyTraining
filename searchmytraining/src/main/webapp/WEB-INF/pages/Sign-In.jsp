@@ -27,21 +27,21 @@
 				</div>
 				<div class="sign-in">
 					<div class="sub-login">
-						<a href="#login_form" class="login_pop">
+						<a href="#login_form" class="login_pop close1">
 							<h2>Trainee</h2> <img
 							src="<%=request.getContextPath()%>/resources/images/user.png"
 							alt="user" />
 						</a>
 					</div>
 					<div class="sub-login">
-						<a href="#login_form2" class="login_pop2">
+						<a href="#login_form2" class="login_pop2 close1">
 							<h2>Provider</h2> <img
 							src="<%=request.getContextPath()%>/resources/images/provider.png"
 							alt="provider" />
 						</a>
 					</div>
 					<div class="sub-login">
-					<a href="#" class="login_pop3">
+					<a href="#" class="login_pop3 close1">
 						<h2>Freelancer</h2>
 						<img
 							src="<%=request.getContextPath()%>/resources/images/lancer.png"

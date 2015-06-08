@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class MyController {  
 	
+	
 	@RequestMapping("/tt")
 	public String doAction()
 	{
@@ -67,12 +68,18 @@ public class MyController {
 	@RequestMapping("/about")
 	public String About()
 	{
-		return "pages/AboutUs";
+		return "pages/InternalPages/AboutUs";
+	}
+	@RequestMapping("/contact")
+	public String Contact()
+	{
+		return "pages/InternalPages/ContactUs";
 	}
 	@RequestMapping("/AdvSearch")
 	public String Advanc()
 	{
 		return "pages/AdvSearch";
 	}
+	
 	
 }

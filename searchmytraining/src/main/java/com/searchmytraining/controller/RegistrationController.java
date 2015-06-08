@@ -70,7 +70,7 @@ public class RegistrationController {
 	@ResponseBody
 	public RespnoseWrapper TrainingProviderRegistration(
 			@RequestBody @Valid TrainerDTO trainerdto, BindingResult result,
-			ModelMap model, HttpServletRequest request, HttpServletResponse response) throws Exception {
+			ModelMap model, HttpServletRequest request, HttpServletResponse response,HttpSession session) throws Exception {
 		RespnoseWrapper response1 = new RespnoseWrapper();
 		response1.setValidation_error(true);
 		response1.setId(501);
@@ -90,6 +90,7 @@ public class RegistrationController {
 			response1.setValidation_error(false);
 			this.trainerdto1 = trainerdto;
 			userid = trainerservice.registerTrainer(trainerdto);
+			session.setAttribute("userid",userid);
 		}
 		return response1;
 	}

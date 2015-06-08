@@ -37,7 +37,9 @@ public class UploadFileController {
 	public String create(HttpServletRequest request,
 			@RequestParam CommonsMultipartFile fileUpload, HttpSession session)
 			throws Exception {
-
+		
+		String userType=null;
+		
 		System.out.println("origional file name: "
 				+ fileUpload.getOriginalFilename());
 
@@ -60,7 +62,10 @@ public class UploadFileController {
 			Double cPrice = Double.parseDouble(request.getParameter("cPrice"));
 			String CDesc = request.getParameter("CDesc");
 			String Ckey = request.getParameter("Ckey");
+			String place=request.getParameter("place");
 			String[] keyCode = request.getParameterValues("tags[]");
+			
+			userType=request.getParameter("userType");
 			String keyword="";
 
 			Integer userid = Integer.parseInt(session.getAttribute("userid")
@@ -74,8 +79,7 @@ public class UploadFileController {
 				System.out.println("same");
 
 			}
-
-			
+		
 			  for(String element:keyCode){ 
 				  	
 				  keyword=keyword+","+element.trim();
@@ -94,7 +98,7 @@ public class UploadFileController {
 			entity.setStart_date(Fdate);
 			entity.setEnd_date(Tdate);
 			entity.setStatus("New");
-
+			entity.setPlace(place);
 			// Mapping Entity
 			entity.setUser(usrEntity);
 			entity.setIndstrySubcat(industrySubCat);
@@ -106,13 +110,13 @@ public class UploadFileController {
 			entity.setRank(0);
 			entity.setvFlag("Not Varified");
 			entity.setUpdatedOn(currentTime);
-			entity.setKeyword(keyword);
+			entity.setKeyword(keyword.substring(1));
 			
 			calnderService.addCalender(entity);
 			
-			if (fileUpload.getSize() < 1000000000) {
+			/*if (fileUpload.getSize() < 1000000000) {
 				System.out.println("File is less than the capacity!!!!");
-			}
+			}*/
 			InputStream inputStream = null;
 			OutputStream outputStream = null;
 			if (fileUpload.getSize() > 0) {
@@ -134,6 +138,11 @@ public class UploadFileController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "pages/FreeLancer/FreeLancerProfile";
+		if(userType.equalsIgnoreCase("freelancer")){
+			return "pages/FreeLancer/FreeLancerProfile";
+		}else{
+			return "pages/TrainingProvider/TrainingProviderProfile";
+		}
+		
 	}
 }

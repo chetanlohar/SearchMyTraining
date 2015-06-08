@@ -5,7 +5,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" 	href="<%=request.getContextPath()%>/resources/css/pop-up.css" type="text/css">
+<<<<<<< HEAD
  <script src="<%=request.getContextPath()%>/resources/js/pop-up.js"></script>
+=======
+<%--<script src="<%=request.getContextPath()%>/resources/js/pop-up.js"></script>
+>>>>>>> c6f3011c708578ea6f66ff16aae938c005884dcb
 <script src="<%=request.getContextPath()%>/resources/js/popup-box.js"></script>
  <title>Advance Search</title>
 </head>

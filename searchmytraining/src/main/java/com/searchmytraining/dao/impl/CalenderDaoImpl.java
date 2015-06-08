@@ -61,8 +61,8 @@ public class CalenderDaoImpl extends AbstractJpaDAO<CalenderEntity> implements
 	}
 
 	@Override
-	public List<CalenderEntity> getCalendersByKeyword(String kyeword) {
-		String query = "from CalenderEntity calender where calender.kyeword like '%"+kyeword+"%'";
+	public List<CalenderEntity> getCalendersByKeyword(String keyword) {
+		String query = "from CalenderEntity calender where calender.keyword like '%"+keyword+"%'";
 		entityManager = getEntityManager();
 		TypedQuery<CalenderEntity> query1 = entityManager.createQuery(query,CalenderEntity.class);
 		List<CalenderEntity> list = query1.getResultList();
