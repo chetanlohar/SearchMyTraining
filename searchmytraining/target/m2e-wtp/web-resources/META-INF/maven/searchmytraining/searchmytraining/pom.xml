@@ -167,7 +167,15 @@
 			<groupId>org.apache.lucene</groupId>
 			<artifactId>lucene-core</artifactId>
 			<version>5.1.0</version>
-		</dependency>
+		</dependency> 
+		
+		<dependency>
+	<groupId>org.apache.lucene</groupId>
+	<artifactId>lucene-queryparser</artifactId>
+	<version>5.1.0</version>
+</dependency>
+		
+
 		
 		<!-- End: Maven Dependency checked in by Vaibhav Khandelwal on 25 May -->
 		
