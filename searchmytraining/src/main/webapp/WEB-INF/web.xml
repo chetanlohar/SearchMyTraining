@@ -10,6 +10,10 @@
 	</welcome-file-list>
 	
 	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	
+	<listener>
         <listener-class>com.searchmytraining.util.ApplicationStartUp</listener-class>
     </listener>
 
@@ -35,27 +39,21 @@
 			classpath:spring/spring-security.xml
 		</param-value>		
 	</context-param>
+	
 	<context-param>
-	
 		<param-name>LuceneIndexFilePath</param-name>
-		<param-value>C:\Workspace\SearchMyTraining\searchmytraining\src\main\resources\LuceneIndex</param-value>
-	
+		<param-value>C:\LuceneIndex\</param-value>
+		<!-- <param-value>\searchmytraining\src\main\resources\LuceneIndex</param-value> -->
 	</context-param>
 	
-
 	<filter>
 		<filter-name>springSecurityFilterChain</filter-name>
 		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
 	</filter>
-
 	<filter-mapping>
 		<filter-name>springSecurityFilterChain</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-
-
-	<listener>
-		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener>
+	
 </web-app>
 
