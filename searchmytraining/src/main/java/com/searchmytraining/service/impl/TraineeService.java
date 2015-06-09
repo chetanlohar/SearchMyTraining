@@ -42,6 +42,7 @@ public class TraineeService implements ITraineeService {
 		TraineeEntity traineeentity = mapper.map(traineedto, TraineeEntity.class);
 		System.out.println(traineeentity);
 		StatusEntity status = statusdao.getStatus(1);
+		UserEntity userentity = new UserEntity();
 		userentity.setUserName(traineedto.getEmail());
 		userentity.setPassword(encoder.encode(traineedto.getPassword()));
 		userentity.setEnabled(1);
@@ -52,6 +53,7 @@ public class TraineeService implements ITraineeService {
 		//Insertion of User first
 		userdao.addUser(userentity);
 		//Insertion of Role in user_roles table
+		RoleEntity role = new RoleEntity();
 		role.setROLE("TRAINEE");
 		role.setUser(userentity);
 		roledao.setRoleToUser(role);
