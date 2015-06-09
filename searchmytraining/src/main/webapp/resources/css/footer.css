@@ -49,7 +49,7 @@ footer .footer-top .foot_nav .border {
 
 footer .foot_nav ul {
 	list-style: none;
-	margin-left: 90px;
+	margin-left: 110px;
 	margin-top: 35px;
 	color: #fff;
 	font-family: calibri;
@@ -92,7 +92,7 @@ footer .foot_nav ul li a:hover {
 
 footer .foot_nav #foot-ribbon ul.ribb li:first-child h4 {
 	margin-top: 50px;
-	margin-left: 20px;
+	margin-left: 10px;
 	color: white;
 }
 
@@ -136,7 +136,7 @@ footer .foot_nav #foot-ribbon ul.ribb li:nth-child(6) h3 {
 footer .foot_nav .social_icon {
 	width: 80%;
 	height: 95px;
-	margin-top: 15px;
+	margin-top: 10px;
 	color: #fff;
 }
 
@@ -148,8 +148,8 @@ footer .foot_nav .social_icon h3 {
 }
 
 footer .foot_nav .social_icon .connect {
-	margin-top: -5px;
-	height: 60px;
+	margin-top: -15px;
+	height: 100px;
 	width: 100%;
 }
 
@@ -161,7 +161,7 @@ footer .foot_nav .social_icon .connect ul li {
 	float: left;
 	overflow: hidden;
 	margin: 2px 0px 10px;
-	padding-right: 5px;
+	padding-right: 25px;
 }
 
 footer .foot_nav .social_icon .connect ul li a {
@@ -186,6 +186,10 @@ footer .foot_nav .social_icon .connect ul li.twitter a {
 
 footer .foot_nav .social_icon .connect ul li.linked a {
 	background-position: 0px -528px;
+}
+
+footer .foot_nav .social_icon .connect ul li.googleplus a {
+	background-position: 0px -205px;
 }
 
 footer .footer-bottom {

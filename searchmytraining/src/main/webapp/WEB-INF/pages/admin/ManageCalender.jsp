@@ -1,15 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
-</html><%@page
+<%@page
 	import="com.searchmytraining.dto.FreelancerDTO,com.searchmytraining.entity.UserEntity"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
@@ -17,84 +6,76 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
+	<script type="text/javascript"
+	src="<%=request.getContextPath()%>/resources/js/datepicker/date.js"></script>
+	<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/css/tooltip.css"
+	type="text/css">
 <script type="text/javascript">
-$('#acord1').accordion({
-	collapsible : true
-});
-
-jQuery(document).ready(function () {
-	  
-    jQuery(".acord .skip").click(function () {
-        var $nextContent = jQuery(this).parent().next().next();
-        jQuery(".acord .acord_cont").slideUp("fast", function () {
-       
-            $nextContent.show()
-        });
-        jQuery(".acord ").next().slideDown("fast", function () {
-            
-            $nextContent.show()
-        });
-     
-
-    });
-}); 
-
+$('#Fdate,#Tdate').datepicker();
 	
 </script>
 </head>
 <body>
-	          <div id="acord1" class="acord">
-		       <h3 class="acord_head plus">
-		       <span></span>
-		       Industrywise Calender Selection
-		        </h3>
-		       
-							<div class="acord_cont">
-								<form action="#">
-									<div class="selectCalender">
-									  <label>Industry </label>
-									  <select id="industryLists">
-									  <option>A</option>
-									  <option>B</option>
-									  <option>C</option>
-									  <option>D</option>
-									  <option>E</option>
-									  <option>F</option>
-									  </select>
-									</div>									
-								</form>
-							</div>
+	<div class="calender">
+		<form action="">
+			<div class="ctype">
+				<label>Select Calender Detail Type :</label>&nbsp;&nbsp; <select>
+					<option>Newest</option>
+					<option>Oldest</option>
+				</select>
+			</div>
+			<div class="industry">
+				<label>Select Industry :</label>&nbsp;&nbsp; <select>
+					<option>a</option>
+					<option>b</option>
+					<option>c</option>
+					<option>d</option>
+				</select>
+			</div>
+			<div class="industry">
+				<label>Select Category :</label>&nbsp;&nbsp; <select>
+					<option>a</option>
+					<option>b</option>
+					<option>c</option>
+					<option>d</option>
+				</select>
+			</div>
+			<div class="industry">
+				<label>Select SubCategory :</label>&nbsp;&nbsp; <select>
+					<option>a</option>
+					<option>b</option>
+					<option>c</option>
+					<option>d</option>
+				</select>
+			</div>
+			<div class="citynew">
+				<label>Select City :</label>
+				<select>
+				<option>Pune,Maharashtra,India</option>
+				<option>Mumbai,Maharashtra,India</option>
+				<option>Solapur,Maharashtra,India</option>
+				
+				</select>
+				</div>
+			<div class="date-range">
+			<label>Select Date Range :</label>
+					<text>From </text> <input type="text" id="Fdate"
+						placeholder="Start Date" autocomplete="off" name="Fdate" /> <span><img
+						src="<%=request.getContextPath()%>/resources/images/calender/calendar.png" /></span>
 
-		          <h3 class="acord_head">
-		          <span></span>
-		          Recently Added Calenders</h3>
-		           
-							<div class="acord_cont">
-								<form action="#">
-									
-								</form>
-							</div>
+				
+				
+					 <text>To </text> <input type="text" id="Tdate"
+						placeholder="End Date" autocomplete="off" name="Tdate" /> <span><img
+						src="<%=request.getContextPath()%>/resources/images/calender/calendar.png" /></span>
+				</div>
+				<div class="search1">
+					 <input type="button" value="search"> 
+				</div>
+			
+		</form>
 
-	            <h3 class="acord_head" >
-	            <span></span>
-		          Ranking As Per Industry</h3>
-		           
-							<div class="acord_cont">
-								<form action="#">
-									        
-								</form>
-							</div>
-							
-							<h3 class="acord_head" >
-							<span></span>
-							Delete Calender</h3>
-							
-							<div class="acord_cont">
-								<form action="#">
-									
-								</form>
-							</div>
-		
 	</div>
 </body>
 </html>

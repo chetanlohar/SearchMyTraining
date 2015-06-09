@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	
+	
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -21,7 +23,11 @@
 		$('#selType').change(function() {
 			$('#Answers > div').hide();
 			$('#Answers').find('#' + $(this).val()).show();
-		});
+			var x= document.getElementById("name2");
+			x.style.backgroundImage = "url('<%=request.getContextPath()%>/resources/images/corporate1.png')";
+							x.style.backgroundRepeat = "no-repeat";
+
+						});
 	});
 	function traineeRegistration(path) {
 		var flag = validation01();
@@ -45,21 +51,29 @@
 							success : function(response) {
 
 								if (response.errorMsg) {
-									$.map(response.errorMsg,
-											function(val, key) {
-												if (key == "traineetype")
-													$('#error00').text(val);
-												else if (key == "corporatename")
-													$('#error00').text(val);
-												else if (key == "name")
-													$('#error01').text(val);
-												else if (key == "contact")
-													$('#error02').text(val);
-												else if (key == "email")
-													$('#error04').text(val);
-												else if (key == "password")
-													$('#error04').text(val);
-											});
+									$
+											.map(
+													response.errorMsg,
+													function(val, key) {
+														if (key == "traineetype")
+															$('#error00').text(
+																	val);
+														else if (key == "corporatename")
+															$('#error00').text(
+																	val);
+														else if (key == "name")
+															$('#error01').text(
+																	val);
+														else if (key == "contact")
+															$('#error02').text(
+																	val);
+														else if (key == "email")
+															$('#error04').text(
+																	val);
+														else if (key == "password")
+															$('#error04').text(
+																	val);
+													});
 								} else {
 									alert("Thank you for Your Registration, Please Update Your Profile:");
 									window.location.href = path
@@ -98,11 +112,10 @@
 			</div>
 			<span id="error00"></span>
 			<div id="Answers">
-				<div id="Corporate" style="display: none;">
+				<div id="Corporate" style="display: none; margin-bottom: 20px;">
 					<input type="text" id="name2" name="copname"
 						placeholder="Corporate Name" />
 				</div>
-
 			</div>
 
 			<div class="name">
@@ -129,7 +142,11 @@
 					placeholder="Enter Password" />
 
 			</div>
-			 <div id="Pass-chek01"><div id="meter01"></div><div id="meter02"></div> <div id="meter03"></div></div>
+			<div id="Pass-chek01">
+				<div id="meter01"></div>
+				<div id="meter02"></div>
+				<div id="meter03"></div>
+			</div>
 
 
 			<div class="password">
@@ -139,6 +156,7 @@
 
 			</div>
 			<span id="error04"></span>
+			
 			<div class="sign">
 				<input type="button" name="Submit" value="Submit"
 					onclick="traineeRegistration('<%=request.getContextPath()%>');">

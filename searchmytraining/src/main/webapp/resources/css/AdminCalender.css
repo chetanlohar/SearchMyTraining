@@ -1,0 +1,71 @@
+@CHARSET "ISO-8859-1";
+.calender{
+	display: block;
+}
+.calender form{
+	height: 400px;
+	width: 80%;
+	border: 1px solid gray;
+}
+.calender .ctype{
+	width: 60%;
+	height: 30px;
+	float:left;
+	margin:20px 0px 10px 100px;
+
+}
+.calender form label {
+	float:left;
+	font-family:calibri;
+	font-size: 16px;
+	width: 300px;
+	text-align: right;
+	color: #000;
+	clear: left;
+	line-height: 30px;
+}
+ .calender form select{
+	width: 200px;
+	height: 30px;
+	float:left;
+	margin-left: 10px;
+}
+.calender .industry{
+	width: 60%;
+	height: 30px;
+	margin:10px 0px 10px 100px;
+	float:left;
+}
+.calender form input{
+	width: 150px;
+	margin-left: 10px;
+	
+}
+.calender .date-range{
+	width: 70%;
+	height: 30px;
+	margin:10px 0px 10px 160px;
+	float:left;
+}
+.calender .date-range label {
+	width: 150px;	
+}
+.calender .date-range text{
+	font-family:calibri;
+	font-size: 16px;
+	margin-left: 10px;
+	line-height: 30px;
+}
+.calender .citynew{
+	width: 60%;
+	height: 30px;
+	margin:10px 0px 10px 100px;
+	float:left;
+}
+.calender .search1{
+	width: 60%;
+	height: 30px;
+	margin:10px 0px 10px 100px;
+	float:left;
+	background: red;
+}

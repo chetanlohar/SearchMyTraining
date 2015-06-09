@@ -23,12 +23,12 @@ and open the template in the editor.
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/tabs.css"
 	type="text/css">
-	<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/AdminPages.css"
-	type="text/css">
+	
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/form.css"
 	type="text/css">
+	<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/css/AdminCalender.css">
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/js/jquery/jquery-1.10.2.js"></script>
 <script type="text/javascript"
@@ -66,17 +66,7 @@ jQuery(document).ready(function () {
 </script>
 
 <script type="text/javascript">
-function FLPload() {
-	<%-- $("#home-content").load("<%=request.getContextPath()%>/resources/pages/FreeLancer/FLprofile.jsp", function(responseText, statusText, xhr) --%>
-	$("#home-content").load("<%=request.getContextPath()%>/accountSetting", function(responseText, statusText, xhr)
-	        {
-	                if(statusText == "success")
-	                        /* alert("Successfully loaded the content!"); */
-	                if(statusText == "error")
-	                        alert("An error occurred: " + xhr.status + " - " + xhr.statusText);
-	        });
-	
-}
+
 
 function FLCload() {
 	$("#home-content").load("<%=request.getContextPath()%>/manageCalender", function(responseText, statusText, xhr)
@@ -121,21 +111,26 @@ function AMCload() {
 	        });
 	}
 </script>
+<style>
+.container .container-form-wrapar{
+width: 100%;
+box-shadow:none;
+}
+</style>
 </head>
-<body style="min-width: 960px;" onload="FLPload(); ">
+<body style="min-width: 960px;" onload="FLCload(); ">
 
 <input id= "myhiddenid" type="hidden" value="${requestScope.freelancerDto.name12}"/>
 
 
 	<%@include file="../../layouts/Header-1.jsp"%>
 	<div class="container">
-		<div class=" container-form-wrapar">
+		<div class="container-form-wrapar">
 			<div class="space"></div>
 			<div style="margin-top: 0px;" id="w" class="clearfix">
 				<ul id="sidemenu">
-					<li><a href="" onclick="FLPload();" class="open"><strong>Account Setting</strong></a>
-					</li>
-					<li><a href="" onclick="FLCload()"><strong>Manage Calender</strong></a></li>
+					
+					<li><a href=""  onclick="FLCload();" class="open"><strong>Calender Details</strong></a></li>
 					<li><a href="" onclick="FSIload();"><strong>Manage Trainings</strong></a></li>
 
 					<li><a href="" onclick="FLSload();"><strong>Manage Services</strong></a></li>

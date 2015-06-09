@@ -100,7 +100,7 @@
 		<div class="foot_nav">
 			<div id="foot-ribbon">
 
-				<ul class="ribb">
+				<ul class="ribb" style="margin-top: -25px;margin-left: 90px;">
 					<li>
 						<h4>GET IN TOUCH</h4>
 					</li>
@@ -120,8 +120,10 @@
 							<li class="facebook social-slide"><a href="#"
 								target="_blank">Facebook</a></li>
 							<li class="twitter social-slide"><a href="#" target="_blank">Twitter</a></li>
+						</ul><br><br>
+						<ul>	
 							<li class="linked social-slide"><a href="#" target="_blank">IN</a></li>
-							
+							<li class="googleplus social-slide"><a href="#" target="_blank">google-Plus</a></li>
 						</ul>
 					</div>
 

@@ -706,7 +706,7 @@ $(function(){
 				<li data-hovercolor="#fff" class="box-shaddow-black"><a
 					href="<%=request.getContextPath()%>/resources/graph-design.html">
 						<h2 data-type="mText" class="sti-item">It Is Not Only Important To Be Powerfull, What's Really  Important
-						Is To Be Brave,Training Is Essential Because  Training Makes You Brave .</h2>
+						Is To Be Brave,Training Is Essential Because  Training Makes You Brave.</h2>
 						<h3 data-type="sText" class="sti-item">Search About Graphics
 							»</h3> <span data-type="icon" class="sti-icon sti-icon-print sti-item"></span>
 				</a></li>

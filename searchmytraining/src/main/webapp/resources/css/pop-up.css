@@ -66,12 +66,14 @@ and open the template in the editor.
 	text-shadow: rgb(224, 224, 224) 1px 1px 0px;
 	font-weight: bold;
 }
+
 #pop_up_box form span {
-	margin-left:20px;
+	margin-left: 20px;
 	font-size: 13px;
-	color:red;
+	color: red;
 	font-family: arial;
 }
+
 #pop_up_box form input[type="text"] {
 	color: #858282;
 	font-size: 15px;
@@ -196,12 +198,15 @@ and open the template in the editor.
 	height: 280px;
 	margin: 30px auto;
 }
-#pop_up_box_1 form .name{
-	width:44px;
+
+#pop_up_box_1 form .name {
+	width: 44px;
 }
-#pop_up_box_1 form .city{
+
+#pop_up_box_1 form .city {
 	
 }
+
 #pop_up_box_1 form h2 {
 	margin-top: 5px;
 	line-height: 50px;
@@ -213,10 +218,11 @@ and open the template in the editor.
 	font-weight: bold;
 	text-shadow: rgb(224, 224, 224) 1px 1px 0px;
 }
+
 #pop_up_box_1 form span {
-	margin-left:20px;
+	margin-left: 20px;
 	font-size: 13px;
-	color:red;
+	color: red;
 	font-family: arial;
 }
 
@@ -325,10 +331,11 @@ and open the template in the editor.
 	background: #FFFFFF;
 	overflow: hidden;
 }
+
 #pop_up_box_2 form span {
-	margin-left:35px;
+	margin-left: 35px;
 	font-size: 13px;
-	color:red;
+	color: red;
 	font-family: arial;
 }
 
@@ -357,46 +364,45 @@ and open the template in the editor.
 	margin-left: 30px;
 }
 
-#pop_up_box_2 form  #Pass-chek01{
+#pop_up_box_2 form  #Pass-chek01 {
 	width: 270px;
-	margin-top:2px;
+	margin-top: 2px;
 	height: 15px;
 	font-size: 12px;
-   font-family: arial;
-   text-align: center;
-    
-    margin-left: 40px;
-
+	font-family: arial;
+	text-align: center;
+	margin-left: 40px;
 }
 
-#pop_up_box_2 form #Pass-chek01 .weak{
+#pop_up_box_2 form #Pass-chek01 .weak {
 	width: 88px;
 	height: 15px;
 	float: left;
-    margin-right:2px;
-    color: #fff;
-    line-height: 15px;
-    float:left;
-    background: orange;
-    
+	margin-right: 2px;
+	color: #fff;
+	line-height: 15px;
+	float: left;
+	background: orange;
 }
-#pop_up_box_2 form #Pass-chek01 .good{
+
+#pop_up_box_2 form #Pass-chek01 .good {
 	width: 88px;
 	height: 15px;
 	float: left;
-    margin-right:2px;
-    background: blue !important;
-    color: #fff;
-    line-height: 15px;
+	margin-right: 2px;
+	background: blue !important;
+	color: #fff;
+	line-height: 15px;
 }
-#pop_up_box_2 form #Pass-chek01 .strong{
+
+#pop_up_box_2 form #Pass-chek01 .strong {
 	width: 88px;
 	height: 15px;
 	float: left;
-    margin-right:2px;
-    background: green !important;
-    color: #fff;
-    line-height: 15px;
+	margin-right: 2px;
+	background: green !important;
+	color: #fff;
+	line-height: 15px;
 }
 
 #pop_up_box_2 form h2 {
@@ -410,12 +416,18 @@ and open the template in the editor.
 	text-shadow: rgb(224, 224, 224) 1px 1px 0px;
 }
 
+#pop_up_box_2 form .name {
+	margin-top: 0px;
+}
+
 #pop_up_box_2 form .type {
 	height: 40px;
 	width: 270px;
-	margin: 5px 40px;
+	margin: 0px 40px;
 }
-
+#pop_up_box_2 form .Answers{
+	height: 50px;
+}
 #pop_up_box_2 form select {
 	font-family: calibri;
 	font-size: 17px;
@@ -454,7 +466,7 @@ and open the template in the editor.
 	height: 40px;
 	width: 270px;
 	border: 1px solid #C0C0C0;
-	margin: 10px 10px 5px 40px;
+	margin: 5px 10px 0px 40px;
 	border-radius: 3px;
 	-webkit-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
 	-moz-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
@@ -479,12 +491,6 @@ and open the template in the editor.
 	background-position-y: 5px;
 }
 
-#pop_up_box_2 form .city input {
-	background: url('../images/location_ico.png') no-repeat;
-	background-position: left center;
-	background-position-x: 2px;
-	background-position-y: 5px;
-}
 
 #pop_up_box_2 form .contact input {
 	background: url('../images/icons_phone_iconWhite.png') no-repeat;
@@ -858,9 +864,11 @@ and open the template in the editor.
 	font-weight: bold;
 	text-shadow: rgb(224, 224, 224) 1px 1px 0px;
 }
-#pop_up_box_4 form .name{
+
+#pop_up_box_4 form .name {
 	height: 56px;
 }
+
 #pop_up_box_4 form select {
 	font-family: calibri;
 	font-size: 17px;
@@ -883,8 +891,7 @@ and open the template in the editor.
 	border-color: gray;
 }
 
- #pop_up_box_4 form input[type="password"]
-	{
+#pop_up_box_4 form input[type="password"] {
 	color: #858282;
 	font-size: 15px;
 	padding: 0px 0px 0px 40px;
@@ -902,7 +909,8 @@ and open the template in the editor.
 	-o-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
 	box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
 }
-#pop_up_box_4 form input[type="text"]{
+
+#pop_up_box_4 form input[type="text"] {
 	color: #858282;
 	font-size: 15px;
 	padding: 0px 0px 0px 40px;
@@ -919,7 +927,6 @@ and open the template in the editor.
 	-ms-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
 	-o-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
 	box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
-	
 }
 
 #pop_up_box_4 form input[type="text"]:focus, #pop_up_box_4 form input[type="password"]:focus
@@ -965,52 +972,53 @@ and open the template in the editor.
 	background-position-x: 4px;
 	background-position-y: 8px;
 }
+
 #pop_up_box_4 form span {
-	margin-left:20px;
+	margin-left: 20px;
 	font-size: 13px;
-	color:red;
+	color: red;
 	font-family: arial;
 }
 
-#pop_up_box_4 form #Pass-chek{
+#pop_up_box_4 form #Pass-chek {
 	width: 270px;
 	height: 15px;
 	font-size: 13px;
 	margin-left: 20px;
-   font-family: arial;
-   text-align: center;
-   margin-top: 2px;
- 
+	font-family: arial;
+	text-align: center;
+	margin-top: 2px;
+}
 
-}
-#pop_up_box_4 form #Pass-chek .weak{
+#pop_up_box_4 form #Pass-chek .weak {
 	width: 88px;
 	height: 15px;
 	float: left;
-    margin-right:2px;
-    color: #fff;
-    line-height: 15px;
-    float:left;
-    background: orange;
-    
+	margin-right: 2px;
+	color: #fff;
+	line-height: 15px;
+	float: left;
+	background: orange;
 }
-#pop_up_box_4 form #Pass-chek .good{
+
+#pop_up_box_4 form #Pass-chek .good {
 	width: 88px;
 	height: 15px;
 	float: left;
-    margin-right:2px;
-    background: blue !important;
-    color: #fff;
-    line-height: 15px;
+	margin-right: 2px;
+	background: blue !important;
+	color: #fff;
+	line-height: 15px;
 }
-#pop_up_box_4 form #Pass-chek .strong{
+
+#pop_up_box_4 form #Pass-chek .strong {
 	width: 88px;
 	height: 15px;
 	float: left;
-    margin-right:2px;
-    background: green !important;
-    color: #fff;
-    line-height: 15px;
+	margin-right: 2px;
+	background: green !important;
+	color: #fff;
+	line-height: 15px;
 }
 
 #pop_up_box_4 form .sign input {
@@ -1040,18 +1048,27 @@ and open the template in the editor.
 	margin-right: 10px;
 }
 
+@
+keyframes bar { 0% {
+	width: 20%
+}
 
-@keyframes bar{
+50%
+{
+width
+:
+50%
+
 	
-	0% {
-	width:20%
-	}
-	50% {
-	width:50%
-	}
-	100% {
-	width:100%
-	}
+}
+100%
+{
+width
+:
+100%
+
+	
+}
 }
 
 /*=============================REgistration Css Ends=====================================*/
@@ -1118,20 +1135,20 @@ and open the template in the editor.
 	text-shadow: rgb(224, 224, 224) 1px 1px 0px;
 	padding-top: 15px;
 }
-#pop_up_box_5 form .errormsg{
+
+#pop_up_box_5 form .errormsg {
 	width: 320px;
 	height: 30px;
 	margin-left: 5px;
-	
-
 }
-#pop_up_box_5 form .errormsg span{
-	
+
+#pop_up_box_5 form .errormsg span {
 	line-height: 30px;
 	font-family: arial;
 	font-size: 13px;
 	color: red;
 }
+
 #pop_up_box_5 form input[type="password"], #pop_up_box_5 form input[type="email"]
 	{
 	color: #858282;
@@ -1176,9 +1193,9 @@ and open the template in the editor.
 	background-position-y: 9px;
 }
 
-#pop_up_box_5 form .sign{
+#pop_up_box_5 form .sign {
 	width: 100%;
-	height:40px;
+	height: 40px;
 	margin-top: 10px !important;
 	overflow: hidden;
 }
@@ -1190,8 +1207,8 @@ and open the template in the editor.
 	text-shadow: 2px whitesmoke;
 	float: left;
 	width: 90px;
-	height:40px;
-	border:none;
+	height: 40px;
+	border: none;
 	margin-left: 50px;
 	border-radius: 5px;
 	color: #FFFFFF;
@@ -1207,8 +1224,8 @@ and open the template in the editor.
 	text-shadow: 2px whitesmoke;
 	float: left;
 	width: 90px;
-	height:40px;
-	border:none;
+	height: 40px;
+	border: none;
 	margin-left: 10px;
 	border-radius: 5px;
 	color: #FFFFFF;
@@ -1233,8 +1250,7 @@ and open the template in the editor.
 .p-container {
 	/*margin-top:2em;*/
 	width: 100%;
-	height:40px;
-
+	height: 40px;
 }
 
 .p-container  .checkbox input {
@@ -1280,15 +1296,15 @@ and open the template in the editor.
 .p-container  .checkbox {
 	float: left;
 	margin-right: 0px;
-	
 }
-.p-container  a{
+
+.p-container  a {
 	float: left;
-	font-size:15px !important;
+	font-size: 15px !important;
 	color: blue !important;
 	line-height: 57px;
 	margin-left: 20px;
-	margin-top:10px;
+	margin-top: 10px;
 	text-decoration: none;
 }
 
@@ -1362,7 +1378,6 @@ and open the template in the editor.
 	margin-top: 40px;
 	background: #ECF0F3;
 }
-
 
 .b-close {
 	cursor: pointer;
@@ -1770,56 +1785,55 @@ and open the template in the editor.
 	font-weight: bold;
 	text-shadow: rgb(224, 224, 224) 1px 1px 0px;
 }
+
 #pop_up_box_8 form span {
-	margin-left:20px;
+	margin-left: 20px;
 	font-size: 13px;
-	color:red;
+	color: red;
 	font-family: arial;
 }
 
-
-
-#pop_up_box_8 form #Pass-chek12{
+#pop_up_box_8 form #Pass-chek12 {
 	width: 270px;
 	height: 15px;
 	font-size: 13px;
 	margin-left: 20px;
-   font-family: arial;
-   text-align: center;
-   margin-top: 2px;
-    margin-bottom: 2px;
-
-}
-#pop_up_box_8 form #Pass-chek12 .weak{
-	width: 88px;
-	height: 15px;
-	float: left;
-    margin-right:2px;
-    color: #fff;
-    line-height: 15px;
-    float:left;
-    background: orange;
-    
-}
-#pop_up_box_8 form #Pass-chek12 .good{
-	width: 88px;
-	height: 15px;
-	float: left;
-    margin-right:2px;
-    background: blue !important;
-    color: #fff;
-    line-height: 15px;
-}
-#pop_up_box_8 form #Pass-chek12 .strong{
-	width: 88px;
-	height: 15px;
-	float: left;
-    margin-right:2px;
-    background: green !important;
-    color: #fff;
-    line-height: 15px;
+	font-family: arial;
+	text-align: center;
+	margin-top: 2px;
+	margin-bottom: 2px;
 }
 
+#pop_up_box_8 form #Pass-chek12 .weak {
+	width: 88px;
+	height: 15px;
+	float: left;
+	margin-right: 2px;
+	color: #fff;
+	line-height: 15px;
+	float: left;
+	background: orange;
+}
+
+#pop_up_box_8 form #Pass-chek12 .good {
+	width: 88px;
+	height: 15px;
+	float: left;
+	margin-right: 2px;
+	background: blue !important;
+	color: #fff;
+	line-height: 15px;
+}
+
+#pop_up_box_8 form #Pass-chek12 .strong {
+	width: 88px;
+	height: 15px;
+	float: left;
+	margin-right: 2px;
+	background: green !important;
+	color: #fff;
+	line-height: 15px;
+}
 
 #pop_up_box_8 form input[type="text"], #pop_up_box_8 form input[type="password"]
 	{
@@ -1840,12 +1854,15 @@ and open the template in the editor.
 	-o-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
 	box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
 }
-#pop_up_box_8 form .name{
+
+#pop_up_box_8 form .name {
 	height: 44px;
 }
-#pop_up_box_8 form .password{
+
+#pop_up_box_8 form .password {
 	height: 44px;
 }
+
 #pop_up_box_8 form input[type="text"]:focus, #pop_up_box_8 form input[type="password"]:focus
 	{
 	border: 1px solid #40A9DF;
@@ -1868,6 +1885,7 @@ and open the template in the editor.
 	background-position-x: 2px;
 	background-position-y: 5px;
 }
+
 #pop_up_box_8 form select {
 	font-family: calibri;
 	font-size: 17px;
@@ -1935,7 +1953,6 @@ and open the template in the editor.
 
 #pop_up_box_8 form .sign input[type="button"] {
 	margin-left: 50px;
-
 }
 /*==================Freelancer REgistration Css Ends==================*/
 #pop_up_box_9 {
@@ -1948,136 +1965,148 @@ and open the template in the editor.
 	background: #ECF0F3;
 }
 
-#pop-up-box-head{
-	height:30px;
-	width:100%;
+#pop-up-box-head {
+	height: 30px;
+	width: 100%;
 	background: #3e3e3e;
-	color:white;
+	color: white;
 	text-align: center;
 	padding-top: 13px;
 	font-family: calibri;
 	font-size: 20px;
-	}
-	#pop-up-box-contents{
-	height:470px;
-	width:100%;
-	
-	}
-	.row1{
+}
+
+#pop-up-box-contents {
+	height: 470px;
+	width: 100%;
+}
+
+.row1 {
 	height: 35px;
 	width: 100%;
 	margin: 15px 84px;
-	
-	}
-	.row1 label{
+}
+
+.row1 label {
 	width: 80px;
 	font-size: 20px;
 	font-family: calibri;
 	line-height: 35px;
 	margin: 10px;
-	}
-	.row1 input[type="text"]{
+}
+
+.row1 input[type="text"] {
 	height: 35px;
 	width: 280px;
 	margin-left: 2px;
-	}
-	
-	.row2{
+}
+
+.row2 {
 	height: 35px;
 	width: 80%;
-	margin-left:90px;
+	margin-left: 90px;
 	margin-bottom: 32px;
+}
 
-	}
-	.row2 label{
+.row2 label {
 	width: 85px;
 	font-size: 20px;
 	line-height: 35px;
 	font-family: calibri;
 	margin: 10px;
-	}
-	.row2 input[type="text"]{
+}
+
+.row2 input[type="text"] {
 	height: 35px;
 	width: 100px;
 	margin: 10px;
-	}
-	.row3{
+}
+
+.row3 {
 	height: 35px;
 	width: 100%;
-	margin-left:0px;
+	margin-left: 0px;
 	margin-bottom: 25px;
+}
 
-	}
-	.row3 label{
+.row3 label {
 	width: 85px;
 	font-size: 20px;
 	line-height: 35px;
 	font-family: calibri;
 	margin-left: 88px;
 	margin-right: 9px;
-	}
-	.row3 input[type="text"]{
+}
+
+.row3 input[type="text"] {
 	height: 35px;
 	width: 100px;
 	margin-left: 4px;
-	}
-	#sd{
+}
+
+#sd {
 	margin: 1px;
-	}
-	.row4{
+}
+
+.row4 {
 	height: 35px;
 	width: 100%;
 	margin: 25px 84px;
-	
-	}
-	.row4 label{
+}
+
+.row4 label {
 	width: 80px;
 	font-size: 20px;
 	font-family: calibri;
 	line-height: 35px;
-	
-	}
-		.row4 select{
+}
+
+.row4 select {
 	height: 35px;
 	width: 276px;
 	margin-left: 9px;
-	}
-	.row5{
+}
+
+.row5 {
 	height: 35px;
 	width: 100%;
 	margin: 25px 17px;
-	}
-	.row5 label{
+}
+
+.row5 label {
 	width: 80px;
 	font-size: 20px;
 	font-family: calibri;
 	line-height: 35px;
 	margin-left: 5px;
-	
-	}
-		.row5 select{
+}
+
+.row5 select {
 	height: 35px;
 	width: 276px;
 	margin-left: 4px;
-	}
-	.row6{
+}
+
+.row6 {
 	height: 35px;
 	width: 100%;
 	margin: 25px 17px;
-	}
-	.row6 label{
+}
+
+.row6 label {
 	width: 80px;
 	font-size: 20px;
 	font-family: calibri;
 	line-height: 35px;
-	
-	}
-		.row6 select{
+}
+
+.row6 select {
 	height: 35px;
 	width: 276px;
 	margin-left: 4px;
-	}
-	#pop_up_box_9 form select {
+}
+
+#pop_up_box_9 form select {
 	font-family: calibri;
 	font-size: 17px;
 	border: 1px solid #cccccc;
@@ -2089,17 +2118,18 @@ and open the template in the editor.
 	-o-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
 	box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
 }
-.row4 option{
+
+.row4 option {
 	padding-left: 15px;
 	border-color: gray;
-	 direction: rtl;
-	 
+	direction: rtl;
 }
-#pop_up_box_9 form input[type="text"]{
+
+#pop_up_box_9 form input[type="text"] {
 	font-family: calibri;
 	font-size: 17px;
 	border: 1px solid #cccccc;
-	text-align:center;
+	text-align: center;
 	padding: 0px 0px 0px 10px;
 	-webkit-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
 	-moz-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
@@ -2108,32 +2138,31 @@ and open the template in the editor.
 	box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
 }
 
-
-	#button2{
+#button2 {
 	height: 60px;
 	width: 60%;
-	margin-left:113px;
-	
-	 
-	}
-	#button2 input{
-	 cursor: pointer;
-    font-size: 20px;
-    font-family: calibri;
-    text-shadow: 2px whitesmoke;
-    width: 125px;
-    height: 42px;
-    margin-top: 5px;
-    border: none;
-    margin-left: 15px;
-    border-radius: 5px;
-    color: #FFFFFF;
-    text-shadow: 0px -1px 0px rgba(0,0,0,.7);
-    //background: #0FA1E0;
-    background:#3e3e3e;
-    box-shadow: 1px 1px 1px rgba(10, 10, 10, 0.8);
-	}
-	#button2 input:hover{
-	 box-shadow: none;
-    background: #0C7FB0;
-	}
+	margin-left: 113px;
+}
+
+#button2 input {
+	cursor: pointer;
+	font-size: 20px;
+	font-family: calibri;
+	text-shadow: 2px whitesmoke;
+	width: 125px;
+	height: 42px;
+	margin-top: 5px;
+	border: none;
+	margin-left: 15px;
+	border-radius: 5px;
+	color: #FFFFFF;
+	text-shadow: 0px -1px 0px rgba(0, 0, 0, .7); //
+	background: #0FA1E0;
+	background: #3e3e3e;
+	box-shadow: 1px 1px 1px rgba(10, 10, 10, 0.8);
+}
+
+#button2 input:hover {
+	box-shadow: none;
+	background: #0C7FB0;
+}
