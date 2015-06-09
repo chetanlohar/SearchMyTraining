@@ -36,7 +36,14 @@ public class UploadFileController {
 	public String create(HttpServletRequest request,
 			@RequestParam CommonsMultipartFile fileUpload, HttpSession session)
 			throws Exception {
-		
+		String path="";
+		if(request.getServletContext().getInitParameter("uploadpath")!=null)
+		{
+			path=request.getServletContext().getInitParameter("uploadpath");
+			System.out.println("path======"+path);
+			
+		}
+			
 		String userType = null;
 
 		System.out.println("origional file name: "
@@ -84,9 +91,9 @@ public class UploadFileController {
 
 				keyword = keyword + "," + element.trim();
 			}
-			System.out.println("keyword=========== " + keyword);
+			/*System.out.println("keyword=========== " + keyword);*/
 
-			entity.setBrochure("C:\\SearchMT\\"
+			entity.setBrochure(path
 					+ fileUpload.getOriginalFilename());
 			entity.setTitle(ctitle);
 			entity.setCode("keyCode");
@@ -117,8 +124,7 @@ public class UploadFileController {
 				if (fileUpload.getSize() > 0) {
 					inputStream = fileUpload.getInputStream();
 					// File realUpload = new File("C:/");
-					outputStream = new FileOutputStream("C:\\SearchMT\\"
-							+ fileUpload.getOriginalFilename());
+					outputStream = new FileOutputStream(path+fileUpload.getOriginalFilename());
 
 					int readBytes = 0;
 					byte[] buffer = new byte[10000];
