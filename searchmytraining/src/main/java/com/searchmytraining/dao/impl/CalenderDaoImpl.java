@@ -85,9 +85,7 @@ public class CalenderDaoImpl extends AbstractJpaDAO<CalenderEntity> implements
 		
 		List<CalenderEntity> list = new ArrayList<CalenderEntity>();
 		CalenderEntity cal;
-		
 		try{
-			
 			Path path = Paths.get(SearchUtil.basePath);
 			Directory dir = FSDirectory.open(path);
 			
@@ -106,16 +104,25 @@ public class CalenderDaoImpl extends AbstractJpaDAO<CalenderEntity> implements
 			      //Retrieve the matched document and show relevant details
 			      Document doc = searcher.doc(scoredoc.doc);
 			      
-			      System.out.println("\nKeyWord: "+doc.getField("KeyWord").stringValue());
+			      /*System.out.println("\nKeyWord: "+doc.getField("KeyWord").stringValue());
 			      System.out.println("Description: "+doc.getField("Description").stringValue());
-			      System.out.println("Code: "+doc.getField("Code").stringValue());
-			      
+			      System.out.println("Code: "+doc.getField("Code").stringValue());*/
+
+			      System.out.println("\nTitle: "+doc.getField("title").stringValue());
+			      System.out.println("KeyWord: "+doc.getField("keyword").stringValue());
+			      System.out.println("Place: "+doc.getField("place").stringValue());
+			     
 			      cal = new CalenderEntity();
-			      cal.setKeyword(doc.getField("KeyWord").stringValue());
-			      cal.setDescription(doc.getField("Description").stringValue());
-			      cal.setCode(doc.getField("Code").stringValue());
+			      cal.setTitle(doc.getField("title").stringValue());
+			      cal.setStart_date(doc.getField("start_date").stringValue());
+			      cal.setEnd_date(doc.getField("end_date").stringValue());
+			      cal.setPrice(Double.parseDouble(doc.getField("price").stringValue()));
+			      cal.setKeyword(doc.getField("keyword").stringValue());
+			      cal.setTitle(doc.getField("title").stringValue());
+			      cal.setPlace(doc.getField("place").stringValue());
+			      cal.setDescription(doc.getField("description").stringValue());
+			      cal.setType(doc.getField("type").stringValue());
 			      list.add(cal);
-			      
 			   }
 			
 		}catch(Exception ex){

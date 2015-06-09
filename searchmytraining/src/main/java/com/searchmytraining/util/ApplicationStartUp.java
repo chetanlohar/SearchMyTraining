@@ -22,7 +22,7 @@ import com.searchmytraining.entity.CalenderEntity;
 import com.searchmytraining.service.ICalenderService;
 
 @SuppressWarnings("deprecation")
-public class ApplicationStartUp implements ServletContextListener, HttpSessionAttributeListener, HttpSessionListener{
+public class ApplicationStartUp implements ServletContextListener{
 
 	@Autowired
 	public ICalenderService calenderservice;
@@ -53,7 +53,6 @@ public class ApplicationStartUp implements ServletContextListener, HttpSessionAt
         .getRequiredWebApplicationContext(ctxEvent.getServletContext())
         .getAutowireCapableBeanFactory()
         .autowireBean(this);
-		
 		
 		List<CalenderEntity> calenders = calenderservice.getAllCalender();
 		
@@ -94,8 +93,12 @@ public class ApplicationStartUp implements ServletContextListener, HttpSessionAt
 		IndexableField idxF4 = new Field("BasicSearchString",cal.getDescription() +" "+cal.getKeyword()+" "+cal.getCode(),Store.NO, Index.ANALYZED);
 		doc.add(idxF4);*/
 		
-		IndexableField idxCalId = new Field("trngId",cal.getTrngId().toString(),Store.NO, Index.ANALYZED);
+		System.out.println("from creatDocument :" + cal.getKeyword());
+		
+		IndexableField idxCalId = new Field("trngId",cal.getTrngId().toString(),Store.NO, Index.NOT_ANALYZED);
 		doc.add(idxCalId);
+		IndexableField idxKeyword = new Field("keyword",cal.getKeyword(),Store.YES,Index.ANALYZED);
+		doc.add(idxKeyword);
 		IndexableField idxTitle = new Field("title", cal.getTitle(), Store.YES, Index.ANALYZED);
 		doc.add(idxTitle);
 		IndexableField idxStartDate = new Field("start_date",cal.getStart_date(),Store.YES,Index.ANALYZED);
@@ -104,43 +107,15 @@ public class ApplicationStartUp implements ServletContextListener, HttpSessionAt
 		doc.add(idxEndDate);
 		IndexableField idxPrice = new Field("price",cal.getPrice().toString(),Store.YES,Index.ANALYZED);
 		doc.add(idxPrice);
-		IndexableField idxPlace = new Field("place",cal.getPlace(),Store.YES,Index.ANALYZED);
+		IndexableField idxPlace = new Field("place",cal.getPlace(),Store.YES,Index.ANALYZED_NO_NORMS);
 		doc.add(idxPlace);
 		IndexableField idxType = new Field("type",cal.getType(),Store.YES,Index.ANALYZED);
 		doc.add(idxType);
-		IndexableField idxDesc = new Field("description",cal.getDescription(),Store.NO,Index.ANALYZED);
+		IndexableField idxDesc = new Field("description",cal.getDescription(),Store.YES,Index.ANALYZED);
 		doc.add(idxDesc);
+		IndexableField idxBasicSearch = new Field("BasicSearchString",cal.getTitle()+" "+cal.getDescription()+" "+cal.getKeyword(),Store.NO,Index.ANALYZED);
+		doc.add(idxBasicSearch);
 		
 		return doc;
-	}
-
-	@Override
-	public void sessionCreated(HttpSessionEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void sessionDestroyed(HttpSessionEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void attributeAdded(HttpSessionBindingEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void attributeRemoved(HttpSessionBindingEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void attributeReplaced(HttpSessionBindingEvent arg0) {
-		// TODO Auto-generated method stub
-		
 	}
 }
