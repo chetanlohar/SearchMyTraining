@@ -60,8 +60,11 @@
                     $elem.animate({top: (parseInt(top) - 70)}, 900, 'linear', function() {
                         window.verticalScroller($(this))
                     });
+                    
+                  
+                   
                 }
-
+               
 
                 $(document).ready(function() {
                     var i = 0;
@@ -70,6 +73,17 @@
                         i += 135;
                         window.verticalScroller($(this));
                     });
+                    
+                    $("#verticalScroller").on('mouseenter', function() {
+                    	$("#verticalScroller > div").stop();
+    				
+    				})
+    				 $("#verticalScroller").on('mouseleave', function() {
+    					  window.verticalScroller($(this));
+    				
+    				})
+                    
+                    
                 });
               
 //===================================================================================================
