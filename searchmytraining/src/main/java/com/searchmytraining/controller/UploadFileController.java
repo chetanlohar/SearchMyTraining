@@ -29,7 +29,6 @@ import com.searchmytraining.service.ICalenderService;
 public class UploadFileController {
 	@Autowired
 	ICalenderService calnderService;
-
 	/*
 	 * @Autowired IKeywordService keywordService;
 	 */
@@ -37,6 +36,7 @@ public class UploadFileController {
 	public String create(HttpServletRequest request,
 			@RequestParam CommonsMultipartFile fileUpload, HttpSession session)
 			throws Exception {
+
 		String path = null;
 		String userType = null;
 		String fileName = null;
@@ -49,6 +49,7 @@ public class UploadFileController {
 		String place = null;
 		String[] keyCode = null;
 		String keyword = null;
+		String CDesc = null;
 		Integer userid = 0;
 		Integer trnIndstrSubCatId = 0;
 
@@ -75,12 +76,10 @@ public class UploadFileController {
 			Tdate = request.getParameter("Tdate");
 			Ctype = request.getParameter("Ctype");
 			cPrice = Double.parseDouble(request.getParameter("cPrice"));
-			String CDesc = request.getParameter("CDesc");
+			CDesc = request.getParameter("CDesc");
 			place = request.getParameter("place");
 			keyCode = request.getParameterValues("tags[]");
-
 			userType = request.getParameter("userType");
-
 			userid = Integer
 					.parseInt(session.getAttribute("userid").toString());
 			trnIndstrSubCatId = Integer.parseInt(request.getParameter("Itype"));
