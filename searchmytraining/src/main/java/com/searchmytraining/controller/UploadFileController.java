@@ -29,6 +29,7 @@ import com.searchmytraining.service.ICalenderService;
 public class UploadFileController {
 	@Autowired
 	ICalenderService calnderService;
+
 	/*
 	 * @Autowired IKeywordService keywordService;
 	 */
@@ -36,20 +37,25 @@ public class UploadFileController {
 	public String create(HttpServletRequest request,
 			@RequestParam CommonsMultipartFile fileUpload, HttpSession session)
 			throws Exception {
-		String path="";
-		if(request.getServletContext().getInitParameter("uploadpath")!=null)
-		{
-			path=request.getServletContext().getInitParameter("uploadpath");
-			System.out.println("path======"+path);
-			
-		}
-			
+		String path = null;
 		String userType = null;
-
-		System.out.println("origional file name: "
-				+ fileUpload.getOriginalFilename());
 		String fileName = null;
 		String fileExtension = null;
+		String ctitle = null;
+		String Fdate = null;
+		String Tdate = null;
+		String Ctype = null;
+		Double cPrice = null;
+		String place = null;
+		String[] keyCode = null;
+		String keyword = null;
+		Integer userid = 0;
+		Integer trnIndstrSubCatId = 0;
+
+		if (request.getServletContext().getInitParameter("uploadpath") != null) {
+			path = request.getServletContext().getInitParameter("uploadpath");
+
+		}
 
 		fileName = fileUpload.getOriginalFilename();
 		fileExtension = fileName.substring(fileName.indexOf(".") + 1,
@@ -61,29 +67,23 @@ public class UploadFileController {
 
 		Calendar calendar = Calendar.getInstance();
 		Timestamp currentTime = new Timestamp(calendar.getTime().getTime());
-		System.out.println("Date from timestamp "
-				+ currentTime.toString().substring(0, 11).trim());
-		System.out.println("from create method: "
-				+ session.getAttribute("userid"));
+
 		try {
 
-			String ctitle = request.getParameter("ctitle");
-			String Fdate = request.getParameter("Fdate");
-			String Tdate = request.getParameter("Tdate");
-			String Ctype = request.getParameter("Ctype");
-			Double cPrice = Double.parseDouble(request.getParameter("cPrice"));
+			ctitle = request.getParameter("ctitle");
+			Fdate = request.getParameter("Fdate");
+			Tdate = request.getParameter("Tdate");
+			Ctype = request.getParameter("Ctype");
+			cPrice = Double.parseDouble(request.getParameter("cPrice"));
 			String CDesc = request.getParameter("CDesc");
-			// String Ckey = request.getParameter("Ckey");
-			String place = request.getParameter("place");
-			String[] keyCode = request.getParameterValues("tags[]");
+			place = request.getParameter("place");
+			keyCode = request.getParameterValues("tags[]");
 
 			userType = request.getParameter("userType");
-			String keyword = "";
 
-			Integer userid = Integer.parseInt(session.getAttribute("userid")
-					.toString());
-			Integer trnIndstrSubCatId = Integer.parseInt(request
-					.getParameter("Itype"));
+			userid = Integer
+					.parseInt(session.getAttribute("userid").toString());
+			trnIndstrSubCatId = Integer.parseInt(request.getParameter("Itype"));
 			usrEntity.setUserId(userid);
 			industrySubCat.setTrnIndstrSubCatId(trnIndstrSubCatId);
 
@@ -91,10 +91,8 @@ public class UploadFileController {
 
 				keyword = keyword + "," + element.trim();
 			}
-			/*System.out.println("keyword=========== " + keyword);*/
 
-			entity.setBrochure(path
-					+ fileUpload.getOriginalFilename());
+			entity.setBrochure(path + fileUpload.getOriginalFilename());
 			entity.setTitle(ctitle);
 			entity.setCode("keyCode");
 			entity.setContenttype("" + fileUpload.getContentType());
@@ -105,10 +103,6 @@ public class UploadFileController {
 			entity.setEnd_date(Tdate);
 			entity.setStatus("New");
 			entity.setPlace(place);
-			// Mapping Entity
-			entity.setUser(usrEntity);
-			entity.setIndstrySubcat(industrySubCat);
-
 			entity.setType(Ctype);
 			entity.setPrice(cPrice);
 			entity.setTitle(ctitle);
@@ -117,14 +111,19 @@ public class UploadFileController {
 			entity.setvFlag("Not Varified");
 			entity.setUpdatedOn(currentTime);
 			entity.setKeyword(keyword.substring(1));
+
+			// Mapping Entity
+			entity.setUser(usrEntity);
+			entity.setIndstrySubcat(industrySubCat);
+
 			if (null != fileExtension && fileExtension.equalsIgnoreCase("pdf")) {
 
 				InputStream inputStream = null;
 				OutputStream outputStream = null;
 				if (fileUpload.getSize() > 0) {
 					inputStream = fileUpload.getInputStream();
-					// File realUpload = new File("C:/");
-					outputStream = new FileOutputStream(path+fileUpload.getOriginalFilename());
+					outputStream = new FileOutputStream(path
+							+ fileUpload.getOriginalFilename());
 
 					int readBytes = 0;
 					byte[] buffer = new byte[10000];
