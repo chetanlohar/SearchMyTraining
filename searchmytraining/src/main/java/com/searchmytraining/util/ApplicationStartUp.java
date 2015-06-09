@@ -4,10 +4,6 @@ import java.util.List;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
-import javax.servlet.http.HttpSessionAttributeListener;
-import javax.servlet.http.HttpSessionBindingEvent;
-import javax.servlet.http.HttpSessionEvent;
-import javax.servlet.http.HttpSessionListener;
 
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
@@ -79,7 +75,6 @@ public class ApplicationStartUp implements ServletContextListener{
 		idx.addDocument(d2);*/
 		
 		idx.close();
-		
 	}
 
 	private Document createDocument(CalenderEntity cal){
@@ -92,9 +87,7 @@ public class ApplicationStartUp implements ServletContextListener{
 		doc.add(idxF3);
 		IndexableField idxF4 = new Field("BasicSearchString",cal.getDescription() +" "+cal.getKeyword()+" "+cal.getCode(),Store.NO, Index.ANALYZED);
 		doc.add(idxF4);*/
-		
 		System.out.println("from creatDocument :" + cal.getKeyword());
-		
 		IndexableField idxCalId = new Field("trngId",cal.getTrngId().toString(),Store.NO, Index.NOT_ANALYZED);
 		doc.add(idxCalId);
 		IndexableField idxKeyword = new Field("keyword",cal.getKeyword(),Store.YES,Index.ANALYZED);
@@ -113,9 +106,8 @@ public class ApplicationStartUp implements ServletContextListener{
 		doc.add(idxType);
 		IndexableField idxDesc = new Field("description",cal.getDescription(),Store.YES,Index.ANALYZED);
 		doc.add(idxDesc);
-		IndexableField idxBasicSearch = new Field("BasicSearchString",cal.getTitle()+" "+cal.getDescription()+" "+cal.getKeyword(),Store.NO,Index.ANALYZED);
+		IndexableField idxBasicSearch = new Field("BasicSearchString",cal.getTitle()+" "+cal.getDescription()+" "+cal.getKeyword()+" "+cal.getPlace(),Store.NO,Index.ANALYZED);
 		doc.add(idxBasicSearch);
-		
 		return doc;
 	}
 }
