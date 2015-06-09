@@ -1,5 +1,12 @@
 package com.searchmytraining.util;
 
+import java.io.IOException;
+import java.nio.file.FileVisitResult;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.SimpleFileVisitor;
+import java.nio.file.attribute.BasicFileAttributes;
 import java.util.List;
 
 import javax.servlet.ServletContextEvent;
@@ -34,6 +41,7 @@ public class ApplicationStartUp implements ServletContextListener{
 		System.out.println("Base Path is: "+ctxEvent.getServletContext().getInitParameter("LuceneIndexFilePath"));
 		SearchUtil.basePath = ctxEvent.getServletContext().getInitParameter("LuceneIndexFilePath"); 
 		try{
+			deleteExistingIndex();
 			indexTrainings(ctxEvent);
 		}catch(Exception ex){
 			System.out.println("Exception while indexing "+ex.getMessage());
@@ -41,6 +49,43 @@ public class ApplicationStartUp implements ServletContextListener{
 		}
 				
 	}
+	
+	private void deleteExistingIndex(){
+		Path dir = Paths.get(SearchUtil.basePath);
+        try
+        {
+            Files.walkFileTree(dir, new SimpleFileVisitor<Path>()
+            {
+                  @Override
+                  public FileVisitResult visitFile(Path file, BasicFileAttributes attrs)
+                          throws IOException
+                  {
+                      System.out.println("Deleting file: " + file);
+                      Files.delete(file);
+                      return FileVisitResult.CONTINUE;
+                  }
+              
+                  @Override
+                  public FileVisitResult postVisitDirectory(Path dir,
+                          IOException exc) throws IOException
+                  {
+                      System.out.println("Deleting dir: " + dir);
+                      if (exc == null) {
+                          Files.delete(dir);
+                          return FileVisitResult.CONTINUE;
+                      } else {
+                          throw exc;
+                      }
+                   }
+  
+                });
+        }
+        catch (IOException e)
+        {
+          e.printStackTrace();
+        }
+    }
+	
 	
 	public void indexTrainings(ServletContextEvent ctxEvent) throws Exception{
 		SearchUtil util = new SearchUtil();
