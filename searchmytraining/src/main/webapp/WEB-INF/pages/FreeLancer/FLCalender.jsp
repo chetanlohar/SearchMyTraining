@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -19,100 +20,83 @@
 $('#acord2').accordion({
 	collapsible : true
 });
-function freelAddCalender(path) {
-	try {
-		 alert('ctitle '+$('#ctitle').val()+" Fdate "+$('#Fdate').val()+" Tdate "+$('#Tdate').val()+" Ctype "+$('#Ctype').val()+" cPrice "+$('#cPrice').val()+" CDesc "+$('#CDesc').val()+" Ckey "+$('#Ckey').val()+"file "+$('#file').val()); 
-		$.ajax({
+function recenAddedCalender() {
+	$("#abc").load("<%=request.getContextPath()%>/getRecentelyAdded",
+				function(responseText, statusText, xhr) {
+					if (statusText == "success")
+						/* alert("Successfully loaded the content!"); */
+						if (statusText == "error")
+							alert("An error occurred: " + xhr.status + " - "
+									+ xhr.statusText);
+				});
 
-			url :path+'/freelanceFileUpload',
+	}
+function userAllCalender() {
+	$("#abc").load("<%=request.getContextPath()%>/getUserCalender",
+				function(responseText, statusText, xhr) {
+					if (statusText == "success")
+						/* alert("Successfully loaded the content!"); */
+						if (statusText == "error")
+							alert("An error occurred: " + xhr.status + " - "
+									+ xhr.statusText);
+				});
 
-			type : 'post',
-			
-			dataType : 'json',
+	}
+</script>
 
-			data : JSON.stringify({
+<script type="text/javascript">
+	$(document).ready(function() {
 
-				"ctitle" : $('#ctitle').val(),
+		function Validate() {
+			var image = document.getElementById("file").value;
+			if (image == '') {
+				alert("Please enter Image Path");
+				document.getElementById("image").focus();
+				return false;
+			}
 
-				"Fdate" : $('#Fdate').val(),
+		}
 
-				"Tdate" : $('#Tdate').val(),
-				
-				"Ctype" : $('#Ctype').val(),
-				
-				"cPrice" : $('#cPrice').val(),
-				
-				"CDesc" : $('#CDesc').val(),
-				
-				"Ckey" : $('#Ckey').val(),
-				
-				"fileData" : $('#file').val(),
-				
-				"userid":$('#userid').val()
+		$('#Fdate,#Tdate').datepicker();
 
-			}),
+	});
+</script>
+<script type="text/javascript">
+	$(document)
+			.ready(
+					function() {
 
-			contentType : "application/json",
-			
-			success : function(response) {
-				alert("Thank you for Your Registration, Please Update Your Profile:");
-				<%-- window.location.href="<%=request.getContextPath()%>/freelancer_updateprofile"; --%>
+						$('.tagRemove').click(function(event) {
+							alert("see you")
+							event.preventDefault();
+							$(this).parent().remove();
+						});
+						$('ul.tags').click(function() {
+							$('#tags-field').focus();
+						});
+						$('#tags-field')
+								.keypress(
+										function(event) {
+											if (event.which == '32') {
 
-						}
+												if ($(this).val() != '') {
+													$(
+															'<li class="addedTag">'
+																	+ $(this)
+																			.val()
+																	+ '<span class="tagRemove" onclick="$(this).parent().remove();">x</span><input type="hidden" value="'
+																	+ $(this)
+																			.val()
+																	+ '" name="tags[]"></li>')
+															.insertBefore(
+																	'.tags .tagAdd');
+													$(this).val('');
+
+												}
+											}
+										});
+
 					});
-
-		} catch (ex) {
-
-			alert(ex);
-
-		}
-
-	}
-</script>
-
-<script type="text/javascript">
-$(document).ready(function() {
-
-
-	function Validate() {
-		var image = document.getElementById("file").value;
-		if (image == '') {
-			alert("Please enter Image Path");
-			document.getElementById("image").focus();
-			return false;
-		}
-	
-	}
-
-	$('#Fdate,#Tdate').datepicker();
-	
-
-});
-</script>
-<script type="text/javascript">
-$(document).ready(function() {
-
-$('.tagRemove').click(function(event) {
-	           alert("see you")
-              event.preventDefault();
-              $(this).parent().remove();
-          });
-          $('ul.tags').click(function() {
-              $('#tags-field').focus();
-          });
-          $('#tags-field').keypress(function(event) {
-              if (event.which == '32') {
-				  	
-                  if ($(this).val() != '') {
-                      $('<li class="addedTag">' + $(this).val() + '<span class="tagRemove" onclick="$(this).parent().remove();">x</span><input type="hidden" value="' + $(this).val() + '" name="tags[]"></li>').insertBefore('.tags .tagAdd');
-                      $(this).val('');
-                     
-                  }
-              }
-          });
-
-});
-
 </script>
 </head>
 <body>
@@ -164,9 +148,8 @@ $('.tagRemove').click(function(event) {
 						placeholder="price" autocomplete="off" name="cPrice" />
 				</div>
 				<div class="price">
-						<label>Place:</label> 
-						<input type="text" id="place" name="place" />
-					</div>
+					<label>Place:</label> <input type="text" id="place" name="place" />
+				</div>
 				<div class="description">
 					<label>Description:</label> <input type="text" id="CDesc"
 						placeholder="Description" autocomplete="off" name="CDesc" />
@@ -188,23 +171,53 @@ $('.tagRemove').click(function(event) {
 							id="fileupload" name="fileUpload" />
 					</div>
 					<script type="text/javascript">
-                              document.getElementById("fileupload").onchange = function () {
-                            	    document.getElementById("uploadFile").value = this.value;};
-                              </script>
+						document.getElementById("fileupload").onchange = function() {
+							document.getElementById("uploadFile").value = this.value;
+						};
+					</script>
 
 
 				</div>
 				<div class="submit">
 					<input type="submit" id="Cadd" value="Add">
 				</div>
-				<input type="hidden" name="userType" value="freelancer"> 
+				<input type="hidden" name="userType" value="freelancer">
 			</form>
 		</div>
 
-		<h3 class="acord_head">View Calendar</h3>
-		<div class="acord_cont"></div>
+		<h3 class="acord_head" onclick="recenAddedCalender();">Recentely Added Calendar</h3>
+		<div class="acord_cont" >
+		<div id="abc">
+			<table>
+				<tr>
+					<th>Title</th>
+					<th>Start Date</th>
+					<th>End Date</th>
+					<th>Price</th>
+					<th>Brochure</th>
+					<th>Description</th>
+				</tr>
+				<c:forEach var="calender" items="${recentelyAdded}">
+					<tr>
+						<td>${calender.title}</td>
+						<td>${calender.start_date}</td>
+						<td>${calender.end_date}</td>
+						<td>${calender.price}</td>
+						<td><a href="<%=request.getContextPath()%>/downloadFile?path=${calender.brochure}">Brouchure</a></td>
+						<td>${calender.description}</td>
+					</tr>
+				</c:forEach>
+
+
+			</table>
+
+		</div>
+</div>
 
 	</div>
+	<h3 class="acord_head">View All Calendar</h3>
+		<div class="acord_cont"></div>
+		
 
 
 </body>

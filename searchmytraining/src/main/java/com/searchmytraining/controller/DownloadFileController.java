@@ -19,18 +19,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class DownloadFileController 
 {
 	private static final int BUFFER_SIZE = 4096;
-	private String filePath = "C://SearchMT/IBRegForm.doc";
 
 	@RequestMapping(method = RequestMethod.GET)
 	public void doDownload(@RequestParam("path") String path,HttpServletRequest request,
 			HttpServletResponse response) throws IOException {
-		// get absolute path of the application
+
 		ServletContext context = request.getServletContext();
 		String appPath = context.getRealPath("");
-		System.out.println("appPath = " + appPath);
 
-		// construct the complete absolute path of the file
-		/* String fullPath = appPath + filePath; */
+
 		String fullPath = path;
 		File downloadFile = new File(fullPath);
 		FileInputStream inputStream = new FileInputStream(downloadFile);

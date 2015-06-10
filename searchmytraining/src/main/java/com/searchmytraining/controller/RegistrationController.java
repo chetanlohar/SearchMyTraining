@@ -34,7 +34,7 @@ import com.searchmytraining.service.IUserService;
 import com.searchmytraining.wrapper.RespnoseWrapper;
 
 @Controller
-@SessionAttributes("user_id")
+@SessionAttributes("userid")
 public class RegistrationController {
 
 	@Autowired
