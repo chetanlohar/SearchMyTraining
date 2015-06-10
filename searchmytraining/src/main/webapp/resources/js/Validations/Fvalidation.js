@@ -227,6 +227,9 @@ function validation12() {
 	var contact1  =  $("#contact12").val();
 	var mail1     =  $("#email12").val();
 	var pass     =   $("#password").val();
+	var captcha = $('#captchf').html();
+	var rcaptcha = $('#frcapch').val();
+
 	
 	 if($("#name12").val() == ""  || $("#name12").val().length < 3 || $("#name12").val().match(Number)){
 		   $("#name12").focus();
@@ -266,6 +269,10 @@ function validation12() {
 		 $('#error15').html(img).append("  Please Enter Password Same Above")
 		 return false;
 	 }
+	 else if(String(captcha).trim().localeCompare(String(rcaptcha).trim())!=0){
+			$('#frcapch').focus();
+			return false;
+		}
 	return true;
 }
 

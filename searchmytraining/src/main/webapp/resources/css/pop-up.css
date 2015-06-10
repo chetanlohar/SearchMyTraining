@@ -311,7 +311,7 @@ and open the template in the editor.
 	display: none;
 	padding: 4px;
 	min-width: 400px;
-	min-height: 520px;
+	min-height: 550px;
 	margin-top: 100px;
 	background: #ECF0F3;
 }
@@ -425,9 +425,51 @@ and open the template in the editor.
 	width: 270px;
 	margin: 0px 40px;
 }
-#pop_up_box_2 form .Answers{
+
+#pop_up_box_2 form .cpatcha {
+	height: 40px;
+	width: 270px;
+	margin: 0px 40px;
+
+}
+
+#pop_up_box_2 form .cpatcha .Ccode {
+	width: 80%;
+	height: 100%;
+	background: url('../images/cp.png') no-repeat;
+	background-size: 100% 100%;
+	font-family: Snap ITC;
+	font-size: 28px;
+	line-height: 40px;
+	text-align: center;
+	float: left;
+}
+
+#pop_up_box_2 form .cpatcha .refresh {
+	width: 20%;
+	height: 100%;
+	float: left;
+}
+
+#pop_up_box_2 form .cpatcha .refresh #refreshc {
+	width: 55px;
+	height: 40px;
+	background: url('../images/Refreshc.png') no-repeat;
+	background-size: 100% 100%;
+	border: none;
+	margin-top: 0px;
+}
+
+#pop_up_box_2 form .rcpatcha {
+	height: 40px;
+	width: 270px;
+	margin: 15px 40px;
+}
+
+#pop_up_box_2 form .Answers {
 	height: 50px;
 }
+
 #pop_up_box_2 form select {
 	font-family: calibri;
 	font-size: 17px;
@@ -490,7 +532,6 @@ and open the template in the editor.
 	background-position-x: 2px;
 	background-position-y: 5px;
 }
-
 
 #pop_up_box_2 form .contact input {
 	background: url('../images/icons_phone_iconWhite.png') no-repeat;
@@ -809,7 +850,7 @@ and open the template in the editor.
 	display: none;
 	padding: 4px;
 	min-width: 400px;
-	min-height: 585px;
+	min-height: 700px;
 	margin-top: 40px;
 	background: #ECF0F3;
 }
@@ -822,7 +863,7 @@ and open the template in the editor.
 }
 
 #pop_up_box_4 .reg_form {
-	height: 575px;
+	height: 700px;
 	width: 390px;
 	margin: 5px auto 5px;
 	border-radius: 10px;
@@ -867,6 +908,46 @@ and open the template in the editor.
 
 #pop_up_box_4 form .name {
 	height: 56px;
+}
+
+#pop_up_box_4 form .cpatcha1 {
+	height: 40px;
+	width: 270px;
+	margin: 0px 20px;
+
+}
+
+#pop_up_box_4 form .cpatcha1 .Ccode {
+	width: 80%;
+	height: 100%;
+	background: url('../images/cp.png') no-repeat;
+	background-size: 100% 100%;
+	font-family: Snap ITC;
+	font-size: 28px;
+	line-height: 40px;
+	text-align: center;
+	float: left;
+}
+
+#pop_up_box_4 form .cpatcha1 .refresh1 {
+	width: 20%;
+	height: 100%;
+	float: left;
+}
+
+#pop_up_box_4 form .cpatcha1 .refresh1 #refreshc {
+	width: 55px;
+	height: 40px;
+	background: url('../images/Refreshc.png') no-repeat;
+	background-size: 100% 100%;
+	border: none;
+	margin-top: 0px;
+}
+
+#pop_up_box_4 form .rcpatcha1 {
+	height: 40px;
+	width: 270px;
+	margin: 15px 20px;
 }
 
 #pop_up_box_4 form select {
@@ -1056,18 +1137,22 @@ keyframes bar { 0% {
 50%
 {
 width
-:
-50%
 
-	
+
+:
+
+
+50%
 }
 100%
 {
 width
-:
-100%
 
-	
+
+:
+
+
+100%
 }
 }
 
@@ -1730,7 +1815,7 @@ width
 	display: none;
 	padding: 4px;
 	min-width: 400px;
-	min-height: 575px;
+	min-height: 650px;
 	margin-top: 40px;
 	background: #ECF0F3;
 }
@@ -1743,7 +1828,7 @@ width
 }
 
 #pop_up_box_8 .reg_form {
-	height: 565px;
+	height: 650px;
 	width: 390px;
 	margin: 5px auto 5px;
 	border-radius: 10px;
@@ -1833,6 +1918,46 @@ width
 	background: green !important;
 	color: #fff;
 	line-height: 15px;
+}
+
+#pop_up_box_8 form .cpatcha1 {
+	height: 40px;
+	width: 270px;
+	margin: 0px 20px;
+	
+}
+
+#pop_up_box_8 form .cpatcha1 .Ccode {
+	width: 80%;
+	height: 100%;
+	background: url('../images/cp.png') no-repeat;
+	background-size: 100% 100%;
+	font-family: Snap ITC;
+	font-size: 28px;
+	line-height: 40px;
+	text-align: center;
+	float: left;
+}
+
+#pop_up_box_8 form .cpatcha1 .refresh1 {
+	width: 20%;
+	height: 100%;
+	float: left;
+}
+
+#pop_up_box_8 form .cpatcha1 .refresh1 #refreshc {
+	width: 55px;
+	height: 40px;
+	background: url('../images/Refreshc.png') no-repeat;
+	background-size: 100% 100%;
+	border: none;
+	margin-top: 0px;
+}
+
+#pop_up_box_8 form .rcpatcha1 {
+	height: 40px;
+	width: 270px;
+	margin: 15px 20px;
 }
 
 #pop_up_box_8 form input[type="text"], #pop_up_box_8 form input[type="password"]

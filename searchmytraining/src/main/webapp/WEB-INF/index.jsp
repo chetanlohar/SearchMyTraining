@@ -63,6 +63,12 @@ and open the template in the editor.
         }       
     }); 
     } 
+  
+  $.get('searchview', function(data) {
+	  
+	  document.getElementById("calender").innerHTML="";
+	  $('#calender').append(data);
+	});
 </script>
 <script type="text/javascript">
 $(window).scroll(function(){
@@ -166,7 +172,7 @@ $(function(){
 			</div>
 			<div class="search">
 				<input type="submit" value="Search" id="button" name=button
-					onclick="LoadPage();" />
+					onclick="recenAddedCalenderb();" />
 			</div>
 			<div class="adv-search">
 				<a href="#" id="advsearch1">Advance Search</a>
@@ -272,84 +278,10 @@ $(function(){
 				</ul>
 				<div id="tabcontent">
 					<div id="home-content" class="contentblock">
-						<div class="top-institute">
-							<ul>
-								<li><h1>Information Technologies1</h1></li>
-								<ul>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-								</ul>
-							</ul>
+						<div class="top-institute" id ="calender">
+							
 						</div>
-						<div class="top-institute">
-							<ul>
-								<li><h1>Information Technologies1</h1></li>
-								<ul>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-								</ul>
-							</ul>
-						</div>
-						<div class="top-institute">
-							<ul>
-								<li><h1>Information Technologies1</h1></li>
-								<ul>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-									<li><a href="#">Information Technologies</a></li>
-								</ul>
-							</ul>
-						</div>
+						
 
 					</div>
 					<!-- @end #home-content -->

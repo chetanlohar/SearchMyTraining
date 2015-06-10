@@ -216,6 +216,9 @@ function validation(path) {
 	var contact  =  $("#contact1").val();
 	var Cmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 	var mail     =  $("#email1").val();
+	var captcha = $('#captch').html();
+	var rcaptcha = $('#prcaptch').val();
+	
 	
 	
 	 if($("#org_name").val() == "" || $("#org_name").val().length < 5 || $("#org_name").val().match(Number) ){
@@ -256,6 +259,10 @@ function validation(path) {
 		 $("#error5").html(img).append("Please Enter Password Same Above")
 		 return false;
 	 }
+	 else if(String(captcha).trim().localeCompare(String(rcaptcha).trim())!=0){
+			$('#prcaptch').focus();
+			return false;
+		}
 	 return true;	 
 }
 

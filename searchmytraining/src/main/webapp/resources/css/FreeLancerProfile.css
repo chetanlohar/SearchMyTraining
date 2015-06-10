@@ -740,7 +740,8 @@ margin-top: 20px;
 .acord .acord_cont  .fileUpload span{
 	
 	 color: #fff !important;
-	 margin: 0px 0px;
+	 margin: 0px -5px;
+	 line-height: 25px;
 }
 .acord .acord_cont  .fileUpload input.upload {
     position: absolute;
@@ -760,7 +761,7 @@ margin-top: 20px;
 }
 .acord .acord_cont  .btn {
   display: inline-block;
-  padding: 6px 12px;
+  padding: 5px 12px;
   margin-bottom: 0;
   font-size: 14px;
   font-weight: normal;
@@ -780,5 +781,26 @@ margin-top: 20px;
   border-radius: 4px;
 }
 
+.acord .acord_cont .browse #uploadFile{
+	height:30px;
+	font-size:16px;
+	margin-left:10px;
+	border-radius:6px;
+	text-align:center;
+	border:none;
+	color: gray;
 
+}
 
+/* =================================View Calender============================================ */
+#abc table{
+	
+	width: 100%;
+	height: 100%;
+}
+
+#xyz table{
+	
+	width: 100%;
+	height: 100%;
+}

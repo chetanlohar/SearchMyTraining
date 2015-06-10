@@ -18,7 +18,7 @@
 	
 </script>
 
-<body>
+<body onload="randString(5);">
 	<div id="pop_up_box_4">
 		<a class="b-close"><img
 			src="<%=request.getContextPath()%>/resources/images/images.png"></a>
@@ -68,6 +68,22 @@
 				</div>
 				
 				<span id="error5"></span>
+				<div class="cpatcha1">
+			
+			<div class="Ccode" id="captch"></div>
+			<div class="refresh1">
+			<input type="button" id="refreshc" onclick='randString(5);' /> 
+			
+			</div>
+			
+			</div>
+			<div class="rcpatcha1">
+			
+			<input style="margin: 0 auto;" type="text" id="prcaptch" name="" placeholder="Enter Captch">
+			
+			</div>
+				
+				
 				<div class="sign">
 					<input type="button" name="Submit" value="Submit" onclick="trainerRegistration('<%=request.getContextPath()%>'); " />
 					<input type="reset" name="Cancel" value="Cancel" class="cancel">

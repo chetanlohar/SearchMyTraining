@@ -20,17 +20,26 @@
 $('#acord2').accordion({
 	collapsible : true
 });
-function recenAddedCalender() {
-	$("#abc").load("<%=request.getContextPath()%>/getRecentelyAdded",
-				function(responseText, statusText, xhr) {
+
+
+$.get('Resent', function(data) {
+    $('#resent').append(data);
+});
+
+$.get('View', function(data) {
+    $('#viewall').append(data);
+});
+<%--  function recenAddedCalender() {
+
+	$("#viewall").load("<%=request.getContextPath()%>/View",function(responseText, statusText, xhr) {
 					if (statusText == "success")
-						/* alert("Successfully loaded the content!"); */
+					 alert("Successfully loaded the content!"); 
 						if (statusText == "error")
 							alert("An error occurred: " + xhr.status + " - "
 									+ xhr.statusText);
 				});
-
-	}
+	
+	}  --%>
 function userAllCalender() {
 	$("#abc").load("<%=request.getContextPath()%>/getUserCalender",
 				function(responseText, statusText, xhr) {
@@ -99,7 +108,7 @@ function userAllCalender() {
 					});
 </script>
 </head>
-<body>
+<body >
 	<div id="acord2" class="acord">
 		<h3 class="acord_head">ADD Calender</h3>
 		<div class="acord_cont">
@@ -164,7 +173,7 @@ function userAllCalender() {
 
 				</div>
 				<div class="browse">
-					<label>Upload Calender:</label> <input id="uploadFile"
+					<label>Upload Calender:</label> <input id="uploadFile" 
 						placeholder="Choose File" disabled="disabled" />
 					<div class="fileUpload btn btn-primary">
 						<span>Brouchure</span> <input type="file" class="upload"
@@ -179,46 +188,32 @@ function userAllCalender() {
 
 				</div>
 				<div class="submit">
-					<input type="submit" id="Cadd" value="Add">
+					<input type="submit" id="Cadd" value="Add" >
 				</div>
 				<input type="hidden" name="userType" value="freelancer">
 			</form>
 		</div>
+		
 
 		<h3 class="acord_head" onclick="recenAddedCalender();">Recentely Added Calendar</h3>
 		<div class="acord_cont" >
-		<div id="abc">
-			<table>
-				<tr>
-					<th>Title</th>
-					<th>Start Date</th>
-					<th>End Date</th>
-					<th>Price</th>
-					<th>Brochure</th>
-					<th>Description</th>
-				</tr>
-				<c:forEach var="calender" items="${recentelyAdded}">
-					<tr>
-						<td>${calender.title}</td>
-						<td>${calender.start_date}</td>
-						<td>${calender.end_date}</td>
-						<td>${calender.price}</td>
-						<td><a href="<%=request.getContextPath()%>/downloadFile?path=${calender.brochure}">Brouchure</a></td>
-						<td>${calender.description}</td>
-					</tr>
-				</c:forEach>
-
-
-			</table>
-
-		</div>
+		<div id="resent">
+		
+			
+			</div>
 </div>
 
-	</div>
-	<h3 class="acord_head">View All Calendar</h3>
-		<div class="acord_cont"></div>
+	
+	<h3 class="acord_head" onclick="recenAddedCalendera();"  >View All Calendar</h3>
+		<div class="acord_cont">
+			<div id="viewall">
 		
+			
+			</div>
+		
+		</div>
+	
 
-
+</div>
 </body>
 </html>

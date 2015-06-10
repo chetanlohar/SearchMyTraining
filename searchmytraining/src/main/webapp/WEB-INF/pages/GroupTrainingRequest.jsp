@@ -63,6 +63,7 @@
 				<div class="req">
 					<textarea id="requirements21" name="requirements"
 						placeholder="Training Requirement Description"></textarea>
+						<p> (Max 250 Characters)</p>
 				</div>
 				<div class="sign">
 					<input type="submit" name="Send" value="Send" onclick="validation21();"> <input

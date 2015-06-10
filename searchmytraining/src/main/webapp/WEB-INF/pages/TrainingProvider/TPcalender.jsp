@@ -60,8 +60,7 @@ $('.tagRemove').click(function(event) {
 				</div>
 				<div class="fdate">
 					<label>From Date:</label> <input type="text" id="Fdate"
-						placeholder="Start Date" name="Fdate"
-						style="background-image: url('<%=request.getContextPath()%>/resources/images/calender/calendar.png');" />
+						placeholder="Start Date" name="Fdate" />
 					<span><img
 						src="<%=request.getContextPath()%>/resources/images/calender/calendar.png" /></span>
 				</div>

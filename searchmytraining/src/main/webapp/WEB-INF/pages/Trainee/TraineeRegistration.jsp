@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-	
-	
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -16,7 +16,7 @@
 <script src="<%=request.getContextPath()%>/resources/js/popup-box.js"></script>
 <script
 	src="<%=request.getContextPath()%>/resources/js/Validations/passwordValidation.js"></script>
-<script src="<%=request.getContextPath()%>/resources/js/validation.js"></script>
+<script src="<%=request.getContextPath()%>/resources/js/Validations/validation.js"></script>
 
 <script type="text/javascript">
 	$(function() {
@@ -24,7 +24,7 @@
 			$('#Answers > div').hide();
 			$('#Answers').find('#' + $(this).val()).show();
 			var x= document.getElementById("name2");
-			x.style.backgroundImage = "url('<%=request.getContextPath()%>/resources/images/corporate1.png')";
+			x.style.backgroundImage = "url('<%=request.getContextPath()%> /resources/images/corporate1.png')";
 							x.style.backgroundRepeat = "no-repeat";
 
 						});
@@ -90,7 +90,7 @@
 </script>
 
 </head>
-
+<body onload="randString(5);">
 <div id="pop_up_box_2">
 	<a class="b-close"><img id="close"
 		src="<%=request.getContextPath()%>/resources/images/images.png"></a>
@@ -156,7 +156,21 @@
 
 			</div>
 			<span id="error04"></span>
+			<div class="cpatcha">
 			
+			<div class="Ccode" id="captch"></div>
+			<div class="refresh">
+			<input type="button" id="refreshc" onclick="randString(5);" /> 
+			
+			</div>
+			
+			</div>
+			<div class="rcpatcha">
+			
+			<input style="margin: 0 auto;" type="text" id="rcapcthar" name="" placeholder="Enter Captch">
+			
+			</div>
+
 			<div class="sign">
 				<input type="button" name="Submit" value="Submit"
 					onclick="traineeRegistration('<%=request.getContextPath()%>');">

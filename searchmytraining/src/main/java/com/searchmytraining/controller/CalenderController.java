@@ -36,7 +36,7 @@ public class CalenderController {
 					+ ": TCreated ON" + entity.getCreatedOn());
 		}
 		model.addAttribute("recentelyAdded",recentelyAdded);
-		return "pages/FreeLancer/FLCalender";
+		return "pages/FreeLancer/Resentcalender";
 	}
 
 	@RequestMapping("/getAllCalender")
@@ -63,7 +63,7 @@ public class CalenderController {
 					+ ": TCreated ON" + entity.getCreatedOn());
 		}
 		model.addAttribute("userAllCalender",userAllCalender);
-		return "pages/FreeLancer/FLCalender";
+		return "pages/FreeLancer/AllCalender";
 
 	}
 

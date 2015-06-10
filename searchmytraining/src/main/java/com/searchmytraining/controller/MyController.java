@@ -49,6 +49,16 @@ public class MyController {
 	{
 		return "pages/FreeLancer/FLsetting";
 	}
+	@RequestMapping("/Resent")
+	public String doAction9()
+	{
+		return "pages/FreeLancer/Resentcalender";
+	}
+	@RequestMapping("/View")
+	public String doAction10()
+	{
+		return "pages/FreeLancer/AllCalender";
+	}
 	
 	@RequestMapping("/index")
 	public String doAction8()
@@ -63,7 +73,7 @@ public class MyController {
 	@RequestMapping("/LOG")
 	public String GeLOG()
 	{
-		return "pages/Login";
+		return "pages/LogIn";
 	}
 	@RequestMapping("/about")
 	public String About()
@@ -79,6 +89,11 @@ public class MyController {
 	public String Advanc()
 	{
 		return "pages/AdvSearch";
+	}
+	@RequestMapping("/searchview")
+	public String searchview()
+	{
+		return "searchcalender";
 	}
 	
 	

@@ -16,6 +16,8 @@ body {
 	position: relative;
 	font-family: Helvetica, Arial, Verdana, sans-serif;
 }
+
+
 .acord .plus span, .acord .minus span {
 	background: url(../../resources/images/acordSprite2.png) no-repeat; 
 	width: 8px; 
@@ -652,6 +654,10 @@ input[type=password]:focus {
     border: 1px solid gray;
     text-align: center;
 	font-family: arial;
+}
+.acord .acord_cont .browse #uploadFile{
+	
+	background:lightblue !important;
 }
 .acord .acord_cont .Acalender thead tr{
     padding: 5px;

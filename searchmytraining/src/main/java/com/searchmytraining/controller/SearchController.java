@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -32,12 +33,19 @@ public class SearchController {
 		return result;
 	}
 	
-	@RequestMapping(value = "/getCalendars", method = RequestMethod.POST)/*, produces = { "application/json" }, consumes = { "application/json" })*/
-	@ResponseBody
-	public List<CalenderEntity> getCalendars(@RequestParam("inputkeyword") String inputkeyword) throws Exception
+	@RequestMapping(value = "/getCalendars")/*, produces = { "application/json" }, consumes = { "application/json" })*/
+	public String getCalendars(@RequestParam("inputkeyword") String inputkeyword,ModelMap model) throws Exception
 	{
+		
 		List<CalenderEntity> calendars =calendarservice.getCalendersByKeyword(inputkeyword); 
-		System.out.println(calendars.size());
-		return calendars;
+		/*
+		for(CalenderEntity cal:calendars)
+		{
+			System.out.println("Title:"+cal.getTitle()+" CalType : "+cal.getType()+" Description: "+cal.getDescription()+" keywords: "+cal.getKeyword());
+			
+		}*/
+		
+		model.addAttribute("calendars", calendars);
+		return "searchcalender";
 	}
 }

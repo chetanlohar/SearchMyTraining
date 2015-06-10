@@ -198,7 +198,10 @@ function validation01() {
 	var mob1    = /^[1-9]{1}[0-9]{9}$/;
 	var Cmail1 = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 	var mail01 = $('#email').val();
+	var captcha = $('#captch').html();
+	var rcaptcha = $('#rcapcthar').val();
 	
+
 	
 		if($('#selType').val()=='' || $('#selType').val() == '0'){
 			
@@ -251,8 +254,15 @@ function validation01() {
 		 $('#error04').html(img).append(" Please Enter Password Same Above");
                  return false;
 	}
-	else
-        return true;
+	else if(String(captcha).trim().localeCompare(String(rcaptcha).trim())!=0){
+		$('#rcapcthar').focus();
+		return false;
+	}
+		
+	else 
+		
+	return true;
+       
 		
 }
 

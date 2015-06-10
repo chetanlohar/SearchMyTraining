@@ -65,7 +65,7 @@ and open the template in the editor.
 	<script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/js/jquery/jquery.iconmenu.js"></script>
 	
-<script type="text/javascript">
+
 
 <script type="text/javascript">
 jQuery(document).ready(function () {
@@ -201,6 +201,6 @@ function FLSload() {
 
 		</div>
 	</div>
-	<%@include file="../../layouts/footer.jsp"%>
+	<%@include file="../../layouts/footer.jsp"%> 
 </body>
 </html>

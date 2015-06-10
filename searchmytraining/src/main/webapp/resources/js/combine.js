@@ -78,14 +78,15 @@
                     	$("#verticalScroller > div").stop();
     				
     				})
-    				 $("#verticalScroller").on('mouseleave', function() {
-    					  window.verticalScroller($(this));
-    				
-    				})
+    				 
                     
                     
                 });
-              
+                $("#verticalScroller").on('mouseleave', function() {
+					
+					 window.verticalScroller($(this));
+				
+				})
 //===================================================================================================
         
 
@@ -128,6 +129,23 @@
                 if (!Modernizr.csstransitions) {
                     initJQuery();
                 }
-//======================================================================================================
+//====================================Captcha code==================================================================
 
+        
+                function randString(x){
+             
+                	 var text = " ";
 
+                	    var charset = "QWERTYUIOPASDFGHJKLZXCVBNMabcdefghijklmnopqrstuvwxyz0123456789";
+
+                	    for( var i=0; i < x; i++ )
+                	        text += charset.charAt(Math.floor(Math.random() * charset.length));
+                	    
+                           $(".Ccode").html(text);
+                	
+                		
+                	}
+                
+                
+
+          
