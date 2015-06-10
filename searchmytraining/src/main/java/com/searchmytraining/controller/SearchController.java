@@ -26,7 +26,7 @@ public class SearchController {
 	public List<String> doSearch(@RequestParam("tagName") String tagName)
 	{
 		SuggestTraining suggesttraining = new SuggestTraining();
-		List<String> result = suggesttraining.doAutoSuggest(tagName);
+		List<String> result = suggesttraining.doAutoSuggest(tagName,calendarservice);
 		/*Iterator<String> itr = result.iterator();
 		while(itr.hasNext())
 			System.out.println(itr.next());*/
