@@ -10,24 +10,21 @@
 <script
 	src="<%=request.getContextPath()%>/resources/js/Validations/FreeLProfile.js"></script>
 <script	src="<%=request.getContextPath()%>/resources/js/work/categories.js"></script>
+<script	src="<%=request.getContextPath()%>/resources/js/work/freelance.js"></script>
 <script type="text/javascript">
 $('#acord1').accordion({
 	collapsible : true
 });
 
 jQuery(document).ready(function () {
-	  
     jQuery(".acord .skip").click(function () {
         var $nextContent = jQuery(this).parent().next().next();
         jQuery(".acord .acord_cont").slideUp("fast", function () {
-       
             $nextContent.show()
         });
         jQuery(".acord ").next().slideDown("fast", function () {
-            
             $nextContent.show()
         });
-     
     });
 }); 
 
@@ -108,52 +105,33 @@ jQuery(document).ready(function () {
 		}
 
 	} --%>
-	
 	function changeImage(input) {
 	    if (input.files && input.files[0]) {
 	        var reader = new FileReader();
-
 	        reader.onload = function(e) {
 	            $('#profilepic').attr('src', e.target.result);
 	        };
-
 	        reader.readAsDataURL(input.files[0]);
 	    }
 	}
-	
-	
-	
-	
-	
-	
 </script>
 </head>
 <body>
-<input id="userid" type="hidden" value="${sessionScope.userid}">
+<input id="userid" type="hidden" value="${userid}">
 	<div id="acord1" class="acord">
 		<h3 class="acord_head">
 		Profile Details <span></span></h3>
 		<div class="acord_cont">
 			<form action="#" name="" id="flForm">
 				<!-- Splitting the name into Three parts first second and third -->
-				<c:set var="string1" value="${requestScope.freelancerDto.name12}" />
-				<c:set var="string2" value="${fn:split(string1, ' ')}" />
 				<div class="name">
 					<label>Full Name <text>*</text> :</label> 
 					<input type="text" id="fname61"	name="fname61" value='${freelancerDto.name12}' onkeypress="return validateFLName(event);"/> 
 					<span id="error61"></span>
 				</div>
-				<%-- <div class="name">
-					<label>Middle Name :</label> <input type="text" id="mname62"
-						name="mname62" value="${string2[1]}" onkeypress="return validateFLName(event);"/> <span id="error62"></span>
-				</div>
-				<div class="name">
-					<label>Last Name :</label> <input type="text" name="lname63"
-						id="lname63" value="${string2[2]}" onkeypress="return validateFLName(event);"/> <span id="error63"></span>
-				</div> --%>
 				<div class="Email">
 					<label>Email(Login Id) <text>*</text> :</label> <input type="email" id="email64"
-						name="email64" value="${requestScope.freelancerDto.email12}" /> <span
+						name="email64" value="${freelancerDto.email12}" /> <span
 						id="error64"></span>
 				</div>
 				 <div class="photo">
@@ -164,9 +142,8 @@ jQuery(document).ready(function () {
                         <input type="file" id="fileupload"  class="upload" name="picture" style="visibility: visible" onchange="changeImage(this);"/>         
                       </div>
 				</div>
-				 
 			</form>
-			<input class="skipbtn9" type="button" value="Save & Continue" name="save" form="flForm" onclick="return freeLancerValidate();"/>
+			<input class="skipbtn9" type="button" value="Save & Continue" name="save" form="flForm" onclick="return freelProfDet('<%=request.getContextPath()%>');"/>
 			<input class="skip" type="button" id="skip1" value="Skip" name="skip" />
 		</div>
 		<h3 class="acord_head">

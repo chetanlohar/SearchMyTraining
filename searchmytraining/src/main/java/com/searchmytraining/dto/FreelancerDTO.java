@@ -44,8 +44,4 @@ public class FreelancerDTO
 	public void setCnfpassword12(String cnfpassword12) {
 		this.cnfpassword12 = cnfpassword12;
 	}
-	
-	
-	
-
 }

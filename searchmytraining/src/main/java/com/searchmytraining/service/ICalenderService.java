@@ -14,5 +14,4 @@ public interface ICalenderService
 	public String updateCalender(CalenderEntity entity);
 	public void removeCalender(long calenderId);
 	public List<CalenderEntity> getCalendersByKeyword(String kyeword) throws Exception; 
-
 }

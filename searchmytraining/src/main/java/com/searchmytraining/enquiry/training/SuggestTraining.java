@@ -15,10 +15,19 @@ import org.apache.lucene.search.suggest.analyzing.AnalyzingInfixSuggester;
 import org.apache.lucene.store.RAMDirectory;
 import org.apache.lucene.util.BytesRef;
 import org.apache.lucene.util.Version;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import com.searchmytraining.entity.CalenderEntity;
 import com.searchmytraining.entity.TrainingEntity;
+import com.searchmytraining.service.ICalenderService;
+import com.searchmytraining.service.impl.CalenderService;
  
+
 public class SuggestTraining {
+	
+	/*@Autowired
+	public ICalenderService calenderservice;*/
 	
     private List<String> initLookup(AnalyzingInfixSuggester suggester, String name) {
     	List<String>  lstResults = new ArrayList<String>();
@@ -29,10 +38,10 @@ public class SuggestTraining {
             // Do the actual lookup.  We ask for the top 10 results.
             results = suggester.lookup(name, contexts, 10, true, false);
             for (Lookup.LookupResult result : results) {
-                TrainingEntity trainEnt = getTraining(result);
-                if (trainEnt != null) {
+                CalenderEntity calEntity = getCalenders(result);
+                if (calEntity != null) {
                     /*lstResults.add(trainEnt.getTitle() + ":" + trainEnt.getDescription() );*/
-                	lstResults.add(trainEnt.getTitle());
+                	lstResults.add(calEntity.getTitle());
                 }
             }
         } catch (IOException e) {
@@ -41,14 +50,14 @@ public class SuggestTraining {
         return lstResults;
     }
 
-    private TrainingEntity getTraining(Lookup.LookupResult result)
+    private CalenderEntity getCalenders(Lookup.LookupResult result)
     {
         try {
             BytesRef payload = result.payload;
             if (payload != null) {
                 ByteArrayInputStream bis = new ByteArrayInputStream(payload.bytes);
                 ObjectInputStream in = new ObjectInputStream(bis);
-                TrainingEntity p = (TrainingEntity) in.readObject();
+                CalenderEntity p = (CalenderEntity) in.readObject();
                 return p;
             } else {
                 return null;
@@ -62,17 +71,18 @@ public class SuggestTraining {
     StandardAnalyzer analyzer;
     AnalyzingInfixSuggester suggester;
     
-    @PostConstruct
-    public void init(){
+    /*@PostConstruct*/
+    public void init(ICalenderService calenderservice){
     	index_dir = new RAMDirectory();
         analyzer = new StandardAnalyzer();
-        ArrayList<TrainingEntity> trainings = new ArrayList<TrainingEntity>(); //This should be replaced with code to load all the traning from DB
-        TrainingEntity training1 = new TrainingEntity("Spring Framework", "java,spring,framework,advance", "Spring Framework is a Java Framework and developed in java which is based on principle of IOC", "programming,technology", 1);
+        List<CalenderEntity> trainings = calenderservice.getAllCalender();/* new ArrayList<TrainingEntity>(); //This should be replaced with code to load all the traning from DB*/
+        /*TrainingEntity training1 = new TrainingEntity("Spring Framework", "java,spring,framework,advance", "Spring Framework is a Java Framework and developed in java which is based on principle of IOC", "programming,technology", 1);
         TrainingEntity training2 = new TrainingEntity("Hibernate", "hibernate,java,orm,orm tool,framework,database tool", "Hibernate is a java framework which is called as ORM tool that is Object Relational Mapping tool", "programming,technology", 2);
         TrainingEntity training3 = new TrainingEntity("Personaliy Developement", "communication,speaking,personality,self developement", "In Personality Developement several things will taugh how to talk how to behave so you can develope your personality and impress all ur peoples around you", "communication", 3);
         trainings.add(training1);
         trainings.add(training2);
-        trainings.add(training3);
+        trainings.add(training3);*/
+        
         try {
 			suggester = new AnalyzingInfixSuggester(index_dir, analyzer);
 			suggester.build(new TrainingIterator(trainings.iterator()));
@@ -81,8 +91,8 @@ public class SuggestTraining {
 		}
     }
     
-    public List<String> doAutoSuggest(String inputStr) {
-    	init();
+    public List<String> doAutoSuggest(String inputStr,ICalenderService calenderservice) {
+    	init(calenderservice);
     	return initLookup(suggester, inputStr);
     }	
 }

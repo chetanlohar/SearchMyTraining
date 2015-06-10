@@ -47,7 +47,7 @@ public class FreelancerService implements IFreelancerService
 		FreelancerEntity entity = mapper.map(freelancerDto, FreelancerEntity.class);
 		UserEntity user = new UserEntity();
 		user.setUserName(entity.getEmail());
-		user.setPassword(encoder.encode(entity.getPassword()));
+		user.setPassword(encoder.encode(freelancerDto.getPassword12()));
 		user.setEnabled(1);
 		user.setAccountNonExpired(1);
 		user.setAccountNonLocked(1);

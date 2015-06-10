@@ -16,7 +16,6 @@ import javax.persistence.Table;
 public class FreelancerEntity implements Serializable
 {
 	private static final long serialVersionUID = 1L;
-	
 	@Id
 	@Column(name="freelancerId")
 	@GeneratedValue
@@ -28,9 +27,8 @@ public class FreelancerEntity implements Serializable
 	@Column(name="contact")
 	 private String contact ;
 	@Column(name="email")
-	 private String email ; 
-	@Column(name="password")
-	 private String password ; 
+	 private String email ;
+
 	
 	@ManyToOne(fetch=FetchType.EAGER,targetEntity=UserEntity.class)
 	@JoinColumn(name="userId")
@@ -39,59 +37,39 @@ public class FreelancerEntity implements Serializable
 	public Integer getFreelancerId() {
 		return freelancerId;
 	}
-
 	public void setFreelancerId(Integer freelancerId) {
 		this.freelancerId = freelancerId;
 	}
-
 	public String getFullName() {
 		return fullName;
 	}
-
 	public void setFullName(String fullName) {
 		this.fullName = fullName;
 	}
-
 	public String getCity() {
 		return city;
 	}
-
 	public void setCity(String city) {
 		this.city = city;
 	}
-
 	public String getContact() {
 		return contact;
 	}
-
 	public void setContact(String contact) {
 		this.contact = contact;
 	}
-
 	public String getEmail() {
 		return email;
 	}
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
 	public UserEntity getUser() {
 		return user;
 	}
-
 	public void setUser(UserEntity user) {
 		this.user = user;
 	}
-
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}

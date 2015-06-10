@@ -130,16 +130,18 @@
 	<mapping>
 		<class-a>com.searchmytraining.dto.FreelancerDTO</class-a>
 		<class-b>com.searchmytraining.entity.FreelancerEntity</class-b>
+		<field-exclude>
+			<a>password12</a>
+			<b>password12</b>
+		</field-exclude>
 		<field-exclude type="one-way">
 			<a>cnfpassword12</a>
-			<b>cnfpassword</b>
+			<b>cnfpassword12</b>
 		</field-exclude>
-
 		<field>
 			<a>name12</a>
 			<b>fullName</b>
 		</field>
-
 		<field>
 			<a>city12</a>
 			<b>city</b>
@@ -152,10 +154,10 @@
 			<a>email12</a>
 			<b>email</b>
 		</field>
-		<field>
+		<!-- <field>
 			<a>password12</a>
 			<b>password</b>
-		</field>
+		</field> -->
 	</mapping>
 	
 	<mapping>

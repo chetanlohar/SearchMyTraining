@@ -45,7 +45,7 @@
 
 </head>
 <body>
-	<input id="userid" type="hidden" name="userid" value="${user.userId}">
+	<input id="userid" type="hidden" name="userid" value="${userid}">
 	<div id="acord1" class="acord">
 		<h3 class="acord_head plus">
 		<span></span>

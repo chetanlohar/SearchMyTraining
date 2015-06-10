@@ -246,6 +246,7 @@ function freeLancerValidate() {
 
 			$nextContent.show()
 		});
+		return true;
 		jQuery(".acord ").next().slideDown("fast", function() {
 
 			$nextContent.show()
@@ -383,6 +384,19 @@ function freeLancerValidate4() {
 		});
 	}
 }
+
+function freelProfDet(path)
+{
+	console.log("in freelProfDet...");
+	var flag=freeLancerValidate();
+	console.log(flag);
+	
+	
+}
+
+
+
+
 function freelLocDetails(path) {
 
 	console.log("in freelcontactdetails...");

@@ -12,22 +12,23 @@ import java.util.Set;
 import org.apache.lucene.search.suggest.InputIterator;
 import org.apache.lucene.util.BytesRef;
 
+import com.searchmytraining.entity.CalenderEntity;
 import com.searchmytraining.entity.TrainingEntity;
 
 public class TrainingIterator implements InputIterator {
 
-	private Iterator<TrainingEntity> trainIterator;
-	private TrainingEntity currTraining;
+	private Iterator<CalenderEntity> calIterator;
+	private CalenderEntity currTraining;
 	
-	TrainingIterator(Iterator<TrainingEntity> trainIterator){
-		this.trainIterator = trainIterator;
+	TrainingIterator(Iterator<CalenderEntity> iterator){
+		this.calIterator = iterator;
 	}
 	
 	public BytesRef next(){
-		if(trainIterator.hasNext()){
-			currTraining = trainIterator.next();
+		if(calIterator.hasNext()){
+			currTraining = calIterator.next();
 			try{
-				return new BytesRef((currTraining.getTitle()+currTraining.getKeyWords()).getBytes("UTF8"));
+				return new BytesRef((currTraining.getTitle()+currTraining.getKeyword()).getBytes("UTF8"));
 			}catch(UnsupportedEncodingException ex){
 				throw new Error("Not able to convert to UTF8");
 			}
@@ -70,7 +71,7 @@ public class TrainingIterator implements InputIterator {
 	}
 
 	public long weight() {
-		return currTraining.getPriority();
+		return currTraining.getRank();    /*getPriority();*/
 	}
 	
 	 public Comparator<BytesRef> getComparator() {
