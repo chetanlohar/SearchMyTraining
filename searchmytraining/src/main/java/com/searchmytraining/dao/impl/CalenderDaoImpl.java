@@ -13,8 +13,13 @@ import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.index.IndexReader;
+import org.apache.lucene.index.Term;
 import org.apache.lucene.queryparser.classic.QueryParser;
+import org.apache.lucene.queryparser.xml.builders.RangeQueryBuilder;
+import org.apache.lucene.search.BooleanClause;
+import org.apache.lucene.search.BooleanQuery;
 import org.apache.lucene.search.IndexSearcher;
+import org.apache.lucene.search.PrefixQuery;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TopDocs;
@@ -132,4 +137,75 @@ public class CalenderDaoImpl extends AbstractJpaDAO<CalenderEntity> implements
 		
 	}
 
+
+	public List<CalenderEntity> getCalendersByAdvancedSearch(CalenderEntity cal){
+		
+		List<CalenderEntity> lstCal = new ArrayList<CalenderEntity>();
+		BooleanQuery query;
+		Query query1;
+		QueryParser queryParser;
+		
+		try{
+			
+			Path path = Paths.get(SearchUtil.basePath);
+			Directory dir = FSDirectory.open(path);
+			
+			IndexReader reader = DirectoryReader.open(dir);
+			IndexSearcher searcher = new IndexSearcher(reader);
+			
+			query = new BooleanQuery();
+			if(cal.getKeyword() != null){
+				queryParser = new QueryParser("BasicSearchString",new StandardAnalyzer());
+				query1 = queryParser.parse(cal.getKeyword());
+				query.add(query1,BooleanClause.Occur.MUST);
+			}
+			if(cal.getPlace() != null){
+				queryParser = new QueryParser("place",new StandardAnalyzer());
+				query1 = queryParser.parse(cal.getPlace());
+				query.add(query1,BooleanClause.Occur.MUST);
+			}
+			
+			//For Date Range Query
+			/*if(fromDate != null && toDate != null){
+				Term begin = new Term("fromDate",fromDate);
+				Term end = new Term("toDate",toDate);
+				query1 = new RangeQueryBuilder(begin, end, true);
+				query.add(query1,BooleanClause.Occur.MUST);
+			}*/
+			
+			TopDocs topDocs = searcher.search(query, 10);
+			
+			ScoreDoc[] scoreDosArray = topDocs.scoreDocs;
+			
+			for(ScoreDoc scoredoc: scoreDosArray){
+			      //Retrieve the matched document and show relevant details
+			      Document doc = searcher.doc(scoredoc.doc);
+			      
+			      /*System.out.println("\nKeyWord: "+doc.getField("KeyWord").stringValue());
+			      System.out.println("Description: "+doc.getField("Description").stringValue());
+			      System.out.println("Code: "+doc.getField("Code").stringValue());*/
+
+			      System.out.println("\nTitle: "+doc.getField("title").stringValue());
+			      System.out.println("KeyWord: "+doc.getField("keyword").stringValue());
+			      System.out.println("Place: "+doc.getField("place").stringValue());
+			     
+			      cal = new CalenderEntity();
+			      cal.setTitle(doc.getField("title").stringValue());
+			      cal.setStart_date(doc.getField("start_date").stringValue());
+			      cal.setEnd_date(doc.getField("end_date").stringValue());
+			      cal.setPrice(Double.parseDouble(doc.getField("price").stringValue()));
+			      cal.setKeyword(doc.getField("keyword").stringValue());
+			      cal.setTitle(doc.getField("title").stringValue());
+			      cal.setPlace(doc.getField("place").stringValue());
+			      cal.setDescription(doc.getField("description").stringValue());
+			      cal.setType(doc.getField("type").stringValue());
+			      lstCal.add(cal);
+			   }
+			
+			
+		}catch(Exception ex){
+			ex.printStackTrace();
+		}
+		return lstCal;
+	}
 }
