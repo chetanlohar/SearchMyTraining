@@ -20,6 +20,7 @@ import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TopDocs;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;
 
 import com.searchmytraining.dao.AbstractJpaDAO;
@@ -59,7 +60,9 @@ public class CalenderDaoImpl extends AbstractJpaDAO<CalenderEntity> implements
 	}
 
 	@Override
+	@Cacheable(value="autoCompleteCache")
 	public List<CalenderEntity> getAllCalender() {
+		System.out.println("Came In for Query");
 		setClazz(CalenderEntity.class);
 		return findAll();
 	}
