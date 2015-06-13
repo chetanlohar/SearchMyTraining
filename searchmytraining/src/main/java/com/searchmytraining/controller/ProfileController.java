@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,7 @@ import com.searchmytraining.dto.CertificationAwardDTO;
 import com.searchmytraining.dto.ClientDetailsDTO;
 import com.searchmytraining.dto.ContactDTO;
 import com.searchmytraining.dto.EmploymentDTO;
+import com.searchmytraining.dto.FreelancerDTO;
 import com.searchmytraining.dto.InstituteDTO;
 import com.searchmytraining.dto.LocationDTO;
 import com.searchmytraining.dto.ProfessionalAssociationDTO;
@@ -184,6 +186,12 @@ public class ProfileController {
 			emplservice.updateEmpldet(empldto);
 			return responsewrapper;
 		}
+	}
+	
+	@RequestMapping(value="/updatefreelprofdet",method=RequestMethod.POST)
+	public void updateFreeLanceProfDet(@RequestBody FreelancerDTO freelancerDto,HttpSession session)
+	{
+		System.out.println("caught by updateFreeLanceProfDet()... :)");
 	}
 	
 	@RequestMapping(value="/freelcertiawardDet",method=RequestMethod.POST)
