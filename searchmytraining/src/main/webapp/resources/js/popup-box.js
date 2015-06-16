@@ -162,4 +162,16 @@
     });
 })(jQuery);
 
+//======================================Place Add==========================================
+;(function($) {
+    $(function() {
+        $('#placeadd').bind('click', function(e) {
+            e.preventDefault();
+            $('#pop_up_box_10').bPopup({
+            
+            
+            } );
+        });
+    });
+})(jQuery);
 

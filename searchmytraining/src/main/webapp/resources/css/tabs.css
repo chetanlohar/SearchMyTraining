@@ -130,10 +130,11 @@ font-family: Helvetica, Arial, Verdana, sans-serif;
 }
 #sidemenu li a strong { 
   display: block;
-  margin-top: 5px;
+  margin-top: 0px;
+  line-height: 25px;
 }
 #sidemenu li a.open {
-  width: 96%;
+  width: 100%;
   background: #fff;
 }
 /* extra styles */

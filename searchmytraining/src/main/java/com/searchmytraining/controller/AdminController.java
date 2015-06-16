@@ -26,20 +26,20 @@ public class AdminController
 	{		
 		return "pages/admin/ManageCalender";		
 	}
-	@RequestMapping("/manageTrainings")
-	public String manTraining()
+	@RequestMapping("/manageAdd")
+	public String manAdd()
 	{
-		return "pages/admin/ManageTrainings";
+		return "pages/admin/ManageAdd";
 	}
-	@RequestMapping("/manageServices")
-	public String manServices()
+	@RequestMapping("/providerRanking")
+	public String provRanking()
 	{
-		return "pages/admin/ManageServices";
+		return "pages/admin/ProviderRanking";
 	}
-	@RequestMapping("/manageCareer")
-	public String manCareer()
+	@RequestMapping("/charts")
+	public String manCharts()
 	{
-		return "pages/admin/ManageCareer";
+		return "pages/admin/Charts";
 	}
 
 }
