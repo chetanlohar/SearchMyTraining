@@ -29,7 +29,7 @@
          
        <div class="logbar"  >
        <div class="panel">
-       <form action="">
+       <form action="AdminPages">
           
           <input type="text"  id="auser" value="" placeholder="UserName" >
        

@@ -19,14 +19,25 @@ import org.apache.lucene.document.Field.Store;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexableField;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.cache.ehcache.EhCacheCacheManager;
+import org.springframework.cache.ehcache.EhCacheManagerFactoryBean;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import com.searchmytraining.entity.CalenderEntity;
 import com.searchmytraining.service.ICalenderService;
 
+
+
 @SuppressWarnings("deprecation")
 public class ApplicationStartUp implements ServletContextListener{
 
+	
 	@Autowired
 	public ICalenderService calenderservice;
 	
@@ -47,7 +58,6 @@ public class ApplicationStartUp implements ServletContextListener{
 			System.out.println("Exception while indexing "+ex.getMessage());
 			ex.printStackTrace();
 		}
-				
 	}
 	
 	private void deleteExistingIndex(){
