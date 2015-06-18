@@ -68,6 +68,12 @@
 				</div>
 				
 				<span id="error5"></span>
+				<div class="rcpatcha1">
+			
+			<input style="margin: 0 auto;" type="text" id="prcaptch" name="" placeholder="Enter Captch">
+			
+			</div>
+				
 				<div class="cpatcha1">
 			
 			<div class="Ccode" id="captch"></div>
@@ -77,12 +83,7 @@
 			</div>
 			
 			</div>
-			<div class="rcpatcha1">
 			
-			<input style="margin: 0 auto;" type="text" id="prcaptch" name="" placeholder="Enter Captch">
-			
-			</div>
-				
 				
 				<div class="sign">
 					<input type="button" name="Submit" value="Submit" onclick="trainerRegistration('<%=request.getContextPath()%>'); " />

@@ -156,6 +156,11 @@
 
 			</div>
 			<span id="error04"></span>
+			<div class="rcpatcha">
+			
+			<input style="margin: 0 auto;" type="text" id="rcapcthar" name="" placeholder="Enter Captch">
+			
+			</div>
 			<div class="cpatcha">
 			
 			<div class="Ccode" id="captch"></div>
@@ -165,11 +170,7 @@
 			</div>
 			
 			</div>
-			<div class="rcpatcha">
 			
-			<input style="margin: 0 auto;" type="text" id="rcapcthar" name="" placeholder="Enter Captch">
-			
-			</div>
 
 			<div class="sign">
 				<input type="button" name="Submit" value="Submit"

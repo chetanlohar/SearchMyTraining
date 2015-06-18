@@ -12,9 +12,11 @@
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/tooltip.css"
 	type="text/css">
+	
 <script type="text/javascript">
 	$('#Fdate,#Tdate').datepicker();
 </script>
+
 </head>
 <body>
 	<div class="calender">
@@ -85,19 +87,43 @@
 				<h4>Sort By</h4>
 			</div>
 			<div class="calender_display">
-			<div class="cal">
+			<div>
 			<h3>Training Provider Name<br>
 			     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pune</h3>
 			
 			<input type="button" Value="View Calender">
 			</div>
-			<div class="cal">
+			<div>
 			<h3>Training Provider Name<br>
 			     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pune</h3>
 			
 			<input type="button" Value="View Calender">
 			</div>
-			<div class="cal">
+			<div>
+			<h3>Training Provider Name<br>
+			     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pune</h3>
+			
+			<input type="button" Value="View Calender">
+			</div>
+			<div>
+			<h3>Training Provider Name<br>
+			     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pune</h3>
+			
+			<input type="button" Value="View Calender">
+			</div>
+			<div>
+			<h3>Training Provider Name<br>
+			     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pune</h3>
+			
+			<input type="button" Value="View Calender">
+			</div>
+			<div>
+			<h3>Training Provider Name<br>
+			     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pune</h3>
+			
+			<input type="button" Value="View Calender">
+			</div>
+			<div>
 			<h3>Training Provider Name<br>
 			     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pune</h3>
 			
@@ -108,4 +134,5 @@
 	</div>
 
 </body>
+
 </html>

@@ -42,16 +42,17 @@ and open the template in the editor.
 	src="<%=request.getContextPath()%>/resources/js/jquery/jquery.min.js"></script>
 <script
 	src="<%=request.getContextPath()%>/resources/js/bootstrap.min.js"></script>
-
-<script type="text/javascript"
-	src="<%=request.getContextPath()%>/resources/js/jquery/jquery-1.10.2.js"></script>
+<script
+	src="<%=request.getContextPath()%>/resources/js/pagination/jquery.tabpager.min.js"></script>
+<%-- <script type="text/javascript"
+	src="<%=request.getContextPath()%>/resources/js/jquery/jquery-1.10.2.js"></script> --%>
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/js/jquery/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/js/jquery/jquery-ui-1.10.4.custom.js"></script>
 <!--color-->
-<script type="text/javascript"
-	src="<%=request.getContextPath()%>/resources/js/jquery-1.10.2.min.js"></script>
+<%-- <script type="text/javascript"
+	src="<%=request.getContextPath()%>/resources/js/jquery-1.10.2.min.js"></script> --%>
 
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/js/AddDel.js"></script>
@@ -112,6 +113,7 @@ function AMCload() {
 				});
 	}
 </script>
+
 <style>
 .container .container-form-wrapar {
 	width: 100%;
@@ -215,7 +217,7 @@ function AMCload() {
 		<div class="container-form-wrapar">
 			
 			<div style="margin-top: 0px;" id="w" class="clearfix">
-				<ul id="sidemenu">
+				<ul  id="sidemenu">
 
 					<li><a href="" onclick="FLCload();" class="open"><strong>Calender
 								Details</strong></a></li>

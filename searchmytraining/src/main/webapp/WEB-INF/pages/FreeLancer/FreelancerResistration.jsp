@@ -119,6 +119,12 @@
 						id="cnfpassword12" placeholder="Confirm Password">
 				</div>
 				<span id="error15"></span>
+				<div class="rcpatcha1">
+
+					<input style="margin: 0 auto;" type="text" id="frcapch" name=""
+						placeholder="Enter Captch">
+
+				</div>
 				<div class="cpatcha1">
 
 					<div class="Ccode" id="captchf"></div>
@@ -128,12 +134,7 @@
 					</div>
 
 				</div>
-				<div class="rcpatcha1">
-
-					<input style="margin: 0 auto;" type="text" id="frcapch" name=""
-						placeholder="Enter Captch">
-
-				</div>
+				
 				<div class="sign">
 					<!-- <input type="button" name="Submit" value="Submit" onclick="freelancerRegistration();validation12();"> -->
 					<input type="button" name="Submit" value="Submit"
