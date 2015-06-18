@@ -22,19 +22,7 @@
                     <div class="paging">
             
   <!--Pagination Start-->  
-  <section class="archive-pages">
-    <ul>
-      <li class="first"><a href="#" title="first page">first page</a></li>
-      <li class="previous"><a href="#" class="previous_link" title="previous page">previous page</a></li>
-      <li class="selected">1</li>
-      <li><a href="#" class="page_link" title="Page 2">2</a></li>
-      <li><a href="#" class="page_link" title="Page 3">3</a></li>
-      <li><a href="#" class="page_link" title="Page 4">4</a></li>
-      <li><a href="#" class="page_link" title="Page 5">5</a></li>
-      <li class="next"><a href="#"  class="next_link" title="next page">next page</a></li>
-      <li class="last"><a href="#" title="last page">last page</a></li>
-    </ul>
-  </section>
+
   <!--End-->  
   
  </div>

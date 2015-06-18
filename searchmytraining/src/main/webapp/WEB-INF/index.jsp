@@ -15,13 +15,10 @@ and open the template in the editor.
 	href="<%=request.getContextPath()%>/resources/css/combine.css"
 	media="all" type="text/css">
 	
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/jquery.dialogbox.css"
-	media="all" type="text/css">	
+
 <script
 	src="<%=request.getContextPath()%>/resources/js/modernizr-1.5.min.js"></script>
-<script
-	src="<%=request.getContextPath()%>/resources/js/jquery.backgroundPosition.js"></script>
+
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/js/jquery/jquery-1.10.2.js"></script>
 <script type="text/javascript"
@@ -39,13 +36,14 @@ and open the template in the editor.
 <script src="<%=request.getContextPath()%>/resources/js/tabBar.js"></script>
 <script src="<%=request.getContextPath()%>/resources/js/toggle.js"></script>
 <script src="<%=request.getContextPath()%>/resources/js/combine.js"></script>
+<script src="<%=request.getContextPath()%>/resources/js/paging.js"></script>
 
 <script
 	src="<%=request.getContextPath()%>/resources/js/work/calender.js"></script>
 
 <script
 	src="<%=request.getContextPath()%>/resources/js/jquery/jquery.autocomplete.min.js"></script>
-<!-- <script async src="//code.jquery.com/ui/1.10.1/jquery-ui.min.js"></script> -->
+
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/main_auto.css"
 	media="all" type="text/css">
@@ -65,10 +63,10 @@ and open the template in the editor.
     } 
   
   $.get('searchview', function(data) {
-	  
-	  document.getElementById("calender").innerHTML="";
+
 	  $('#calender').append(data);
 	});
+  
 </script>
 <script type="text/javascript">
 $(window).scroll(function(){
@@ -89,6 +87,18 @@ $(window).scroll(function(){
 
     var jssor_slider1 = new $JssorSlider$("slider1_container", options);
 });
+ 
+ function loadcalender() {
+		<%-- $("#home-content").load("<%=request.getContextPath()%>/resources/pages/FreeLancer/FLprofile.jsp", function(responseText, statusText, xhr) --%>
+		$("#mid").load("<%=request.getContextPath()%>/calenderdiv", function(responseText, statusText, xhr)
+		        {
+		                if(statusText == "success")
+		                        /* alert("Successfully loaded the content!"); */
+		                if(statusText == "error")
+		                        alert("An error occurred: " + xhr.status + " - " + xhr.statusText);
+		        });
+		
+	}
  
 </script>
 <script type="text/javascript">
@@ -172,7 +182,7 @@ $(function(){
 			</div>
 			<div class="search">
 				<input type="submit" value="Search" id="button" name=button
-					onclick="recenAddedCalenderb();" />
+					onclick="loadcalender();recenAddedCalenderb(); " />
 			</div>
 			<div class="adv-search">
 				<a href="#" id="advsearch1">Advance Search</a>

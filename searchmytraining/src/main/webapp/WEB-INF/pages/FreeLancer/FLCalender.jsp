@@ -14,6 +14,9 @@
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/js/datepicker/date.js"></script>
 
+	<script type="text/javascript"
+	src="<%=request.getContextPath()%>/resources/js/Validations/calender_validation.js"></script>
+
 
 
 <script type="text/javascript">
@@ -65,7 +68,8 @@ function userAllCalender() {
 			}
 
 		}
-
+		
+		 
 		$('#Fdate,#Tdate').datepicker();
 
 	});
@@ -119,17 +123,17 @@ function userAllCalender() {
 				<div class="title">
 					<label>Title:</label> <input type="text" id="ctitle"
 						placeholder="Title" autocomplete="off" name="ctitle" />
+						<span id="c1"></span>
 				</div>
 				<div class="fdate">
 					<label>From Date:</label> <input type="text" id="Fdate"
-						placeholder="Start Date" autocomplete="off" name="Fdate" /> <span><img
-						src="<%=request.getContextPath()%>/resources/images/calender/calendar.png" /></span>
-
+						placeholder="Start Date" autocomplete="off" name="Fdate" /> 
+						<span id="c2"></span>
 				</div>
 				<div class="Tdate">
 					<label>To Date:</label> <input type="text" id="Tdate"
-						placeholder="End Date" autocomplete="off" name="Tdate" /> <span><img
-						src="<%=request.getContextPath()%>/resources/images/calender/calendar.png" /></span>
+						placeholder="End Date" autocomplete="off" name="Tdate" /> 
+						<span id="c3"></span>
 				</div>
 				<div class="Industry">
 					<label>Industry Type:</label> <select id="Itype" name="Itype">
@@ -142,6 +146,7 @@ function userAllCalender() {
 						<option value="6">Certifications</option>
 						<option value="7">Other</option>
 					</select>
+					<span id="c4"></span>
 				</div>
 				<div class="Ctype">
 					<label>Type Of Calendar:</label> <select id="Ctype" name="Ctype">
@@ -150,18 +155,22 @@ function userAllCalender() {
 						<option value="Workshop">Workshop</option>
 						<option value="Etc">Etc</option>
 					</select>
+					<span id="c5"></span>
 				</div>
 				<div class="price">
 
 					<label>Price:</label> <input type="text" id="cPrice"
 						placeholder="price" autocomplete="off" name="cPrice" />
+						<span id="c6"></span>
 				</div>
 				<div class="price">
 					<label>Place:</label> <input type="text" id="place" name="place" />
+					<span id="c7"></span>
 				</div>
 				<div class="description">
 					<label>Description:</label> <input type="text" id="CDesc"
 						placeholder="Description" autocomplete="off" name="CDesc" />
+						<span id="c8"></span>
 				</div>
 				<div class="keyCode">
 					<label>KeyCode:</label>
@@ -177,7 +186,7 @@ function userAllCalender() {
 						placeholder="Choose File" disabled="disabled" />
 					<div class="fileUpload btn btn-primary">
 						<span>Brouchure</span> <input type="file" class="upload"
-							id="fileupload" name="fileUpload" />
+							id="fileupload" name="fileUpload" accept="application/pdf" />
 					</div>
 					<script type="text/javascript">
 						document.getElementById("fileupload").onchange = function() {

@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
 <script type="text/javascript">
 	$('#acord3').accordion({
 		collapsible : true

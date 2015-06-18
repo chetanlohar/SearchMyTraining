@@ -849,6 +849,7 @@ body .ui-tooltip {
 	border: 1px solid #aaaaaa;
 	background: #ffffff url("images/ui-bg_flat_75_ffffff_40x100.png") 50% 50% repeat-x;
 	color: #222222;
+	color:#29B4BE;
 }
 .ui-widget-content a {
 	color: #222222;
@@ -869,9 +870,9 @@ body .ui-tooltip {
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default {
 	border: 1px solid #d3d3d3;
-	background: #e6e6e6 url("images/ui-bg_glass_75_e6e6e6_1x400.png") 50% 50% repeat-x;
+	background: #39D1DF; 
 	font-weight: normal;
-	color: #555555;
+	color: #FFF;
 }
 .ui-state-default a,
 .ui-state-default a:link,
@@ -965,6 +966,7 @@ body .ui-tooltip {
 	opacity: .35;
 	filter:Alpha(Opacity=35); /* support: IE8 */
 	background-image: none;
+	background: #40A8CB;
 }
 .ui-state-disabled .ui-icon {
 	filter:Alpha(Opacity=35); /* support: IE8 - See #6059 */
@@ -1236,7 +1238,7 @@ body .ui-tooltip {
 .ui-tabs .ui-tabs-hide { display: none !important; }
 
 .ui-datepicker { width: 17em; padding: .2em .2em 0; display: none; }
-.ui-datepicker .ui-datepicker-header { position:relative; padding:.2em 0; }
+.ui-datepicker .ui-datepicker-header { position:relative; padding:.2em 0;background: #40A8CB;color: #fff; }
 .ui-datepicker .ui-datepicker-prev { position:absolute; top: 2px; width: 1.8em; height: 1.8em; background: url(" ../images/calender/prev.png");}
 .ui-datepicker .ui-datepicker-next { position:absolute; top: 2px; width: 1.8em; height: 1.8em; background: url("../images/calender/next.png");}
 .ui-datepicker .ui-datepicker-prev-hover, .ui-datepicker .ui-datepicker-next-hover { top: 1px; }
@@ -1251,7 +1253,7 @@ body .ui-tooltip {
 .ui-datepicker select.ui-datepicker-month, 
 .ui-datepicker select.ui-datepicker-year { width: 45%;}
 .ui-datepicker table {width: 100%; font-size: .9em; border-collapse: collapse; margin:0 0 .4em; }
-.ui-datepicker th { padding: .7em .3em; text-align: center; font-weight: bold; border: 0;  }
+.ui-datepicker th { padding: .7em .3em; text-align: center; font-weight: bold; border: 0;   }
 .ui-datepicker td { border: 0; padding: 1px; }
 .ui-datepicker td span, .ui-datepicker td a { display: block; padding: .2em; text-align: right; text-decoration: none; }
 .ui-datepicker .ui-datepicker-buttonpane { background-image: none; margin: .7em 0 0 0; padding:0 .2em; border-left: 0; border-right: 0; border-bottom: 0; }

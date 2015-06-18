@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <script type="text/javascript">
 
-function recenAddedCalendera() {
+function recenAddedCalenderat() {
 
 	$("#viewall_calender").load("<%=request.getContextPath()%>/getUserCalender",function(responseText, statusText, xhr) {
 					if (statusText == "success")
@@ -54,30 +54,6 @@ $(document).ready(function()
 		}
 
 
-		$('table.viewcalender').each(function() {
-		    var currentPage = 0;
-		    var numPerPage = 10;
-		    var $table = $(this);
-		    $table.bind('repaginate', function() {
-		        $table.find('tbody tr').hide().slice(currentPage * numPerPage, (currentPage + 1) * numPerPage).show();
-		    });
-		    $table.trigger('repaginate');
-		    var numRows = $table.find('tbody tr').length;
-		    var numPages = Math.ceil(numRows / numPerPage);
-		    var $pager = $('<div class="pager"></div>');
-		    for (var page = 0; page < numPages; page++) {
-		        $('<span class="page-number"></span>').text(page + 1).bind('click', {
-		            newPage: page
-		        }, function(event) {
-		            currentPage = event.data['newPage'];
-		            $table.trigger('repaginate');
-		            $(this).addClass('active').siblings().removeClass('active');
-		        }).appendTo($pager).addClass('clickable');
-		    }
-		    $pager.insertAfter($table).find('span.page-number:first').addClass('active');
-		});
-
-
 
 
 
@@ -101,7 +77,6 @@ $(document).ready(function()
 		
 		
 		 <table class="viewcalender" id="tblData2">
-		 <thead>
 				<tr>
 					<th>Title</th>
 					<th>Start Date</th>
@@ -110,8 +85,6 @@ $(document).ready(function()
 					<th>Brochure</th>
 					<th>Description</th>
 				</tr>
-				</thead>
-				<tbody>
 				<c:forEach var="calender1" items="${userAllCalender}">
 					<tr>
 						<td>${calender1.title}</td>
@@ -122,7 +95,7 @@ $(document).ready(function()
 						<td>${calender1.description}</td>
 					</tr>
 				</c:forEach>
-</tbody>
+
 
 			</table> 
 

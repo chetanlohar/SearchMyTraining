@@ -10,7 +10,7 @@
 <script
 	src="<%=request.getContextPath()%>/resources/js/Validations/FreeLProfile.js"></script>
 <script	src="<%=request.getContextPath()%>/resources/js/work/categories.js"></script>
-<script	src="<%=request.getContextPath()%>/resources/js/work/freelance.js"></script>
+<%-- <script	src="<%=request.getContextPath()%>/resources/js/work/freelance.js"></script> --%>
 <script type="text/javascript">
 $('#acord1').accordion({
 	collapsible : true

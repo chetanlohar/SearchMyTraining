@@ -74,19 +74,7 @@
                         window.verticalScroller($(this));
                     });
                     
-                    $("#verticalScroller").on('mouseenter', function() {
-                    	$("#verticalScroller > div").stop();
-    				
-    				})
-    				 
-                    
-                    
-                });
-                $("#verticalScroller").on('mouseleave', function() {
-					
-					 window.verticalScroller($(this));
-				
-				})
+                 
 //===================================================================================================
         
 

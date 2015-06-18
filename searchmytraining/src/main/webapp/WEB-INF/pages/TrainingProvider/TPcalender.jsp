@@ -9,11 +9,20 @@
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/screen.css"
 	type="text/css">
+	<script type="text/javascript"
+	src="<%=request.getContextPath()%>/resources/js/Validations/calender_validation.js"></script>
 
 <script type="text/javascript">
 
 $('#acord2').accordion({
 	collapsible : true
+});
+$.get('Resent', function(data) {
+    $('#resent').append(data);
+});
+
+$.get('View', function(data) {
+    $('#viewall').append(data);
 });
 
 jQuery(".tm-input").tagsManager();
@@ -49,7 +58,7 @@ $('.tagRemove').click(function(event) {
 </head>
 <body>
 	<div id="acord2" class="acord">
-		<h3 class="acord_head">ADD Calender</h3>
+		<h3 class="acord_head">ADD Calendar</h3>
 		<div class="acord_cont">
 			<form id="Add_calender" method="post"
 				enctype="multipart/form-data" action="uploadFile">
@@ -57,18 +66,17 @@ $('.tagRemove').click(function(event) {
 				<div class="title">
 					<label>Title:</label> <input type="text" id="ctitle"
 						placeholder="Title" name="ctitle" />
+						<span id="c1"></span>
 				</div>
 				<div class="fdate">
 					<label>From Date:</label> <input type="text" id="Fdate"
 						placeholder="Start Date" name="Fdate" />
-					<span><img
-						src="<%=request.getContextPath()%>/resources/images/calender/calendar.png" /></span>
+					
 				</div>
 				<div class="Tdate">
 					<label>To Date:</label> <input type="text" id="Tdate"
-						placeholder="End Date" name="Tdate" /> <span><img
-						src="<%=request.getContextPath()%>/resources/images/calender/calendar.png" /></span>
-				</div>
+						placeholder="End Date" name="Tdate" /> 
+										</div>
 				<div class="Industry">
 					<label>Industry Type:</label> <select id="Itype" name="Itype">
 						<option value="1">Industry Types</option>
@@ -135,10 +143,17 @@ $('.tagRemove').click(function(event) {
 				</div>
 				<div class="browse">
 					<label>Upload Calender:</label>
+					<input id="uploadFile" 
+						placeholder="Choose File" disabled="disabled" />
 					<div class="fileUpload btn btn-primary">
 						<span>Brouchure</span> <input type="file" class="upload"
-							id="fileupload" name="fileUpload" />
+							id="fileupload" name="fileUpload" accept="application/pdf"  />
 					</div>
+					<script type="text/javascript">
+						document.getElementById("fileupload").onchange = function() {
+							document.getElementById("uploadFile").value = this.value;
+						};
+					</script>
 				</div>
 				<div class="submit">
 					<input type="submit" id="Cadd" value="Add">
@@ -147,11 +162,21 @@ $('.tagRemove').click(function(event) {
 			</form>
 		</div>
 
-		<h3 class="acord_head">View Calendar</h3>
+		<h3 class="acord_head" onclick="recenAddedCalendert();">Recently Added Calendar</h3>
+			<div class="acord_cont" >
+		<div id="resent">
+		
+			
+			</div>
+</div>
+        <h3 class="acord_head" onclick="recenAddedCalenderat();">View All Calendar</h3>
 		<div class="acord_cont">
-			<h1>hello</h1>
+			<div id="viewall">
+		
+			
+			</div>
+		
 		</div>
-
 
 	</div>
 

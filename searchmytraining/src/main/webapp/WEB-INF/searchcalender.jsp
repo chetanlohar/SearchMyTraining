@@ -9,6 +9,7 @@
 <script type="text/javascript">
 
 function recenAddedCalenderb() {
+	alert("work")
 	 var keyword=$("#w-input-search").val();
 	 alert("keyword "+keyword);
 
