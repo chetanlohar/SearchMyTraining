@@ -58,7 +58,6 @@ public class ApplicationStartUp implements ServletContextListener{
 			System.out.println("Exception while indexing "+ex.getMessage());
 			ex.printStackTrace();
 		}
-				
 	}
 	
 	private void deleteExistingIndex(){
