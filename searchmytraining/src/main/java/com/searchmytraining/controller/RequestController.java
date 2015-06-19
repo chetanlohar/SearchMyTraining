@@ -3,9 +3,12 @@ package com.searchmytraining.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.searchmytraining.dto.TrainingEnquiryDTO;
 import com.searchmytraining.entity.GroupRequestEntity;
 import com.searchmytraining.entity.TrainingEnquiryEntity;
 import com.searchmytraining.service.IGroupTrainingRequestService;
@@ -52,29 +55,12 @@ public class RequestController {
 	}
 
 	@RequestMapping(value = "/trainingenquiry", method = RequestMethod.POST)
-	public String trainingenquiry(@RequestParam("FirstName") String firstname,
-			@RequestParam("LastName") String lastname,
-			@RequestParam("title") String title,
-			@RequestParam("Email") String email,
-			@RequestParam("contact") String phone,
-			@RequestParam("city") String city,
-			@RequestParam("requirements") String requirements, ModelMap model) {
+	public String trainingEnquiry(@RequestBody TrainingEnquiryDTO trainingenquirydto, ModelMap model) {
 
-		TrainingEnquiryEntity trainingentity = new TrainingEnquiryEntity();
-		trainingentity.setFirstname(firstname);
-		trainingentity.setLastname(lastname);
-		trainingentity.setCourse_title(title);
-		trainingentity.setEmail(email);
-		trainingentity.setPhone(phone);
-		trainingentity.setTrainingneeds(requirements);
-		trainingentity.setCityid(3001L);
+		System.out.println("caught by trainingEnquiry :-)");
 		
-		trainingService.saveTrainingEnquiry(trainingentity);
 		
-		model.addAttribute("requested_success_msg", "Thank you for your interest, we will get backto you very soon.");
-
 		return "index";
-		/*return "requesttraining";*/
 	}
 
 }

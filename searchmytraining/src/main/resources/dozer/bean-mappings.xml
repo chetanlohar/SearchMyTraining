@@ -3,6 +3,21 @@
 	xsi:schemaLocation="http://dozer.sourceforge.net
           http://dozer.sourceforge.net/schema/beanmapping.xsd">
 
+	<!-- <mapping>
+		<class-a>com.searchmytraining.dto.TrainingEnquiryDTO</class-a>
+		<class-b>com.searchmytraining.entity.TrainingEnquiryEntity</class-b>
+		<field>
+			<a>history</a>
+			<b>historyOfCompany</b>
+		</field>
+		<field-exclude>
+			<a>workingdays</a>
+			<b>workingdays</b>
+		</field-exclude>
+	</mapping> -->
+
+
+
 	<mapping>
 		<class-a>com.searchmytraining.dto.TrainerDTO</class-a>
 		<class-b>com.searchmytraining.entity.TrainerEntity</class-b>
@@ -83,7 +98,7 @@
 			<b>phone</b>
 		</field-exclude>
 	</mapping>
-	
+
 	<mapping>
 		<class-a>com.searchmytraining.dto.LocationDTO</class-a>
 		<class-b>com.searchmytraining.entity.LocationEntity</class-b>
@@ -108,16 +123,17 @@
 			<b>userid</b>
 		</field-exclude>
 	</mapping>
-	
+
 	<mapping>
 		<class-a>com.searchmytraining.dto.ProfessionalAssociationDTO</class-a>
-		<class-b>com.searchmytraining.entity.ProfessionalAssociationEntity</class-b>
+		<class-b>com.searchmytraining.entity.ProfessionalAssociationEntity
+		</class-b>
 		<field-exclude>
 			<a>assocName</a>
 			<b>assocName</b>
 		</field-exclude>
 	</mapping>
-	
+
 	<mapping>
 		<class-a>com.searchmytraining.dto.ClientDetailsDTO</class-a>
 		<class-b>com.searchmytraining.entity.ClientEntity</class-b>
@@ -154,12 +170,9 @@
 			<a>email12</a>
 			<b>email</b>
 		</field>
-		<!-- <field>
-			<a>password12</a>
-			<b>password</b>
-		</field> -->
+		<!-- <field> <a>password12</a> <b>password</b> </field> -->
 	</mapping>
-	
+
 	<mapping>
 		<class-a>com.searchmytraining.dto.EmploymentDTO</class-a>
 		<class-b>com.searchmytraining.entity.EmploymentEntity</class-b>
@@ -168,10 +181,11 @@
 			<b>userid</b>
 		</field-exclude>
 	</mapping>
-	
+
 	<mapping>
 		<class-a>com.searchmytraining.dto.CertificationAwardDTO</class-a>
-		<class-b>com.searchmytraining.entity.CertificationAwardEntity</class-b>
+		<class-b>com.searchmytraining.entity.CertificationAwardEntity
+		</class-b>
 		<field>
 			<a>awrdDetails</a>
 			<b>certfctName</b>

@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;
 
 import com.searchmytraining.dao.AbstractJpaDAO;
@@ -23,8 +24,10 @@ public class StateDaoImpl extends AbstractJpaDAO<StateEntity> implements StateDA
 	}
 	
 	@Override
+	@Cacheable(value="stateCache",key="#countryid")
 	public List<StateEntity> getStates(Integer countryid)
 	{
+		System.out.println("in getstates method...");
 		entityManager = getEntityManager();
 		setClazz(StateEntity.class);
 		String query = "select states from StateEntity states where states.country.countryId='"+countryid+"'";

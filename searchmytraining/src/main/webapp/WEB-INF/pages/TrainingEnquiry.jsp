@@ -10,6 +10,9 @@
         <script src="<%=request.getContextPath()%>/resources/js/popup-box.js"></script>
        <script src="<%=request.getContextPath()%>/resources/js/validation.js"></script>
   <script src="<%=request.getContextPath()%>/resources/js/Validations/TEvalidation.js"></script>  
+  <script src="<%=request.getContextPath()%>/resources/js/work/trainingenquiry.js"></script>  
+  
+  
     
 </head>
 <body>
@@ -19,7 +22,7 @@
                 <div class="head">
                     <img src="<%=request.getContextPath()%>/resources/images/enquiry-icon.png" alt="register">
                 </div>
-                <form action="#" name="myform" method="post" onsubmit="return TEvalidate();">
+                <form id="enquiryform" name="myform" method="post" onsubmit="return TEvalidate();">
                     <h2>Training Enquiry</h2>
                     <div class="fname">
                         <input type="text" autocomplete="off" name="firstname" id="firstname22" placeholder="First Name" >
@@ -50,7 +53,7 @@
                     </div>
                   
                     <div class="sign">
-                        <input type="submit" name="Submit" value="Send" onclick="TEvalidate(); ">
+                        <input type="button" name="Submit" value="Send" onclick="enquiry();">
                         <input type="reset" name="Cancel" value="Cancel" class="cancel" >
                     </div>
 
