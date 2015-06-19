@@ -2,6 +2,7 @@ package com.searchmytraining.dao.impl;
 
 import java.util.List;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;
 
 import com.searchmytraining.dao.AbstractJpaDAO;
@@ -27,6 +28,7 @@ public class CountryDaoImpl extends AbstractJpaDAO<CountryEntity> implements Cou
 	}
 
 	@Override
+	@Cacheable(value="countryCache")
 	public List<CountryEntity> getAllCountries() {
 		setClazz(CountryEntity.class);
 		return findAll();

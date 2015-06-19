@@ -1,10 +1,8 @@
 function industryCategory(path) {
 	var id = $("#tindustry").val();
-	console.log("in getstates method...id: "+id);
-	console.log(id);
 	$.ajax({
 		type : "POST",
-		url : path + "/getIndustryCategory",
+		url : "./getIndustryCategory",
 		dataType : 'json',
 		data : "id=" + id,
 		/* data: JSON.stringify({"tid" : id,"fname":"Softinfology"}), */

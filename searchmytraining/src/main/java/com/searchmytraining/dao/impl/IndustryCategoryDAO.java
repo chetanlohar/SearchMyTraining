@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;
 
 import com.searchmytraining.dao.AbstractJpaDAO;
@@ -17,11 +18,12 @@ public class IndustryCategoryDAO extends AbstractJpaDAO<IndustryCategoryEntity> 
 	EntityManager entityManager;
 	
 	@Override
+	@Cacheable(value="industryCatCache")
 	public List<IndustryCategoryEntity> getIndustryCategories() {
 		setClazz(IndustryCategoryEntity.class);
 		return findAll();
 	}
-	
+	@Cacheable(value="industryCatCache")
 	public List<IndustryCategoryEntity> getIndustryCategories(Integer industryid)
 	{
 		String query="select industryCat from IndustryCategoryEntity industryCat where industryCat.industry.trnIndstrId= '"+industryid+"'";
