@@ -552,10 +552,10 @@ background: #FFFFFF;
 	.search_wrapar .citi-box{
     width: 130px;
     height: 35px;
-    background: red;
+    
     margin-left: 300px;
     margin-top: 60px;
-    background:pink;
+   
 }
 
 .search_wrapar .citi-box .country #drop{
@@ -578,12 +578,12 @@ background: #FFFFFF;
     height: 100px;
     width: 58%;
     margin: 5px auto;
-   background: red; 
+
 }
 .search_wrapar .search_bar .course-name{
     height: 70px;
     width: 330px;
-    background: green;
+  
      margin-left: 7px; 
     float: left;
     margin-top: 10px;
@@ -603,13 +603,13 @@ background: #FFFFFF;
     -moz-transition: all 0.30s ease-in-out;
     -ms-transition: all 0.30s ease-in-out;
     -o-transition: all 0.30s ease-in-out;
-    background: blue;
+  
 }
 
 .search_wrapar .search_bar .location{
     height: 70px;
     width: 250px;
-    background: blue;
+
     float: left;
     margin-top: 10px;
 }
@@ -621,7 +621,7 @@ background: #FFFFFF;
     float: right;
     margin-right: 75px;
     margin-top: -19px;
-    background: blue;
+   
 }
 
 .search_wrapar .brow_train{
@@ -645,10 +645,9 @@ background: #FFFFFF;
 	.search_wrapar .citi-box{
     width: 130px;
     height: 35px;
-    background: red;
     margin-left: 260px;
     margin-top: 60px;
-    background:green;
+    
 }
 
 .search_wrapar .citi-box .country #drop{
@@ -671,12 +670,12 @@ background: #FFFFFF;
     height: 100px;
     width: 58%;
     margin: 5px auto;
-   background: red; 
+  
 }
 .search_wrapar .search_bar .course-name{
     height: 70px;
     width: 300px;
-    background: green;
+   
      margin-left: 7px; 
     float: left;
     margin-top: 10px;
@@ -696,13 +695,13 @@ background: #FFFFFF;
     -moz-transition: all 0.30s ease-in-out;
     -ms-transition: all 0.30s ease-in-out;
     -o-transition: all 0.30s ease-in-out;
-    background: blue;
+  
 }
 
 .search_wrapar .search_bar .location{
     height: 70px;
     width: 250px;
-    background: blue;
+
     float: left;
     margin-top: 10px;
 }
@@ -712,7 +711,7 @@ background: #FFFFFF;
     float: right;
     margin-right: 60px;
     margin-top: -19px;
-    background: blue;
+
 }
 
 .search_wrapar .brow_train{
@@ -720,12 +719,12 @@ background: #FFFFFF;
     height: 40px;
     /*border: 1px solid #fff;*/
     margin: 30px auto;
-    background: black;
+
     opacity: 0.8;
    
 }
 .ver_add-wrapar{
-	background: red;
+
 	width: 20%;
 }
 
@@ -742,10 +741,10 @@ background: #FFFFFF;
 	.search_wrapar .citi-box{
     width: 130px;
     height: 35px;
-    background: red;
+  
     margin-left: 200px;
     margin-top: 60px;
-    background:lime;
+    
 }
 
 .search_wrapar .citi-box .country #drop{
@@ -768,12 +767,12 @@ background: #FFFFFF;
     height: 100px;
     width: 68%;
     margin: 5px auto;
-   background: red; 
+   
 }
 .search_wrapar .search_bar .course-name{
     height: 70px;
     width: 340px;
-    background: green;
+   
      margin-left: 7px; 
     float: left;
     margin-top: 10px;
@@ -793,13 +792,13 @@ background: #FFFFFF;
     -moz-transition: all 0.30s ease-in-out;
     -ms-transition: all 0.30s ease-in-out;
     -o-transition: all 0.30s ease-in-out;
-    background: blue;
+    
 }
 
 .search_wrapar .search_bar .location{
     height: 70px;
     width: 280px;
-    background: blue;
+  
     float: left;
     margin-top: 10px;
 }
@@ -810,7 +809,7 @@ background: #FFFFFF;
     float: right;
     margin-right: 55px;
     margin-top: -19px;
-    background: orange;
+    
 }
 
 .search_wrapar .brow_train{
@@ -818,7 +817,7 @@ background: #FFFFFF;
     height: 40px;
     /*border: 1px solid #fff;*/
     margin: 30px auto;
-    background: black;
+    
     opacity: 0.8;
    
 }
@@ -833,7 +832,7 @@ background: #FFFFFF;
 	.search_wrapar .citi-box{
     width: 130px;
     height: 35px;
-    background: red;
+   
     margin-left: 130px;
     margin-top: 60px;
    
@@ -864,7 +863,7 @@ background: #FFFFFF;
 .search_wrapar .search_bar .course-name{
     height: 70px;
     width: 330px;
-    background: green;
+   
      margin-left: 7px; 
     float: left;
     margin-top: 10px;
@@ -923,7 +922,7 @@ background: #FFFFFF;
 	.search_wrapar .citi-box{
     width: 130px;
     height: 35px;
-    background: red;
+
     margin-left: 130px;
     margin-top: 60px;
     
@@ -1010,7 +1009,7 @@ background: #FFFFFF;
 	.search_wrapar .citi-box{
     width: 130px;
     height: 35px;
-    background: red;
+  
     margin-left: 50px;
     margin-top: 60px;
     
@@ -1067,10 +1066,10 @@ background: #FFFFFF;
 .search_wrapar .search_bar .location{
     height: 70px;
     width: 230px;
-    background:red;
+   
     float: left;
     margin-top: 10px;
-    background: orange;
+   
 }
 .search_wrapar .search_bar .location input{
     padding-left: 15px;
@@ -1147,7 +1146,7 @@ background: #FFFFFF;
 .search_wrapar .search_bar .course-name{
     height: 70px;
     width: 220px;
-    background: red;
+  
      margin-left: 7px; 
     float: left;
     margin-top: 10px;
@@ -1173,7 +1172,7 @@ background: #FFFFFF;
 .search_wrapar .search_bar .location{
     height: 70px;
     width: 220px;
-    background:red;
+    
     float: left;
     margin-top: 10px;
     background: black;
@@ -1204,7 +1203,7 @@ background: #FFFFFF;
    
 }
 .search_wrapar .adv-search a{
-	color:red;
+	
 	font-size: 12px;
 }
 
@@ -1218,7 +1217,7 @@ background: #FFFFFF;
 	.search_wrapar .citi-box{
     width: 100px;
     height: 35px;
-    background: red;
+  
     margin-left: 5px;
     margin-top: 60px;
     
@@ -1252,7 +1251,7 @@ background: #FFFFFF;
 .search_wrapar .search_bar .course-name{
     height: 70px;
     width: 110px;
-    background: red;
+   
      margin-left: 0px; 
     float: left;
     margin-top: 10px;
@@ -1278,7 +1277,7 @@ background: #FFFFFF;
 .search_wrapar .search_bar .location{
     height: 70px;
     width: 110px;
-    background:red;
+
     float: left;
     margin-top: 10px;
     background: black;
@@ -1319,7 +1318,7 @@ background: #FFFFFF;
     
 }
 .search_wrapar .adv-search a{
-	color:red;
+	
 	font-size: 13px;
 }
 	.search_wrapar .brow_train{
@@ -1340,7 +1339,7 @@ background: #FFFFFF;
     display: inline;
     line-height: 40px;
     padding: 0px;
-    /*background: red;*/
+    
 }
 .search_wrapar .brow_train ul li:first-child{
     margin-left: 2px;

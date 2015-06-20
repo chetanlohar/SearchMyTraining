@@ -14,7 +14,7 @@ and open the template in the editor.
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/combine.css"
 	media="all" type="text/css">
-	
+
 
 <script
 	src="<%=request.getContextPath()%>/resources/js/modernizr-1.5.min.js"></script>
@@ -62,10 +62,7 @@ and open the template in the editor.
     }); 
     } 
   
-  $.get('searchview', function(data) {
 
-	  $('#calender').append(data);
-	});
   
 </script>
 <script type="text/javascript">
@@ -89,14 +86,18 @@ $(window).scroll(function(){
 });
  
  function loadcalender() {
-		<%-- $("#home-content").load("<%=request.getContextPath()%>/resources/pages/FreeLancer/FLprofile.jsp", function(responseText, statusText, xhr) --%>
-		$("#mid").load("<%=request.getContextPath()%>/calenderdiv", function(responseText, statusText, xhr)
-		        {
-		                if(statusText == "success")
-		                        /* alert("Successfully loaded the content!"); */
-		                if(statusText == "error")
-		                        alert("An error occurred: " + xhr.status + " - " + xhr.statusText);
-		        });
+	
+		   	 var keyword=$("#w-input-search").val();
+		   	
+		   	 console.log("keyword "+keyword);
+
+		   	$("#mid").load("<%=request.getContextPath()%>/getCalendars?inputkeyword="+keyword,function(responseText, statusText, xhr) {
+		   					if (statusText == "success")
+		   					// alert("Successfully loaded the content!"); 
+		   						if (statusText == "error")
+		   							alert("An error occurred: " + xhr.status + " - "
+		   									+ xhr.statusText);
+		   				});
 		
 	}
  
@@ -118,6 +119,7 @@ $(function(){
 })
 
 </script>
+
 
 </head>
 <body>
@@ -182,7 +184,7 @@ $(function(){
 			</div>
 			<div class="search">
 				<input type="submit" value="Search" id="button" name=button
-					onclick="loadcalender();recenAddedCalenderb(); " />
+					onclick="loadcalender(); " />
 			</div>
 			<div class="adv-search">
 				<a href="#" id="advsearch1">Advance Search</a>
@@ -268,7 +270,7 @@ $(function(){
 		<div class="middle_part" id="mid">
 			<div class="top_add" id="top">
 				<img
-					src="<%=request.getContextPath()%>/resources/images/hdBannerCareers_bg.png"
+					src="<%=request.getContextPath()%>/resources/images/hdBannerCareers_bg.jpg"
 					alt="a">
 			</div>
 			<div id="t" class="clearfix">
@@ -288,10 +290,8 @@ $(function(){
 				</ul>
 				<div id="tabcontent">
 					<div id="home-content" class="contentblock">
-						<div class="top-institute" id ="calender">
-							
-						</div>
-						
+						<div class="top-institute" id="calender"></div>
+
 
 					</div>
 					<!-- @end #home-content -->
@@ -593,8 +593,8 @@ $(function(){
 				<!--<img src="images/sem.gif" alt="a">-->
 				<h1>SEMINARS</h1>
 				<ul class="text_slide">
-					<marquee direction="up" behavior="scroll" scrollamount="3" onmouseover="this.stop()" onmouseout="this.start()"
-						height="305">
+					<marquee direction="up" behavior="scroll" scrollamount="3"
+						onmouseover="this.stop()" onmouseout="this.start()" height="305">
 
 						<li><a href="#" target="_blank">Seminar on Graphics
 								Design</a>
@@ -627,28 +627,33 @@ $(function(){
 			<ul id="icon-menu" class="sti-menu">
 				<li data-hovercolor="#fff" class="box-shaddow-black"><a
 					href="<%=request.getContextPath()%>/resources/softeware-development.html">
-						<h2 data-type="mText" class="sti-item">Respect  The Training Honor The Commitment Cherish The Result.</h2>
+						<h2 data-type="mText" class="sti-item">Respect The Training
+							Honor The Commitment Cherish The Result.</h2>
 						<h3 data-type="sText" class="sti-item">Software Development »</h3>
 						<span data-type="icon" class="sti-icon sti-icon-branding sti-item"></span>
 				</a></li>
 				<li data-hovercolor="#fff" class="box-shaddow-black"><a
 					href="<%=request.getContextPath()%>/resources/ourwork.html">
 						<h2 data-type="mText" class="sti-item">Sucess in Business
-							Require Training and Discipline and Hard Work
-					But If You're Not Frightened By These Things,The Opportunities are Just as Great Today as they ever were.</h2>
+							Require Training and Discipline and Hard Work But If You're Not
+							Frightened By These Things,The Opportunities are Just as Great
+							Today as they ever were.</h2>
 						<h3 data-type="sText" class="sti-item">See Our Web Portfolio
 							»</h3> <span data-type="icon" class="sti-icon sti-icon-web sti-item"></span>
 				</a></li>
 				<li data-hovercolor="#fff" class="box-shaddow-black"><a
 					href="<%=request.getContextPath()%>/resources/seo.html">
-						<h2 data-type="mText" class="sti-item">Practice Is The Hardest Part Of Learning, And Training  Is The Essence Of  Transformation.</h2>
+						<h2 data-type="mText" class="sti-item">Practice Is The
+							Hardest Part Of Learning, And Training Is The Essence Of
+							Transformation.</h2>
 						<h3 data-type="sText" class="sti-item">SEO Company india »</h3> <span
 						data-type="icon" class="sti-icon sti-icon-seo sti-item"></span>
 				</a></li>
 				<li data-hovercolor="#fff" class="box-shaddow-black"><a
 					href="<%=request.getContextPath()%>/resources/graph-design.html">
-						<h2 data-type="mText" class="sti-item">It Is Not Only Important To Be Powerfull, What's Really  Important
-						Is To Be Brave,Training Is Essential Because  Training Makes You Brave.</h2>
+						<h2 data-type="mText" class="sti-item">It Is Not Only
+							Important To Be Powerfull, What's Really Important Is To Be
+							Brave,Training Is Essential Because Training Makes You Brave.</h2>
 						<h3 data-type="sText" class="sti-item">Search About Graphics
 							»</h3> <span data-type="icon" class="sti-icon sti-icon-print sti-item"></span>
 				</a></li>

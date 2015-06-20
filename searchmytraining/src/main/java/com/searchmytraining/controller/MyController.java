@@ -18,6 +18,7 @@ public class MyController {
 	{
 		return "pages/FreeLancer/FLCalender";
 	}
+	
 	@RequestMapping("/calenderdiv")
 	public String doAction2()
 	{

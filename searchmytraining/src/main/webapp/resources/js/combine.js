@@ -25,10 +25,7 @@
 //===========================================================================================================
 
 //==========================================Location Js==================================================
-                function my_show() {
-                    document.getElementById("drop").style.display = "block";
-
-                }
+              
 
                 function  ShowCountry(val) {
 
@@ -38,12 +35,23 @@
                 }
 
 
-                $(document).ready(function() {
-                    $("#Country").click(function() {
-                        $("#drop").fadeIn();
-                    });
+                function  ShowCountry(val) {
+
+
+                    document.getElementById("Country").innerHTML = val;
+                    document.getElementById("drop").style.display = "none";
+                }
+
+
+            
+                $(document).on('click', '#Country' , function(e){
+                	 $("#drop").slideToggle("slow");
+                     e.stopPropagation();
                 });
                 
+                $(document).click(function(){
+                    $("#drop").slideUp();
+                                    })
                
                 
                 
@@ -60,11 +68,8 @@
                     $elem.animate({top: (parseInt(top) - 70)}, 900, 'linear', function() {
                         window.verticalScroller($(this))
                     });
-                    
-                  
-                   
                 }
-               
+
 
                 $(document).ready(function() {
                     var i = 0;
@@ -73,6 +78,7 @@
                         i += 135;
                         window.verticalScroller($(this));
                     });
+                });
                     
                  
 //===================================================================================================

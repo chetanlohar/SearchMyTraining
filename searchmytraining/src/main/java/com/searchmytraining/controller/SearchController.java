@@ -46,6 +46,7 @@ public class SearchController {
 		}*/
 		
 		model.addAttribute("calendars", calendars);
-		return "searchcalender";
+		return "pages/CodePages/calenderdiv";
+		/*return "searchcalender";*/
 	}
 }

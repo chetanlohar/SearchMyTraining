@@ -15,22 +15,7 @@
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/LogIn.css"
 	media="all" type="text/css">
-<!-- <script type="text/javascript">
-$(function(){
-	  $('ul.tabs li:first').addClass('active');
-	  $('.tab_block div').hide();
-	  $('.tab_block div:first').show();
-	  $('ul.tabs li').on('click',function(){
-	    $('ul.tabs li').removeClass('active');
-	    $(this).addClass('active')
-	    $('.tab_block div').hide();
-	    var activeTab = $(this).find('a').attr('href');
-	    $(activeTab).slideDown('slow');
-	    return false;
-	  });
-	})
 
-</script> -->
 <script type="text/javascript">
 	$(window).scroll(function() {
 		if ($(window).scrollTop() >= 10) {
