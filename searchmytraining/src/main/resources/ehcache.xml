@@ -12,22 +12,26 @@
 		<persistence strategy="localTempSwap" />
 	</cache>
 
-	<cache name="stateCache" maxElementsInMemory="1000" eternal="true"
-		overflowToDisk="false" memoryStoreEvictionPolicy="LFU" >
-	</cache>
-	
 	<cache name="countryCache" maxElementsInMemory="1000" eternal="true"
-		overflowToDisk="false" memoryStoreEvictionPolicy="LFU" >
+		overflowToDisk="false" memoryStoreEvictionPolicy="LFU">
 	</cache>
-	
+
+	<cache name="stateCache" maxElementsInMemory="1000" eternal="true"
+		overflowToDisk="false" memoryStoreEvictionPolicy="LFU">
+	</cache>
+
+	<cache name="cityCache" maxElementsInMemory="1000" eternal="true"
+		overflowToDisk="false" memoryStoreEvictionPolicy="LFU">
+	</cache>
+
 	<cache name="industryCache" maxElementsInMemory="1000" eternal="true"
-		overflowToDisk="false" memoryStoreEvictionPolicy="LFU" >
+		overflowToDisk="false" memoryStoreEvictionPolicy="LFU">
 	</cache>
-	<cache name="industryCatCache" maxElementsInMemory="1000" eternal="true"
-		overflowToDisk="false" memoryStoreEvictionPolicy="LFU" >
+	<cache name="industryCatCache" maxElementsInMemory="1000"
+		eternal="true" overflowToDisk="false" memoryStoreEvictionPolicy="LFU">
 	</cache>
-	<cache name="industrySubCatCache" maxElementsInMemory="1000" eternal="true"
-		overflowToDisk="false" memoryStoreEvictionPolicy="LFU" >
+	<cache name="industrySubCatCache" maxElementsInMemory="1000"
+		eternal="true" overflowToDisk="false" memoryStoreEvictionPolicy="LFU">
 	</cache>
 
 

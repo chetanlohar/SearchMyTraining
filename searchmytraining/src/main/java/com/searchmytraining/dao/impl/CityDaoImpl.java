@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;
 
 import com.searchmytraining.dao.AbstractJpaDAO;
@@ -37,6 +38,7 @@ public class CityDaoImpl extends AbstractJpaDAO<CityEntity> implements CityDAO {
 		return findAll();
 	}
 	
+	@Cacheable(value="cityCache")
 	public List<CityEntity> getCities(Integer stateid) 
 	{
 		setClazz(CityEntity.class);

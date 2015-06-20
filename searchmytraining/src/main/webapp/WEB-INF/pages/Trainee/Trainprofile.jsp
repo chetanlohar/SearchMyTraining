@@ -84,22 +84,20 @@ $('#acord1').accordion({
 						<!-- <option value="emptype3">C</option> -->
 					</select>
 					<span id="erroremp"></span>
-				
 				</div>
 				<div class="industry">
 					<label> Industry :</label> 
-					<select id="tindustry">
+					<select id="tindustry" onchange="industryCategory()">
 						<option value="0">--Select--</option>
 						<c:forEach var="industry" items="${industries}">
-							<option value="${industry.trnIndstrId}"
-								onclick="industryCategory(${industry.trnIndstrId},'<%=request.getContextPath()%>');">${industry.indstrName}</option>
+							<option value="${industry.trnIndstrId}">${industry.indstrName}</option>
 						</c:forEach>
 					</select>
 					<span id="errorindustry"></span>
 				</div>
 				<div class="funArea">
 					<label>Functional Area  :</label>
-					<select id="industrycatid" onchange="industrySubCategory('<%=request.getContextPath()%>')">
+					<select id="industrycatid" onchange="industrySubCategory()">
 						<option value="0">--Select--</option>
 					</select>
 					<span id="errorfunarea"></span>
@@ -153,17 +151,17 @@ $('#acord1').accordion({
 				
 				<div class="country">
 					<label>Country :</label> 
-					<select id="countryid">
+					<select id="countryid" onchange="getStates();">
 						<option value="0">--Select--</option>
 						<c:forEach var="country" items="${countries}">
-							<option value="${country.countryId}" onclick="getStates(${country.countryId},'<%=request.getContextPath()%>');">${country.countryName}</option>
+							<option value="${country.countryId}">${country.countryName}</option>
 						</c:forEach>
 					</select>
 				</div>
 				<span id="errorcountry"></span>
 				<div class="state">
 					<label>State :</label> 
-					<select id="stateid" onchange="getCities('<%=request.getContextPath()%>')">
+					<select id="stateid" onchange="getCities()">
 						<option value="0">--Select--</option>
 					</select>
 	     		</div>
