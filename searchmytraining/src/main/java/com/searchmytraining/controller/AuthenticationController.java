@@ -28,7 +28,7 @@ public class AuthenticationController {
 	@RequestMapping("/login")
 	public String login(ModelMap model) {
 		
-		return "pages/Login";
+		return "pages/LogIn";
 		
 	}
 
@@ -67,6 +67,15 @@ public class AuthenticationController {
 		return new ResponseEntity<String>("{\"success\" : true, \"page\" : \""
 				+ page + "\"}", getJsonHeaders(), HttpStatus.OK);
 	}
+	
+	
+	@RequestMapping(value = "/logout-success", method = RequestMethod.GET)
+	public String logoutSuccess(HttpServletRequest request) {
+		
+		return "pages/LogIn";
+		
+	}
+	
 	
 	public static void main(String[] args) {
 		org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();

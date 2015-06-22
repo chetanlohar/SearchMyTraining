@@ -41,6 +41,12 @@
 
 						</div>
 					</c:if>
+					<c:if test="${'true' eq param.access_denied}">
+						<div style="color: blue">
+							Access Denied!!!<br />
+
+						</div>
+					</c:if>
 					<div class="msg"></div>
 					<form action="#">
 						<div class="user">
