@@ -34,7 +34,7 @@
 				<div class="name">
 					<input id="org_name" type="text" autocomplete="off" name="org_name"
 						value="" placeholder="Organization Name" required=""> <span
-						id="error1"></span>
+						id="error1"><text>.</text></span>
 
 				</div>
 				<select id="cityid">
@@ -43,16 +43,32 @@
 					<option value="Mumbai">Mumbai</option>
 					<option value="Nagpur">Nagpur</option>
 					<option value="Solapur">Solapur</option>
-				</select> <span id="error2"></span>
+					<option value="Nashik">Nashik</option>
+					<option value="Bangalore">Bangalore</option>
+					<option value="Delhi">Delhi</option>
+					<option value="Kolkata">Kolkata</option>
+					<option value="Chennai">Chennai</option>
+					<option value="Goa">Goa</option>
+					<option value="Indore">Indore</option>
+					<option value="Noida">Noida</option>
+					<option value="Hydrabad">Hydrabad</option>
+					<option value="Gurgaon">Gurgaon</option>
+					<option value="Chandigarh">Chandigarh</option>
+					<option value="Jaipur">Jaipur</option>
+					<option value="Baroda">Baroda</option>
+					<option value="Ahmedabad">Ahmedabad</option>
+					<option value="Lucknow">Lucknow</option>
+					
+				</select> <span id="error2"><text>.</text></span>
 				<div class="contact">
 					<input id="contact1" type="text" autocomplete="off" name="contact"
 						value="" placeholder="Contact No." required=""
-						onkeypress="return validate(event)"> <span id="error3"></span>
+						onkeypress="return validate(event)"> <span id="error3"><text>.</text></span>
 				</div>
 				<div class="mailto">
 					<input id="email1" type="text" autocomplete="off" name="email"
 						value="" placeholder="Enter Email Id" required=""> 
-					<span id="error4"></span>
+					<span id="error4"><text>.</text></span>
 				</div>
 				<div class="password">
 					<input id="password" class="pass" type="password"
@@ -67,7 +83,7 @@
 						required="">
 				</div>
 				
-				<span id="error5"></span>
+				<span id="error5"><text>.</text></span>
 				<div class="rcpatcha1">
 			
 			<input style="margin: 0 auto;" type="text" id="prcaptch" name="" placeholder="Enter Captch">

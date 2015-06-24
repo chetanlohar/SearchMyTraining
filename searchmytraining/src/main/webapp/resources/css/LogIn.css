@@ -21,7 +21,7 @@ body {
 .Log_container .Log_warapar .log_bar {
 	width: 50%;
 	height: 100%;
-	float: left;
+	float: right;
 }
 
 .Log_container .Log_warapar .log_bar .form_container {

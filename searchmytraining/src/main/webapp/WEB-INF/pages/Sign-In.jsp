@@ -15,7 +15,7 @@
 
 <%@include file="HomePageLogin.jsp" %>
 	<div id="pop_up_box_6">
-		<a class="b-close"><img
+		<a class="b-close close1"><img
 			src="<%=request.getContextPath()%>/resources/images/images.png"
 			alt="cancel"></a>
 		<div class="reg_form">

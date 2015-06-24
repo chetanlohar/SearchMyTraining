@@ -68,10 +68,14 @@ and open the template in the editor.
 }
 
 #pop_up_box form span {
+
 	margin-left: 20px;
 	font-size: 13px;
 	color: red;
 	font-family: arial;
+}
+#pop_up_box form span text{
+	color: #fff;
 }
 
 #pop_up_box form input[type="text"] {
@@ -175,6 +179,9 @@ and open the template in the editor.
 	background: #FFFFFF;
 	padding-top: 35px;
 }
+#pop_up_box_1 .reg_form .clr{
+	clear: both;
+}
 
 #pop_up_box_1 .reg_form .head {
 	position: absolute;
@@ -224,6 +231,9 @@ and open the template in the editor.
 	font-size: 13px;
 	color: red;
 	font-family: arial;
+}
+#pop_up_box_1 form span text{
+	color: #fff;
 }
 
 #pop_up_box_1 form input[type="text"] {
@@ -312,7 +322,7 @@ and open the template in the editor.
 	padding: 4px;
 	min-width: 400px;
 	min-height: 550px;
-	margin-top: 100px;
+	margin-top: 50px;
 	background: #ECF0F3;
 }
 
@@ -338,7 +348,9 @@ and open the template in the editor.
 	color: red;
 	font-family: arial;
 }
-
+#pop_up_box_2 form span text{
+	color: #fff;
+}
 #pop_up_box_2 .reg_form form {
 	height: auto;
 	width: 85%;
@@ -1060,7 +1072,9 @@ and open the template in the editor.
 	color: red;
 	font-family: arial;
 }
-
+#pop_up_box_4 form span text{
+	color: #fff;
+}
 #pop_up_box_4 form #Pass-chek {
 	width: 270px;
 	height: 15px;
@@ -1233,7 +1247,9 @@ width
 	font-size: 13px;
 	color: red;
 }
-
+#pop_up_box_5 form span text{
+	color: #fff;
+}
 #pop_up_box_5 form input[type="password"], #pop_up_box_5 form input[type="email"]
 	{
 	color: #858282;
@@ -1460,8 +1476,9 @@ width
 	padding: 2px;
 	width: 520px;
 	height: 300px;
-	margin-top: 40px;
+	margin-top: 30px;
 	background: #ECF0F3;
+	
 }
 
 .b-close {
@@ -1877,7 +1894,9 @@ width
 	color: red;
 	font-family: arial;
 }
-
+#pop_up_box_8 form span text{
+	color: #fff;
+}
 #pop_up_box_8 form #Pass-chek12 {
 	width: 270px;
 	height: 15px;

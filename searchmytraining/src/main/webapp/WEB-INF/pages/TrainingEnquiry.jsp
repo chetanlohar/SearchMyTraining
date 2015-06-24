@@ -17,7 +17,7 @@
 </head>
 <body>
 <div id="pop_up_box">
-            <a class="b-close"><img src="<%=request.getContextPath()%>/resources/images/images.png"></a>
+            <a class="b-close close1"><img src="<%=request.getContextPath()%>/resources/images/images.png"></a>
             <div class="reg_form">
                 <div class="head">
                     <img src="<%=request.getContextPath()%>/resources/images/enquiry-icon.png" alt="register">
@@ -27,34 +27,34 @@
                     <div class="fname">
                         <input type="text" autocomplete="off" name="firstname" id="firstname22" placeholder="First Name" >
                     </div>
-                    <span id="error29"></span>
+                    <span id="error29"><text>.</text></span>
                     <div class="lname">
                         <input type="text" autocomplete="off" name="lname" id="lname22" placeholder="Last Name" >
                     </div>
-                    <span id="error30"></span>
+                    <span id="error30"><text>.</text></span>
                     <div class="title">
                         <input type="text" autocomplete="off" name="title" id="title22" placeholder="Subject / Title" >
                     </div>
-                    <span id="error31"></span>
+                    <span id="error31"><text>.</text></span>
                     <div class="city">
                         <input type="text" autocomplete="off" name="city" id="city22" placeholder="City">
                     </div>
-                    <span id="error32"></span>
+                    <span id="error32"><text>.</text></span>
                     <div class="mailto">
                         <input type="text" autocomplete="off"  name="email" id="email22" placeholder="Email Id" >
                     </div>
-                    <span id="error33"></span>
+                    <span id="error33"><text>.</text></span>
                     <div class="contact">
                         <input type="text" autocomplete="off" name="mob" id="mob22" placeholder="Contact No." onkeypress="return TEValidate(event)">
                     </div>
-                    <span id="error34"></span>
+                    <span id="error34"><text>.</text></span>
                     <div class="req">
                         <textarea  name="requirements" id="requirements22" placeholder="Requirement Description"></textarea>
                     </div>
                   
                     <div class="sign">
                         <input type="button" name="Submit" value="Send" onclick="enquiry();">
-                        <input type="reset" name="Cancel" value="Cancel" class="cancel" >
+                        <input type="reset" name="Cancel" value="Cancel" class="cancel close1" >
                     </div>
 
                 </form>

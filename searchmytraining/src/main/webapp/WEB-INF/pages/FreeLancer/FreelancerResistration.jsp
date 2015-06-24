@@ -83,12 +83,27 @@
 					<input type="text" autocomplete="off" name="name" id="name12"
 						placeholder="Full Name">
 				</div>
-				<span id="error11"></span> <select id="City_name12">
+				<span id="error11"><text>.</text></span> <select id="City_name12">
 					<option value="0">Select City</option>
 					<option value="Pune">Pune</option>
 					<option value="Mumbai">Mumbai</option>
 					<option value="Nagpur">Nagpur</option>
 					<option value="Solapur">Solapur</option>
+					<option value="Nashik">Nashik</option>
+					<option value="Bangalore">Bangalore</option>
+					<option value="Delhi">Delhi</option>
+					<option value="Kolkata">Kolkata</option>
+					<option value="Chennai">Chennai</option>
+					<option value="Goa">Goa</option>
+					<option value="Indore">Indore</option>
+					<option value="Noida">Noida</option>
+					<option value="Hydrabad">Hydrabad</option>
+					<option value="Gurgaon">Gurgaon</option>
+					<option value="Chandigarh">Chandigarh</option>
+					<option value="Jaipur">Jaipur</option>
+					<option value="Baroda">Baroda</option>
+					<option value="Ahmedabad">Ahmedabad</option>
+					<option value="Lucknow">Lucknow</option>
 				</select> <span id="error12"></span>
 				<!--  <div class="name">
                         <input type="text" autocomplete="off" name="training_type" value="" placeholder="Training Type" required="">
@@ -97,12 +112,12 @@
 					<input type="text" name="contact" autocomplete="off" id="contact12"
 						placeholder="Contact No." onkeypress="return validate12(event)">
 				</div>
-				<span id="error13"></span>
+				<span id="error13"><text>.</text></span>
 				<div class="mailto">
 					<input type="text" autocomplete="off" name="email" id="email12"
 						placeholder="Enter Email Id">
 				</div>
-				<span id="error14"></span>
+				<span id="error14"><text>.</text></span>
 				<div class="password">
 					<input type="password" autocomplete="off" name="password"
 						id="password12" placeholder="Enter Password">
@@ -118,7 +133,7 @@
 					<input type="password" autocomplete="off" name="cnfpassword"
 						id="cnfpassword12" placeholder="Confirm Password">
 				</div>
-				<span id="error15"></span>
+				<span id="error15"><text>.</text></span>
 				<div class="rcpatcha1">
 
 					<input style="margin: 0 auto;" type="text" id="frcapch" name=""

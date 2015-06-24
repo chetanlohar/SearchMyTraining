@@ -124,14 +124,14 @@ $(function(){
 </head>
 <body>
 	<%@include file="layouts/Header.jsp"%>
-	<%@include file="pages/Trainee/TraineeRegistration.jsp"%>
+	<%-- <%@include file="pages/Trainee/TraineeRegistration.jsp"%>
 	<%@include
 		file="pages/TrainingProvider/TrainingProviderRegistration.jsp"%>
 	<%@include file="pages/FreeLancer/FreelancerResistration.jsp"%>
 	<%@include file="pages/TrainingEnquiry.jsp"%>
 	<%@include file="pages/GroupTrainingRequest.jsp"%>
 	<%@include file="pages/Sign-In.jsp"%>
-	<%@include file="pages/AdvSearch.jsp"%>
+	<%@include file="pages/AdvSearch.jsp"%> --%>
 
 	<!--==============================================================================-->
 	<div class="search_wrapar">
