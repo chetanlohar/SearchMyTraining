@@ -8,5 +8,5 @@ public interface IIndustryCategoryService {
 	
 	public List<IndustryCategoryEntity> getIndustryCategories();
 	public List<IndustryCategoryEntity> getIndustryCategories(Integer industryid);
-
+	public List<IndustryCategoryEntity> getIndustryCategoriesbyid(Integer industrycatid);
 }

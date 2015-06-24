@@ -30,4 +30,10 @@ public class UserService implements IUserService {
 	public UserEntity getUser(Integer id) {
 		return userdao.getUser(id);
 	}
+
+	@Override
+	@Transactional
+	public UserEntity getUser(String username) {
+		return userdao.getUser(username);
+	}
 }

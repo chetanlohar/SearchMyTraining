@@ -1,5 +1,8 @@
 package com.searchmytraining.dao.impl;
 
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+
 import org.springframework.stereotype.Repository;
 
 import com.searchmytraining.dao.AbstractJpaDAO;
@@ -9,6 +12,8 @@ import com.searchmytraining.entity.UserEntity;
 @Repository
 public class UserDaoImpl extends AbstractJpaDAO<UserEntity> implements UserDAO {
 
+	EntityManager entityManager;
+	
 	@Override
 	public void addUser(UserEntity entity) {
 		create(entity);
@@ -26,5 +31,19 @@ public class UserDaoImpl extends AbstractJpaDAO<UserEntity> implements UserDAO {
 		System.out.println("from UserDaoImpl: "+user.getUserName());
 		return user;
 	}
+
+	@Override
+	public UserEntity getUser(String username) {
+		
+		String query = "from UserEntity user where user.userName=?";
+		entityManager = getEntityManager();
+		TypedQuery<UserEntity> query1 = entityManager.createQuery(query,UserEntity.class);
+		query1.setParameter(1, username.trim());
+		UserEntity userentity = query1.getSingleResult();
+		System.out.println(userentity.getUserId());
+		return userentity;
+	}
+	
+	
 
 }

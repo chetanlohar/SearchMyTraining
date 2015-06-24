@@ -76,8 +76,9 @@
 													});
 								} else {
 									alert("Thank you for Your Registration, Please Update Your Profile:");
-									window.location.href = path
-											+ "/trainee_updateprofile";
+									doLoginSuccess(path);
+									/* window.location.href = path
+											+ "/trainee_updateprofile"; */
 								}
 
 							}
@@ -87,6 +88,35 @@
 			}
 		}
 	}
+	
+	function doLoginSuccess(path)
+	{
+		console.log("in doLoginSuccess()... :-)");
+		var username = $('#email').val();
+		var credentials = {username:$('#email').val(),password:$('#pass1').val()};
+		$.ajax({
+			url : "${ctx}/searchmytraining/j_spring_security_check",
+			type : "POST",
+			//contentType : "application/json",
+			beforeSend : function(xhr) {
+				xhr.withCredentials = true;
+			},
+			data : credentials,
+			success : function(data, status) {
+				if (data != null) {
+					if (data.success == false) {
+						$('#auth_error_mesg').html(data.message);
+						$("#auth_error_div").show();
+					} else if (data.success == true) {										
+						location.href = "${ctx}/searchmytraining" + data.page+"?username="+username;
+						/* location.href = path + data.page; */
+					}
+				}
+			},
+			error : loginFailed
+		});
+	}
+	
 </script>
 
 </head>

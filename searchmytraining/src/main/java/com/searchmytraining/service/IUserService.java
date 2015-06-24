@@ -7,4 +7,5 @@ public interface IUserService {
 	public void addUser(UserEntity user);
 	public Integer getMaxUserId(String idcolumn);
 	public UserEntity getUser(Integer id);
+	public UserEntity getUser(String username);
 }

@@ -367,7 +367,7 @@ function tProf4(){
 		       
 		            $nextContent.show()
 		        });
-		        updateempdet(path);
+		        updateempdet();
 		        jQuery(".acord .acord_cont").hasClass().next().slideDown("fast", function () {
 		            
 		            $nextContent.show()
@@ -412,14 +412,12 @@ function tProf3(){
 }
 
 
-function updateempdet(path) {
+function updateempdet() {
 
 	console.log("in updateempdet...");
-	console.log($("#employmenttype").val() + ":" + $("#industrysubcatid").val()
-			+ ":" + $("#employer").val() + $("#jobprofileid").val());
 	try {
 		$.ajax({
-			url : path + "/updateempdet",
+			url : "./updateempdet",
 			dataType : "json",
 			type : "post",
 			data : JSON.stringify({
@@ -446,7 +444,7 @@ function updateempdet(path) {
 				} 
 			},
 			error : function(response) {
-				alert("in error...");
+				alert("in error...: "+response);
 			}
 		});
 

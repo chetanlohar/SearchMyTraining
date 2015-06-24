@@ -10,9 +10,12 @@
 	src="<%=request.getContextPath()%>/resources/js/AddDel.js"></script>
 		<script
 	src="<%=request.getContextPath()%>/resources/js/Validations/TraineeProfile.js"></script>
+<script	src="<%=request.getContextPath()%>/resources/js/work/categories.js"></script>
 <script type="text/javascript">
 jQuery(document).ready(function () {
   
+	 // filling of Industry Categories
+	
     jQuery(".acord .skip").click(function () {
         var $nextContent = jQuery(this).parent().next().next();
         jQuery(".acord .acord_cont").slideUp("fast", function () {
@@ -22,7 +25,93 @@ jQuery(document).ready(function () {
             $nextContent.show()
         });
     });
+    loadEmploymentData();
 });
+
+function loadEmploymentData()
+{
+	var industriescat = '${industrycategories}';
+	var jsonindustrycategories = $.parseJSON(industriescat);
+	var industries = '${industries}';
+	var jsonindustries = $.parseJSON(industries);
+	var indsubcat = '${industrysubcat}';
+	var jsonindsubcat = $.parseJSON(indsubcat);
+	var industry_value = '${employmentdetails.indsubcat.industrycategory.industry.trnIndstrId}';
+	var industry_cat_value = '${employmentdetails.indsubcat.industrycategory.trnIndstrCatId}';
+	var industry_subcat_value = '${employmentdetails.indsubcat.trnIndstrSubCatId}';
+	console.log(industry_value+" "+industry_cat_value+" "+industry_subcat_value);
+	if(industry_value!= 0)
+	{
+		console.log("Registered user...");
+		jQuery.each(jsonindustries, function(index, item) {
+			if(this.trnIndstrId == industry_value)
+			{
+				$('#tindustry').append(
+					$("<option selected></option>").text(this.indstrName).val(
+							this.trnIndstrId));
+			}
+			else
+			{
+				$('#tindustry').append(
+						$("<option></option>").text(this.indstrName).val(
+								this.trnIndstrId));	
+			}
+		});
+		jQuery.each(jsonindustrycategories, function(index, item) {
+			if(this.trnIndstrCatId == industry_cat_value)
+			{
+				$('#industrycatid').append(
+					$("<option selected></option>").text(this.indstrCatName).val(
+							this.trnIndstrCatId));
+			}
+			else
+			{
+				$('#industrycatid').append(
+						$("<option></option>").text(this.indstrCatName).val(
+								this.trnIndstrCatId));	
+			}
+		});
+		jQuery.each(jsonindsubcat, function(index, item) {
+			if(this.trnIndstrSubCatId == industry_subcat_value)
+			{
+				$('#industrysubcatid').append(
+					$("<option selected></option>").text(this.indstrSubCatName).val(
+							this.trnIndstrSubCatId));
+			}
+			else
+			{
+				$('#industrysubcatid').append(
+						$("<option></option>").text(this.indstrSubCatName).val(
+								this.trnIndstrSubCatId));	
+			}
+		});
+		var employmenttype = '${employmentdetails.employmentType}'
+		if(employmenttype)
+		{
+			console.log(employmenttype);
+			var isFullTime = "";
+			var isPartTime = "";
+			if(employmenttype == "Full Time")
+				var isFullTime = "selected";
+			else
+				var isPartTime = "selected";
+			/* $('#employmenttype').find('option').remove().end();
+			$('#employmenttype').append(
+					$("<option></option>").text(this.indstrName).val(
+							this.trnIndstrId)); */
+		}
+	}
+	else
+	{
+		console.log("New user...");
+		jQuery.each(jsonindustries, function(index, item) {
+			$('#tindustry').append(
+					$("<option></option>").text(this.indstrName).val(
+							this.trnIndstrId));
+		});
+	}
+}
+
 
 </script>
 <script	src="<%=request.getContextPath()%>/resources/js/work/InstituteJS.js"></script>
@@ -32,7 +121,6 @@ $('#acord1').accordion({
 	collapsible : true
 });
 </script>
-<script	src="<%=request.getContextPath()%>/resources/js/work/categories.js"></script>
 </head>
 <body>
 	<input id="userid" type="hidden" value="${sessionScope.userid}">
@@ -44,7 +132,7 @@ $('#acord1').accordion({
 			<form action="#">
 				<div class="name">
 					<label>Full Name <text>*</text> :</label> <input id="name" type="text" name="name"
-						value="${traineedto.name}" onkeypress="return validateName(event);"/>
+						value="${sessionScope.trainee.fullName}" onkeypress="return validateName(event);"/>
 						<span id="error51"></span>
 				</div>
 				<!-- 									<div class="name">
@@ -56,12 +144,12 @@ $('#acord1').accordion({
  -->
 				<div class="email">
 					<label>Email Id <text>*</text> :</label> <input id="email" type="text"
-						name="email" value="${traineedto.email}" />
+						name="email" value="${sessionScope.trainee.emailid}" />
 						<span id="error52"></span>
 				</div>
 				<div class="contact">
 					<label>Phone No <text>*</text> :</label> <input id="contact" type="text"
-						name="phone" value="${traineedto.contact}" onkeypress="return validate13(event);"/>
+						name="phone" value="${sessionScope.trainee.phone}" onkeypress="return validate13(event);"/>
 				<span id="error53"></span>
 				</div>
 
@@ -79,8 +167,8 @@ $('#acord1').accordion({
 					<label>Employment Type :</label> 
 					<select id="employmenttype">
 						<option value="0">--Select--</option>
-						<option value="Full Time">Full Time</option>
-						<option value="Part Time">Part Time</option>
+						<option value="Full Time" ${isFullTime}>Full Time</option>
+						<option value="Part Time" ${isPartTime}>Part Time</option>
 						<!-- <option value="emptype3">C</option> -->
 					</select>
 					<span id="erroremp"></span>
@@ -89,9 +177,9 @@ $('#acord1').accordion({
 					<label> Industry :</label> 
 					<select id="tindustry" onchange="industryCategory()">
 						<option value="0">--Select--</option>
-						<c:forEach var="industry" items="${industries}">
+						 <%--<c:forEach var="industry" items="${industries}">
 							<option value="${industry.trnIndstrId}">${industry.indstrName}</option>
-						</c:forEach>
+						</c:forEach> --%>
 					</select>
 					<span id="errorindustry"></span>
 				</div>
@@ -112,12 +200,12 @@ $('#acord1').accordion({
 				</div>
 				<div class="employer">
 					<label>Employer:</label> <input type="text" name="employer"
-						id="employer">
+						id="employer" value="${employmentdetails.employer}">
 						<span id="error506"></span>
 				</div>
 				<div class="jobProf">
 					<label>Job Profile </label>
-					<textarea id="jobprofileid" type="text" name="jobprof"></textarea>
+					<textarea id="jobprofileid" type="text" name="jobprof">${employmentdetails.jobProfile}</textarea>
 					<span id="errorjobprofile"></span>
 				</div>
 			</form>
@@ -193,7 +281,7 @@ $('#acord1').accordion({
 							<option value="2">OFFICE-LANDLINE</option>
 							<option value="3">PERSONAL-MOBILE</option>
 							<option value="4">PERSONAL-LANDLINE</option>
-						</select> <input type="text" name="contdetails58" id="traineephone1" onkeypress="return validate13(event)" value="${traineedto.contact}">
+						</select> <input type="text" name="contdetails58" id="traineephone1" onkeypress="return validate13(event)" value="${sessionScope.trainee.phone}">
 					<input class="addcontact1" type="button" value="+" >
 					
 					</p>

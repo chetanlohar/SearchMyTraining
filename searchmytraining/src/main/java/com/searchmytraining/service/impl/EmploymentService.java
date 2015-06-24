@@ -38,4 +38,10 @@ public class EmploymentService implements IEmploymentService {
 		emplEntity.setIndsubcat(indsubentity);
 		empldao.updateEmpldet(emplEntity);
 	}
+
+	@Override
+	public EmploymentEntity findEmplDet(Integer userid) {
+		return empldao.findEmplDet(userid);
+	}
+	
 }

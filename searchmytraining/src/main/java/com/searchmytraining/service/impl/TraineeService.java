@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.searchmytraining.dao.RoleDAO;
 import com.searchmytraining.dao.StatusDAO;
-import com.searchmytraining.dao.TraineeRegistrationDao;
+import com.searchmytraining.dao.TraineeDAO;
 import com.searchmytraining.dao.UserDAO;
 import com.searchmytraining.dto.TraineeDTO;
 import com.searchmytraining.entity.RoleEntity;
@@ -20,7 +20,7 @@ import com.searchmytraining.service.ITraineeService;
 @Service
 public class TraineeService implements ITraineeService {
 	@Autowired
-	public TraineeRegistrationDao traineedao;
+	public TraineeDAO traineedao;
 	@Autowired
 	public DozerBeanMapper mapper;
 	@Autowired
@@ -60,6 +60,11 @@ public class TraineeService implements ITraineeService {
 		traineeentity.setUser(userentity);
 		//Insertion of Trainee
 		traineedao.registerTrainee(traineeentity);
+	}
+
+	@Override
+	public TraineeEntity getTrainee(Integer userid) {
+		return traineedao.getTrainee(userid);
 	}
 
 }

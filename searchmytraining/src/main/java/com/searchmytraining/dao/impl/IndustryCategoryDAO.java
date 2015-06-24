@@ -32,4 +32,10 @@ public class IndustryCategoryDAO extends AbstractJpaDAO<IndustryCategoryEntity> 
 		List<IndustryCategoryEntity> l = query1.getResultList();
 		return l;
 	}
+	@Override
+	public List<IndustryCategoryEntity> getIndustryCategoriesbyid(Integer industrycatid) {
+		
+		
+		return null;
+	}
 }

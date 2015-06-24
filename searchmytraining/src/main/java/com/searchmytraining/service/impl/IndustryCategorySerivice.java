@@ -24,4 +24,10 @@ public class IndustryCategorySerivice implements IIndustryCategoryService {
 	public List<IndustryCategoryEntity> getIndustryCategories(Integer industryid) {
 		return industrycatdao.getIndustryCategories(industryid);
 	}
+
+	@Override
+	public List<IndustryCategoryEntity> getIndustryCategoriesbyid(
+			Integer industrycatid) {
+		return industrycatdao.getIndustryCategoriesbyid(industrycatid);
+	}
 }

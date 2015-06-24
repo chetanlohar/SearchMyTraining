@@ -170,7 +170,6 @@
 			<a>email12</a>
 			<b>email</b>
 		</field>
-		<!-- <field> <a>password12</a> <b>password</b> </field> -->
 	</mapping>
 
 	<mapping>

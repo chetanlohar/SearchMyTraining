@@ -27,6 +27,7 @@ import com.searchmytraining.dto.InstituteDTO;
 import com.searchmytraining.dto.LocationDTO;
 import com.searchmytraining.dto.ProfessionalAssociationDTO;
 import com.searchmytraining.entity.CityEntity;
+import com.searchmytraining.entity.EmploymentEntity;
 import com.searchmytraining.entity.IndustryCategoryEntity;
 import com.searchmytraining.entity.IndustrySubCategoryEntity;
 import com.searchmytraining.entity.StateEntity;

@@ -22,20 +22,23 @@ public class IndustrySubCategoryDAO extends AbstractJpaDAO<IndustrySubCategoryEn
 	public List<IndustrySubCategoryEntity> getIndustrySubCategories(Integer subid) 
 	{
 		System.out.println("from getIndustrySubCategories method");
-		String query = "select indsubcategory from IndustrySubCategoryEntity indsubcategory where indsubcategory.industrycategory.trnIndstrCatId='"+subid+"'";
+		String query = "select indsubcategory from IndustrySubCategoryEntity indsubcategory where indsubcategory.industrycategory.trnIndstrCatId=?";
 		entityManager = getEntityManager();
 		TypedQuery<IndustrySubCategoryEntity> query1 = entityManager.createQuery(query, IndustrySubCategoryEntity.class);
+		query1.setParameter(1, subid);
 		List<IndustrySubCategoryEntity> list = query1.getResultList();
 		return list;
 	}
 
 	@Override
-	@Cacheable(value="industrySubCatCache")
+	/*@Cacheable(value="industrySubCatCache")*/
 	public IndustrySubCategoryEntity getIndustrySubCategory(
 			Integer industrysubcatid) {
 		System.out.println("from getIndustrySubCategory method");
 		setClazz(IndustrySubCategoryEntity.class);
 		return findOne(industrysubcatid);
 	}
+	
+	
 
 }

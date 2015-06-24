@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
+import org.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -17,6 +18,7 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
@@ -24,10 +26,16 @@ import com.searchmytraining.dao.CountryDAO;
 import com.searchmytraining.dto.FreelancerDTO;
 import com.searchmytraining.dto.TraineeDTO;
 import com.searchmytraining.dto.TrainerDTO;
+import com.searchmytraining.entity.EmploymentEntity;
+import com.searchmytraining.entity.IndustryCategoryEntity;
+import com.searchmytraining.entity.IndustrySubCategoryEntity;
+import com.searchmytraining.entity.TraineeEntity;
 import com.searchmytraining.entity.UserEntity;
+import com.searchmytraining.service.IEmploymentService;
 import com.searchmytraining.service.IFreelancerService;
 import com.searchmytraining.service.IIndustryCategoryService;
 import com.searchmytraining.service.IIndustrySerivice;
+import com.searchmytraining.service.IIndustrySubCategoryService;
 import com.searchmytraining.service.ITraineeService;
 import com.searchmytraining.service.ITrainerService;
 import com.searchmytraining.service.IUserService;
@@ -45,7 +53,7 @@ public class RegistrationController {
 
 	@Autowired
 	public IUserService userservice;
-
+	
 	@Autowired
 	public IFreelancerService freelancerservice;
 
@@ -54,6 +62,12 @@ public class RegistrationController {
 
 	@Autowired
 	public IIndustryCategoryService industrycategoryser;
+	
+	@Autowired
+	public IIndustrySubCategoryService indsubcatindservice;
+	
+	@Autowired
+	public IEmploymentService employmentservice;
 	
 	@Autowired
 	public CountryDAO countrydao;
@@ -121,6 +135,7 @@ public class RegistrationController {
 		userid = freelancerservice.registerFreelancer(freelancerDto);
 		session.setAttribute("userid", userid);
 		return freelancerDto;
+		
 
 	}
 
@@ -162,7 +177,7 @@ public class RegistrationController {
 			response1.setValidation_error(false);
 			this.traineedto1 = traineedto;
 			traineeservice.registerTrainee(traineedto);
-			Integer userid = userservice.getMaxUserId("userId");
+			Integer userid = userservice.getMaxUserId("userId");  // Please modify this ASAP
 			session.setAttribute("userid", userid);
 			model.addAttribute("userid", userid);
 			return response1;
@@ -170,19 +185,52 @@ public class RegistrationController {
 	}
 
 	@RequestMapping("/trainee_updateprofile")
-	public String traineeProfileMapping(ModelMap model) {
+	public String traineeProfileMapping(@RequestParam("username") String username, ModelMap model, HttpSession session) {
+		UserEntity user = userservice.getUser(username);
+		session.setAttribute("userid", user.getUserId());
+		TraineeEntity trainee = traineeservice.getTrainee(user.getUserId());
+		System.out.println("traineeid : "+trainee.getTraineeId());
+		session.setAttribute("trainee", trainee);
 		return "pages/Trainee/TraineeProfile";
 	}
 
 	@RequestMapping("/trainprofile")
 	public String updateTraineeProfile(ModelMap model, HttpSession session) {
 		
-		model.addAttribute("userid", session.getAttribute("userid"));
-		model.addAttribute("traineedto", traineedto1);
-		model.addAttribute("industries", industryservice.getIndustries());
-		model.addAttribute("industrycategories",
-				industrycategoryser.getIndustryCategories());
-		model.addAttribute("countries",countrydao.getAllCountries());
+		TraineeEntity trainee = (TraineeEntity) session.getAttribute("trainee");
+		Integer indcatid=0;
+		try
+		{
+			System.out.println("userid is: "+trainee.getUser().getUserId());
+			EmploymentEntity emplentity = employmentservice.findEmplDet(trainee.getUser().getUserId());
+			indcatid=emplentity.getIndsubcat().getIndustrycategory().getTrnIndstrCatId();
+			List<IndustrySubCategoryEntity> indsubsubcatlist = indsubcatindservice.getIndustrySubCategories(indcatid);
+			Integer indid = emplentity.getIndsubcat().getIndustrycategory().getIndustry().getTrnIndstrId();
+			List<IndustryCategoryEntity> indcatlist = industrycategoryser.getIndustryCategories(indid);
+			Integer indsubcatid = emplentity.getIndsubcat().getTrnIndstrSubCatId();
+			
+			for(IndustryCategoryEntity indcatName:indcatlist)
+				System.out.println(indcatName.getIndstrCatName());
+			
+			model.addAttribute("industrycategories", new JSONArray(indcatlist));
+			model.addAttribute("industrysubcat",new JSONArray(indsubsubcatlist));
+			model.addAttribute("employmentdetails", emplentity);
+			
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+			System.out.println("New User... No result available");
+			model.addAttribute("industrycategories",new JSONArray(industrycategoryser.getIndustryCategories()));
+			model.addAttribute("industry_value",0);
+			model.addAttribute("industry_cat_value",0);
+			model.addAttribute("industry_subcat_value",0);
+		}
+		finally
+		{
+			model.addAttribute("industries",new JSONArray(industryservice.getIndustries()));
+			model.addAttribute("countries",countrydao.getAllCountries());
+		}
 		return "pages/Trainee/Trainprofile";
 	}
 

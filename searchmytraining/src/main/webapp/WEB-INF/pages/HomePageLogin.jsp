@@ -31,7 +31,7 @@
 				</div>
 
 				<div class="mailto">
-					<input type="email" autocomplete="off" name="username" value=""
+					<input id="emailid" type="email" autocomplete="off" name="username"
 						placeholder="Enter Username" required="">
 				</div>
 				<div class="password">
@@ -67,6 +67,7 @@
 	};
 	$("#login").click(function(e) {
 		// e.preventDefault();
+		var username =  $("#emailid").val();
 		$.ajax({
 			url : "${ctx}/searchmytraining/j_spring_security_check",
 			type : "POST",
@@ -81,13 +82,31 @@
 						$('#auth_error_mesg').html(data.message);
 						$("#auth_error_div").show();
 					} else if (data.success == true) {
-
-						location.href = "${ctx}/searchmytraining" + data.page;
+						/* $.post("${ctx}/searchmytraining" + data.page,{ username: $("#emailid").val()},function(data){
+							alert(data);
+							loadHTML(data);
+						}); */
+						location.href = "${ctx}/searchmytraining" + data.page+"?username="+username;
 					}
 				}
 			},
 			error : loginFailed
 		});
 	});
+</script>
+<script type="text/javascript">
+	function updateProfile(url)
+	{
+		$.ajax({
+			  type: "POST",
+			  url: url,
+			  data: {
+				  username: $("#emailid").value()
+			  },
+			  success: function(){
+				  location.href = "${ctx}/searchmytraining" + data.page;
+			  },
+			});
+	}
 </script>
 </html>
