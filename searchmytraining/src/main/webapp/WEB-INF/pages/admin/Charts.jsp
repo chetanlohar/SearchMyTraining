@@ -4,9 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<script type="text/javascript"
-	src="<%=request.getContextPath()%>/resources/js/Canvas.js"></script>
-
+<script type="text/javascript" src="./resources/js/Canvas.js"></script>
+<script type="text/javascript">
+	var charttpf = '${chartstpf}';
+	var charttpi = '${chartstpi}';
+	abc(charttpf,charttpi);
+	
+</script>
 
 </head>
 <body>
