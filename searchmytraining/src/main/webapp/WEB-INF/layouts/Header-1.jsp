@@ -13,14 +13,18 @@
 	href="<%=request.getContextPath()%>/resources/css/reset.css">
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/js/logout.js"></script>
+	 <link
+	href="<%=request.getContextPath()%>/resources/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">  
 </head>
+
 <body>
 	<div class="header">
 
 		<div id='cssmenu'>
 
 			<ul id="coolMenu">
-			<li class='active has-sub'><a href="javascript:void 0">Home</a>
+			<li class='active has-sub'><a href="javascript:void 0"><i class="fa fa-home fa-1x"></i></a>
 				</li>
 				<li class='active has-sub'><a href='#'><span>Browse</span></a>
 					<ul>

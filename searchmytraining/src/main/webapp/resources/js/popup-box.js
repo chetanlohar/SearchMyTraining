@@ -153,9 +153,7 @@
         $('#advsearch1').bind('click', function(e) {
             e.preventDefault();
             $('#pop_up_box_9').bPopup({
-            	easing: 'easeOutBack', //uses jQuery easing plugin
-                speed: 450,
-                transition: 'slideDown'
+            	
           
             } );
         });

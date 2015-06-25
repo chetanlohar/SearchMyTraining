@@ -24,9 +24,9 @@
           <div class="Subhead">
            <h1>Administration Login</h1>
           </div>
-       
+       <div class="image">
             <img style="margin-left: 30px;" alt="Admin-Login" src="<%=request.getContextPath()%>/resources/images/adminlogin.png"/>
-         
+         </div>
        <div class="logbar"  >
        <div class="panel">
        <form action="AdminPages">

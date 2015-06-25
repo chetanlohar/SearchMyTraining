@@ -252,12 +252,17 @@ body{
     text-decoration: none;
     color: #fff;
     font-family: calibri;
-}  
+} 
+.search_wrapar .brow_train ul li.active{
+	color: #ffcc00;
+	background: #000;
+	opacity:0.3;
+} 
 .search_wrapar .brow_train ul li a:hover{
     /*    text-decoration: underline;*/
     color: #ffcc00;
 
-    /*color: #000;*/
+  
     text-decoration-color: #004A7F;
 }
 .search_wrapar .brow_train ul li span{
@@ -1091,6 +1096,7 @@ background: #FFFFFF;
    
 }
 
+
 /* =====================================for Android Device===================================================== */
 
 @media screen and (max-width:640px){
@@ -1332,6 +1338,9 @@ background: #FFFFFF;
 	
 	
 }
+
+
+/* ================================================Mystyle css slider======================================== */
 
 
 

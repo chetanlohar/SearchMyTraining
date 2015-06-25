@@ -141,5 +141,13 @@
                 	}
                 
                 
-
-          
+/*============================================Add class active in Browse training=====================================================*/
+               $(document).ready(function() {
+				
+		
+                $('.brow_obpt').on('click', 'li', function(){
+                	
+                    $('.brow_obpt li').removeClass('active');
+                    $(this).addClass('active');
+                });
+});

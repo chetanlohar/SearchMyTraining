@@ -795,5 +795,64 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4f5fc', end
 	border-right: 1px solid #fff; 
 	
 }
+/* =========================================Tag css====================================================== */
+ol,
+ul { list-style: outside none none; }
+
+
+
+.tags {
+  background: none repeat scroll 0 0 #fff;
+  border: 1px solid #ccc;
+  display: table;
+  padding: 0.3em;
+  width: 70%;
+  float: left;
+}
+
+.tags li.tagAdd,
+.tags li.addedTag {
+  float: left;
+  margin-left: 0.20em;
+  margin-right: 0.20em;
+}
+
+.tags li.addedTag {
+  background: none repeat scroll 0 0 #08D7F9;
+  border-radius: 5px;
+  color: #fff;
+  padding: .1em;
+}
+.tags input[type='text']{
+	width: 150px;
+}
+.tags input,
+li.addedTag {
+  border: 1px solid transparent;
+  border-radius: 5px;
+  box-shadow: none;
+  display: block;
+  padding: 0.3em;
+}
+
+.tags input:hover { border: 1px solid #000; }
+
+span.tagRemove {
+  cursor: pointer;
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
+span.tagRemove:hover { color: #222222; }
+
+
+p { color: #ccc; }
+
+h1 {
+  color: #6b6b6b;
+  font-size: 1.0em;
+}
+
+
 
 

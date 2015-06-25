@@ -159,7 +159,7 @@ function FLSload() {
 
 					<li><a href=""><strong>Send SMS</strong></a></li>
 					<li><a href=""><strong>Send Email</strong></a></li>
-					<li><a href=""><strong>Add Brouchers</strong></a></li>
+					
 				</ul>
 				<div id="content">
 					<div id="home-content" class="contentblock">

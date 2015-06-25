@@ -38,6 +38,7 @@ and open the template in the editor.
 <script src="<%=request.getContextPath()%>/resources/js/combine.js"></script>
 <script src="<%=request.getContextPath()%>/resources/js/paging.js"></script>
 
+
 <script
 	src="<%=request.getContextPath()%>/resources/js/work/calender.js"></script>
 
@@ -63,7 +64,7 @@ and open the template in the editor.
     } 
   
 
-  
+ 
 </script>
 <script type="text/javascript">
 $(window).scroll(function(){
@@ -124,14 +125,7 @@ $(function(){
 </head>
 <body>
 	<%@include file="layouts/Header.jsp"%>
-	<%-- <%@include file="pages/Trainee/TraineeRegistration.jsp"%>
-	<%@include
-		file="pages/TrainingProvider/TrainingProviderRegistration.jsp"%>
-	<%@include file="pages/FreeLancer/FreelancerResistration.jsp"%>
-	<%@include file="pages/TrainingEnquiry.jsp"%>
-	<%@include file="pages/GroupTrainingRequest.jsp"%>
-	<%@include file="pages/Sign-In.jsp"%>
-	<%@include file="pages/AdvSearch.jsp"%> --%>
+	
 
 	<!--==============================================================================-->
 	<div class="search_wrapar">
@@ -150,7 +144,7 @@ $(function(){
 						alt="arrow" /></a>
 				</div>
 				<span class="txt"><a href="#" id="Country"
-					onclick="my_show()">India</a></span>
+					onclick="my_show()">Pune</a></span>
 				<div id="drop" class="drop1">
 					<ul>
 						<li><a href="javacript:void(0)" id="selCountry"
@@ -629,7 +623,7 @@ $(function(){
 					href="<%=request.getContextPath()%>/resources/softeware-development.html">
 						<h2 data-type="mText" class="sti-item">Respect The Training
 							Honor The Commitment Cherish The Result.</h2>
-						<h3 data-type="sText" class="sti-item">Software Development »</h3>
+						<h3 data-type="sText" class="sti-item">All Training »</h3>
 						<span data-type="icon" class="sti-icon sti-icon-branding sti-item"></span>
 				</a></li>
 				<li data-hovercolor="#fff" class="box-shaddow-black"><a
@@ -638,7 +632,7 @@ $(function(){
 							Require Training and Discipline and Hard Work But If You're Not
 							Frightened By These Things,The Opportunities are Just as Great
 							Today as they ever were.</h2>
-						<h3 data-type="sText" class="sti-item">See Our Web Portfolio
+						<h3 data-type="sText" class="sti-item">Group Training
 							»</h3> <span data-type="icon" class="sti-icon sti-icon-web sti-item"></span>
 				</a></li>
 				<li data-hovercolor="#fff" class="box-shaddow-black"><a
@@ -646,7 +640,7 @@ $(function(){
 						<h2 data-type="mText" class="sti-item">Practice Is The
 							Hardest Part Of Learning, And Training Is The Essence Of
 							Transformation.</h2>
-						<h3 data-type="sText" class="sti-item">SEO Company india »</h3> <span
+						<h3 data-type="sText" class="sti-item">Industrial Training »</h3> <span
 						data-type="icon" class="sti-icon sti-icon-seo sti-item"></span>
 				</a></li>
 				<li data-hovercolor="#fff" class="box-shaddow-black"><a
@@ -654,7 +648,7 @@ $(function(){
 						<h2 data-type="mText" class="sti-item">It Is Not Only
 							Important To Be Powerfull, What's Really Important Is To Be
 							Brave,Training Is Essential Because Training Makes You Brave.</h2>
-						<h3 data-type="sText" class="sti-item">Search About Graphics
+						<h3 data-type="sText" class="sti-item">Seminar
 							»</h3> <span data-type="icon" class="sti-icon sti-icon-print sti-item"></span>
 				</a></li>
 			</ul>

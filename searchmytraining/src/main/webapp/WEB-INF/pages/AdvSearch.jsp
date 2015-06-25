@@ -16,56 +16,82 @@
 </head>
 <body>
 	<div id="pop_up_box_9">
-		<div id="pop-up-box-head">Advanced Search</div>
-		<div id="pop-up-box-contents">
-			<form action="">
-				<div class="row1">
-					<label>Keywords</label> <input type="text" id="keyword">
+		<a class="b-close close1"><img
+			src="<%=request.getContextPath()%>/resources/images/images.png"></a>
+		<div class="Advace_from">
+			<div class="head">
+				<img src="<%=request.getContextPath()%>/resources/images/search.jpg"
+					alt="Search">
+			</div>
+
+			<form id="advace_search" name="asearch" action="#" method="post">
+				<h1>Advance Search</h1>
+				<div class="box">
+					<label for="keyword">Keyword:</label> <input type="text" name="Key"
+						value="" placeholder="     Keyword">
 				</div>
-				<div class="row2">
-					<label>Country </label> <input type="text" id="country"> <label>City
-					</label> <input type="text" id="city">
+				<div class="box">
+					<label for="Country">Country:</label> <input type="text"
+						name="Country" value="" placeholder="     Country">
 				</div>
-				<div class="row3">
-					<label>From Date </label> <input type="text" id="from_date">
-					<label id="sd">To Date </label> <input type="text" id="to_date">
+				<div class="box">
+					<label for="City">City:</label> <input type="text" name="City"
+						value="" placeholder="      City">
 				</div>
-				<div class="row4">
-					<label>Price Range </label> <select id="price_range" dir="ltr">
-						<option value="">Select Price Range</option>
-						<option value="">0-2000</option>
-						<option value="">2001-4000</option>
-						<option value="">4001-7000</option>
-						<option value="">7001-10000</option>
-						<option value="">10001-15000</option>
-						<option value="">15001-25000</option>
-						<option value="">25000-Above</option>
+				<div class="box">
+					<label for="Frdate">From Date:</label> <input type="text"
+						name="Frdate" value="" placeholder="     From Date">
+				</div>
+				<div class="box">
+					<label for="Todate">To Date:</label> <input type="text"
+						name="Todate" value="" placeholder="     To Date">
+				</div>
+				<div class="box">
+					<label for="Price">Price Range:</label> <select>
+						<option value="1">0-5000 Rs</option>
+						<option value="2">5000-10,000 Rs</option>
+						<option value="3">10,000-15,000 Rs</option>
+						<option value="4">15,000-20,000 Rs</option>
+						<option value="5">20,000-25,000 Rs</option>
+						<option value="6">Above 25,000 </option>
+						<option></option>
+
 					</select>
 				</div>
-				<div class="row5">
-					<label>Training By Industry </label> <select
-						id="training_by_industry">
-						<option value="">Select Industry</option>
-						<option value=""></option>
-						<option value=""></option>
-						<option value=""></option>
+				<div class="box">
+					<label for="Industries">Training By Industry:</label> 
+					    <select>
+						<option value="I1">IT Industry</option>
+						<option value="I2">HR Management</option>
+						<option value="I3">Health care</option>
+						<option value="I4">IT Industry</option>
+						<option value="I5">IT Industry</option>
+						<option value="I6">IT Industry</option>
+						<option></option>
+
 					</select>
 				</div>
-				<div class="row6">
-					<label>Training By Category </label> <select
-						id="training_by_category">
-						<option value="">Select Category</option>
-						<option value=""></option>
-						<option value=""></option>
-						<option value=""></option>
-						<option value=""></option>
+				<div class="box">
+					<label for="category">Training By Category:</label> 
+					    <select>
+						<option value="I1">Business Skill Training</option>
+						<option value="I2">Finance Training</option>
+						<option value="I3">Health care Training</option>
+						<option value="I4">Human Resource Training</option>
+						<option value="I5">Industrial Training</option>
+						<option value="I6">Information Technology Training</option>
+						<option></option>
+
 					</select>
 				</div>
-				<div id="button2">
-					<input type="submit" id="search_button" value="Search"> <input
-						type="reset" id="reset_button" value="Clear">
+               <div class="box">
+					 <input type="Button"
+						name="Search" value="Search">
 				</div>
+
+
 			</form>
+
 		</div>
 	</div>
 </body>

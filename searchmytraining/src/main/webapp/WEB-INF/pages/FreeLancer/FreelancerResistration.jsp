@@ -104,7 +104,8 @@
 					<option value="Baroda">Baroda</option>
 					<option value="Ahmedabad">Ahmedabad</option>
 					<option value="Lucknow">Lucknow</option>
-				</select> <span id="error12"></span>
+				</select> 
+				<span id="error12"><text>.</text></span>
 				<!--  <div class="name">
                         <input type="text" autocomplete="off" name="training_type" value="" placeholder="Training Type" required="">
                     </div> -->
