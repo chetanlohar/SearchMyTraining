@@ -94,7 +94,7 @@ $(window).scroll(function(){
 
 		   	$("#mid").load("<%=request.getContextPath()%>/getCalendars?inputkeyword="+keyword,function(responseText, statusText, xhr) {
 		   					if (statusText == "success")
-		   					// alert("Successfully loaded the content!"); 
+		   						console.log("Successfully loaded the content!"); 
 		   						if (statusText == "error")
 		   							alert("An error occurred: " + xhr.status + " - "
 		   									+ xhr.statusText);

@@ -13,12 +13,6 @@ public class MyController {
 		return "pages/FreeLancer/FLprofile";
 	}
 	
-	@RequestMapping("/FLCalender")
-	public String doAction1()
-	{
-		return "pages/FreeLancer/FLCalender";
-	}
-	
 	@RequestMapping("/calenderdiv")
 	public String doAction2()
 	{

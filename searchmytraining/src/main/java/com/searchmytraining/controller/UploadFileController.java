@@ -14,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import com.searchmytraining.entity.CalenderEntity;
@@ -27,8 +28,14 @@ import com.searchmytraining.service.ICalenderService;
 @Controller
 @RequestMapping("/uploadFile")
 public class UploadFileController {
+	
+	@Autowired
+	public WebApplicationContext context;
+	
 	@Autowired
 	ICalenderService calnderService;
+	
+	
 	/*
 	 * @Autowired IKeywordService keywordService;
 	 */
@@ -62,9 +69,9 @@ public class UploadFileController {
 		fileExtension = fileName.substring(fileName.indexOf(".") + 1,
 				fileName.length());
 
-		CalenderEntity entity = new CalenderEntity();
-		UserEntity usrEntity = new UserEntity();
-		IndustrySubCategoryEntity industrySubCat = new IndustrySubCategoryEntity();
+		CalenderEntity entity = (CalenderEntity)context.getBean("calenderEntity");
+		UserEntity usrEntity = (UserEntity)context.getBean("userEntity");
+		IndustrySubCategoryEntity industrySubCat = (IndustrySubCategoryEntity)context.getBean("industrySubCategoryEntity");
 
 		Calendar calendar = Calendar.getInstance();
 		Timestamp currentTime = new Timestamp(calendar.getTime().getTime());

@@ -7,6 +7,7 @@ import org.dozer.DozerBeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.context.WebApplicationContext;
 
 import com.searchmytraining.dao.CityDAO;
 import com.searchmytraining.dao.IClientDAO;
@@ -33,6 +34,9 @@ import com.searchmytraining.service.IInstituteServiceDetails;
 @Service
 public class InstituteServiceDetails implements IInstituteServiceDetails {
 
+	@Autowired
+	public WebApplicationContext context;
+	
 	@Autowired
 	public InstituteDAO institutedao;
 	@Autowired
@@ -61,8 +65,7 @@ public class InstituteServiceDetails implements IInstituteServiceDetails {
 		String workingdays = institudedto.getWorkingDays().toString().replace("[", "").replace("]", "");
 		InstituteEntity entity = mapper.map(institudedto, InstituteEntity.class);
 		entity.setWorkingDays(workingdays);
-		UserEntity user = new UserEntity();
-		user = userdao.getUser(institudedto.getUserid());
+		UserEntity user = userdao.getUser(institudedto.getUserid());
 		entity.setUser(user);
 		institutedao.updateInstituteDetails(entity);
 	}
@@ -113,7 +116,7 @@ public class InstituteServiceDetails implements IInstituteServiceDetails {
 		Iterator<String> i = associationNames.iterator();
 		while(i.hasNext())
 		{
-			ProfessionalAssociationEntity profentity_new = new ProfessionalAssociationEntity();
+			ProfessionalAssociationEntity profentity_new = (ProfessionalAssociationEntity)context.getBean("professionalAssociationEntity");
 			profentity_new.setUser(user);
 			profentity_new.setAssocName(i.next());
 			assocdao.addAssociation(profentity_new);  // insertion of Professional Association
@@ -129,7 +132,7 @@ public class InstituteServiceDetails implements IInstituteServiceDetails {
 		Iterator<String> i = clientNames.iterator();
 		while(i.hasNext())
 		{
-			ClientEntity cliententity = new ClientEntity();
+			ClientEntity cliententity = (ClientEntity)context.getBean("clientEntity");
 			cliententity.setUser(user);
 			cliententity.setClientName(i.next());
 			clientdao.addClientDetails(cliententity); // Insertion of Client Details

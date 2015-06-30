@@ -11,6 +11,8 @@
 		<script
 	src="<%=request.getContextPath()%>/resources/js/Validations/TraineeProfile.js"></script>
 <script	src="<%=request.getContextPath()%>/resources/js/work/categories.js"></script>
+<script	src="<%=request.getContextPath()%>/resources/js/work/InstituteJS.js"></script>
+<script	src="<%=request.getContextPath()%>/resources/js/work/updatetraineeprofile.js"></script>
 <script type="text/javascript">
 jQuery(document).ready(function () {
   
@@ -25,12 +27,9 @@ jQuery(document).ready(function () {
             $nextContent.show()
         });
     });
-    loadEmploymentData();
-});
-
-function loadEmploymentData()
-{
-	var industriescat = '${industrycategories}';
+	 
+	//Employement Details
+    var industriescat = '${industrycategories}';
 	var jsonindustrycategories = $.parseJSON(industriescat);
 	var industries = '${industries}';
 	var jsonindustries = $.parseJSON(industries);
@@ -39,82 +38,23 @@ function loadEmploymentData()
 	var industry_value = '${employmentdetails.indsubcat.industrycategory.industry.trnIndstrId}';
 	var industry_cat_value = '${employmentdetails.indsubcat.industrycategory.trnIndstrCatId}';
 	var industry_subcat_value = '${employmentdetails.indsubcat.trnIndstrSubCatId}';
-	console.log(industry_value+" "+industry_cat_value+" "+industry_subcat_value);
-	if(industry_value!= 0)
-	{
-		console.log("Registered user...");
-		jQuery.each(jsonindustries, function(index, item) {
-			if(this.trnIndstrId == industry_value)
-			{
-				$('#tindustry').append(
-					$("<option selected></option>").text(this.indstrName).val(
-							this.trnIndstrId));
-			}
-			else
-			{
-				$('#tindustry').append(
-						$("<option></option>").text(this.indstrName).val(
-								this.trnIndstrId));	
-			}
-		});
-		jQuery.each(jsonindustrycategories, function(index, item) {
-			if(this.trnIndstrCatId == industry_cat_value)
-			{
-				$('#industrycatid').append(
-					$("<option selected></option>").text(this.indstrCatName).val(
-							this.trnIndstrCatId));
-			}
-			else
-			{
-				$('#industrycatid').append(
-						$("<option></option>").text(this.indstrCatName).val(
-								this.trnIndstrCatId));	
-			}
-		});
-		jQuery.each(jsonindsubcat, function(index, item) {
-			if(this.trnIndstrSubCatId == industry_subcat_value)
-			{
-				$('#industrysubcatid').append(
-					$("<option selected></option>").text(this.indstrSubCatName).val(
-							this.trnIndstrSubCatId));
-			}
-			else
-			{
-				$('#industrysubcatid').append(
-						$("<option></option>").text(this.indstrSubCatName).val(
-								this.trnIndstrSubCatId));	
-			}
-		});
-		var employmenttype = '${employmentdetails.employmentType}'
-		if(employmenttype)
-		{
-			console.log(employmenttype);
-			var isFullTime = "";
-			var isPartTime = "";
-			if(employmenttype == "Full Time")
-				var isFullTime = "selected";
-			else
-				var isPartTime = "selected";
-			/* $('#employmenttype').find('option').remove().end();
-			$('#employmenttype').append(
-					$("<option></option>").text(this.indstrName).val(
-							this.trnIndstrId)); */
-		}
-	}
-	else
-	{
-		console.log("New user...");
-		jQuery.each(jsonindustries, function(index, item) {
-			$('#tindustry').append(
-					$("<option></option>").text(this.indstrName).val(
-							this.trnIndstrId));
-		});
-	}
-}
-
-
+	var employmenttype = '${employmentdetails.employmentType}';
+	var employmentdetails = '${employmentdetails}';
+    loadEmploymentData(jsonindustrycategories,jsonindustries,jsonindsubcat,industry_value,industry_cat_value,industry_subcat_value,employmenttype);
+    
+ 	//Location Details
+ 	
+ 	var jsonstates = '${states}';
+ 	var jsoncities = '${cities}';
+ 	var states = $.parseJSON(jsonstates);
+ 	var cities = $.parseJSON(jsoncities);
+ 	var country_value = '${locentity.city.state.country.countryId}';
+ 	var state_value = '${locentity.city.state.stateId}';
+ 	var city_value = '${locentity.city.cityId}';
+ 	loadLocationInfo(states,cities,state_value,city_value);
+    
+});
 </script>
-<script	src="<%=request.getContextPath()%>/resources/js/work/InstituteJS.js"></script>
 <script type="text/javascript">
 
 $('#acord1').accordion({
@@ -169,7 +109,6 @@ $('#acord1').accordion({
 						<option value="0">--Select--</option>
 						<option value="Full Time" ${isFullTime}>Full Time</option>
 						<option value="Part Time" ${isPartTime}>Part Time</option>
-						<!-- <option value="emptype3">C</option> -->
 					</select>
 					<span id="erroremp"></span>
 				</div>
@@ -221,19 +160,19 @@ $('#acord1').accordion({
 			<form action="" class="multi">
 				<div class="flatNo">
 					<label>Building No./Flat No./Society No. :</label> <input
-						type="text" id="flatno54" name="name" />
+						type="text" id="flatno54" name="name" value='${locentity.buildingNo}'/>
 						<span id="error54"></span>	
 				</div>
 				<div class="street">
-					<label>Street :</label> <input type="text" id="street55" name="name" />
+					<label>Street :</label> <input type="text" id="street55" name="name" value='${locentity.street}'/>
 					<span id="error55"></span>
 				</div>
 				<div class="landmark">
-					<label>Landmark :</label> <input type="text" id="landm56" name="name" />
+					<label>Landmark :</label> <input type="text" id="landm56" name="name" value='${locentity.landmark}'/>
 					<span id="error56"></span>
 				</div>
 				<div class="pin">
-					<label>Pincode <text> * </text> :</label> <input type="text" id="pin57" name="name" onkeypress="return validate13(event)"/>
+					<label>Pincode <text> * </text> :</label> <input type="text" id="pin57" name="name" value='${locentity.pincode}' onkeypress="return validate13(event)"/>
 				    <span id="error57"></span>
 				</div>
 				
@@ -242,7 +181,15 @@ $('#acord1').accordion({
 					<select id="countryid" onchange="getStates();">
 						<option value="0">--Select--</option>
 						<c:forEach var="country" items="${countries}">
-							<option value="${country.countryId}">${country.countryName}</option>
+							<c:choose>
+								<c:when test="${country_value == country.countryId}">
+									<option value="${country.countryId}" selected>${country.countryName}</option>
+								</c:when>
+								<c:otherwise>
+									<option value="${country.countryId}">${country.countryName}</option>
+								</c:otherwise>
+							</c:choose>
+							
 						</c:forEach>
 					</select>
 				</div>

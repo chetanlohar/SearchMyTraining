@@ -25,33 +25,46 @@ $.get('View', function(data) {
     $('#viewall').append(data);
 });
 
-jQuery(".tm-input").tagsManager();
+
 $('#fdate,#Tdate').datepicker();
 </script>
-<script>
-$(document).ready(function() {
+<script type="text/javascript">
+	$(document)
+			.ready(
+					function() {
 
-$('.tagRemove').click(function(event) {
-	         
-              event.preventDefault();
-              $(this).parent().remove();
-          });
-          $('ul.tags').click(function() {
-              $('#tags-field').focus();
-          });
-          $('#tags-field').keypress(function(event) {
-              if (event.which == '32') {
-				  	
-                  if ($(this).val() != '') {
-                      $('<li class="addedTag">' + $(this).val() + '<span class="tagRemove" onclick="$(this).parent().remove();">x</span><input type="hidden" value="' + $(this).val() + '" name="tags[]"></li>').insertBefore('.tags .tagAdd');
-                      $(this).val('');
-                     
-                  }
-              }
-          });
+						$('.tagRemove').click(function(event) {
+							alert("see you")
+							event.preventDefault();
+							$(this).parent().remove();
+						});
+						$('ul.tags').click(function() {
+							$('#tags-field').focus();
+						});
+						$('#tags-field')
+								.keypress(
+										function(event) {
+											console.log(event.which);
+											if (event.which == '32') {
+                                                  alert("gfg");
+												if ($(this).val() != '') {
+													$(
+															'<li class="addedTag">'
+																	+ $(this)
+																			.val()
+																	+ '<span class="tagRemove" onclick="$(this).parent().remove();">x</span><input type="hidden" value="'
+																	+ $(this)
+																			.val()
+																	+ '" name="tags[]"></li>')
+															.insertBefore(
+																	'.tags .tagAdd');
+													$(this).val('');
 
-});
+												}
+											}
+										});
 
+					});
 </script>
 
 

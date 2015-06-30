@@ -25,7 +25,7 @@ public class StateDaoImpl extends AbstractJpaDAO<StateEntity> implements StateDA
 	
 	@Override
 	@Cacheable(value="stateCache")
-	public List<StateEntity> getStates(Integer countryid)
+	public List<StateEntity> getStates(Long countryid)
 	{
 		System.out.println("in getstates method...");
 		entityManager = getEntityManager();

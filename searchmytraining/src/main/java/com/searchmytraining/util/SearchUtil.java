@@ -25,7 +25,6 @@ public class SearchUtil {
 	public String getBasePath() {
 		return basePath;
 	}
-
 	
 
 	public IndexWriter getIndexforCalenderEntities() throws Exception{
@@ -36,6 +35,8 @@ public class SearchUtil {
 		
 		Path path = Paths.get(basePath);
 		Directory dir = FSDirectory.open(path);
+		
+		
 		IndexWriterConfig conf = new IndexWriterConfig(new StopAnalyzer());
 		IndexWriter idx = new IndexWriter(dir,conf);
 		return idx;

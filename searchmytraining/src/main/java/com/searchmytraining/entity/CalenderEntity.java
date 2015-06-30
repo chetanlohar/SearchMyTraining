@@ -2,6 +2,7 @@ package com.searchmytraining.entity;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -11,10 +12,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-/**
- * @author user
- *
- */
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Component
+@Scope("prototype")
 @Entity
 @Table(name = "tbl_trngcalender")
 public class CalenderEntity implements Serializable {

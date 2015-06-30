@@ -13,20 +13,19 @@ import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.index.IndexReader;
-import org.apache.lucene.index.Term;
 import org.apache.lucene.queryparser.classic.QueryParser;
-import org.apache.lucene.queryparser.xml.builders.RangeQueryBuilder;
 import org.apache.lucene.search.BooleanClause;
 import org.apache.lucene.search.BooleanQuery;
 import org.apache.lucene.search.IndexSearcher;
-import org.apache.lucene.search.PrefixQuery;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TopDocs;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.context.WebApplicationContext;
 
 import com.searchmytraining.dao.AbstractJpaDAO;
 import com.searchmytraining.dao.CalenderDAO;
@@ -37,6 +36,14 @@ import com.searchmytraining.util.SearchUtil;
 public class CalenderDaoImpl extends AbstractJpaDAO<CalenderEntity> implements
 		CalenderDAO {
 	EntityManager entityManager;
+	@Autowired
+	public WebApplicationContext context;
+	
+	@Autowired
+	public StandardAnalyzer analyzer;
+	
+	@Autowired
+	public QueryParser queryParser;
 
 	@Override
 	public void addCalender(CalenderEntity entity) {
@@ -90,12 +97,14 @@ public class CalenderDaoImpl extends AbstractJpaDAO<CalenderEntity> implements
 		CalenderEntity cal;
 		try{
 			Path path = Paths.get(SearchUtil.basePath);
+			
+			
 			Directory dir = FSDirectory.open(path);
 			
 			IndexReader reader = DirectoryReader.open(dir);
 			IndexSearcher searcher = new IndexSearcher(reader);
 			
-			QueryParser queryParser = new QueryParser("BasicSearchString",new StandardAnalyzer());
+			/*QueryParser queryParser = new QueryParser("BasicSearchString",analyzer);*/
 			
 			Query query = queryParser.parse(keyword);
 			
@@ -115,7 +124,7 @@ public class CalenderDaoImpl extends AbstractJpaDAO<CalenderEntity> implements
 			      System.out.println("KeyWord: "+doc.getField("keyword").stringValue());
 			      System.out.println("Place: "+doc.getField("place").stringValue());
 			     
-			      cal = new CalenderEntity();
+			      cal = (CalenderEntity)context.getBean("calenderEntity");
 			      cal.setTitle(doc.getField("title").stringValue());
 			      cal.setStart_date(doc.getField("start_date").stringValue());
 			      cal.setEnd_date(doc.getField("end_date").stringValue());
@@ -145,6 +154,8 @@ public class CalenderDaoImpl extends AbstractJpaDAO<CalenderEntity> implements
 		Query query1;
 		QueryParser queryParser;
 		
+		
+		
 		try{
 			
 			Path path = Paths.get(SearchUtil.basePath);
@@ -155,12 +166,12 @@ public class CalenderDaoImpl extends AbstractJpaDAO<CalenderEntity> implements
 			
 			query = new BooleanQuery();
 			if(cal.getKeyword() != null){
-				queryParser = new QueryParser("BasicSearchString",new StandardAnalyzer());
+				queryParser = new QueryParser("BasicSearchString",analyzer);
 				query1 = queryParser.parse(cal.getKeyword());
 				query.add(query1,BooleanClause.Occur.MUST);
 			}
 			if(cal.getPlace() != null){
-				queryParser = new QueryParser("place",new StandardAnalyzer());
+				queryParser = new QueryParser("place", analyzer);
 				query1 = queryParser.parse(cal.getPlace());
 				query.add(query1,BooleanClause.Occur.MUST);
 			}
@@ -189,7 +200,8 @@ public class CalenderDaoImpl extends AbstractJpaDAO<CalenderEntity> implements
 			      System.out.println("KeyWord: "+doc.getField("keyword").stringValue());
 			      System.out.println("Place: "+doc.getField("place").stringValue());
 			     
-			      cal = new CalenderEntity();
+			      cal = (CalenderEntity)context.getBean("calenderEntity");
+			      
 			      cal.setTitle(doc.getField("title").stringValue());
 			      cal.setStart_date(doc.getField("start_date").stringValue());
 			      cal.setEnd_date(doc.getField("end_date").stringValue());

@@ -6,6 +6,6 @@ import com.searchmytraining.entity.CityEntity;
 
 public interface ICityService {
 
-	public List<CityEntity> getCities(Integer stateid);
+	public List<CityEntity> getCities(Long stateid);
 	
 }

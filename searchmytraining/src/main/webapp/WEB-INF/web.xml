@@ -51,6 +51,11 @@
 		<param-value>C:\\SearchMT\\</param-value>
 	</context-param>
 	
+	<context-param>
+		<param-name>whitelist</param-name>
+		<param-value>classpath:spring/whitelist.txt</param-value>
+	</context-param>
+	
 	<filter>
 		<filter-name>springSecurityFilterChain</filter-name>
 		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
