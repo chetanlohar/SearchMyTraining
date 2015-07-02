@@ -80,5 +80,6 @@
 		<constructor-arg value="BasicSearchString" />
 		<constructor-arg ref="standardAnalyzer"/>
 	</bean>
+	<bean id="lucenedocument" class="org.apache.lucene.document.Document" scope="prototype"/>
 	
 </beans>

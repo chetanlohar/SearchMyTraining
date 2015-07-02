@@ -112,6 +112,8 @@ public class CalenderDaoImpl extends AbstractJpaDAO<CalenderEntity> implements
 			
 			ScoreDoc[] scoreDosArray = topDocs.scoreDocs;
 			
+			System.out.println("Hits: "+topDocs.totalHits);
+			
 			for(ScoreDoc scoredoc: scoreDosArray){
 			      //Retrieve the matched document and show relevant details
 			      Document doc = searcher.doc(scoredoc.doc);

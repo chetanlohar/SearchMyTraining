@@ -88,11 +88,11 @@ $(window).scroll(function(){
  
  function loadcalender() {
 	
-		   	 var keyword=$("#w-input-search").val();
+		   	 var keyword=$('#w-input-search').val();
 		   	
-		   	 console.log("keyword "+keyword);
+		   	 console.log("keyword :"+keyword);
 
-		   	$("#mid").load("<%=request.getContextPath()%>/getCalendars?inputkeyword="+keyword,function(responseText, statusText, xhr) {
+		   	$("#mid").load("./getCalendars",{inputkeyword:keyword},function(responseText, statusText, xhr) {
 		   					if (statusText == "success")
 		   						console.log("Successfully loaded the content!"); 
 		   						if (statusText == "error")

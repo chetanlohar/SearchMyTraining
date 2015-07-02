@@ -6,7 +6,7 @@
 <head>
 <script type="text/javascript">
 	$('#calender_show').paging({
-		limit : 2
+		limit : 10
 	});
 </script>
 </head>
