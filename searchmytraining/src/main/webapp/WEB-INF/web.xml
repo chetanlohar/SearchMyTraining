@@ -5,9 +5,9 @@
 	version="3.0">
 	<display-name>Archetype Created Web Application</display-name>
 
-	<welcome-file-list>
+	<!-- <welcome-file-list>
 		<welcome-file>/WEB-INF/index.jsp</welcome-file>
-	</welcome-file-list>
+	</welcome-file-list> -->
 	
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
@@ -51,11 +51,24 @@
 		<param-value>C:\\SearchMT\\</param-value>
 	</context-param>
 	
-	<context-param>
-		<param-name>whitelist</param-name>
-		<param-value>classpath:spring/whitelist.txt</param-value>
-	</context-param>
+	<!-- <context-param>
+		<param-name>AdsImagesPath_vertical</param-name>
+		<param-value>C:\\Ads_Images\\verticalscroller</param-value>
+	</context-param> -->
 	
+	<context-param>
+		<param-name>ads_verticalleftscroller</param-name>
+		<param-value>/resources/images/ads_verticalleftscroller</param-value>
+	</context-param>
+	<context-param>
+		<param-name>ads_verticalrightscroller</param-name>
+		<param-value>/resources/images/ads_verticalrightscroller</param-value>
+	</context-param>
+	<context-param>
+		<param-name>ads_horizontalmainbanner</param-name>
+		<param-value>/resources/images/ads_horizontalmainbanner</param-value>
+	</context-param>
+
 	<filter>
 		<filter-name>springSecurityFilterChain</filter-name>
 		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>

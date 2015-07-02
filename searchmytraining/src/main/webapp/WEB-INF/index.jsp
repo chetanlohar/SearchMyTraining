@@ -4,6 +4,8 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+<%@ page import="java.util.List,java.io.File,java.util.ArrayList" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html lang=''>
 <head>
 <title>SearchMyTraining</title>
@@ -121,7 +123,6 @@ $(function(){
 
 </script>
 
-
 </head>
 <body>
 	<%@include file="layouts/Header.jsp"%>
@@ -230,7 +231,14 @@ $(function(){
 		<div class="ver_add-wrapar">
 
 			<div id="verticalScroller">
-				<div>
+				
+				<c:forEach var="image" items="${verticalLeftImageList}">
+				<div>  
+	  				<img src="./resources/images/ads_verticalleftscroller/${image}" alt="${image}">
+				</div>
+				</c:forEach>
+				
+				<%-- <div>
 					<img src="<%=request.getContextPath()%>/resources/images/a.png"
 						alt="b">
 				</div>
@@ -257,16 +265,23 @@ $(function(){
 				<div>
 					<img src="<%=request.getContextPath()%>/resources/images/a.png"
 						alt="b">
-				</div>
+				</div> --%>
 			</div>
 
 		</div>
 		<div class="middle_part" id="mid">
 			<div class="top_add" id="top">
+				<c:forEach var="image" items="${horizontalMainImageList}">
+					<div>  
+		  				<img src="./resources/images/ads_horizontalmainbanner/${image}" alt="${image}">
+					</div>
+				</c:forEach>
+			</div>
+			<%-- <div class="top_add" id="top">
 				<img
 					src="<%=request.getContextPath()%>/resources/images/hdBannerCareers_bg.jpg"
 					alt="a">
-			</div>
+			</div> --%>
 			<div id="t" class="clearfix">
 				<ul id="tabmenu">
 					<li class="open hvr-underline-reveal"><a href="#home-content">All
@@ -548,9 +563,15 @@ $(function(){
 
 			<div class="top_cat_box">
 				<div id="slider1_container" style="width: 290px; height: 300px;">
-					<div u="slides"
-						style="cursor: move; position: absolute; left: 0px; top: 0px; width: 290px; height: 300px; overflow: hidden;">
-						<div>
+					<div u="slides"	style="cursor: move; position: absolute; left: 0px; top: 0px; width: 290px; height: 300px; overflow: hidden;">
+					
+						<c:forEach var="image" items="${verticalRightImageList}">
+							<div>  
+	  							<img src="./resources/images/ads_verticalrightscroller/${image}" alt="${image}">
+							</div>
+						</c:forEach>
+					
+						<%-- <div>
 							<img
 								src="<%=request.getContextPath()%>/resources/images/first.png"
 								alt="a">
@@ -578,7 +599,7 @@ $(function(){
 							<img
 								src="<%=request.getContextPath()%>/resources/images/traino2.png"
 								alt="f">
-						</div>
+						</div> --%>
 
 					</div>
 				</div>
