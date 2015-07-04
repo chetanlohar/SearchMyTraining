@@ -135,7 +135,7 @@ $("#org_name").on ('keyup', function(e) {
 	
 })
 
-$("#cityid").on('change',function(e) {
+$("#cityid").on('change keyup',function(e) {
 	var img = '<img src ="resources/images/error.png">'
 	
 		if($("#cityid").val() == " " || $("#cityid").val() == '0') {

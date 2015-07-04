@@ -81,7 +81,7 @@
 				<h2>Registration</h2>
 				<div class="name">
 					<input type="text" autocomplete="off" name="name" id="name12"
-						placeholder="Full Name">
+						placeholder="Full Name" autofocus/>
 				</div>
 				<span id="error11"><text>.</text></span> <select id="City_name12">
 					<option value="0">Select City</option>

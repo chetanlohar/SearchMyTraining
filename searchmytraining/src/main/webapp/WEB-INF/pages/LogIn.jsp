@@ -9,6 +9,9 @@
 <title>Login SMT</title>
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/js/jquery/jquery-1.10.2.js"></script>
+
+<script type="text/javascript"
+	src="<%=request.getContextPath()%>/resources/js/modernizr-1.5.min.js"></script>
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/combine.css"
 	media="all" type="text/css">
@@ -35,6 +38,8 @@
 			<div class="log_bar">
 				<div class="form_container ">
 					<h1>Sign In</h1>
+					
+					<div class="msg">
 					<c:if test="${'true' eq param.logout}">
 						<div style="color: blue">
 							Logout successful!!!<br />
@@ -47,7 +52,8 @@
 
 						</div>
 					</c:if>
-					<div class="msg"></div>
+					
+					</div>
 					<form action="#">
 						<div class="user">
 							<input type="text" name="username"

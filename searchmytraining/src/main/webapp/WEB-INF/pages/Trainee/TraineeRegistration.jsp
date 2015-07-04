@@ -134,7 +134,7 @@
 			<h2>Registration</h2>
 			<div class=type>
 
-				<select id="selType">
+				<select id="selType" autofocus>
 					<option value="0">--Trainee Type---</option>
 					<option value="Corporate">Corporate</option>
 					<option value="Individual">Individual</option>

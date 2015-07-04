@@ -109,6 +109,22 @@ $(document).ready(function() {
 	
 	})
 	
+$('#selType').on('change keyup',function(e){
+	var img = '<img src ="resources/images/error.png">';
+	if($('#selType').val()=='' || $('#selType').val() == '0'){
+		
+		$('#selType').focus();
+		  $('#error00').html(img).append("   Please Select Type");
+                      return false;
+	}
+	else{
+		$('#error00').html("")
+	}
+	
+})
+
+	
+	
 $("#fname").on ('keyup', function(e) {
 	var img = '<img src ="resources/images/error.png">'
 	var Number = /([0-9])/;

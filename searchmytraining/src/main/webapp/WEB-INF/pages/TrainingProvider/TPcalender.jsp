@@ -6,9 +6,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/js/datepicker/date.js"></script>
-<link rel="stylesheet"
+<%-- <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/screen.css"
-	type="text/css">
+	type="text/css"> --%>
+	
 	<script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/js/Validations/calender_validation.js"></script>
 
@@ -25,33 +26,44 @@ $.get('View', function(data) {
     $('#viewall').append(data);
 });
 
-jQuery(".tm-input").tagsManager();
+
 $('#fdate,#Tdate').datepicker();
 </script>
-<script>
-$(document).ready(function() {
+<script type="text/javascript">
+	$(document).ready(function() {
 
-$('.tagRemove').click(function(event) {
-	         
-              event.preventDefault();
-              $(this).parent().remove();
-          });
-          $('ul.tags').click(function() {
-              $('#tags-field').focus();
-          });
-          $('#tags-field').keypress(function(event) {
-              if (event.which == '32') {
-				  	
-                  if ($(this).val() != '') {
-                      $('<li class="addedTag">' + $(this).val() + '<span class="tagRemove" onclick="$(this).parent().remove();">x</span><input type="hidden" value="' + $(this).val() + '" name="tags[]"></li>').insertBefore('.tags .tagAdd');
-                      $(this).val('');
-                     
-                  }
-              }
-          });
+						$('.tagRemove').click(function(event) {
+							alert("see you")
+							event.preventDefault();
+							$(this).parent().remove();
+						});
+						$('ul.tags').click(function() {
+							$('#tags-field').focus();
+						});
+						$('#tags-field')
+								.keypress(
+										function(event) {
+											alert(event);
+											if (event.which == '188') {
+                                                      alert("fggf");
+												if ($(this).val() != '') {
+													$(
+															'<li class="addedTag">'
+																	+ $(this)
+																			.val()
+																	+ '<span class="tagRemove" onclick="$(this).parent().remove();">x</span><input type="hidden" value="'
+																	+ $(this)
+																			.val()
+																	+ '" name="tags[]"></li>')
+															.insertBefore(
+																	'.tags .tagAdd');
+													$(this).val('');
 
-});
+												}
+											}
+										});
 
+					});
 </script>
 
 

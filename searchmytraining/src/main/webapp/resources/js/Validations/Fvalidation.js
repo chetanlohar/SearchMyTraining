@@ -114,7 +114,7 @@ $(document).ready(function() {
 	})
 
 
-$("#name12").on ('keyup', function(e) {
+$("#name12").on ('keyup ', function(e) {
 	var Number = /([0-9])/;
 	var img = '<img src ="resources/images/error.png">'
 	if($("#name12").val() == "" )
@@ -135,7 +135,7 @@ $("#name12").on ('keyup', function(e) {
 	
 })
 
-$("#City_name12").on('change',function(e) {
+$("#City_name12").on('change keyup',function(e) {
 	
 	var img = '<img src ="resources/images/error.png">'
 		if($("#City_name12").val() == " " || $("#City_name12").val() == 0) {

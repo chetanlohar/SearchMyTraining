@@ -14,7 +14,9 @@ and open the template in the editor.
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/combine.css"
 	media="all" type="text/css">
-
+ <link
+	href="<%=request.getContextPath()%>/resources/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css"> 
 
 <script
 	src="<%=request.getContextPath()%>/resources/js/modernizr-1.5.min.js"></script>
@@ -37,8 +39,10 @@ and open the template in the editor.
 <script src="<%=request.getContextPath()%>/resources/js/toggle.js"></script>
 <script src="<%=request.getContextPath()%>/resources/js/combine.js"></script>
 <script src="<%=request.getContextPath()%>/resources/js/paging.js"></script>
+<script src="<%=request.getContextPath()%>/resources/js/jquery.tablesorter.min.js"></script>
 
 
+ 
 <script
 	src="<%=request.getContextPath()%>/resources/js/work/calender.js"></script>
 

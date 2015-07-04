@@ -47,8 +47,9 @@ and open the template in the editor.
 	src="<%=request.getContextPath()%>/resources/js/accordion.js"></script>
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/js/AddDel.js"></script>
-<script type="text/javascript"
-	src="<%=request.getContextPath()%>/resources/js/tabBar.js"></script>
+
+	<script type="text/javascript"
+	src="<%=request.getContextPath()%>/resources/js/include.js"></script>
 
 <script>
 	$(document).ready(function() {

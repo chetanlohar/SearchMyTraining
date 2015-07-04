@@ -28,7 +28,7 @@
 				<h2>Group Training</h2>
 				<div class="name">
 					<input type="text" id="name21" autocomplete="off" name="name"
-						placeholder="Name" >
+						placeholder="Name" autofocus >
 				</div>
 				<div class="clr"></div>
 				<span id="error21"><text>.</text></span>
@@ -64,7 +64,7 @@
 				<div class="req">
 					<textarea id="requirements21" name="requirements"
 						placeholder="Training Requirement Description"></textarea>
-						<p> (Max 250 Characters)</p>
+						<h4> (Max 250 Characters)</h4>
 				</div>
 				<div class="sign">
 					<input type="submit" name="Send" value="Send" onclick="validation21();"> <input

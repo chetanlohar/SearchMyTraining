@@ -80,7 +80,7 @@ function userAllCalender() {
 					function() {
 
 						$('.tagRemove').click(function(event) {
-							alert("see you")
+							alert("see you");
 							event.preventDefault();
 							$(this).parent().remove();
 						});
@@ -90,7 +90,7 @@ function userAllCalender() {
 						$('#tags-field')
 								.keypress(
 										function(event) {
-											if (event.which == '32') {
+											if (event.which == '188') {
 
 												if ($(this).val() != '') {
 													$(

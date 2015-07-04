@@ -65,7 +65,7 @@
                                        <span class="person">Per/Person</span>
                                    </div>
                                   <div class="view_detail">
-                                     <p><a href="#" class="detail_bar">View Details</a></p>
+                                     <p ><a href="#" class="detail_bar">View Details</a></p>
                                      <p><a href="#" class="group_train">Group Training</a></p>
                                      
                                   </div>

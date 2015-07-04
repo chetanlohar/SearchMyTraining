@@ -7,7 +7,8 @@ body {
 }
 #main .about_banner{
 	height: 150px;
-	width: 100%;
+	width: 90%;
+	margin: 0px auto;
 }
 #main .about_banner img{
 	height: 100%;
@@ -31,9 +32,20 @@ body {
 	height: 100%;
 	width: 70%;
 	float:left;
-	background: gray;
+	background: #f5f5f5;
+	font-family: arial;
 }
-
+#main .right .title{
+	border-bottom: 1px solid gray;
+}
+#main .right .title h1{
+	font-size: 26px;
+	margin: 20px 0px 5px 10px;
+	
+}
+  
+  
+  
 /* ====================================Contact Us=================================== */
 #contact{
 	height: 900px;

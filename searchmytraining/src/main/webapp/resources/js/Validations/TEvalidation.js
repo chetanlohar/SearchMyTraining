@@ -26,6 +26,7 @@ $(document).ready(function() {
 	$("#lname22").on('keyup',function(e){
 		var no = /([0-9])/;
 		if($("#lname22").val() == ""){
+			
 			$("#lname22companyName21").focus();
 	
 			$("#error30").html(img).append("  Please Enter Last Name")

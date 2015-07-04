@@ -33,7 +33,7 @@
 				<h2>Registration</h2>
 				<div class="name">
 					<input id="org_name" type="text" autocomplete="off" name="org_name"
-						value="" placeholder="Organization Name" required=""> <span
+						value="" placeholder="Organization Name"  autofocus/> <span
 						id="error1"><text>.</text></span>
 
 				</div>

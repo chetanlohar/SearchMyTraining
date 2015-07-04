@@ -17,7 +17,7 @@
 </head>
 <body>
 <div id="pop_up_box">
-            <a class="b-close close1"><img src="<%=request.getContextPath()%>/resources/images/images.png"></a>
+            <a class="b-close " href="javascript:void(0);"><img src="<%=request.getContextPath()%>/resources/images/images.png"></a>
             <div class="reg_form">
                 <div class="head">
                     <img src="<%=request.getContextPath()%>/resources/images/enquiry-icon.png" alt="register">
@@ -25,7 +25,7 @@
                 <form id="enquiryform" name="myform" method="post" onsubmit="return TEvalidate();">
                     <h2>Training Enquiry</h2>
                     <div class="fname">
-                        <input type="text" autocomplete="off" name="firstname" id="firstname22" placeholder="First Name" >
+                        <input type="text" autocomplete="off" name="firstname" id="firstname22" placeholder=" First Name" autofocus >
                     </div>
                     <span id="error29"><text>.</text></span>
                     <div class="lname">

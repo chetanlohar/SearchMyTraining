@@ -37,151 +37,34 @@
 
 					<li class="open hvr-underline-reveal" onclick="loadfreelancer('<%=request.getContextPath()%>');"><a>Freelancer</a></li>
 
-					<li class="open hvr-underline-reveal" onclick="loadseminar('<%=request.getContextPath()%>');"><a>Seminar/</a></li>
+					<li class="open hvr-underline-reveal" onclick="loadseminar('<%=request.getContextPath()%>');"><a>Seminar</a></li>
 
 				</ul>
 				<div id="tabcontent">
 				
 					<div id="about-content" class="contentblock ">
                        <div class="institute_wrapar">
-                           <ul class="institute_list">
-                           <li>
-                           <div class="institute_block">
-                               <div class="inastitute_block_left">
-                               <h1><a href="#">Softinfology Pvt Ltd.nnn</a></h1>
-                               <div class="address">
-                               <span class="institute_location"> Kharadinnn | </span>
-                               <a href="#" class="tooltip" title="15-Nov-2015,10-Dec-2015"><span>More Date</span></a>
-                          
-                               <br>
-                               <span class="institute_add">Kharadi,Opp.Zensar IT Park,Near Huyndai Showroom</span>
+                         <div class="list-cart-box">
+                            <div class="list-cart-card">
+                             <div class="list-detail-box">
+                               <div class="list-image">
+                               
                                </div>
-                               </div> 
-                               <div class="inastitute_block_right">
-
-                                  <div class="view_detail">
-                                     <p><a href="#" class="detail_bar">View Details</a></p>
-                                     <p><a href="#" class="group_train">Group Training</a></p>
-                                     
+                               <div class="list-detail">
+                                  <div class="listtext-part">
+                                   <p class="list-name"><a href="#">Softinfology Pvt Ltd</a></p>
+                                    <p class="list-loc"><img alt="loc" src="/searchmytraining/resources/images/list-loc.png"/>     Kharadi Pune</p>
                                   </div>
-                                   </div> 
-                           
-                           </div>
-                           </li>
-                           <li>
-                           <div class="institute_block">
-                               <div class="inastitute_block_left">
-                               <h1><a href="#">Softinfology Pvt Ltd.</a></h1>
-                               <div class="address">
-                               <span class="institute_location"> Kharadinnn | </span>
-                              <a href="#" class="tooltip" title="15-Nov-2015,10-Dec-2015"><span>More Date</span></a>
-                              
-                               <br>
-                               <span class="institute_add">Kharadi,Opp.Zensar IT Park,Near Huyndai Showroom</span>
+                                  <div class="list-link">
+                                     <p class="detail"><a href="#" class="detail_bar">View Details</a></p>
+                                     <p><a href="#" class="group_train">Group Training</a></p>
+                                  </div>
                                </div>
-                               </div> 
-                               <div class="inastitute_block_right">
-                                  <div class="view_detail">
-                                     <p><a href="#" class="detail_bar">View Details</a></p>
-                                     <p><a href="#" class="group_train">Group Training</a></p>
-                                     
-                                  </div>
-                                   </div> 
-                           
-                           </div>
-                           </li>
-                           <li>
-                           <div class="institute_block">
-                               <div class="inastitute_block_left">
-                               <h1><a href="#">Softinfology Pvt Ltd.</a></h1>
-                              <div class="address">
-                               <span class="institute_location"> Kharadinnn | </span>
-                              <a href="#" class="tooltip" title="15-Nov-2015,10-Dec-2015"><span>More Date</span></a>
-                               <br>
-                               <span class="institute_add">Kharadi,Opp.Zensar IT Park,Near Huyndai Showroom</span>
-                               </div>
-                               </div> 
-                               <div class="inastitute_block_right">
-                                  
-                                  <div class="view_detail">
-                                     <p><a href="#" class="detail_bar">View Details</a></p>
-                                     <p><a href="#" class="group_train">Group Training</a></p>
-                                     
-                                  </div>
-                                   </div> 
-                           
-                           </div>
-                           </li>
-                           <li>
-                           <div class="institute_block">
-                               <div class="inastitute_block_left">
-                               <h1><a href="#">Softinfology Pvt Ltd.</a></h1>
-                              <div class="address">
-                               <span class="institute_location"> Kharadinnn | </span>
-                             <a href="#" class="tooltip" title="15-Nov-2015,10-Dec-2015"><span>More Date</span></a>
-                               <br>
-                               <span class="institute_add">Kharadi,Opp.Zensar IT Park,Near Huyndai Showroom</span>
-                               </div>
-                               </div> 
-                               <div class="inastitute_block_right">
-                                  
-                                  <div class="view_detail">
-                                     <p><a href="#" class="detail_bar">View Details</a></p>
-                                     <p><a href="#" class="group_train">Group Training</a></p>
-                                     
-                                  </div>
-                                   </div> 
-                           
-                           </div>
-                           </li>
-                           <li>
-                           <div class="institute_block">
-                               <div class="inastitute_block_left">
-                               <h1><a href="#">Softinfology Pvt Ltd.</a></h1>
-                               <div class="address">
-                               <span class="institute_location"> Kharadinnn | </span>
-                              <a href="#" class="tooltip" title="15-Nov-2015,10-Dec-2015"><span>More Date</span></a>
-                               <br>
-                               <span class="institute_add">Kharadi,Opp.Zensar IT Park,Near Huyndai Showroom</span>
-                               </div>
-                               </div> 
-                               <div class="inastitute_block_right">
-                                  
-                                  <div class="view_detail">
-                                     <p><a href="#" class="detail_bar">View Details</a></p>
-                                     <p><a href="#" class="group_train">Group Training</a></p>
-                                     
-                                  </div>
-                                   </div> 
-                           
-                           </div>
-                           </li>
-                           
-                            <li>
-                           <div class="institute_block">
-                               <div class="inastitute_block_left">
-                               <h1><a href="#">Softinfology Pvt Ltd.</a></h1>
-                               <div class="address">
-                               <span class="institute_location"> Kharadinnn | </span>
-                              <a href="#" class="tooltip" title="15-Nov-2015,10-Dec-2015"><span>More Date</span></a>
-                               <br>
-                               <span class="institute_add">Kharadi,Opp.Zensar IT Park,Near Huyndai Showroom</span>
-                               </div>
-                               </div> 
-                               <div class="inastitute_block_right">
-                                   
-                                  <div class="view_detail">
-                                     <p><a href="#" class="detail_bar">View Details</a></p>
-                                     <p><a href="#" class="group_train">Group Training</a></p>
-                                     
-                                  </div>
-                                   </div> 
-                           
-                           </div>
-                           </li>
-                           
-                           
-                           </ul>
+                               
+                             </div>
+                            </div>
+                         
+                         </div>
                        </div>
 						
 					</div>
