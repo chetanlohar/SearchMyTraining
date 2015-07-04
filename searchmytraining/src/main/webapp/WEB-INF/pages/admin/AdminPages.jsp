@@ -112,7 +112,20 @@ function AMCload() {
 									+ xhr.statusText);
 				});
 	}
+	
+function Reportload() {
+	$("#home-content").load("./showReports",
+				function(responseText, statusText, xhr) {
+					if (statusText == "success")
+						/* alert("Successfully loaded the content!"); */
+						if (statusText == "error")
+							alert("An error occurred: " + xhr.status + " - "
+									+ xhr.statusText);
+				});
+	}
 </script>
+
+
 
 <style>
 .container .container-form-wrapar {
@@ -228,6 +241,8 @@ function AMCload() {
 								For Training Provider</strong></a></li>
 
 					<li><a href="" onclick="AMCload();"><strong>Charts
+								</strong></a></li>
+					<li><a href="" onclick="Reportload();"><strong>Reports
 								</strong></a></li>
 
 				</ul>

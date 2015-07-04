@@ -23,7 +23,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.context.WebApplicationContext;
 
-import com.searchmytraining.dao.CountryDAO;
 import com.searchmytraining.dto.FreelancerDTO;
 import com.searchmytraining.dto.TraineeDTO;
 import com.searchmytraining.dto.TrainerDTO;
@@ -36,6 +35,7 @@ import com.searchmytraining.entity.StateEntity;
 import com.searchmytraining.entity.TraineeEntity;
 import com.searchmytraining.entity.UserEntity;
 import com.searchmytraining.service.ICityService;
+import com.searchmytraining.service.ICountryService;
 import com.searchmytraining.service.IEmploymentService;
 import com.searchmytraining.service.IFreelancerService;
 import com.searchmytraining.service.IIndustryCategoryService;
@@ -88,7 +88,7 @@ public class RegistrationController {
 	public ICityService cityservice;
 	
 	@Autowired
-	public CountryDAO countrydao;
+	public ICountryService countryservice;
 
 	public UserEntity user;
 	public TraineeDTO traineedto1;
@@ -167,7 +167,7 @@ public class RegistrationController {
 	public String freeLancerProfile(ModelMap model, HttpSession session) {
 		System.out.println("from /Flprofile userid: "+session.getAttribute("userid"));
 		model.addAttribute("freelancerDto", this.freelancerDto1);
-		model.addAttribute("countries",countrydao.getAllCountries());
+		model.addAttribute("countries",countryservice.getAllCountries());
 		return "pages/FreeLancer/FLprofile";
 	}
 
@@ -262,7 +262,7 @@ public class RegistrationController {
 		finally
 		{
 			model.addAttribute("industries",new JSONArray(industryservice.getIndustries()));
-			model.addAttribute("countries",countrydao.getAllCountries());
+			model.addAttribute("countries",countryservice.getAllCountries());
 		}
 		return "pages/Trainee/Trainprofile";
 	}

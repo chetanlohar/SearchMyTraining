@@ -7,7 +7,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>searchmytraining Maven Webapp</name>
 	<url>http://maven.apache.org</url>
-	<properties> 
+	<properties>
 		<spring.version>4.0.5.RELEASE</spring.version>
 		<hibernate.version>4.2.12.Final</hibernate.version>
 		<log4j.version>1.2.17</log4j.version>
@@ -137,58 +137,48 @@
 			<artifactId>commons-logging</artifactId>
 			<version>1.1.1</version>
 		</dependency>
-		<!-- <dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-beans</artifactId>
-			<version>3.0.3.RELEASE</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-core</artifactId>
-			<version>3.0.3.RELEASE</version>
-		</dependency> -->
-		
+		<!-- <dependency> <groupId>org.springframework</groupId> <artifactId>spring-beans</artifactId> 
+			<version>3.0.3.RELEASE</version> </dependency> <dependency> <groupId>org.springframework</groupId> 
+			<artifactId>spring-core</artifactId> <version>3.0.3.RELEASE</version> </dependency> -->
+
 
 		<!--Start: Maven Dependency checked in by Vaibhav Khandelwal -->
-		
-		<!-- <dependency>
-			<groupId>org.apache.tomcat</groupId>
-			<artifactId>catalina</artifactId>
-			<version>6.0.26</version>
-		</dependency> -->
-		
+
+		<!-- <dependency> <groupId>org.apache.tomcat</groupId> <artifactId>catalina</artifactId> 
+			<version>6.0.26</version> </dependency> -->
+
 		<dependency>
 			<groupId>org.apache.lucene</groupId>
 			<artifactId>lucene-suggest</artifactId>
 			<version>5.1.0</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.apache.lucene</groupId>
 			<artifactId>lucene-core</artifactId>
 			<version>5.1.0</version>
-		</dependency> 
-		
+		</dependency>
+
 		<dependency>
 			<groupId>org.apache.lucene</groupId>
 			<artifactId>lucene-queryparser</artifactId>
 			<version>5.1.0</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>net.sf.ehcache</groupId>
 			<artifactId>ehcache</artifactId>
 			<version>2.9.0</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context-support</artifactId>
 			<version>4.1.4.RELEASE</version>
 		</dependency>
-		
+
 		<!-- End: Maven Dependency checked in by Vaibhav Khandelwal on 25 May -->
-		
+
 		<!-- Start: Maven Dependency(Gson) added by Prashant Nemade 1st June -->
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
@@ -196,7 +186,20 @@
 			<version>2.2.2</version>
 		</dependency>
 		<!-- End: Maven Dependency(Gson) added by Prashant Nemade 1st June -->
-		
+
+		<!-- Display tag Libraries -->
+		<!-- <dependency>
+			<groupId>displaytag</groupId>
+			<artifactId>displaytag</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>displaytag</groupId>
+			<artifactId>displaytag-export-poi</artifactId>
+			<version>1.2</version>
+		</dependency> -->
+
+
 	</dependencies>
 	<build>
 		<plugins>

@@ -47,15 +47,26 @@
 			alt="cancel"></a>
 		<div class="reg_form">
 
-			<form action="#" name="myform">
+			<form action="uploadAdvertise" method="post" name="myform" enctype="multipart/form-data">
 				<div class="upload">
-					<label>Upload </label> <input type="file">
-				</div>
-				<div class="url">
-					<label>URL </label> <input type="text">
+					<label>Upload </label> 
+					<input id="fileupload" name="fileUpload" type="file">
 				</div>
 				<div class="add_name">
-					<label>Name of Add </label> <input type="text">
+					<label>Advertise Name</label> 
+					<input id="adname" type="text">
+				</div>
+				<div class="url">
+					<label>URL </label> 
+					<input id="adurl" type="text">
+				</div>
+				<div class="add_name">
+					<label>Start Date</label> 
+					<input id="adstart_date" type="text">
+				</div>
+				<div class="add_name">
+					<label>End Date</label> 
+					<input id="adstart_date" type="text">
 				</div>
 				<br><br>
 				<input type="submit" value="Submit" >

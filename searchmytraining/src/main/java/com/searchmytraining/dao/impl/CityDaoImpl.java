@@ -18,16 +18,18 @@ public class CityDaoImpl extends AbstractJpaDAO<CityEntity> implements CityDAO {
 	EntityManager entityManager;
 	
 	@Override
+	@Cacheable(value="cityCache1")
 	public CityEntity getCity(Integer id) {
 		setClazz(CityEntity.class);
 		return findOne(id);
 	}
 	
+	@Cacheable(value="cityCache2")
 	public CityEntity getCity(String cityname)
 	{
 		System.out.println(cityname);
 		String query = "select city.cityId from CityEntity city where city.cityName= '"+cityname.toUpperCase()+"'";
-		Integer cityid =	(Integer)getQueryResult(query);
+		Integer cityid = (Integer)getQueryResult(query);
 		setClazz(CityEntity.class);
 		return findOne(cityid);
 	}

@@ -135,7 +135,7 @@
 			</form>
 			<input class="skipbtn5" type="button" value="Save & Continue" name="save"
 				form="ContactDetailsForm"
-				onclick="saveInstituteContactDetails('<%=request.getContextPath()%>');trainingProValidate1();" />
+				onclick="saveInstituteContactDetails();trainingProValidate1();" />
 			<input class="skip" id="skip3" type="button" value="Skip" name="skip" />
 		</div>
 		<h3 class="acord_head">

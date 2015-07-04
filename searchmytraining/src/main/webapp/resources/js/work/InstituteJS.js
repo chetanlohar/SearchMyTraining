@@ -62,7 +62,7 @@ function saveInstituteDetails(path) {
 		var workingdays = [ "MON", "TUE", "WED", "THU", "FRI", "SAT" ];
 		/* alert($('#org_name').val()+":"+$('#yearofestablishment').val()+":"+$('#training_methodology').val()+":"+$('#hrsofoperations').val()+$('#history').val()); */
 		$.ajax({
-			url : path + '/updateinstitutedetails',
+			url : './updateinstitutedetails',
 			type : 'post',
 			dataType : 'json',
 			data : JSON.stringify({
@@ -84,22 +84,22 @@ function saveInstituteDetails(path) {
 	}
 }
 
-function saveInstituteContactDetails(path) {
+function saveInstituteContactDetails() {
 	/*
 	 * alert("in saveInstituteContactDetails phonetypeid:
 	 * "+$('#phonetypeid').val());
 	 */
 	try {
 		$.ajax({
-			url : path + '/updateinstcontactinfo',
+			url : './updatecontactinfo',
 			type : 'post',
 			dataType : 'json',
 			data : JSON.stringify({
 				"email" : $('#email').val(),
-				"website" : $('#website').val(),
+				"website" : $('#institutewebsitename').val(),
 				"contactpersonname" : $('#contactpersonname').val(),
-				"phonetypeid" : $('#phonetypeid').val(),
-				"phone" : $('#phone').val(),
+				"phonetypeid" : $('#phonetypeid0').val(),
+				"phone" : $('#institutecontact85').val(),
 				"userid" : $('#userid').val()
 			}),
 			contentType : "application/json",
