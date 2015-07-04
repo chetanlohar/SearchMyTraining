@@ -93,6 +93,7 @@ public class ProfileController {
 	@ResponseBody
 	public void updateContactInfo(@RequestBody @Valid ContactDTO contactdto)
 	{
+		System.out.println("in updateContactInfo...");
 		contactinfoservice.updateContactInfoDet(contactdto);
 	}
 	

@@ -13,6 +13,8 @@
 	src="<%=request.getContextPath()%>/resources/js/AddDel.js"></script>
 <script
 	src="<%=request.getContextPath()%>/resources/js/Validations/TrainingProProfile.js"></script>
+
+<script type="text/javascript" src="./resources/js/work/categories.js"></script>
 <script type="text/javascript">
 	jQuery(document).ready(
 			function() {
@@ -115,7 +117,7 @@
 				<div id="achiv">
 					<p>
 						<label>Institute Contact: </label> 
-						<select id="phonetypeid0">
+						<select id="phonetypeid1">
 							<option value="0" name="contact">--Select--</option>
 							<option value="1">OFFICE-MOBILE</option>
 							<option value="2">OFFICE-LANDLINE</option>
@@ -123,7 +125,7 @@
 							<option value="4">PERSONAL-LANDLINE</option>
 							<option value="5">FAX</option>
 							<option value="6">TOLL FREE</option>
-						</select> <input id="institutecontact85" type="text" name="institutecontact85" onkeypress="return validate15(event)"
+						</select> <input id="institutecontact1" type="text" name="institutecontact85" onkeypress="return validate15(event)"
 							value="${trainerdto.contact}">
 					<input type="button" value="+" class="addScnt">
 					<input type="hidden" id="rowtot" name="rowtot" value="1">
@@ -164,36 +166,26 @@
 						 <span id="error84"></span>
 				</div>
 				<div class="country">
-					<label>Country :</label> <select id="tpcountry">
-						<option value="0">--Country--</option>
-						<option value="India">India</option>
-						<option value="United States">United States</option>
-						<option value="England">England</option>
-						<option value="New Zealand">New Zealand</option>
-						<option value="Pakistan">Pakistan</option>
+					<label>Country :</label> 
+					<select id="countryid" onchange="getStates();">
+						<option value="0">--Select--</option>
+						<c:forEach var="country" items="${countries}">
+							<option value="${country.countryId}">${country.countryName}</option>
+						</c:forEach>
 					</select>
 				</div>
 				<span id="errortpcountry"></span>
 				<div class="state">
-					<label>State :</label> <select id="tpstate">
-						<option value="0">--State--</option>
-						<option value="Maharashtra">Maharashtra</option>
-						<option value="Gujarat">Gujarat</option>
-						<option value="Telangana">Telangana</option>
-						<option value="Andra Pradesh">Andra Pradesh</option>
-						<option value="Karnataka">Karnataka</option>
-						<option value="Punjab">Punjab</option>
-						<option value="Haryana">Haryana</option>
+					<label>State :</label> 
+					<select id="stateid" onchange="getCities()">
+						<option value="0">--Select--</option>
 					</select>
 				</div>
 				<span id="errortpstate"></span>
 				<div class="city1">
-					<label>City :</label> <select id="tpcity">
-						<option value="0">--City--</option>
-						<option value="Pune">Pune</option>
-						<option value="Mumbai">Mumbai</option>
-						<option value="Nagpur">Nagpur</option>
-						<option value="Nashik">Nashik</option>
+					<label>City :</label> 
+					<select id="cityid">
+						<option value="0">--Select--</option>
 					</select>
 				</div>
 				<span id="errortpcity"></span>
@@ -210,12 +202,14 @@
 			<form action="#" class="multi">
 				<div id="achiv2">
 					<p>
-						<span>Award Name:</span> <input type="text" name="award" /> <span>Type:</span>
+						<span>Award Name:</span> 
+						<input type="text" name="award" /> <span>Type:</span>
 						<select>
 							<option value="1">1</option>
 							<option value="2">2</option>
 							<option value="3">3</option>
-						</select> <span>Year Of Received:</span> <input style="width: 80px;"
+						</select> <span>Year Of Received:</span> 
+						<input style="width: 80px;"
 							type="text" name="year" /> <input type="file" />
 				          <input type="button" class="addAward" value="+">
 					</p>
@@ -231,8 +225,8 @@
 			<form id="professinalassociationform" method="post" class="multi">
 				<div id="association">
 					<p>
-						<label>Association Name :</label> <input id="assocName86"
-							type="text" name="assocName86" />
+						<label>Association Name :</label> 
+						<input id="assocName1"	type="text" name="assocName86" />
 							<input type="button" class="addAsso" value="+">
 					</p>
 					&nbsp;&nbsp;&nbsp;&nbsp;

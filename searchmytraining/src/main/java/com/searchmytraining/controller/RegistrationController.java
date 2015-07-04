@@ -140,6 +140,7 @@ public class RegistrationController {
 	public String trainerProfile(ModelMap model) {
 		model.addAttribute("trainerdto", this.trainerdto1);
 		model.addAttribute("user", user);
+		model.addAttribute("countries",countryservice.getAllCountries());
 		return "pages/TrainingProvider/TPprofile";
 	}
 
