@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.context.WebApplicationContext;
 
 import com.searchmytraining.dao.RoleDAO;
 import com.searchmytraining.dao.StatusDAO;
@@ -19,6 +20,10 @@ import com.searchmytraining.service.ITrainerService;
 
 @Service
   public class TrainerService implements ITrainerService {
+	
+	@Autowired
+	public WebApplicationContext context; 
+	
 	@Autowired
 	public TrainerRegistrationDAO regdao;
 	@Autowired
@@ -30,15 +35,11 @@ import com.searchmytraining.service.ITrainerService;
 	@Autowired
 	public UserDAO userdao;
 	@Autowired
-	public RoleEntity role;
-	@Autowired
-	public UserEntity user;
-	@Autowired
 	public BCryptPasswordEncoder encoder;
 	@Override
 	@Transactional
 	public Integer registerTrainer(TrainerDTO trainerdto) {
-		UserEntity user = new UserEntity();
+		UserEntity user = (UserEntity)context.getBean("userEntity");
 		StatusEntity status = statusdao.getStatus(1);
 		TrainerEntity entity = mapper.map(trainerdto, TrainerEntity.class);
 		user.setUserName(entity.getEmail());
@@ -50,7 +51,7 @@ import com.searchmytraining.service.ITrainerService;
 		user.setStatus(status);
 		userdao.addUser(user);
 		entity.setUser(user);
-		RoleEntity role = new RoleEntity();
+		RoleEntity role = (RoleEntity)context.getBean("roleEntity");
 		role.setROLE("TPI");
 		role.setUser(user);
 		roledao.setRoleToUser(role);

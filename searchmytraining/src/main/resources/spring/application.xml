@@ -61,19 +61,25 @@
 
 	<bean id="persistenceExceptionTranslationPostProcessor"
 		class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
-		
-	<bean id="userEntity" class="com.searchmytraining.entity.UserEntity" scope="prototype"/>
-	<bean id="roleEntity" class="com.searchmytraining.entity.RoleEntity" scope="prototype"/>
-<!-- 	<bean id="chartEntity" class="com.searchmytraining.entity.ChartEntity" scope="prototype"/>
- -->
+
 	<bean id="mapper" class="org.dozer.DozerBeanMapper" scope="singleton">
 		<property name="mappingFiles">
-			<list>				
-				<value>dozer/bean-mappings.xml</value>				
+			<list>
+				<value>dozer/bean-mappings.xml</value>
 			</list>
 		</property>
 	</bean>
 	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
+	
+	<!-- Lucene Configuration -->
+	
+	<bean id="standardAnalyzer" class="org.apache.lucene.analysis.standard.StandardAnalyzer"/>	
+	<bean id="queryParser" class="org.apache.lucene.queryparser.classic.QueryParser" scope="prototype">
+		<constructor-arg value="BasicSearchString" />
+		<constructor-arg ref="standardAnalyzer"/>
+	</bean>
+	<bean id="lucenedocument" class="org.apache.lucene.document.Document" scope="prototype"/>
+	
 </beans>

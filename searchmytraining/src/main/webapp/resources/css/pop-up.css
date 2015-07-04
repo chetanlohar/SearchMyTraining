@@ -2211,3 +2211,14 @@ width
 	box-shadow: none;
 	background: #000;
 }
+/* ======================Get Contact========================== */
+#pop_up_box_11{
+	border-radius: 5px;
+	color: #000;
+	display: none;
+	min-width: 500px;
+	min-height: 570px;
+	margin-top: 80px;
+    background: #ECF0F3;
+    font-family: arial;
+}

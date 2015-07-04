@@ -13,6 +13,8 @@ function industryCategory() {
 			$('#industrycatid').attr('enabled', 'true');
 			$('#industrycatid').append(
 					$("<option value='0'></option>").text("--Select--"));
+			$('#industrysubcatid').append(
+					$("<option value='0'></option>").text("--Select--"));
 			jQuery.each(response, function(index, item) {
 				$('#industrycatid').append(
 						$("<option></option>").text(this.indstrCatName).val(
@@ -56,6 +58,8 @@ function getStates() {
 			$('#cityid').find('option').remove().end();
 			$('#stateid').attr('enabled', 'true');
 			$('#stateid').append(
+					$("<option value='0'></option>").text("--Select--"));
+			$('#cityid').append(
 					$("<option value='0'></option>").text("--Select--"));
 			jQuery.each(response, function(index, item) {
 				$('#stateid').append(

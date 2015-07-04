@@ -36,4 +36,8 @@ public class LocationService implements ILocationService {
 		locationdao.insertLocation(locentity);
 	}
 
+	@Override
+	public LocationEntity findLocDet(Integer userid) {
+		return locationdao.findLocDet(userid);
+	}
 }

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.searchmytraining.dao.CalenderDAO;
+import com.searchmytraining.dto.SearchCalendarDTO;
 import com.searchmytraining.entity.CalenderEntity;
 import com.searchmytraining.service.ICalenderService;
 
@@ -55,6 +56,11 @@ public class CalenderService implements ICalenderService
 	@Override
 	public List<CalenderEntity> getCalendersByKeyword(String kyeword) throws Exception{
 		return daoObj.getCalendersByKeyword(kyeword);
+	}
+
+	@Override
+	public List<CalenderEntity> getCalendersOnSearch(SearchCalendarDTO searchcaldto) {
+		return daoObj.getCalendersOnSearch(searchcaldto);
 	}
 
 }

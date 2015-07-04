@@ -2,6 +2,11 @@ package com.searchmytraining.wrapper;
 
 import java.util.Map;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Component
+@Scope("prototype")
 public class RespnoseWrapper {
 	
 	private Integer id;

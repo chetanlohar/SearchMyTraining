@@ -21,21 +21,28 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.context.WebApplicationContext;
 
-import com.searchmytraining.dao.CountryDAO;
 import com.searchmytraining.dto.FreelancerDTO;
 import com.searchmytraining.dto.TraineeDTO;
 import com.searchmytraining.dto.TrainerDTO;
+import com.searchmytraining.entity.CityEntity;
 import com.searchmytraining.entity.EmploymentEntity;
 import com.searchmytraining.entity.IndustryCategoryEntity;
 import com.searchmytraining.entity.IndustrySubCategoryEntity;
+import com.searchmytraining.entity.LocationEntity;
+import com.searchmytraining.entity.StateEntity;
 import com.searchmytraining.entity.TraineeEntity;
 import com.searchmytraining.entity.UserEntity;
+import com.searchmytraining.service.ICityService;
+import com.searchmytraining.service.ICountryService;
 import com.searchmytraining.service.IEmploymentService;
 import com.searchmytraining.service.IFreelancerService;
 import com.searchmytraining.service.IIndustryCategoryService;
 import com.searchmytraining.service.IIndustrySerivice;
 import com.searchmytraining.service.IIndustrySubCategoryService;
+import com.searchmytraining.service.ILocationService;
+import com.searchmytraining.service.IStateService;
 import com.searchmytraining.service.ITraineeService;
 import com.searchmytraining.service.ITrainerService;
 import com.searchmytraining.service.IUserService;
@@ -45,6 +52,9 @@ import com.searchmytraining.wrapper.RespnoseWrapper;
 @SessionAttributes("userid")
 public class RegistrationController {
 
+	@Autowired
+	public WebApplicationContext context;
+	
 	@Autowired
 	public ITrainerService trainerservice;
 
@@ -70,7 +80,15 @@ public class RegistrationController {
 	public IEmploymentService employmentservice;
 	
 	@Autowired
-	public CountryDAO countrydao;
+	public ILocationService locservice;
+	
+	@Autowired
+	public IStateService stateservice;
+	@Autowired
+	public ICityService cityservice;
+	
+	@Autowired
+	public ICountryService countryservice;
 
 	public UserEntity user;
 	public TraineeDTO traineedto1;
@@ -85,7 +103,7 @@ public class RegistrationController {
 	public RespnoseWrapper TrainingProviderRegistration(
 			@RequestBody @Valid TrainerDTO trainerdto, BindingResult result,
 			ModelMap model, HttpServletRequest request, HttpServletResponse response,HttpSession session) throws Exception {
-		RespnoseWrapper response1 = new RespnoseWrapper();
+		RespnoseWrapper response1 = (RespnoseWrapper)context.getBean("respnoseWrapper");
 		response1.setValidation_error(true);
 		response1.setId(501);
 		if (result.hasErrors()) {
@@ -122,6 +140,7 @@ public class RegistrationController {
 	public String trainerProfile(ModelMap model) {
 		model.addAttribute("trainerdto", this.trainerdto1);
 		model.addAttribute("user", user);
+		model.addAttribute("countries",countryservice.getAllCountries());
 		return "pages/TrainingProvider/TPprofile";
 	}
 
@@ -149,7 +168,7 @@ public class RegistrationController {
 	public String freeLancerProfile(ModelMap model, HttpSession session) {
 		System.out.println("from /Flprofile userid: "+session.getAttribute("userid"));
 		model.addAttribute("freelancerDto", this.freelancerDto1);
-		model.addAttribute("countries",countrydao.getAllCountries());
+		model.addAttribute("countries",countryservice.getAllCountries());
 		return "pages/FreeLancer/FLprofile";
 	}
 
@@ -176,6 +195,8 @@ public class RegistrationController {
 		} else {
 			response1.setValidation_error(false);
 			this.traineedto1 = traineedto;
+			ITraineeService traineeser = (ITraineeService)context.getBean("traineeService");
+			System.out.println("traineeser ref: "+traineeser);
 			traineeservice.registerTrainee(traineedto);
 			Integer userid = userservice.getMaxUserId("userId");  // Please modify this ASAP
 			session.setAttribute("userid", userid);
@@ -201,6 +222,8 @@ public class RegistrationController {
 		Integer indcatid=0;
 		try
 		{
+			//Employement Details
+			
 			System.out.println("userid is: "+trainee.getUser().getUserId());
 			EmploymentEntity emplentity = employmentservice.findEmplDet(trainee.getUser().getUserId());
 			indcatid=emplentity.getIndsubcat().getIndustrycategory().getTrnIndstrCatId();
@@ -208,13 +231,24 @@ public class RegistrationController {
 			Integer indid = emplentity.getIndsubcat().getIndustrycategory().getIndustry().getTrnIndstrId();
 			List<IndustryCategoryEntity> indcatlist = industrycategoryser.getIndustryCategories(indid);
 			Integer indsubcatid = emplentity.getIndsubcat().getTrnIndstrSubCatId();
-			
 			for(IndustryCategoryEntity indcatName:indcatlist)
 				System.out.println(indcatName.getIndstrCatName());
-			
 			model.addAttribute("industrycategories", new JSONArray(indcatlist));
 			model.addAttribute("industrysubcat",new JSONArray(indsubsubcatlist));
 			model.addAttribute("employmentdetails", emplentity);
+			
+			//Location Details
+			
+			LocationEntity location = locservice.findLocDet(trainee.getUser().getUserId());
+			System.out.println(location);
+			List<StateEntity> states = stateservice.getStates(location.getCity().getState().getCountry().getCountryId());
+			List<CityEntity> cities = cityservice.getCities(location.getCity().getState().getStateId());
+			Long country_value = location.getCity().getState().getCountry().getCountryId();
+			model.addAttribute("country_value",country_value);
+			model.addAttribute("locentity",location);
+			model.addAttribute("states",new JSONArray(states));
+			model.addAttribute("cities",new JSONArray(cities));
+			
 			
 		}
 		catch(Exception e)
@@ -229,7 +263,7 @@ public class RegistrationController {
 		finally
 		{
 			model.addAttribute("industries",new JSONArray(industryservice.getIndustries()));
-			model.addAttribute("countries",countrydao.getAllCountries());
+			model.addAttribute("countries",countryservice.getAllCountries());
 		}
 		return "pages/Trainee/Trainprofile";
 	}

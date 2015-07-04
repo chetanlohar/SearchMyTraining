@@ -7,6 +7,7 @@ import java.util.Map;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
+import org.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -27,16 +28,15 @@ import com.searchmytraining.dto.InstituteDTO;
 import com.searchmytraining.dto.LocationDTO;
 import com.searchmytraining.dto.ProfessionalAssociationDTO;
 import com.searchmytraining.entity.CityEntity;
-import com.searchmytraining.entity.EmploymentEntity;
 import com.searchmytraining.entity.IndustryCategoryEntity;
 import com.searchmytraining.entity.IndustrySubCategoryEntity;
 import com.searchmytraining.entity.StateEntity;
-import com.searchmytraining.entity.UserEntity;
 import com.searchmytraining.service.ICityService;
 import com.searchmytraining.service.IContactInfoService;
 import com.searchmytraining.service.IEmploymentService;
 import com.searchmytraining.service.IFreeLancerServiceDetails;
 import com.searchmytraining.service.IIndustryCategoryService;
+import com.searchmytraining.service.IIndustrySerivice;
 import com.searchmytraining.service.IIndustrySubCategoryService;
 import com.searchmytraining.service.IInstituteServiceDetails;
 import com.searchmytraining.service.ILocationService;
@@ -49,7 +49,9 @@ public class ProfileController {
 	
 	@Autowired
 	public IInstituteServiceDetails instituteservice;
-	public UserEntity user;
+	
+	@Autowired
+	public IIndustrySerivice industryservice;
 	
 	@Autowired
 	public IIndustryCategoryService industrycatservice;
@@ -91,6 +93,7 @@ public class ProfileController {
 	@ResponseBody
 	public void updateContactInfo(@RequestBody @Valid ContactDTO contactdto)
 	{
+		System.out.println("in updateContactInfo...");
 		contactinfoservice.updateContactInfoDet(contactdto);
 	}
 	
@@ -146,14 +149,14 @@ public class ProfileController {
 	public List<StateEntity> getStates(@RequestParam("countryid") Integer countryid)
 	{
 		System.out.println("in getStates(...)");
-		return state.getStates(countryid);
+		return state.getStates(countryid.longValue());
 	}
 	
 	@RequestMapping("/getCities")
 	@ResponseBody
 	public List<CityEntity> getCitites(@RequestParam("stateid") Integer stateid)
 	{
-		return city.getCities(stateid);
+		return city.getCities(stateid.longValue());
 	}
 	
 	@RequestMapping("/TPcalender")
@@ -202,6 +205,13 @@ public class ProfileController {
 		System.out.println(certidto.getAwrdDetails());
 		freelanceservice.updateCertiAndAwardInfo(certidto);
 		return null;
+	}
+	
+	@RequestMapping("/FLCalender")
+	public String getCalenders(ModelMap model)
+	{
+		model.addAttribute("industries",new JSONArray(industryservice.getIndustries()));
+		return "pages/FreeLancer/FLCalender";
 	}
 	
 }

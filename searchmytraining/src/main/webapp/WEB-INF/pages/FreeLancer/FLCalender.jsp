@@ -68,11 +68,23 @@ function userAllCalender() {
 			}
 
 		}
-		
-		 
 		$('#Fdate,#Tdate').datepicker();
-
+		loadIndustries();
 	});
+	
+	function loadIndustries()
+	{
+		var industries = '${industries}';
+		var jsonindustries = $.parseJSON(industries);
+		$('#Itype').find('option').remove().end();
+		$('#Itype').attr('enabled', 'true');
+		$('#Itype').append(
+				$("<option value='0'></option>").text("--Select--"));
+		jQuery.each(jsonindustries, function(index, item) {
+			$('#Itype').append(
+				$("<option></option>").text(this.indstrName).val(this.trnIndstrId));
+		});
+	}
 </script>
 <script type="text/javascript">
 	$(document)
@@ -136,15 +148,16 @@ function userAllCalender() {
 						<span id="c3"></span>
 				</div>
 				<div class="Industry">
-					<label>Industry Type:</label> <select id="Itype" name="Itype">
-						<option value="1">Industry Types</option>
+					<label>Industry Type:</label> 
+					<select id="Itype" name="Itype">
+						<!-- <option value="1">Industry Types</option>
 						<option value="1">Technology</option>
 						<option value="2">Business & Management</option>
 						<option value="3">Engineering & Manufacturing</option>
 						<option value="4">Health & Safety</option>
 						<option value="5">Art & Craft & Sports</option>
 						<option value="6">Certifications</option>
-						<option value="7">Other</option>
+						<option value="7">Other</option> -->
 					</select>
 					<span id="c4"></span>
 				</div>

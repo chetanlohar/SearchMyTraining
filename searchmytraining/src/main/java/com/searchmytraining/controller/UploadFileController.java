@@ -14,24 +14,37 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import com.searchmytraining.entity.CalenderEntity;
+import com.searchmytraining.entity.CityEntity;
 import com.searchmytraining.entity.IndustrySubCategoryEntity;
 /*import com.searchmytraining.entity.KeywordEntity;*/
 import com.searchmytraining.entity.UserEntity;
 import com.searchmytraining.service.ICalenderService;
+import com.searchmytraining.service.ICityService;
 
 /*import com.searchmytraining.service.IKeywordService;*/
 
 @Controller
 @RequestMapping("/uploadFile")
 public class UploadFileController {
+	
 	@Autowired
-	ICalenderService calnderService;
+	public WebApplicationContext context;
+	
+	@Autowired
+	public ICalenderService calnderService;
+	
+	@Autowired
+	public ICityService cityservice;
+	
+	
 	/*
 	 * @Autowired IKeywordService keywordService;
 	 */
+	
 	@RequestMapping(method = RequestMethod.POST)
 	public String create(HttpServletRequest request,
 			@RequestParam CommonsMultipartFile fileUpload, HttpSession session)
@@ -46,7 +59,7 @@ public class UploadFileController {
 		String Tdate = null;
 		String Ctype = null;
 		Double cPrice = null;
-		String place = null;
+		Integer place = null;
 		String[] keyCode = null;
 		String keyword = null;
 		String CDesc = null;
@@ -62,9 +75,9 @@ public class UploadFileController {
 		fileExtension = fileName.substring(fileName.indexOf(".") + 1,
 				fileName.length());
 
-		CalenderEntity entity = new CalenderEntity();
-		UserEntity usrEntity = new UserEntity();
-		IndustrySubCategoryEntity industrySubCat = new IndustrySubCategoryEntity();
+		CalenderEntity entity = (CalenderEntity)context.getBean("calenderEntity");
+		UserEntity usrEntity = (UserEntity)context.getBean("userEntity");
+		IndustrySubCategoryEntity industrySubCat = (IndustrySubCategoryEntity)context.getBean("industrySubCategoryEntity");
 
 		Calendar calendar = Calendar.getInstance();
 		Timestamp currentTime = new Timestamp(calendar.getTime().getTime());
@@ -77,7 +90,7 @@ public class UploadFileController {
 			Ctype = request.getParameter("Ctype");
 			cPrice = Double.parseDouble(request.getParameter("cPrice"));
 			CDesc = request.getParameter("CDesc");
-			place = request.getParameter("place");
+			place = Integer.parseInt(request.getParameter("place"));
 			keyCode = request.getParameterValues("tags[]");
 			userType = request.getParameter("userType");
 			userid = Integer
@@ -101,7 +114,9 @@ public class UploadFileController {
 			entity.setStart_date(Fdate);
 			entity.setEnd_date(Tdate);
 			entity.setStatus("New");
-			entity.setPlace(place);
+			
+			CityEntity city = cityservice.getCity(place);
+			entity.setCity(city);
 			entity.setType(Ctype);
 			entity.setPrice(cPrice);
 			entity.setTitle(ctitle);

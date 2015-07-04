@@ -14,7 +14,6 @@ import org.apache.lucene.search.suggest.Lookup;
 import org.apache.lucene.search.suggest.analyzing.AnalyzingInfixSuggester;
 import org.apache.lucene.store.RAMDirectory;
 import org.apache.lucene.util.BytesRef;
-import org.apache.lucene.util.Version;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
@@ -24,17 +23,18 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import com.searchmytraining.entity.CalenderEntity;
-import com.searchmytraining.entity.TrainingEntity;
 import com.searchmytraining.service.ICalenderService;
-import com.searchmytraining.service.impl.CalenderService;
  
+@Component
 @Configuration
 @EnableCaching
 @ComponentScan({ "com.searchmytraining.*" })
 public class SuggestTraining {
+	@Autowired
+	public ICalenderService calendarservice;
 	
 	@Bean
 	public CacheManager cacheManager() {
@@ -94,11 +94,11 @@ public class SuggestTraining {
     StandardAnalyzer analyzer;
     AnalyzingInfixSuggester suggester;
     
-    /*@PostConstruct*/
-    public void init(ICalenderService calenderservice){
+    @PostConstruct
+    public void init(){
     	index_dir = new RAMDirectory();
         analyzer = new StandardAnalyzer();
-        List<CalenderEntity> trainings = calenderservice.getAllCalender();/* new ArrayList<TrainingEntity>(); //This should be replaced with code to load all the traning from DB*/
+        List<CalenderEntity> trainings = calendarservice.getAllCalender();/* new ArrayList<TrainingEntity>(); //This should be replaced with code to load all the traning from DB*/
         /*TrainingEntity training1 = new TrainingEntity("Spring Framework", "java,spring,framework,advance", "Spring Framework is a Java Framework and developed in java which is based on principle of IOC", "programming,technology", 1);
         TrainingEntity training2 = new TrainingEntity("Hibernate", "hibernate,java,orm,orm tool,framework,database tool", "Hibernate is a java framework which is called as ORM tool that is Object Relational Mapping tool", "programming,technology", 2);
         TrainingEntity training3 = new TrainingEntity("Personaliy Developement", "communication,speaking,personality,self developement", "In Personality Developement several things will taugh how to talk how to behave so you can develope your personality and impress all ur peoples around you", "communication", 3);
@@ -114,8 +114,7 @@ public class SuggestTraining {
 		}
     }
     
-    public List<String> doAutoSuggest(String inputStr,ICalenderService calenderservice) {
-    	init(calenderservice);
+    public List<String> doAutoSuggest(String inputStr) {
     	return initLookup(suggester, inputStr);
     }	
 }

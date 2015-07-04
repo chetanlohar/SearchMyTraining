@@ -32,6 +32,9 @@ $('#fdate,#Tdate').datepicker();
 <script type="text/javascript">
 	$(document).ready(function() {
 
+	$(document)
+			.ready(
+					function() {
 						$('.tagRemove').click(function(event) {
 							alert("see you")
 							event.preventDefault();
@@ -43,9 +46,9 @@ $('#fdate,#Tdate').datepicker();
 						$('#tags-field')
 								.keypress(
 										function(event) {
-											alert(event);
 											if (event.which == '188') {
                                                       alert("fggf");
+											console.log(event.which);
 												if ($(this).val() != '') {
 													$(
 															'<li class="addedTag">'

@@ -2,6 +2,7 @@ package com.searchmytraining.entity;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -11,10 +12,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-/**
- * @author user
- *
- */
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Component
+@Scope("prototype")
 @Entity
 @Table(name = "tbl_trngcalender")
 public class CalenderEntity implements Serializable {
@@ -76,9 +78,9 @@ public class CalenderEntity implements Serializable {
 	@Column(name = "keyword")
 	private String keyword;
 	
-
-	@Column(name = "place")
-	private String place;
+	@ManyToOne(fetch = FetchType.EAGER, targetEntity = CityEntity.class)
+	@JoinColumn(name = "place")
+	private CityEntity city;
 	
 	@ManyToOne(fetch = FetchType.EAGER, targetEntity = UserEntity.class)
 	@JoinColumn(name = "userId")
@@ -231,12 +233,13 @@ public class CalenderEntity implements Serializable {
 	public void setKeyword(String keyword) {
 		this.keyword = keyword;
 	}
-	public String getPlace() {
-		return place;
+	
+	public CityEntity getCity() {
+		return city;
 	}
 
-	public void setPlace(String place) {
-		this.place = place;
+	public void setCity(CityEntity city) {
+		this.city = city;
 	}
 
 	public UserEntity getUser() {

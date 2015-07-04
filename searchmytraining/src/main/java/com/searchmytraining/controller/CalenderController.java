@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.searchmytraining.entity.CalenderEntity;
 import com.searchmytraining.service.ICalenderService;
@@ -76,6 +78,19 @@ public class CalenderController {
 	public void deleteCalenderById(Long calId) {
 
 		iCalnder.removeCalender(calId);
+	}
+	
+	@RequestMapping(value="/getContacted",method=RequestMethod.GET)
+	public void getContacted(@RequestParam("trngId") Integer trngId)
+	{
+		System.out.println("geContacted id: "+trngId);
+	}
+	
+	@RequestMapping(value="/getContacted",method=RequestMethod.POST)
+	public void getContacted1(@RequestParam("trngId") Integer trngId,ModelMap model)
+	{
+		
+		System.out.println("geContacted1 id: "+trngId);
 	}
 
 }

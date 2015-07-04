@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.context.WebApplicationContext;
 
 import com.searchmytraining.dao.FreelancerDAO;
 import com.searchmytraining.dao.RoleDAO;
@@ -21,22 +22,18 @@ import com.searchmytraining.service.IFreelancerService;
 public class FreelancerService implements IFreelancerService
 {
 	@Autowired
+	public WebApplicationContext context;
+	
+	@Autowired
 	public FreelancerDAO regdao;
 	@Autowired
 	public DozerBeanMapper mapper;
-
 	@Autowired
 	public RoleDAO roledao;
-
 	@Autowired
 	public StatusDAO statusdao;
-
 	@Autowired
 	public UserDAO userdao;
-	@Autowired
-	public UserEntity user;
-	@Autowired
-	public RoleEntity role;
 	@Autowired
 	public BCryptPasswordEncoder encoder;
 	
@@ -45,7 +42,7 @@ public class FreelancerService implements IFreelancerService
 	public Integer registerFreelancer(FreelancerDTO freelancerDto) {
 		StatusEntity status = statusdao.getStatus(1);
 		FreelancerEntity entity = mapper.map(freelancerDto, FreelancerEntity.class);
-		UserEntity user = new UserEntity();
+		UserEntity user = (UserEntity)context.getBean("userEntity");
 		user.setUserName(entity.getEmail());
 		user.setPassword(encoder.encode(freelancerDto.getPassword12()));
 		user.setEnabled(1);
@@ -56,7 +53,7 @@ public class FreelancerService implements IFreelancerService
 		// Insertion of user in users table
 		userdao.addUser(user);
 		//Insertion of Role in user_roles table
-		RoleEntity role = new RoleEntity();
+		RoleEntity role = (RoleEntity)context.getBean("roleEntity");
 		role.setROLE("TPF");
 		role.setUser(user);
 		roledao.setRoleToUser(role);

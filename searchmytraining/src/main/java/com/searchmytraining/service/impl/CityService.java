@@ -16,8 +16,23 @@ public class CityService implements ICityService {
 	public CityDAO citydao;
 	
 	@Override
-	public List<CityEntity> getCities(Integer stateid) {
+	public List<CityEntity> getCities(Long stateid) {
 		return citydao.getCities(stateid);
+	}
+
+	@Override
+	public CityEntity getCity(Integer cityid) {
+		return citydao.getCity(cityid);
+	}
+
+	@Override
+	public CityEntity getCity(String cityname) {
+		return citydao.getCity(cityname);
+	}
+
+	@Override
+	public List<CityEntity> getAllCities() {
+		return citydao.getAllCities();
 	}
 
 }

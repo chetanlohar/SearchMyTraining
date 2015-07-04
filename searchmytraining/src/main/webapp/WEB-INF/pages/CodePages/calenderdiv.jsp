@@ -6,12 +6,31 @@
 <head>
 <script type="text/javascript">
 	$('#calender_show').paging({
-		limit : 2
+		limit : 10
 	});
+</script>
+<script type="text/javascript">
+var trng_id=1;
+function giveLink(url,data)
+{
+	console.log("in giveLink...")
+	$.ajax({
+		  url: "./"+url,
+		  method: "POST",
+		  data: { trngId : trng_id },
+		});
+}
+
+function giveLink1(data)
+{
+	trng_id=data;
+	console.log("in giveLink1...trng_id:"+trng_id)
+}
+
 </script>
 </head>
 <body>
-
+<%@include file="../../pages/CodePages/getContacted.jsp"%>
 
 	
 	<div id="t" class="">
@@ -36,23 +55,24 @@
 						<thead>
 							<tr>
 								<th>Title</th>
+								<th>Location</th>
 								<th>Start Date</th>
-								<th>End Date</th>
 								<th>Price</th>
 								<th>Brochure</th>
-								<th>Description</th>
+								<th>Get Contacted</th>
 							</tr>
 						</thead>
 						<tbody>
 							<c:forEach var="calender2" items="${calendars}">
 								<tr>
 									<td>${calender2.title}</td>
+									<td>${calender2.city.cityName}</td>
 									<td>${calender2.start_date}</td>
-									<td>${calender2.end_date}</td>
 									<td>${calender2.price}</td>
 									<td><a
-										href="<%=request.getContextPath()%>/downloadFile?path=${calender2.brochure}">Brouchure</a></td>
-									<td>${calender2.description}</td>
+										href="./downloadFile?path=${calender2.brochure}">Brouchure</a></td>
+									<td><a class="Get_C" href="javascript:void(0)" onClick="giveLink1(${calender2.trngId})">Get Contacted</a></td>
+									<%-- onClick="giveLink('getContacted',${calender2.trngId})" --%>
 								</tr>
 							</c:forEach>
 						</tbody>

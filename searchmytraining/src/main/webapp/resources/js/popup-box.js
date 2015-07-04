@@ -172,4 +172,15 @@
         });
     });
 })(jQuery);
+/*======================Get Contact=============================*/
+(function($) {
+    $(function() {
+        $('.Get_C').bind('click', function(e) {
+            e.preventDefault();
+            $('#pop_up_box_11').bPopup({
+            } );
+        });
+    });
+})(jQuery);
+
 

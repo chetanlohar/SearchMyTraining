@@ -62,7 +62,7 @@ function saveInstituteDetails(path) {
 		var workingdays = [ "MON", "TUE", "WED", "THU", "FRI", "SAT" ];
 		/* alert($('#org_name').val()+":"+$('#yearofestablishment').val()+":"+$('#training_methodology').val()+":"+$('#hrsofoperations').val()+$('#history').val()); */
 		$.ajax({
-			url : path + '/updateinstitutedetails',
+			url : './updateinstitutedetails',
 			type : 'post',
 			dataType : 'json',
 			data : JSON.stringify({
@@ -84,22 +84,30 @@ function saveInstituteDetails(path) {
 	}
 }
 
-function saveInstituteContactDetails(path) {
-	/*
-	 * alert("in saveInstituteContactDetails phonetypeid:
-	 * "+$('#phonetypeid').val());
-	 */
+function saveInstituteContactDetails() {
+	
+	
 	try {
+		var phonetypes = [];
+		for (i = 1; i <= 5; i++) 
+			if ($('#phonetypeid' + i).val())
+				phonetypes.push($('#phonetypeid' + i).val());
+			
+		var phonevalues = [];
+		for (i = 1; i <= 5; i++)
+			if ($('#institutecontact' + i).val())
+				phonevalues.push($('#institutecontact' + i).val());	
+			
 		$.ajax({
-			url : path + '/updateinstcontactinfo',
+			url : './updatecontactinfo',
 			type : 'post',
 			dataType : 'json',
 			data : JSON.stringify({
 				"email" : $('#email').val(),
-				"website" : $('#website').val(),
+				"website" : $('#institutewebsitename').val(),
 				"contactpersonname" : $('#contactpersonname').val(),
-				"phonetypeid" : $('#phonetypeid').val(),
-				"phone" : $('#phone').val(),
+				"phonetypeid" : phonetypes,
+				"phone" : phonevalues,
 				"userid" : $('#userid').val()
 			}),
 			contentType : "application/json",
@@ -118,7 +126,7 @@ function saveLocationDetails(path) {
 	if (flag) {
 		try {
 			$.ajax({
-				url : path + '/updateinstlocinfo',
+				url : path + '/updatelocinfo',
 				type : 'post',
 				dataType : 'json',
 				data : JSON.stringify({

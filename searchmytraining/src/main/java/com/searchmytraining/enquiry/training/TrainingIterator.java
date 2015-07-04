@@ -13,7 +13,6 @@ import org.apache.lucene.search.suggest.InputIterator;
 import org.apache.lucene.util.BytesRef;
 
 import com.searchmytraining.entity.CalenderEntity;
-import com.searchmytraining.entity.TrainingEntity;
 
 public class TrainingIterator implements InputIterator {
 

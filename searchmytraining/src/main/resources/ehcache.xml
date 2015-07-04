@@ -23,6 +23,14 @@
 	<cache name="cityCache" maxElementsInMemory="1000" eternal="true"
 		overflowToDisk="false" memoryStoreEvictionPolicy="LFU">
 	</cache>
+	
+	<cache name="cityCache1" maxElementsInMemory="1000" eternal="true"
+		overflowToDisk="false" memoryStoreEvictionPolicy="LFU">
+	</cache>
+	
+	<cache name="cityCache2" maxElementsInMemory="1000" eternal="true"
+		overflowToDisk="false" memoryStoreEvictionPolicy="LFU">
+	</cache>
 
 	<cache name="industryCache" maxElementsInMemory="1000" eternal="true"
 		overflowToDisk="false" memoryStoreEvictionPolicy="LFU">
