@@ -48,7 +48,12 @@ public class ContactInfoService implements IContactInfoService {
 			phonedao.insertPhoneDetails(phoneentity);
 		}
 		contactentity.setUser(user);
+		System.out.println(contactentity);
 		contactdao.insertContactInfo(contactentity);
+	}
+	@Override
+	public ContactInfoEntity getContactInfoDetailsByUserId(Long userid) {
+		return contactdao.getContactInfoDetails(userid);
 	}
 
 }

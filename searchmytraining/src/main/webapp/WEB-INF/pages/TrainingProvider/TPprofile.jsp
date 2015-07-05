@@ -66,25 +66,25 @@
 			<form action="#" method="post" id="form1">
 				<div class="name">
 					<label>Institute/Organization Name :</label> <input id="org_name"
-						type="text" name="org_name"	value="${trainerdto.org_name}" /> <span id="error73"></span>
+						type="text" name="org_name"	value="${instituteinfo.companyName}" /> <span id="error73"></span>
 				</div>
 				<div class="name">
 					<label>Year Of Establishment :</label> <input
-						id="yearofestablishment" type="text" name="yearofestablishment" onkeypress="return validate15(event);"/> <span
+						id="yearofestablishment" type="text" name="yearofestablishment" onkeypress="return validate15(event);" value="${instituteinfo.yrofEstablmnt}"/> <span
 						id="error74"></span>
 				</div>
 				<div class="methodology">
 					<label>Training Methodology :</label> <input
-						id="training_methodology" type="text" name="training_methodology" />
+						id="training_methodology" type="text" name="training_methodology" value="${instituteinfo.trngMethodology}"/>
 						<span id="error75"></span>
 				</div>
 				<div class="name">
 					<label>Hours Of Operations :</label> <input id="hrsofoperations"
-						type="text" name="hrsofoperations" /> <span id="error76"></span>
+						type="text" name="hrsofoperations" value="${instituteinfo.hrsOfOpertn}"/> <span id="error76"></span>
 				</div>
 				<div class="history">
 					<label>Organization History :</label>
-					<textarea id="history" name="history"></textarea>
+					<textarea id="history" name="history" >${instituteinfo.historyOfCompany}</textarea>
 				</div>
 				<div class="w-days">
 					<label>Working Days :</label> <input id="sunday" type="checkbox"
@@ -111,17 +111,17 @@
 			<form class="multi" id="ContactDetailsForm">
 				<div class="name">
 					<label>Institute Email:</label> <input id="instituteEmail" type="text"
-						name="instituteEmail" value="${trainerdto.email}">
+						name="instituteEmail" value="${contactinfo.emailId}">
 						<span id="error77"></span>
 				</div>
 				<div class="name">
 					<label>Website:</label> <input id="institutewebsitename"
-						type="text" name="website"> <span id="error78"></span>
+						type="text" name="website" value="${contactinfo.website}"> <span id="error78"></span>
 						<span id="error78"></span>
 				</div>
 				<div class="name">
 					<label>Contact Person Name:</label> <input id="contactpersonname"
-						type="text" name="website" value=""> <span id="error79"></span>
+						type="text" name="website" value="${contactinfo.cntcPersName}"> <span id="error79"></span>
 				</div>
 				<!--<div class="seperate">-->
 				<div id="achiv">
@@ -135,7 +135,8 @@
 							<option value="4">PERSONAL-LANDLINE</option>
 							<option value="5">FAX</option>
 							<option value="6">TOLL FREE</option>
-						</select> <input id="institutecontact1" type="text" name="institutecontact85" onkeypress="return validate15(event)"
+						</select> 
+						<input id="institutecontact1" type="text" name="institutecontact85" onkeypress="return validate15(event)"
 							value="${trainerdto.contact}">
 					<input type="button" value="+" class="addScnt">
 					<input type="hidden" id="rowtot" name="rowtot" value="1">
@@ -244,8 +245,12 @@
 				<div id="association">
 					<p>
 						<label>Association Name :</label> 
-						<input id="assocName1"	type="text" name="assocName86" />
-							<input type="button" class="addAsso" value="+">
+						<c:set var="count" value="1" scope="page" />
+						<c:forEach var="assoc" items="${profassoc}">
+							<input id="assocName${count}" type="text" name="assocName${count}" value="${assoc.assocName}"/><br>
+							<c:set var="count" value="${count+1}" scope="page" />
+						</c:forEach>
+						<input type="button" class="addAsso" value="+">
 					</p>
 					&nbsp;&nbsp;&nbsp;&nbsp;
 				<span id="error86"></span>
@@ -268,8 +273,12 @@
 
 				<div id="client">
 					<p>
-						<label>Key Client Name :</label> <input id="clientName1"
-							type="text" name="clientName87" />
+						<label>Key Client Name :</label> 
+						<c:set var="count" value="1" scope="page" />
+						<c:forEach var="client" items="${clientlist}">
+							<input id="clientName${count}"	type="text" name="clientName${count}" value="${client.clientName}"/><br>
+							<c:set var="count" value="${count+1}" scope="page" />
+						</c:forEach>
 					<input type="button" value="+" class="addClient">
 					</p>
 

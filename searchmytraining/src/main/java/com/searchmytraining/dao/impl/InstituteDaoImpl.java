@@ -15,7 +15,14 @@ public class InstituteDaoImpl extends AbstractJpaDAO<InstituteEntity> implements
 
 	@Override
 	public void updateInstituteDetails(InstituteEntity entity) {
-		create(entity);
+		InstituteEntity institute = getInstituteInfo(entity.getUser().getUserId().longValue());
+		if(institute!=null)
+		{
+			entity.setCompInfoId(institute.getCompInfoId());
+			update(entity);
+		}
+		else
+			create(entity);
 	}
 
 	@Override

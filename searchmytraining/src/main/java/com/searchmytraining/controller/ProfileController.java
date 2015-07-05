@@ -80,11 +80,8 @@ public class ProfileController {
 	@ResponseBody
 	public InstituteDTO updateInstituteDetails(@RequestBody InstituteDTO institutedto)
 	{
-		System.out.println("hey caught by TrainerProfileController.... :-)");
 		System.out.println(institutedto.getUserid());
-		
 		instituteservice.updateInstituteDetails(institutedto);
-		
 		return null;
 		/*return institutedto;*/
 	}

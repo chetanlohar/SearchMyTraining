@@ -2,6 +2,7 @@ package com.searchmytraining.service.impl;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 import org.dozer.DozerBeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -69,8 +70,6 @@ public class InstituteServiceDetails implements IInstituteServiceDetails {
 		entity.setUser(user);
 		institutedao.updateInstituteDetails(entity);
 	}
-	
-	
 
 	@Override
 	@Transactional
@@ -142,6 +141,16 @@ public class InstituteServiceDetails implements IInstituteServiceDetails {
 	@Override
 	public InstituteEntity getInstituteInfo(Long userid) {
 		return institutedao.getInstituteInfo(userid);
+	}
+
+	@Override
+	public List<ProfessionalAssociationEntity> getProfAssocByUserId(Long userid) {
+		return assocdao.getProfAssocByUserId(userid);
+	}
+
+	@Override
+	public List<ClientEntity> getClientDetailsByUserId(Long userid) {
+		return clientdao.getClientDetailsByUserId(userid);
 	}
 
 }

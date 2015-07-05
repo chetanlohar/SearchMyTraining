@@ -103,7 +103,7 @@ function saveInstituteContactDetails() {
 			type : 'post',
 			dataType : 'json',
 			data : JSON.stringify({
-				"email" : $('#email').val(),
+				"email" : $('#instituteEmail').val(),
 				"website" : $('#institutewebsitename').val(),
 				"contactpersonname" : $('#contactpersonname').val(),
 				"phonetypeid" : phonetypes,

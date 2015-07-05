@@ -27,16 +27,20 @@ import com.searchmytraining.dto.FreelancerDTO;
 import com.searchmytraining.dto.TraineeDTO;
 import com.searchmytraining.dto.TrainerDTO;
 import com.searchmytraining.entity.CityEntity;
+import com.searchmytraining.entity.ClientEntity;
+import com.searchmytraining.entity.ContactInfoEntity;
 import com.searchmytraining.entity.EmploymentEntity;
 import com.searchmytraining.entity.IndustryCategoryEntity;
 import com.searchmytraining.entity.IndustrySubCategoryEntity;
 import com.searchmytraining.entity.InstituteEntity;
 import com.searchmytraining.entity.LocationEntity;
+import com.searchmytraining.entity.ProfessionalAssociationEntity;
 import com.searchmytraining.entity.StateEntity;
 import com.searchmytraining.entity.TraineeEntity;
 import com.searchmytraining.entity.TrainerEntity;
 import com.searchmytraining.entity.UserEntity;
 import com.searchmytraining.service.ICityService;
+import com.searchmytraining.service.IContactInfoService;
 import com.searchmytraining.service.ICountryService;
 import com.searchmytraining.service.IEmploymentService;
 import com.searchmytraining.service.IFreelancerService;
@@ -84,6 +88,9 @@ public class RegistrationController {
 	
 	@Autowired
 	public IInstituteServiceDetails instituteservice;
+	
+	@Autowired
+	public IContactInfoService contactinfoservice;
 	
 	@Autowired
 	public ILocationService locservice;
@@ -153,6 +160,19 @@ public class RegistrationController {
 		
 		// Institute Information
 		
+		InstituteEntity instituteinfo = instituteservice.getInstituteInfo(trainer.getUser().getUserId().longValue());
+		if(instituteinfo!=null)
+			model.addAttribute("instituteinfo", instituteinfo);
+		
+		// Contact Inforamtion
+		
+		ContactInfoEntity contactinfo = contactinfoservice.getContactInfoDetailsByUserId(trainer.getUser().getUserId().longValue());
+		
+		if(contactinfo!=null)
+			model.addAttribute("contactinfo", contactinfo);
+		
+		// Location Information
+		
 		LocationEntity location = locservice.findLocDet(trainer.getUser().getUserId());
 		if(location!=null)
 		{
@@ -165,9 +185,18 @@ public class RegistrationController {
 			model.addAttribute("cities",new JSONArray(cities));
 		}
 		
-		InstituteEntity instituteinfo = instituteservice.getInstituteInfo(trainer.getUser().getUserId().longValue());
-		if(instituteinfo!=null)
-			model.addAttribute("instituteinfo", instituteinfo);
+		// Professional Association
+		
+		List<ProfessionalAssociationEntity> profassoc = instituteservice.getProfAssocByUserId(trainer.getUser().getUserId().longValue());
+		if(profassoc!=null)
+			model.addAttribute("profassoc", profassoc);
+		
+		// Key Client Details
+		
+		List<ClientEntity> clientlist = instituteservice.getClientDetailsByUserId(trainer.getUser().getUserId().longValue());
+		if(clientlist!=null)
+			model.addAttribute("clientlist", clientlist);
+		
 		model.addAttribute("countries",countryservice.getAllCountries());
 		return "pages/TrainingProvider/TPprofile";
 	}
