@@ -44,7 +44,15 @@ public class LocationInfoDAO extends AbstractJpaDAO<LocationEntity> implements I
 		entitymanager = getEntityManager();
 		TypedQuery<LocationEntity> typedquery = entitymanager.createQuery(query, LocationEntity.class);
 		typedquery.setParameter(1, userid);
-		LocationEntity locEntity = typedquery.getSingleResult();
-		return locEntity;
+		try
+		{
+			LocationEntity locEntity = typedquery.getSingleResult();
+			return locEntity;
+		}
+		catch(NoResultException e)
+		{
+			System.out.println("User Location is not available...");
+			return null;
+		}
 	}
 }

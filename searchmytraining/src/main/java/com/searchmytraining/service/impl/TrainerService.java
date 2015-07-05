@@ -9,7 +9,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 import com.searchmytraining.dao.RoleDAO;
 import com.searchmytraining.dao.StatusDAO;
-import com.searchmytraining.dao.TrainerRegistrationDAO;
+import com.searchmytraining.dao.TrainerDAO;
 import com.searchmytraining.dao.UserDAO;
 import com.searchmytraining.dto.TrainerDTO;
 import com.searchmytraining.entity.RoleEntity;
@@ -25,7 +25,7 @@ import com.searchmytraining.service.ITrainerService;
 	public WebApplicationContext context; 
 	
 	@Autowired
-	public TrainerRegistrationDAO regdao;
+	public TrainerDAO regdao;
 	@Autowired
 	public DozerBeanMapper mapper;
 	@Autowired
@@ -58,5 +58,12 @@ import com.searchmytraining.service.ITrainerService;
 		regdao.registerTrainer(entity);
 		return userdao.getMaxUserId("userId");
 	}
-
+	@Override
+	public TrainerEntity getTrainer(Long id) {
+		return regdao.getTrainer(id);
+	}
+	@Override
+	public TrainerEntity getTrainerByUserid(Long userid) {
+		return regdao.getTrainerByUserid(userid);
+	}
 }

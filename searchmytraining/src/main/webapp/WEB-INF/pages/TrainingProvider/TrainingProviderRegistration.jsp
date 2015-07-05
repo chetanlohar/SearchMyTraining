@@ -12,11 +12,88 @@
 <script src="<%=request.getContextPath()%>/resources/js/pop-up.js"></script>
 <script src="<%=request.getContextPath()%>/resources/js/popup-box.js"></script>
 <script src="<%=request.getContextPath()%>/resources/js/Validations/Rvalidation.js"></script>
-
-</head>
 <script type="text/javascript">
-	
+function trainerRegistration(path) {
+	if (validation(path)) {
+		try {
+			$
+					.ajax({
+						url : './trainingprovider_reg',
+						type : 'post',
+						dataType : 'json',
+						data : JSON.stringify({
+							"org_name" : $('#org_name').val(),
+							"city" : $('#cityid').val(),
+							"contact" : $('#contact1').val(),
+							"email" : $('#email1').val(),
+							"password" : $('#password').val(),
+							"cnfpassword" : $('#cnfpassword').val()
+						}),
+						contentType : "application/json",
+						success : function(response) {
+							/* alert(response.validation_error); */
+							if (response.errorMsg) {
+
+								$.map(response.errorMsg, function(val, key) {
+									if (key == "org_name")
+										$('#error1').text(val);
+									else if (key == "city")
+										$('#error2').text(val);
+									else if (key == "contact")
+										$('#error3').text(val);
+									else if (key == "email")
+										$('#error4').text(val);
+									else if (key == "password")
+										$('#error5').text(val);
+									else if (key == "cnfpassword")
+										$('#error6').text(val);
+								});
+
+							} else {
+								alert("Thank you for Your Registration, Please Update Your Profile: SMT");
+								doLogin(path);
+								/*window.location.href = path	+ "/trainingprovider_updateprofile";*/
+							}
+
+						}
+					});
+		} catch (ex) {
+
+			alert(ex);
+		}
+	}
+}
+
+function doLogin(path)
+{
+	console.log("in doLogin()... :-)");
+	var username = $('#email1').val();
+	var credentials = {username:$('#email1').val(),password:$('#password').val()};
+	$.ajax({
+		url : "${ctx}/searchmytraining/j_spring_security_check",
+		type : "POST",
+		//contentType : "application/json",
+		beforeSend : function(xhr) {
+			xhr.withCredentials = true;
+		},
+		data : credentials,
+		success : function(data, status) {
+			if (data != null) {
+				if (data.success == false) {
+					$('#auth_error_mesg').html(data.message);
+					$("#auth_error_div").show();
+				} else if (data.success == true) {
+					console.log("in j_spring_security_check success");
+					/* location.href = path + data.page; */
+					location.href = "${ctx}/searchmytraining" + data.page+"?username="+username;
+				}
+			}
+		},
+		error : loginFailed
+	});
+}
 </script>
+</head>
 
 <body onload="randString(5);">
 	<div id="pop_up_box_4">

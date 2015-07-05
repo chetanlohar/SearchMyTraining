@@ -134,9 +134,9 @@ function saveLocationDetails(path) {
 					"street" : $('#street82').val(),
 					"landmark" : $('#landmark83').val(),
 					"pincode" : $('#instituteLocPincode').val(),
-					"country" : $('#tpcountry').val(),
-					"state" : $('#tpstate').val(),
-					"city" : $('#tpcity').val(),
+					"country" : $('#countryid').val(),
+					"state" : $('#stateid').val(),
+					"city" : $('#cityid').val(),
 					"userid" : $('#userid').val()
 				}),
 				contentType : "application/json",

@@ -12,7 +12,7 @@
 	src="<%=request.getContextPath()%>/resources/js/Validations/TraineeProfile.js"></script>
 <script	src="<%=request.getContextPath()%>/resources/js/work/categories.js"></script>
 <script	src="<%=request.getContextPath()%>/resources/js/work/InstituteJS.js"></script>
-<script	src="<%=request.getContextPath()%>/resources/js/work/updatetraineeprofile.js"></script>
+<script	src="./resources/js/work/updatetraineeprofile.js"></script>
 <script type="text/javascript">
 jQuery(document).ready(function () {
   

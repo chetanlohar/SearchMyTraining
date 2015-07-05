@@ -6,4 +6,5 @@ public interface InstituteDAO {
 	
 	public void updateInstituteDetails(InstituteEntity entity);
 	public Integer getMaxUserId(String idcolumn);
+	public InstituteEntity getInstituteInfo(Long userid);
 }

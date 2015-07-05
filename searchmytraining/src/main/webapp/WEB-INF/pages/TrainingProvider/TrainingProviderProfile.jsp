@@ -78,7 +78,7 @@ function displaybox(val) {
 <script type="text/javascript">
 function FPload() {
 	<%-- $("#home-content").load("<%=request.getContextPath()%>/resources/pages/TrainingProvider/TPprofile.jsp?user='chetan'", function(responseText, statusText, xhr) --%>
-	$("#home-content").load("<%=request.getContextPath()%>/trainerprofile", function(responseText, statusText, xhr)
+	$("#home-content").load("./trainerprofile", function(responseText, statusText, xhr)
 	        {
 	                if(statusText == "success")
 	                        /* alert("Successfully loaded the content!"); */
@@ -90,7 +90,7 @@ function FPload() {
 
 
 function TCload() {
-	$("#home-content").load("<%=request.getContextPath()%>/TPcalender", function(responseText, statusText, xhr)
+	$("#home-content").load("./TPcalender", function(responseText, statusText, xhr)
 	        {
 	                if(statusText == "success")
 	                        /* alert("Successfully loaded the content!"); */
@@ -102,7 +102,7 @@ function TCload() {
 
 
 function TSload() {
-	$("#home-content").load("<%=request.getContextPath()%>/resources/pages/TrainingProvider/TPsetting.jsp", function(responseText, statusText, xhr)
+	$("#home-content").load("./resources/pages/TrainingProvider/TPsetting.jsp", function(responseText, statusText, xhr)
 	        {
 	                if(statusText == "success")
 	                        /* alert("Successfully loaded the content!"); */
@@ -114,7 +114,7 @@ function TSload() {
 
 
 function TIload() {
-	$("#home-content").load("<%=request.getContextPath()%>/resources/pages/TrainingProvider/Insights.jsp", function(responseText, statusText, xhr)
+	$("#home-content").load("./resources/pages/TrainingProvider/Insights.jsp", function(responseText, statusText, xhr)
 			
 	        {
 	                if(statusText == "success")

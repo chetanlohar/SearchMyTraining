@@ -139,5 +139,9 @@ public class InstituteServiceDetails implements IInstituteServiceDetails {
 		}
 		
 	}
+	@Override
+	public InstituteEntity getInstituteInfo(Long userid) {
+		return institutedao.getInstituteInfo(userid);
+	}
 
 }

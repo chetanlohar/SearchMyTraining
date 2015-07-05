@@ -15,6 +15,7 @@
 	src="<%=request.getContextPath()%>/resources/js/Validations/TrainingProProfile.js"></script>
 
 <script type="text/javascript" src="./resources/js/work/categories.js"></script>
+<script	src="<%=request.getContextPath()%>/resources/js/work/updatetrainerprofile.js"></script>
 <script type="text/javascript">
 	jQuery(document).ready(
 			function() {
@@ -34,6 +35,15 @@
 										$nextContent.show()
 									});
 						});
+				var jsonstates = '${states}';
+			 	var jsoncities = '${cities}';
+			 	var states = $.parseJSON(jsonstates);
+			 	var cities = $.parseJSON(jsoncities);
+			 	var country_value = '${location.city.state.country.countryId}';
+			 	var state_value = '${location.city.state.stateId}';
+			 	var city_value = '${location.city.cityId}';
+			 	loadLocationInfo(states,cities,state_value,city_value);
+				
 			});
 </script>
 
@@ -47,7 +57,7 @@
 
 </head>
 <body>
-	<input id="userid" type="hidden" name="userid" value="${userid}">
+	<input id="userid" type="hidden" name="userid" value="${trainer.user.userId}">
 	<div id="acord1" class="acord">
 		<h3 class="acord_head plus">
 		<span></span>
@@ -147,22 +157,22 @@
 			<form action="#">
 				<div class="name">
 					<label>Building No./Flat No./Society No. :</label> <input
-						id="bldng_flatno" type="text" name="bldng_flatno" />
+						id="bldng_flatno" type="text" name="bldng_flatno" value="${location.buildingNo}"/>
 						<span id="error81"></span>
 				</div>
 				<div class="street">
 					<label>Street :</label> <input id="street82" type="text"
-						name="street82" />
+						name="street82" value="${location.street}"/>
 						<span id="error82"></span>
 				</div>
 				<div class="land">
 					<label>Landmark :</label> <input id="landmark83" type="text"
-						name="landmark83" />
+						name="landmark83" value="${location.landmark}"/>
 						<span id="error83"></span>
 				</div>
 				<div class="pin">
 					<label>Pincode :</label> <input id="instituteLocPincode"
-						type="text" name="instituteLocPincode" onkeypress="return validate15(event)"/>
+						type="text" name="instituteLocPincode" onkeypress="return validate15(event)" value="${location.pincode}"/>
 						 <span id="error84"></span>
 				</div>
 				<div class="country">
@@ -170,7 +180,15 @@
 					<select id="countryid" onchange="getStates();">
 						<option value="0">--Select--</option>
 						<c:forEach var="country" items="${countries}">
-							<option value="${country.countryId}">${country.countryName}</option>
+							<c:choose>
+								<c:when test="${country_value == country.countryId}">
+									<option value="${country.countryId}" selected>${country.countryName}</option>
+								</c:when>
+								<c:otherwise>
+									<option value="${country.countryId}">${country.countryName}</option>
+								</c:otherwise>
+							</c:choose>
+							
 						</c:forEach>
 					</select>
 				</div>
@@ -251,6 +269,25 @@
 				<div id="client">
 					<p>
 						<label>Key Client Name :</label> <input id="clientName1"
+							type="text" name="clientName87" />
+					<input type="button" value="+" class="addClient">
+					</p>
+
+					&nbsp;&nbsp;&nbsp;
+					<span id="error87"></span>
+				</div>
+			</form>
+			<input  type="button" value="Save & Continue" form="clientdetailsform"
+				onclick="saveKeyClients('<%=request.getContextPath()%>');trainingProValidate4();" />
+		</div>
+		<h3 class="acord_head">
+		<span></span>
+		Industry Type</h3>
+		<div class="acord_cont">
+			<form id="clientdetailsform" class="multi" method="post">
+				<div id="client">
+					<p>
+						<label>Industry Type</label> <input id="clientName1"
 							type="text" name="clientName87" />
 					<input type="button" value="+" class="addClient">
 					</p>
