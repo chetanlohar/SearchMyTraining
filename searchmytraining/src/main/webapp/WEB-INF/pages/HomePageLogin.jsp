@@ -41,7 +41,7 @@
 				<div class="p-container">
 					<label class="checkbox"><input type="checkbox"
 						name="rememberMe" checked><i></i>Remember Me</label> <a
-						href="<%=request.getContextPath()%>/ForgotPass">Forgot
+						href="<%=request.getContextPath()%>/pm/fp">Forgot
 						Password??</a>
 					<div class="clear"></div>
 				</div>
