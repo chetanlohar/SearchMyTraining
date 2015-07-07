@@ -109,15 +109,22 @@ public class InstituteServiceDetails implements IInstituteServiceDetails {
 	@Override
 	@Transactional
 	public void updateProfessionalAssociations(ProfessionalAssociationDTO associationdto) {
-		
 		UserEntity user = userdao.getUser(associationdto.getUserid()); // Getting required User
 		ArrayList<String> associationNames = associationdto.getAssocName();
-		Iterator<String> i = associationNames.iterator();
-		while(i.hasNext())
+		ArrayList<Integer> assocIds = associationdto.getAssocIds();
+		System.out.println("assocIds size: "+assocIds.size());
+		Iterator<Integer> i = assocIds.iterator();
+		for(String assocName:associationNames)
 		{
 			ProfessionalAssociationEntity profentity_new = (ProfessionalAssociationEntity)context.getBean("professionalAssociationEntity");
 			profentity_new.setUser(user);
-			profentity_new.setAssocName(i.next());
+			if(i.hasNext())
+			{
+				profentity_new.setAsscoId(i.next());
+				profentity_new.setAssocName(assocName);
+			}
+			else
+				profentity_new.setAssocName(assocName);
 			assocdao.addAssociation(profentity_new);  // insertion of Professional Association
 		}
 	}
@@ -127,13 +134,17 @@ public class InstituteServiceDetails implements IInstituteServiceDetails {
 	public void updateClientDetails(ClientDetailsDTO clientdetailsdto) {
 
 		UserEntity user = userdao.getUser(clientdetailsdto.getUserid());
-		ArrayList<String> clientNames = clientdetailsdto.getClientName();
-		Iterator<String> i = clientNames.iterator();
-		while(i.hasNext())
+		System.out.println("client id size: "+clientdetailsdto.getClientIds().size());
+		List<String> clientNames = clientdetailsdto.getClientName();
+		List<Integer> clientids = clientdetailsdto.getClientIds();
+		Iterator<Integer> i = clientids.iterator();
+		for(String clientname:clientNames)
 		{
 			ClientEntity cliententity = (ClientEntity)context.getBean("clientEntity");
 			cliententity.setUser(user);
-			cliententity.setClientName(i.next());
+			if(i.hasNext())
+				cliententity.setKeyClientId(i.next());
+			cliententity.setClientName(clientname);
 			clientdao.addClientDetails(cliententity); // Insertion of Client Details
 		}
 		

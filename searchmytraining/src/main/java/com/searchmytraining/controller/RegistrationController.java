@@ -1,5 +1,6 @@
 package com.searchmytraining.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -134,7 +135,7 @@ public class RegistrationController {
 		} else {
 			response1.setValidation_error(false);
 			this.trainerdto1 = trainerdto;
-			userid = trainerservice.registerTrainer(trainerdto);
+			Integer userid = trainerservice.registerTrainer(trainerdto);
 			session.setAttribute("userid",userid);
 		}
 		return response1;
@@ -190,12 +191,26 @@ public class RegistrationController {
 		List<ProfessionalAssociationEntity> profassoc = instituteservice.getProfAssocByUserId(trainer.getUser().getUserId().longValue());
 		if(profassoc!=null)
 			model.addAttribute("profassoc", profassoc);
-		
+		else
+		{
+			ProfessionalAssociationEntity profentity = new ProfessionalAssociationEntity();
+			profassoc = new ArrayList<ProfessionalAssociationEntity>();
+			profassoc.add(profentity);
+			model.addAttribute("profassoc", profassoc);
+		}
+			
 		// Key Client Details
 		
 		List<ClientEntity> clientlist = instituteservice.getClientDetailsByUserId(trainer.getUser().getUserId().longValue());
 		if(clientlist!=null)
 			model.addAttribute("clientlist", clientlist);
+		else
+		{
+			ClientEntity client = new ClientEntity();
+			clientlist = new ArrayList<ClientEntity>();
+			clientlist.add(client);
+			model.addAttribute("clientlist", clientlist);
+		}
 		
 		model.addAttribute("countries",countryservice.getAllCountries());
 		return "pages/TrainingProvider/TPprofile";
@@ -207,24 +222,38 @@ public class RegistrationController {
 	public FreelancerDTO freelaancerRegistration(
 			@RequestBody FreelancerDTO freelancerDto,HttpSession session) throws Exception {
 		
-		this.freelancerDto1 = freelancerDto;
-		userid = freelancerservice.registerFreelancer(freelancerDto);
-		session.setAttribute("userid", userid);
+		Integer userid = freelancerservice.registerFreelancer(freelancerDto);
+		UserEntity user = userservice.getUser(userid);
+		session.setAttribute("user", user);
 		return freelancerDto;
-		
-
 	}
 
-	@RequestMapping("/freelancer_updateprofile")
-	public String freelancerProfileMapping(ModelMap model) {
-		model.addAttribute("freelancerDto", this.freelancerDto1);
+	@RequestMapping(value="/freelancer_updateprofile", method=RequestMethod.POST)
+	public String freelancerProfileMapping(@RequestParam String username,ModelMap model) {
+		System.out.println("FL username: "+username);
 		return "pages/FreeLancer/FreeLancerProfile";
 	}
 
 	@RequestMapping("/FLprofile")
 	public String freeLancerProfile(ModelMap model, HttpSession session) {
-		System.out.println("from /Flprofile userid: "+session.getAttribute("userid"));
-		model.addAttribute("freelancerDto", this.freelancerDto1);
+		UserEntity user = (UserEntity) session.getAttribute("user");
+		System.out.println("from /Flprofile userid: "+user.getUserId());
+		
+		// Location Information
+		
+				LocationEntity location = locservice.findLocDet(trainer.getUser().getUserId());
+				if(location!=null)
+				{
+					List<StateEntity> states = stateservice.getStates(location.getCity().getState().getCountry().getCountryId());
+					List<CityEntity> cities = cityservice.getCities(location.getCity().getState().getStateId());
+					Long country_value = location.getCity().getState().getCountry().getCountryId();
+					model.addAttribute("country_value",country_value);
+					model.addAttribute("location", location);
+					model.addAttribute("states",new JSONArray(states));
+					model.addAttribute("cities",new JSONArray(cities));
+				}
+		
+		
 		model.addAttribute("countries",countryservice.getAllCountries());
 		return "pages/FreeLancer/FLprofile";
 	}

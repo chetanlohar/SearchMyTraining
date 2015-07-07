@@ -87,6 +87,9 @@
 							loadHTML(data);
 						}); */
 						location.href = "${ctx}/searchmytraining" + data.page+"?username="+username;
+						/* $('#url').val(username);
+						$("#loginformhidden").attr("action", "${ctx}/searchmytraining" + data.page);
+						$('#loginformhidden').submit(); */
 					}
 				}
 			},
@@ -109,4 +112,7 @@
 			});
 	}
 </script>
+<form id="loginformhidden" style="display: hidden" method="POST">
+  <input type="hidden" id="url" name="username" value=""/>
+</form>
 </html>

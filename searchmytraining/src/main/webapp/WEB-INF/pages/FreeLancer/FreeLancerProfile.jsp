@@ -148,7 +148,7 @@ function FLSload() {
 				<ul id="sidemenu">
 					<li><a href="" onclick="FLPload();" class="open"><strong>Profile</strong></a>
 					</li>
-					<li><a href="" onclick="FLCload()"><strong>Calender</strong></a></li>
+					<!-- <li><a href="" onclick="FLCload()"><strong>Calender</strong></a></li> -->
 					<li><a href="" onclick="FSIload();"><strong>Insights</strong></a></li>
 
 					<li><a href="" onclick="FLSload();"><strong>Settings</strong></a></li>

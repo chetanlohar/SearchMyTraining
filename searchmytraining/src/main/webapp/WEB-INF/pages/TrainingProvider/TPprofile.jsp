@@ -5,6 +5,7 @@
 <%@page
 	import="com.searchmytraining.dto.TrainerDTO,com.searchmytraining.entity.UserEntity"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -245,9 +246,12 @@
 				<div id="association">
 					<p>
 						<label>Association Name :</label> 
+						<input id="assocNameSize" type="hidden" value="${fn:length(profassoc)}"/>
 						<c:set var="count" value="1" scope="page" />
 						<c:forEach var="assoc" items="${profassoc}">
-							<input id="assocName${count}" type="text" name="assocName${count}" value="${assoc.assocName}"/><br>
+							<input id="assocName${count}" type="text" name="assocName${count}" value="${assoc.assocName}"/>
+							<input id="profassocid${count}" type="hidden" name="profassocid${count}" value="${assoc.asscoId}"/>
+							<%-- <a href="#" id="remScnt${count}" class="remScnt"> <img style="margin-left:5px;margin-top:5px;float:left;" src="resources/images/Cancel-128.png"></a> --%>
 							<c:set var="count" value="${count+1}" scope="page" />
 						</c:forEach>
 						<input type="button" class="addAsso" value="+">
@@ -274,14 +278,15 @@
 				<div id="client">
 					<p>
 						<label>Key Client Name :</label> 
-						<c:set var="count" value="1" scope="page" />
+						<input id="clientSize" type="hidden" value="${fn:length(clientlist)}"/>
+						<c:set var="count_client" value="1" scope="page" />
 						<c:forEach var="client" items="${clientlist}">
-							<input id="clientName${count}"	type="text" name="clientName${count}" value="${client.clientName}"/><br>
-							<c:set var="count" value="${count+1}" scope="page" />
+							<input id="clientName${count_client}"	type="text" name="clientName${count_client}" value="${client.clientName}"/>
+							<input id="clientid${count_client}" type="hidden" name="clientid${count_client}" value="${client.keyClientId}"/>
+							<c:set var="count_client" value="${count_client+1}" scope="page" />
 						</c:forEach>
 					<input type="button" value="+" class="addClient">
 					</p>
-
 					&nbsp;&nbsp;&nbsp;
 					<span id="error87"></span>
 				</div>

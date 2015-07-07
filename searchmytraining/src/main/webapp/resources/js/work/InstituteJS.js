@@ -153,16 +153,23 @@ function saveLocationDetails(path) {
 function saveProfessionalAssociations(path) {
 	try {
 		var associationnames = [];
+		var associationids = [];
 		for (i = 1; i <= 5; i++) {
 			if ($('#assocName' + i).val())
 				associationnames.push($('#assocName' + i).val());
 		}
+		for (i = 1; i <= 5; i++) {
+			if ($('#profassocid' + i).val())
+				associationids.push($('#profassocid' + i).val());
+		}
+		console.log("associationids: "+associationids)
 		$.ajax({
 			url : path + '/updateassociationinfo',
 			type : 'post',
 			dataType : 'json',
 			data : JSON.stringify({
 				"assocName" : associationnames,
+				"assocIds" : associationids,
 				"userid" : $('#userid').val()
 			}),
 			contentType : "application/json",
@@ -176,20 +183,25 @@ function saveProfessionalAssociations(path) {
 }
 
 function saveKeyClients(path) {
-	alert("in saveKeyClients()...");
 	try {
 		var clientnames = [];
+		var clientIds = [];
 		for (i = 1; i <= 5; i++) {
 			if ($('#clientName' + i).val())
 				clientnames.push($('#clientName' + i).val());
 		}
-		alert(clientnames);
+		for (i = 1; i <= 5; i++) {
+			if ($('#clientid' + i).val())
+				clientIds.push($('#clientid' + i).val());
+		}
+		console.log("clientIds: "+clientIds);
 		$.ajax({
 			url : path + '/updateclientdetails',
 			type : 'post',
 			dataType : 'json',
 			data : JSON.stringify({
 				"clientName" : clientnames,
+				"clientIds" : clientIds,
 				"userid" : $('#userid').val()
 			}),
 			contentType : "application/json",

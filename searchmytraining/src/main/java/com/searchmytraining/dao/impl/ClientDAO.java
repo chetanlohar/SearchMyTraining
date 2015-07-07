@@ -11,14 +11,16 @@ import org.springframework.stereotype.Repository;
 import com.searchmytraining.dao.AbstractJpaDAO;
 import com.searchmytraining.dao.IClientDAO;
 import com.searchmytraining.entity.ClientEntity;
-import com.searchmytraining.entity.ProfessionalAssociationEntity;
 
 @Repository
 public class ClientDAO extends AbstractJpaDAO<ClientEntity> implements IClientDAO {
 
 	@Override
 	public void addClientDetails(ClientEntity entity) {
-		create(entity);
+		if(entity!=null)
+			update(entity);
+		else
+			create(entity);
 	}
 
 	@Override
@@ -29,12 +31,13 @@ public class ClientDAO extends AbstractJpaDAO<ClientEntity> implements IClientDA
 		try{
 			typedquery.setParameter(1, userid.intValue());
 			List<ClientEntity> clientlist = typedquery.getResultList();
-			return clientlist;
+			if(clientlist.size()!=0)
+				return clientlist;
 		}
 		catch(NoResultException e)
 		{
 			System.out.println(e.getMessage()+"\nContact Info is not Available");
-			return null;
 		}
+		return null;
 	}
 }
