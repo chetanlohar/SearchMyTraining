@@ -1799,7 +1799,7 @@ width
 }
 
 .p-container  .checkbox input+i:after {
-	position: absolute;
+	position: initial;
 	opacity: 0;
 	transition: opacity 0.1s;
 	-o-transition: opacity 0.1s;

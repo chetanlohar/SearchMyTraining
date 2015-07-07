@@ -121,6 +121,10 @@ public class MyController {
 	public String Contact() {
 		return "pages/InternalPages/ContactUs";
 	}
+	@RequestMapping("/Team")
+	public String Team() {
+		return "pages/InternalPages/MeetOurTeam";
+	}
 
 	@RequestMapping("/AdvSearch")
 	public String Advanc() {

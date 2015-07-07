@@ -54,7 +54,7 @@ strong { font-weight: bold; }
 table { border-collapse: collapse; border-spacing: 0; }
 img { border: 0; max-width: 100%; }
 
-
+/* 
 p {
   font-size: 1.4em;
   line-height: 1.25em;
@@ -62,7 +62,7 @@ p {
   font-weight: normal;
   margin-bottom: 10px;
   float: left;
-}
+} */
 
 /*a { color: #8dadd8; }
 a:hover { color: #7299cf; }*/

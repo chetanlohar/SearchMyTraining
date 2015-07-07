@@ -385,12 +385,7 @@ transform
 	margin-left: -10px;
 }
 
-#cssmenu>ul>li:nth-child(6):hover:after, #cssmenu>ul>li:nth-child(7):hover:after
-	{
-	border-left: none;
-	border-right: none;
-	border-bottom: none
-}
+
 
 #cssmenu>ul>li.active>a {
 	color: #ffffff;

@@ -27,6 +27,22 @@
 			$('.header').removeClass('fixed_header');
 		}
 	});
+
+		  function randString(x){
+	             
+         	 var text = " ";
+
+         	    var charset = "QWERTYUIOPASDFGHJKLZXCVBNMabcdefghijklmnopqrstuvwxyz0123456789";
+
+         	    for( var i=0; i < x; i++ )
+         	        text += charset.charAt(Math.floor(Math.random() * charset.length));
+         	    
+                    $(".Ccode").html(text);
+         	
+         		
+         	}
+		
+	
 </script>
 </head>
 
@@ -39,7 +55,7 @@
 				<div class="form_container ">
 					<h1>Sign In</h1>
 					
-					<div class="msg">
+				
 					<c:if test="${'true' eq param.logout}">
 						<div style="color: blue">
 							Logout successful!!!<br />
@@ -53,7 +69,7 @@
 						</div>
 					</c:if>
 					
-					</div>
+					
 					<form action="#">
 						<div class="user">
 							<input type="text" name="username"
@@ -65,7 +81,7 @@
 						</div>
 
 						<div class="submit">
-							<input type="submit" value="Sign In"> <a href="#">Forgot
+							<input type="submit" value="Sign In"> <a href="<%=request.getContextPath()%>/ForgotPass">Forgot
 								Password ?</a>
 
 						</div>

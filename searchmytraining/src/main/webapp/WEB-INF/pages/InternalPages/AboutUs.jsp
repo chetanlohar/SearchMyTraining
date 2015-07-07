@@ -23,20 +23,53 @@
 	<div id="main">
 		<div class="about_banner">
 			<img alt="banner"
-				src="<%=request.getContextPath()%>/resources/images/about.jpg">
+				src="<%=request.getContextPath()%>/resources/images/aboutus.jpg">
 		</div>
 		<div class="clear"></div>
 		<div class="about">
-			<div class="left"></div>
+			<div class="left">
+				<div class="Service">
+					<h1>OUR FEATURES</h1>
+					<p>Search All Type Training</p>
+					<p>Find Nearest Training Center</p>
+					<p>Search All Type Training</p>
+					<p>Search All Type Training</p>
+
+
+				</div>
+				<div class="testimonial">
+					<h1>TESTIMONIALS</h1>
+					<blockquote class="testo">
+						<p>Softinfology Is The Leading Company In IT Industry.We Are
+							The Master In All Technology</p>
+
+					</blockquote>
+					<p class="author">Prashant Maskar</p>
+				</div>
+
+			</div>
 			<div class="right">
-			<div class="title">
-			<h1>Our Story</h1>
+				<div class="title">
+					<h1>What We Do...</h1>
+				</div>
+				<p>Search My Training is founded by a group of likeminded young
+					professionals in the year January 2015. Much before they built
+					their website they realized the need of the industry and
+					learners.The team of SearchMyTraining strongly believes that
+					everyone should get chance to participate the learning programmes
+					of their choice to enhance and develop their qualities which
+					support themself for their personal and professional career.</p>
+				<p>Learning agility of an trainee should not go waste and
+					training providers should get the chance to share their knowledge
+					with rest of the world. Like other popular web portals which
+					provides you best services, SearchMyTraining.com saves time and
+					provides better quality results in comparison to traditional
+					training search method.</p>
+				<p>We are helping to instructor led and onsite training for
+					individuals and helping individuals to find their choice of
+					training through searchmytraining.com</p>
 			</div>
-			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-			</div>
-			
+
 		</div>
 	</div>
 	<%@include file="../../layouts/footer.jsp"%>
