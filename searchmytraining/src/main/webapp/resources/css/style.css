@@ -536,7 +536,7 @@ background: #FFFFFF;
 }
 /*========================Media Query for section bar=================================*/
 
-@media  screen and (max-width: 1400px){
+@media  screen and (max-width: 1366px){
 	
 	
 	.search_wrapar .citi-box{
@@ -623,9 +623,7 @@ background: #FFFFFF;
     opacity: 0.8;
    
 }
-	
-	
-	
+
 }
 
 
@@ -1095,6 +1093,11 @@ background: #FFFFFF;
     font-size: 13px;
    
 }
+
+	
+}
+
+
 
 
 /* =====================================for Android Device===================================================== */

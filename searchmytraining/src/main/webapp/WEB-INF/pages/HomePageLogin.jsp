@@ -10,10 +10,27 @@
 	type="text/css">
 <script src="<%=request.getContextPath()%>/resources/js/pop-up.js"></script>
 <script src="<%=request.getContextPath()%>/resources/js/popup-box.js"></script>
-
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#forgetpasslinkid").click(function(e){
+		var email = $('#emailid').val();
+		$('#formemailid').val(email);
+		var email1 = $('#formemailid').val();
+		if(email == ""){
+			$("#emailid").focus();
+			$("#auth_error_div_emailreq").html('Email Id Required');
+		}
+		else
+			$("#hiddenform").submit();
+		});
+});
+</script>
 </head>
 
 <body>
+<form id="hiddenform" action="./forgotpass" method="POST">
+	<input id="formemailid" type="hidden" name="username"/>
+</form>
 	<div id="pop_up_box_5">
 		<a class="b-close"><img
 			src="<%=request.getContextPath()%>/resources/images/images.png"></a>
@@ -29,6 +46,11 @@
 					Your login attempt was not successful, try again. Caused : <span
 						class="error_msg_auth" id="auth_error_mesg"></span>
 				</div>
+				
+				<div class="errormsg">
+				<span
+						class="error_msg_auth" id="auth_error_div_emailreq"></span>
+				</div>
 
 				<div class="mailto">
 					<input id="emailid" type="email" autocomplete="off" name="username"
@@ -39,9 +61,9 @@
 						placeholder="Enter Password" required="">
 				</div>
 				<div class="p-container">
-					<label class="checkbox"><input type="checkbox"
-						name="rememberMe" checked><i></i>Remember Me</label> <a
-						href="<%=request.getContextPath()%>/ForgotPass">Forgot
+					<input type="checkbox" id="test2" checked="checked" />
+                       <label for="test2">Remember Me</label>
+                        <a id="forgetpasslinkid" href="#">Forgot
 						Password??</a>
 					<div class="clear"></div>
 				</div>

@@ -27,7 +27,7 @@ body {
 
 .calender form label.a {
 	float: left;
-	font-family: calibri !important;
+	font-family: arial !important;
 	font-size: 16px !important;
 	width: 300px;
 	text-align: right;
@@ -84,7 +84,7 @@ input[type="text"]:FOCUS, input[type="text"]:HOVER {
 }
 
 .calender .date-range text {
-	font-family: calibri;
+	font-family: arial;
 	font-size: 16px;
 	margin-left: 10px;
 	line-height: 30px;
@@ -183,7 +183,7 @@ input[type="button"]:HOVER {
 .calender .result_section .calender_display div h3 {
 	font-size: 20px;
 	width: 30%;
-	font-family: calibri;
+	font-family: arial;
 	float: left;
 	line-height: 22px;
 	margin: 30px 0px 0px 30px;
@@ -229,7 +229,7 @@ input[type="button"]:HOVER {
 
 .Advertise .look_up label {
 	float: left;
-	font-family: calibri !important;
+	font-family: arial !important;
 	font-size: 18px;
 	width: 300px;
 	text-align: right;
@@ -438,7 +438,7 @@ ul.switch li.on a, ul.switch1 li.on1 a, ul.switch2 li.on2 a {
 .contents div h3 {
 	font-size: 20px;
 	width: 30%;
-	font-family: calibri;
+	font-family: arial;
 	float: left;
 	line-height: 22px;
 	margin: 30px 0px 0px 30px;

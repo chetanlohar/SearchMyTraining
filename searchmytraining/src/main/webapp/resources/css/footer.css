@@ -52,7 +52,7 @@ footer .foot_nav ul {
 	margin-left: 110px;
 	margin-top: 35px;
 	color: #fff;
-	font-family: calibri;
+	font-family: arial;
 }
 
 footer .foot_nav ul li {
@@ -78,7 +78,7 @@ footer .foot_nav ul li h4 {
 	color: #0194F6;
 	color: #0fa1e0;
 	font-size: 21px;
-	font-family: calibri;
+	font-family: arial;
 }
 
 footer .foot_nav ul li a:hover {
@@ -144,7 +144,7 @@ footer .foot_nav .social_icon h3 {
 	margin-left: 130px;
 	color: #ffffff;
 	font-size: 21px;
-	font-family: calibri;
+	font-family: arial;
 }
 
 footer .foot_nav .social_icon .connect {
@@ -228,7 +228,7 @@ footer .footer-bottom {
 	color: #fff;
 	text-decoration: none;
 	line-height: 30px;
-	font-family: calibri
+	font-family: arial
 }
 /*.footer-bottom .floatLeft ul li a:hover {color:#5B9F24;color: #F1B500;text-decoration:none;}*/
 .footer-bottom .floatRight {
@@ -240,7 +240,7 @@ footer .footer-bottom {
 	}
 
 .footer-bottom .floatRight p {
-	font-family: calibri;
+	font-family: arial;
 	font-size: 14px;
 	color: #fff;
 	line-height: 20px;

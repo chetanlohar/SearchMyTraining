@@ -60,7 +60,7 @@ and open the template in the editor.
 	line-height: 50px;
 	width: 100%;
 	text-align: center;
-	font-family: calibri;
+	font-family: arial;
 	font-size: 24px;
 	color: #3e3e3e;
 	text-shadow: rgb(224, 224, 224) 1px 1px 0px;
@@ -118,7 +118,7 @@ and open the template in the editor.
 	margin: 7px 5px;
 	border-radius: 3px;
 	resize: none;
-	font-family: calibri;
+	font-family:arial;
 	-webkit-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
 	-moz-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
 	-ms-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
@@ -129,7 +129,7 @@ and open the template in the editor.
 #pop_up_box form .sign input {
 	cursor: pointer;
 	font-size: 20px;
-	font-family: calibri;
+	font-family: arial;
 	text-shadow: 2px whitesmoke;
 	width: 90px;
 	height: 40px;
@@ -219,7 +219,7 @@ and open the template in the editor.
 	line-height: 50px;
 	width: 100%;
 	text-align: center;
-	font-family: calibri;
+	font-family: arial;
 	font-size: 24px;
 	color: #3e3e3e;
 	font-weight: bold;
@@ -277,7 +277,7 @@ and open the template in the editor.
 	margin: 7px 5px;
 	border-radius: 3px;
 	resize: none;
-	font-family: calibri;
+	font-family:arial;
 	-webkit-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
 	-moz-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
 	-ms-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
@@ -288,7 +288,7 @@ and open the template in the editor.
 #pop_up_box_1 form .sign input {
 	cursor: pointer;
 	font-size: 20px;
-	font-family: calibri;
+	font-family:arial;
 	text-shadow: 2px whitesmoke;
 	width: 90px;
 	height: 40px;
@@ -483,7 +483,7 @@ and open the template in the editor.
 }
 
 #pop_up_box_2 form select {
-	font-family: calibri;
+	font-family: arial;
 	font-size: 17px;
 	width: 270px;
 	border: 1px solid #cccccc;
@@ -505,7 +505,7 @@ and open the template in the editor.
 #pop_up_box_2 form label {
 	color: #858282;
 	font-size: 19px;
-	font-family: calibri;
+	font-family: arial;
 	line-height: 40px;
 }
 
@@ -569,7 +569,7 @@ and open the template in the editor.
 #pop_up_box_2 form .sign input {
 	cursor: pointer;
 	font-size: 20px;
-	font-family: calibri;
+	font-family: arial;
 	text-shadow: 2px whitesmoke;
 	width: 90px;
 	height: 40px;
@@ -603,7 +603,7 @@ and open the template in the editor.
 /*=============================REgistration Css Ends=====================================*/
 
 /*=============================Login Css Starts=====================================*/
-#pop_up_box_3 {
+/* #pop_up_box_3 {
 	background-color: #fff;
 	border-radius: 5px;
 	color: #000;
@@ -660,7 +660,7 @@ and open the template in the editor.
 	margin-top: 10px;
 	text-decoration: none;
 	color: #000000;
-	font-family: calibri;
+	font-family: arial;
 }
 
 #pop_up_box_3 form a:hover {
@@ -726,7 +726,7 @@ and open the template in the editor.
 #pop_up_box_3 form .sign input {
 	cursor: pointer;
 	font-size: 20px;
-	font-family: calibri;
+	font-family: arial;
 	text-shadow: 2px whitesmoke;
 	width: 90px;
 	height: 40px;
@@ -850,7 +850,7 @@ and open the template in the editor.
 
 .p-container .checkbox input:checked+i:after {
 	opacity: 1;
-}
+} */
 
 /*=============================Login Css Ends=====================================*/
 
@@ -963,7 +963,7 @@ and open the template in the editor.
 }
 
 #pop_up_box_4 form select {
-	font-family: calibri;
+	font-family: arial;
 	font-size: 17px;
 	width: 270px;
 	border: 1px solid #cccccc;
@@ -1119,7 +1119,7 @@ and open the template in the editor.
 #pop_up_box_4 form .sign input {
 	cursor: pointer;
 	font-size: 20px;
-	font-family: calibri;
+	font-family: arial;
 	text-shadow: 2px whitesmoke;
 	width: 90px;
 	height: 40px;
@@ -1199,6 +1199,7 @@ width
 	border-radius: 10px;
 	background: #FFFFFF;
 	overflow: hidden;
+   font-family: arial;
 }
 
 #pop_up_box_5 .reg_form .head {
@@ -1239,12 +1240,13 @@ width
 	width: 320px;
 	height: 30px;
 	margin-left: 5px;
+	font-size: 13px;
 }
 
-#pop_up_box_5 form .errormsg span {
+#pop_up_box_5 form .errormsg .error_msg_auth {
 	line-height: 30px;
 	font-family: arial;
-	font-size: 13px;
+	font-size: 13px ;
 	color: red;
 }
 #pop_up_box_5 form span text{
@@ -1303,8 +1305,8 @@ width
 
 #pop_up_box_5 form .sign input[type="submit"] {
 	cursor: pointer;
-	font-size: 20px;
-	font-family: calibri;
+	font-size: 18px;
+	font-family: arial;
 	text-shadow: 2px whitesmoke;
 	float: left;
 	width: 90px;
@@ -1320,8 +1322,8 @@ width
 
 #pop_up_box_5 form .sign input[type="reset"] {
 	cursor: pointer;
-	font-size: 20px;
-	font-family: calibri;
+	font-size: 18px;
+	font-family: arial;
 	text-shadow: 2px whitesmoke;
 	float: left;
 	width: 90px;
@@ -1337,11 +1339,10 @@ width
 
 #pop_up_box_5 form a {
 	float: right;
-	font-size: 18px;
+	font-size: 14px;
 	line-height: 40px;
 	text-decoration: none;
-	color: #000000;
-	font-family: calibri;
+
 }
 
 #pop_up_box_5 form a:hover {
@@ -1352,119 +1353,75 @@ width
 	/*margin-top:2em;*/
 	width: 100%;
 	height: 40px;
+	font-family: arial;
+}
+.p-container [type="checkbox"]:not(:checked),
+.p-container [type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+
+}
+.p-container  [type="checkbox"]:not(:checked) + label,
+.p-container  [type="checkbox"]:checked + label {
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  line-height: 40px;
+  font-size: 14px;
+}
+/* checked mark aspect */
+.p-container  [type="checkbox"]:not(:checked) + label::after,
+.p-container  [type="checkbox"]:checked + label::after {
+  content: url("../images/tick.png") no-repeat 7px 1px;
+  position: absolute;
+  top: -2px; left: 0px;
+  font-size: 14px;
+  color: #09ad7e;
+  transition: all .2s;
 }
 
-.p-container  .checkbox input {
-	position: absolute;
-	left: -9999px;
+/* checkbox aspect */
+.p-container  [type="checkbox"]:not(:checked) + label:before,
+.p-container  [type="checkbox"]:checked + label:before {
+  content: '';
+  position: absolute;
+  left:0; top: 2px;
+  width: 17px; height: 17px;
+  border: 1px solid #aaa;
+  background: #f8f8f8;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,.3)
 }
 
-.p-container.checkbox i {
-	border-color: #fff;
-	transition: border-color 0.3s;
-	-o-transition: border-color 0.3s;
-	-ms-transition: border-color 0.3s;
-	-moz-transition: border-color 0.3s;
-	-webkit-transition: border-color 0.3s;
+/* checked mark aspect changes */
+.p-container  [type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+.p-container  [type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+/* disabled checkbox */
+.p-container  [type="checkbox"]:disabled:not(:checked) + label:before,
+.p-container  [type="checkbox"]:disabled:checked + label:before {
+  box-shadow: none;
+  border-color: #bbb;
+  background-color: #ddd;
+}
+.p-container  [type="checkbox"]:disabled:checked + label:after {
+  color: #999;
+}
+.p-container  [type="checkbox"]:disabled + label {
+  color: #aaa;
 }
 
-.p-container.checkbox i:hover {
-	border-color: red;
+.p-container  label:hover:before {
+  border: 1px solid #4778d9!important;
 }
 
-.p-container  i:before {
-	background-color: #2da5da;
-}
 
-.p-container  .checkbox input+i:after {
-	position: absolute;
-	opacity: 0;
-	transition: opacity 0.1s;
-	-o-transition: opacity 0.1s;
-	-ms-transition: opacity 0.1s;
-	-moz-transition: opacity 0.1s;
-	-webkit-transition: opacity 0.1s;
-}
-
-.p-container .checkbox input+i:after {
-	content: url("../images/tick.png") no-repeat 7px 1px;
-	top: -15px;
-	left: 1px;
-	width: 15px;
-	height: 15px;
-}
-
-.p-container  .checkbox {
-	float: left;
-	margin-right: 0px;
-}
-
-.p-container  a {
-	float: left;
-	font-size: 15px !important;
-	color: blue !important;
-	line-height: 57px;
-	margin-left: 20px;
-	margin-top: 10px;
-	text-decoration: none;
-}
-
-.p-container .checkbox {
-	padding-left: 40px;
-	font-size: 14px;
-	line-height: 60px;
-	color: #858282;
-	cursor: pointer;
-	font-family: 'Open Sans', sans-serif;
-	margin-right: 0px !important;
-}
-
-.p-container  .checkbox {
-	position: relative;
-	display: block;
-}
-
-.p-container  .checkbox i {
-	position: absolute;
-	top: 18px;
-	left: 5px;
-	display: block;
-	width: 22px;
-	height: 22px;
-	outline: none;
-	border: 1px solid #999;
-	background: #fff;
-	border-radius: 4px;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	-o-border-radius: 4px;
-}
-
-.p-container  .checkbox input+i:after {
-	position: absolute;
-	opacity: 0;
-	transition: opacity 0.1s;
-	-o-transition: opacity 0.1s;
-	-ms-transition: opacity 0.1s;
-	-moz-transition: opacity 0.1s;
-	-webkit-transition: opacity 0.1s;
-}
-
-.p-container .checkbox input+i:after {
-	color: #2da5da;
-}
-
-.p-container .checkbox input:checked+i, .p-container .input:checked+i {
-	border-color: #2da5da;
-}
-
-.p-container .rating input:checked ~ label {
-	color: #2da5da;
-}
-
-.p-container .checkbox input:checked+i:after {
-	opacity: 1;
-}
+ 
 /*==========================================Login Css Ends===========================================*/
 
 /*=========================================Sign Up Css Starts========================================*/
@@ -1522,7 +1479,7 @@ width
 	color: #3e3e3e;
 	font-weight: bold;
 	text-shadow: rgb(225, 225, 225) 1px 1px 0px;
-	font-family: calibri;
+	font-family:arial;
 }
 
 #pop_up_box_6 .reg_form form .sign-in {
@@ -1575,7 +1532,7 @@ width
 /*=============================Sign Up Css Ends=====================================*/
 
 /* ==========================Freelancer Login starts=========================================== */
-#pop_up_box_7 {
+/* #pop_up_box_7 {
 	background-color: #fff;
 	border-radius: 5px;
 	color: #000;
@@ -1632,7 +1589,7 @@ width
 	margin-top: 10px;
 	text-decoration: none;
 	color: #000000;
-	font-family: calibri;
+	font-family: arial;
 }
 
 #pop_up_box_7 form a:hover {
@@ -1698,7 +1655,7 @@ width
 #pop_up_box_7 form .sign input {
 	cursor: pointer;
 	font-size: 20px;
-	font-family: calibri;
+	font-family: arial;
 	text-shadow: 2px whitesmoke;
 	width: 90px;
 	height: 40px;
@@ -1799,7 +1756,7 @@ width
 }
 
 .p-container  .checkbox input+i:after {
-	position: initial;
+	position: inherit;
 	opacity: 0;
 	transition: opacity 0.1s;
 	-o-transition: opacity 0.1s;
@@ -1822,7 +1779,8 @@ width
 
 .p-container .checkbox input:checked+i:after {
 	opacity: 1;
-}
+	position: static;
+} */
 /* ==========================Freelancer Login ends=========================================== */
 /*=============================Freelancer Registration Css Starts=====================================*/
 #pop_up_box_8 {
@@ -2031,7 +1989,7 @@ width
 }
 
 #pop_up_box_8 form select {
-	font-family: calibri;
+	font-family: arial;
 	font-size: 17px;
 	width: 270px;
 	border: 1px solid #cccccc;
@@ -2076,7 +2034,7 @@ width
 #pop_up_box_8 form .sign input {
 	cursor: pointer;
 	font-size: 20px;
-	font-family: calibri;
+	font-family:arial;
 	text-shadow: 2px whitesmoke;
 	width: 90px;
 	height: 40px;
@@ -2158,7 +2116,7 @@ width
 #pop_up_box_9 form .box label {
 	font-size: 19px;
 	width: 180px;
-	font-family: calibri;
+	font-family: arial;
 	float: left;
 	text-align: right;
 	color: #000;
@@ -2221,4 +2179,49 @@ width
 	margin-top: 80px;
     background: #ECF0F3;
     font-family: arial;
+}
+
+/* ====================== End Get Contact========================== */
+
+
+
+/* ====================== Responsive code========================== */
+@media screen and (max-height: 740px) {
+#pop_up_box {
+	background-color: #fff;
+	border-radius: 5px;
+	color: #000;
+	display: none;
+	padding: 10px;
+	min-width: 300px;
+	min-height: 500px;
+	margin-top: 40px;
+	background: #ECF0F3;
+}
+
+#pop_up_box .reg_form {
+	height: 500px;
+	width: 300px;
+	border-radius: 10px;
+	background: #fff;
+	padding: 30px 0px;
+}
+#pop_up_box form input[type="text"] {
+	width: 230px;
+	height: 30px;
+}
+	#pop_up_box form textarea {
+	height: 80px;
+	width: 230px;
+	font-size: 14px;
+	}
+	#pop_up_box .reg_form .head {
+	position: absolute;
+	margin-left: 80px;
+	margin-top: -75px;
+}
+
+#pop_up_box form h2 {
+	font-size: 20px;
+}
 }

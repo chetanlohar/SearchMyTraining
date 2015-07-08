@@ -166,7 +166,7 @@ text{
 	color: #000;
 	clear: left;
 	margin: 6px 4px 0px 0px;
-	font-family: calibri;
+	font-family: arial;
 }
 
 .acord .acord_cont #client textarea {
@@ -174,12 +174,12 @@ text{
 	height: 100px;
 	width: 300px;
 	padding: 5px 10px;
-	font-family: calibri;
+	font-family: arial;
 }
 
 .acord .acord_cont h3 {
 	margin-left: 445px;
-	font-family: calibri;
+	font-family: arial;
 }
 
 .acord .acord_cont #Achievement {
@@ -246,7 +246,7 @@ p a img {
 	color: #000;
 	clear: left;
 	margin: 6px 4px 0px 0px;
-	font-family: calibri;
+	font-family: arial;
 }
 
 input[type="button"] {

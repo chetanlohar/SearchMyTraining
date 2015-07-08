@@ -8,6 +8,7 @@
 	$('#calender_show').paging({
 		limit : 10
 	});
+	$("#calender_show").tablesorter(); 
 </script>
 <script type="text/javascript">
 var trng_id=1;
@@ -51,7 +52,7 @@ function giveLink1(data)
 		<div id="tabcontent">
 			<div id="home-content" class="contentblock">
 				<div class="Calender_wrapar">
-					<table id="calender_show">
+					<table id="calender_show" class="tablesorter">
 						<thead>
 							<tr>
 								<th>Title</th>
@@ -70,7 +71,7 @@ function giveLink1(data)
 									<td>${calender2.start_date}</td>
 									<td>${calender2.price}</td>
 									<td><a
-										href="./downloadFile?path=${calender2.brochure}">Brouchure</a></td>
+										href="./downloadFile?path=${calender2.brochure}"><i class="fa fa-download"></i></a></td>
 									<td><a class="Get_C" href="javascript:void(0)" onClick="giveLink1(${calender2.trngId})">Get Contacted</a></td>
 									<%-- onClick="giveLink('getContacted',${calender2.trngId})" --%>
 								</tr>

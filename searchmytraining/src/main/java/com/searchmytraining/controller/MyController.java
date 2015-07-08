@@ -1,14 +1,15 @@
 package com.searchmytraining.controller;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class MyController {
@@ -134,6 +135,13 @@ public class MyController {
 	@RequestMapping("/searchview")
 	public String searchview() {
 		return "searchcalender";
+	}
+	
+	@RequestMapping("/forgotpass")
+	public String forgotPass(@RequestParam String username,ModelMap model) {
+		System.out.println("username: "+username);
+		model.addAttribute("username", username);
+		return "pages/ForgotPass";
 	}
 
 }

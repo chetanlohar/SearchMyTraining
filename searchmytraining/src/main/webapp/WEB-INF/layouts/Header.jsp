@@ -57,7 +57,7 @@ $('#dropM').on('click',function(e){
             <div id='cssmenu'>
                         <span class="menubtn" id ="dropM"></span>
                 <ul id="coolMenu">
-                <li class='active has-sub'><a href='#'><i class="fa fa-home"></i></a>
+                <li class='active has-sub'><a href='./'><i class="fa fa-home"></i></a>
                     <li class='active has-sub'><a href='#'><span>Browse</span></a>
                         <ul>
                             <li><a href='#'><span>All Training</span></a></li>
