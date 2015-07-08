@@ -76,7 +76,10 @@
  
 $(function() {
         var scntDiv = $('#association');
-        var i = $('#association p').size() + 1;
+        /*var i = $('#association p').size() + 1;*/
+        var assocNamesSize = $('#assocNameSize').val();
+        var i = parseInt(assocNamesSize);
+        i++;
         
         $('.addAsso').live('click', function() {
             $('<p style="margin-left:253px;"><input type="text" id="assocName'+ i +'" size="20" name="a_scnt_' + i +'"/><a href="#" id="remScnt"> <img style="margin-left:5px;margin-top:5px;float:left;" src="resources/images/Cancel-128.png"></a> <input type="button" class="addAsso" value="+"> </p>').appendTo(scntDiv);
@@ -97,8 +100,10 @@ $(function() {
 
 $(function() {
         var scntDiv = $('#client');
-        var i = $('#client p').size() + 1;
-        
+        /*var i = $('#client p').size() + 1;*/
+        var clientSize = $('#clientSize').val();
+        var i = parseInt(clientSize);
+        i++;
         $('.addClient').live('click', function() {
             $('<p style="margin-left:253px;"><input type="text" id="clientName'+i+'" size="20" name="clientName'+i+'"/><a href="#" id="remScnt"><img style="margin-top:5px;float:left;margin-left:5px;" src="resources/images/Cancel-128.png"></a> <input type="button" value="+" class="addClient"> </p>').appendTo(scntDiv);
                 i++;

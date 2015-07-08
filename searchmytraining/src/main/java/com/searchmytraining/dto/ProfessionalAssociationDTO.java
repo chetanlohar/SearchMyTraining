@@ -6,6 +6,7 @@ public class ProfessionalAssociationDTO {
 	
 	private Integer userid;
 	private ArrayList<String> assocName;
+	private ArrayList<Integer> assocIds;
 	public Integer getUserid() {
 		return userid;
 	}
@@ -18,10 +19,15 @@ public class ProfessionalAssociationDTO {
 	public void setAssocName(ArrayList<String> assocName) {
 		this.assocName = assocName;
 	}
+	public ArrayList<Integer> getAssocIds() {
+		return assocIds;
+	}
+	public void setAssocIds(ArrayList<Integer> assocIds) {
+		this.assocIds = assocIds;
+	}
 	@Override
 	public String toString() {
 		return "ProfessionalAssociationDTO [userid=" + userid + ", assocName="
 				+ assocName + "]";
 	}
-	
 }

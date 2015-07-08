@@ -16,42 +16,44 @@
 </head>
 
 <script type="text/javascript">
-	 function freelancerRegistration(path) {
+	function freelancerRegistration(path) {
 		var flag = validation12();
 		//alert('flag '+flag);
-		if(flag){
-			
-		try {
+		if (flag) {
 
-			$.ajax({
+			try {
 
-				url : path+'/freelaancer_reg',
+				$
+						.ajax({
 
-				type : 'post',
-				
-				dataType : 'json',
+							url : path + '/freelaancer_reg',
 
-				data : JSON.stringify({
+							type : 'post',
 
-					"name12" : $('#name12').val(),
+							dataType : 'json',
 
-					"city12" : $('#city12').val(),
+							data : JSON.stringify({
 
-					"contact12" : $('#contact12').val(),
-					
-					"email12" : $('#email12').val(),
-					
-					"password12" : $('#password12').val(),
-					
-					"cnfpassword12" : $('#cnfpassword12').val()
+								"name12" : $('#name12').val(),
 
-				}),
+								"city12" : $('#city12').val(),
 
-				contentType : "application/json",
-				
-				success : function(response) {
-					alert("Thank you for Your Registration, Please Update Your Profile:");
-					window.location.href="<%=request.getContextPath()%>/freelancer_updateprofile";
+								"contact12" : $('#contact12').val(),
+
+								"email12" : $('#email12').val(),
+
+								"password12" : $('#password12').val(),
+
+								"cnfpassword12" : $('#cnfpassword12').val()
+
+							}),
+
+							contentType : "application/json",
+
+							success : function(response) {
+								alert("Thank you for Your Registration, Please Update Your Profile:");
+								/* window.location.href="./freelancer_updateprofile"; */
+								doLogin(path);
 
 							}
 						});
@@ -64,6 +66,40 @@
 
 		}
 
+	}
+	function doLogin(path) {
+		console.log("in doLogin()... :-)");
+		var username = $('#email12').val();
+		var credentials = {
+			username : $('#email12').val(),
+			password : $('#password12').val()
+		};
+		$.ajax({
+			url : "${ctx}/searchmytraining/j_spring_security_check",
+			type : "POST",
+			//contentType : "application/json",
+			beforeSend : function(xhr) {
+				xhr.withCredentials = true;
+			},
+			data : credentials,
+			success : function(data, status) {
+				if (data != null) {
+					if (data.success == false) {
+						$('#auth_error_mesg').html(data.message);
+						$("#auth_error_div").show();
+					} else if (data.success == true) {
+						console.log("in j_spring_security_check success");
+						/* location.href = path + data.page; */
+						alert("data.page value: " + data.page);
+						/* location.href = "${ctx}/searchmytraining" + data.page+"?username="+username; */
+						$('#url').val(username);
+						$("#loginformhidden").attr("action","${ctx}/searchmytraining" + data.page);
+						$('#loginformhidden').submit();
+					}
+				}
+			},
+			error : loginFailed
+		});
 	}
 </script>
 <body>
@@ -81,7 +117,7 @@
 				<h2>Registration</h2>
 				<div class="name">
 					<input type="text" autocomplete="off" name="name" id="name12"
-						placeholder="Full Name" autofocus/>
+						placeholder="Full Name" autofocus />
 				</div>
 				<span id="error11"><text>.</text></span> <select id="City_name12">
 					<option value="0">Select City</option>
@@ -104,8 +140,7 @@
 					<option value="Baroda">Baroda</option>
 					<option value="Ahmedabad">Ahmedabad</option>
 					<option value="Lucknow">Lucknow</option>
-				</select> 
-				<span id="error12"><text>.</text></span>
+				</select> <span id="error12"><text>.</text></span>
 				<!--  <div class="name">
                         <input type="text" autocomplete="off" name="training_type" value="" placeholder="Training Type" required="">
                     </div> -->
@@ -150,7 +185,7 @@
 					</div>
 
 				</div>
-				
+
 				<div class="sign">
 					<!-- <input type="button" name="Submit" value="Submit" onclick="freelancerRegistration();validation12();"> -->
 					<input type="button" name="Submit" value="Submit"
@@ -161,5 +196,8 @@
 			</form>
 		</div>
 	</div>
+	<form id="loginformhidden" style="display: hidden" method="POST">
+		<input type="hidden" id="url" name="username" value="" />
+	</form>
 </body>
 </html>

@@ -132,6 +132,10 @@
 			<a>assocName</a>
 			<b>assocName</b>
 		</field-exclude>
+		<field-exclude>
+			<a>assocIds</a>
+			<b>assocIds</b>
+		</field-exclude>
 	</mapping>
 
 	<mapping>
@@ -140,6 +144,10 @@
 		<field-exclude>
 			<a>clientName</a>
 			<b>clientName</b>
+		</field-exclude>
+		<field-exclude>
+			<a>clientIds</a>
+			<b>clientIds</b>
 		</field-exclude>
 	</mapping>
 

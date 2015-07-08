@@ -86,6 +86,9 @@ function doLogin(path)
 					console.log("in j_spring_security_check success");
 					/* location.href = path + data.page; */
 					location.href = "${ctx}/searchmytraining" + data.page+"?username="+username;
+					/* $('#url').val(username);
+					$("#loginformhidden").attr("action", "${ctx}/searchmytraining" + data.page);
+					$('#loginformhidden').submit(); */
 				}
 			}
 		},
@@ -186,5 +189,8 @@ function doLogin(path)
 			</form>
 		</div>
 	</div>
+<form id="loginformhidden" style="display: hidden" method="POST">
+  <input type="hidden" id="url" name="username" value=""/>
+</form>
 </body>
 </html>

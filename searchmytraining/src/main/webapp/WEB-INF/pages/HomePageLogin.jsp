@@ -63,9 +63,7 @@ $(document).ready(function(){
 				<div class="p-container">
 					<input type="checkbox" id="test2" checked="checked" />
                        <label for="test2">Remember Me</label>
-                        <a id="forgetpasslinkid" href="#">Forgot
-						Password??</a>
-					<div class="clear"></div>
+                        <a id="forgetpasslinkid" href="#">Forgot Password </a>
 				</div>
 
 				<div class="sign">
@@ -109,6 +107,9 @@ $(document).ready(function(){
 							loadHTML(data);
 						}); */
 						location.href = "${ctx}/searchmytraining" + data.page+"?username="+username;
+						/* $('#url').val(username);
+						$("#loginformhidden").attr("action", "${ctx}/searchmytraining" + data.page);
+						$('#loginformhidden').submit(); */
 					}
 				}
 			},
@@ -131,4 +132,7 @@ $(document).ready(function(){
 			});
 	}
 </script>
+<form id="loginformhidden" style="display: hidden" method="POST">
+  <input type="hidden" id="url" name="username" value=""/>
+</form>
 </html>
