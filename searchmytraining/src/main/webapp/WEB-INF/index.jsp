@@ -38,7 +38,6 @@ and open the template in the editor.
 	src="<%=request.getContextPath()%>/resources/js/jquery/jquery.iconmenu.js"></script>
 <script src="<%=request.getContextPath()%>/resources/js/my_js1.js"></script>
 <script src="<%=request.getContextPath()%>/resources/js/tabBar.js"></script>
-<script src="<%=request.getContextPath()%>/resources/js/toggle.js"></script>
 <script src="<%=request.getContextPath()%>/resources/js/combine.js"></script>
 <script src="<%=request.getContextPath()%>/resources/js/paging.js"></script>
 <script src="<%=request.getContextPath()%>/resources/js/jquery.tablesorter.min.js"></script>

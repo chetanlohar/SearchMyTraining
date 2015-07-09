@@ -35,7 +35,7 @@
 		  <div class="profile_container">
 		  <div class="profile_info">
 		    <div class="Profile_pic">
-		       <img src="<%=request.getContextPath()%>/resources/images/team.jpg" alt="CEO" class="image-round">
+		       <img src="<%=request.getContextPath()%>/resources/images/ppani.jpg" alt="CEO" class="image-round">
 		    </div>
 		    <div class="profile_link">
 		    <a href="#"><i class="fa fa-envelope"></i></a>
@@ -57,7 +57,7 @@
 		  <div class="profile_container">
 		  <div class="profile_info">
 		    <div class="Profile_pic">
-		       <img src="<%=request.getContextPath()%>/resources/images/team.jpg" alt="CEO" class="image-round">
+		       <img src="<%=request.getContextPath()%>/resources/images/ppani.jpg" alt="CEO" class="image-round">
 		    </div>
 		    <div class="profile_link">
 		    <a href="#"><i class="fa fa-envelope"></i></a>
@@ -78,7 +78,7 @@
 		  <div class="profile_container">
 		  <div class="profile_info">
 		    <div class="Profile_pic">
-		       <img src="<%=request.getContextPath()%>/resources/images/team.jpg" alt="CEO" class="image-round">
+		       <img src="<%=request.getContextPath()%>/resources/images/ppani.jpg" alt="CEO" class="image-round">
 		    </div>
 		    <div class="profile_link">
 		    <a href="#"><i class="fa fa-envelope"></i></a>
@@ -99,7 +99,7 @@
 		  <div class="profile_container">
 		  <div class="profile_info">
 		    <div class="Profile_pic">
-		       <img src="<%=request.getContextPath()%>/resources/images/team.jpg" alt="CEO" class="image-round">
+		       <img src="<%=request.getContextPath()%>/resources/images/ppani.jpg" alt="CEO" class="image-round">
 		    </div>
 		    <div class="profile_link">
 		    <a href="#"><i class="fa fa-envelope"></i></a>
