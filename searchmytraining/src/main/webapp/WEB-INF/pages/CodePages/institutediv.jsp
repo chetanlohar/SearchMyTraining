@@ -48,16 +48,17 @@
                             <div class="list-cart-card">
                              <div class="list-detail-box">
                                <div class="list-image">
-                               
+                               <img src="/searchmytraining/resources/images/soft.png" alt="soft"/>
                                </div>
                                <div class="list-detail">
                                   <div class="listtext-part">
                                    <p class="list-name"><a href="#">Softinfology Pvt Ltd</a></p>
-                                    <p class="list-loc"><img alt="loc" src="/searchmytraining/resources/images/list-loc.png"/>     Kharadi Pune</p>
+                                    <p class="list-loc"><i class="fa fa-map-marker"></i>   Kharadi Pune</p>
+                                    <p><a href="#" class="tooltip" title="15-Nov-2015,10-Dec-2015"><span><i class="fa fa-calendar"></i>More Date</span></a></p>
                                   </div>
                                   <div class="list-link">
-                                     <p class="detail"><a href="#" class="detail_bar">View Details</a></p>
-                                     <p><a href="#" class="group_train">Group Training</a></p>
+                                     <a href="#"><i class="fa fa-edit"></i>View Details</a>
+                                     <a href="#"><i class="fa fa-users"></i>Group Training</a>
                                   </div>
                                </div>
                                

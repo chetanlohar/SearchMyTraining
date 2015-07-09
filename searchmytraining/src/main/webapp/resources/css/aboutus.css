@@ -343,13 +343,14 @@ body {
 
 #main .team_container .profile_container .profile_info .Profile_pic .image-round
 	{
-	width: 80%;
-	height: 90%;
+	width: 60%;
+	height: 100%;
 	margin: 10px 0px 0px 20px;
 	border-radius: 50%;
 }
 
 #main .team_container .profile_container .profile_info .profile_link {
+	width:125px;
 	margin: 20px auto;
 }
 
@@ -385,7 +386,7 @@ body {
 	font-size: 18px;
 	letter-spacing: 2px;
 	text-transform: uppercase;
-	color: #b3b3b1;
+	color: #0080ff;
 	font-weight: 400;
 	line-height: 25px;
 }
@@ -398,5 +399,7 @@ body {
 }
 
 #main .team_container .profile_container .profile_containt p {
-	color: #c0c0c0;
+	color: #1A0000;
+	line-height:20px;
+	text-align: justify;
 }

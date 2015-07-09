@@ -61,8 +61,9 @@ $(document).ready(function(){
 						placeholder="Enter Password" required="">
 				</div>
 				<div class="p-container">
-					<input type="checkbox" id="test2" checked="checked" />
-                       <label for="test2">Remember Me</label>
+				<label for="remember"><input type="checkbox" id="test2" checked="checked" />  Remember Me</label>
+				
+                      
                         <a id="forgetpasslinkid" href="#">Forgot Password </a>
 				</div>
 
