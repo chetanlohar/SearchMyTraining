@@ -106,10 +106,10 @@ $(document).ready(function(){
 							alert(data);
 							loadHTML(data);
 						}); */
-						location.href = "${ctx}/searchmytraining" + data.page+"?username="+username;
-						/* $('#url').val(username);
+						/* location.href = "${ctx}/searchmytraining" + data.page+"?username="+username; */
+						$('#url').val(username);
 						$("#loginformhidden").attr("action", "${ctx}/searchmytraining" + data.page);
-						$('#loginformhidden').submit(); */
+						$('#loginformhidden').submit();
 					}
 				}
 			},

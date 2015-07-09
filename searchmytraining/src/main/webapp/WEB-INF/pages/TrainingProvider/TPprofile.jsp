@@ -16,7 +16,7 @@
 	src="<%=request.getContextPath()%>/resources/js/Validations/TrainingProProfile.js"></script>
 
 <script type="text/javascript" src="./resources/js/work/categories.js"></script>
-<script	src="<%=request.getContextPath()%>/resources/js/work/updatetrainerprofile.js"></script>
+<script	src="./resources/js/work/updatetrainerprofile.js"></script>
 <script type="text/javascript">
 	jQuery(document).ready(
 			function() {
@@ -127,18 +127,27 @@
 				<!--<div class="seperate">-->
 				<div id="achiv">
 					<p>
-						<label>Institute Contact: </label> 
-						<select id="phonetypeid1">
-							<option value="0" name="contact">--Select--</option>
-							<option value="1">OFFICE-MOBILE</option>
-							<option value="2">OFFICE-LANDLINE</option>
-							<option value="3">PERSONAL-MOBILE</option>
-							<option value="4">PERSONAL-LANDLINE</option>
-							<option value="5">FAX</option>
-							<option value="6">TOLL FREE</option>
-						</select> 
-						<input id="institutecontact1" type="text" name="institutecontact85" onkeypress="return validate15(event)"
-							value="${trainerdto.contact}">
+						<label>Institute Contact: </label>
+						<input id="phonesSize" type="hidden" value="${fn:length(phones)}"/>
+						<c:set var="countPhones" value="1" scope="page" />
+						<c:forEach var="phone" items="${phones}">
+							<select id="phonetypeid${countPhones}">
+								<option value="0">--Select--</option>
+								<c:forEach var="phonetype" items="${phonetypes}">
+									<c:choose>
+										<c:when test="${phone.phonetype.phnTypeId == phonetype.phnTypeId}">
+											<option value="${phonetype.phnTypeId}" selected>${phonetype.phnTypeName}</option>
+										</c:when>
+										<c:otherwise>
+											<option value="${phonetype.phnTypeId}">${phonetype.phnTypeName}</option>
+										</c:otherwise>
+									</c:choose>
+								</c:forEach>
+							</select>
+							<input id="institutecontact${countPhones}" type="text" name="institutecontact85" onkeypress="return validate15(event)" value="${phone.phoneValue}">
+							<c:set var="countPhones" value="${countPhones+1}" scope="page" />
+						</c:forEach> 
+					
 					<input type="button" value="+" class="addScnt">
 					<input type="hidden" id="rowtot" name="rowtot" value="1">
 					</p>

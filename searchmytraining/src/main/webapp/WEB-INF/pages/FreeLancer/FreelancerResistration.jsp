@@ -20,55 +20,32 @@
 		var flag = validation12();
 		//alert('flag '+flag);
 		if (flag) {
-
 			try {
-
-				$
-						.ajax({
-
+				$.ajax({
 							url : path + '/freelaancer_reg',
-
 							type : 'post',
-
 							dataType : 'json',
-
 							data : JSON.stringify({
-
 								"name12" : $('#name12').val(),
-
 								"city12" : $('#city12').val(),
-
 								"contact12" : $('#contact12').val(),
-
 								"email12" : $('#email12').val(),
-
 								"password12" : $('#password12').val(),
-
 								"cnfpassword12" : $('#cnfpassword12').val()
-
 							}),
-
 							contentType : "application/json",
-
 							success : function(response) {
 								alert("Thank you for Your Registration, Please Update Your Profile:");
 								/* window.location.href="./freelancer_updateprofile"; */
-								doLogin(path);
-
+								doLoginTPF(path);
 							}
 						});
-
 			} catch (ex) {
-
 				alert(ex);
-
 			}
-
 		}
-
 	}
-	function doLogin(path) {
-		console.log("in doLogin()... :-)");
+	function doLoginTPF(path) {
 		var username = $('#email12').val();
 		var credentials = {
 			username : $('#email12').val(),
@@ -89,8 +66,6 @@
 						$("#auth_error_div").show();
 					} else if (data.success == true) {
 						console.log("in j_spring_security_check success");
-						/* location.href = path + data.page; */
-						alert("data.page value: " + data.page);
 						/* location.href = "${ctx}/searchmytraining" + data.page+"?username="+username; */
 						$('#url').val(username);
 						$("#loginformhidden").attr("action","${ctx}/searchmytraining" + data.page);

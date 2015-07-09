@@ -137,11 +137,11 @@ public class MyController {
 		return "searchcalender";
 	}
 	
-	@RequestMapping("/forgotpass")
+	@RequestMapping("/forgotpassword")
 	public String forgotPass(@RequestParam String username,ModelMap model) {
 		System.out.println("username: "+username);
 		model.addAttribute("username", username);
-		return "pages/ForgotPass";
+		return "pages/ForgotPassword";
 	}
 
 }

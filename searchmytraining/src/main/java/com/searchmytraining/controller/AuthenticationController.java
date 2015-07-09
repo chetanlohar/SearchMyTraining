@@ -35,9 +35,10 @@ public class AuthenticationController {
 	@RequestMapping(value = "/authentication-failure", method = RequestMethod.GET)
 	public ResponseEntity<String> authenticationFailure(
 			HttpServletRequest request) {
-
+		System.out.println("in...authentication-failure");
 		String errorMessage = ((Exception) request.getSession().getAttribute(
 				"SPRING_SECURITY_LAST_EXCEPTION")).getMessage();
+		System.out.println("errorMessage: "+errorMessage);
 		return new ResponseEntity<String>(
 				"{\"success\" : false, \"message\" : \"" + errorMessage + "\"}",
 				getJsonHeaders(), HttpStatus.OK);
@@ -46,6 +47,7 @@ public class AuthenticationController {
 	@RequestMapping(value = "/authentication-success", method = RequestMethod.GET)
 	public ResponseEntity<String> authenticationSuccess(
 			HttpServletRequest request) {
+		System.out.println("in...authentication-success");
 		Authentication authentication = SecurityContextHolder.getContext()
 				.getAuthentication();
 

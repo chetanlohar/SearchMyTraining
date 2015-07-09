@@ -16,9 +16,8 @@
 function trainerRegistration(path) {
 	if (validation(path)) {
 		try {
-			$
-					.ajax({
-						url : './trainingprovider_reg',
+			$.ajax({
+						url : '${pageContext.request.contextPath}'+'/trainingprovider_reg',
 						type : 'post',
 						dataType : 'json',
 						data : JSON.stringify({
@@ -33,7 +32,6 @@ function trainerRegistration(path) {
 						success : function(response) {
 							/* alert(response.validation_error); */
 							if (response.errorMsg) {
-
 								$.map(response.errorMsg, function(val, key) {
 									if (key == "org_name")
 										$('#error1').text(val);
@@ -51,7 +49,7 @@ function trainerRegistration(path) {
 
 							} else {
 								alert("Thank you for Your Registration, Please Update Your Profile: SMT");
-								doLogin(path);
+								doLoginTP();
 								/*window.location.href = path	+ "/trainingprovider_updateprofile";*/
 							}
 
@@ -64,10 +62,12 @@ function trainerRegistration(path) {
 	}
 }
 
-function doLogin(path)
+function doLoginTP()
 {
-	console.log("in doLogin()... :-)");
+	console.log("in doLogin()... :-)..hi");
 	var username = $('#email1').val();
+	var password1=$('#password').val();
+	console.log("username: "+username+"\npassword: "+password1);
 	var credentials = {username:$('#email1').val(),password:$('#password').val()};
 	$.ajax({
 		url : "${ctx}/searchmytraining/j_spring_security_check",
@@ -78,17 +78,18 @@ function doLogin(path)
 		},
 		data : credentials,
 		success : function(data, status) {
+			console.log("before if...")
 			if (data != null) {
 				if (data.success == false) {
+					alert(data.message);
 					$('#auth_error_mesg').html(data.message);
 					$("#auth_error_div").show();
 				} else if (data.success == true) {
 					console.log("in j_spring_security_check success");
-					/* location.href = path + data.page; */
-					location.href = "${ctx}/searchmytraining" + data.page+"?username="+username;
-					/* $('#url').val(username);
-					$("#loginformhidden").attr("action", "${ctx}/searchmytraining" + data.page);
-					$('#loginformhidden').submit(); */
+					/* location.href = "${ctx}/searchmytraining" + data.page+"?username="+username; */
+					$('#url').val(username);
+					$("#loginformhidden").attr("action","${ctx}/searchmytraining" + data.page);
+					$('#loginformhidden').submit();
 				}
 			}
 		},
@@ -162,25 +163,16 @@ function doLogin(path)
 						name="cnfpassword" value="" placeholder="Confirm Password"
 						required="">
 				</div>
-				
 				<span id="error5"><text>.</text></span>
 				<div class="rcpatcha1">
-			
 			<input style="margin: 0 auto;" type="text" id="prcaptch" name="" placeholder="Enter Captch">
-			
 			</div>
-				
 				<div class="cpatcha1">
-			
 			<div class="Ccode" id="captch"></div>
 			<div class="refresh1">
 			<input type="button" id="refreshc" onclick='randString(5);' /> 
-			
 			</div>
-			
 			</div>
-			
-				
 				<div class="sign">
 					<input type="button" name="Submit" value="Submit" onclick="trainerRegistration('<%=request.getContextPath()%>'); " />
 					<input type="reset" name="Cancel" value="Cancel" class="cancel">
@@ -189,8 +181,8 @@ function doLogin(path)
 			</form>
 		</div>
 	</div>
-<form id="loginformhidden" style="display: hidden" method="POST">
-  <input type="hidden" id="url" name="username" value=""/>
-</form>
+	<form id="loginformhidden" style="display: hidden" method="POST">
+		<input type="hidden" id="url" name="username" value="" />
+	</form>
 </body>
 </html>

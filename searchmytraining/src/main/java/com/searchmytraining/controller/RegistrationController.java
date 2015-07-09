@@ -24,6 +24,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.context.WebApplicationContext;
 
+import com.searchmytraining.dao.IPhoneDAO;
+import com.searchmytraining.dao.IPhoneTypeDAO;
 import com.searchmytraining.dto.FreelancerDTO;
 import com.searchmytraining.dto.TraineeDTO;
 import com.searchmytraining.dto.TrainerDTO;
@@ -35,6 +37,7 @@ import com.searchmytraining.entity.IndustryCategoryEntity;
 import com.searchmytraining.entity.IndustrySubCategoryEntity;
 import com.searchmytraining.entity.InstituteEntity;
 import com.searchmytraining.entity.LocationEntity;
+import com.searchmytraining.entity.PhoneEntity;
 import com.searchmytraining.entity.ProfessionalAssociationEntity;
 import com.searchmytraining.entity.StateEntity;
 import com.searchmytraining.entity.TraineeEntity;
@@ -103,6 +106,12 @@ public class RegistrationController {
 	
 	@Autowired
 	public ICountryService countryservice;
+	
+	@Autowired
+	public IPhoneDAO phonedao;
+	
+	@Autowired
+	public IPhoneTypeDAO phonetypedao;
 
 	public UserEntity user;
 	public TraineeDTO traineedto1;
@@ -141,9 +150,8 @@ public class RegistrationController {
 		return response1;
 	}
 
-	@RequestMapping("/trainingprovider_updateprofile")
+	@RequestMapping(value="/trainingprovider_updateprofile",method=RequestMethod.POST)
 	public String TrainingProviderProfileMapping(@RequestParam("username") String username,ModelMap model, HttpSession session) {
-		
 		UserEntity user = userservice.getUser(username);
 		session.setAttribute("userid", user.getUserId());
 		System.out.println("userid: "+user.getUserId());
@@ -168,10 +176,13 @@ public class RegistrationController {
 		// Contact Inforamtion
 		
 		ContactInfoEntity contactinfo = contactinfoservice.getContactInfoDetailsByUserId(trainer.getUser().getUserId().longValue());
-		
 		if(contactinfo!=null)
 			model.addAttribute("contactinfo", contactinfo);
 		
+		// Phone Information
+		List<PhoneEntity> phones = phonedao.getPhoneByUserId(trainer.getUser().getUserId().longValue());
+		if(phones.size()>0)
+			model.addAttribute("phones", phones);
 		// Location Information
 		
 		LocationEntity location = locservice.findLocDet(trainer.getUser().getUserId());
@@ -212,6 +223,7 @@ public class RegistrationController {
 			model.addAttribute("clientlist", clientlist);
 		}
 		
+		model.addAttribute("phonetypes", phonetypedao.getAllPhoneTypes());
 		model.addAttribute("countries",countryservice.getAllCountries());
 		return "pages/TrainingProvider/TPprofile";
 	}
@@ -237,11 +249,10 @@ public class RegistrationController {
 	@RequestMapping("/FLprofile")
 	public String freeLancerProfile(ModelMap model, HttpSession session) {
 		UserEntity user = (UserEntity) session.getAttribute("user");
+		model.addAttribute("userid", user.getUserId());
 		System.out.println("from /Flprofile userid: "+user.getUserId());
-		
 		// Location Information
-		
-				LocationEntity location = locservice.findLocDet(trainer.getUser().getUserId());
+				LocationEntity location = locservice.findLocDet(user.getUserId());
 				if(location!=null)
 				{
 					List<StateEntity> states = stateservice.getStates(location.getCity().getState().getCountry().getCountryId());
@@ -252,8 +263,6 @@ public class RegistrationController {
 					model.addAttribute("states",new JSONArray(states));
 					model.addAttribute("cities",new JSONArray(cities));
 				}
-		
-		
 		model.addAttribute("countries",countryservice.getAllCountries());
 		return "pages/FreeLancer/FLprofile";
 	}
@@ -291,7 +300,7 @@ public class RegistrationController {
 		}
 	}
 
-	@RequestMapping("/trainee_updateprofile")
+	@RequestMapping(value="/trainee_updateprofile",method=RequestMethod.POST)
 	public String traineeProfileMapping(@RequestParam("username") String username, ModelMap model, HttpSession session) {
 		UserEntity user = userservice.getUser(username);
 		session.setAttribute("userid", user.getUserId());

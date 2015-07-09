@@ -393,10 +393,6 @@ function freelProfDet(path)
 	
 	
 }
-
-
-
-
 function freelLocDetails(path) {
 
 	console.log("in freelcontactdetails...");
@@ -405,7 +401,7 @@ function freelLocDetails(path) {
 	if (flag) {
 		try {
 			$.ajax({
-				url : path + '/updatelocinfo',
+				url : './updatelocinfo',
 				type : 'post',
 				dataType : 'json',
 				data : JSON.stringify({

@@ -76,7 +76,7 @@
 													});
 								} else {
 									alert("Thank you for Your Registration, Please Update Your Profile:");
-									doLoginSuccess(path);
+									doLoginTrainee(path);
 									/* window.location.href = path
 											+ "/trainee_updateprofile"; */
 								}
@@ -89,9 +89,8 @@
 		}
 	}
 	
-	function doLoginSuccess(path)
+	function doLoginTrainee(path)
 	{
-		console.log("in doLoginSuccess()... :-)");
 		var username = $('#email').val();
 		var credentials = {username:$('#email').val(),password:$('#pass1').val()};
 		$.ajax({
@@ -108,17 +107,17 @@
 						$('#auth_error_mesg').html(data.message);
 						$("#auth_error_div").show();
 					} else if (data.success == true) {										
-						location.href = "${ctx}/searchmytraining" + data.page+"?username="+username;
-						/* location.href = path + data.page; */
+						/* location.href = "${ctx}/searchmytraining" + data.page+"?username="+username; */
+						$('#url').val(username);
+						$("#loginformhidden").attr("action","${ctx}/searchmytraining" + data.page);
+						$('#loginformhidden').submit();
 					}
 				}
 			},
 			error : loginFailed
 		});
 	}
-	
 </script>
-
 </head>
 <body onload="randString(5);">
 <div id="pop_up_box_2">
@@ -147,11 +146,9 @@
 						placeholder="Corporate Name" />
 				</div>
 			</div>
-
 			<div class="name">
 				<input type="text" autocomplete="off" name="fname" id="fname"
 					placeholder="Full Name">
-
 			</div>
 			<span id="error01"><text>.</text></span>
 			<%-- <img src ="<%=request.getContextPath()%>/resources/images/error.png" alt="error"/> --%>
@@ -164,13 +161,11 @@
 			<div class="mailto">
 				<input type="text" id="email" autocomplete="off" name="email"
 					placeholder="Email Id">
-
 			</div>
 			<span id="error03"><text>.</text></span>
 			<div class="password">
 				<input type="password" id="pass1" autocomplete="off" name="pass1"
 					placeholder="Enter Password" />
-
 			</div>
 			<div id="Pass-chek01">
 				<div id="meter01"></div>
@@ -200,7 +195,6 @@
 			</div>
 			
 			</div>
-			
 
 			<div class="sign">
 				<input type="button" name="Submit" value="Submit"
@@ -211,6 +205,8 @@
 		</form>
 	</div>
 </div>
-
+<form id="loginformhidden" style="display: hidden" method="POST">
+		<input type="hidden" id="url" name="username" value="" />
+</form>
 </body>
 </html>

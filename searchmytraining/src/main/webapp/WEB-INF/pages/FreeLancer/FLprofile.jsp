@@ -11,6 +11,7 @@
 	src="<%=request.getContextPath()%>/resources/js/Validations/FreeLProfile.js"></script>
 <script	src="<%=request.getContextPath()%>/resources/js/work/categories.js"></script>
 <%-- <script	src="<%=request.getContextPath()%>/resources/js/work/freelance.js"></script> --%>
+<script	src="./resources/js/work/updatefreelancerprofile.js"></script>
 <script type="text/javascript">
 $('#acord1').accordion({
 	collapsible : true
@@ -26,84 +27,61 @@ jQuery(document).ready(function () {
             $nextContent.show()
         });
     });
-}); 
+});
+var jsonstates = '${states}';
+	var jsoncities = '${cities}';
+	var states = $.parseJSON(jsonstates);
+	var cities = $.parseJSON(jsoncities);
+	var country_value = '${location.city.state.country.countryId}';
+	var state_value = '${location.city.state.stateId}';
+	var city_value = '${location.city.cityId}';
+	loadLocationInfo(states,cities,state_value,city_value);
 
 <%-- function freeEduDetails() {
 	try {
 		alert('Hi Jumanji');
 		/* alert('degreeType '+$('#degreeType').val()+" qualification "+$('#qualification').val()+" university "+$('#university').val()+" yop "+$('#yop').val()); */
 		$.ajax({
-
 			url : '<%=request.getContextPath()%>/updateFreedetails',
-
 			type : 'post',
-			
 			dataType : 'json',
-
 			data : JSON.stringify({
-
 				"degreeType" : $('#degreeType').val(),
-
 				"qualification" : $('#qualification').val(),
-
 				"eduSpecfctn" : $('#eduSpecfctn').val(),
-				
 				"university" : $('#university').val(),
-				
 				"yop" : $('#yop').val()
-
 			}),
-
 			contentType : "application/json",
-			
 			success : function(response) {
 				alert("Thank you for Your Registration, Please Update Your Profile:");
 				window.location.href="<%=request.getContextPath()%>/freelancer_updateprofile";
-				
 			}
 		});
-
 	} catch (ex) {
-
 		alert(ex);
-
 	}
-
 }
-	
-	
 	function freeCrtfctDetails() {
 		try {
 			alert('Hi Jumanji 2');
 			/* alert('awrdDetails '+$('#awrdDetails').val()); */
 			$.ajax({
-
 				url : '<%=request.getContextPath()%>/freelaancer_reg',
-
 				type : 'post',
-				
 				dataType : 'json',
-
 				data : JSON.stringify({
-
 					"awrdDetails" : $('#awrdDetailsawrdDetails').val()
 				}),
-
 				contentType : "application/json",
-				
 				success : function(response) {
 					alert("Thank you for Your Registration, Please Update Your Profile:");
 					window.location.href="<%=request.getContextPath()%>/freelancer_updateprofile";
-					
 				}
 			});
-
 		} catch (ex) {
-
 			alert(ex);
-
 		}
-
 	} --%>
 	function changeImage(input) {
 	    if (input.files && input.files[0]) {
@@ -175,18 +153,24 @@ jQuery(document).ready(function () {
 				
 				<div class="country">
 					<label>Country <text>*</text> :</label> 
-					<select id="countryid" onchange="getStates('<%=request.getContextPath()%>')">
+					<select id="countryid" onchange="getStates();">
 						<option value="0">--Select--</option>
 						<c:forEach var="country" items="${countries}">
-							<option value="${country.countryId}">${country.countryName}</option><!-- onclick="getStates(${country.countryId},'<%=request.getContextPath()%>');" -->
-							<c:set var="cntid" value="${country.countryId}"/>
+							<c:choose>
+								<c:when test="${country_value == country.countryId}">
+									<option value="${country.countryId}" selected>${country.countryName}</option>
+								</c:when>
+								<c:otherwise>
+									<option value="${country.countryId}">${country.countryName}</option>
+								</c:otherwise>
+							</c:choose>
 						</c:forEach>
 					</select>
 				</div>
 				<span id="errorflcountry"></span>
 				<div class="state">
 					<label>State <text>*</text> :</label> 
-					<select id="stateid" onchange="getCities('<%=request.getContextPath()%>')">
+					<select id="stateid" onchange="getCities()">
 						<option value="0">--Select--</option>
 					</select>
 	     		</div>
