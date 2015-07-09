@@ -94,7 +94,9 @@
 					<input type="text" autocomplete="off" name="name" id="name12"
 						placeholder="Full Name" autofocus />
 				</div>
-				<span id="error11"><text>.</text></span> <select id="City_name12">
+				<span id="error11"><text>.</text></span> 
+				<div class="city">
+				<select id="City_name12">
 					<option value="0">Select City</option>
 					<option value="Pune">Pune</option>
 					<option value="Mumbai">Mumbai</option>
@@ -115,7 +117,9 @@
 					<option value="Baroda">Baroda</option>
 					<option value="Ahmedabad">Ahmedabad</option>
 					<option value="Lucknow">Lucknow</option>
-				</select> <span id="error12"><text>.</text></span>
+				</select> 
+				</div>
+				<span id="error12"><text>.</text></span>
 				<!--  <div class="name">
                         <input type="text" autocomplete="off" name="training_type" value="" placeholder="Training Type" required="">
                     </div> -->
