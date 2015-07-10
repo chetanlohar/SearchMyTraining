@@ -11,6 +11,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+@Component
+@Scope("prototype")
 @Entity
 @Table(name="tbl_freelancerregdetails")
 public class FreelancerEntity implements Serializable
@@ -22,13 +26,14 @@ public class FreelancerEntity implements Serializable
 	private Integer freelancerId ; 
 	@Column(name="fullName")
 	 private String fullName ;
-	@Column(name="city")
-	 private String city ;
 	@Column(name="contact")
 	 private String contact ;
 	@Column(name="email")
 	 private String email ;
 
+	@ManyToOne(fetch=FetchType.EAGER,targetEntity=CityEntity.class)
+	@JoinColumn(name="city")
+	private CityEntity city;
 	
 	@ManyToOne(fetch=FetchType.EAGER,targetEntity=UserEntity.class)
 	@JoinColumn(name="userId")
@@ -46,10 +51,10 @@ public class FreelancerEntity implements Serializable
 	public void setFullName(String fullName) {
 		this.fullName = fullName;
 	}
-	public String getCity() {
+	public CityEntity getCity() {
 		return city;
 	}
-	public void setCity(String city) {
+	public void setCity(CityEntity city) {
 		this.city = city;
 	}
 	public String getContact() {

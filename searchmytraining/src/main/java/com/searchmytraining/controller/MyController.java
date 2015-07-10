@@ -6,16 +6,23 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.searchmytraining.service.ICityService;
+
 @Controller
 public class MyController {
+	
+	@Autowired
+	public ICityService cityservice;
+	
 
 	@RequestMapping("/")
-	public String displayFiles(HttpServletRequest request) {
+	public String displayFiles(HttpServletRequest request,ModelMap model) {
 		
 		//Images for Vertical Left pane
 		
@@ -50,6 +57,8 @@ public class MyController {
 			horizontalMainImageList.add(imageFile.getName());
 		}
 		request.setAttribute("horizontalMainImageList", horizontalMainImageList);
+		
+		model.addAttribute("cities", cityservice.getAllCities());
 		return "index";
 	}
 

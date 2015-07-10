@@ -39,9 +39,17 @@ public class EmploymentDAO extends AbstractJpaDAO<EmploymentEntity> implements I
 		String query = "from EmploymentEntity empl where empl.user.userId=?";
 		entitymanager = getEntityManager();
 		TypedQuery<EmploymentEntity> typedquery = entitymanager.createQuery(query, EmploymentEntity.class);
-		typedquery.setParameter(1, userid);
-		EmploymentEntity emplentity = typedquery.getSingleResult();
-		return emplentity;
+		try
+		{
+			typedquery.setParameter(1, userid);
+			EmploymentEntity emplentity = typedquery.getSingleResult();
+			return emplentity;
+		}
+		catch(NoResultException e)
+		{
+			return null;
+		}
+		
 	}
 
 }

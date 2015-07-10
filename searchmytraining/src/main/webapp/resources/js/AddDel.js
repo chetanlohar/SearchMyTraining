@@ -13,7 +13,7 @@
         
         var assocNamesSize = $('#assocNameSize').val();
         var i = parseInt(assocNamesSize);
-        I++;
+        i++;
         
         $('.addScnt').live('click', function() {
             $('<p style="margin-left:253px;"><select id="phonetypeid'+ i +'" onchange="return contactValidation();" style="margin-right:10px;"><option value="0" name="state">--Select--</option><option value="1">OFFICE-MOBILE</option><option value="2">OFFICE-LANDLINE</option><option value="3">PERSONAL-MOBILE</option><option value="5">FAX</option><option value="6">TOLL FREE</option><input type="text" id="institutecontact' + i +'" size="20" placeholder="Please Enter Number" name="institutecontact' + i +'" onkeypress="return validate15(event)"/> <a href="#" id="remScnt"><img style="margin-left:10px;margin-top:5px;float:left;" src="resources/images/Cancel-128.png"></a><input type="button" value="+" class="addScnt"><span id="error'+ i +'"></span></p>').appendTo(scntDiv);

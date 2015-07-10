@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -27,7 +28,7 @@
 							dataType : 'json',
 							data : JSON.stringify({
 								"name12" : $('#name12').val(),
-								"city12" : $('#city12').val(),
+								"city12" : $('#City_name12').val(),
 								"contact12" : $('#contact12').val(),
 								"email12" : $('#email12').val(),
 								"password12" : $('#password12').val(),
@@ -97,26 +98,10 @@
 				<span id="error11"><text>.</text></span> 
 				<div class="city">
 				<select id="City_name12">
-					<option value="0">Select City</option>
-					<option value="Pune">Pune</option>
-					<option value="Mumbai">Mumbai</option>
-					<option value="Nagpur">Nagpur</option>
-					<option value="Solapur">Solapur</option>
-					<option value="Nashik">Nashik</option>
-					<option value="Bangalore">Bangalore</option>
-					<option value="Delhi">Delhi</option>
-					<option value="Kolkata">Kolkata</option>
-					<option value="Chennai">Chennai</option>
-					<option value="Goa">Goa</option>
-					<option value="Indore">Indore</option>
-					<option value="Noida">Noida</option>
-					<option value="Hydrabad">Hydrabad</option>
-					<option value="Gurgaon">Gurgaon</option>
-					<option value="Chandigarh">Chandigarh</option>
-					<option value="Jaipur">Jaipur</option>
-					<option value="Baroda">Baroda</option>
-					<option value="Ahmedabad">Ahmedabad</option>
-					<option value="Lucknow">Lucknow</option>
+					<option value="0" selected>--Select--</option>
+					<c:forEach var="city" items="${cities}">
+						<option value="${city.cityId}">${city.cityName}</option>
+					</c:forEach>
 				</select> 
 				</div>
 				<span id="error12"><text>.</text></span>

@@ -12,10 +12,12 @@ import com.searchmytraining.dao.StatusDAO;
 import com.searchmytraining.dao.TrainerDAO;
 import com.searchmytraining.dao.UserDAO;
 import com.searchmytraining.dto.TrainerDTO;
+import com.searchmytraining.entity.CityEntity;
 import com.searchmytraining.entity.RoleEntity;
 import com.searchmytraining.entity.StatusEntity;
 import com.searchmytraining.entity.TrainerEntity;
 import com.searchmytraining.entity.UserEntity;
+import com.searchmytraining.service.ICityService;
 import com.searchmytraining.service.ITrainerService;
 
 @Service
@@ -35,7 +37,10 @@ import com.searchmytraining.service.ITrainerService;
 	@Autowired
 	public UserDAO userdao;
 	@Autowired
+	public ICityService cityservice;
+	@Autowired
 	public BCryptPasswordEncoder encoder;
+	
 	@Override
 	@Transactional
 	public Integer registerTrainer(TrainerDTO trainerdto) {
@@ -51,10 +56,15 @@ import com.searchmytraining.service.ITrainerService;
 		user.setStatus(status);
 		userdao.addUser(user);
 		entity.setUser(user);
+		
 		RoleEntity role = (RoleEntity)context.getBean("roleEntity");
 		role.setROLE("TPI");
 		role.setUser(user);
 		roledao.setRoleToUser(role);
+		
+		CityEntity city = (CityEntity)context.getBean("cityEntity");
+		city = cityservice.getCity(trainerdto.getCity());
+		entity.setCity(city);
 		regdao.registerTrainer(entity);
 		return userdao.getMaxUserId("userId");
 	}

@@ -33,6 +33,7 @@ import com.searchmytraining.entity.CityEntity;
 import com.searchmytraining.entity.ClientEntity;
 import com.searchmytraining.entity.ContactInfoEntity;
 import com.searchmytraining.entity.EmploymentEntity;
+import com.searchmytraining.entity.FreelancerEntity;
 import com.searchmytraining.entity.IndustryCategoryEntity;
 import com.searchmytraining.entity.IndustrySubCategoryEntity;
 import com.searchmytraining.entity.InstituteEntity;
@@ -120,6 +121,8 @@ public class RegistrationController {
 	public Integer userid;
 
 	public FreelancerDTO freelancerDto1;
+	
+	
 
 	@RequestMapping(value = "/trainingprovider_reg", method = RequestMethod.POST, produces = { "application/json" }, consumes = { "application/json" })
 	@ResponseBody
@@ -241,8 +244,13 @@ public class RegistrationController {
 	}
 
 	@RequestMapping(value="/freelancer_updateprofile", method=RequestMethod.POST)
-	public String freelancerProfileMapping(@RequestParam String username,ModelMap model) {
+	public String freelancerProfileMapping(@RequestParam String username,ModelMap model,HttpSession session) {
 		System.out.println("FL username: "+username);
+		UserEntity user = userservice.getUser(username);
+		System.out.println(user.getUserId());
+		session.setAttribute("user", user);
+		FreelancerEntity flentity = freelancerservice.getFreeLancerDetByUserId(user.getUserId().longValue());
+		session.setAttribute("flentity", flentity);
 		return "pages/FreeLancer/FreeLancerProfile";
 	}
 
@@ -321,16 +329,19 @@ public class RegistrationController {
 			
 			System.out.println("userid is: "+trainee.getUser().getUserId());
 			EmploymentEntity emplentity = employmentservice.findEmplDet(trainee.getUser().getUserId());
-			indcatid=emplentity.getIndsubcat().getIndustrycategory().getTrnIndstrCatId();
-			List<IndustrySubCategoryEntity> indsubsubcatlist = indsubcatindservice.getIndustrySubCategories(indcatid);
-			Integer indid = emplentity.getIndsubcat().getIndustrycategory().getIndustry().getTrnIndstrId();
-			List<IndustryCategoryEntity> indcatlist = industrycategoryser.getIndustryCategories(indid);
-			Integer indsubcatid = emplentity.getIndsubcat().getTrnIndstrSubCatId();
-			for(IndustryCategoryEntity indcatName:indcatlist)
-				System.out.println(indcatName.getIndstrCatName());
-			model.addAttribute("industrycategories", new JSONArray(indcatlist));
-			model.addAttribute("industrysubcat",new JSONArray(indsubsubcatlist));
-			model.addAttribute("employmentdetails", emplentity);
+			if(emplentity!=null)
+			{
+				indcatid=emplentity.getIndsubcat().getIndustrycategory().getTrnIndstrCatId();
+				List<IndustrySubCategoryEntity> indsubsubcatlist = indsubcatindservice.getIndustrySubCategories(indcatid);
+				Integer indid = emplentity.getIndsubcat().getIndustrycategory().getIndustry().getTrnIndstrId();
+				List<IndustryCategoryEntity> indcatlist = industrycategoryser.getIndustryCategories(indid);
+				Integer indsubcatid = emplentity.getIndsubcat().getTrnIndstrSubCatId();
+				for(IndustryCategoryEntity indcatName:indcatlist)
+					System.out.println(indcatName.getIndstrCatName());
+				model.addAttribute("industrycategories", new JSONArray(indcatlist));
+				model.addAttribute("industrysubcat",new JSONArray(indsubsubcatlist));
+				model.addAttribute("employmentdetails", emplentity);
+			}
 			
 			//Location Details
 			

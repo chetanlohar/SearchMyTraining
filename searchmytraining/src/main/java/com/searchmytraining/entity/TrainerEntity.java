@@ -25,9 +25,6 @@ public class TrainerEntity implements Serializable{
 	@Column(name="org_name")
 	private String org_name;
 	
-	@Column(name="city")
-	private String city;
-	
 	@Column(name="contact")
 	private String contact;
 	
@@ -36,6 +33,10 @@ public class TrainerEntity implements Serializable{
 		
 	@Column(name="password")
 	private String password;
+	
+	@ManyToOne(fetch=FetchType.EAGER,targetEntity=CityEntity.class)
+	@JoinColumn(name="city")
+	private CityEntity city;
 
 	@ManyToOne(fetch=FetchType.EAGER,targetEntity=UserEntity.class)
 	@JoinColumn(name="userId")
@@ -57,11 +58,11 @@ public class TrainerEntity implements Serializable{
 		this.org_name = org_name;
 	}
 	
-	public String getCity() {
+	public CityEntity getCity() {
 		return city;
 	}
 
-	public void setCity(String city) {
+	public void setCity(CityEntity city) {
 		this.city = city;
 	}
 

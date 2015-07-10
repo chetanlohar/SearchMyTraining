@@ -1,5 +1,7 @@
 package com.searchmytraining.service.impl;
 
+import javax.persistence.EntityManager;
+
 import org.dozer.DozerBeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -12,10 +14,12 @@ import com.searchmytraining.dao.RoleDAO;
 import com.searchmytraining.dao.StatusDAO;
 import com.searchmytraining.dao.UserDAO;
 import com.searchmytraining.dto.FreelancerDTO;
+import com.searchmytraining.entity.CityEntity;
 import com.searchmytraining.entity.FreelancerEntity;
 import com.searchmytraining.entity.RoleEntity;
 import com.searchmytraining.entity.StatusEntity;
 import com.searchmytraining.entity.UserEntity;
+import com.searchmytraining.service.ICityService;
 import com.searchmytraining.service.IFreelancerService;
 
 @Service
@@ -25,7 +29,7 @@ public class FreelancerService implements IFreelancerService
 	public WebApplicationContext context;
 	
 	@Autowired
-	public FreelancerDAO regdao;
+	public FreelancerDAO freelancerdao;
 	@Autowired
 	public DozerBeanMapper mapper;
 	@Autowired
@@ -34,6 +38,8 @@ public class FreelancerService implements IFreelancerService
 	public StatusDAO statusdao;
 	@Autowired
 	public UserDAO userdao;
+	@Autowired
+	public ICityService cityservice;
 	@Autowired
 	public BCryptPasswordEncoder encoder;
 	
@@ -58,8 +64,18 @@ public class FreelancerService implements IFreelancerService
 		role.setUser(user);
 		roledao.setRoleToUser(role);
 		entity.setUser(user);
-		regdao.registerFreelancer(entity);
+		
+		CityEntity city = (CityEntity)context.getBean("cityEntity");
+		city = cityservice.getCity(freelancerDto.getCity12());
+		entity.setCity(city);
+		
+		freelancerdao.registerFreelancer(entity);
 		return userdao.getMaxUserId("userId");
+	}
+
+	@Override
+	public FreelancerEntity getFreeLancerDetByUserId(Long userid) {
+		return freelancerdao.getFreeLancerDetByUserId(userid);
 	}
 	
 

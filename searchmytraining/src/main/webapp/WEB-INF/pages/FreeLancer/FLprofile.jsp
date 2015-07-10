@@ -61,28 +61,7 @@ var jsonstates = '${states}';
 	} catch (ex) {
 		alert(ex);
 	}
-}
-	function freeCrtfctDetails() {
-		try {
-			alert('Hi Jumanji 2');
-			/* alert('awrdDetails '+$('#awrdDetails').val()); */
-			$.ajax({
-				url : '<%=request.getContextPath()%>/freelaancer_reg',
-				type : 'post',
-				dataType : 'json',
-				data : JSON.stringify({
-					"awrdDetails" : $('#awrdDetailsawrdDetails').val()
-				}),
-				contentType : "application/json",
-				success : function(response) {
-					alert("Thank you for Your Registration, Please Update Your Profile:");
-					window.location.href="<%=request.getContextPath()%>/freelancer_updateprofile";
-				}
-			});
-		} catch (ex) {
-			alert(ex);
-		}
-	} --%>
+}--%>
 	function changeImage(input) {
 	    if (input.files && input.files[0]) {
 	        var reader = new FileReader();
@@ -104,12 +83,12 @@ var jsonstates = '${states}';
 				<!-- Splitting the name into Three parts first second and third -->
 				<div class="name">
 					<label>Full Name <text>*</text> :</label> 
-					<input type="text" id="fname61"	name="fname61" value='${freelancerDto.name12}' onkeypress="return validateFLName(event);"/> 
+					<input type="text" id="fname61"	name="fname61" value='${flentity.fullName}' onkeypress="return validateFLName(event);"/> 
 					<span id="error61"></span>
 				</div>
 				<div class="Email">
 					<label>Email(Login Id) <text>*</text> :</label> <input type="email" id="email64"
-						name="email64" value="${freelancerDto.email12}" /> <span
+						name="email64" value="${flentity.email}" /> <span
 						id="error64"></span>
 				</div>
 				 <div class="photo">
@@ -130,22 +109,25 @@ var jsonstates = '${states}';
 		<div class="acord_cont">
 			<form name="" class="multi" id="freeContact">
 				<div class="flatNo">
-					<label>Building No./Flat No./Society No.<text>*</text> :</label> <input
-						type="text" name="builNo65" id="builNo65" />
+					<label>Building No./Flat No./Society No.<text>*</text> :</label> 
+					<input
+						type="text" name="builNo65" id="builNo65" value="${location.buildingNo}"/>
 						<span id="error65"></span>
 				</div>
 				<div class="street">
-					<label>Street :</label> <input type="text" name="streetName66"
-						id="streetName66" />
+					<label>Street :</label> 
+					<input type="text" name="streetName66"
+						id="streetName66" value="${location.street}"/>
 						<span id="error66"></span>
 				</div>
 				<div class="landmark">
-					<label>Landmark :</label> <input type="text" name="landmark67"
-						id="landmark67" />
+					<label>Landmark :</label> 
+					<input type="text" name="landmark67"
+						id="landmark67" value="${location.landmark}"/>
 						<span id="error67"></span>
 				</div>
 				<div class="pin">
-					<label>Pincode <text>*</text> :</label> <input type="text" name="pin68" id="pin68" onkeypress="return validate14(event)"/>
+					<label>Pincode <text>*</text> :</label> <input type="text" name="pin68" id="pin68" onkeypress="return validate14(event)" value="${location.pincode}"/>
 				<span id="error68"></span>
 				</div>
 				
@@ -298,7 +280,7 @@ var jsonstates = '${states}';
 					
 				</div><br><br>
                      <h3>(Max 250 characters)</h3>
-				<input class="skipbtn13" type="button" value="Save" name="save" form="frmCerfDetails" onclick="freeCrtfctDetails();" />
+				<input class="skipbtn13" type="button" value="Save" name="save" form="frmCerfDetails" onclick="freelCertificationAwardDet();" />
 			</form>
 
 		</div>

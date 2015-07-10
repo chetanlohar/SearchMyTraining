@@ -64,9 +64,9 @@
 				<div class="u-info">
 				<h1>Welcome,</h1>
 				 <div class="u_name">
-				<h2>ABC XYZ</h2>
+				<h2>${trainer.org_name}${flentity.fullName}${trainee.fullName}</h2>
 				</div>
-				<div class=u_mailid><h3>abcabcabc@gmail.com</h3>
+				<div class=u_mailid><h3>${trainer.email}${flentity.email}${trainee.emailid}</h3>
 				</div> 
 				</div><br></br>
 				 <div class="signout">

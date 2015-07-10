@@ -35,3 +35,4 @@ function loadLocationInfo(states,cities,state_value,city_value)
 		});
 	}
 }
+

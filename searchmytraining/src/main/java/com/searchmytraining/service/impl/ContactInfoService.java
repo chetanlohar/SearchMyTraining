@@ -1,11 +1,13 @@
 package com.searchmytraining.service.impl;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 import org.dozer.DozerBeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.context.WebApplicationContext;
 
 import com.searchmytraining.dao.IContactInfoDAO;
 import com.searchmytraining.dao.IPhoneDAO;
@@ -20,6 +22,8 @@ import com.searchmytraining.service.IUserService;
 @Repository
 public class ContactInfoService implements IContactInfoService {
 
+	@Autowired
+	public WebApplicationContext context;
 	@Autowired
 	public DozerBeanMapper mapper;
 	@Autowired
@@ -39,12 +43,23 @@ public class ContactInfoService implements IContactInfoService {
 		ArrayList<String> phones = contactdto.getPhone();
 		Iterator<Integer> phonetypeitr = phonetypeids.iterator();
 		Iterator<String> phoneitr = phones.iterator();
+		List<PhoneEntity> phonesdet = phonedao.getPhoneByUserId(contactdto.getUserid().longValue());
+		
 		while(phonetypeitr.hasNext() && phoneitr.hasNext())
 		{
-			PhoneEntity phoneentity = new PhoneEntity();
-			phoneentity.setUser(user);
-			phoneentity.setPhoneValue(phoneitr.next());
-			phoneentity.setPhonetype(phonetypedao.getPhoneType(phonetypeitr.next()));
+			String phoneValue = phoneitr.next();
+			PhoneEntity phoneentity1 = phonedao.getPhoneDet(phoneValue);
+			PhoneEntity phoneentity = (PhoneEntity)context.getBean("phoneEntity");
+			if(phoneentity1!=null)
+			{
+				phoneentity1.setPhoneValue(phoneValue);
+			}
+			else
+			{
+				phoneentity.setUser(user);
+				phoneentity.setPhoneValue(phoneValue);
+				phoneentity.setPhonetype(phonetypedao.getPhoneType(phonetypeitr.next()));
+			}
 			phonedao.insertPhoneDetails(phoneentity);
 		}
 		contactentity.setUser(user);
@@ -55,5 +70,5 @@ public class ContactInfoService implements IContactInfoService {
 	public ContactInfoEntity getContactInfoDetailsByUserId(Long userid) {
 		return contactdao.getContactInfoDetails(userid);
 	}
-
+	
 }

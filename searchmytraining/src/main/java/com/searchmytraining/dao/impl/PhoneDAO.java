@@ -3,6 +3,7 @@ package com.searchmytraining.dao.impl;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
@@ -27,5 +28,23 @@ public class PhoneDAO extends AbstractJpaDAO<PhoneEntity> implements IPhoneDAO {
 		typedQuery.setParameter(1, userid.intValue());
 		List<PhoneEntity> phones = typedQuery.getResultList();
 		return phones;
+	}
+	
+	public PhoneEntity getPhoneDet(String phoneno)
+	{
+		EntityManager em = getEntityManager();
+		String strquery = "from PhoneEntity phone where phone.phoneValue=?";
+		TypedQuery<PhoneEntity> typedquery = em.createQuery(strquery, PhoneEntity.class);
+		try{
+			typedquery.setParameter(1, phoneno);
+			PhoneEntity phoneentity = typedquery.getSingleResult();
+			return phoneentity;
+		}
+		catch(NoResultException e)
+		{
+			System.out.println(phoneno+" is not exists");
+			return null;
+		}
+		
 	}
 }

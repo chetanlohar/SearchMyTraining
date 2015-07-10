@@ -478,7 +478,7 @@ function freelCertificationAwardDet(path) {
 	if (flag) {
 		try {
 			$.ajax({
-				url : path + '/freelcertiawardDet',
+				url : './freelcertiawardDet',
 				type : 'post',
 				dataType : 'json',
 				data : JSON.stringify({

@@ -3,7 +3,7 @@ package com.searchmytraining.dto;
 public class FreelancerDTO 
 {
 	private String name12;
-	private String city12;
+	private Integer city12;
 	private String contact12;
 	private String email12;
 	private String password12;
@@ -14,10 +14,10 @@ public class FreelancerDTO
 	public void setName12(String name12) {
 		this.name12 = name12;
 	}
-	public String getCity12() {
+	public Integer getCity12() {
 		return city12;
 	}
-	public void setCity12(String city12) {
+	public void setCity12(Integer city12) {
 		this.city12 = city12;
 	}
 	public String getContact12() {

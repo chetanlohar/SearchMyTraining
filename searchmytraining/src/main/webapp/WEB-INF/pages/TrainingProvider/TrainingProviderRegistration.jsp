@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -119,28 +120,12 @@ function doLoginTP()
 
 				</div>
 				<select id="cityid">
-					<option value="0">Select City</option>
-					<option value="Pune">Pune</option>
-					<option value="Mumbai">Mumbai</option>
-					<option value="Nagpur">Nagpur</option>
-					<option value="Solapur">Solapur</option>
-					<option value="Nashik">Nashik</option>
-					<option value="Bangalore">Bangalore</option>
-					<option value="Delhi">Delhi</option>
-					<option value="Kolkata">Kolkata</option>
-					<option value="Chennai">Chennai</option>
-					<option value="Goa">Goa</option>
-					<option value="Indore">Indore</option>
-					<option value="Noida">Noida</option>
-					<option value="Hydrabad">Hydrabad</option>
-					<option value="Gurgaon">Gurgaon</option>
-					<option value="Chandigarh">Chandigarh</option>
-					<option value="Jaipur">Jaipur</option>
-					<option value="Baroda">Baroda</option>
-					<option value="Ahmedabad">Ahmedabad</option>
-					<option value="Lucknow">Lucknow</option>
-					
-				</select> <span id="error2"><text>.</text></span>
+					<option value="0" selected>--Select--</option>
+					<c:forEach var="city" items="${cities}">
+						<option value="${city.cityId}">${city.cityName}</option>
+					</c:forEach>
+				</select> 
+				<span id="error2"><text>.</text></span>
 				<div class="contact">
 					<input id="contact1" type="text" autocomplete="off" name="contact"
 						value="" placeholder="Contact No." required=""

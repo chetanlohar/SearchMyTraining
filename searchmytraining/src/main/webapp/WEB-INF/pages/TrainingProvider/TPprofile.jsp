@@ -130,6 +130,7 @@
 						<label>Institute Contact: </label>
 						<input id="phonesSize" type="hidden" value="${fn:length(phones)}"/>
 						<c:set var="countPhones" value="1" scope="page" />
+						<c:set var="phonevalueids" value="" />
 						<c:forEach var="phone" items="${phones}">
 							<select id="phonetypeid${countPhones}">
 								<option value="0">--Select--</option>
@@ -137,6 +138,8 @@
 									<c:choose>
 										<c:when test="${phone.phonetype.phnTypeId == phonetype.phnTypeId}">
 											<option value="${phonetype.phnTypeId}" selected>${phonetype.phnTypeName}</option>
+											<%-- <input type="hidden" id="phonetypeids_1" value="${phonetype.phnTypeId}" />
+											<input type="hidden" id="phonenumids_1" value="${phone.phoneId}" /> --%>
 										</c:when>
 										<c:otherwise>
 											<option value="${phonetype.phnTypeId}">${phonetype.phnTypeName}</option>

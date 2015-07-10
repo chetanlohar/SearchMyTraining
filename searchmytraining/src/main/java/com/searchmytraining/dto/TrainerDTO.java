@@ -8,9 +8,7 @@ public class TrainerDTO {
 
 	@NotEmpty(message="Enter the Organisation Name")
 	private String org_name;
-	
-	@NotEmpty(message="Please Enter the City")
-	private String city;
+	private Integer city;
 	@NotEmpty(message="Please Enter the Contact")
 	private String contact;
 	@NotEmpty(message="Please Enter the Email")
@@ -33,10 +31,10 @@ public class TrainerDTO {
 	public void setOrg_name(String org_name) {
 		this.org_name = org_name;
 	}
-	public String getCity() {
+	public Integer getCity() {
 		return city;
 	}
-	public void setCity(String city) {
+	public void setCity(Integer city) {
 		this.city = city;
 	}
 	public String getContact() {
