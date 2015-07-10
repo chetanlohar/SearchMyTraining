@@ -2210,10 +2210,12 @@ disabled checkbox
 #pop_up_box form input[type="text"] {
 	width: 250px;
 	height: 30px;
+	margin-left: 15px;
 }
 	#pop_up_box form textarea {
 	height: 80px;
 	width: 250px;
+	margin-left: 15px;
 	font-size: 14px;
 	}
 	#pop_up_box .reg_form .head {
@@ -2224,7 +2226,12 @@ disabled checkbox
 
 #pop_up_box form h2 {
 	font-size: 20px;
+	
 }
+#pop_up_box form .sign input{
+	margin-left: 30px;
+}
+
 /* =========Group Training============= */
 #pop_up_box_1 {
 
@@ -2233,26 +2240,33 @@ disabled checkbox
 	margin-top: 30px;
 
 }
+
 #pop_up_box_1 .reg_form {
 	height: 550px;
 	width: 350px;
 
+}
+#pop_up_box_1 form{
+	margin-top: 10px;
 }
 #pop_up_box_1 form h2{
 		font-size: 20px;
 }
 #pop_up_box_1 form h4{
 		font-size: 14px;
+		margin-left: 10px;
 }
 #pop_up_box_1 form input[type="text"] {
 	width: 250px;
-	height: 25px;
+	height: 30px;
 	font-size: 14px;
+	margin-left: 15px;
 }
 #pop_up_box_1 form .req textarea {
 	height: 50px;
 	width: 250px;
 	font-size: 14px;
+	margin-left: 15px;
 	}
 #pop_up_box_1 .reg_form .head {
 	position: absolute;
@@ -2265,7 +2279,7 @@ disabled checkbox
 	margin-left: 10px;
 }
 #pop_up_box_1 form .sign input[type="submit"] {
-	margin-left: 30px;
+	margin-left: 50px;
 	margin-right: 10px;
 }
 /* =========Trainy registration============= */
@@ -2287,16 +2301,20 @@ disabled checkbox
 #pop_up_box_2 .reg_form .head {
 	position: absolute;
 	margin-left: 100px;
-	margin-top: -50px;
+	margin-top: -40px;
 }
+#pop_up_box_2 .reg_form .head img {
+	height: 85px;
+	width: 85px;
+	}
 
 #pop_up_box_2 form input[type="text"],#pop_up_box_2 form input[type="password"] {
 	width: 250px;
-	height: 25px;
+	height: 30px;
 	font-size: 14px;
 	background-position-x: 4px;
 	background-position-y: 5px;
-  margin: 6px 10px 0px 21px;
+  margin: 6px 10px 0px 23px;
 
 }
 #pop_up_box_2 form .name input {
@@ -2327,7 +2345,7 @@ disabled checkbox
 	background-position-y: 3px;
 }
 #pop_up_box_2 form .type {
-	margin-left: 20px;
+	margin-left: 23px;
 }
 #pop_up_box_2 form select {
 	height: 30px;
@@ -2336,16 +2354,37 @@ disabled checkbox
 #pop_up_box_2 form .rcpatcha {
   height: 30px;
   width: 250px;
-  margin: 6px 19px 1px;
+  margin: 6px 23px 1px;
 }
 #pop_up_box_2 form .cpatcha {
-  height: 40px;
+  height: 35px;
   width: 250px;
-  margin: 15px 17px 10px;
+  margin: 15px 25px 10px;
 }
 #pop_up_box_2 form .sign input[type="button"] {
-  margin-left: 30px;
+  margin-left: 43px;
 }
+#pop_up_box_2 form  #Pass-chek01 {
+	
+	margin-left: 24px;
+}
+#pop_up_box_2 form #Pass-chek01 .weak {
+	width: 80px;
+
+}
+
+#pop_up_box_2 form #Pass-chek01 .good {
+	width: 80px;
+
+}
+
+#pop_up_box_2 form #Pass-chek01 .strong {
+	width: 80px;
+
+}
+
+
+
 
 /* ========= Training Privider============= */
 #pop_up_box_4 {
@@ -2359,22 +2398,27 @@ disabled checkbox
 #pop_up_box_4 .reg_form  {
 	height:575px;
 	width:350px;
-	margin-top: 22px;
+	margin-top: 2px;
 
 }
 #pop_up_box_4 .reg_form .head {
 	position: absolute;
 	margin-left: 100px;
-	margin-top: -50px;
+	margin-top: -30px;
+}
+#pop_up_box_4 form .name{
+	height: 45px;
 }
 #pop_up_box_4 form select {
 	height: 30px;
     width: 250px;
+    margin-left:14px;
 }
 #pop_up_box_4 form input[type="text"],#pop_up_box_4 form input[type="password"] {
 	width: 250px;
-	height: 25px;
+	height: 30px;
 	font-size: 14px;
+	margin-left:14px;
 	background-position-x: 4px;
 	background-position-y: 5px;
 
@@ -2402,10 +2446,44 @@ disabled checkbox
 	background-position-x: 4px;
 	background-position-y: 3px;
 }
+
+
+#pop_up_box_4 form .rcpatcha1 {
+  height: 30px;
+  width: 250px;
+  margin: 6px 13px 1px;
+}
+#pop_up_box_4 form .cpatcha1 {
+  height: 40px;
+  width: 250px;
+  margin: 15px 13px 10px;
+}
+#pop_up_box_4 form .sign input[type="button"] {
+  margin-left: 30px;
+}
+#pop_up_box_4 form  #Pass-chek {
+	
+	margin-left: 18px;
+}
+#pop_up_box_4 form #Pass-chek .weak {
+	width: 80px;
+
+}
+
+#pop_up_box_4 form #Pass-chek .good {
+	width: 80px;
+
+}
+
+#pop_up_box_4 form #Pass-chek .strong {
+	width: 80px;
+
+}
+
 /* ========= Freelancer============= */
 #pop_up_box_8 {
 
-	min-width: 300px;
+	min-width: 350px;
 	min-height: 590px;
 	margin-top: 30px;
 
@@ -2414,17 +2492,25 @@ disabled checkbox
 }
 #pop_up_box_8 .reg_form  {
 	height:590px;
-	margin-top: 22px;
+	width:350px;
+	margin-top: 2px;
 
 
 }
+#pop_up_box_8 .reg_form .head {
+	position: absolute;
+	margin-left: 100px;
+	margin-top: -35px;
+}
 #pop_up_box_8 form .name {
-  height: 30px;
+  height: 35px;
+ 
 }
 #pop_up_box_8 form select {
 	 height: 30px;
      width: 250px;
      font-size: 14px;
+     margin-left: 15px;
 }
 #pop_up_box_8 form .password {
   height: 30px;
@@ -2439,8 +2525,9 @@ disabled checkbox
 }
 #pop_up_box_8 form input[type="text"],#pop_up_box_8 form input[type="password"] {
 	width: 250px;
-	height: 25px;
+	height: 30px;
 	font-size: 14px;
+	 margin-left: 15px;
 	background-position-x: 4px;
 	background-position-y: 5px;
 
@@ -2466,7 +2553,45 @@ disabled checkbox
 	background-position-x: 4px;
 	background-position-y: 3px;
 }
+#pop_up_box_8 form #Pass-chek12 {
+	width: 270px;
+	height: 15px;
+	font-size: 13px;
+	margin-left: 20px;
+	font-family: arial;
+	text-align: center;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
 
+#pop_up_box_8 form #Pass-chek12 .weak {
+	width: 80px;
+
+}
+
+#pop_up_box_8 form #Pass-chek12 .good {
+	width: 80px;
+
+}
+
+#pop_up_box_8 form #Pass-chek12 .strong {
+	width: 80px;
+	
+}
+
+#pop_up_box_8 form .cpatcha1 {
+	height: 40px;
+	width: 270px;
+	margin: 0px 15px;
+	
+}
+#pop_up_box_8 form .rcpatcha1 {
+
+	margin: 5px 15px;
+}
+#pop_up_box_8 form .sign input[type="button"] {
+	margin-left: 30px;
+}
 
 
 }

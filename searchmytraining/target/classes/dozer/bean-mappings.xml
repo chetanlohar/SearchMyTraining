@@ -3,12 +3,32 @@
 	xsi:schemaLocation="http://dozer.sourceforge.net
           http://dozer.sourceforge.net/schema/beanmapping.xsd">
 
+	<!-- <mapping>
+		<class-a>com.searchmytraining.dto.TrainingEnquiryDTO</class-a>
+		<class-b>com.searchmytraining.entity.TrainingEnquiryEntity</class-b>
+		<field>
+			<a>history</a>
+			<b>historyOfCompany</b>
+		</field>
+		<field-exclude>
+			<a>workingdays</a>
+			<b>workingdays</b>
+		</field-exclude>
+	</mapping> -->
+
+
+
 	<mapping>
 		<class-a>com.searchmytraining.dto.TrainerDTO</class-a>
 		<class-b>com.searchmytraining.entity.TrainerEntity</class-b>
 		<field-exclude type="one-way">
 			<a>cnfpassword</a>
 			<b>cnfpassword</b>
+		</field-exclude>
+		
+		<field-exclude type="one-way">
+			<a>city</a>
+			<b>city</b>
 		</field-exclude>
 
 	</mapping>
@@ -83,7 +103,7 @@
 			<b>phone</b>
 		</field-exclude>
 	</mapping>
-	
+
 	<mapping>
 		<class-a>com.searchmytraining.dto.LocationDTO</class-a>
 		<class-b>com.searchmytraining.entity.LocationEntity</class-b>
@@ -108,16 +128,21 @@
 			<b>userid</b>
 		</field-exclude>
 	</mapping>
-	
+
 	<mapping>
 		<class-a>com.searchmytraining.dto.ProfessionalAssociationDTO</class-a>
-		<class-b>com.searchmytraining.entity.ProfessionalAssociationEntity</class-b>
+		<class-b>com.searchmytraining.entity.ProfessionalAssociationEntity
+		</class-b>
 		<field-exclude>
 			<a>assocName</a>
 			<b>assocName</b>
 		</field-exclude>
+		<field-exclude>
+			<a>assocIds</a>
+			<b>assocIds</b>
+		</field-exclude>
 	</mapping>
-	
+
 	<mapping>
 		<class-a>com.searchmytraining.dto.ClientDetailsDTO</class-a>
 		<class-b>com.searchmytraining.entity.ClientEntity</class-b>
@@ -125,24 +150,30 @@
 			<a>clientName</a>
 			<b>clientName</b>
 		</field-exclude>
+		<field-exclude>
+			<a>clientIds</a>
+			<b>clientIds</b>
+		</field-exclude>
 	</mapping>
 
 	<mapping>
 		<class-a>com.searchmytraining.dto.FreelancerDTO</class-a>
 		<class-b>com.searchmytraining.entity.FreelancerEntity</class-b>
+		<field-exclude>
+			<a>password12</a>
+			<b>password12</b>
+		</field-exclude>
+		<field-exclude>
+			<a>city12</a>
+			<b>city12</b>
+		</field-exclude>
 		<field-exclude type="one-way">
 			<a>cnfpassword12</a>
-			<b>cnfpassword</b>
+			<b>cnfpassword12</b>
 		</field-exclude>
-
 		<field>
 			<a>name12</a>
 			<b>fullName</b>
-		</field>
-
-		<field>
-			<a>city12</a>
-			<b>city</b>
 		</field>
 		<field>
 			<a>contact12</a>
@@ -152,12 +183,8 @@
 			<a>email12</a>
 			<b>email</b>
 		</field>
-		<field>
-			<a>password12</a>
-			<b>password</b>
-		</field>
 	</mapping>
-	
+
 	<mapping>
 		<class-a>com.searchmytraining.dto.EmploymentDTO</class-a>
 		<class-b>com.searchmytraining.entity.EmploymentEntity</class-b>
@@ -166,10 +193,11 @@
 			<b>userid</b>
 		</field-exclude>
 	</mapping>
-	
+
 	<mapping>
 		<class-a>com.searchmytraining.dto.CertificationAwardDTO</class-a>
-		<class-b>com.searchmytraining.entity.CertificationAwardEntity</class-b>
+		<class-b>com.searchmytraining.entity.CertificationAwardEntity
+		</class-b>
 		<field>
 			<a>awrdDetails</a>
 			<b>certfctName</b>
@@ -179,6 +207,4 @@
 			<b>userid</b>
 		</field-exclude>
 	</mapping>
-
-
 </mappings> 

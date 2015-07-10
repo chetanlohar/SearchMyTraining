@@ -979,3 +979,20 @@ html[xmlns] .clearfix {
 * html .clearfix {
 	height: 1%;
 }
+
+
+
+/* =======================Responsive Code============================== */
+
+
+
+@media screen and (max-width:1366px) {
+	
+	#tabmenu li {
+
+	width: 165px;
+
+}
+	
+	
+}

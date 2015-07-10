@@ -43,11 +43,11 @@
 	<!-- ================================================================================================= -->
 	<div class="Fpass_wrapar">
 		<div class="Fpass_container">
-			<h1>Forgot your Password ?</h1>
+			<h1>FORGOT YOUR PASSWORD ?</h1>
 			<h3>A verification code sent to Email Id</h3>
 			<form action="#">
 			   <div class="email">
-			   <input type="text" id="Femail" name="email" placeholder="Email Id" required="" value="${username}"/>
+			   <input type="text" id="Femail" name="email" autocomplete="off" placeholder="Email Id" required="" value="${username}"/>
 			   <p></p>
 			   </div>
 			  <!--  <p><strong>Get a Verification Code On</strong></p>

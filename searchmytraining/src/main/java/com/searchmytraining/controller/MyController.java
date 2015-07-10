@@ -135,7 +135,19 @@ public class MyController {
 	public String Team() {
 		return "pages/InternalPages/MeetOurTeam";
 	}
-
+	@RequestMapping("/Benefit")
+	public String Benefit() {
+		return "pages/InternalPages/Benifits";
+	}
+	@RequestMapping("/Career")
+	public String Career() {
+		return "pages/InternalPages/Career";
+	}
+	@RequestMapping("/News")
+	public String News() {
+		return "pages/InternalPages/SMTnews";
+	}
+	
 	@RequestMapping("/AdvSearch")
 	public String Advanc() {
 		return "pages/AdvSearch";

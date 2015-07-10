@@ -72,20 +72,20 @@ $('#dropM').on('click',function(e){
 
                         <ul>
                             <li ><a href="#" id="regi_pop"><span >Registration</span></a></li>
-                            <li><a href='#'><span>Benefits Of Registration</span></a></li>
+                            <li><a href='Benefit'><span>Benefits Of Registration</span></a></li>
                         </ul>
 
                     </li>
                     <li class='active has-sub'><a href='#'><span>Training Provider</span></a>
                         <ul >
                             <li><a href="#" id="regi_pop2"><span>Registration</span></a></li>
-                           <li><a href='#'><span>Benefits Of Registration</span></a></li>
+                           <li><a href='Benefit'><span>Benefits Of Registration</span></a></li>
                         </ul>
                     </li>
                     <li class='active has-sub'><a href='#'><span>Freelancer</span></a>
                         <ul >
                             <li><a href="#" id="regi_pop3"><span>Registration</span></a></li>
-                            <li><a href='#'><span>Benefits Of Registration</span></a></li>
+                            <li><a href='Benefit'><span>Benefits Of Registration</span></a></li>
                         </ul>
                     </li>
 
@@ -93,8 +93,8 @@ $('#dropM').on('click',function(e){
                         <ul>
                             <li><a href="about"><span>About Us</span></a></li>
                             <li><a href='Team'><span>Meet Our Team</span></a></li>
-                            <li><a href='#'><span>SearchMyTraining News</span></a></li>
-                             <li><a href='#'><span>Career With Us</span></a></li>
+                            <li><a href='News'><span>SearchMyTraining News</span></a></li>
+                             <li><a href='Career'><span>Career With Us</span></a></li>
                             <li><a href="contact"><span>Contact Us</span></a></li>
                         </ul>
                     </li>

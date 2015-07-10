@@ -130,15 +130,18 @@ body {
 }
 
 #main .right .title h1 {
-	font-size: 26px;
-	margin: 20px 0px 25px 10px;
+	font-size: 28px;
+	line-height: 50px;
+	font-weight: bold; margin : 20px 0px 25px 10px;
+	background-image: url("../images/crosslines.png");
 	text-shadow: 1px 1px 4px rgba(150, 150, 150, 1);
+	margin: 20px 0px 25px 10px;
 }
 
 #main .right p {
 	font-size: 1.0em;
 	line-height: 1.40em;
-	color: #575757;
+	color: #7d7d7d;
 	font-weight: normal;
 	margin-bottom: 10px;
 	float: left;
@@ -260,7 +263,7 @@ body {
 #contact .content .left-content p {
 	line-height: 24px;
 	margin-left: 150px;
-	color: #7e7e7e;
+	color: #7d7d7d;
 	font-family: arial;
 	font-size: 16px;
 	padding: 10px 0px;
@@ -350,7 +353,7 @@ body {
 }
 
 #main .team_container .profile_container .profile_info .profile_link {
-	width:125px;
+	width: 125px;
 	margin: 20px auto;
 }
 
@@ -400,6 +403,192 @@ body {
 
 #main .team_container .profile_container .profile_containt p {
 	color: #1A0000;
-	line-height:20px;
+	line-height: 20px;
 	text-align: justify;
 }
+
+/* =================Career With Us============================= */
+#main {
+	height: 900px;
+	font-family: arial;
+}
+
+#main .Career_banner {
+	height: 150px;
+	width: 90%;
+	margin: 0px auto;
+}
+
+#main .Career_banner img {
+	height: 100%;
+	width: 100%;
+}
+
+.clear {
+	clear: both;
+}
+
+#main .career_container {
+	width: 90%;
+	margin: 30px auto;
+	position: relative;
+}
+
+#main .career_container .career_left {
+	height: 100%;
+	width: 20%;
+	margin-right: 25px;
+	float: left;
+}
+
+#main .career_container .career_left h2 {
+	Color: black;
+	font-weight: bold;
+	font-family: 18px;
+}
+
+#main .career_container .career_right {
+	height: 100%;
+	width: 78%;
+	float: left;
+}
+
+#main .career_container .career_right h2 {
+	Color: black;
+	font-weight: bold;
+	font-size: 28px;
+	line-height: 40px;
+	margin-bottom: 10px;
+	text-shadow: 1px 1px 4px rgba(150, 150, 150, 1);
+	background-image: url("../images/crosslines.png")
+}
+
+#main .career_container .career_right .sub_baner img {
+	width: 100%;
+	height: 250px;
+}
+
+#main .career_container .career_right .career-containt p {
+	text-align: justify;
+	line-height: 20px;
+	color: #7d7d7d;
+	margin-bottom: 10px;
+}
+
+/* ================= End Career With Us============================= */
+
+/* ================= News Page start============================= */
+#main {
+	height: 900px;
+	font-family: arial;
+}
+
+#main .News_banner {
+	height: 150px;
+	width: 90%;
+	margin: 0px auto;
+}
+
+#main .News_banner img {
+	height: 100%;
+	width: 100%;
+}
+
+.clear {
+	clear: both;
+}
+
+#main .news_container {
+	width: 90%;
+	margin: 30px auto;
+	position: relative;
+}
+
+#main .news_container .news_left {
+	height: 100%;
+	width: 20%;
+	margin-right: 25px;
+	float: left;
+    border: 1px solid #ccc;
+}
+#main .news_container .news_left .News-line h3{
+	text-align: center;
+	font-weight: bold;
+	font-size: 15px;
+	line-height: 50px;
+	margin-bottom: 10px;
+	color:#fff;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4096ee+0,4096ee+100;Blue+Flat+%232 */
+background: #4096ee; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzQwOTZlZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM0MDk2ZWUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top,  #4096ee 0%, #4096ee 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4096ee), color-stop(100%,#4096ee)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #4096ee 0%,#4096ee 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #4096ee 0%,#4096ee 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #4096ee 0%,#4096ee 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #4096ee 0%,#4096ee 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4096ee', endColorstr='#4096ee',GradientType=0 ); /* IE6-8 */
+
+}
+#main .news_container .news_left .News-line h1{
+	line-height: 30px;
+	text-align: center;
+}
+
+#main .news_container .news_right {
+	height: 100%;
+	width: 77%;
+	float: left;
+
+}
+
+#main .news_container .news_right h2 {
+	Color: black;
+	font-weight: bold;
+	font-size: 28px;
+	line-height: 40px;
+	margin-bottom: 10px;
+	text-shadow: 1px 1px 4px rgba(150, 150, 150, 1);
+	background-image: url("../images/crosslines.png")
+}
+#main .news_container .news_right h3{
+	Color: black;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 40px;
+	margin-bottom: 10px;
+	color: #8080ff;
+	
+}
+#main .news_container .news_right p{
+	text-align: justify;
+	line-height: 20px;
+	color: #7d7d7d;
+}
+
+/* ============End Of NEWS==================================== */
+
+/* ==================Benefit Page============================== */
+
+
+#main {
+	height: 900px;
+	font-family: arial;
+}
+
+#main .benefit_banner {
+	height: 150px;
+	width: 90%;
+	margin: 0px auto;
+}
+
+#main .benefit_banner img {
+	height: 100%;
+	width: 100%;
+}
+
+.clear {
+	clear: both;
+}
+
