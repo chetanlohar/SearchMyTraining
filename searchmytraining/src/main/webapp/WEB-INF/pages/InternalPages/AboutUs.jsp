@@ -50,24 +50,13 @@
 			</div>
 			<div class="right">
 				<div class="title">
-					<h1>What We Do...</h1>
+					<h1>Why SearchMyTraining?</h1>
 				</div>
-				<p>Search My Training is founded by a group of likeminded young
-					professionals in the year January 2015. Much before they built
-					their website they realized the need of the industry and
-					learners.The team of SearchMyTraining strongly believes that
-					everyone should get chance to participate the learning programmes
-					of their choice to enhance and develop their qualities which
-					support themself for their personal and professional career.</p>
-				<p>Learning agility of an trainee should not go waste and
-					training providers should get the chance to share their knowledge
-					with rest of the world. Like other popular web portals which
-					provides you best services, SearchMyTraining.com saves time and
-					provides better quality results in comparison to traditional
-					training search method.</p>
-				<p>We are helping to instructor led and onsite training for
-					individuals and helping individuals to find their choice of
-					training through searchmytraining.com</p>
+				<p><b><em>SearchMyTraining is one of the first organization to come up with the solution of bringing the training providers and trainee to a common platform.</em>  </b></p>
+				<p><strong>Industry Prospective :-</strong>&nbsp;&nbsp;Almost in every sector corporate houses, Government employees, employers look for different trainings to enhance knowledge and keep their people up to date with the ever changing world.Although training it is quite organized within the boundaries of academic education, but when it comes to specialization and short duration training programs, it is difficult to find out its start and end point. These trainings (industry) have their own way of developing curriculums and developing its delivery method. The challenge is no benchmarking, no alignment and lastly scattered.</p>
+				<p><strong>Training Providers Prospective :- </strong>&nbsp;&nbsp; From the prospective of training providers every organization is independent on their own while it comes to create their own customer base, pulling the learners and advertising their organization and product. If the organization is able spend enough money they are able to be in the leading position in the industry.When it comes to small or mid- size training providers they struggle to establish themselves in a large competitive market regardless of having good programme or product. Their connection withlearner depends on mass mailing, advertisementin newspapers, contact with corporate L&D team/ HR team, references, etc.</p>
+				<p><strong>Trainee Prospective :- </strong> &nbsp;&nbsp;The biggest sufferer of this unorganized industry is Trainee. This unorganized industry affects trainees the most. Trainee struggles to get the appropriate specialized training which is required for their career or development. Trainee keeps on searching through deferent search engines, individual networks, references etc to get their training needs fulfilled. Trainee joins programme without having sufficient information, knowledge, and comparison.</p>
+				<p><b>SearchMyTraining is an attempt to provide a common platform to connect training providers with potential learners and help learners find the best suitable trainings for them. </b></p>
 			</div>
 
 		</div>

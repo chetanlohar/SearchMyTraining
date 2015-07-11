@@ -16,20 +16,25 @@
 	href="./resources/css/LogIn.css"
 	media="all" type="text/css">
 	<script type="text/javascript">
-    function recoveryoption1() {
-    	
-    	$("#r2").attr('checked', false);
-			$("#hiden-box1").slideDown();
-			$("#hiden-box2").slideUp();
-		};
-		
-		function recoveryoption() {
-	    	
-	    	$("#r1").attr('checked', false);
-			
-				$("#hiden-box1").slideUp();
-			};
+  $(document).ready(function(e){
+	  $("#otp").on('click',function(e){
+       
+		  $("#hidebar").slideDown();
+		  $("#otp").attr('value', 'Resend');
+		  $("#Femail").attr('disabled','disabled');   
 
+  }); 
+	  $("#edit").on('click',function(e){
+		  
+		  $("#otp").attr('value', 'Send OTP');
+		  $("#hidebar").slideUp();
+		  $("#Femail").removeAttr('disabled');
+		  
+		  
+		  
+  });   
+	  
+  });
 	
 	</script>
 
@@ -47,8 +52,10 @@
 			<h3>A verification code sent to Email Id</h3>
 			<form action="#">
 			   <div class="email">
-			   <input type="text" id="Femail" name="email" autocomplete="off" placeholder="Email Id" required="" value="${username}"/>
-			   <p></p>
+			   <input type="text" id="Femail" name="email" autocomplete="off" placeholder="Email Id" required="" value="${username}" disabled="true" />
+			   <input type="button" id="edit" value="Edit">
+			   <input type="button" id="otp" value="Send OTP">
+			   <p>Hint:Please Enter Registered Email Id</p>
 			   </div>
 			  <!--  <p><strong>Get a Verification Code On</strong></p>
 			    <div class="radio-option">
@@ -64,9 +71,10 @@
 			       <label for="r1">Email</label>
 			       
 			    </div> -->
+			    <div class="hideable" id="hidebar">
 			    <div class="verifiaction">
 			    <input type="text" id="verfi" name="veryfi" value="" placeholder="verification Code" >
-			    <input type="button" id="verfi1" value="Resend"/>
+			    <p>Please Enter OTP From Your Email Id</p>
 			    
 			    </div>
 			    <div class="Npass">
@@ -75,7 +83,7 @@
 			    <div class="vsubmit">
 			     <input type="button" id="fsubmit" value="Submit"/>
 			    </div>
-			
+			</div>
 			</form>
 		</div>
 

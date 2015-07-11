@@ -125,12 +125,14 @@ body {
 	color: #fff;
 	border-radius: 2px;
 	margin: 8px 10px;
-	background: #0080ff;
+	background: #3e3e3e;
+	box-shadow: 1px 1px 1px rgba(10, 10, 10, 0.8);
 	padding: 10px 13px;
 }
 
 .Log_container .Log_warapar .log_bar .form_container .Nuser a:HOVER {
-	background: #3071B9;
+	box-shadow: none;
+	background: #000;
 }
 
 .Log_container .Log_warapar .advertise {
@@ -175,7 +177,12 @@ body {
 	color: #fff;
 	border-radius: 2px;
 	margin: 0px 30px;
-	background: #0080ff;
+	background: #3e3e3e;
+	box-shadow: 1px 1px 1px rgba(10, 10, 10, 0.8);
+}
+.Log_container .Log_warapar .log_bar .form_container form input[type=submit]:HOVER{
+	box-shadow: none;
+	background: #000;
 }
 /* ===================================
 ForgotPassword Page
@@ -189,9 +196,9 @@ ForgotPassword Page
 }
 
 .Fpass_wrapar .Fpass_container {
-	width: 400px;
-	height: 300px;
-	margin: 30px auto;
+	width: 500px;
+	height: 350px;
+	margin: 100px auto;
 	background-color: #fff;
 	border-radius: 10px;
 	font-family: arial;
@@ -202,7 +209,7 @@ ForgotPassword Page
 
 .Fpass_wrapar .Fpass_container h1 {
 	color: #222;
-	font-size: 24px;
+	font-size: 20px;
 	padding: 10px;
 	font-weight: normal;
 	line-height: 28px;
@@ -212,7 +219,7 @@ ForgotPassword Page
 	background: #3e9cbf;
 	border-radius: 5px 5px 0px 0px;
 	text-shadow: -2px 2px 4px #000;
-		background: #3e3e3e;
+	background: #3e3e3e;
 }
 
 .Fpass_wrapar .Fpass_container h3 {
@@ -226,22 +233,20 @@ ForgotPassword Page
 }
 
 .Fpass_wrapar .Fpass_container form .email {
-	width: 60%;
-	height: 40px;
+	width: 80%;
+	height: 60px;
 	margin: 10px auto;
+
 }
 
+
 .Fpass_wrapar .Fpass_container form .email input[type="text"] {
-	width: 200px;
-	padding: 5px 35px;
-	border-radius: 0.2em;
+	width: 220px;
+	padding: 10px 10px;
 	border: 1px solid #c3c5c8;
 	margin-left: 10px;
 	color: #000;
-	background: url(../images/mail1.png) no-repeat left center;
-	background-size:18px;
-	background-position-x: 2px;
-	background-position-y: 5px;
+
 }
 .Fpass_wrapar .Fpass_container form .email input[type="text"]:FOCUS{
 	border: 1px solid #40A9DF;
@@ -251,6 +256,52 @@ ForgotPassword Page
 	-moz-box-shadow: 0 0 3px #40A9DF;
 	
 }
+.Fpass_wrapar .Fpass_container form .email #edit{
+	
+	width: 55px;
+	height: 37px;
+	border: none;
+	margin-left:-5px;
+	font-size: 14px;
+	color: #fff;
+	border-radius: 2px;
+	background: #3e3e3e;
+	
+	
+}
+.Fpass_wrapar .Fpass_container form .email #otp{
+	
+	width: 80px;
+	height: 37px;
+	border: none;
+	margin-left:10px;
+	font-size: 14px;
+	color: #fff;
+	border-radius: 2px;
+	background: #3e3e3e;
+}
+
+.Fpass_wrapar .Fpass_container form .email input[type="button"] {
+	
+	color: #fff;
+	background: #3e3e3e;
+	box-shadow: 1px 1px 1px rgba(10, 10, 10, 0.8);
+}
+.Fpass_wrapar .Fpass_container form .email input[type="button"]:HOVER{
+		box-shadow: none;
+	background: #000;
+}
+.Fpass_wrapar .Fpass_container form .email p{
+	line-height: 20px;
+	font-size: 14px;
+	color: #7e7e7e;
+	margin-left: 10px;
+}
+
+
+
+
+
 
 .Fpass_wrapar .Fpass_container form .radio-option {
 	width: 100%;
@@ -287,17 +338,29 @@ ForgotPassword Page
 	color: #000;
 }
 
-.Fpass_wrapar .Fpass_container form .verifiaction {
+.Fpass_wrapar .Fpass_container form .hideable{
 	width: 80%;
 	margin: 10px auto;
+	display: none;
+}
+.Fpass_wrapar .Fpass_container form .verifiaction {
+	width: 100%;
+
+}
+.Fpass_wrapar .Fpass_container form .verifiaction p{
+	line-height: 40px;
+	margin-left: 10px;
+	color: #7e7e7e;
+	font-size: 14px;
+	
 }
 
 .Fpass_wrapar .Fpass_container form .verifiaction input[type="text"] {
-	width: 200px;
-	padding: 5px 6px;
+	width: 275px;
+	padding: 10px 10px;
 	border-radius: 0.2em;
 	border: 1px solid #c3c5c8;
-	margin-left: 50px;
+	margin-left: 10px;
 	color: #000;
 }
 .Fpass_wrapar .Fpass_container form .verifiaction input[type="text"]:FOCUS{
@@ -320,18 +383,19 @@ border: 1px solid #40A9DF;
 	box-shadow: 1px 1px 1px rgba(10, 10, 10, 0.8);
 }
 .Fpass_wrapar .Fpass_container form .verifiaction input[type="button"]:HOVER{
-		box-shadow: none;
+	box-shadow: none;
 	background: #000;
 }
 
 .Fpass_wrapar .Fpass_container form .Npass {
-	width: 60%;
-	margin: 10px auto;
+	width: 100%;
+	margin-top: 10px;
+	
 }
 
 .Fpass_wrapar .Fpass_container form .Npass input[type="text"] {
-	width: 200px;
-	padding: 5px 6px;
+	width: 275px;
+	padding: 10px 10px;
 	border-radius: 0.2em;
 	border: 1px solid #c3c5c8;
 	margin-left: 10px;

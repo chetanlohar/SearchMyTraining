@@ -91,8 +91,8 @@ $('#dropM').on('click',function(e){
 
                     <li class='active has-sub'><a href='about'><span>About Us</span></a>
                         <ul>
-                            <li><a href="about"><span>About Us</span></a></li>
-                            <li><a href='Team'><span>Meet Our Team</span></a></li>
+                            <li><a href="about"><span>Why SearchMyTraining</span></a></li>
+                            <li><a href='Team'><span>About Us</span></a></li>
                             <li><a href='News'><span>SearchMyTraining News</span></a></li>
                              <li><a href='Career'><span>Career With Us</span></a></li>
                             <li><a href="contact"><span>Contact Us</span></a></li>

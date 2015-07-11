@@ -19,107 +19,46 @@
 </head>
 <body>
      <%@include file="../../layouts/Header.jsp"%>
-     
-     <div id ="main">
-     <div class="about_banner">
+    <div id="main">
+		<div class="about_banner">
 			<img alt="banner"
-				src="<%=request.getContextPath()%>/resources/images/team.jpg">
+				src="<%=request.getContextPath()%>/resources/images/aboutus.jpg">
 		</div>
 		<div class="clear"></div>
-		<div class="team_container">
-		<div class="intro">
-		  <h2>Meet The Team</h2>
-		  <p>"Individuals can and do make a difference, but it takes a team<br>to really mess things up."</p>
-		
-		</div>
-		  <div class="profile_container">
-		  <div class="profile_info">
-		    <div class="Profile_pic">
-		       <img src="<%=request.getContextPath()%>/resources/images/ppani.jpg" alt="CEO" class="image-round">
-		    </div>
-		    <div class="profile_link">
-		    <a href="#"><i class="fa fa-envelope"></i></a>
-		    <a href="#"><i class="fa fa-facebook"></i></a>
-		    <a href="#"><i class="fa fa-twitter"></i></a>
-		    <a href="#"><i class="fa fa-linkedin"></i></a>
-		    </div>
-		    </div>
-		    <div class="profile_containt">
-		      <h3>Pradip Pani</h3>
-		      <p class="position">Founder & CEO</p>
-		      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+		<div class="about">
+			<div class="left">
+				<div class="Service">
+					<h1>OUR FEATURES</h1>
+					<p>Search All Type Training</p>
+					<p>Find Nearest Training Center</p>
+					<p>Search All Type Training</p>
+					<p>Search All Type Training</p>
 
-		      </p>
-		    
-		    </div>
-		  
-		  </div>
-		  <div class="profile_container">
-		  <div class="profile_info">
-		    <div class="Profile_pic">
-		       <img src="<%=request.getContextPath()%>/resources/images/ppani.jpg" alt="CEO" class="image-round">
-		    </div>
-		    <div class="profile_link">
-		    <a href="#"><i class="fa fa-envelope"></i></a>
-		    <a href="#"><i class="fa fa-facebook"></i></a>
-		    <a href="#"><i class="fa fa-twitter"></i></a>
-		    <a href="#"><i class="fa fa-linkedin"></i></a>
-		    </div>
-		    </div>
-		    <div class="profile_containt">
-		      <h3>Pradip Pani</h3>
-		      <p class="position">Founder & CEO</p>
-		      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
-		      </p>
-		    
-		    </div>
-		  </div>
-		  <div class="profile_container">
-		  <div class="profile_info">
-		    <div class="Profile_pic">
-		       <img src="<%=request.getContextPath()%>/resources/images/ppani.jpg" alt="CEO" class="image-round">
-		    </div>
-		    <div class="profile_link">
-		    <a href="#"><i class="fa fa-envelope"></i></a>
-		    <a href="#"><i class="fa fa-facebook"></i></a>
-		    <a href="#"><i class="fa fa-twitter"></i></a>
-		    <a href="#"><i class="fa fa-linkedin"></i></a>
-		    </div>
-		    </div>
-		    <div class="profile_containt">
-		      <h3>Pradip Pani</h3>
-		      <p class="position">Founder & CEO</p>
-		      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+				</div>
+				<div class="testimonial">
+					<h1>TESTIMONIALS</h1>
+					<blockquote class="testo">
+						<p>Softinfology Is The Leading Company In IT Industry.We Are
+							The Master In All Technology</p>
 
-		      </p>
-		    
-		    </div>
-		  </div>
-		  <div class="profile_container">
-		  <div class="profile_info">
-		    <div class="Profile_pic">
-		       <img src="<%=request.getContextPath()%>/resources/images/ppani.jpg" alt="CEO" class="image-round">
-		    </div>
-		    <div class="profile_link">
-		    <a href="#"><i class="fa fa-envelope"></i></a>
-		    <a href="#"><i class="fa fa-facebook"></i></a>
-		    <a href="#"><i class="fa fa-twitter"></i></a>
-		    <a href="#"><i class="fa fa-linkedin"></i></a>
-		    </div>
-		    </div>
-		    <div class="profile_containt">
-		      <h3>Pradip Pani</h3>
-		      <p class="position">Founder & CEO</p>
-		      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+					</blockquote>
+					<p class="author">Prashant Maskar</p>
+				</div>
 
-		      </p>
-		    
-		    </div>
-		  </div>
+			</div>
+			<div class="right">
+				<div class="title">
+					<h1>About Us</h1>
+				</div>
+				
+				<p><strong>Search My Training </strong>is founded by a group of likeminded young professionals in the year January 2015. Much before they built their website they realized the need of the industry and learners.The team of SearchMyTraining strongly believes that everyone should get chance to participate the learning programmes of their choice to enhance and develop their qualities which support themself for their personal and professional career.</p>
+				<p>Learning agility of an trainee should not go waste and training providers should get the chance to share their knowledge with rest of the world. Like other popular web portals which provides you best services,  SearchMyTraining.com saves time and provides better quality results in comparison to traditional training search method.</p>
+				<p>We are helping to instructor led and onsite training for individuals and helping individuals to find their choice of training through <a href="#">searchmytraining.com</a></p>
+				
+			</div>
 
 		</div>
-     
-     </div>
+	</div>
 </body>
 </html>
