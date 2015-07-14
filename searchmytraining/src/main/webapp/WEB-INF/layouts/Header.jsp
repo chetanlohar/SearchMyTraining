@@ -79,13 +79,13 @@ $('#dropM').on('click',function(e){
                     <li class='active has-sub'><a href='#'><span>Training Provider</span></a>
                         <ul >
                             <li><a href="#" id="regi_pop2"><span>Registration</span></a></li>
-                           <li><a href='Benefit'><span>Benefits Of Registration</span></a></li>
+                           <li><a href='TPBenefit'><span>Benefits Of Registration</span></a></li>
                         </ul>
                     </li>
                     <li class='active has-sub'><a href='#'><span>Freelancer</span></a>
                         <ul >
                             <li><a href="#" id="regi_pop3"><span>Registration</span></a></li>
-                            <li><a href='Benefit'><span>Benefits Of Registration</span></a></li>
+                            <li><a href='FLBenefit'><span>Benefits Of Registration</span></a></li>
                         </ul>
                     </li>
 

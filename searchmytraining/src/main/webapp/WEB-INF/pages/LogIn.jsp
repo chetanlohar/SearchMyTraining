@@ -81,7 +81,7 @@
 						</div>
 
 						<div class="submit">
-							<input type="submit" value="Sign In"> <a href="<%=request.getContextPath()%>/ForgotPass">Forgot
+							<input type="submit" value="Sign In"> <a href="./forgotpassword">Forgot
 								Password ?</a>
 
 						</div>

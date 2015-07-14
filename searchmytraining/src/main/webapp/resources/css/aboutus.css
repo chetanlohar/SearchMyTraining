@@ -611,7 +611,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4096ee', end
 	width: 20%;
 	margin-right: 25px;
 	float: left;
-    background: red;
+
 }
 #main .benefit_container .benefit_right {
 	height: 100%;
@@ -632,4 +632,37 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4096ee', end
 #main .benefit_container .benefit_right .trainee_benifit .why h3{
 	font-size: 20px;
 	font-weight: bold;
+	margin-bottom: 15px;
+}
+#main .benefit_container .benefit_right .trainee_benifit .why p{
+	text-align: justify;
+	line-height: 25px;
+	color: #7d7d7d;
+}
+#main .benefit_container .benefit_right .trainee_benifit .tr_benefit h3{
+	font-size: 20px;
+	font-weight: bold;
+	margin-top:20px;
+    margin-bottom: 15px;
+    line-height: 40px;
+    background-image: url("../images/crosslines.png");
+}
+#main .benefit_container .benefit_right .trainee_benifit .tr_benefit ul{
+	margin-left: 80px;
+    list-style-image: url("../images/list-arrow.png");
+}
+#main .benefit_container .benefit_right .trainee_benifit .tr_benefit ul li{
+	line-height: 25px;
+	color: #7d7d7d;
+
+}
+
+#main .benefit_container .benefit_right .trainee_benifit .sub_banner{
+	width: 100%;
+	height: 250px;
+    margin-top: 20px;
+}
+#main .benefit_container .benefit_right .trainee_benifit .sub_banner img{
+	width: 500px;
+	height: 100%;
 }

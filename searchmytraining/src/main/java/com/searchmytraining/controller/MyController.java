@@ -139,6 +139,14 @@ public class MyController {
 	public String Benefit() {
 		return "pages/InternalPages/Benifits";
 	}
+	@RequestMapping("/TPBenefit")
+	public String TPBenefit() {
+		return "pages/InternalPages/TPbenifits";
+	}
+	@RequestMapping("/FLBenefit")
+	public String FLBenefit() {
+		return "pages/InternalPages/FLBenifits";
+	}
 	@RequestMapping("/Career")
 	public String Career() {
 		return "pages/InternalPages/Career";
