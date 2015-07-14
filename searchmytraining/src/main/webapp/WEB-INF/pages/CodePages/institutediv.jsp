@@ -36,7 +36,7 @@
 						<div class="list-cart-card">
 							<div class="list-detail-box">
 								<div class="list-image">
-									<img src="/searchmytraining/resources/images/soft.png"
+									<img class="gimg" src="/searchmytraining/resources/images/soft.png"
 										alt="soft" />
 								</div>
 								<div class="list-detail">
@@ -68,7 +68,7 @@
 						<div class="list-cart-card">
 							<div class="list-detail-box">
 								<div class="list-image">
-									<img src="/searchmytraining/resources/images/soft.png"
+									<img class="gimg" src="/searchmytraining/resources/images/soft.png"
 										alt="soft" />
 								</div>
 								<div class="list-detail">
@@ -100,7 +100,7 @@
 						<div class="list-cart-card">
 							<div class="list-detail-box">
 								<div class="list-image">
-									<img src="/searchmytraining/resources/images/soft.png"
+									<img class="gimg" src="/searchmytraining/resources/images/soft.png"
 										alt="soft" />
 								</div>
 								<div class="list-detail">
@@ -132,7 +132,7 @@
 						<div class="list-cart-card">
 							<div class="list-detail-box">
 								<div class="list-image">
-									<img src="/searchmytraining/resources/images/soft.png"
+									<img class="gimg" src="/searchmytraining/resources/images/soft.png"
 										alt="soft" />
 								</div>
 								<div class="list-detail">
@@ -164,7 +164,7 @@
 						<div class="list-cart-card">
 							<div class="list-detail-box">
 								<div class="list-image">
-									<img src="/searchmytraining/resources/images/soft.png"
+									<img class="gimg" src="/searchmytraining/resources/images/soft.png"
 										alt="soft" />
 								</div>
 								<div class="list-detail">

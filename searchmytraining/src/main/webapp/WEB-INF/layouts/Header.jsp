@@ -99,7 +99,7 @@ $('#dropM').on('click',function(e){
                         </ul>
                     </li>
                     <li class='active has-sub'>
-                        <a href="javascript:void 0">Blog</a>
+                        <a href="Blog">Blog</a>
                     </li>
                     <li class='active has-sub'>
                         <a href="#" id="sign-up">Sign-In</a>

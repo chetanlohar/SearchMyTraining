@@ -8,6 +8,12 @@
 	href="<%=request.getContextPath()%>/resources/css/reset.css">
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/aboutus.css">
+	<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/css/combine.css">
+	<script type="text/javascript"
+	src="<%=request.getContextPath()%>/resources/js/jquery/jquery-1.10.2.js"></script>
+<script src="<%=request.getContextPath()%>/resources/js/pop-up.js"></script>
+<script src="<%=request.getContextPath()%>/resources/js/popup-box.js"></script>
 <title>Contact Us</title>
 </head>
 <body>

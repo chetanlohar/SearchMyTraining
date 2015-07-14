@@ -155,6 +155,10 @@ public class MyController {
 	public String News() {
 		return "pages/InternalPages/SMTnews";
 	}
+	@RequestMapping("/Blog")
+	public String Blog() {
+		return "pages/InternalPages/Blog";
+	}
 	
 	@RequestMapping("/AdvSearch")
 	public String Advanc() {

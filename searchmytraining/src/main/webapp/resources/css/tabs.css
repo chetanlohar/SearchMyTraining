@@ -453,6 +453,14 @@ a:hover { color: #7299cf; }*/
 	height: 95px;
 	padding: 5px 0px 0px 0px;
 }
+.section_wrapar .middle_part #tabcontent .institute_wrapar .list-cart-box .list-cart-card .list-detail-box:HOVER .gimg{
+	  filter: grayscale(0); 
+     -webkit-filter: grayscale(0); 
+     -moz-filter: grayscale(0); 
+     -o-filter: grayscale(0);
+  
+	
+}
 
 .section_wrapar .middle_part #tabcontent .institute_wrapar .list-cart-box .list-cart-card .list-detail-box .list-image
 	{
@@ -465,7 +473,7 @@ a:hover { color: #7299cf; }*/
 	margin-left: 5px;
 }
 
-.section_wrapar .middle_part #tabcontent .institute_wrapar .list-cart-box .list-cart-card .list-detail-box .list-image img
+.section_wrapar .middle_part #tabcontent .institute_wrapar .list-cart-box .list-cart-card .list-detail-box .list-image .gimg
 	{
 	height: 100%;
 	width: 100%;
@@ -477,7 +485,7 @@ a:hover { color: #7299cf; }*/
 	-moz-filter: grayscale(100%);
 	-o-filter: grayscale(100%);
 }
-.section_wrapar .middle_part #tabcontent .institute_wrapar .list-cart-box .list-cart-card .list-detail-box .list-image:hover img{
+.section_wrapar .middle_part #tabcontent .institute_wrapar .list-cart-box .list-cart-card .list-detail-box .list-image:hover .gimg{
 	    filter: grayscale(0); 
      -webkit-filter: grayscale(0); 
      -moz-filter: grayscale(0); 
@@ -554,8 +562,8 @@ a:hover { color: #7299cf; }*/
 	background: #8989BA;
 	color:#fff;
 	text-decoration:none;
-	font-size: 15px;
-	padding: 5px 0px 5px 0px;
+	font-size: 13px;
+	padding: 5px ;
 }
 
 

@@ -108,8 +108,8 @@ function saveInstituteContactDetails() {
 			if ($('#phonenumids' + i).val())
 				phonenumids.push($('#phonenumids' + i).val());*/
 		
-		alert(phonetypeids);
-		alert(phonenumids);
+		/*alert(phonetypeids);
+		alert(phonenumids);*/
 		
 			
 		$.ajax({

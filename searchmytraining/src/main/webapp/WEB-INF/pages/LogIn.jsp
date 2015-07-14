@@ -52,6 +52,7 @@
 		var email1 = $('#formemailid').val();
 		if(email == ""){
 			$("#username").focus();
+			$("#username").css('border-color','red');
 			$("#auth_error_div_emailreq").html('Email Id Required');
 		}
 		else{

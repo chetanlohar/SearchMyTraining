@@ -156,6 +156,13 @@ body {
 	margin-left: 30px;
 	color: #ccc;
 }
+.Log_container .Log_warapar .log_bar .form_container form input[type=text]:FOCUS{
+	border: 1px solid #40A9DF;
+	box-shadow: 0 0 10px #40A9DF;
+	-webkit-box-shadow: 0 0 10px #40A9DF;
+	-o-box-shadow: 0 0 10px #40A9DF;
+	-moz-box-shadow: 0 0 10px #40A9DF;
+}
 
 .Log_container .Log_warapar .log_bar .form_container form input[type=password]
 	{
@@ -166,6 +173,13 @@ body {
 	background: url(../images/pass.png) no-repeat 280px center;
 	border: 1px solid #c3c5c8;
 	color: #ccc;
+}
+.Log_container .Log_warapar .log_bar .form_container form input[type=password]:FOCUS{
+	border: 1px solid #40A9DF;
+	box-shadow: 0 0 3px #40A9DF;
+	-webkit-box-shadow: 0 0 3px #40A9DF;
+	-o-box-shadow: 0 0 3px #40A9DF;
+	-moz-box-shadow: 0 0 3px #40A9DF;
 }
 
 .Log_container .Log_warapar .log_bar .form_container form input[type=submit]
