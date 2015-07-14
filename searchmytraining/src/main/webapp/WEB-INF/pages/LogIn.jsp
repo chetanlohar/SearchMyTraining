@@ -44,9 +44,27 @@
 		
 	
 </script>
+<script type="text/javascript">
+	function myfunc()
+	{
+		var email = $('#username').val();
+		$('#formemailid').val(email);
+		var email1 = $('#formemailid').val();
+		if(email == ""){
+			$("#username").focus();
+			$("#auth_error_div_emailreq").html('Email Id Required');
+		}
+		else{
+			$("#hiddenform").submit();
+		}
+	}
+</script>
 </head>
 
 <body>
+<form id="hiddenform" action="${pageContext.request.contextPath}/forgotpassword" method="POST">
+	<input id="formemailid" type="hidden" name="username"/>
+</form>
 	<%@include file="../layouts/Header.jsp"%>
 
 	<div class="Log_container">
@@ -72,7 +90,7 @@
 					
 					<form action="#">
 						<div class="user">
-							<input type="text" name="username"
+							<input id="username" type="text" name="username"
 								placeholder="  User or Email Address">
 
 						</div>
@@ -81,9 +99,8 @@
 						</div>
 
 						<div class="submit">
-							<input type="submit" value="Sign In"> <a href="./forgotpassword">Forgot
-								Password ?</a>
-
+							<input type="submit" value="Sign In"> 
+							<a id="forgetpasslinkid1" href="#" onclick="myfunc();">Forgot Password </a>
 						</div>
 
 					</form>
