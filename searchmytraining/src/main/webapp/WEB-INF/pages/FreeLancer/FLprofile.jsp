@@ -191,20 +191,37 @@ var jsonstates = '${states}';
 						<label>Contact No : </label> 
 						<select id="phonetypeid1">
 							<option value="0">--Select--</option>
-							<c:if test="${phones[0].phonetype.phnTypeId == 3}">
+							<c:if test="${phones[0].phonetype.phnTypeId eq 3}">
 								<option value="3" selected>PERSONAL-MOBILE</option>
 							</c:if>
-							<option value="3">PERSONAL-MOBILE</option>
-							<option value="4">PERSONAL-LANDLINE</option>
+							<c:if test="${phones[0].phonetype.phnTypeId ne 3}">
+								<option value="3">PERSONAL-MOBILE</option>
+							</c:if>
+							<c:if test="${phones[0].phonetype.phnTypeId eq 4}">
+								<option value="4" selected>PERSONAL-LANDLINE</option>
+							</c:if>
+							<c:if test="${phones[0].phonetype.phnTypeId ne 4}">
+								<option value="4">PERSONAL-LANDLINE</option>
+							</c:if>
 						</select> 
 						<input type="text" name="contactNo69" id="phonevalue1" onkeypress="return validate14(event)" value="${phones[0].phoneValue}"/>
 						<!-- <input type="button" value="+" class="addcontact"> -->
 					</p>
 					<p style="margin-left:253px;">
-					<select id="phonetypeid2" required>
-						<option value="0">--Select--</option>
-						<option value="3">PERSONAL-MOBILE</option>
-						<option value="4">PERSONAL-LANDLINE</option>
+					<select id="phonetypeid2">
+							<option value="0">--Select--</option>
+							<c:if test="${phones[1].phonetype.phnTypeId eq 3}">
+								<option value="3" selected>PERSONAL-MOBILE</option>
+							</c:if>
+							<c:if test="${phones[1].phonetype.phnTypeId ne 3}">
+								<option value="3">PERSONAL-MOBILE</option>
+							</c:if>
+							<c:if test="${phones[1].phonetype.phnTypeId eq 4}">
+								<option value="4" selected>PERSONAL-LANDLINE</option>
+							</c:if>
+							<c:if test="${phones[1].phonetype.phnTypeId ne 4}">
+								<option value="4">PERSONAL-LANDLINE</option>
+							</c:if>
 					</select>
 					<input type="text" id="phonevalue2" size="20" name="phonevalue2" value="${phones[1].phoneValue}"/>
 				<br>
@@ -260,16 +277,11 @@ var jsonstates = '${states}';
 				<div class="year">
 
 					<label>Year Of Passing : </label> <select id="flyearofpassing">
-						<option value="0" name="yop"
-							id="yop">--Select Year--</option>
-						<option value="2000">2000</option>
-						<option value="2001">2001</option>
-						<option value="2002">2002</option>
-						<option value="2003">2003</option>
-						<option value="2004">2004</option>
-						<option value="2005">2005</option>
-						<option value="2006">2006</option>
-						<option value="2007">2007</option>
+						<option value="0" name="yop" id="yop">--Select Year--</option>
+						<c:forEach var="i" begin="1960" end="2015">
+							<option value="${i}">${i}</option>
+  			 				<%-- Item <c:out value="${i}"/><p> --%>
+						</c:forEach>
 					</select>
 					 <span id="errorflyearofpassing"></span> 
 

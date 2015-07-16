@@ -13,6 +13,7 @@ import com.searchmytraining.dao.FreelancerDAO;
 import com.searchmytraining.dao.IFLProfileDAO;
 import com.searchmytraining.dao.IFreeeLCertificationAwrdDAO;
 import com.searchmytraining.dao.IPhoneDAO;
+import com.searchmytraining.dao.IPhoneTypeDAO;
 import com.searchmytraining.dao.RoleDAO;
 import com.searchmytraining.dao.StatusDAO;
 import com.searchmytraining.dao.UserDAO;
@@ -22,6 +23,7 @@ import com.searchmytraining.entity.CityEntity;
 import com.searchmytraining.entity.FreeLancerProfileEntity;
 import com.searchmytraining.entity.FreelancerEntity;
 import com.searchmytraining.entity.PhoneEntity;
+import com.searchmytraining.entity.PhoneTypeEntity;
 import com.searchmytraining.entity.RoleEntity;
 import com.searchmytraining.entity.StatusEntity;
 import com.searchmytraining.entity.UserEntity;
@@ -53,6 +55,8 @@ public class FreelancerService implements IFreelancerService
 	public IFLProfileDAO flprofiledao;
 	@Autowired
 	public IPhoneDAO phonedao;
+	@Autowired
+	public IPhoneTypeDAO phonetypedao;
 	
 	@Override
 	@Transactional
@@ -84,7 +88,15 @@ public class FreelancerService implements IFreelancerService
 		flProfEntity.setUser(user);
 		flprofiledao.insertFlProfDet(flProfEntity);
 		
-		freelancerdao.registerFreelancer(entity);
+		
+		PhoneEntity phone = (PhoneEntity)context.getBean("phoneEntity");
+		PhoneTypeEntity phonetype = phonetypedao.getPhoneType(3);
+		phone.setPhonetype(phonetype);
+		phone.setPhoneValue(freelancerDto.getContact12());
+		phone.setUser(user);
+		
+		phonedao.insertPhoneDetails(phone);
+		/*freelancerdao.registerFreelancer(entity);*/
 		return userdao.getMaxUserId("userId");
 	}
 

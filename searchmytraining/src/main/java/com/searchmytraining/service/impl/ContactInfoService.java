@@ -15,6 +15,7 @@ import com.searchmytraining.dao.IPhoneTypeDAO;
 import com.searchmytraining.dto.ContactDTO;
 import com.searchmytraining.entity.ContactInfoEntity;
 import com.searchmytraining.entity.PhoneEntity;
+import com.searchmytraining.entity.PhoneTypeEntity;
 import com.searchmytraining.entity.UserEntity;
 import com.searchmytraining.service.IContactInfoService;
 import com.searchmytraining.service.IUserService;
@@ -45,25 +46,38 @@ public class ContactInfoService implements IContactInfoService {
 		Iterator<String> phoneitr = phones.iterator();
 		List<PhoneEntity> phonesdet = phonedao.getPhoneByUserId(contactdto.getUserid().longValue());
 		
-		while(phonetypeitr.hasNext() && phoneitr.hasNext())
+		if(phonesdet!=null)
 		{
-			String phoneValue = phoneitr.next();
-			PhoneEntity phoneentity1 = phonedao.getPhoneDet(phoneValue);
-			PhoneEntity phoneentity = (PhoneEntity)context.getBean("phoneEntity");
-			if(phoneentity1!=null)
+			Iterator<PhoneEntity> phonedetitr = phonesdet.iterator();
+			while(phonetypeitr.hasNext() && phoneitr.hasNext())
 			{
-				phoneentity1.setPhoneValue(phoneValue);
+				if(phonedetitr.hasNext())
+				{
+					String phonevalue = phoneitr.next();
+					Integer phonetypeid = phonetypeitr.next();
+					PhoneEntity phoneentity = phonedetitr.next();
+					phoneentity.setPhoneValue(phonevalue);
+					if(phoneentity.getPhonetype().getPhnTypeId() != phonetypeid)
+					{
+						PhoneTypeEntity phonetypeentity = phonetypedao.getPhoneType(phonetypeid);
+						phoneentity.setPhonetype(phonetypeentity);
+					}
+					phonedao.updatePhoneDetails(phoneentity);
+				}
+				else
+				{
+					PhoneEntity phone_new = (PhoneEntity)context.getBean("phoneEntity");
+					String phonevalue = phoneitr.next();
+					Integer phonetypeid = phonetypeitr.next();
+					phone_new.setPhoneValue(phonevalue);
+					PhoneTypeEntity phonetypeentity = phonetypedao.getPhoneType(phonetypeid);
+					phone_new.setPhonetype(phonetypeentity);
+					phone_new.setUser(user);
+					phonedao.insertPhoneDetails(phone_new);
+				}
 			}
-			else
-			{
-				phoneentity.setUser(user);
-				phoneentity.setPhoneValue(phoneValue);
-				phoneentity.setPhonetype(phonetypedao.getPhoneType(phonetypeitr.next()));
-			}
-			phonedao.insertPhoneDetails(phoneentity);
 		}
 		contactentity.setUser(user);
-		System.out.println(contactentity);
 		contactdao.insertContactInfo(contactentity);
 	}
 	@Override

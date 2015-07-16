@@ -24,6 +24,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.searchmytraining.dto.CertificationAwardDTO;
+import com.searchmytraining.dto.EducationDTO;
 import com.searchmytraining.dto.FreelancerDTO;
 import com.searchmytraining.entity.CertificationAwardEntity;
 import com.searchmytraining.entity.CityEntity;
@@ -134,7 +135,7 @@ public class FreeLancerController {
 	}
 	
 	@RequestMapping(value="/updateflprofdet")
-	public void updateFlProfileDetails(@RequestParam CommonsMultipartFile picture, @RequestParam("fname61") String fullname, @RequestParam("email64") String email,HttpSession session, RedirectAttributes ra)
+	public String updateFlProfileDetails(@RequestParam CommonsMultipartFile picture, @RequestParam("fname61") String fullname, @RequestParam("email64") String email,HttpSession session, RedirectAttributes ra)
 	{
 		UserEntity user = (UserEntity)session.getAttribute("user");
 		FreeLancerProfileEntity profentity = freelancerservice.getFLProfileDet(user.getUserId().longValue());
@@ -151,6 +152,7 @@ public class FreeLancerController {
 			session.removeAttribute("flProfEntity");
 			session.setAttribute("flProfEntity",profentity);
 		}
+		return "pages/FreeLancer/FreeLancerProfile";
 	}
 	
 	@RequestMapping("/downloadFLPhotograph/{userId}")
@@ -175,7 +177,19 @@ public class FreeLancerController {
 		{
 			e.printStackTrace();
 		}
+		return null;
+	}
+	
+	@RequestMapping("/updateedudetails/{userId}")
+	public String updateEduDetails(@RequestBody EducationDTO edudto,@PathVariable("userId") Integer userId,ModelMap model)
+	{
+		System.out.println("userId: "+userId);
+		System.out.println(edudto);
 		
 		return null;
 	}
+	
+	
+	
+	
 }

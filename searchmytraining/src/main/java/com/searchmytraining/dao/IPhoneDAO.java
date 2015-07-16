@@ -9,4 +9,5 @@ public interface IPhoneDAO {
 		public void insertPhoneDetails(PhoneEntity entity);
 		public List<PhoneEntity> getPhoneByUserId(Long userid);
 		public PhoneEntity getPhoneDet(String phoneno);
+		public void updatePhoneDetails(PhoneEntity entity);
 }

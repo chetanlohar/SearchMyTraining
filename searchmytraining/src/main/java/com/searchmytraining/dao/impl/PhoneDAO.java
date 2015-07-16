@@ -55,4 +55,9 @@ public class PhoneDAO extends AbstractJpaDAO<PhoneEntity> implements IPhoneDAO {
 		}
 		
 	}
+
+	@Override
+	public void updatePhoneDetails(PhoneEntity entity) {
+		update(entity);
+	}
 }
