@@ -72,7 +72,8 @@
   </div>
   <div class="blog_data">
   <img class="blog_image" src="<%=request.getContextPath()%>/resources/images/careerwithus.png">
-  <p> Social media isn't only an external communication platform for businessesSocial media isn't only an external communication platform for businessesSocial media isn't only an external communication platform for businessesSocial media Social media isn't only an external communication platform for businessesSocial media isn't only an external communication platform for businessesisn't only an external communication platform for businesses Social media isn't only an external communication platform for businesses - networking is important for internal practices. Companies are putting their executives through new forms of  Social media isn't only an external communication platform for businesses - networking is important for internal practices. Companies are putting their executives through new forms of<p>
+  <p> Social media networking is important for internal practices. Companies are putting their executives through new forms of  Social media isn't only an external communication platform for businesses - networking is important for internal practices. Companies are putting their executives through new forms of<p>
+  <a href="#">Read More</a>
   </div>
  </div>
  <div class="athour_blog">
@@ -94,7 +95,8 @@
   </div>
   <div class="blog_data">
   <img class="blog_image" src="<%=request.getContextPath()%>/resources/images/careerwithus.png">
-  <p> Social media isn't only an external communication platform for businessesSocial media isn't only an external communication platform for businessesSocial media isn't only an external communication platform for businessesSocial media Social media isn't only an external communication platform for businessesSocial media isn't only an external communication platform for businessesisn't only an external communication platform for businesses Social media isn't only an external communication platform for businesses - networking is important for internal practices. Companies are putting their executives through new forms of  Social media isn't only an external communication platform for businesses - networking is important for internal practices. Companies are putting their executives through new forms of<p>
+  <p> Social media isn'tal media isn't only an external communication platform for businesses - networking is important for internal practices. Companies are putting their executives through new forms of  Social media isn't only an external communication platform for businesses - networking is important for internal practices. Companies are putting their executives through new forms of<p>
+   <a href="#">Read More</a>
   </div>
  </div>
  <div class="athour_blog">
@@ -116,7 +118,8 @@
   </div>
   <div class="blog_data">
   <img class="blog_image" src="<%=request.getContextPath()%>/resources/images/careerwithus.png">
-  <p> Social media isn't only an external communication platform for businessesSocial media isn't only an external communication platform for businessesSocial media isn't only an external communication platform for businessesSocial media Social media isn't only an external communication platform for businessesSocial media isn't only an external communication platform for businessesisn't only an external communication platform for businesses Social media isn't only an external communication platform for businesses - networking is important for internal practices. Companies are putting their executives through new forms of  Social media isn't only an external communication platform for businesses - networking is important for internal practices. Companies are putting their executives through new forms of<p>
+  <p> Social media is new forms of Social media is new forms of Social media is new forms of Social media is new forms of Social media is new forms of Social media is new forms of<p>
+   <a href="#">Read More</a>
   </div>
  </div>
  </div>
@@ -133,6 +136,10 @@
 
 </div>
 
+<div class="blog-footer">
+<p>&copy;&nbsp;Copyright 2015 - All Rights Strictly Reserved -
+				Softinfology Pvt. Ltd</p>
 
+</div>
 </body>
 </html>

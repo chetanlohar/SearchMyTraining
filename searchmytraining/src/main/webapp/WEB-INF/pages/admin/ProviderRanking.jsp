@@ -42,7 +42,7 @@ scroll: true
 	<div id="tab-content">
 		<ul id="tab">
 			<li>Newly Uploaded</li>
-			<li>Modified</li>
+			<li>Published</li>
 			<li>Verified</li>
 			<li>Not Verified</li>
 		</ul>
@@ -50,421 +50,125 @@ scroll: true
 		<div id="wrapper1" style="height: auto;">
 
 			<div class="contents">
-				<div>
-					<h3>
-						Training Provider Name<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mumbai
-					</h3>
-					<p>
-						<input type="button" Value="View Calender"> <select>
-							<option style="display: none;">Ranking</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
-					</p>
-				</div>
-				<div>
-					<h3>
-						Training Provider Name<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mumbai
-					</h3>
-					<p>
-						<input type="button" Value="View Calender"> <select>
-							<option style="display: none;">Ranking</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
-					</p>
-				</div>
-				<div>
-					<h3>
-						Training Provider Name<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mumbai
-					</h3>
-					<p>
-						<input type="button" Value="View Calender"> <select>
-							<option style="display: none;">Ranking</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
-					</p>
-				</div>
-				<div>
-					<h3>
-						Training Provider Name<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mumbai
-					</h3>
-					<p>
-						<input type="button" Value="View Calender"> <select>
-							<option style="display: none;">Ranking</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
-					</p>
-				</div>
-				<div>
-					<h3>
-						Training Provider Name<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mumbai
-					</h3>
-					<p>
-						<input type="button" Value="View Calender"> <select>
-							<option style="display: none;">Ranking</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
-					</p>
-				</div>
-				<div>
-					<h3>
-						Training Provider Name<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mumbai
-					</h3>
-					<p>
-						<input type="button" Value="View Calender"> <select>
-							<option style="display: none;">Ranking</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
-					</p>
-				</div>
-				<div>
-					<h3>
-						Training Provider Name<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mumbai
-					</h3>
-					<p>
-						<input type="button" Value="View Calender"> <select>
-							<option style="display: none;">Ranking</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
-					</p>
-				</div>
-			</div>
-			<!-- /.contents -->
-
-			<!-- .contents -->
-			<div class="contents">
-				<div>
-					<h3>
-						Training Provider Name<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mumbai
-					</h3>
-					<p>
-						<input type="button" Value="View Calender"> <select>
-							<option style="display: none;">Ranking</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
-					</p>
-				</div>
-				<div>
-					<h3>
-						Training Provider Name<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mumbai
-					</h3>
-					<p>
-						<input type="button" Value="View Calender"> <select>
-							<option style="display: none;">Ranking</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
-					</p>
-				</div>
-				<div>
-					<h3>
-						Training Provider Name<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mumbai
-					</h3>
-					<p>
-						<input type="button" Value="View Calender"> <select>
-							<option style="display: none;">Ranking</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
-					</p>
-				</div>
-				<div>
-					<h3>
-						Training Provider Name<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mumbai
-					</h3>
-					<p>
-						<input type="button" Value="View Calender"> <select>
-							<option style="display: none;">Ranking</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
-					</p>
-				</div>
-				<div>
-					<h3>
-						Training Provider Name<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mumbai
-					</h3>
-					<p>
-						<input type="button" Value="View Calender"> <select>
-							<option style="display: none;">Ranking</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
-					</p>
-				</div>
-				<div>
-					<h3>
-						Training Provider Name<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mumbai
-					</h3>
-					<p>
-						<input type="button" Value="View Calender"> <select>
-							<option style="display: none;">Ranking</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
-					</p>
-				</div>
-				<div>
-					<h3>
-						Training Provider Name<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mumbai
-					</h3>
-					<p>
-						<input type="button" Value="View Calender"> <select>
-							<option style="display: none;">Ranking</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
-					</p>
-				</div>
-				<div>
-					<h3>
-						Training Provider Name<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mumbai
-					</h3>
-					<p>
-						<input type="button" Value="View Calender"> <select>
-							<option style="display: none;">Ranking</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
-					</p>
-				</div>
-				<div>
-					<h3>
-						Training Provider Name<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mumbai
-					</h3>
-					<p>
-						<input type="button" Value="View Calender"> <select>
-							<option style="display: none;">Ranking</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
-					</p>
-				</div>
+			<table class="table">
+			<thead>
+			<tr>
+			<th>Training ID</th>
+			<th>Institute Code</th>
+			<th>Title</th>
+			<th>Start Date</th>
+			<th>Place</th>
+			<th>Price</th>
+			<th>Links</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+			<td>JS007</td>
+			<td>SO555</td>
+			<td>CORE JAVA </td>
+			<td>05/05/2015</td>
+			<td>Pune</td>
+			<td>5000 RS</td>
+			<td><a href="view">View</a> | <a href="#">Edit </a> | <a href="#">Ignore</a></td>
+			
+			</tr>
+			
+			</tbody>
+			</table>
 				
 			</div>
 			<!-- /.contents -->
 
 			<!-- .contents -->
 			<div class="contents">
-				<div>
-					<h3>
-						Training Provider Name<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mumbai
-					</h3>
-					<p>
-						<input type="button" Value="View Calender"> <select>
-							<option style="display: none;">Ranking</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
-					</p>
-				</div>
-				<div>
-					<h3>
-						Training Provider Name<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mumbai
-					</h3>
-					<p>
-						<input type="button" Value="View Calender"> <select>
-							<option style="display: none;">Ranking</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
-					</p>
-				</div>
-				<div>
-					<h3>
-						Training Provider Name<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mumbai
-					</h3>
-					<p>
-						<input type="button" Value="View Calender"> <select>
-							<option style="display: none;">Ranking</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
-					</p>
-				</div>
-				<div>
-					<h3>
-						Training Provider Name<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mumbai
-					</h3>
-					<p>
-						<input type="button" Value="View Calender"> <select>
-							<option style="display: none;">Ranking</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
-					</p>
-				</div>
-				<div>
-					<h3>
-						Training Provider Name<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mumbai
-					</h3>
-					<p>
-						<input type="button" Value="View Calender"> <select>
-							<option style="display: none;">Ranking</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
-					</p>
-				</div>
-				<div>
-					<h3>
-						Training Provider Name<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mumbai
-					</h3>
-					<p>
-						<input type="button" Value="View Calender"> <select>
-							<option style="display: none;">Ranking</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
-					</p>
-				</div>
-				<div>
-					<h3>
-						Training Provider Name<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mumbai
-					</h3>
-					<p>
-						<input type="button" Value="View Calender"> <select>
-							<option style="display: none;">Ranking</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
-					</p>
-				</div>
-				<div>
-					<h3>
-						Training Provider Name<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mumbai
-					</h3>
-					<p>
-						<input type="button" Value="View Calender"> <select>
-							<option style="display: none;">Ranking</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
-					</p>
-				</div>
+				<table class="table">
+			<thead>
+			<tr>
+			<th>Training ID</th>
+			<th>Institute Code</th>
+			<th>Title</th>
+			<th>Start Date</th>
+			<th>Place</th>
+			<th>Price</th>
+			<th>Links</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+			<td>JS007</td>
+			<td>SO555</td>
+			<td>CORE JAVA </td>
+			<td>05/05/2015</td>
+			<td>Pune</td>
+			<td>5000 RS</td>
+			<td><a href="#">View</a> | <a href="#">Edit </a> | <a href="#">Ignore</a></td>
+			
+			</tr>
+			
+			</tbody>
+			</table>
 				
+			</div>
+			<!-- /.contents -->
+
+			<!-- .contents -->
+			<div class="contents">
+				<table class="table">
+			<thead>
+			<tr>
+			<th>Training ID</th>
+			<th>Institute Code</th>
+			<th>Title</th>
+			<th>Start Date</th>
+			<th>Place</th>
+			<th>Price</th>
+			<th>Links</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+			<td>JS007</td>
+			<td>SO555</td>
+			<td>CORE JAVA </td>
+			<td>05/05/2015</td>
+			<td>Pune</td>
+			<td>5000 RS</td>
+			<td><a href="#">View</a> | <a href="#">Edit </a> | <a href="#">Ignore</a></td>
+			
+			</tr>
+			
+			</tbody>
+			</table>
 			</div>
 
 			<div class="contents">
-				<div>
-					<h3>
-						Training Provider Name<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mumbai
-					</h3>
-					<p>
-						<input type="button" Value="View Calender"> <select>
-							<option style="display: none;">Ranking</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
-					</p>
-				</div>
+				<table class="table">
+			<thead>
+			<tr>
+			<th>Training ID</th>
+			<th>Institute Code</th>
+			<th>Title</th>
+			<th>Start Date</th>
+			<th>Place</th>
+			<th>Price</th>
+			<th>Links</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+			<td>JS007</td>
+			<td>SO555</td>
+			<td>CORE JAVA </td>
+			<td>05/05/2015</td>
+			<td>Pune</td>
+			<td>5000 RS</td>
+			<td><a href="#">View</a> | <a href="#">Edit </a> | <a href="#">Ignore</a></td>
+			
+			</tr>
+			
+			</tbody>
+			</table>
 			</div>
 
 		</div>

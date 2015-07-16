@@ -59,7 +59,7 @@
 					</div>
 					<div class="sub_banner">
 						<img alt="banner"
-							src="<%=request.getContextPath()%>/resources/images/Freelance.jpg">
+							src="<%=request.getContextPath()%>/resources/images/freelance.png">
 
 
 					</div>
@@ -72,6 +72,6 @@
 		</div>
 
 	</div>
-
+	<%@include file="../../layouts/footer.jsp"%>
 </body>
 </html>

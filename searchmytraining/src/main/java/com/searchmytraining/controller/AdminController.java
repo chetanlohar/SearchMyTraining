@@ -74,6 +74,12 @@ public class AdminController
 	{
 		return "pages/admin/ProviderRanking";
 	}
+	
+	@RequestMapping("view")
+	public String view()
+	{		
+		return "pages/admin/view";		
+	}
 	@RequestMapping("/charts")
 	public String manCharts(ModelMap model)
 	{

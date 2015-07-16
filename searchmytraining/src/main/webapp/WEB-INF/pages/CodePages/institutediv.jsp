@@ -5,7 +5,8 @@
 <script>
 	$(document).ready(function() {
 		$('.tooltip').tooltipster({
-			position : 'right'
+			position : 'bottom'
+			
 
 		});
 	});

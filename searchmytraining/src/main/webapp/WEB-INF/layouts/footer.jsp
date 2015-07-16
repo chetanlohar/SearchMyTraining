@@ -88,9 +88,9 @@
 					<li>
 						<h4>WHO ARE WE?</h4>
 					</li>
-					<li><a href="about">About Us</a></li>
-					<li><a href="#">Meet Our Team</a></li>
-					<li><a href="#">Career With Us</a></li>
+					<li><a href="Team">About Us</a></li>
+					<li><a href="about">Why SearchMyTraining</a></li>
+					<li><a href="Career">Career With Us</a></li>
 					<li><a href="contact">Contact Us</a></li>
 					
 				</ul>

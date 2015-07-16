@@ -186,3 +186,24 @@ body {
 	line-height: 20px;
 	
 }
+.blog_container .blog_wrapar .blog_containt .blog_right .ablog_wrap .athour_blog .blog_data a{
+	text-decoration: none;
+	background:#337AB7;
+	color:#fff;
+	padding: 5px;
+	line-height: 60px;
+}
+.blog-footer{
+	width: 100%;
+	height: 30px;
+	background:#0c7fb0;
+	overflow-x:hidden; 
+}
+.blog-footer p{
+	text-align: center;
+	line-height: 30px;
+	font-family: arial;
+	font-size: 14px;
+	color: #fff;
+	text-shadow: -3px 1px 5px #000;
+}

@@ -232,7 +232,7 @@ a:hover { color: #7299cf; }*/
 	background: whitesmoke;
 	padding: 0px 0px;
 	margin-top: 45px;
-	min-height: 600px;
+	min-height: 700px;
 	width: 100%;
 }
 
@@ -485,7 +485,7 @@ a:hover { color: #7299cf; }*/
 	-moz-filter: grayscale(100%);
 	-o-filter: grayscale(100%);
 }
-.section_wrapar .middle_part #tabcontent .institute_wrapar .list-cart-box .list-cart-card .list-detail-box .list-image:hover .gimg{
+.section_wrapar .middle_part #tabcontent .institute_wrapar .list-cart-box .list-cart-card .list-detail-box:hover .gimg{
 	    filter: grayscale(0); 
      -webkit-filter: grayscale(0); 
      -moz-filter: grayscale(0); 
@@ -568,164 +568,142 @@ a:hover { color: #7299cf; }*/
 
 
 /*============================================ freelancer div css=========================================================  */
-.section_wrapar .middle_part #tabcontent .freelancer_wrapar {
+.section_wrapar .middle_part #tabcontent .Freelancer_wrapar {
 	width: 100%;
-	height: 100%;
+	height: auto;
+	font-family: arial;
+
 }
 
-.section_wrapar .middle_part #tabcontent .freelancer_wrapar table {
-	width: 100%;
-	height: 100%;
-	cellpadding: "0";
-	cellspacing: "0";
-	border-spacing: 0;
-	border: 1px solid #ccc;
-}
-
-.section_wrapar .middle_part #tabcontent .freelancer_wrapar table tr {
-	display: block;
-	padding-bottom: 10px;
-	margin-bottom: 2px;
+.section_wrapar .middle_part #tabcontent .Freelancer_wrapar .list-cart-box .list-cart-card
+	{
+	position: relative;
+	width: 99%;
+	height: 100px;
 	border: 1px solid #ccc;
 	background: #fff;
+	
 }
 
-.section_wrapar .middle_part #tabcontent .freelancer_wrapar table tr:HOVER
+.section_wrapar .middle_part #tabcontent .Freelancer_wrapar .list-cart-box .list-cart-card .list-detail-box
 	{
-	background: #f4f4f4;
+	width: 98%;
+	height: 95px;
+	padding: 5px 0px 0px 0px;
+}
+.section_wrapar .middle_part #tabcontent .Freelancer_wrapar .list-cart-box .list-cart-card .list-detail-box:HOVER .gimg{
+	  filter: grayscale(0); 
+     -webkit-filter: grayscale(0); 
+     -moz-filter: grayscale(0); 
+     -o-filter: grayscale(0);
+  
+	
 }
 
-.section_wrapar .middle_part #tabcontent .freelancer_wrapar table tr .Freelance_block_left
+.section_wrapar .middle_part #tabcontent .Freelancer_wrapar .list-cart-box .list-cart-card .list-detail-box .list-image
 	{
-	width: 95%;
+	position: relative;
+	width: 14%;
+	height: 90px;
+	border-radius:10px;
+	border:1px solid #ccc;
+	float: left;
+	margin-left: 5px;
+}
+
+.section_wrapar .middle_part #tabcontent .Freelancer_wrapar .list-cart-box .list-cart-card .list-detail-box .list-image .gimg
+	{
 	height: 100%;
+	width: 100%;
+	border-radius:5px;
+	display: block;
+	transition: all 0.5s linear;
+	filter: grayscale(100%);
+	-webkit-filter: grayscale(100%);
+	-moz-filter: grayscale(100%);
+	-o-filter: grayscale(100%);
+}
+.section_wrapar .middle_part #tabcontent .Freelancer_wrapar .list-cart-box .list-cart-card .list-detail-box:hover .gimg{
+	    filter: grayscale(0); 
+     -webkit-filter: grayscale(0); 
+     -moz-filter: grayscale(0); 
+     -o-filter: grayscale(0);
+	
 }
 
-.section_wrapar .middle_part #tabcontent .freelancer_wrapar table tr .Freelance_block_left h1
+.section_wrapar .middle_part #tabcontent .Freelancer_wrapar .list-cart-box .list-cart-card .list-detail-box .list-detail
 	{
-	line-height: 25px;
-	font-size: 18px;
-	font-weight: bold;
-	color: #000;
-	margin-top: 10px;
-	margin-left: 10px;
+	position: relative;
+	width: 82%;
+	height: 90px;
+	float: left;
 }
 
-.section_wrapar .middle_part #tabcontent .freelancer_wrapar table tr .Freelance_block_left h1 a:hover
+.section_wrapar .middle_part #tabcontent .Freelancer_wrapar .list-cart-box .list-cart-card .list-detail-box .list-detail .listtext-part
 	{
+	width: 73%;
+	height: 90px;
+	margin-left: 15px;
+	float: left;
+}
+
+.section_wrapar .middle_part #tabcontent .Freelancer_wrapar .list-cart-box .list-cart-card .list-detail-box .list-detail .listtext-part .list-name
+	{
+	width: 100%;
+	font-size: 100%;
+	font-size: 1.1em;
+	line-height: 40px;
+	
+}
+.section_wrapar .middle_part #tabcontent .Freelancer_wrapar .list-cart-box .list-cart-card .list-detail-box .list-detail .listtext-part .list-name a{
+		text-decoration: none;
+	color: #6699FF;
+	
+}
+.section_wrapar .middle_part #tabcontent .Freelancer_wrapar .list-cart-box .list-cart-card .list-detail-box .list-detail .listtext-part .list-name a:HOVER{
 	text-decoration: underline;
 }
 
-.section_wrapar .middle_part #tabcontent .freelancer_wrapar table tr .Freelance_block_left h1 a
+.section_wrapar .middle_part #tabcontent .Freelancer_wrapar .list-cart-box .list-cart-card .list-detail-box .list-detail .listtext-part .list-loc
 	{
+	color: #686868;
+	font-size: 1em;
+	line-height: 25px;
+}
+
+.section_wrapar .middle_part #tabcontent .Freelancer_wrapar .list-cart-box .list-cart-card .list-detail-box .list-detail .listtext-part .list-date{
+	font-size: 1em;
+	line-height: 25px;
+
+}
+.section_wrapar .middle_part #tabcontent .Freelancer_wrapar .list-cart-box .list-cart-card .list-detail-box .list-detail .listtext-part .list-date a{
 	text-decoration: none;
-	color: #6699FF;
+	
 }
 
-.section_wrapar .middle_part #tabcontent .freelancer_wrapar table tr .Freelance_block_left .address
+.section_wrapar .middle_part #tabcontent .Freelancer_wrapar .list-cart-box .list-cart-card .list-detail-box .list-detail .list-link
 	{
-	width: 100%;
-	margin-left: 10px;
-	line-height: 18px;
-}
-
-.section_wrapar .middle_part #tabcontent .freelancer_wrapar table tr Freelance_block_right .view_detail
-	{
+	width: 23%;
+	height: 90px;
 	float: left;
-	width: 50%;
-	height: 100%;
-	background: blue;
 }
-
-.section_wrapar .middle_part #tabcontent .freelancer_wrapar table tr .Freelance_block_right .view_detail p
-	{
-	text-align: right;
-	margin: 10px;
+.section_wrapar .middle_part #tabcontent .Freelancer_wrapar .list-cart-box .list-cart-card .list-detail-box .list-detail .list-link .details{
+	line-height: 40px;
+    background: #00AAD6;
+    color:#fff;
+    text-decoration:none;
+	font-size: 16px;
+	padding: 5px 3px 5px 3px;
 }
-
-.section_wrapar .middle_part #tabcontent .freelancer_wrapar table tr .Freelance_block_right .view_detail .detail_bar
-	{
-	text-decoration: none;
-	font-size: 15px;
-	padding: 10px;
-	color: #fff;
-	background: rgb(0, 183, 234); /* Old browsers */
-	background: -moz-linear-gradient(top, rgba(0, 183, 234, 1) 0%,
-		rgba(0, 158, 195, 1) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0,
-		183, 234, 1)), color-stop(100%, rgba(0, 158, 195, 1)));
-	/* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, rgba(0, 183, 234, 1) 0%,
-		rgba(0, 158, 195, 1) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, rgba(0, 183, 234, 1) 0%,
-		rgba(0, 158, 195, 1) 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, rgba(0, 183, 234, 1) 0%,
-		rgba(0, 158, 195, 1) 100%); /* IE10+ */
-	background: linear-gradient(to bottom, rgba(0, 183, 234, 1) 0%,
-		rgba(0, 158, 195, 1) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b7ea',
-		endColorstr='#009ec3', GradientType=0); /* IE6-9 */
-	background: #00AAD6;
-}
-
-.section_wrapar .middle_part #tabcontent .freelancer_wrapar table tr .Freelance_block_right .view_detail .group_train
-	{
-	text-decoration: none;
-	padding: 5px 15px;
-	font-size: 11px;
-	color: #fff;
-	background: rgb(137, 137, 186); /* Old browsers */
-	background: -moz-linear-gradient(top, rgba(137, 137, 186, 1) 0%,
-		rgba(137, 137, 186, 1) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(137,
-		137, 186, 1)), color-stop(100%, rgba(137, 137, 186, 1)));
-	/* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, rgba(137, 137, 186, 1) 0%,
-		rgba(137, 137, 186, 1) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, rgba(137, 137, 186, 1) 0%,
-		rgba(137, 137, 186, 1) 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, rgba(137, 137, 186, 1) 0%,
-		rgba(137, 137, 186, 1) 100%); /* IE10+ */
-	background: linear-gradient(to bottom, rgba(137, 137, 186, 1) 0%,
-		rgba(137, 137, 186, 1) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8989ba',
-		endColorstr='#8989ba', GradientType=0); /* IE6-9 */
+.section_wrapar .middle_part #tabcontent .Freelancer_wrapar .list-cart-box .list-cart-card .list-detail-box .list-detail .list-link .group{
+	line-height: 30px;
 	background: #8989BA;
+	color:#fff;
+	text-decoration:none;
+	font-size: 13px;
+	padding: 5px ;
 }
-
-.section_wrapar .middle_part #tabcontent .freelancer_wrapar table tr .tooltip
-	{
-	display: inline;
-	position: relative;
-}
-
-.section_wrapar .middle_part #tabcontent .freelancer_wrapar table tr .tooltip:hover:after
-	{
-	background: #333;
-	background: rgba(0, 0, 0, .8);
-	border-radius: 5px;
-	bottom: 26px;
-	color: #fff;
-	content: attr(title);
-	left: 20%;
-	padding: 5px 15px;
-	position: absolute;
-	z-index: 98;
-	width: 200px;
-}
-
-.section_wrapar .middle_part #tabcontent .freelancer_wrapar table tr .tooltip:hover:before
-	{
-	border: solid;
-	border-color: #333 transparent;
-	border-width: 6px 6px 0 6px;
-	bottom: 20px;
-	content: "";
-	left: 50%;
-	position: absolute;
-	z-index: 99;
-}
-
+/* =============Pagination============================== */
 .paging-nav {
 	text-align: right;
 	padding-top: 2px;
@@ -749,238 +727,140 @@ a:hover { color: #7299cf; }*/
 /*============================================ seminar div css=========================================================  */
 .section_wrapar .middle_part #tabcontent .seminar_wrapar {
 	width: 100%;
-	height: 100%;
-	overflow: scroll;
-	display: block;
+	height: auto;
+	font-family: arial;
+
 }
 
-.section_wrapar .middle_part #tabcontent .seminar_wrapar .seminar_list {
-	list-style: none;
-	text-decoration: none;
-}
-
-.section_wrapar .middle_part #tabcontent .seminar_wrapar .seminar_list li
+.section_wrapar .middle_part #tabcontent .seminar_wrapar .list-cart-box .list-cart-card
 	{
-	width: 100%;
+	position: relative;
+	width: 99%;
 	height: 100px;
-	display: list-item;
-	background-color: #FFF;
-	background: rgb(255, 255, 255); /* Old browsers */
-	background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%,
-		rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255,
-		255, 255, 1)), color-stop(47%, rgba(246, 246, 246, 1)),
-		color-stop(100%, rgba(237, 237, 237, 1))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%,
-		rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%);
-	/* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 0%,
-		rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%);
-	/* Opera 11.10+ */
-	background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 0%,
-		rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%); /* IE10+ */
-	background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%,
-		rgba(246, 246, 246, 1) 47%, rgba(237, 237, 237, 1) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff',
-		endColorstr='#ededed', GradientType=0); /* IE6-9 */
-}
-
-.section_wrapar .middle_part #tabcontent .seminar_wrapar .seminar_list li:hover
-	{
-	background: rgb(241, 251, 251); /* Old browsers */
-	background: -moz-linear-gradient(top, rgba(241, 251, 251, 1) 0%,
-		rgba(209, 249, 249, 1) 50%, rgba(239, 250, 251, 1) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(241,
-		251, 251, 1)), color-stop(50%, rgba(209, 249, 249, 1)),
-		color-stop(100%, rgba(239, 250, 251, 1))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, rgba(241, 251, 251, 1) 0%,
-		rgba(209, 249, 249, 1) 50%, rgba(239, 250, 251, 1) 100%);
-	/* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, rgba(241, 251, 251, 1) 0%,
-		rgba(209, 249, 249, 1) 50%, rgba(239, 250, 251, 1) 100%);
-	/* Opera 11.10+ */
-	background: -ms-linear-gradient(top, rgba(241, 251, 251, 1) 0%,
-		rgba(209, 249, 249, 1) 50%, rgba(239, 250, 251, 1) 100%); /* IE10+ */
-	background: linear-gradient(to bottom, rgba(241, 251, 251, 1) 0%,
-		rgba(209, 249, 249, 1) 50%, rgba(239, 250, 251, 1) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1fbfb',
-		endColorstr='#effafb', GradientType=0); /* IE6-9 */
-}
-
-.section_wrapar .middle_part #tabcontent .seminar_wrapar .seminar_list .seminar_block
-	{
-	width: 100%;
-	height: 100px;
-	margin-bottom: 5px;
-}
-
-.section_wrapar .middle_part #tabcontent .seminar_wrapar .seminar_list .seminar_block .seminar_block_left
-	{
-	width: 50%;
-	height: 100%;
-	float: left;
-}
-
-.section_wrapar .middle_part #tabcontent .seminar_wrapar .seminar_list .seminar_block .seminar_block_left h1
-	{
-	line-height: 25px;
-	font-size: 18px;
-	font-weight: bold;
-	color: #000;
-	margin-top: 10px;
-	margin-left: 10px;
-}
-
-.section_wrapar .middle_part #tabcontent .seminar_wrapar .seminar_list .seminar_block .seminar_block_left h1 a
-	{
-	text-decoration: none;
-	color: #000;
-}
-
-.section_wrapar .middle_part #tabcontent .seminar_wrapar .seminar_list .seminar_block .seminar_block_left h1 a:hover
-	{
-	text-decoration: underline;
-	color: #3BC7DC;
-}
-
-.section_wrapar .middle_part #tabcontent .seminar_wrapar .seminar_list .seminar_block .seminar_block_left .address
-	{
-	width: 100%;
-	margin-left: 10px;
-	line-height: 18px;
-}
-
-.section_wrapar .middle_part #tabcontent .seminar_wrapar .seminar_list .seminar_block .seminar_block_left .seminar_add
-	{
+	border: 1px solid #ccc;
+	background: #fff;
 	
 }
 
-.section_wrapar .middle_part #tabcontent .seminar_wrapar .seminar_list .seminar_block .seminar_block_right
+.section_wrapar .middle_part #tabcontent .seminar_wrapar .list-cart-box .list-cart-card .list-detail-box
 	{
-	width: 50%;
-	height: 100%;
-	float: left;
+	width: 98%;
+	height: 95px;
+	padding: 5px 0px 0px 0px;
+}
+.section_wrapar .middle_part #tabcontent .seminar_wrapar .list-cart-box .list-cart-card .list-detail-box:HOVER .gimg{
+	  filter: grayscale(0); 
+     -webkit-filter: grayscale(0); 
+     -moz-filter: grayscale(0); 
+     -o-filter: grayscale(0);
+  
+	
 }
 
-.section_wrapar .middle_part #tabcontent .seminar_wrapar .seminar_list .seminar_block .seminar_block_right .fee_box
+.section_wrapar .middle_part #tabcontent .seminar_wrapar .list-cart-box .list-cart-card .list-detail-box .list-image
 	{
-	float: left;
-	width: 48%;
-	height: 100%;
-	margin-right: 5px;
-	margin-top: 10px;
-	text-align: right;
-	font-weight: 400;
-}
-
-.section_wrapar .middle_part #tabcontent .seminar_wrapar .seminar_list .seminar_block .seminar_block_right .fee_box .person
-	{
-	color: #999;
-	float: right;
-	font-size: 12px;
-}
-
-.section_wrapar .middle_part #tabcontent .seminar_wrapar .seminar_list .seminar_block .seminar_block_right .fee_box .fee
-	{
-	font-size: 20px;
-	margin-right: 5px;
-}
-
-.section_wrapar .middle_part #tabcontent .seminar_wrapar .seminar_list .seminar_block .seminar_block_right .view_detail
-	{
-	float: left;
-	width: 50%;
-	height: 100%;
-}
-
-.section_wrapar .middle_part #tabcontent .seminar_wrapar .seminar_list .seminar_block .seminar_block_right .view_detail p
-	{
-	text-align: right;
-	margin: 10px;
-}
-
-.section_wrapar .middle_part #tabcontent .seminar_wrapar .seminar_list .seminar_block .seminar_block_right .view_detail .detail_bar
-	{
-	text-decoration: none;
-	padding: 5px 20px;
-	font-size: 15px;
-	color: #fff;
-	background: rgb(0, 183, 234); /* Old browsers */
-	background: -moz-linear-gradient(top, rgba(0, 183, 234, 1) 0%,
-		rgba(0, 158, 195, 1) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0,
-		183, 234, 1)), color-stop(100%, rgba(0, 158, 195, 1)));
-	/* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, rgba(0, 183, 234, 1) 0%,
-		rgba(0, 158, 195, 1) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, rgba(0, 183, 234, 1) 0%,
-		rgba(0, 158, 195, 1) 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, rgba(0, 183, 234, 1) 0%,
-		rgba(0, 158, 195, 1) 100%); /* IE10+ */
-	background: linear-gradient(to bottom, rgba(0, 183, 234, 1) 0%,
-		rgba(0, 158, 195, 1) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b7ea',
-		endColorstr='#009ec3', GradientType=0); /* IE6-9 */
-	background: #00AAD6;
-}
-
-.section_wrapar .middle_part #tabcontent .seminar_wrapar .seminar_list .seminar_block .seminar_block_right .view_detail .group_train
-	{
-	text-decoration: none;
-	padding: 5px 15px;
-	font-size: 11px;
-	color: #fff;
-	background: rgb(137, 137, 186); /* Old browsers */
-	background: -moz-linear-gradient(top, rgba(137, 137, 186, 1) 0%,
-		rgba(137, 137, 186, 1) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(137,
-		137, 186, 1)), color-stop(100%, rgba(137, 137, 186, 1)));
-	/* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, rgba(137, 137, 186, 1) 0%,
-		rgba(137, 137, 186, 1) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, rgba(137, 137, 186, 1) 0%,
-		rgba(137, 137, 186, 1) 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, rgba(137, 137, 186, 1) 0%,
-		rgba(137, 137, 186, 1) 100%); /* IE10+ */
-	background: linear-gradient(to bottom, rgba(137, 137, 186, 1) 0%,
-		rgba(137, 137, 186, 1) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8989ba',
-		endColorstr='#8989ba', GradientType=0); /* IE6-9 */
-	background: #8989BA;
-}
-
-.section_wrapar .middle_part #tabcontent .seminar_wrapar .seminar_list .seminar_block .tooltip
-	{
-	display: inline;
 	position: relative;
+	width: 14%;
+	height: 90px;
+	border-radius:10px;
+	border:1px solid #ccc;
+	float: left;
+	margin-left: 5px;
 }
 
-.section_wrapar .middle_part #tabcontent .seminar_wrapar .seminar_list .seminar_block .tooltip:hover:after
+.section_wrapar .middle_part #tabcontent .seminar_wrapar .list-cart-box .list-cart-card .list-detail-box .list-image .gimg
 	{
-	background: #333;
-	background: rgba(0, 0, 0, .8);
-	border-radius: 5px;
-	bottom: 26px;
-	color: #fff;
-	content: attr(title);
-	left: 20%;
-	padding: 5px 15px;
-	position: absolute;
-	z-index: 98;
-	width: 200px;
+	height: 100%;
+	width: 100%;
+	border-radius:5px;
+	display: block;
+	transition: all 0.5s linear;
+	filter: grayscale(100%);
+	-webkit-filter: grayscale(100%);
+	-moz-filter: grayscale(100%);
+	-o-filter: grayscale(100%);
+}
+.section_wrapar .middle_part #tabcontent .seminar_wrapar .list-cart-box .list-cart-card .list-detail-box:hover .gimg{
+	    filter: grayscale(0); 
+     -webkit-filter: grayscale(0); 
+     -moz-filter: grayscale(0); 
+     -o-filter: grayscale(0);
+	
 }
 
-.section_wrapar .middle_part #tabcontent .seminar_wrapar .seminar_list .seminar_block .tooltip:hover:before
+.section_wrapar .middle_part #tabcontent .seminar_wrapar .list-cart-box .list-cart-card .list-detail-box .list-detail
 	{
-	border: solid;
-	border-color: #333 transparent;
-	border-width: 6px 6px 0 6px;
-	bottom: 20px;
-	content: "";
-	left: 50%;
-	position: absolute;
-	z-index: 99;
+	position: relative;
+	width: 82%;
+	height: 90px;
+	float: left;
 }
+
+.section_wrapar .middle_part #tabcontent .seminar_wrapar .list-cart-box .list-cart-card .list-detail-box .list-detail .listtext-part
+	{
+	width: 73%;
+	height: 90px;
+	margin-left: 15px;
+	float: left;
+}
+
+.section_wrapar .middle_part #tabcontent .seminar_wrapar .list-cart-box .list-cart-card .list-detail-box .list-detail .listtext-part .list-name
+	{
+	width: 100%;
+	font-size: 100%;
+	font-size: 1.1em;
+	line-height: 40px;
+	
+}
+.section_wrapar .middle_part #tabcontent .seminar_wrapar .list-cart-box .list-cart-card .list-detail-box .list-detail .listtext-part .list-name a{
+		text-decoration: none;
+	color: #6699FF;
+	
+}
+.section_wrapar .middle_part #tabcontent .seminar_wrapar .list-cart-box .list-cart-card .list-detail-box .list-detail .listtext-part .list-name a:HOVER{
+	text-decoration: underline;
+}
+
+.section_wrapar .middle_part #tabcontent .seminar_wrapar .list-cart-box .list-cart-card .list-detail-box .list-detail .listtext-part .list-loc
+	{
+	color: #686868;
+	font-size: 1em;
+	line-height: 25px;
+}
+
+.section_wrapar .middle_part #tabcontent .seminar_wrapar .list-cart-box .list-cart-card .list-detail-box .list-detail .listtext-part .list-date{
+	font-size: 1em;
+	line-height: 25px;
+
+}
+.section_wrapar .middle_part #tabcontent .seminar_wrapar .list-cart-box .list-cart-card .list-detail-box .list-detail .listtext-part .list-date a{
+	text-decoration: none;
+	
+}
+
+.section_wrapar .middle_part #tabcontent .seminar_wrapar .list-cart-box .list-cart-card .list-detail-box .list-detail .list-link
+	{
+	width: 23%;
+	height: 90px;
+	float: left;
+}
+.section_wrapar .middle_part #tabcontent .seminar_wrapar .list-cart-box .list-cart-card .list-detail-box .list-detail .list-link .details{
+	line-height: 40px;
+    background: #00AAD6;
+    color:#fff;
+    text-decoration:none;
+	font-size: 16px;
+	padding: 5px 3px 5px 3px;
+}
+.section_wrapar .middle_part #tabcontent .seminar_wrapar .list-cart-box .list-cart-card .list-detail-box .list-detail .list-link .group{
+	line-height: 30px;
+	background: #8989BA;
+	color:#fff;
+	text-decoration:none;
+	font-size: 13px;
+	padding: 5px ;
+}
+/* ******************End of Seminar div***************************** */
 /* extra styles */
 .bigtxtfield {
 	display: block;

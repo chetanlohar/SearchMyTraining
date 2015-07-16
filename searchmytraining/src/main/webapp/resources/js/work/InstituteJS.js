@@ -106,9 +106,9 @@ function saveInstituteContactDetails() {
 		var phonenumids = [];
 		for (i = 1; i <= 5; i++)
 			if ($('#phonenumids' + i).val())
-				phonenumids.push($('#phonenumids' + i).val());*/
+				phonenumids.push($('#phonenumids' + i).val());
 		
-		/*alert(phonetypeids);
+		alert(phonetypeids);
 		alert(phonenumids);*/
 		
 			

@@ -94,8 +94,24 @@ $(window).scroll(function(){
     var jssor_slider1 = new $JssorSlider$("slider1_container", options);
 });
  
- function loadcalender() {
+ function searchvalidate() {
+	 if ($("#w-input-search").val()==""){
+		 $("#w-input-search").css('border','1px solid red');
+		 $("#w-input-search").focus();
+	 }
+	 else if($("#loc").val()==""){
+		 $("#loc").css('border','1px solid red');
+		 $("#loc").focus();
+	 }
+	 else{
+		 $("#w-input-search").css('border','1px solid #ccc');
+		 $("#loc").css('border','1px solid #ccc');
+		 loadcalender(); 
+	 }
 	
+ }
+ function loadcalender() {
+	      
 		   	 var keyword=$('#w-input-search').val();
 		   	
 		   	 console.log("keyword :"+keyword);
@@ -178,14 +194,14 @@ $(function(){
 
 			<div class="course-name">
 				<input class="input-1" id="w-input-search" type="text"
-					placeholder="Course Name" />
+					placeholder="Course Name"  required="required"/>
 			</div>
 			<div class="location">
-				<input class="input-2" type="text" placeholder="Location" />
+				<input class="input-2" id="loc" type="text" placeholder="Location" required="required" />
 			</div>
 			<div class="search">
 				<input type="submit" value="Search" id="button" name=button
-					onclick="loadcalender(); " />
+					onclick="searchvalidate(); " />
 			</div>
 			<div class="adv-search">
 				<a href="#" id="advsearch1">Advance Search</a>
