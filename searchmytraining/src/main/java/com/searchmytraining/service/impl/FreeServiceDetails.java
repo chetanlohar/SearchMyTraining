@@ -67,5 +67,7 @@ public class FreeServiceDetails implements IFreeLancerServiceDetails {
 		certientity.setUser(userdao.getUser(certidto.getUserid()));
 		certidao.updateCertificationAwrdDet(certientity);
 	}
+	
+	
 
 }

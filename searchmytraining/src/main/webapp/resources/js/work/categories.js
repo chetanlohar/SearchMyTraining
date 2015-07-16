@@ -2,7 +2,7 @@ function industryCategory() {
 	var id = $("#tindustry").val();
 	$.ajax({
 		type : "POST",
-		url : "./getIndustryCategory",
+		url : "/searchmytraining/common/getIndustryCategory",
 		dataType : 'json',
 		data : "id=" + id,
 		/* data: JSON.stringify({"tid" : id,"fname":"Softinfology"}), */
@@ -28,7 +28,7 @@ function industrySubCategory() {
 	var subid = $('#industrycatid').val();
 	$.ajax({
 		type : "POST",
-		url : "./getIndustrySubCategory",
+		url : "/searchmytraining/common/getIndustrySubCategory",
 		dataType : 'json',
 		data : "subid=" + subid,
 		success : function(response) {
@@ -50,7 +50,7 @@ function getStates() {
 	console.log("in getstates method...cntid: " + countryid);
 	$.ajax({
 		type : "POST",
-		url : "./getstates",
+		url : "/searchmytraining/common/getstates",
 		dataType : 'json',
 		data : "countryid=" + countryid,
 		success : function(response) {
@@ -74,7 +74,7 @@ function getCities() {
 	var stateid = $('#stateid').val();
 	$.ajax({
 		type : "POST",
-		url : "./getCities",
+		url : "/searchmytraining/common/getCities",
 		dataType : 'json',
 		data : "stateid=" + stateid,
 		success : function(response) {

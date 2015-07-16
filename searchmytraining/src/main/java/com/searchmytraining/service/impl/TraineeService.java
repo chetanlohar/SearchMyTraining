@@ -2,7 +2,6 @@ package com.searchmytraining.service.impl;
 
 import org.dozer.DozerBeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -43,7 +42,7 @@ public class TraineeService implements ITraineeService {
 	
 	@Override
 	@Transactional
-	public void registerTrainee(TraineeDTO traineedto) {
+	public Integer registerTrainee(TraineeDTO traineedto) {
 		TraineeEntity traineeentity = mapper.map(traineedto, TraineeEntity.class);
 		System.out.println(traineeentity);
 		StatusEntity status = statusdao.getStatus(1);
@@ -55,16 +54,20 @@ public class TraineeService implements ITraineeService {
 		userentity.setAccountNonLocked(1);
 		userentity.setCredentialsNonExpired(1);
 		userentity.setStatus(status);
+		
 		//Insertion of User first
 		userdao.addUser(userentity);
+		
 		//Insertion of Role in user_roles table
 		RoleEntity role = (RoleEntity)context.getBean("roleEntity");
 		role.setROLE("TRAINEE");
 		role.setUser(userentity);
 		roledao.setRoleToUser(role);
 		traineeentity.setUser(userentity);
+		
 		//Insertion of Trainee
 		traineedao.registerTrainee(traineeentity);
+		return userentity.getUserId();
 	}
 
 	@Override

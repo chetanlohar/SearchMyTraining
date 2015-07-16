@@ -24,18 +24,16 @@
 			$('#Answers > div').hide();
 			$('#Answers').find('#' + $(this).val()).show();
 			var x= document.getElementById("name2");
-			x.style.backgroundImage = "url('<%=request.getContextPath()%> /resources/images/corporate1.png')";
+			x.style.backgroundImage = "url('<%=request.getContextPath()%>/resources/images/corporate1.png')";
 							x.style.backgroundRepeat = "no-repeat";
-
 						});
 	});
-	function traineeRegistration(path) {
+	function traineeRegistration() {
 		var flag = validation01();
 		if (flag) {
 			try {
-				$
-						.ajax({
-							url : path + '/trainee_reg',
+				$.ajax({
+							url : './trainee_reg',
 							type : 'post',
 							dataType : 'json',
 							data : JSON.stringify({
@@ -49,19 +47,17 @@
 							}),
 							contentType : "application/json",
 							success : function(response) {
-
 								if (response.errorMsg) {
-									$
-											.map(
-													response.errorMsg,
-													function(val, key) {
-														if (key == "traineetype")
-															$('#error00').text(
-																	val);
-														else if (key == "corporatename")
-															$('#error00').text(
-																	val);
-														else if (key == "name")
+									$.map(
+										response.errorMsg,
+									  		function(val, key) {
+												if (key == "traineetype")
+													$('#error00').text(
+															val);
+												else if (key == "corporatename")
+													$('#error00').text(
+															val);
+												else if (key == "name")
 															$('#error01').text(
 																	val);
 														else if (key == "contact")
@@ -76,7 +72,7 @@
 													});
 								} else {
 									alert("Thank you for Your Registration, Please Update Your Profile:");
-									doLoginTrainee(path);
+									doLoginTrainee();
 									/* window.location.href = path
 											+ "/trainee_updateprofile"; */
 								}
@@ -89,7 +85,7 @@
 		}
 	}
 	
-	function doLoginTrainee(path)
+	function doLoginTrainee()
 	{
 		var username = $('#email').val();
 		var credentials = {username:$('#email').val(),password:$('#pass1').val()};
@@ -198,7 +194,7 @@
 
 			<div class="sign">
 				<input type="button" name="Submit" value="Submit"
-					onclick="traineeRegistration('<%=request.getContextPath()%>');">
+					onclick="traineeRegistration();">
 				<input type="reset" name="Cancel" value="Cancel" class="b-close1">
 			</div>
 

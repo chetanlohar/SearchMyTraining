@@ -46,7 +46,6 @@
 			src="<%=request.getContextPath()%>/resources/images/images.png"
 			alt="cancel"></a>
 		<div class="reg_form">
-
 			<form action="uploadAdvertise" method="post" name="myform" enctype="multipart/form-data">
 				<div class="upload">
 					<label>Upload </label> 

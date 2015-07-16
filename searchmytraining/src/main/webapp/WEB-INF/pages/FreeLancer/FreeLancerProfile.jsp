@@ -54,9 +54,7 @@ and open the template in the editor.
 	src="<%=request.getContextPath()%>/resources/js/jquery/jquery.iconmenu.js"></script>
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/js/include.js"></script>
-
-	
-	<script type="text/javascript"
+<script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/js/jquery/jquery.iconmenu.js"></script>
 	
 
@@ -87,23 +85,10 @@ jQuery(document).ready(function () {
 <script type="text/javascript">
 function FLPload() {
 
-	$("#home-content").load("<%=request.getContextPath()%>/FLprofile", function(responseText, statusText, xhr)
+	$("#home-content").load("${pageContext.request.contextPath}/freelancer/FLUpdateProfile", function(responseText, statusText, xhr)
 	        {
-		
 	                if(statusText == "success")
 	                        /*  alert("Successfully loaded the content!");  */
-	                if(statusText == "error")
-	                        alert("An error occurred: " + xhr.status + " - " + xhr.statusText);
-	        });
-	
-}
-
-
-function FLCload() {
-	$("#home-content").load("<%=request.getContextPath()%>/FLCalender", function(responseText, statusText, xhr)
-	        {
-	                if(statusText == "success")
-	                        /* alert("Successfully loaded the content!"); */
 	                if(statusText == "error")
 	                        alert("An error occurred: " + xhr.status + " - " + xhr.statusText);
 	        });
@@ -148,13 +133,12 @@ function FLSload() {
 				<ul id="sidemenu">
 					<li><a href="" onclick="FLPload();" class="open"><strong>Profile</strong></a>
 					</li>
-					<!-- <li><a href="" onclick="FLCload()"><strong>Calender</strong></a></li> -->
 					<li><a href="" onclick="FSIload();"><strong>Insights</strong></a></li>
 
 					<li><a href="" onclick="FLSload();"><strong>Settings</strong></a></li>
 
-					<li><a href=""><strong>Send SMS</strong></a></li>
-					<li><a href=""><strong>Send Email</strong></a></li>
+					<!-- <li><a href=""><strong>Send SMS</strong></a></li>
+					<li><a href=""><strong>Send Email</strong></a></li> -->
 					
 				</ul>
 				<div id="content">

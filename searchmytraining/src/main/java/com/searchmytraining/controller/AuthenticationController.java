@@ -60,7 +60,7 @@ public class AuthenticationController {
 		} else if (roles.contains("ROLE_TPI")) {
 			page = "/trainingprovider_updateprofile";
 		} else if (roles.contains("ROLE_TPF")) {
-			page = "/freelancer_updateprofile";
+			page = "/freelancer/mapFLUpdateProfile";
 
 		} else if (roles.contains("ROLE_TRAINEE")) {
 			page = "/trainee_updateprofile";

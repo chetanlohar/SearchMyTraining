@@ -19,17 +19,12 @@
 	<cache name="stateCache" maxElementsInMemory="1000" eternal="true"
 		overflowToDisk="false" memoryStoreEvictionPolicy="LFU">
 	</cache>
-
-	<cache name="cityCache" maxElementsInMemory="1000" eternal="true"
-		overflowToDisk="false" memoryStoreEvictionPolicy="LFU">
-	</cache>
 	
-	<cache name="cityCache1" maxElementsInMemory="1000" eternal="true"
-		overflowToDisk="false" memoryStoreEvictionPolicy="LFU">
-	</cache>
-	
-	<cache name="cityCache2" maxElementsInMemory="1000" eternal="true"
-		overflowToDisk="false" memoryStoreEvictionPolicy="LFU">
+	<cache name="cityCache" maxEntriesLocalHeap="10000"
+		maxEntriesLocalDisk="1000" eternal="false" diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="300" timeToLiveSeconds="600"
+		memoryStoreEvictionPolicy="LFU" transactionalMode="off">
+		<persistence strategy="localTempSwap" />
 	</cache>
 
 	<cache name="industryCache" maxElementsInMemory="1000" eternal="true"

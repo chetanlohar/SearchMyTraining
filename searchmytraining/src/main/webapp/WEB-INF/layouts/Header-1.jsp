@@ -53,24 +53,32 @@
 		</div> -->
 		<div class="main">
 			<div class="user-icon">
-				<img
-					src="<%=request.getContextPath()%>/resources/images/user-icon.png"
-					id="menu_opener" alt="ass" onclick="myFunction()" />
+				<c:if test="${!empty flProfEntity.photograph}">
+				 	<img src="${pageContext.request.contextPath}/freelancer/downloadFLPhotograph/${flProfEntity.user.userId}" id="menu_opener" alt="ass"/>
+				 </c:if>
+				 <c:if test="${empty flProfEntity.photograph}">
+				 	<img src="${pageContext.request.contextPath}/resources/images/user-icon.png" id="menu_opener" alt="ass"/>
+				 </c:if>	
 			</div>
 			<div id="submenu">
 				<div class="Pro-pic">
-				<img alt="user" src="<%=request.getContextPath()%>/resources/images/user-icon.png">
+					<c:if test="${!empty flProfEntity.photograph}">
+				 		<img src="${pageContext.request.contextPath}/freelancer/downloadFLPhotograph/${flProfEntity.user.userId}" id="profilepic" name="profilepic" width="98" height="98" border="0" alt="PROFILE PICTURE" onError="this.src= ${pageContext.request.contextPath}/resources/images/avtar.jpg ;" />
+				 	</c:if>
+				 	<c:if test="${empty flProfEntity.photograph}">
+				 		<img alt="user" src="${pageContext.request.contextPath}/resources/images/user-icon.png">
+				 	</c:if>
 				</div>
 				<div class="u-info">
 				<h1>Welcome,</h1>
 				 <div class="u_name">
-				<h2>${trainer.org_name}${flentity.fullName}${trainee.fullName}</h2>
+				<h2>${trainer.org_name}${flProfEntity.fullname}${trainee.fullName}</h2>
 				</div>
-				<div class=u_mailid><h3>${trainer.email}${flentity.email}${trainee.emailid}</h3>
+				<div class=u_mailid><h3>${trainer.email}${flProfEntity.email}${trainee.emailid}</h3>
 				</div> 
 				</div><br></br>
 				 <div class="signout">
-				 <a href="<c:url value="j_spring_security_logout" />" >Sign-Out</a> 
+				 <a href="<c:url value="${pageContext.request.contextPath}/j_spring_security_logout"/>" >Sign-Out</a> 
 				</div> 
 			</div>
 		</div>

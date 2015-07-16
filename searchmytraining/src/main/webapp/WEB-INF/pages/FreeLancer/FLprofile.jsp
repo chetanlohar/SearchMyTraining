@@ -1,7 +1,7 @@
-<%@page
-	import="com.searchmytraining.dto.FreelancerDTO,com.searchmytraining.entity.UserEntity"%>
+<%@page	import="com.searchmytraining.dto.FreelancerDTO,com.searchmytraining.entity.UserEntity"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -11,7 +11,7 @@
 	src="<%=request.getContextPath()%>/resources/js/Validations/FreeLProfile.js"></script>
 <script	src="<%=request.getContextPath()%>/resources/js/work/categories.js"></script>
 <%-- <script	src="<%=request.getContextPath()%>/resources/js/work/freelance.js"></script> --%>
-<script	src="./resources/js/work/updatefreelancerprofile.js"></script>
+<script	src="${pageContext.request.contextPath}/resources/js/work/updatefreelancerprofile.js"></script>
 <script type="text/javascript">
 $('#acord1').accordion({
 	collapsible : true
@@ -65,8 +65,12 @@ var jsonstates = '${states}';
 	function changeImage(input) {
 	    if (input.files && input.files[0]) {
 	        var reader = new FileReader();
+	        var phototgraph = '${flProfEntity.photograph}';
 	        reader.onload = function(e) {
-	            $('#profilepic').attr('src', e.target.result);
+	        	if(phototgraph)
+	            	$('#profilepic_curr').attr('src', e.target.result);
+	        	else
+	        		$('#profilepic_avtar').attr('src', e.target.result);
 	        };
 	        reader.readAsDataURL(input.files[0]);
 	    }
@@ -74,30 +78,35 @@ var jsonstates = '${states}';
 </script>
 </head>
 <body>
-<input id="userid" type="hidden" value="${userid}">
+<input id="userid" type="hidden" value="${flProfEntity.user.userId}">
 	<div id="acord1" class="acord">
 		<h3 class="acord_head">
 		Profile Details <span></span></h3>
 		<div class="acord_cont">
-			<form action="#" name="" id="flForm">
-				<!-- Splitting the name into Three parts first second and third -->
+			<form id="flForm" action="${pageContext.request.contextPath}/freelancer/updateflprofdet" method="post" name="myform" enctype="multipart/form-data">
 				<div class="name">
 					<label>Full Name <text>*</text> :</label> 
-					<input type="text" id="fname61"	name="fname61" value='${flentity.fullName}' onkeypress="return validateFLName(event);"/> 
+					<input id="fname61" name="fname61" value='${flProfEntity.fullname}' onkeypress="return validateFLName(event);"/> 
 					<span id="error61"></span>
 				</div>
 				<div class="Email">
 					<label>Email(Login Id) <text>*</text> :</label> <input type="email" id="email64"
-						name="email64" value="${flentity.email}" /> <span
+						name="email64" value="${flProfEntity.email}" /> <span
 						id="error64"></span>
 				</div>
 				 <div class="photo">
-				<img src="<%=request.getContextPath()%>/resources/images/avtar.jpg" id="profilepic" name="profilepic" width="140" height="160" border="0" alt="PROFILE PICTURE" onError="this.src= <%=request.getContextPath()%>/resources/images/avtar.jpg ;" />
+				 <c:if test="${!empty flProfEntity.photograph}">
+				 	<img src="${pageContext.request.contextPath}/freelancer/downloadFLPhotograph/${flProfEntity.user.userId}" id="profilepic_curr" name="profilepic" width="140" height="160" border="0" alt="PROFILE PICTURE" onError="this.src= ${pageContext.request.contextPath}/resources/images/avtar.jpg ;" />
+				 </c:if>
+				 <c:if test="${empty flProfEntity.photograph}">
+				 	<img src="${pageContext.request.contextPath}/resources/images/avtar.jpg" id="profilepic_avtar" name="profilepic" width="140" height="160" border="0" alt="PROFILE PICTURE" onError="this.src=${pageContext.request.contextPath}/resources/images/avtar.jpg ;" />
+				 </c:if>
+				
 				
 				<div class="fileUpload btn btn-primary">
-                    <span>Upload Photo</span>
-                        <input type="file" id="fileupload"  class="upload" name="picture" style="visibility: visible" onchange="changeImage(this);"/>         
-                      </div>
+                	<span>Upload Photo</span>
+                		<input type="file" id="fileupload" class="upload" name="picture" style="visibility: visible" onchange="changeImage(this);"/>         
+                </div>
 				</div>
 			</form>
 			<input class="skipbtn9" type="button" value="Save & Continue" name="save" form="flForm" onclick="return freelProfDet('<%=request.getContextPath()%>');"/>
@@ -182,12 +191,22 @@ var jsonstates = '${states}';
 						<label>Contact No : </label> 
 						<select id="phonetypeid1">
 							<option value="0">--Select--</option>
+							<c:if test="${phones[0].phonetype.phnTypeId == 3}">
+								<option value="3" selected>PERSONAL-MOBILE</option>
+							</c:if>
 							<option value="3">PERSONAL-MOBILE</option>
 							<option value="4">PERSONAL-LANDLINE</option>
 						</select> 
-						<input type="text" name="contactNo69" id="phonevalue1" onkeypress="return validate14(event)" value="${freelancerDto.contact12}"/>
-					    <input type="button" value="+" class="addcontact">
+						<input type="text" name="contactNo69" id="phonevalue1" onkeypress="return validate14(event)" value="${phones[0].phoneValue}"/>
+						<!-- <input type="button" value="+" class="addcontact"> -->
 					</p>
+					<p style="margin-left:253px;">
+					<select id="phonetypeid2" required>
+						<option value="0">--Select--</option>
+						<option value="3">PERSONAL-MOBILE</option>
+						<option value="4">PERSONAL-LANDLINE</option>
+					</select>
+					<input type="text" id="phonevalue2" size="20" name="phonevalue2" value="${phones[1].phoneValue}"/>
 				<br>
 				<span id="errorflcontact"></span>
 					<span id="error69"></span>
@@ -275,12 +294,14 @@ var jsonstates = '${states}';
 				<div id="client">
 					<p>
 						<label>Achievements/Awards/Certification :</label>
-						<textarea rows="5" cols="50" name="awrdDetails" id="awrdDetails"> </textarea>
+						<textarea rows="5" cols="50" name="awrdDetails" id="awrdDetails">${certification.certfctName}</textarea>
 					</p>
 					
 				</div><br><br>
                      <h3>(Max 250 characters)</h3>
-				<input class="skipbtn13" type="button" value="Save" name="save" form="frmCerfDetails" onclick="freelCertificationAwardDet();" />
+				<input class="skipbtn13" type="button" value="Save" name="save"
+					form="frmCerfDetails"
+					onclick="freelCertificationAwardDet('<%=request.getContextPath()%>');" />
 			</form>
 
 		</div>

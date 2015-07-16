@@ -13,17 +13,15 @@
 <script src="<%=request.getContextPath()%>/resources/js/popup-box.js"></script>
 <script
 	src="<%=request.getContextPath()%>/resources/js/Validations/Fvalidation.js"></script>
-
 </head>
 
 <script type="text/javascript">
-	function freelancerRegistration(path) {
+	function freelancerRegistration() {
 		var flag = validation12();
-		//alert('flag '+flag);
 		if (flag) {
 			try {
 				$.ajax({
-							url : path + '/freelaancer_reg',
+							url : './freelancer/flregister',
 							type : 'post',
 							dataType : 'json',
 							data : JSON.stringify({
@@ -37,8 +35,7 @@
 							contentType : "application/json",
 							success : function(response) {
 								alert("Thank you for Your Registration, Please Update Your Profile:");
-								/* window.location.href="./freelancer_updateprofile"; */
-								doLoginTPF(path);
+								doLoginTPF();
 							}
 						});
 			} catch (ex) {
@@ -46,7 +43,7 @@
 			}
 		}
 	}
-	function doLoginTPF(path) {
+	function doLoginTPF() {
 		var username = $('#email12').val();
 		var credentials = {
 			username : $('#email12').val(),
@@ -66,7 +63,6 @@
 						$('#auth_error_mesg').html(data.message);
 						$("#auth_error_div").show();
 					} else if (data.success == true) {
-						console.log("in j_spring_security_check success");
 						/* location.href = "${ctx}/searchmytraining" + data.page+"?username="+username; */
 						$('#url').val(username);
 						$("#loginformhidden").attr("action","${ctx}/searchmytraining" + data.page);
@@ -153,7 +149,7 @@
 				<div class="sign">
 					<!-- <input type="button" name="Submit" value="Submit" onclick="freelancerRegistration();validation12();"> -->
 					<input type="button" name="Submit" value="Submit"
-						onclick="freelancerRegistration('<%=request.getContextPath()%>');">
+						onclick="freelancerRegistration();">
 					<input type="reset" name="Cancel" value="Cancel" class="cancel">
 				</div>
 

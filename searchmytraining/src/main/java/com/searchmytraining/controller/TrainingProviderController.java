@@ -17,10 +17,4 @@ public class TrainingProviderController
 	{
 		return "pages/TrainingProvider/TPsetting";
 	}
-	
-	@RequestMapping("/ForgotPass")
-	public String getTpForgetPass()
-	{
-		return "pages/ForgotPass";
-	}
 }

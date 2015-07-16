@@ -25,9 +25,17 @@ public class PhoneDAO extends AbstractJpaDAO<PhoneEntity> implements IPhoneDAO {
 		EntityManager entityManger = getEntityManager();
 		String strquery="from PhoneEntity phone where phone.user.userId=?";
 		TypedQuery<PhoneEntity> typedQuery = entityManger.createQuery(strquery, PhoneEntity.class);
-		typedQuery.setParameter(1, userid.intValue());
-		List<PhoneEntity> phones = typedQuery.getResultList();
-		return phones;
+		try
+		{
+			typedQuery.setParameter(1, userid.intValue());
+			List<PhoneEntity> phones = typedQuery.getResultList();
+			return phones;
+		}
+		catch(NoResultException e)
+		{
+			System.out.println("from getPhoneByUserId: "+e.getMessage());
+			return null;
+		}
 	}
 	
 	public PhoneEntity getPhoneDet(String phoneno)

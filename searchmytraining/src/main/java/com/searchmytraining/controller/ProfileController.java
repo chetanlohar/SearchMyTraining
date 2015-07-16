@@ -7,7 +7,6 @@ import java.util.Map;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
-import org.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -16,10 +15,8 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.searchmytraining.dto.CertificationAwardDTO;
 import com.searchmytraining.dto.ClientDetailsDTO;
 import com.searchmytraining.dto.ContactDTO;
 import com.searchmytraining.dto.EmploymentDTO;
@@ -27,54 +24,26 @@ import com.searchmytraining.dto.FreelancerDTO;
 import com.searchmytraining.dto.InstituteDTO;
 import com.searchmytraining.dto.LocationDTO;
 import com.searchmytraining.dto.ProfessionalAssociationDTO;
-import com.searchmytraining.entity.CityEntity;
-import com.searchmytraining.entity.IndustryCategoryEntity;
-import com.searchmytraining.entity.IndustrySubCategoryEntity;
-import com.searchmytraining.entity.StateEntity;
-import com.searchmytraining.service.ICityService;
 import com.searchmytraining.service.IContactInfoService;
 import com.searchmytraining.service.IEmploymentService;
-import com.searchmytraining.service.IFreeLancerServiceDetails;
-import com.searchmytraining.service.IIndustryCategoryService;
-import com.searchmytraining.service.IIndustrySerivice;
-import com.searchmytraining.service.IIndustrySubCategoryService;
 import com.searchmytraining.service.IInstituteServiceDetails;
 import com.searchmytraining.service.ILocationService;
-import com.searchmytraining.service.IStateService;
 import com.searchmytraining.wrapper.RespnoseWrapper;
 
 @Controller
 public class ProfileController {
-
 	
 	@Autowired
 	public IInstituteServiceDetails instituteservice;
 	
 	@Autowired
-	public IIndustrySerivice industryservice;
-	
-	@Autowired
-	public IIndustryCategoryService industrycatservice;
-	@Autowired
 	public ILocationService locservice;
-	
-	@Autowired
-	public IIndustrySubCategoryService industrysubcatservice;
-	
-	@Autowired
-	public IStateService state;
-	
-	@Autowired
-	public ICityService city;
 	
 	@Autowired
 	public IEmploymentService emplservice;
 	
 	@Autowired
 	public IContactInfoService contactinfoservice;
-	
-	@Autowired
-	public IFreeLancerServiceDetails freelanceservice;
 	
 	@RequestMapping(value="/updateinstitutedetails",method = RequestMethod.POST, produces={"application/json"}, consumes={"application/json"})
 	@ResponseBody
@@ -91,6 +60,7 @@ public class ProfileController {
 	public void updateContactInfo(@RequestBody @Valid ContactDTO contactdto)
 	{
 		System.out.println("in updateContactInfo...");
+		System.out.println(contactdto);
 		contactinfoservice.updateContactInfoDet(contactdto);
 	}
 	
@@ -124,38 +94,6 @@ public class ProfileController {
 		/*instituteservice.updateClientDetails(clientdetailsdto);	*/
 	}
 
-	@RequestMapping("/getIndustryCategory")
-	@ResponseBody
-	public List<IndustryCategoryEntity> getIndustryCategory(@RequestParam("id") Integer industryid, ModelMap model)
-	{
-		List<IndustryCategoryEntity> l = industrycatservice.getIndustryCategories(industryid);
-		model.addAttribute("industrycategories", l);
-		return l;
-	}
-	
-	@RequestMapping("/getIndustrySubCategory")
-	@ResponseBody
-	public List<IndustrySubCategoryEntity> getIndustrySubCategory(@RequestParam("subid") Integer industrysubid, ModelMap model)
-	{
-		System.out.println("caughed by getIndustrySubCategory method... subid:"+industrysubid);
-		return industrysubcatservice.getIndustrySubCategories(industrysubid);
-	}
-	
-	@RequestMapping("/getstates")
-	@ResponseBody
-	public List<StateEntity> getStates(@RequestParam("countryid") Integer countryid)
-	{
-		System.out.println("in getStates(...)");
-		return state.getStates(countryid.longValue());
-	}
-	
-	@RequestMapping("/getCities")
-	@ResponseBody
-	public List<CityEntity> getCitites(@RequestParam("stateid") Integer stateid)
-	{
-		return city.getCities(stateid.longValue());
-	}
-	
 	@RequestMapping("/TPcalender")
 	public String TPcalender(ModelMap model)
 	{
@@ -188,27 +126,4 @@ public class ProfileController {
 			return responsewrapper;
 		}
 	}
-	
-	@RequestMapping(value="/updatefreelprofdet",method=RequestMethod.POST)
-	public void updateFreeLanceProfDet(@RequestBody FreelancerDTO freelancerDto,HttpSession session)
-	{
-		System.out.println("caught by updateFreeLanceProfDet()... :)");
-	}
-	
-	@RequestMapping(value="/freelcertiawardDet",method=RequestMethod.POST)
-	@ResponseBody
-	public RespnoseWrapper updateCertifactionAwrdDet(@RequestBody CertificationAwardDTO certidto, ModelMap model)
-	{
-		System.out.println(certidto.getAwrdDetails());
-		freelanceservice.updateCertiAndAwardInfo(certidto);
-		return null;
-	}
-	
-	@RequestMapping("/FLCalender")
-	public String getCalenders(ModelMap model)
-	{
-		model.addAttribute("industries",new JSONArray(industryservice.getIndustries()));
-		return "pages/FreeLancer/FLCalender";
-	}
-	
 }

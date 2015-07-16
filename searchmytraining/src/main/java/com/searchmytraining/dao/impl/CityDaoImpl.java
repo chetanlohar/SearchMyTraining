@@ -18,13 +18,11 @@ public class CityDaoImpl extends AbstractJpaDAO<CityEntity> implements CityDAO {
 	EntityManager entityManager;
 	
 	@Override
-	@Cacheable(value="cityCache1")
 	public CityEntity getCity(Integer id) {
 		setClazz(CityEntity.class);
 		return findOne(id);
 	}
 	
-	@Cacheable(value="cityCache2")
 	public CityEntity getCity(String cityname)
 	{
 		System.out.println(cityname);
@@ -35,11 +33,11 @@ public class CityDaoImpl extends AbstractJpaDAO<CityEntity> implements CityDAO {
 	}
 
 	@Override
+	@Cacheable(value="cityCache")
 	public List<CityEntity> getAllCities() {
 		setClazz(CityEntity.class);
 		return findAll();
 	}
-	
 	@Cacheable(value="cityCache")
 	public List<CityEntity> getCities(Long stateid) 
 	{

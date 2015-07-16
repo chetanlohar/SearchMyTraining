@@ -63,7 +63,7 @@ $('#acord1').accordion({
 </script>
 </head>
 <body>
-	<input id="userid" type="hidden" value="${sessionScope.userid}">
+	<input id="userid" type="hidden" value="${trainee.user.userId}">
 	<div id="acord1" class="acord">
 		<h3 class="acord_head">
 		<span></span>
@@ -72,7 +72,7 @@ $('#acord1').accordion({
 			<form action="#">
 				<div class="name">
 					<label>Full Name <text>*</text> :</label> <input id="name" type="text" name="name"
-						value="${sessionScope.trainee.fullName}" onkeypress="return validateName(event);"/>
+						value="${trainee.fullName}" onkeypress="return validateName(event);"/>
 						<span id="error51"></span>
 				</div>
 				<!-- 									<div class="name">
@@ -84,12 +84,12 @@ $('#acord1').accordion({
  -->
 				<div class="email">
 					<label>Email Id <text>*</text> :</label> <input id="email" type="text"
-						name="email" value="${sessionScope.trainee.emailid}" />
+						name="email" value="${trainee.emailid}" />
 						<span id="error52"></span>
 				</div>
 				<div class="contact">
 					<label>Phone No <text>*</text> :</label> <input id="contact" type="text"
-						name="phone" value="${sessionScope.trainee.phone}" onkeypress="return validate13(event);"/>
+						name="phone" value="${trainee.phone}" onkeypress="return validate13(event);"/>
 				<span id="error53"></span>
 				</div>
 

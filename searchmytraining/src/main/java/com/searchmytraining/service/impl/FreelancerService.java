@@ -1,6 +1,6 @@
 package com.searchmytraining.service.impl;
 
-import javax.persistence.EntityManager;
+import java.util.List;
 
 import org.dozer.DozerBeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,12 +10,18 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.WebApplicationContext;
 
 import com.searchmytraining.dao.FreelancerDAO;
+import com.searchmytraining.dao.IFLProfileDAO;
+import com.searchmytraining.dao.IFreeeLCertificationAwrdDAO;
+import com.searchmytraining.dao.IPhoneDAO;
 import com.searchmytraining.dao.RoleDAO;
 import com.searchmytraining.dao.StatusDAO;
 import com.searchmytraining.dao.UserDAO;
 import com.searchmytraining.dto.FreelancerDTO;
+import com.searchmytraining.entity.CertificationAwardEntity;
 import com.searchmytraining.entity.CityEntity;
+import com.searchmytraining.entity.FreeLancerProfileEntity;
 import com.searchmytraining.entity.FreelancerEntity;
+import com.searchmytraining.entity.PhoneEntity;
 import com.searchmytraining.entity.RoleEntity;
 import com.searchmytraining.entity.StatusEntity;
 import com.searchmytraining.entity.UserEntity;
@@ -27,7 +33,6 @@ public class FreelancerService implements IFreelancerService
 {
 	@Autowired
 	public WebApplicationContext context;
-	
 	@Autowired
 	public FreelancerDAO freelancerdao;
 	@Autowired
@@ -42,6 +47,12 @@ public class FreelancerService implements IFreelancerService
 	public ICityService cityservice;
 	@Autowired
 	public BCryptPasswordEncoder encoder;
+	@Autowired
+	public IFreeeLCertificationAwrdDAO certidao;
+	@Autowired
+	public IFLProfileDAO flprofiledao;
+	@Autowired
+	public IPhoneDAO phonedao;
 	
 	@Override
 	@Transactional
@@ -69,6 +80,10 @@ public class FreelancerService implements IFreelancerService
 		city = cityservice.getCity(freelancerDto.getCity12());
 		entity.setCity(city);
 		
+		FreeLancerProfileEntity flProfEntity = mapper.map(freelancerDto, FreeLancerProfileEntity.class);
+		flProfEntity.setUser(user);
+		flprofiledao.insertFlProfDet(flProfEntity);
+		
 		freelancerdao.registerFreelancer(entity);
 		return userdao.getMaxUserId("userId");
 	}
@@ -77,6 +92,31 @@ public class FreelancerService implements IFreelancerService
 	public FreelancerEntity getFreeLancerDetByUserId(Long userid) {
 		return freelancerdao.getFreeLancerDetByUserId(userid);
 	}
-	
 
+	@Override
+	public CertificationAwardEntity getCertificationDetByUserId(Long userid) {
+		return certidao.getCertificationDetByUserId(userid);
+	}
+
+	@Override
+	@Transactional
+	public void insertFlProfDet(FreeLancerProfileEntity entity) {
+		flprofiledao.insertFlProfDet(entity);
+	}
+	
+	public FreeLancerProfileEntity getFLProfileDet(Long userId)
+	{
+		return flprofiledao.getFLProfileDet(userId);
+	}
+
+	@Override
+	@Transactional
+	public void updateFlProfDet(FreeLancerProfileEntity entity) {
+		flprofiledao.updateFlProfDet(entity);
+	}
+
+	@Override
+	public List<PhoneEntity> getFLPhoneDetails(Long userId) {
+		return phonedao.getPhoneByUserId(userId);
+	}
 }

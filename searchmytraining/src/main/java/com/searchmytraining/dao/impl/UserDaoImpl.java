@@ -3,7 +3,6 @@ package com.searchmytraining.dao.impl;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
-import org.hibernate.dialect.MySQLInnoDBDialect;
 import org.springframework.stereotype.Repository;
 
 import com.searchmytraining.dao.AbstractJpaDAO;
@@ -19,6 +18,7 @@ public class UserDaoImpl extends AbstractJpaDAO<UserEntity> implements UserDAO {
 	public void addUser(UserEntity entity) {
 		try{
 			create(entity);
+			System.out.println("from addUser1: "+entity.getUserId());
 		}
 		catch(Exception e)
 		{

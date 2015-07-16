@@ -11,7 +11,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
+@Component
+@Scope("prototype")
 @Entity
 @Table(name="tbl_instprofiledetails")
 public class InstituteEntity implements Serializable{

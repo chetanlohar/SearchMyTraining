@@ -66,8 +66,14 @@
 		<div class="acord_cont">
 			<form action="#" method="post" id="form1">
 				<div class="name">
-					<label>Institute/Organization Name :</label> <input id="org_name"
-						type="text" name="org_name"	value="${instituteinfo.companyName}" /> <span id="error73"></span>
+					<label>Institute/Organization Name :</label>
+					<c:if test="${not empty instituteinfo.companyName}">
+						<input id="org_name" type="text" name="org_name" value="${instituteinfo.companyName}" />
+					</c:if> 
+					<c:if test="${empty instituteinfo.companyName}">
+						<input id="org_name" type="text" name="org_name" value="${trainer.org_name}" />
+					</c:if>
+					<span id="error73"></span>
 				</div>
 				<div class="name">
 					<label>Year Of Establishment :</label> <input
@@ -111,9 +117,9 @@
 		<div class="acord_cont">
 			<form class="multi" id="ContactDetailsForm">
 				<div class="name">
-					<label>Institute Email:</label> <input id="instituteEmail" type="text"
-						name="instituteEmail" value="${contactinfo.emailId}">
-						<span id="error77"></span>
+					<label>Institute Email:</label> 
+					<input id="instituteEmail" type="text" name="instituteEmail" value="${contactinfo.emailId}">
+					<span id="error77"></span>
 				</div>
 				<div class="name">
 					<label>Website:</label> <input id="institutewebsitename"
@@ -131,6 +137,7 @@
 						<input id="phonesSize" type="hidden" value="${fn:length(phones)}"/>
 						<c:set var="countPhones" value="1" scope="page" />
 						<c:set var="phonevalueids" value="" />
+						<c:set var="flag" value=""/>
 						<c:forEach var="phone" items="${phones}">
 							<select id="phonetypeid${countPhones}">
 								<option value="0">--Select--</option>
@@ -138,8 +145,8 @@
 									<c:choose>
 										<c:when test="${phone.phonetype.phnTypeId == phonetype.phnTypeId}">
 											<option value="${phonetype.phnTypeId}" selected>${phonetype.phnTypeName}</option>
-											<%-- <input type="hidden" id="phonetypeids_1" value="${phonetype.phnTypeId}" />
-											<input type="hidden" id="phonenumids_1" value="${phone.phoneId}" /> --%>
+											<%-- <input type="hidden" id="phonetypeids${countPhones}" value="${phonetype.phnTypeId}" /> 
+											<input type="hidden" id="phonenumids${countPhones}" value="${phone.phoneId}" /> --%>
 										</c:when>
 										<c:otherwise>
 											<option value="${phonetype.phnTypeId}">${phonetype.phnTypeName}</option>
@@ -150,7 +157,6 @@
 							<input id="institutecontact${countPhones}" type="text" name="institutecontact85" onkeypress="return validate15(event)" value="${phone.phoneValue}">
 							<c:set var="countPhones" value="${countPhones+1}" scope="page" />
 						</c:forEach> 
-					
 					<input type="button" value="+" class="addScnt">
 					<input type="hidden" id="rowtot" name="rowtot" value="1">
 					</p>

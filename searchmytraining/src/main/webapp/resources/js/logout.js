@@ -1,7 +1,6 @@
 $(function logout() {
 
       $('#menu_opener').click(function() {
-    	  console.log("you clicked me...")
   $('#submenu').slideToggle('fast');
   return false;
 

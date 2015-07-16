@@ -31,7 +31,6 @@ function trainerRegistration(path) {
 						}),
 						contentType : "application/json",
 						success : function(response) {
-							/* alert(response.validation_error); */
 							if (response.errorMsg) {
 								$.map(response.errorMsg, function(val, key) {
 									if (key == "org_name")
@@ -79,14 +78,12 @@ function doLoginTP()
 		},
 		data : credentials,
 		success : function(data, status) {
-			console.log("before if...")
 			if (data != null) {
 				if (data.success == false) {
 					alert(data.message);
 					$('#auth_error_mesg').html(data.message);
 					$("#auth_error_div").show();
 				} else if (data.success == true) {
-					console.log("in j_spring_security_check success");
 					/* location.href = "${ctx}/searchmytraining" + data.page+"?username="+username; */
 					$('#url').val(username);
 					$("#loginformhidden").attr("action","${ctx}/searchmytraining" + data.page);
@@ -162,7 +159,6 @@ function doLoginTP()
 					<input type="button" name="Submit" value="Submit" onclick="trainerRegistration('<%=request.getContextPath()%>'); " />
 					<input type="reset" name="Cancel" value="Cancel" class="cancel">
 				</div>
-
 			</form>
 		</div>
 	</div>

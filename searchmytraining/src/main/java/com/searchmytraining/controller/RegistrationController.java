@@ -122,7 +122,6 @@ public class RegistrationController {
 
 	public FreelancerDTO freelancerDto1;
 	
-	
 
 	@RequestMapping(value = "/trainingprovider_reg", method = RequestMethod.POST, produces = { "application/json" }, consumes = { "application/json" })
 	@ResponseBody
@@ -300,18 +299,17 @@ public class RegistrationController {
 			this.traineedto1 = traineedto;
 			ITraineeService traineeser = (ITraineeService)context.getBean("traineeService");
 			System.out.println("traineeser ref: "+traineeser);
-			traineeservice.registerTrainee(traineedto);
-			Integer userid = userservice.getMaxUserId("userId");  // Please modify this ASAP
+			Integer userid = traineeservice.registerTrainee(traineedto);
+			System.out.println("trainee userid: "+userid);
 			session.setAttribute("userid", userid);
-			model.addAttribute("userid", userid);
 			return response1;
 		}
 	}
 
 	@RequestMapping(value="/trainee_updateprofile",method=RequestMethod.POST)
 	public String traineeProfileMapping(@RequestParam("username") String username, ModelMap model, HttpSession session) {
-		UserEntity user = userservice.getUser(username);
-		session.setAttribute("userid", user.getUserId());
+		
+		UserEntity user=userservice.getUser(username);
 		TraineeEntity trainee = traineeservice.getTrainee(user.getUserId());
 		System.out.println("traineeid : "+trainee.getTraineeId());
 		session.setAttribute("trainee", trainee);
@@ -347,15 +345,16 @@ public class RegistrationController {
 			
 			LocationEntity location = locservice.findLocDet(trainee.getUser().getUserId());
 			System.out.println(location);
-			List<StateEntity> states = stateservice.getStates(location.getCity().getState().getCountry().getCountryId());
-			List<CityEntity> cities = cityservice.getCities(location.getCity().getState().getStateId());
-			Long country_value = location.getCity().getState().getCountry().getCountryId();
-			model.addAttribute("country_value",country_value);
-			model.addAttribute("locentity",location);
-			model.addAttribute("states",new JSONArray(states));
-			model.addAttribute("cities",new JSONArray(cities));
-			
-			
+			if(location!=null)
+			{
+				List<StateEntity> states = stateservice.getStates(location.getCity().getState().getCountry().getCountryId());
+				List<CityEntity> cities = cityservice.getCities(location.getCity().getState().getStateId());
+				Long country_value = location.getCity().getState().getCountry().getCountryId();
+				model.addAttribute("country_value",country_value);
+				model.addAttribute("locentity",location);
+				model.addAttribute("states",new JSONArray(states));
+				model.addAttribute("cities",new JSONArray(cities));
+			}
 		}
 		catch(Exception e)
 		{

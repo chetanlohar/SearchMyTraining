@@ -390,8 +390,8 @@ function freelProfDet(path)
 	console.log("in freelProfDet...");
 	var flag=freeLancerValidate();
 	console.log(flag);
-	
-	
+	if(flag)
+		$('#flForm').submit();
 }
 function freelLocDetails(path) {
 
@@ -401,7 +401,7 @@ function freelLocDetails(path) {
 	if (flag) {
 		try {
 			$.ajax({
-				url : './updatelocinfo',
+				url : path+'/updatelocinfo',
 				type : 'post',
 				dataType : 'json',
 				data : JSON.stringify({
@@ -432,7 +432,6 @@ function freelLocDetails(path) {
 function flContactDet(path)
 {
 	var flag = freeLancerValidate3();
-	console.log("in traineeContactDet... flag:"+flag);
 	if (flag) {
 		var phones = [];
 		var phonetypeids = [];
@@ -457,7 +456,6 @@ function flContactDet(path)
 				}),
 				contentType : "application/json",
 				success : function(response) {
-					 alert("hey... you are in success congratz :-)"); 
 				},
 				error : function() {
 					console.log("in error msg...");
@@ -478,7 +476,7 @@ function freelCertificationAwardDet(path) {
 	if (flag) {
 		try {
 			$.ajax({
-				url : './freelcertiawardDet',
+				url : path + '/freelancer/freelcertiawardDet',
 				type : 'post',
 				dataType : 'json',
 				data : JSON.stringify({

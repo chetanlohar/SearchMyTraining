@@ -5,6 +5,6 @@ import com.searchmytraining.entity.TraineeEntity;
 
 public interface ITraineeService {
 	
-	public void registerTrainee(TraineeDTO traineedto);
+	public Integer registerTrainee(TraineeDTO traineedto);
 	public TraineeEntity getTrainee(Integer userid);
 }
