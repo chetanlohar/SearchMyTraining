@@ -24,7 +24,7 @@
 		<div id='cssmenu'>
 
 			<ul id="coolMenu">
-			<li class='active has-sub'><a href="javascript:void 0"><i class="fa fa-home fa-1x"></i></a>
+			<li class='active has-sub'><a href="${pageContext.request.contextPath}"><i class="fa fa-home fa-1x"></i></a>
 				</li>
 				<li class='active has-sub'><a href='#'><span>Browse</span></a>
 					<ul>

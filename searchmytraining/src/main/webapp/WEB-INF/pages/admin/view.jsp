@@ -41,11 +41,14 @@ $(document).ready(function() {
 
 </head>
 <body>
-<div class="headbar"><a href="#">Back To Home</a></div>
+<div class="headbar"><p><a href="#">Back To Home</a></p>
+<h1>SearchMyTraining</h1>
+
+</div>
 <div class="view_wrapar">
 <div class="form_wrapar">
 <h1>Calendar Details</h1>
-<input type="button" name="Edit"  id="edit" value="EDIT">
+<a href="#" id="edit"><i class=" fa fa-edit"></i> Edit</a>
 <form action="#">
 <label for="Tid"><span>Training Id:</span><input type="text" class="input-field" name="training_id" value="" disabled="true"/></label>
 <label for="Title"><span>Title:</span><input type="text" class="input-field" name="title" value="" disabled="true"/></label>
@@ -69,5 +72,7 @@ $(document).ready(function() {
 </div>
 
 </div>
+<div class="view_footer"><p>&copy Copyright 2015 - All Rights Strictly Reserved -
+				Softinfology Pvt. Ltd.<p></div>
 </body>
 </html>

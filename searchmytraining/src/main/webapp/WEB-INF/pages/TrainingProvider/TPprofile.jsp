@@ -54,6 +54,22 @@
 	$('#acord1').accordion({
 		collapsible : true
 	});
+	
+	function changeImage(input) {
+	    if (input.files && input.files[0]) {
+	        var reader = new FileReader();
+	        var phototgraph = '${flProfEntity.photograph}';
+	        reader.onload = function(e) {
+	        	if(phototgraph)
+	            	$('#profilepic_curr').attr('src', e.target.result);
+	        	else
+	        		$('#profilepic_avtar').attr('src', e.target.result);
+	        };
+	        reader.readAsDataURL(input.files[0]);
+	    }
+	}
+	
+	
 </script>
 
 </head>
@@ -102,6 +118,20 @@
 						name="workingdays" />T <input id="friday" type="checkbox"
 						name="workingdays" />F <input id="saturday" type="checkbox"
 						name="workingdays" />S
+				</div>
+				<div class="photo">
+				 <c:if test="${!empty flProfEntity.photograph}">
+				 	<img src="${pageContext.request.contextPath}/freelancer/downloadFLPhotograph/${flProfEntity.user.userId}" id="profilepic_curr" name="profilepic" width="140" height="160" border="0" alt="PROFILE PICTURE" onError="this.src= ${pageContext.request.contextPath}/resources/images/avtar.jpg ;" />
+				 </c:if>
+				 <c:if test="${empty flProfEntity.photograph}">
+				 	<img src="${pageContext.request.contextPath}/resources/images/avtar.jpg" id="profilepic_avtar" name="profilepic" width="140" height="160" border="0" alt="PROFILE PICTURE" onError="this.src=${pageContext.request.contextPath}/resources/images/avtar.jpg ;" />
+				 </c:if>
+				
+				
+				<div class="fileUpload btn btn-primary">
+                	<span>Upload Photo</span>
+                		<input type="file" id="fileupload" class="upload" name="picture" style="visibility: visible" onchange="changeImage(this);"/>         
+                </div>
 				</div>
 				<%-- <input class="skip" type="button" value="Save & Continue" onclick="saveInstituteDetails('<%=request.getContextPath() %>');" />	 --%>
 			</form>

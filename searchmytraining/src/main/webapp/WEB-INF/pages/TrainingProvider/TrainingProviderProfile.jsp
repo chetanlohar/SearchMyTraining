@@ -188,10 +188,11 @@ function TIload() {
 
 		</div>
 	</div>
+	
 	</div>
 
-	<%@include file="../../layouts/footer.jsp"%>
+	
 
-
+<%@include file="../../layouts/footer.jsp"%>
 </body>
 </html>

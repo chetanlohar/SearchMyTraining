@@ -56,6 +56,7 @@ and open the template in the editor.
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/main_auto.css"
 	media="all" type="text/css">
+	
 <script>
   function LoadPage(){
 	 var inputkeyword=$("#w-input-search").val();

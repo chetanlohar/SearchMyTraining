@@ -11,6 +11,8 @@
 	href="<%=request.getContextPath()%>/resources/css/combine.css">
 	<link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/blog.css">
+	<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/css/social-likes_birman.css">
 	<link
 	href="<%=request.getContextPath()%>/resources/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css"> 
@@ -18,6 +20,7 @@
 	src="<%=request.getContextPath()%>/resources/js/jquery/jquery-1.10.2.js"></script>
 <script src="<%=request.getContextPath()%>/resources/js/pop-up.js"></script>
 <script src="<%=request.getContextPath()%>/resources/js/popup-box.js"></script>
+<script src="<%=request.getContextPath()%>/resources/js/social-likes.js"></script>
 
 <title>Blog</title>
 </head>
@@ -74,6 +77,12 @@
   <img class="blog_image" src="<%=request.getContextPath()%>/resources/images/careerwithus.png">
   <p> Social media networking is important for internal practices. Companies are putting their executives through new forms of  Social media isn't only an external communication platform for businesses - networking is important for internal practices. Companies are putting their executives through new forms of<p>
   <a href="#">Read More</a>
+  <div style="width: 40%;float: left;padding-top: 15px;" class="social-likes">
+                                        <div class="facebook" title="Share link on Facebook">Facebook</div>
+                                        <div class="twitter" title="Share link on Twitter">Twitter</div>
+                                        <div class="plusone" title="Share link on Google+">Google+</div>
+                                        <div class="pinterest" title="Share image on Pinterest" data-media="">Pinterest</div>
+                                    </div>
   </div>
  </div>
  <div class="athour_blog">
@@ -97,6 +106,12 @@
   <img class="blog_image" src="<%=request.getContextPath()%>/resources/images/careerwithus.png">
   <p> Social media isn'tal media isn't only an external communication platform for businesses - networking is important for internal practices. Companies are putting their executives through new forms of  Social media isn't only an external communication platform for businesses - networking is important for internal practices. Companies are putting their executives through new forms of<p>
    <a href="#">Read More</a>
+   <div style="width: 40%;float: left;padding-top: 15px;" class="social-likes">
+                                        <div class="facebook" title="Share link on Facebook">Facebook</div>
+                                        <div class="twitter" title="Share link on Twitter">Twitter</div>
+                                        <div class="plusone" title="Share link on Google+">Google+</div>
+                                        <div class="pinterest" title="Share image on Pinterest" data-media="">Pinterest</div>
+                                    </div>
   </div>
  </div>
  <div class="athour_blog">
@@ -120,6 +135,12 @@
   <img class="blog_image" src="<%=request.getContextPath()%>/resources/images/careerwithus.png">
   <p> Social media is new forms of Social media is new forms of Social media is new forms of Social media is new forms of Social media is new forms of Social media is new forms of<p>
    <a href="#">Read More</a>
+   <div style="width: 40%;float: left;padding-top: 15px;" class="social-likes">
+                                        <div class="facebook" title="Share link on Facebook">Facebook</div>
+                                        <div class="twitter" title="Share link on Twitter">Twitter</div>
+                                        <div class="plusone" title="Share link on Google+">Google+</div>
+                                        <div class="pinterest" title="Share image on Pinterest" data-media="">Pinterest</div>
+                                    </div>
   </div>
  </div>
  </div>

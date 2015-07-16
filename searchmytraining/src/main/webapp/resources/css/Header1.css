@@ -27,6 +27,7 @@ and open the template in the editor.
 	background: linear-gradient(to bottom, #333333 0%, #141414 100%);
 	border-bottom: 3px solid #0fa1e0;
 	z-index: 9999;
+	font-family: arial;
 }
 
 .header #cssmenu {
@@ -290,13 +291,14 @@ and open the template in the editor.
 	font-size: 18px;
 }
 .main #submenu .u-info .u_name h2 {
-	margin: 5px 45px;
-		font-size: 17px;
+	margin: 5px 5px;
+	width:95%;
+	font-size: 17px;
 	float: left;
 }
 
 .main #submenu .u-info .u_mailid h3{
-	margin-left: 15px;
+	margin-left: 5px;
     color: gray;
 }
 
