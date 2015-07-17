@@ -135,7 +135,7 @@
 					<option value="Individual">Individual</option>
 				</select>
 			</div>
-			<span id="error00"><text>.</text></span>
+			<span id="error00" class="errorm"><text>.</text></span>
 			<div id="Answers">
 				<div id="Corporate" style="display: none; margin-bottom: 20px;">
 					<input type="text" id="name2" name="copname"
@@ -146,19 +146,19 @@
 				<input type="text" autocomplete="off" name="fname" id="fname"
 					placeholder="Full Name">
 			</div>
-			<span id="error01"><text>.</text></span>
+			<span id="error01" class="errorm"><text>.</text></span>
 			<%-- <img src ="<%=request.getContextPath()%>/resources/images/error.png" alt="error"/> --%>
 			<div class="contact">
 				<input type="text" id="mob" autocomplete="off" name="mob"
 					placeholder="Contact No." onkeypress="return validate02(event)">
 
 			</div>
-			<span id="error02"><text>.</text></span>
+			<span id="error02" class="errorm"><text>.</text></span>
 			<div class="mailto">
 				<input type="text" id="email" autocomplete="off" name="email"
 					placeholder="Email Id">
 			</div>
-			<span id="error03"><text>.</text></span>
+			<span id="error03" class="errorm"><text>.</text></span>
 			<div class="password">
 				<input type="password" id="pass1" autocomplete="off" name="pass1"
 					placeholder="Enter Password" />
@@ -176,7 +176,7 @@
 					placeholder="Confirm Password" />
 
 			</div>
-			<span id="error04"><text>.</text></span>
+			<span id="error04" class="errorm"><text>.</text></span>
 			<div class="rcpatcha">
 			
 			<input style="margin: 0 auto;" type="text" id="rcapcthar" name="" placeholder="Enter Captch">
@@ -195,7 +195,7 @@
 			<div class="sign">
 				<input type="button" name="Submit" value="Submit"
 					onclick="traineeRegistration();">
-				<input type="reset" name="Cancel" value="Cancel" class="b-close1">
+				<input type="reset" name="Cancel" value="Reset" class="b-close1">
 			</div>
 
 		</form>

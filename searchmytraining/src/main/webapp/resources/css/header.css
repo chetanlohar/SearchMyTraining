@@ -614,6 +614,7 @@ transform
 @media screen and (max-width: 1024px) {
 	.header {
 		width: 100%
+		
 	}
 	.header .special_link {
 		width: 17%;
@@ -635,8 +636,9 @@ transform
 		color: #ffffff;
 		display: block;
 		font-family: Helvetica, Arial, Verdana, sans-serif;
-		padding: 19px 18px;
+		padding: 19px 14px;
 		text-decoration: none;
+	
 	}
 	.header .logo {
 		width: 17%;
@@ -697,7 +699,7 @@ transform
 		color: #ffffff;
 		display: block;
 		font-family: Helvetica, Arial, Verdana, sans-serif;
-		padding: 19px 18px;
+		padding: 19px 15px;
 		text-decoration: none;
 	}
 	.header .logo {
@@ -774,7 +776,7 @@ transform
 		font-family: arial;
 		text-align: center;
 		cursor: pointer;
-		background: blue;
+
 	}
 	.header .logo {
 		width: 17%;
@@ -791,7 +793,7 @@ transform
 		width: 50px;
 		height: 53px;
 		margin-left: 10px;
-		background: orange;
+
 	}
 	.header .special_link .group .text {
 		text-decoration: none;
@@ -808,7 +810,7 @@ transform
 		width: 50px;
 		height: 53px;
 		margin-left: 10px;
-		background: olive;
+
 	}
 	.header .logo .training .text {
 		text-decoration: none;

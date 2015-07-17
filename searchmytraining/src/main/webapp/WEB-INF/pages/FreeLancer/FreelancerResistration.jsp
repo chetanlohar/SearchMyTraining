@@ -91,7 +91,7 @@
 					<input type="text" autocomplete="off" name="name" id="name12"
 						placeholder="Full Name" autofocus />
 				</div>
-				<span id="error11"><text>.</text></span> 
+				<span id="error11" class="errorm"><text>.</text></span> 
 				<div class="city">
 				<select id="City_name12">
 					<option value="0" selected>--Select--</option>
@@ -100,7 +100,7 @@
 					</c:forEach>
 				</select> 
 				</div>
-				<span id="error12"><text>.</text></span>
+				<span id="error12" class="errorm"><text>.</text></span>
 				<!--  <div class="name">
                         <input type="text" autocomplete="off" name="training_type" value="" placeholder="Training Type" required="">
                     </div> -->
@@ -108,12 +108,12 @@
 					<input type="text" name="contact" autocomplete="off" id="contact12"
 						placeholder="Contact No." onkeypress="return validate12(event)">
 				</div>
-				<span id="error13"><text>.</text></span>
+				<span id="error13" class="errorm"><text>.</text></span>
 				<div class="mailto">
 					<input type="text" autocomplete="off" name="email" id="email12"
 						placeholder="Enter Email Id">
 				</div>
-				<span id="error14"><text>.</text></span>
+				<span id="error14" class="errorm"><text>.</text></span>
 				<div class="password">
 					<input type="password" autocomplete="off" name="password"
 						id="password12" placeholder="Enter Password">
@@ -129,7 +129,7 @@
 					<input type="password" autocomplete="off" name="cnfpassword"
 						id="cnfpassword12" placeholder="Confirm Password">
 				</div>
-				<span id="error15"><text>.</text></span>
+				<span id="error15" class="errorm"><text>.</text></span>
 				<div class="rcpatcha1">
 
 					<input style="margin: 0 auto;" type="text" id="frcapch" name=""
@@ -150,7 +150,7 @@
 					<!-- <input type="button" name="Submit" value="Submit" onclick="freelancerRegistration();validation12();"> -->
 					<input type="button" name="Submit" value="Submit"
 						onclick="freelancerRegistration();">
-					<input type="reset" name="Cancel" value="Cancel" class="cancel">
+					<input type="reset" name="Cancel" value="Reset" class="cancel">
 				</div>
 
 			</form>

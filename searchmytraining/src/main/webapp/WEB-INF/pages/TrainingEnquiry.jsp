@@ -27,34 +27,34 @@
                     <div class="fname">
                         <input type="text" autocomplete="off" name="firstname" id="firstname22" placeholder=" First Name" autofocus >
                     </div>
-                    <span id="error29"><text>.</text></span>
+                    <span id="error29" class="errorm"><text>.</text></span>
                     <div class="lname">
                         <input type="text" autocomplete="off" name="lname" id="lname22" placeholder="Last Name" >
                     </div>
-                    <span id="error30"><text>.</text></span>
+                    <span id="error30" class="errorm"><text>.</text></span>
                     <div class="title">
                         <input type="text" autocomplete="off" name="title" id="title22" placeholder="Subject / Title" >
                     </div>
-                    <span id="error31"><text>.</text></span>
+                    <span id="error31" class="errorm"><text>.</text></span>
                     <div class="city">
                         <input type="text" autocomplete="off" name="city" id="city22" placeholder="City">
                     </div>
-                    <span id="error32"><text>.</text></span>
+                    <span id="error32" class="errorm"><text>.</text></span>
                     <div class="mailto">
                         <input type="text" autocomplete="off"  name="email" id="email22" placeholder="Email Id" >
                     </div>
-                    <span id="error33"><text>.</text></span>
+                    <span id="error33" class="errorm"><text>.</text></span>
                     <div class="contact">
                         <input type="text" autocomplete="off" name="mob" id="mob22" placeholder="Contact No." onkeypress="return TEValidate(event)">
                     </div>
-                    <span id="error34"><text>.</text></span>
+                    <span id="error34" class="errorm"><text>.</text></span>
                     <div class="req">
-                        <textarea  name="requirements" id="requirements22" placeholder="Requirement Description"></textarea>
+                        <textarea  name="requirements" id="requirements22" class="require" placeholder="Requirement Description"></textarea>
                     </div>
                   
                     <div class="sign">
                         <input type="button" name="Submit" value="Send" onclick="enquiry();">
-                        <input type="reset" name="Cancel" value="Cancel" class="cancel close1" >
+                        <input type="reset" name="Cancel" value="Reset" class="cancel close1" >
                     </div>
 
                 </form>

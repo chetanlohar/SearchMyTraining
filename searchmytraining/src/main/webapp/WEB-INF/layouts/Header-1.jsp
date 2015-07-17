@@ -24,7 +24,7 @@
 		<div id='cssmenu'>
 
 			<ul id="coolMenu">
-			<li class='active has-sub'><a href="${pageContext.request.contextPath}"><i class="fa fa-home fa-1x"></i></a>
+			<li class='active has-sub'><a href='${pageContext.request.contextPath}'><i class="fa fa-home fa-1x"></i></a>
 				</li>
 				<li class='active has-sub'><a href='#'><span>Browse</span></a>
 					<ul>
@@ -37,12 +37,13 @@
 				<li class='active has-sub'><a href='#'><span>About
 							Us</span></a>
 					<ul>
-						<li><a href='#'><span>About Us</span></a></li>
-						<li><a href='#'><span>Meet Our Team</span></a></li>
-						<li><a href='#'><span>Training News</span></a></li>
-						<li><a href='#'><span>Contact Us</span></a></li>
+						<li><a href='about'><span>Why SearchMyTraining</span></a></li>
+						<li><a href='Team'><span>About Us</span></a></li>
+						<li><a href='News'><span>SearchMyTraining News</span></a></li>
+						<li><a href='Career'><span>Career With Us</span></a></li>
+						<li><a href="contact"><span>Contact Us</span></a></li>
 					</ul></li>
-				<li class='active has-sub'><a href="javascript:void 0">Blog</a>
+				<li class='active has-sub'><a href="Blog">Blog</a>
 				</li>
 			</ul>
 

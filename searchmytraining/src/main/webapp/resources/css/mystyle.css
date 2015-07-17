@@ -342,3 +342,54 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
     /*background: url(../images/window.png) no-repeat bottom center;*/
     text-indent: -9999px;
 }
+
+/* =============================Media query========================================= */
+@media  screen and (max-width: 1024px){
+.image-slider{
+
+  width: 90%;
+  height: 100%;
+
+  }
+  .image-slider .ribbon-1 .para p {
+
+  width: 81%;
+ 
+
+}
+.image-slider .ribbon-1 {
+  height: 150px;
+  width: 46%;
+  margin: 0px auto 20px;
+
+}
+#slider {
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+   padding:10px 0px 10px 0px;
+
+}
+.sti-menu li{
+	margin: 5px;
+}
+
+.partners .partners-info {
+  height: 150px;
+  width: 50%;
+  margin: 0px auto;
+  margin-top: 70px;
+
+}
+.border-top ul.garagedoor {
+  list-style: none;
+  width: 100%;
+  overflow: auto;
+  margin-left: 0px;
+
+}
+.border-top ul.garagedoor li {
+  width: 190px;
+}
+
+}

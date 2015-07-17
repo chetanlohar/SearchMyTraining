@@ -14,7 +14,7 @@
 </head>
 <body>
 	<div id="pop_up_box_1">
-		<a class="b-close close1"><img
+		<a href="#" class="b-close close1"><img
 			src="<%=request.getContextPath()%>/resources/images/images.png"></a>
 		<div class="reg_form">
 			<div class="head">
@@ -31,44 +31,44 @@
 						placeholder="Name" autofocus >
 				</div>
 				<div class="clr"></div>
-				<span id="error21"><text>.</text></span>
+				<span id="error21" class="errorm"><text>.</text></span>
 				<div class="cmpnyname">
 					<input type="text" autocomplete="off" id="companyName21"
 						name="companyName" placeholder="Company Name" >
 				</div>
-				<span id="error22"><text>.</text></span>
+				<span id="error22" class="errorm"><text>.</text></span>
 				<div class="coursetitle">
 					<input type="text" id="title21" name="title"
 						placeholder="Course Title" >
 				</div>
-				<span id="error23"><text>.</text></span>
+				<span id="error23" class="errorm"><text>.</text></span>
 				<div class="mailto">
 					<input type="text" id="Email21" autocomplete="off" name="Email"
 						placeholder="Email Id">
 				</div>
-				<span id="error24"><text>.</text></span>
+				<span id="error24" class="errorm"><text>.</text></span>
 				<div class="contact">
 					<input type="text" id="contact21" name="contact"
 						placeholder="Contact No." onkeypress="return Gvalidate(event)" >
 				</div>
-				<span id="error25"><text>.</text></span>
+				<span id="error25" class="errorm"><text>.</text></span>
 				<div class="contact">
 					<input type="text" id="participents21" name="participents" placeholder="Approx No of Participents" onkeypress="return Gvalidate(event)">
 				</div>
-				<span id="error26"><text>.</text></span>
+				<span id="error26" class="errorm"><text>.</text></span>
 				<div class="city">
 					<input type="text" id="city21" name="city" value=""
 						placeholder="City" >
 				</div>
-				<span id="error27"><text>.</text></span>
+				<span id="error27" class="errorm"><text>.</text></span>
 				<div class="req">
-					<textarea id="requirements21" name="requirements"
+					<textarea id="requirements21" name="requirements" class="require"
 						placeholder="Training Requirement Description"></textarea>
-						<h4> (Max 250 Characters)</h4>
+						<h3> (Max 250 Characters)</h3>
 				</div>
 				<div class="sign">
 					<input type="submit" name="Send" value="Send" onclick="validation21();"> <input
-						type="reset" name="Cancel" value="Cancel" class="cancel close1">
+						type="reset" name="Cancel" value="Reset" class="cancel close1">
 				</div>
 			</form>
 		</div>

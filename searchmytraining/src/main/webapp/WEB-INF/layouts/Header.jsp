@@ -18,6 +18,61 @@ $('#dropM').on('click',function(e){
 	$('#coolMenu').slideToggle();
 
 })
+
+$("#regi_pop2").on('click',function(e){
+
+	$("input[type='text']").val('');
+	$("#cityid").val('0');
+	$("input[type='password']").val('');
+	$('#meter1').removeClass();
+	$('#meter2').removeClass();
+	$('#meter3').removeClass();
+	
+    $('#meter1').html(" ")
+	$('#meter2').html("")
+	$('#meter3').html("")
+	$(".errorm").html("");
+	
+})
+$("#regi_pop").on('click',function(e){
+
+	$("input[type='text']").val('');
+	$("#selType").val('0');
+	$("input[type='password']").val('');
+	$('#meter01').removeClass();
+	$('#meter02').removeClass();
+	$('#meter03').removeClass();
+	
+    $('#meter01').html(" ")
+	$('#meter02').html("")
+	$('#meter03').html("")
+	$(".errorm").html("");
+	
+})
+$("#regi_pop3").on('click',function(e){
+
+	$("input[type='text']").val('');
+	$("#City_name12").val('0');
+	$("input[type='password']").val('');
+	$('#meter12').removeClass();
+	$('#meter13').removeClass();
+	$('#meter14').removeClass();
+	
+    $('#meter12').html(" ");
+	$('#meter13').html("");
+	$('#meter14').html("");
+	$(".errorm").html("");
+	
+})
+$(".my-button-new , .my-button").on('click',function(e){
+
+	$("input[type='text']").val('');
+	$(".errorm").html("");
+
+
+	
+})
+
 	
 })
   function randString(x){

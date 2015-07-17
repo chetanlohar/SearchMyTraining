@@ -107,7 +107,7 @@ and open the template in the editor.
 
 #pop_up_box form textarea {
 	color: #858282;
-	font-size: 18px;
+	font-size: 15px;
 	padding: 10px 0px 0px 10px;
 	outline: none;
 	height: 100px;
@@ -266,7 +266,7 @@ and open the template in the editor.
 
 #pop_up_box_1 form .req textarea {
 	color: #858282;
-	font-size: 18px;
+	font-size: 15px;
 	padding: 10px 0px 0px 10px;
 	outline: none;
 	height: 100px;
@@ -283,6 +283,10 @@ and open the template in the editor.
 	-ms-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
 	-o-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
 	box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+}
+#pop_up_box_1 form h3{
+	font-family: arial;
+	margin-left: 150px;
 }
 
 #pop_up_box_1 form .sign input {
@@ -2191,7 +2195,7 @@ disabled checkbox
 
 
 /* ====================== Responsive code========================== */
-@media screen and (max-height: 740px) {
+@media screen and (max-height: 750px) {
 #pop_up_box {
 
 	min-width: 350px;
@@ -2252,9 +2256,9 @@ disabled checkbox
 #pop_up_box_1 form h2{
 		font-size: 20px;
 }
-#pop_up_box_1 form h4{
+#pop_up_box_1 form h3{
 		font-size: 14px;
-		margin-left: 10px;
+		margin-left: 100px;
 }
 #pop_up_box_1 form input[type="text"] {
 	width: 250px;
@@ -2582,7 +2586,7 @@ disabled checkbox
 #pop_up_box_8 form .cpatcha1 {
 	height: 40px;
 	width: 270px;
-	margin: 0px 15px;
+	margin: 15px 15px;
 	
 }
 #pop_up_box_8 form .rcpatcha1 {

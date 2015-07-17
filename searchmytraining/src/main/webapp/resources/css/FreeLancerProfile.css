@@ -64,8 +64,9 @@ text{
 	color: red;
 }
 .acord .acord_cont .photo img {
-	margin-left: 350px;
+	margin-left: 330px;
 	margin-bottom: 10px;
+	border: 1px groove #000;
 }
 
 .acord .acord_cont .photo .fileUpload {
@@ -78,7 +79,7 @@ text{
 .acord .acord_cont .photo .fileUpload span{
 	
 	 color: #fff !important;
-	 margin: 0px 0px 0px -10px;
+	 margin: 0px 0px 0px -13px;
 }
 .acord .acord_cont .photo .fileUpload input.upload {
     position: absolute;
@@ -102,7 +103,7 @@ text{
   padding: 6px 20px;
   margin-bottom: 0;
   font-size: 12px;
-  font-weight: normal;
+  font-weight: bold;
   line-height: 1.42857143;
   text-align: center;
   white-space: nowrap;
@@ -572,7 +573,7 @@ margin-top: 20px;
 	font-size: 18px;
 	height: 30px;
 	color: #FFFFFF;
-	margin-left: 270px;
+	margin-left: 265px;
 	margin-top:20px;
 	border-radius: 5px;
 	cursor: pointer;

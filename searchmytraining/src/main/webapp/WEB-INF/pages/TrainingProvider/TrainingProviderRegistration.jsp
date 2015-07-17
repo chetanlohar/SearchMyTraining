@@ -113,7 +113,7 @@ function doLoginTP()
 				<div class="name">
 					<input id="org_name" type="text" autocomplete="off" name="org_name"
 						value="" placeholder="Organization Name"  autofocus/> <span
-						id="error1"><text>.</text></span>
+						id="error1" class="errorm"><text>.</text></span>
 
 				</div>
 				<select id="cityid">
@@ -122,16 +122,16 @@ function doLoginTP()
 						<option value="${city.cityId}">${city.cityName}</option>
 					</c:forEach>
 				</select> 
-				<span id="error2"><text>.</text></span>
+				<span id="error2"  class="errorm"><text>.</text></span>
 				<div class="contact">
 					<input id="contact1" type="text" autocomplete="off" name="contact"
 						value="" placeholder="Contact No." required=""
-						onkeypress="return validate(event)"> <span id="error3"><text>.</text></span>
+						onkeypress="return validate(event)"> <span id="error3"  class="errorm"><text>.</text></span>
 				</div>
 				<div class="mailto">
 					<input id="email1" type="text" autocomplete="off" name="email"
 						value="" placeholder="Enter Email Id" required=""> 
-					<span id="error4"><text>.</text></span>
+					<span id="error4"  class="errorm"><text>.</text></span>
 				</div>
 				<div class="password">
 					<input id="password" class="pass" type="password"
@@ -145,7 +145,7 @@ function doLoginTP()
 						name="cnfpassword" value="" placeholder="Confirm Password"
 						required="">
 				</div>
-				<span id="error5"><text>.</text></span>
+				<span id="error5"  class="errorm"><text>.</text></span>
 				<div class="rcpatcha1">
 			<input style="margin: 0 auto;" type="text" id="prcaptch" name="" placeholder="Enter Captch">
 			</div>
@@ -157,7 +157,7 @@ function doLoginTP()
 			</div>
 				<div class="sign">
 					<input type="button" name="Submit" value="Submit" onclick="trainerRegistration('<%=request.getContextPath()%>'); " />
-					<input type="reset" name="Cancel" value="Cancel" class="cancel">
+					<input type="reset" name="Cancel" value="Reset" class="cancel">
 				</div>
 			</form>
 		</div>

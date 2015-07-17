@@ -17,7 +17,7 @@ body{
 }
 
 .acord {
-	width: 90%;
+	width: 81%;
 }
 
 .acord .acord_head {
@@ -77,21 +77,22 @@ body{
 	margin: 0px 0px 20px 0px;
 }
 .acord .acord_cont .photo img {
-	margin-left: 340px;
-	margin-bottom: 10px;
+	margin-left: 335px;
+	margin-bottom: 20px;
+	border: 1px groove #000;
 }
 
 .acord .acord_cont .photo .fileUpload {
     position: relative;
     overflow: hidden;
-    margin-left: -120px;
+    margin-left: -125px;
     margin-top:35px;
     float: inherit;
 }
 .acord .acord_cont .photo .fileUpload span{
 	
 	 color: #fff !important;
-	 margin: 0px 0px 0px -10px;
+	 margin: 0px 0px 0px -15px;
 }
 .acord .acord_cont .photo .fileUpload input.upload {
     position: absolute;
@@ -112,10 +113,10 @@ body{
 }
 .acord .acord_cont .photo .btn {
   display: inline-block;
-  padding: 6px 20px;
+  padding: 5px 25px;
   margin-bottom: 0;
   font-size: 12px;
-  font-weight: normal;
+  font-weight: bold;
   line-height: 1.42857143;
   text-align: center;
   white-space: nowrap;
@@ -354,7 +355,7 @@ input[type="button"] {
 	height: 30px;
 	color: #FFFFFF;
 	margin-left: 270px;
-	margin-top:20px;
+	margin-top:15px;
 	border-radius: 5px;
 	cursor: pointer;
 	background: rgb(135, 224, 253); /* Old browsers */
@@ -386,7 +387,7 @@ input[type="button"] {
 	height: 30px;
 	color: #FFFFFF;
 	margin-left: 10px;
-	margin-top:20px;
+	margin-top:15px;
 	border-radius: 5px;
 	cursor: pointer;
 	background: rgb(135, 224, 253); /* Old browsers */
