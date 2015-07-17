@@ -220,4 +220,16 @@
 			<b>userid</b>
 		</field-exclude>
 	</mapping>
+	
+	<mapping>
+		<class-a>com.searchmytraining.dto.EducationDTO</class-a>
+		<class-b>com.searchmytraining.entity.EducationEntity</class-b>
+		<field-exclude>
+			<a>degreeid</a>
+			<b>degreeid</b>
+		</field-exclude>
+	</mapping>
+	
+	
+	
 </mappings> 

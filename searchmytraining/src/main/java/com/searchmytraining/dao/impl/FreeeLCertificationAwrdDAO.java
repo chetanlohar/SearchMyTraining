@@ -14,8 +14,7 @@ import com.searchmytraining.entity.CertificationAwardEntity;
 public class FreeeLCertificationAwrdDAO extends AbstractJpaDAO<CertificationAwardEntity> implements IFreeeLCertificationAwrdDAO {
 	
 	@Override
-	public void updateCertificationAwrdDet(CertificationAwardEntity certientity) {
-		System.out.println("in FreeeLCertificationAwrdDAO impl");
+	public void insertCertificationAwrdDet(CertificationAwardEntity certientity) {
 		create(certientity);
 	}
 	
@@ -36,5 +35,10 @@ public class FreeeLCertificationAwrdDAO extends AbstractJpaDAO<CertificationAwar
 			System.out.println("No result found for Certification Details....");
 			return null;
 		}
+	}
+
+	@Override
+	public void updateCertificationAwrdDet(CertificationAwardEntity certientity) {
+		update(certientity)		;
 	}
 }

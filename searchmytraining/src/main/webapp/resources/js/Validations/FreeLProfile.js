@@ -378,8 +378,8 @@ function freeLancerValidate4() {
 
 			$nextContent.show()
 		});
+		return true;
 		jQuery(".acord ").next().slideDown("fast", function() {
-
 			$nextContent.show()
 		});
 	}

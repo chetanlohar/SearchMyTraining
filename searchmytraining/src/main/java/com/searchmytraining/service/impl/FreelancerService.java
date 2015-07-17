@@ -10,6 +10,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.WebApplicationContext;
 
 import com.searchmytraining.dao.FreelancerDAO;
+import com.searchmytraining.dao.IEducationDAO;
+import com.searchmytraining.dao.IEducationDegreeDAO;
 import com.searchmytraining.dao.IFLProfileDAO;
 import com.searchmytraining.dao.IFreeeLCertificationAwrdDAO;
 import com.searchmytraining.dao.IPhoneDAO;
@@ -17,9 +19,13 @@ import com.searchmytraining.dao.IPhoneTypeDAO;
 import com.searchmytraining.dao.RoleDAO;
 import com.searchmytraining.dao.StatusDAO;
 import com.searchmytraining.dao.UserDAO;
+import com.searchmytraining.dto.CertificationAwardDTO;
+import com.searchmytraining.dto.EducationDTO;
 import com.searchmytraining.dto.FreelancerDTO;
 import com.searchmytraining.entity.CertificationAwardEntity;
 import com.searchmytraining.entity.CityEntity;
+import com.searchmytraining.entity.EducationDegreeEntity;
+import com.searchmytraining.entity.EducationEntity;
 import com.searchmytraining.entity.FreeLancerProfileEntity;
 import com.searchmytraining.entity.FreelancerEntity;
 import com.searchmytraining.entity.PhoneEntity;
@@ -57,6 +63,10 @@ public class FreelancerService implements IFreelancerService
 	public IPhoneDAO phonedao;
 	@Autowired
 	public IPhoneTypeDAO phonetypedao;
+	@Autowired
+	public IEducationDegreeDAO edudegreedao;
+	@Autowired
+	public IEducationDAO edudao;
 	
 	@Override
 	@Transactional
@@ -130,5 +140,56 @@ public class FreelancerService implements IFreelancerService
 	@Override
 	public List<PhoneEntity> getFLPhoneDetails(Long userId) {
 		return phonedao.getPhoneByUserId(userId);
+	}
+	
+	public List<EducationDegreeEntity> getAllEduDetails()
+	{
+		return edudegreedao.getAllEducation();
+	}
+	
+	@Override
+	@Transactional
+	public void updateEduDetails(EducationDTO educationdto, Integer userId)
+	{
+		EducationEntity educationentity_new = mapper.map(educationdto, EducationEntity.class);
+		
+		EducationDegreeEntity edudegree = edudegreedao.getEducationDegree(educationdto.getDegreeid());
+		if(!edudegree.getDegree().equalsIgnoreCase("other"))
+			educationentity_new.setDegreeOther(null);
+		educationentity_new.setDegree(edudegreedao.getEducationDegree(educationdto.getDegreeid()));
+		educationentity_new.setUser(userdao.getUser(userId));
+		EducationEntity educationentity_curr = getEducationDetails(userId.longValue());
+		if(educationentity_curr!=null)
+		{
+			educationentity_new.setEduDetId(educationentity_curr.getEduDetId());
+			edudao.updateEducationDetails(educationentity_new);
+		}
+		else
+		{
+			edudao.insertEducationDetails(educationentity_new);
+		}
+	}
+	
+	public EducationEntity getEducationDetails(Long userId)
+	{
+		return edudao.getEducationDetails(userId);
+	}
+	
+	@Override
+	@Transactional
+	public void updateCertiAndAwardInfo(CertificationAwardDTO certidto) {
+		CertificationAwardEntity certientity_new = mapper.map(certidto, CertificationAwardEntity.class);
+		CertificationAwardEntity certientity_curr = certidao.getCertificationDetByUserId(certidto.getUserid().longValue());
+		if(certientity_curr!=null)
+		{
+			certientity_new.setCertfctId(certientity_curr.getCertfctId());
+			certientity_new.setUser(certientity_curr.getUser());
+			certidao.updateCertificationAwrdDet(certientity_new);
+		}
+		else
+		{
+			certientity_new.setUser(userdao.getUser(certidto.getUserid()));
+			certidao.insertCertificationAwrdDet(certientity_new);
+		}
 	}
 }

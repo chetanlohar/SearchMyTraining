@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +19,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.searchmytraining.dto.ClientDetailsDTO;
 import com.searchmytraining.dto.ContactDTO;
 import com.searchmytraining.dto.EmploymentDTO;
-import com.searchmytraining.dto.FreelancerDTO;
 import com.searchmytraining.dto.InstituteDTO;
 import com.searchmytraining.dto.LocationDTO;
 import com.searchmytraining.dto.ProfessionalAssociationDTO;

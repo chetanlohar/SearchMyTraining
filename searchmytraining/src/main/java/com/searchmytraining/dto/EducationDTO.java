@@ -2,21 +2,21 @@ package com.searchmytraining.dto;
 
 public class EducationDTO {
 	
-	private Integer degreeid;
-	private String otherDegree;
+	private Long degreeid;
+	private String degreeOther;
 	private String university;
 	private Integer yop;
-	public Integer getDegreeid() {
+	public Long getDegreeid() {
 		return degreeid;
 	}
-	public void setDegreeid(Integer degreeid) {
+	public void setDegreeid(Long degreeid) {
 		this.degreeid = degreeid;
 	}
-	public String getOtherDegree() {
-		return otherDegree;
+	public String getDegreeOther() {
+		return degreeOther;
 	}
-	public void setOtherDegree(String otherDegree) {
-		this.otherDegree = otherDegree;
+	public void setDegreeOther(String degreeOther) {
+		this.degreeOther = degreeOther;
 	}
 	public String getUniversity() {
 		return university;
@@ -33,7 +33,7 @@ public class EducationDTO {
 	@Override
 	public String toString() {
 		return "EducationDTO [degreeid=" + degreeid
-				+ ", otherDegree=" + otherDegree + ", university=" + university
+				+ ", degreeOther=" + degreeOther + ", university=" + university
 				+ ", yop=" + yop + "]";
 	}
 }

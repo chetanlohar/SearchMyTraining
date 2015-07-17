@@ -28,14 +28,16 @@ import com.searchmytraining.dto.EducationDTO;
 import com.searchmytraining.dto.FreelancerDTO;
 import com.searchmytraining.entity.CertificationAwardEntity;
 import com.searchmytraining.entity.CityEntity;
+import com.searchmytraining.entity.ContactInfoEntity;
+import com.searchmytraining.entity.EducationEntity;
 import com.searchmytraining.entity.FreeLancerProfileEntity;
 import com.searchmytraining.entity.LocationEntity;
 import com.searchmytraining.entity.PhoneEntity;
 import com.searchmytraining.entity.StateEntity;
 import com.searchmytraining.entity.UserEntity;
 import com.searchmytraining.service.ICityService;
+import com.searchmytraining.service.IContactInfoService;
 import com.searchmytraining.service.ICountryService;
-import com.searchmytraining.service.IFreeLancerServiceDetails;
 import com.searchmytraining.service.IFreelancerService;
 import com.searchmytraining.service.ILocationService;
 import com.searchmytraining.service.IStateService;
@@ -61,7 +63,7 @@ public class FreeLancerController {
 	@Autowired
 	public ICountryService countryservice;
 	@Autowired
-	public IFreeLancerServiceDetails freelanceservice;
+	public IContactInfoService contactservice;
 	
 	@RequestMapping(value = "/flregister", method = RequestMethod.POST, produces = { "application/json" }, consumes = { "application/json" })
 	@ResponseBody
@@ -114,12 +116,25 @@ public class FreeLancerController {
 		if(flProfEntity!=null)
 			model.addAttribute("flProfEntity",flProfEntity);
 		
-		// Contact Information
+		// Phone Information
 		
 		List<PhoneEntity> phones = freelancerservice.getFLPhoneDetails(user.getUserId().longValue());
 		if(phones!=null)
 			model.addAttribute("phones", phones);
 		
+		// Website Information
+		
+		ContactInfoEntity contactwebdetails = contactservice.getContactInfoDetailsByUserId(user.getUserId().longValue());
+		if(contactwebdetails!=null)
+			model.addAttribute("contactwebdetails", contactwebdetails);
+		
+		EducationEntity education = freelancerservice.getEducationDetails(user.getUserId().longValue());
+		if(education!=null)
+			model.addAttribute("education", education);
+		// AllEducationDegrees
+		model.addAttribute("Educations",freelancerservice.getAllEduDetails());
+		
+		// Country Details
 		model.addAttribute("countries",countryservice.getAllCountries());
 		
 		return "pages/FreeLancer/FLprofile";
@@ -130,7 +145,7 @@ public class FreeLancerController {
 	public RespnoseWrapper updateCertifactionAwrdDet(@RequestBody CertificationAwardDTO certidto, ModelMap model)
 	{
 		System.out.println(certidto.getAwrdDetails());
-		freelanceservice.updateCertiAndAwardInfo(certidto);
+		freelancerservice.updateCertiAndAwardInfo(certidto);
 		return null;
 	}
 	
@@ -180,12 +195,13 @@ public class FreeLancerController {
 		return null;
 	}
 	
-	@RequestMapping("/updateedudetails/{userId}")
-	public String updateEduDetails(@RequestBody EducationDTO edudto,@PathVariable("userId") Integer userId,ModelMap model)
+	@RequestMapping(value="/updateedudetails/{chetan}",  method = RequestMethod.POST, produces={"application/json"}, consumes ={"application/json"})
+	@ResponseBody
+	public RespnoseWrapper updateEduDetails(@PathVariable("chetan") Integer userId,@RequestBody EducationDTO edudto,ModelMap model)
 	{
 		System.out.println("userId: "+userId);
 		System.out.println(edudto);
-		
+		freelancerservice.updateEduDetails(edudto, userId);
 		return null;
 	}
 	

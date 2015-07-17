@@ -64,3 +64,60 @@ function updateFlProfDet()
      });
 }
 
+function checkDegree(degree)
+{
+	degree = degree.toLocaleLowerCase().trim();
+	$("#fldegreetype option[value='0']").remove();
+	var degreeName = $('#fldegreetype option:selected').text();
+	degreeName = degreeName.toLocaleLowerCase().trim();
+	if(degreeName == 'other')
+	{
+		$('#otherDegreeDivid').show();
+		$('#otherDegree').attr('required',true);
+	}
+	else
+	{
+		$('#otherDegreeDivid').hide();
+		if(degree != 'other')
+			$('#otherDegree').val(null);
+	}
+}
+
+function updalFLEduDetails(path)
+{
+	var flag = freeLancerValidate4();
+	console.log(flag);
+	if (flag) {
+		try {
+			$.ajax({
+				url : path,
+				type : 'post',
+				dataType : 'json',
+				data : JSON.stringify({
+					"degreeid" : $('#fldegreetype').val(),
+					"degreeOther" : $('#otherDegree').val(),
+					"university" : $('#university72').val(),
+					"yop" : $('#flyearofpassing').val()
+				}),
+				contentType : "application/json",
+				success : function(response) {
+					console.log("in updalFLEduDetails ajax success: "+response);
+					/*if (response.errorMsg) {
+						$.map(response.errorMsg, function(val, key) {
+						 if (key == "traineetype")
+							$('#error1').text(val);
+						 
+						});
+					} else {
+						alert("Thank you for Your Registration, Please Update Your Profile:");
+					}*/
+				}
+			});
+		} catch (ex) {
+			alert("Exception: " + ex);
+		}
+	}
+	
+	
+}
+

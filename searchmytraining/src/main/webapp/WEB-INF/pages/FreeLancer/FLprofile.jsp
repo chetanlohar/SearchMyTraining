@@ -27,6 +27,14 @@ jQuery(document).ready(function () {
             $nextContent.show()
         });
     });
+    otherDegree
+    var education = '${education.degree.degree}';
+    var degreeOtherValue = '${education.degreeOther}';
+    var education = education.toLocaleLowerCase().trim();
+    if(education == 'other' && degreeOtherValue != "")
+    	$('#otherDegreeDivid').show();
+    else
+    	$('#otherDegreeDivid').hide();
 });
 var jsonstates = '${states}';
 	var jsoncities = '${cities}';
@@ -37,43 +45,18 @@ var jsonstates = '${states}';
 	var city_value = '${location.city.cityId}';
 	loadLocationInfo(states,cities,state_value,city_value);
 
-<%-- function freeEduDetails() {
-	try {
-		alert('Hi Jumanji');
-		/* alert('degreeType '+$('#degreeType').val()+" qualification "+$('#qualification').val()+" university "+$('#university').val()+" yop "+$('#yop').val()); */
-		$.ajax({
-			url : '<%=request.getContextPath()%>/updateFreedetails',
-			type : 'post',
-			dataType : 'json',
-			data : JSON.stringify({
-				"degreeType" : $('#degreeType').val(),
-				"qualification" : $('#qualification').val(),
-				"eduSpecfctn" : $('#eduSpecfctn').val(),
-				"university" : $('#university').val(),
-				"yop" : $('#yop').val()
-			}),
-			contentType : "application/json",
-			success : function(response) {
-				alert("Thank you for Your Registration, Please Update Your Profile:");
-				window.location.href="<%=request.getContextPath()%>/freelancer_updateprofile";
-			}
-		});
-	} catch (ex) {
-		alert(ex);
-	}
-}--%>
 	function changeImage(input) {
-	    if (input.files && input.files[0]) {
-	        var reader = new FileReader();
-	        var phototgraph = '${flProfEntity.photograph}';
-	        reader.onload = function(e) {
-	        	if(phototgraph)
-	            	$('#profilepic_curr').attr('src', e.target.result);
-	        	else
-	        		$('#profilepic_avtar').attr('src', e.target.result);
-	        };
-	        reader.readAsDataURL(input.files[0]);
-	    }
+		if (input.files && input.files[0]) {
+			var reader = new FileReader();
+			var phototgraph = '${flProfEntity.photograph}';
+			reader.onload = function(e) {
+			if(phototgraph)
+				$('#profilepic_curr').attr('src', e.target.result);
+			else
+				$('#profilepic_avtar').attr('src', e.target.result);
+			};
+			reader.readAsDataURL(input.files[0]);
+		}
 	}
 </script>
 </head>
@@ -229,7 +212,7 @@ var jsonstates = '${states}';
 					<span id="error69"></span>
 				</div>
 				<div class="website">
-					<label>Website :</label> <input type="text" name="web70" id="web70" />
+					<label>Website :</label> <input type="text" name="web70" id="web70" value="${contactwebdetails.website}"/>
 					<span id="error70"></span>
 				</div>
 			</form>
@@ -243,12 +226,19 @@ var jsonstates = '${states}';
 		<div class="acord_cont">
 			<form class="multi" id="frmEduDetails">
 				<div class="dtype">
-					<label>Degree Type :</label> <select id="fldegreetype">
-						<option value="0" name="degreeType"
-							id="degreeType">--Degree Type--</option>
-						<option value="Diploma">Diploma</option>
-						<option value="Graduate">Graduate</option>
-						<option value="Post Graduate">Post Graduate</option>
+					<label>Degree Type :</label> 
+					<select id="fldegreetype" onchange="checkDegree('${education.degree.degree}');">
+						<option value="0" name="degreeType"	id="degreeType">--Degree Type--</option>
+						<c:forEach var="edu" items="${Educations}">
+						<c:choose>
+							<c:when test="${edu.eduid eq education.degree.eduid}">
+								<option value="${edu.eduid}" selected>${edu.degree}</option>
+							</c:when>
+							<c:otherwise>
+								<option value="${edu.eduid}">${edu.degree}</option>
+							</c:otherwise>
+						</c:choose>
+						</c:forEach>
 					</select>
 					<span id="errorfldegreetype"></span> 
 				</div>
@@ -260,42 +250,41 @@ var jsonstates = '${states}';
 						<span id="error71"></span>
 				</div><br><br> -->
 				
-				<div class="spec">
-					<label>Specification :</label> <select id="flspec">
-						<option value="0"
-							name="eduSpecfctn" id="eduSpecfctn">--Specification--</option>
-						<option value="MCA">MCA</option>
-						<option value="B.E">B.E.</option>
-						<option value="B.Sc">B.Sc.</option>
-					</select>
+				<div id="otherDegreeDivid" class="spec">
+					<input type="text" id="otherDegree" placeholder="Enter Degree Name" style="margin-left:256px;" value="${education.degreeOther}"/>
 					<span id="errorflspec"></span> 
 				</div>
-				 
 				<!--<div class="seperate">-->
 				
-<br><br>
+				<br><br>
 				<div class="year">
-
-					<label>Year Of Passing : </label> <select id="flyearofpassing">
+					<label>Year Of Passing : </label> 
+					<select id="flyearofpassing">
 						<option value="0" name="yop" id="yop">--Select Year--</option>
+						<c:set var="year" value="2015"/>
 						<c:forEach var="i" begin="1960" end="2015">
-							<option value="${i}">${i}</option>
-  			 				<%-- Item <c:out value="${i}"/><p> --%>
+						<c:choose>
+							<c:when test="${year eq education.yop}">
+								<option value="${year}" selected>${year}</option>
+							</c:when>
+							<c:otherwise>
+								<option value="${year}">${year}</option>
+							</c:otherwise>
+						</c:choose>
+						<c:set var="year" value="${year-1}"/>
 						</c:forEach>
 					</select>
 					 <span id="errorflyearofpassing"></span> 
-
 				</div>
 				<div class="university">
 
-					<label>University: </label> <input type="text" name="university72"
-						id="university72" />
-						<span id="error72"></span>
+					<label>University: </label> 
+					<input type="text" name="university72" id="university72" value="${education.university}"/>
+					<span id="error72"></span>
 				</div>
 
 			</form>
-			<input class="skipbtn12" type="button" value="Save & Continue" name="save"
-				form="frmEduDetails" onclick="freeLancerValidate4();freeEduDetails();" /> <input
+			<input class="skipbtn12" type="button" value="Save & Continue" name="save" form="frmEduDetails" onclick="updalFLEduDetails('${pageContext.request.contextPath}/freelancer/updateedudetails/${flProfEntity.user.userId}');" /> <input
 				class="skip" type="button" id="skip1" value="Skip" name="skip" />
 		</div>
 
@@ -310,10 +299,10 @@ var jsonstates = '${states}';
 					</p>
 					
 				</div><br><br>
-                     <h3>(Max 250 characters)</h3>
+					<h3>(Max 250 characters)</h3>
 				<input class="skipbtn13" type="button" value="Save" name="save"
 					form="frmCerfDetails"
-					onclick="freelCertificationAwardDet('<%=request.getContextPath()%>');" />
+					onclick="freelCertificationAwardDet('${pageContext.request.contextPath}');" />
 			</form>
 
 		</div>

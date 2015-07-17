@@ -20,7 +20,6 @@ function traineeRegistration(path) {
 						}),
 						contentType : "application/json",
 						success : function(response) {
-
 							if (response.errorMsg) {
 								$.map(response.errorMsg, function(val, key) {
 									/* if (key == "traineetype")
