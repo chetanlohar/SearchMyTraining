@@ -58,7 +58,7 @@
 	function changeImage(input) {
 	    if (input.files && input.files[0]) {
 	        var reader = new FileReader();
-	        var phototgraph = '${flProfEntity.photograph}';
+	        var phototgraph = '${instituteinfo.institutelogo}';
 	        reader.onload = function(e) {
 	        	if(phototgraph)
 	            	$('#profilepic_curr').attr('src', e.target.result);
@@ -71,16 +71,15 @@
 	
 	
 </script>
-
 </head>
 <body>
-	<input id="userid" type="hidden" name="userid" value="${trainer.user.userId}">
 	<div id="acord1" class="acord">
 		<h3 class="acord_head plus">
 		<span></span>
 		Institute Information</h3>
 		<div class="acord_cont">
-			<form action="#" method="post" id="form1">
+			<form action="${pageContext.request.contextPath}/uploadInstituteLogo" method="post" id="form1" enctype="multipart/form-data">
+			<input id="userid" type="hidden" name="userid" value="${trainer.user.userId}">
 				<div class="name">
 					<label>Institute/Organization Name :</label>
 					<c:if test="${not empty instituteinfo.companyName}">
@@ -120,10 +119,10 @@
 						name="workingdays" />S
 				</div>
 				<div class="photo">
-				 <c:if test="${!empty flProfEntity.photograph}">
-				 	<img src="${pageContext.request.contextPath}/freelancer/downloadFLPhotograph/${flProfEntity.user.userId}" id="profilepic_curr" name="profilepic" width="140" height="160" border="0" alt="PROFILE PICTURE" onError="this.src= ${pageContext.request.contextPath}/resources/images/avtar.jpg ;" />
+				 <c:if test="${!empty instituteinfo.institutelogo}">
+				 	<img src="${pageContext.request.contextPath}/common/downloadPicture/${trainer.user.userId}" id="profilepic_curr" name="profilepic" width="140" height="160" border="0" alt="PROFILE PICTURE" onError="this.src= ${pageContext.request.contextPath}/resources/images/avtar.jpg ;" />
 				 </c:if>
-				 <c:if test="${empty flProfEntity.photograph}">
+				 <c:if test="${empty instituteinfo.institutelogo}">
 				 	<img src="${pageContext.request.contextPath}/resources/images/avtar.jpg" id="profilepic_avtar" name="profilepic" width="140" height="160" border="0" alt="PROFILE PICTURE" onError="this.src=${pageContext.request.contextPath}/resources/images/avtar.jpg ;" />
 				 </c:if>
 				
@@ -135,8 +134,7 @@
 				</div>
 				<%-- <input class="skip" type="button" value="Save & Continue" onclick="saveInstituteDetails('<%=request.getContextPath() %>');" />	 --%>
 			</form>
-			<input class="skipbtn4 plus" type="button" value="Save & Continue" name="save"
-				form="form1"
+			<input class="skipbtn4 plus" type="button" value="Save & Continue" name="save" form="form1"
 				onclick="saveInstituteDetails('<%=request.getContextPath()%>'); trainingProValidate();" />
 			<input class="skip plus" id="skip3" type="button" value="Skip" name="skip" />
 		</div>

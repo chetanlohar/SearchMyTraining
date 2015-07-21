@@ -198,7 +198,13 @@ $(function(){
 					placeholder="Course Name"  required="required"/>
 			</div>
 			<div class="location">
-				<input class="input-2" id="loc" type="text" placeholder="Location" required="required" />
+				<!-- <input class="input-2" id="loc" type="text" placeholder="Location" required="required" /> -->
+				<input class="input-2" id="loc" list="cities" placeholder="Location" required="required" />
+				<datalist id="cities">
+					<c:forEach var="city" items="${cities}">
+						<option value="${city.cityName}">${city.cityName}</option>
+					</c:forEach>
+				</datalist>
 			</div>
 			<div class="search">
 				<input type="submit" value="Search" id="button" name=button
@@ -208,9 +214,7 @@ $(function(){
 				<a href="#" id="advsearch1">Advance Search</a>
 				<div id="type-dialogBox"></div>
 			</div>
-
 		</div>
-
 		<script>
 			$(document).ready(function() {
 				console.log("in auto_complete..path: ${pageContext.request.contextPath}");

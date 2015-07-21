@@ -198,11 +198,10 @@ function validation21() {
 		 $('#error26').html(img).append("  Please Enter No Of Participents")
 		 return false;
 	 }
-	 else if($("#city21").val() == "" || $("#city21").val().length <3){
+	 else if($("#city21").val() == "0"){
 		 $("#city21").focus();
 		 $('#error27').html(img).append("  Please Enter City Name")
 		 return false;
 	 }
-	 
-	 
+	 return true;
 }

@@ -38,6 +38,12 @@ public class IndustrySubCategoryDAO extends AbstractJpaDAO<IndustrySubCategoryEn
 		setClazz(IndustrySubCategoryEntity.class);
 		return findOne(industrysubcatid);
 	}
+
+	@Override
+	public List<IndustrySubCategoryEntity> getAllIndustrySubCategories() {
+		setClazz(IndustrySubCategoryEntity.class);
+		return findAll();
+	}
 	
 	
 

@@ -23,7 +23,7 @@ $(document).ready(function() {
 	});
 	
 	
-	$("#lname22").on('keyup',function(e){
+	/*$("#lname22").on('keyup',function(e){
 		var no = /([0-9])/;
 		if($("#lname22").val() == ""){
 			
@@ -43,7 +43,7 @@ $(document).ready(function() {
 		
 		
 		
-	});
+	});*/
 	
 	$("#title22").on('keyup',function(e){
 		var no = /([0-9])/;
@@ -136,7 +136,7 @@ return false;
 
 function TEvalidate(){
 	var img = '<img src ="resources/images/error.png">'
-	var lname = $("#lname22").val();
+	/*var lname = $("#lname22").val();*/
 	var Number = /([0-9])/;
 	var letter = /^[A-Za-z]+$/;
 	var mob1    = /^[1-9]{1}[0-9]{9}$/;
@@ -149,13 +149,12 @@ function TEvalidate(){
 		   $("#error29").html(img).append("   Please Enter  Name.")
 		    return false;
 		  }
-	 else if($("#lname22").val() == "" || $("#lname22").val().length < 3 || $("#lname22").val().match(/([0-9])/)){
+	 /*else if($("#lname22").val() == "" || $("#lname22").val().length < 3 || $("#lname22").val().match(/([0-9])/)){
 		 $("#lname22").focus();
 		   $("#error30").html(img).append("  Please Enter Last Name.")
 		    return false;
-		 
 	 }
-	 
+	 */
 	 else if($('#title22').val() == '' || $('#title22').val().length <3 || $('#title22').val().match(/([0-9])/))
 	 {
 		 $("#error2").html("")
@@ -164,7 +163,7 @@ function TEvalidate(){
 		 return false;
 	 }
 	
-	 else if($("#city22").val() == "" || $("#city22").val().length <3){
+	 else if($("#city22").val() == "0"){
 		 $("#city22").focus();
 		 $("#error32").html(img).append("  Please Enter City Name")
 		 return false;
@@ -180,8 +179,5 @@ function TEvalidate(){
 		 $("#error34").html(img).append("  Please Enter Contact")
 		 return false;
 	 }
-	
-	 
-	 
-	
+	 return true;
 }

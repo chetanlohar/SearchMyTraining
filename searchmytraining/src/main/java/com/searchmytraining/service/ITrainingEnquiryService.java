@@ -1,9 +1,9 @@
 package com.searchmytraining.service;
 
-import com.searchmytraining.entity.TrainingEnquiryEntity;
+import com.searchmytraining.dto.TrainingEnquiryDTO;
 
 public interface ITrainingEnquiryService {
 	
-	public void saveTrainingEnquiry(TrainingEnquiryEntity entity);
+	public void saveTrainingEnquiry(TrainingEnquiryDTO trainingenquirydto);
 
 }

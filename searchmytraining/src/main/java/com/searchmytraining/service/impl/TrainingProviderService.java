@@ -25,10 +25,10 @@ import com.searchmytraining.entity.TrainerEntity;
 import com.searchmytraining.entity.UserEntity;
 import com.searchmytraining.service.ICityService;
 import com.searchmytraining.service.IInstituteServiceDetails;
-import com.searchmytraining.service.ITrainerService;
+import com.searchmytraining.service.ITrainingProviderService;
 
 @Service
-  public class TrainerService implements ITrainerService {
+  public class TrainingProviderService implements ITrainingProviderService {
 	
 	@Autowired
 	public WebApplicationContext context; 

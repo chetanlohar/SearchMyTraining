@@ -2,25 +2,32 @@ package com.searchmytraining.dto;
 
 public class TrainingEnquiryDTO {
 	
-	private String firstname;
-	private String lastname;
+	private String name;
+	private String companyName;
 	private String coursetitle;
-	private String city;
+	private Integer cityid;
 	private String phone;
 	private String email;
 	private String trngneeds;
+	private Integer noOfParticipents;
 	
-	public String getFirstname() {
-		return firstname;
+	public String getName() {
+		return name;
 	}
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
+	public void setName(String name) {
+		this.name = name;
 	}
-	public String getLastname() {
-		return lastname;
+	public Integer getNoOfParticipents() {
+		return noOfParticipents;
 	}
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
+	public void setNoOfParticipents(Integer noOfParticipents) {
+		this.noOfParticipents = noOfParticipents;
+	}
+	public String getCompanyName() {
+		return companyName;
+	}
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
 	}
 	public String getCoursetitle() {
 		return coursetitle;
@@ -28,11 +35,11 @@ public class TrainingEnquiryDTO {
 	public void setCoursetitle(String coursetitle) {
 		this.coursetitle = coursetitle;
 	}
-	public String getCity() {
-		return city;
+	public Integer getCityid() {
+		return cityid;
 	}
-	public void setCity(String city) {
-		this.city = city;
+	public void setCityid(Integer cityid) {
+		this.cityid = cityid;
 	}
 	public String getPhone() {
 		return phone;

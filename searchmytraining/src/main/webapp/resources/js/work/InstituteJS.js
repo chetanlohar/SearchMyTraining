@@ -54,11 +54,6 @@ function trainingProValidate2() {
 
 function saveInstituteDetails(path) {
 	try {
-
-		/*
-		 * alert("in saveInstituteDetails method:... :-) Userid: " +
-		 * $('#userid').val());
-		 */
 		var workingdays = [ "MON", "TUE", "WED", "THU", "FRI", "SAT" ];
 		/* alert($('#org_name').val()+":"+$('#yearofestablishment').val()+":"+$('#training_methodology').val()+":"+$('#hrsofoperations').val()+$('#history').val()); */
 		$.ajax({
@@ -76,6 +71,7 @@ function saveInstituteDetails(path) {
 			}),
 			contentType : "application/json",
 			success : function(response) {
+				$('#form1').submit();
 				/* alert("hey... you are in success congratz :-)"); */
 			}
 		});
@@ -135,7 +131,6 @@ function saveInstituteContactDetails() {
 }
 
 function saveLocationDetails(path) {
-	alert("In saveInstituteLocationDetails()...");
 	var flag = trainingProValidate2();
 	if (flag) {
 		try {

@@ -3,20 +3,23 @@
 	xsi:schemaLocation="http://dozer.sourceforge.net
           http://dozer.sourceforge.net/schema/beanmapping.xsd">
 
-	<!-- <mapping>
+	<mapping>
 		<class-a>com.searchmytraining.dto.TrainingEnquiryDTO</class-a>
 		<class-b>com.searchmytraining.entity.TrainingEnquiryEntity</class-b>
-		<field>
-			<a>history</a>
-			<b>historyOfCompany</b>
-		</field>
 		<field-exclude>
-			<a>workingdays</a>
-			<b>workingdays</b>
+			<a>cityid</a>
+			<b>cityid</b>
 		</field-exclude>
-	</mapping> -->
-
-
+	</mapping>
+	
+	<mapping>
+		<class-a>com.searchmytraining.dto.TrainingCategoryDTO</class-a>
+		<class-b>com.searchmytraining.entity.TrainingCategoryEntity</class-b>
+		<field-exclude>
+			<a>trainingcategory</a>
+			<b>trainingcategory</b>
+		</field-exclude>
+	</mapping>
 
 	<mapping>
 		<class-a>com.searchmytraining.dto.TrainerDTO</class-a>

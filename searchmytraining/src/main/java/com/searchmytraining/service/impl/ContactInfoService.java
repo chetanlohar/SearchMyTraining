@@ -57,7 +57,7 @@ public class ContactInfoService implements IContactInfoService {
 					Integer phonetypeid = phonetypeitr.next();
 					PhoneEntity phoneentity = phonedetitr.next();
 					phoneentity.setPhoneValue(phonevalue);
-					if(phoneentity.getPhonetype().getPhnTypeId() != phonetypeid)
+					if(phoneentity.getPhonetype()==null || phoneentity.getPhonetype().getPhnTypeId() != phonetypeid)
 					{
 						PhoneTypeEntity phonetypeentity = phonetypedao.getPhoneType(phonetypeid);
 						phoneentity.setPhonetype(phonetypeentity);

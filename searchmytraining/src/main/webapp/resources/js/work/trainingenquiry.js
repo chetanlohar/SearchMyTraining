@@ -1,26 +1,65 @@
-function enquiry() {
+function enquiry(path) {
 	var flag = TEvalidate();
 	console.log("from enquiry: " + flag);
 	if (flag) {
 		try {
 			$.ajax({
-				url : path + '/trainingenquiry',
+				url : path,
 				type : 'post',
-				contentType : "application/json",
 				dataType : 'json',
+				contentType : "application/json",
 				data : JSON.stringify({
-					"firstname" : $('#firstname22').val(),
-					"lastname" : $('#lname22').val(),
+					"name" : $('#firstname22').val(),
+					"companyName" : "Individual",
 					"coursetitle" : $('#title22').val(),
-					"city" : $('#city22').val(),
+					"cityid" : $('#city22').val(),
 					"phone" : $('#mob22').val(),
 					"email" : $('#email22').val(),
-					"trngneeds" : $('#requirements22').val()
+					"trngneeds" : $('#requirements22').val(),
+					"noOfParticipents" : "1"
 					}),
 				success : function(response) {
-					alert("Thank you for Your Registration, Please Update Your Profile:");
-					window.location.href = "<%=request.getContextPath()%>/freelancer_updateprofile";
-					}
+					console.log(":"+response.success);
+					alert("Thank you for Your Enquiry\nWe will get back to you soon:");
+					window.location.reload();
+					},
+				error: function(jqXHR, textStatus, errorThrown) {
+				}
+			});
+			} 
+		catch (ex) {
+			alert(ex);
+		}
+	}
+}
+
+function groupEnquiry(path) {
+	var flag = validation21();
+	console.log("from groupEnquiry: " + flag);
+	if (flag) {
+		try {
+			$.ajax({
+				url : path,
+				type : 'post',
+				dataType : 'json',
+				contentType : "application/json",
+				data : JSON.stringify({
+					"name" : $('#name21').val(),
+					"companyName" : $('#companyName21').val(),
+					"coursetitle" : $('#title21').val(),
+					"cityid" : $('#city21').val(),
+					"phone" : $('#contact21').val(),
+					"email" : $('#Email21').val(),
+					"trngneeds" : $('#requirements21').val(),
+					"noOfParticipents" : $('#participents21').val()
+					}),
+				success : function(response) {
+					console.log(":"+response.success);
+					alert("Thank you for Your Enquiry\nWe will get back to you soon:");
+					window.location.reload();
+					},
+				error: function(jqXHR, textStatus, errorThrown) {
+				}
 			});
 			} 
 		catch (ex) {

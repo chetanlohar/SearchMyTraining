@@ -26,6 +26,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.searchmytraining.dto.CertificationAwardDTO;
 import com.searchmytraining.dto.EducationDTO;
 import com.searchmytraining.dto.FreelancerDTO;
+import com.searchmytraining.entity.ActorDetails;
 import com.searchmytraining.entity.CertificationAwardEntity;
 import com.searchmytraining.entity.CityEntity;
 import com.searchmytraining.entity.ContactInfoEntity;
@@ -81,8 +82,16 @@ public class FreeLancerController {
 		System.out.println(user.getUserId());
 		session.setAttribute("user", user);
 		FreeLancerProfileEntity flProfEntity = freelancerservice.getFLProfileDet(user.getUserId().longValue());
+		ActorDetails actordetails = (ActorDetails)context.getBean("actorDetails");
 		if(flProfEntity!=null)
+		{
+			actordetails.setName(flProfEntity.getFullname());
+			actordetails.setUser(flProfEntity.getUser());
+			actordetails.setPicture(flProfEntity.getPhotograph());
+			session.setAttribute("actordetails", actordetails);
 			session.setAttribute("flProfEntity",flProfEntity);
+		}
+			
 		return "pages/FreeLancer/FreeLancerProfile";
 	}
 	
@@ -170,7 +179,7 @@ public class FreeLancerController {
 		return "pages/FreeLancer/FreeLancerProfile";
 	}
 	
-	@RequestMapping("/downloadFLPhotograph/{userId}")
+	/*@RequestMapping("/downloadFLPhotograph/{userId}")
 	public String downloadFLPhotograph(@PathVariable("userId") Integer userId, HttpServletResponse response)
 	{
 		FreeLancerProfileEntity flprofentity = freelancerservice.getFLProfileDet(userId.longValue());
@@ -193,7 +202,7 @@ public class FreeLancerController {
 			e.printStackTrace();
 		}
 		return null;
-	}
+	}*/
 	
 	@RequestMapping(value="/updateedudetails/{chetan}",  method = RequestMethod.POST, produces={"application/json"}, consumes ={"application/json"})
 	@ResponseBody

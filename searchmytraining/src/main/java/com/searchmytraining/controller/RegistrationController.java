@@ -1,12 +1,9 @@
 package com.searchmytraining.controller;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -24,39 +21,24 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.context.WebApplicationContext;
 
-import com.searchmytraining.dao.IPhoneDAO;
-import com.searchmytraining.dao.IPhoneTypeDAO;
-import com.searchmytraining.dto.FreelancerDTO;
 import com.searchmytraining.dto.TraineeDTO;
-import com.searchmytraining.dto.TrainerDTO;
 import com.searchmytraining.entity.CityEntity;
-import com.searchmytraining.entity.ClientEntity;
-import com.searchmytraining.entity.ContactInfoEntity;
 import com.searchmytraining.entity.EmploymentEntity;
-import com.searchmytraining.entity.FreelancerEntity;
 import com.searchmytraining.entity.IndustryCategoryEntity;
 import com.searchmytraining.entity.IndustrySubCategoryEntity;
-import com.searchmytraining.entity.InstituteEntity;
 import com.searchmytraining.entity.LocationEntity;
-import com.searchmytraining.entity.PhoneEntity;
-import com.searchmytraining.entity.ProfessionalAssociationEntity;
 import com.searchmytraining.entity.StateEntity;
 import com.searchmytraining.entity.TraineeEntity;
-import com.searchmytraining.entity.TrainerEntity;
 import com.searchmytraining.entity.UserEntity;
 import com.searchmytraining.service.ICityService;
-import com.searchmytraining.service.IContactInfoService;
 import com.searchmytraining.service.ICountryService;
 import com.searchmytraining.service.IEmploymentService;
-import com.searchmytraining.service.IFreelancerService;
 import com.searchmytraining.service.IIndustryCategoryService;
 import com.searchmytraining.service.IIndustrySerivice;
 import com.searchmytraining.service.IIndustrySubCategoryService;
-import com.searchmytraining.service.IInstituteServiceDetails;
 import com.searchmytraining.service.ILocationService;
 import com.searchmytraining.service.IStateService;
 import com.searchmytraining.service.ITraineeService;
-import com.searchmytraining.service.ITrainerService;
 import com.searchmytraining.service.IUserService;
 import com.searchmytraining.wrapper.RespnoseWrapper;
 
@@ -66,213 +48,26 @@ public class RegistrationController {
 
 	@Autowired
 	public WebApplicationContext context;
-	
-	@Autowired
-	public ITrainerService trainerservice;
-
 	@Autowired
 	public ITraineeService traineeservice;
-
 	@Autowired
 	public IUserService userservice;
-	
-	@Autowired
-	public IFreelancerService freelancerservice;
-
 	@Autowired
 	public IIndustrySerivice industryservice;
-
 	@Autowired
 	public IIndustryCategoryService industrycategoryser;
-	
 	@Autowired
 	public IIndustrySubCategoryService indsubcatindservice;
-	
 	@Autowired
 	public IEmploymentService employmentservice;
-	
-	@Autowired
-	public IInstituteServiceDetails instituteservice;
-	
-	@Autowired
-	public IContactInfoService contactinfoservice;
-	
 	@Autowired
 	public ILocationService locservice;
-	
 	@Autowired
 	public IStateService stateservice;
 	@Autowired
 	public ICityService cityservice;
-	
 	@Autowired
 	public ICountryService countryservice;
-	
-	@Autowired
-	public IPhoneDAO phonedao;
-	
-	@Autowired
-	public IPhoneTypeDAO phonetypedao;
-
-	public UserEntity user;
-	public TraineeDTO traineedto1;
-
-	public TrainerDTO trainerdto1;
-	public Integer userid;
-
-	public FreelancerDTO freelancerDto1;
-	
-
-	@RequestMapping(value = "/trainingprovider_reg", method = RequestMethod.POST, produces = { "application/json" }, consumes = { "application/json" })
-	@ResponseBody
-	public RespnoseWrapper TrainingProviderRegistration(
-			@RequestBody @Valid TrainerDTO trainerdto, BindingResult result,
-			ModelMap model, HttpServletRequest request, HttpServletResponse response,HttpSession session) throws Exception {
-		RespnoseWrapper response1 = (RespnoseWrapper)context.getBean("respnoseWrapper");
-		response1.setValidation_error(true);
-		response1.setId(501);
-		if (result.hasErrors()) {
-			response1.setId(101);
-			response1.setValidation_error(true);
-
-			List<FieldError> errors = result.getFieldErrors();
-			Map<String, String> errorMsg = new HashMap<String, String>();
-			for (FieldError error : errors) {
-				System.out.println(error.getField() + " :-: "
-						+ error.getDefaultMessage());
-				errorMsg.put(error.getField(), error.getDefaultMessage());
-			}
-			response1.setErrorMsg(errorMsg);
-		} else {
-			response1.setValidation_error(false);
-			this.trainerdto1 = trainerdto;
-			Integer userid = trainerservice.registerTrainer(trainerdto);
-			session.setAttribute("userid",userid);
-		}
-		return response1;
-	}
-
-	@RequestMapping(value="/trainingprovider_updateprofile",method=RequestMethod.POST)
-	public String TrainingProviderProfileMapping(@RequestParam("username") String username,ModelMap model, HttpSession session) {
-		UserEntity user = userservice.getUser(username);
-		session.setAttribute("userid", user.getUserId());
-		System.out.println("userid: "+user.getUserId());
-		TrainerEntity trainer = trainerservice.getTrainerByUserid(user.getUserId().longValue());
-		session.setAttribute("trainer", trainer);
-		return "pages/TrainingProvider/TrainingProviderProfile";
-		
-	}
-
-	@RequestMapping("/trainerprofile")
-	public String trainerProfile(ModelMap model,HttpSession session) {
-		
-		TrainerEntity trainer = (TrainerEntity)session.getAttribute("trainer");
-		System.out.println("from /trainerprofile... userid:"+trainer.getUser().getUserId());
-		
-		// Institute Information
-		
-		InstituteEntity instituteinfo = instituteservice.getInstituteInfo(trainer.getUser().getUserId().longValue());
-		if(instituteinfo!=null)
-			model.addAttribute("instituteinfo", instituteinfo);
-		
-		// Contact Inforamtion
-		
-		ContactInfoEntity contactinfo = contactinfoservice.getContactInfoDetailsByUserId(trainer.getUser().getUserId().longValue());
-		if(contactinfo!=null)
-			model.addAttribute("contactinfo", contactinfo);
-		
-		// Phone Information
-		List<PhoneEntity> phones = phonedao.getPhoneByUserId(trainer.getUser().getUserId().longValue());
-		if(phones.size()>0)
-			model.addAttribute("phones", phones);
-		// Location Information
-		
-		LocationEntity location = locservice.findLocDet(trainer.getUser().getUserId());
-		if(location!=null)
-		{
-			List<StateEntity> states = stateservice.getStates(location.getCity().getState().getCountry().getCountryId());
-			List<CityEntity> cities = cityservice.getCities(location.getCity().getState().getStateId());
-			Long country_value = location.getCity().getState().getCountry().getCountryId();
-			model.addAttribute("country_value",country_value);
-			model.addAttribute("location", location);
-			model.addAttribute("states",new JSONArray(states));
-			model.addAttribute("cities",new JSONArray(cities));
-		}
-		
-		// Professional Association
-		
-		List<ProfessionalAssociationEntity> profassoc = instituteservice.getProfAssocByUserId(trainer.getUser().getUserId().longValue());
-		if(profassoc!=null)
-			model.addAttribute("profassoc", profassoc);
-		else
-		{
-			ProfessionalAssociationEntity profentity = new ProfessionalAssociationEntity();
-			profassoc = new ArrayList<ProfessionalAssociationEntity>();
-			profassoc.add(profentity);
-			model.addAttribute("profassoc", profassoc);
-		}
-			
-		// Key Client Details
-		
-		List<ClientEntity> clientlist = instituteservice.getClientDetailsByUserId(trainer.getUser().getUserId().longValue());
-		if(clientlist!=null)
-			model.addAttribute("clientlist", clientlist);
-		else
-		{
-			ClientEntity client = new ClientEntity();
-			clientlist = new ArrayList<ClientEntity>();
-			clientlist.add(client);
-			model.addAttribute("clientlist", clientlist);
-		}
-		
-		model.addAttribute("phonetypes", phonetypedao.getAllPhoneTypes());
-		model.addAttribute("countries",countryservice.getAllCountries());
-		return "pages/TrainingProvider/TPprofile";
-	}
-
-	// For Freelancer New Registration
-	@RequestMapping(value = "/freelaancer_reg", method = RequestMethod.POST, produces = { "application/json" }, consumes = { "application/json" })
-	@ResponseBody
-	public FreelancerDTO freelaancerRegistration(
-			@RequestBody FreelancerDTO freelancerDto,HttpSession session) throws Exception {
-		
-		Integer userid = freelancerservice.registerFreelancer(freelancerDto);
-		UserEntity user = userservice.getUser(userid);
-		session.setAttribute("user", user);
-		return freelancerDto;
-	}
-
-	@RequestMapping(value="/freelancer_updateprofile", method=RequestMethod.POST)
-	public String freelancerProfileMapping(@RequestParam String username,ModelMap model,HttpSession session) {
-		System.out.println("FL username: "+username);
-		UserEntity user = userservice.getUser(username);
-		System.out.println(user.getUserId());
-		session.setAttribute("user", user);
-		FreelancerEntity flentity = freelancerservice.getFreeLancerDetByUserId(user.getUserId().longValue());
-		session.setAttribute("flentity", flentity);
-		return "pages/FreeLancer/FreeLancerProfile";
-	}
-
-	@RequestMapping("/FLprofile")
-	public String freeLancerProfile(ModelMap model, HttpSession session) {
-		UserEntity user = (UserEntity) session.getAttribute("user");
-		model.addAttribute("userid", user.getUserId());
-		System.out.println("from /Flprofile userid: "+user.getUserId());
-		// Location Information
-				LocationEntity location = locservice.findLocDet(user.getUserId());
-				if(location!=null)
-				{
-					List<StateEntity> states = stateservice.getStates(location.getCity().getState().getCountry().getCountryId());
-					List<CityEntity> cities = cityservice.getCities(location.getCity().getState().getStateId());
-					Long country_value = location.getCity().getState().getCountry().getCountryId();
-					model.addAttribute("country_value",country_value);
-					model.addAttribute("location", location);
-					model.addAttribute("states",new JSONArray(states));
-					model.addAttribute("cities",new JSONArray(cities));
-				}
-		model.addAttribute("countries",countryservice.getAllCountries());
-		return "pages/FreeLancer/FLprofile";
-	}
 
 	// Trainee Registration
 
@@ -296,7 +91,6 @@ public class RegistrationController {
 			return response1;
 		} else {
 			response1.setValidation_error(false);
-			this.traineedto1 = traineedto;
 			ITraineeService traineeser = (ITraineeService)context.getBean("traineeService");
 			System.out.println("traineeser ref: "+traineeser);
 			Integer userid = traineeservice.registerTrainee(traineedto);
@@ -333,7 +127,6 @@ public class RegistrationController {
 				List<IndustrySubCategoryEntity> indsubsubcatlist = indsubcatindservice.getIndustrySubCategories(indcatid);
 				Integer indid = emplentity.getIndsubcat().getIndustrycategory().getIndustry().getTrnIndstrId();
 				List<IndustryCategoryEntity> indcatlist = industrycategoryser.getIndustryCategories(indid);
-				Integer indsubcatid = emplentity.getIndsubcat().getTrnIndstrSubCatId();
 				for(IndustryCategoryEntity indcatName:indcatlist)
 					System.out.println(indcatName.getIndstrCatName());
 				model.addAttribute("industrycategories", new JSONArray(indcatlist));

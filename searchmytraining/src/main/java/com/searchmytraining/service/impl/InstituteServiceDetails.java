@@ -13,22 +13,27 @@ import org.springframework.web.context.WebApplicationContext;
 import com.searchmytraining.dao.CityDAO;
 import com.searchmytraining.dao.IClientDAO;
 import com.searchmytraining.dao.IContactInfoDAO;
+import com.searchmytraining.dao.IIndustrySubCategoryDAO;
 import com.searchmytraining.dao.ILocationInfoDAO;
 import com.searchmytraining.dao.IPhoneDAO;
 import com.searchmytraining.dao.IPhoneTypeDAO;
 import com.searchmytraining.dao.IProfessionalAssociationDAO;
 import com.searchmytraining.dao.InstituteDAO;
+import com.searchmytraining.dao.TrainingCategoryDAO;
 import com.searchmytraining.dao.UserDAO;
 import com.searchmytraining.dto.ClientDetailsDTO;
 import com.searchmytraining.dto.ContactDTO;
 import com.searchmytraining.dto.InstituteDTO;
 import com.searchmytraining.dto.LocationDTO;
 import com.searchmytraining.dto.ProfessionalAssociationDTO;
+import com.searchmytraining.dto.TrainingCategoryDTO;
 import com.searchmytraining.entity.CityEntity;
 import com.searchmytraining.entity.ClientEntity;
+import com.searchmytraining.entity.IndustrySubCategoryEntity;
 import com.searchmytraining.entity.InstituteEntity;
 import com.searchmytraining.entity.LocationEntity;
 import com.searchmytraining.entity.ProfessionalAssociationEntity;
+import com.searchmytraining.entity.TrainingCategoryEntity;
 import com.searchmytraining.entity.UserEntity;
 import com.searchmytraining.service.IInstituteServiceDetails;
 
@@ -37,7 +42,6 @@ public class InstituteServiceDetails implements IInstituteServiceDetails {
 
 	@Autowired
 	public WebApplicationContext context;
-	
 	@Autowired
 	public InstituteDAO institutedao;
 	@Autowired
@@ -58,6 +62,11 @@ public class InstituteServiceDetails implements IInstituteServiceDetails {
 	public IProfessionalAssociationDAO assocdao;
 	@Autowired
 	public IClientDAO clientdao;
+	@Autowired
+	public TrainingCategoryDAO trngcatdao;
+	@Autowired
+	public IIndustrySubCategoryDAO subcatdao;
+	
 	
 	@Override
 	@Transactional
@@ -162,6 +171,29 @@ public class InstituteServiceDetails implements IInstituteServiceDetails {
 	@Override
 	public List<ClientEntity> getClientDetailsByUserId(Long userid) {
 		return clientdao.getClientDetailsByUserId(userid);
+	}
+
+	@Override
+	@Transactional
+	public void uploadInstituteLogo(InstituteEntity instituteentity) {
+		institutedao.updateInstituteDetails(instituteentity);
+	}
+
+	@Override
+	@Transactional
+	public TrainingCategoryEntity addTrainingCategoryEntity(TrainingCategoryDTO trainingcategorydto,Long userId){
+		TrainingCategoryEntity trainingcategoryentity = mapper.map(trainingcategorydto, TrainingCategoryEntity.class);
+		UserEntity user = userdao.getUser(userId.intValue());
+		IndustrySubCategoryEntity subcatentity = subcatdao.getIndustrySubCategory(trainingcategorydto.getTrainingcategory());
+		trainingcategoryentity.setUser(user);
+		trainingcategoryentity.setSubcatentity(subcatentity);
+		trainingcategoryentity = trngcatdao.addTrainingCategoryEntity(trainingcategoryentity);
+		return trainingcategoryentity;
+	}
+
+	@Override
+	public List<TrainingCategoryEntity> getAllTrainingCategories(Long userId) {
+		return trngcatdao.getAllTrainingCategories(userId);
 	}
 
 }

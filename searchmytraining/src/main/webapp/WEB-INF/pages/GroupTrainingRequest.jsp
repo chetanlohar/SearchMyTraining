@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -11,6 +12,7 @@
 <script src="<%=request.getContextPath()%>/resources/js/pop-up.js"></script>
 <script src="<%=request.getContextPath()%>/resources/js/popup-box.js"></script>
 <script src="<%=request.getContextPath()%>/resources/js/Validations/Gvalidation.js"></script>
+<script src="<%=request.getContextPath()%>/resources/js/work/trainingenquiry.js"></script>
 </head>
 <body>
 	<div id="pop_up_box_1">
@@ -57,8 +59,14 @@
 				</div>
 				<span id="error26" class="errorm"><text>.</text></span>
 				<div class="city">
-					<input type="text" id="city21" name="city" value=""
-						placeholder="City" >
+					<!-- <input type="text" id="city21" name="city" value=""
+						placeholder="City" > -->
+					<select id="city21">
+						<option value="0" selected>--Select--</option>
+						<c:forEach var="city" items="${cities}">
+							<option value="${city.cityId}">${city.cityName}</option>
+						</c:forEach>
+					</select>
 				</div>
 				<span id="error27" class="errorm"><text>.</text></span>
 				<div class="req">
@@ -67,8 +75,8 @@
 						<h3> (Max 250 Characters)</h3>
 				</div>
 				<div class="sign">
-					<input type="submit" name="Send" value="Send" onclick="validation21();"> <input
-						type="reset" name="Cancel" value="Reset" class="cancel close1">
+					<input type="submit" name="Send" value="Send" onclick="groupEnquiry('${pageContext.request.contextPath}/request/trainingenquiry');"> 
+					<input type="reset" name="Cancel" value="Reset" class="cancel close1">
 				</div>
 			</form>
 		</div>

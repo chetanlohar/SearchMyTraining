@@ -79,7 +79,7 @@ var jsonstates = '${states}';
 				</div>
 				 <div class="photo">
 				 <c:if test="${!empty flProfEntity.photograph}">
-				 	<img src="${pageContext.request.contextPath}/freelancer/downloadFLPhotograph/${flProfEntity.user.userId}" id="profilepic_curr" name="profilepic" width="140" height="160" border="0" alt="PROFILE PICTURE" onError="this.src= ${pageContext.request.contextPath}/resources/images/avtar.jpg ;" />
+				 	<img src="${pageContext.request.contextPath}/common/downloadPicture/${flProfEntity.user.userId}" id="profilepic_curr" name="profilepic" width="140" height="160" border="0" alt="PROFILE PICTURE" onError="this.src= ${pageContext.request.contextPath}/resources/images/avtar.jpg ;" />
 				 </c:if>
 				 <c:if test="${empty flProfEntity.photograph}">
 				 	<img src="${pageContext.request.contextPath}/resources/images/avtar.jpg" id="profilepic_avtar" name="profilepic" width="140" height="160" border="0" alt="PROFILE PICTURE" onError="this.src=${pageContext.request.contextPath}/resources/images/avtar.jpg ;" />

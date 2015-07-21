@@ -17,7 +17,7 @@ public class ClientDAO extends AbstractJpaDAO<ClientEntity> implements IClientDA
 
 	@Override
 	public void addClientDetails(ClientEntity entity) {
-		if(entity!=null)
+		if(entity.getKeyClientId()!=null)
 			update(entity);
 		else
 			create(entity);
