@@ -720,7 +720,10 @@ background: #FFFFFF;
 	background: black;
 	width: 25%;
 }
+.section_wrapar .ver_add-wrapar #verticalScroller {
+  width: 163px;
 
+}
 	
 	
 	
@@ -1143,6 +1146,30 @@ background: #FFFFFF;
     font-size: 13px;
    
 }
+.section_wrapar{
+    width: 100%;
+
+}
+.section_wrapar .ver_add-wrapar {
+  width: 25%;
+  height: 820px;
+  background: white;
+  float: left;
+  margin-right: 5px;
+  margin-top: 15px;
+  margin-left: 0px;
+
+}
+.section_wrapar .ver_add-wrapar #verticalScroller {
+  width: 180px;
+    height: 730px;
+}
+.section_wrapar .middle_part {
+  width: 72%;
+}
+
+
+
 
 	
 }
@@ -1250,8 +1277,32 @@ background: #FFFFFF;
 	
 	font-size: 12px;
 }
-
+.section_wrapar{
+    width: 100%;
+background: red;
+}
 	
+.section_wrapar .ver_add-wrapar {
+  width: 25%;
+  height: 820px;
+  background: white;
+  float: left;
+  margin-right: 5px;
+  margin-top: 15px;
+  margin-left: 0px;
+
+}
+.section_wrapar .ver_add-wrapar #verticalScroller {
+  width: 150px;
+    height: 730px;
+    background: orange;
+}
+.section_wrapar .ver_add-wrapar #verticalScroller >div {
+	width: 120px;
+	
+}
+.right_part .top_cat_box div img {
+  width: 270px;
 	
 	
 }

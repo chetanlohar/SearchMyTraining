@@ -11,9 +11,11 @@
 		});
 	});
 </script>
+
+
 </head>
 <body>
-
+<%@include file="../../pages/GroupTrainingRequest.jsp"%>
 	<div id="t" class="clearfix">
 		<ul id="tabmenu">
 			<li class="open hvr-underline-reveal"
@@ -55,7 +57,7 @@
 										</p>
 									</div>
 									<div class="list-link">
-										<a href="#" class="details"><i class="fa fa-edit"></i>&nbsp;View
+										<a href="Institueview" class="details data"><i class="fa fa-edit"></i>&nbsp;View
 											Details</a> <a href="#" class="group"><i class="fa fa-users"></i>&nbsp;Group
 											Training</a>
 									</div>

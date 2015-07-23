@@ -86,6 +86,10 @@ public class MyController {
 	public String doAction5() {
 		return "pages/CodePages/seminardiv";
 	}
+	@RequestMapping("/Institueview")
+	public String Institueview() {
+		return "pages/CodePages/Viewdetail";
+	}
 
 	@RequestMapping("/FLinsights")
 	public String doAction6() {

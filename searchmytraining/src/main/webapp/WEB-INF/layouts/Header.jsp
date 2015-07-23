@@ -31,7 +31,7 @@ $("#regi_pop2").on('click',function(e){
     $('#meter1').html(" ")
 	$('#meter2').html("")
 	$('#meter3').html("")
-	$(".errorm").html("");
+	$(".errorm").html("<text>.</text>");
 	
 })
 $("#regi_pop").on('click',function(e){
@@ -46,7 +46,7 @@ $("#regi_pop").on('click',function(e){
     $('#meter01').html(" ")
 	$('#meter02').html("")
 	$('#meter03').html("")
-	$(".errorm").html("");
+	$(".errorm").html("<text>.</text>");
 	
 })
 $("#regi_pop3").on('click',function(e){
@@ -61,13 +61,13 @@ $("#regi_pop3").on('click',function(e){
     $('#meter12').html(" ");
 	$('#meter13').html("");
 	$('#meter14').html("");
-	$(".errorm").html("");
+	$(".errorm").html("<text>.</text>");
 	
 })
 $(".my-button-new , .my-button").on('click',function(e){
 
 	$("input[type='text']").val('');
-	$(".errorm").html("");
+	$(".errorm").html("<text>.</text>");
 
 
 	

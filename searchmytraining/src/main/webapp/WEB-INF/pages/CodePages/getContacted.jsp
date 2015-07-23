@@ -22,10 +22,24 @@ $( document ).ready(function() {
 	<div id="pop_up_box_11">
 		<a class="b-close close1"><img
 			src="<%=request.getContextPath()%>/resources/images/images.png"></a>
+		<div class="form_wrapar">
+		<div class="head">
+                    <img src="<%=request.getContextPath()%>/resources/images/contact.png" alt="register">
+                </div>
+		
 		<form action="./getContacted">
-			Name: <input id="nameid" type="text"><br> 
-			Submit: <input type="button" value="Register" onClick="giveLink('getContacted')"/>
+		     <h1>Get Contacted</h1>
+		     <input type="text" id="Inst_name" name="Inst_name" value="" Placeholder="Name" autofocus/>
+			<input type="email" id="Inst_email" name="Inst_email" value="" Placeholder="Email"/>
+			<input type="text" id="Inst_contact" name="Inst_contact" value="" Placeholder="Contact"/>
+			<textarea rows="4" cols="5" Placeholder="Enquiry About"></textarea>
+			<h3>(Max 150 Character) </h3>
+			
+		      <input type="button" value="Register" onClick="giveLink('getContacted')"/>
+		      <input type="button" value="Reset" name="">
+			
 		</form>
+		</div>	
 	</div>
 </body>
 </html>

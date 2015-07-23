@@ -182,5 +182,16 @@
         });
     });
 })(jQuery);
+/*======================view Details=============================*/
+(function($) {
+    $(function() {
+        $('.group').bind('click', function(e) {
+            e.preventDefault();
+            $('#pop_up_box_1').bPopup({
+            } );
+       
+        });
+    });
+})(jQuery);
 
 
