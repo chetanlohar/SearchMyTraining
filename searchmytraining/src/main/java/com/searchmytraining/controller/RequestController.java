@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -32,7 +33,6 @@ public class RequestController {
 	@Autowired
 	public ITrainingEnquiryService trainingenquiryservice;
 	
-
 	@RequestMapping(value = "/requesttraining", method = RequestMethod.POST, produces="application/json")	
 	public String requestTraining(@RequestParam("Name") String name,
 			@RequestParam("CompanyName") String companyname,
@@ -79,5 +79,13 @@ public class RequestController {
 		grouprequestentity.setPhone("+918446448344");
 		grouprequestentity.setTrainingneeds("We need a very specific and real time oriented training for Spring Framework");
 		emailNotificationService.sendGroupTrainingRequestNotification(grouprequestentity);
+	}
+	
+	@RequestMapping("verify/email/{emailId}")
+	public void sendVerificationLink(@PathVariable("emailId") String emailId)
+	{
+		System.out.println(emailId);
+		/*System.out.println("Sending mail...");*/
+		/*emailNotificationService.sendVerificationLinkEmail(useremail);*/
 	}
 }

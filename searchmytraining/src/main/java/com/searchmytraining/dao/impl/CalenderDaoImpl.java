@@ -124,14 +124,6 @@ public class CalenderDaoImpl extends AbstractJpaDAO<CalenderEntity> implements
 			      //Retrieve the matched document and show relevant details
 			      Document doc = searcher.doc(scoredoc.doc);
 			      
-			      /*System.out.println("\nKeyWord: "+doc.getField("KeyWord").stringValue());
-			      System.out.println("Description: "+doc.getField("Description").stringValue());
-			      System.out.println("Code: "+doc.getField("Code").stringValue());*/
-
-			      /*System.out.println("\nTitle: "+doc.getField("title").stringValue());
-			      System.out.println("KeyWord: "+doc.getField("keyword").stringValue());
-			      System.out.println("Place: "+doc.getField("place").stringValue());*/
-			     
 			      CityEntity city = cityservice.getCity(doc.getField("place").stringValue().trim());
 			      cal = (CalenderEntity)context.getBean("calenderEntity");
 			      cal.setTrngId(Integer.parseInt(doc.getField("trngId").stringValue()));

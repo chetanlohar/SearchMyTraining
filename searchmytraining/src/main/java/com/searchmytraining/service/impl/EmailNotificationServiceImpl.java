@@ -3,6 +3,7 @@ package com.searchmytraining.service.impl;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 import javax.mail.internet.MimeMessage;
 
@@ -57,5 +58,29 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 	}
 	public void setVelocityEngine(VelocityEngine velocityEngine) {
 		this.velocityEngine = velocityEngine;
+	}
+	@Override
+	public void sendVerificationLinkEmail(final String email) {
+
+		System.out.println(email);
+		MimeMessagePreparator preparator = new MimeMessagePreparator() {
+			
+			@Override
+			public void prepare(MimeMessage mimeMessage) throws Exception {
+				// TODO Auto-generated method stub
+				MimeMessageHelper message = new MimeMessageHelper(mimeMessage);
+				message.setTo(email);
+				message.setFrom("job.chetanlohar@gmail.com");
+				message.setSubject("Email Verification Link");
+				message.setSentDate(new Date());
+				Map<String,Object> model = new HashMap<String, Object>();
+				String uuid = UUID.randomUUID().toString();
+				model.put("uuid", uuid);
+				model.put("toemail", email);
+				String text = VelocityEngineUtils.mergeTemplateIntoString(velocityEngine, "velocity/smt_grouptraining_emailverify.vm", "UTF-8",model);
+				message.setText(text,true);
+			}
+		};
+		mailSender.send(preparator);
 	}
 }

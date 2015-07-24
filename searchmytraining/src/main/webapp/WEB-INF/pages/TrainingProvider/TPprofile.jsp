@@ -147,6 +147,7 @@
 				<div class="name">
 					<label>Institute Email:</label> 
 					<input id="instituteEmail" type="text" name="instituteEmail" value="${contactinfo.emailId}">
+					<a href="${pageContext.request.contextPath}/request/verify/email/${trainer.user.userId}">verify</a>
 					<span id="error77"></span>
 				</div>
 				<div class="name">

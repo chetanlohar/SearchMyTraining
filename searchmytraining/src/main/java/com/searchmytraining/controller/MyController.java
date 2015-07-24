@@ -72,11 +72,6 @@ public class MyController {
 		return "pages/CodePages/calenderdiv";
 	}
 
-	@RequestMapping("/institutediv")
-	public String doAction3() {
-		return "pages/CodePages/institutediv";
-	}
-
 	@RequestMapping("/freelancerdiv")
 	public String doAction4() {
 		return "pages/CodePages/freelancerdiv";

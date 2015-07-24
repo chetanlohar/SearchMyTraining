@@ -31,7 +31,17 @@ public class ClientEntity implements Serializable {
 	@ManyToOne(fetch=FetchType.EAGER, targetEntity=UserEntity.class)
 	@JoinColumn(name="userId")
 	private UserEntity user;
+	
+	@ManyToOne(fetch=FetchType.EAGER,targetEntity=InstituteSearchEntity.class)
+	@JoinColumn(name="searchId")
+	private InstituteSearchEntity instituteDetails;
 
+	public InstituteSearchEntity getInstituteDetails() {
+		return instituteDetails;
+	}
+	public void setInstituteDetails(InstituteSearchEntity instituteDetails) {
+		this.instituteDetails = instituteDetails;
+	}
 	public Integer getKeyClientId() {
 		return keyClientId;
 	}
