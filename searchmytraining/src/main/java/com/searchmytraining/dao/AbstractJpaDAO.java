@@ -44,6 +44,10 @@ public abstract class AbstractJpaDAO<T extends Serializable> {
 		entityManager.persist(entity);
 		entityManager.flush();
 	}
+	
+	public void create1(T entity) {
+		entityManager.persist(entity);
+	}
 
 	public T update(T entity) {
 		return entityManager.merge(entity);

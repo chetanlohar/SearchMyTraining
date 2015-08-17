@@ -58,7 +58,42 @@ public class UserDaoImpl extends AbstractJpaDAO<UserEntity> implements UserDAO {
 		System.out.println(userentity.getUserId());
 		return userentity;
 	}
-	
-	
 
+	@Override
+	public void updateUserUUID(String username, String uuid) {
+		UserEntity user = getUser(username);
+		user.setUuid(uuid);
+		update(user);
+	}
+
+	@Override
+	public boolean verifyEmail(String username, String uuid) {
+		String query = "from UserEntity user where user.userName=?";
+		entityManager = getEntityManager();
+		TypedQuery<UserEntity> query1 = entityManager.createQuery(query,UserEntity.class);
+		query1.setParameter(1, username.trim());
+		UserEntity userentity = null;
+		try
+		{
+			userentity = query1.getSingleResult();
+			if(userentity.getUuid().equals(uuid))
+			{
+				userentity.setEmailVerified(1);
+				update(userentity);
+				System.out.println("Email Verified...");
+				return true;
+			}
+		}
+		catch(javax.persistence.NoResultException e)
+		{
+			System.out.println("Session Expired...No result found for userid(null): "+e.getMessage());
+			return false;
+		}
+		catch(NullPointerException e)
+		{
+			System.out.println(e.getMessage());
+			return false;
+		}
+		return false;
+	}
 }

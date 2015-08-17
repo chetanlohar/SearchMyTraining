@@ -8,6 +8,7 @@ import java.util.UUID;
 import javax.mail.internet.MimeMessage;
 
 import org.apache.velocity.app.VelocityEngine;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.mail.javamail.MimeMessagePreparator;
@@ -16,6 +17,7 @@ import org.springframework.ui.velocity.VelocityEngineUtils;
 
 import com.searchmytraining.entity.GroupRequestEntity;
 import com.searchmytraining.service.EmailNotificationService;
+import com.searchmytraining.service.IUserService;
 
 @Service
 public class EmailNotificationServiceImpl implements EmailNotificationService {
@@ -23,6 +25,8 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 	
 	private JavaMailSender mailSender;
 	private VelocityEngine velocityEngine;
+	@Autowired
+	public IUserService userservice;
 
 	@Override
 	public void sendGroupTrainingRequestNotification(final GroupRequestEntity grouprequestentity) {
@@ -40,7 +44,6 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 				message.setSentDate(new Date());
 				Map<String,Object> model = new HashMap<String, Object>();
 				model.put("newMessage", grouprequestentity);
-				
 				String text = VelocityEngineUtils.mergeTemplateIntoString(velocityEngine, "velocity/smt_grouptraining_message.vm", "UTF-8",model);
 				message.setText(text,true);
 			}
@@ -62,6 +65,7 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 	@Override
 	public void sendVerificationLinkEmail(final String email) {
 
+		final String uuid = UUID.randomUUID().toString();
 		System.out.println(email);
 		MimeMessagePreparator preparator = new MimeMessagePreparator() {
 			
@@ -74,7 +78,6 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 				message.setSubject("Email Verification Link");
 				message.setSentDate(new Date());
 				Map<String,Object> model = new HashMap<String, Object>();
-				String uuid = UUID.randomUUID().toString();
 				model.put("uuid", uuid);
 				model.put("toemail", email);
 				String text = VelocityEngineUtils.mergeTemplateIntoString(velocityEngine, "velocity/smt_grouptraining_emailverify.vm", "UTF-8",model);
@@ -82,5 +85,6 @@ public class EmailNotificationServiceImpl implements EmailNotificationService {
 			}
 		};
 		mailSender.send(preparator);
+		userservice.updateUserUUID(email, uuid);
 	}
 }

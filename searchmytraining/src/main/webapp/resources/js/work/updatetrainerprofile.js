@@ -35,3 +35,22 @@ function loadLocationInfo(states,cities,state_value,city_value)
 		});
 	}
 }
+
+function verifyEmail()
+{
+	var email = $('#instituteEmail').val();
+	console.log(email);
+	$.ajax({
+		url : 'request/verify/sendemail',
+		type : 'post',
+		data : {data:email},
+		success : function(response) {
+			 alert(response); 
+		}
+	});
+	
+	
+	
+	
+	
+}

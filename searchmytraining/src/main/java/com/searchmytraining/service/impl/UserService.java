@@ -36,4 +36,16 @@ public class UserService implements IUserService {
 	public UserEntity getUser(String username) {
 		return userdao.getUser(username);
 	}
+
+	@Override
+	@Transactional
+	public void updateUserUUID(String username, String uuid) {
+		userdao.updateUserUUID(username, uuid);
+	}
+
+	@Override
+	@Transactional
+	public boolean verifyEmail(String username, String uuid) {
+		return userdao.verifyEmail(username, uuid);
+	}
 }

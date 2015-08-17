@@ -5,11 +5,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.WebApplicationContext;
 
 import com.searchmytraining.dto.TrainingEnquiryDTO;
@@ -17,6 +17,7 @@ import com.searchmytraining.entity.GroupRequestEntity;
 import com.searchmytraining.service.EmailNotificationService;
 import com.searchmytraining.service.IGroupTrainingRequestService;
 import com.searchmytraining.service.ITrainingEnquiryService;
+import com.searchmytraining.service.IUserService;
 
 @Controller
 @RequestMapping("/request")
@@ -32,6 +33,9 @@ public class RequestController {
 	public EmailNotificationService emailNotificationService;
 	@Autowired
 	public ITrainingEnquiryService trainingenquiryservice;
+	@Autowired
+	public IUserService userserice;
+	
 	
 	@RequestMapping(value = "/requesttraining", method = RequestMethod.POST, produces="application/json")	
 	public String requestTraining(@RequestParam("Name") String name,
@@ -81,11 +85,33 @@ public class RequestController {
 		emailNotificationService.sendGroupTrainingRequestNotification(grouprequestentity);
 	}
 	
-	@RequestMapping("verify/email/{emailId}")
-	public void sendVerificationLink(@PathVariable("emailId") String emailId)
+	@RequestMapping("verify/sendemail")
+	@ResponseBody
+	public String sendVerificationLink(@RequestParam("data") String email)
 	{
-		System.out.println(emailId);
-		/*System.out.println("Sending mail...");*/
-		/*emailNotificationService.sendVerificationLinkEmail(useremail);*/
+		emailNotificationService.sendVerificationLinkEmail(email);
+		return "Email verification link has been send to give Email";
+	}
+	
+	@RequestMapping("verify/email")
+	public String verifyEmail(@RequestParam("username") String username,@RequestParam("c") String c, ModelMap model)
+	{
+		System.out.println(username);
+		System.out.println(c);
+		boolean isVerified = userserice.verifyEmail(username, c);
+		boolean emailVerifiedStatus;
+		if(!isVerified)
+			emailVerifiedStatus=false;
+		else
+			emailVerifiedStatus=true;
+		model.addAttribute("emailVerifiedStatus", emailVerifiedStatus);
+		return "/pages/emailVerifiled";
+	}
+	
+	@RequestMapping("login/auth")
+	public String signIn(@RequestParam boolean emailVerifiedStatus)
+	{
+		System.out.println("emailVerifiedStatus: "+emailVerifiedStatus);
+		return "/pages/LogIn";
 	}
 }

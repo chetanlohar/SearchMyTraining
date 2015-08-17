@@ -10,14 +10,13 @@
 		<h3>
 			Search My Training Details
 		</h3>
-		<pre>
+		<p>
 			To make sure you receive important email communications from searchmytraining.com,
 			please click on the below link to verify your email address: 
-		</pre>
-		<a href="http://localhost:8080/searchmytraining">Verify</a><br>
-		<pre>
-			${uuid}
-		</pre>
+		</p>
+		<a href="http://localhost:8080/searchmytraining/request/verify/email/?username=${toemail}&c=${uuid}">Verify</a><br>
+		<h3>Or Copy and Paste the link below in web browser</h3>
+		<a href="http://localhost:8080/searchmytraining/request/verify/email/?username=${toemail}&c=${uuid}">http://localhost:8080/searchmytraining/request/verify/email/?username=${toemail}&c=${uuid}</a><br>
 	</body>
 
 </html>

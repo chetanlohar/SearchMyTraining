@@ -28,7 +28,7 @@ $(document).ready(function(){
 </head>
 
 <body>
-<form id="hiddenform" action="./forgotpassword" method="POST">
+<form id="hiddenform" action="${pageContext.request.contextPath}/forgotpassword" method="POST">
 	<input id="formemailid" type="hidden" name="username"/>
 </form>
 	<div id="pop_up_box_5">
