@@ -329,6 +329,8 @@
 				<div class="name">
 					<label>Institute Email:</label> 
 					<input id="instituteEmail" type="text" name="instituteEmail" value="${contactinfo.emailId}">
+					<%-- <a href="${pageContext.request.contextPath}/request/verify/email">verify</a> --%>
+					<a href="#" onclick="verifyEmail();">verify</a>
 					<span id="error77"></span>
 				</div>
 				<div class="name">

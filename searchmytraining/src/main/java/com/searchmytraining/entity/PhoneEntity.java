@@ -19,6 +19,12 @@ import org.springframework.stereotype.Component;
 @Table(name="tbl_phonedetails")
 public class PhoneEntity implements Serializable{
 
+	public InstituteSearchEntity getInstituteDetails() {
+		return instituteDetails;
+	}
+	public void setInstituteDetails(InstituteSearchEntity instituteDetails) {
+		this.instituteDetails = instituteDetails;
+	}
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue
@@ -35,6 +41,10 @@ public class PhoneEntity implements Serializable{
 	@ManyToOne(fetch=FetchType.EAGER,targetEntity=PhoneTypeEntity.class)
 	@JoinColumn(name="phnTypeId")
 	private PhoneTypeEntity phonetype;
+	
+	@ManyToOne(fetch=FetchType.LAZY,targetEntity=InstituteSearchEntity.class)
+	@JoinColumn(name="searchId")
+	private InstituteSearchEntity instituteDetails;
 
 	public Integer getPhoneId() {
 		return phoneId;

@@ -1,4 +1,4 @@
-package com.searchmytraining.dao.impl;
+package com.searchmytraining.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,5 +16,11 @@ public class CommonService implements ICommonService {
 	@Override
 	public RoleEntity getRoleByUserId(Long userId) {
 		return role.getRoleByUserId(userId);
+	}
+
+	@Override
+	public boolean verifyEmail(String username, String uuid) {
+		
+		return false;
 	}
 }

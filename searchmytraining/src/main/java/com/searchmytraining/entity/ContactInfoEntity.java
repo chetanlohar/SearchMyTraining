@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Scope("prototype")
 @Entity
-@Table(name="tbl_contcatinfomaster")
+@Table(name="tbl_contactinfomaster")
 public class ContactInfoEntity implements Serializable {
 
 	private static final long serialVersionUID = 1L;

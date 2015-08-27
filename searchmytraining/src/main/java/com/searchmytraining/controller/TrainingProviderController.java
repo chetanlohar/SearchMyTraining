@@ -211,7 +211,7 @@ public class TrainingProviderController
 	}
 	
 	@RequestMapping("/uploadInstituteLogo")
-	public String uploadInstituteLogo(@RequestParam CommonsMultipartFile picture,@RequestParam("userid") Integer userId)
+	public String uploadInstituteLogo(@RequestParam CommonsMultipartFile picture,@RequestParam("userid") Integer userId,HttpSession session)
 	{
 		InstituteEntity institute = instituteservice.getInstituteInfo(userId.longValue());
 		if(institute!=null)
@@ -219,7 +219,15 @@ public class TrainingProviderController
 			institute.setInstitutelogo(picture.getBytes());
 			instituteservice.uploadInstituteLogo(institute);
 		}
-		
+		InstituteEntity instituteinfo = instituteservice.getInstituteInfo(userId.longValue());
+		ActorDetails actordetails = (ActorDetails)context.getBean("actorDetails");
+		if(instituteinfo!=null)
+		{
+			actordetails.setName(instituteinfo.getCompanyName());
+			actordetails.setUser(instituteinfo.getUser());
+			actordetails.setPicture(instituteinfo.getInstitutelogo());
+			session.setAttribute("actordetails", actordetails);
+		}
 		return "pages/TrainingProvider/TrainingProviderProfile";
 	}
 	

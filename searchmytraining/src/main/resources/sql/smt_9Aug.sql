@@ -1,5 +1,5 @@
 /*
-SQLyog Community v12.03 (32 bit)
+SQLyog Ultimate v10.00 Beta1
 MySQL - 5.5.11 : Database - searchmytraining
 *********************************************************************
 */
@@ -63,15 +63,17 @@ insert  into `tbl_alrttypemaster`(`alertTypeId`,`alertType`) values (1,'Training
 DROP TABLE IF EXISTS `tbl_certificationdetails`;
 
 CREATE TABLE `tbl_certificationdetails` (
-  `certfctId` int(11) NOT NULL,
-  `certfctName` varchar(50) DEFAULT NULL,
+  `certfctId` int(11) NOT NULL AUTO_INCREMENT,
+  `certfctName` text,
   `userId` int(11) DEFAULT NULL,
   PRIMARY KEY (`certfctId`),
-  KEY `userId` (`userId`),
-  CONSTRAINT `tbl_certificationdetails_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  UNIQUE KEY `userId` (`userId`),
+  CONSTRAINT `tbl_certificationdetails_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`) ON DELETE SET NULL ON UPDATE SET NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tbl_certificationdetails` */
+
+insert  into `tbl_certificationdetails`(`certfctId`,`certfctName`,`userId`) values (1,'I got vey good awards whaen kawf ',83),(2,'5ytrrewtber tew erwt',81);
 
 /*Table structure for table `tbl_citymaster` */
 
@@ -88,7 +90,7 @@ CREATE TABLE `tbl_citymaster` (
 
 /*Data for the table `tbl_citymaster` */
 
-insert  into `tbl_citymaster`(`cityId`,`cityName`,`stateId`) values (1,'PUNE',1),(2,'NAGPUR',1),(3,'MUMBAI',1),(4,'Nashik',1),(5,'Ahemedabad',2),(6,'Surat',2),(7,'Hyderabad',3),(8,'Banglore',4),(9,'Tallahassee',5),(10,'Austin',6),(11,'Albany',7);
+insert  into `tbl_citymaster`(`cityId`,`cityName`,`stateId`) values (1,'PUNE',1),(2,'NAGPUR',1),(3,'MUMBAI',1),(4,'NASHIK',1),(5,'AHEMEDABAD',2),(6,'SURAT',2),(7,'HYDERABAD',3),(8,'BANGLORE',4),(9,'TALLAHASSEE',5),(10,'AUSTIN',6),(11,'ALBANY',7);
 
 /*Table structure for table `tbl_cntrymaster` */
 
@@ -104,11 +106,11 @@ CREATE TABLE `tbl_cntrymaster` (
 
 insert  into `tbl_cntrymaster`(`countryId`,`countryName`) values (1,'INDIA'),(2,'USA'),(3,'ENGLAND'),(4,'NEW ZEALAND'),(5,'PAKISTAN'),(6,'NEPAL'),(7,'SRI LANKA');
 
-/*Table structure for table `tbl_contcatinfomaster` */
+/*Table structure for table `tbl_contactinfomaster` */
 
-DROP TABLE IF EXISTS `tbl_contcatinfomaster`;
+DROP TABLE IF EXISTS `tbl_contactinfomaster`;
 
-CREATE TABLE `tbl_contcatinfomaster` (
+CREATE TABLE `tbl_contactinfomaster` (
   `contctinfoId` int(11) NOT NULL AUTO_INCREMENT,
   `emailId` varchar(50) DEFAULT NULL,
   `website` varchar(50) DEFAULT NULL,
@@ -116,30 +118,34 @@ CREATE TABLE `tbl_contcatinfomaster` (
   `userId` int(11) DEFAULT NULL,
   PRIMARY KEY (`contctinfoId`),
   KEY `userId` (`userId`),
-  CONSTRAINT `tbl_contcatinfomaster_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=latin1;
+  CONSTRAINT `tbl_contactinfomaster_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`) ON DELETE SET NULL ON UPDATE SET NULL
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
-/*Data for the table `tbl_contcatinfomaster` */
+/*Data for the table `tbl_contactinfomaster` */
 
-insert  into `tbl_contcatinfomaster`(`contctinfoId`,`emailId`,`website`,`cntcPersName`,`userId`) values (28,'abc@gmail.com','www.softinfology.com','Chetan Lohar',116),(29,'ch@gmail.com','www.abc.com','Chetan',70),(34,NULL,NULL,'abc def',78),(35,NULL,NULL,'chetan',99),(36,NULL,NULL,'cheatn',109),(37,NULL,NULL,'Chetan Lohar',109),(38,NULL,NULL,'Chetan Lohar',109),(39,NULL,NULL,'Chetan Lohar',109),(40,NULL,NULL,'Chetan Lohar',109),(41,'chetan@softinfo.com','www','adadfsdfsadf',112),(42,'chetan@softinfo.com','www','adadfsdfsadf',112),(43,'chetan@softinfo.com','www','adadfsdfsadf',112),(44,'a@b.com','w','sadfsadf',114),(45,'a@b.com','q','fafsdfs',116);
+insert  into `tbl_contactinfomaster`(`contctinfoId`,`emailId`,`website`,`cntcPersName`,`userId`) values (1,'prashant@gmail.com',NULL,NULL,NULL),(2,'info@seed.com',NULL,NULL,79),(3,'info@mind.com','www.mindscript.com','Mind Script',80),(4,'chetan@yahoo.com','www.softinfology.com','Chetan Lohar',81),(5,'ranjit@softinfology.com','www.softinfology.com','Ranjit Shinde',83),(6,'info@mindchips.com',NULL,NULL,84),(7,'soft@soft.com',NULL,NULL,85),(8,'ping2chetan@gmail.com','www.mzos.com','Chetan H Lohar',86),(9,'info@impetuss.com',NULL,NULL,87),(10,'info@boston.com','www.boston.com','Bostonkar',88),(11,'chetan@weweww.com','asdfsf.com','Chetan Lohar',89),(12,'chetan@iii.com','www.infotech.com','Chetan Lohar',90),(15,'iuiu@gmail.com',NULL,NULL,91);
 
 /*Table structure for table `tbl_edudetails` */
 
 DROP TABLE IF EXISTS `tbl_edudetails`;
 
 CREATE TABLE `tbl_edudetails` (
-  `eduDetailId` int(11) NOT NULL,
+  `eduDetId` int(11) NOT NULL AUTO_INCREMENT,
+  `university` varchar(50) DEFAULT NULL,
+  `yop` int(11) DEFAULT NULL,
+  `degreeOther` varchar(50) DEFAULT NULL,
   `specltnId` int(11) DEFAULT NULL,
   `userId` int(11) DEFAULT NULL,
-  `unvrstyName` varchar(50) DEFAULT NULL,
-  `yop` int(11) DEFAULT NULL,
-  `grdOther` varchar(50) DEFAULT NULL,
-  `postOther` varchar(50) DEFAULT NULL,
-  `other` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`eduDetailId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`eduDetId`),
+  UNIQUE KEY `cons_edudet_fk_userid` (`userId`),
+  KEY `specltnId` (`specltnId`),
+  CONSTRAINT `cons_edudet_fk_userid` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`) ON DELETE SET NULL ON UPDATE SET NULL,
+  CONSTRAINT `tbl_edudetails_ibfk_1` FOREIGN KEY (`specltnId`) REFERENCES `tbl_eduspecmaster` (`specltnId`) ON DELETE SET NULL ON UPDATE SET NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tbl_edudetails` */
+
+insert  into `tbl_edudetails`(`eduDetId`,`university`,`yop`,`degreeOther`,`specltnId`,`userId`) values (1,'uop',2011,NULL,10,81);
 
 /*Table structure for table `tbl_edumaster` */
 
@@ -154,6 +160,8 @@ CREATE TABLE `tbl_edumaster` (
 
 /*Data for the table `tbl_edumaster` */
 
+insert  into `tbl_edumaster`(`eduid`,`eduTypeBit`,`eduName`) values (1,'D','DIPLOMA'),(2,'G','BA'),(3,'G','BCOM'),(4,'G','BSC'),(5,'G','BE/BTECH'),(6,'P','MBA'),(7,'P','ME/MTECH/MS'),(8,'P','MA'),(9,'P','MCOM'),(10,'P','MCS'),(11,'G','BCA'),(12,'P','MCA');
+
 /*Table structure for table `tbl_eduspecmaster` */
 
 DROP TABLE IF EXISTS `tbl_eduspecmaster`;
@@ -161,13 +169,12 @@ DROP TABLE IF EXISTS `tbl_eduspecmaster`;
 CREATE TABLE `tbl_eduspecmaster` (
   `specltnId` int(11) NOT NULL,
   `specltnName` varchar(50) DEFAULT NULL,
-  `eduid` int(11) DEFAULT NULL,
-  PRIMARY KEY (`specltnId`),
-  KEY `eduid` (`eduid`),
-  CONSTRAINT `tbl_eduspecmaster_ibfk_1` FOREIGN KEY (`eduid`) REFERENCES `tbl_edumaster` (`eduid`) ON DELETE CASCADE ON UPDATE CASCADE
+  PRIMARY KEY (`specltnId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `tbl_eduspecmaster` */
+
+insert  into `tbl_eduspecmaster`(`specltnId`,`specltnName`) values (1,'Bachelor of Engineering'),(2,'Bachelor of Technology'),(3,'Bachelor of Arts'),(4,'Bachelor of Computer Application'),(5,'Bachelor of Commerce'),(6,'Bachelor of Computer Science'),(7,'Bachelor of Science'),(8,'Bachelor of Laws'),(9,'Master of Arts'),(10,'Master of Commerce'),(11,'Master of Business Administration'),(12,'Master of Engineering'),(13,'Master of Technology'),(14,'Master of Laws'),(15,'Other');
 
 /*Table structure for table `tbl_employmentdetails` */
 
@@ -181,6 +188,7 @@ CREATE TABLE `tbl_employmentdetails` (
   `userId` int(11) DEFAULT NULL,
   `indusrysubid` int(11) DEFAULT NULL,
   PRIMARY KEY (`emplmntId`),
+  UNIQUE KEY `cons_unq_userid` (`userId`),
   KEY `userId` (`userId`),
   KEY `indusrysubid` (`indusrysubid`),
   CONSTRAINT `tbl_employmentdetails_ibfk_3` FOREIGN KEY (`indusrysubid`) REFERENCES `tbl_trnsubcatmaster` (`trnIndstrSubCatId`) ON DELETE SET NULL ON UPDATE SET NULL,
@@ -189,7 +197,26 @@ CREATE TABLE `tbl_employmentdetails` (
 
 /*Data for the table `tbl_employmentdetails` */
 
-insert  into `tbl_employmentdetails`(`emplmntId`,`employmentType`,`employer`,`jobProfile`,`userId`,`indusrysubid`) values (1,'Full Time','adfsdfas','sdafsdaf',92,2);
+insert  into `tbl_employmentdetails`(`emplmntId`,`employmentType`,`employer`,`jobProfile`,`userId`,`indusrysubid`) values (1,'Full Time','Wipro Ltd','Working as a S/W developer',89,3);
+
+/*Table structure for table `tbl_flprofdet` */
+
+DROP TABLE IF EXISTS `tbl_flprofdet`;
+
+CREATE TABLE `tbl_flprofdet` (
+  `profdetid` int(11) NOT NULL AUTO_INCREMENT,
+  `fullname` varchar(100) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `photograph` mediumblob,
+  `userid` int(11) DEFAULT NULL,
+  PRIMARY KEY (`profdetid`),
+  UNIQUE KEY `userid` (`userid`),
+  CONSTRAINT `tbl_flprofdet_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `users` (`userId`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+/*Data for the table `tbl_flprofdet` */
+
+insert  into `tbl_flprofdet`(`profdetid`,`fullname`,`email`,`photograph`,`userid`) values (1,'Chetan Lohar','chetan@yahoo.com',NULL,81),(2,'Harsh Hajare','harsh@gmail.com',NULL,82),(3,'Ranjit Shinde','ranjit@softinfology.com',NULL,83);
 
 /*Table structure for table `tbl_freelancerregdetails` */
 
@@ -198,19 +225,20 @@ DROP TABLE IF EXISTS `tbl_freelancerregdetails`;
 CREATE TABLE `tbl_freelancerregdetails` (
   `freelancerId` int(11) NOT NULL AUTO_INCREMENT,
   `fullName` varchar(100) DEFAULT NULL,
-  `city` varchar(50) DEFAULT NULL,
+  `city` int(11) DEFAULT NULL,
   `contact` varchar(20) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
-  `password` varchar(50) DEFAULT NULL,
   `userId` int(11) DEFAULT NULL,
   PRIMARY KEY (`freelancerId`),
   KEY `userId` (`userId`),
-  CONSTRAINT `tbl_freelancerregdetails_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`) ON DELETE SET NULL ON UPDATE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  KEY `city` (`city`),
+  CONSTRAINT `tbl_freelancerregdetails_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`) ON DELETE SET NULL ON UPDATE SET NULL,
+  CONSTRAINT `tbl_freelancerregdetails_ibfk_2` FOREIGN KEY (`city`) REFERENCES `tbl_citymaster` (`cityId`) ON DELETE SET NULL ON UPDATE SET NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tbl_freelancerregdetails` */
 
-insert  into `tbl_freelancerregdetails`(`freelancerId`,`fullName`,`city`,`contact`,`email`,`password`,`userId`) values (1,'chetan h lohar','Pune','1231231231','a@b.com','123',NULL),(2,'Chetan Lohar',NULL,'8446448344','a@b.com','123123',115);
+insert  into `tbl_freelancerregdetails`(`freelancerId`,`fullName`,`city`,`contact`,`email`,`userId`) values (1,'Chetan Lohar',1,'8446448344','chetan@yahoo.com',81);
 
 /*Table structure for table `tbl_freelncerprofiledetails` */
 
@@ -246,6 +274,31 @@ CREATE TABLE `tbl_grptrngrequest` (
 
 /*Data for the table `tbl_grptrngrequest` */
 
+/*Table structure for table `tbl_instituesearch` */
+
+DROP TABLE IF EXISTS `tbl_instituesearch`;
+
+CREATE TABLE `tbl_instituesearch` (
+  `searchId` int(11) NOT NULL AUTO_INCREMENT,
+  `userId` int(11) DEFAULT NULL,
+  `instProfId` int(11) DEFAULT NULL,
+  `locId` int(11) DEFAULT NULL,
+  `contactInfoId` int(11) DEFAULT NULL,
+  PRIMARY KEY (`searchId`),
+  UNIQUE KEY `userId` (`userId`),
+  KEY `instProfId` (`instProfId`),
+  KEY `locId` (`locId`),
+  KEY `contactInfoId` (`contactInfoId`),
+  CONSTRAINT `tbl_instituesearch_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`) ON DELETE SET NULL ON UPDATE SET NULL,
+  CONSTRAINT `tbl_instituesearch_ibfk_2` FOREIGN KEY (`instProfId`) REFERENCES `tbl_instprofiledetails` (`compInfoId`) ON DELETE SET NULL ON UPDATE SET NULL,
+  CONSTRAINT `tbl_instituesearch_ibfk_3` FOREIGN KEY (`locId`) REFERENCES `tbl_locainfodetails` (`locDetialsId`) ON DELETE SET NULL ON UPDATE SET NULL,
+  CONSTRAINT `tbl_instituesearch_ibfk_4` FOREIGN KEY (`contactInfoId`) REFERENCES `tbl_contactinfomaster` (`contctinfoId`) ON DELETE SET NULL ON UPDATE SET NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+/*Data for the table `tbl_instituesearch` */
+
+insert  into `tbl_instituesearch`(`searchId`,`userId`,`instProfId`,`locId`,`contactInfoId`) values (1,86,5,4,8),(2,88,7,6,10);
+
 /*Table structure for table `tbl_instprofiledetails` */
 
 DROP TABLE IF EXISTS `tbl_instprofiledetails`;
@@ -259,14 +312,15 @@ CREATE TABLE `tbl_instprofiledetails` (
   `workingDays` varchar(50) DEFAULT NULL,
   `trngMethodology` varchar(200) DEFAULT NULL,
   `userId` int(11) DEFAULT NULL,
+  `institutelogo` mediumblob,
   PRIMARY KEY (`compInfoId`),
   UNIQUE KEY `userId` (`userId`),
   CONSTRAINT `tbl_instprofiledetails_ibfk_2` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tbl_instprofiledetails` */
 
-insert  into `tbl_instprofiledetails`(`compInfoId`,`companyName`,`yrofEstablmnt`,`historyOfCompany`,`hrsOfOpertn`,`workingDays`,`trngMethodology`,`userId`) values (56,'Softinfology Pvt. Ltd',2003,'Nice History','9 am to 7 pm','MON, TUE, WED, THU, FRI, SAT','Online and Offline',116),(57,'abcabc',1999,'nice history','9 am to 7 PM','MON, TUE, WED, THU, FRI, SAT','Online and offline',70),(58,'abcdeeref',NULL,'','','MON, TUE, WED, THU, FRI, SAT','',78);
+insert  into `tbl_instprofiledetails`(`compInfoId`,`companyName`,`yrofEstablmnt`,`historyOfCompany`,`hrsOfOpertn`,`workingDays`,`trngMethodology`,`userId`,`institutelogo`) values (1,'Seed Infotech',NULL,NULL,NULL,NULL,NULL,79,NULL),(2,'MindScript Technologies',2009,'Nice History','9 am to 7 pm','MON, TUE, WED, THU, FRI, SAT','online, offline and individual',80,NULL),(3,'MindChips Techno',NULL,NULL,NULL,NULL,NULL,84,NULL),(4,'Softinfology Vlt Ltx',NULL,NULL,NULL,NULL,NULL,85,NULL),(5,'Mzos Pvt ltd.',2005,'Nice History really','9 am to 7 pm','MON, TUE, WED, THU, FRI, SAT','Online and Offline and F2F',86,NULL),(6,'Impetus Pvt LTd',2007,'Nice history','9 am to 7 pm','MON, TUE, WED, THU, FRI, SAT','Online and Offline',87,NULL),(7,'Boston Pvt Ltd',2001,'Nice History','10 am to 7 pm','MON, TUE, WED, THU, FRI, SAT','Onlien and Offline F2F',88,NULL),(8,'Training Techo cratz',2000,'Very nice history','9 am to 7 pm','MON, TUE, WED, THU, FRI, SAT','Online and Offline',90,NULL),(9,'asfsdfs asdfs',NULL,NULL,NULL,NULL,NULL,91,NULL);
 
 /*Table structure for table `tbl_intrsttrngareas` */
 
@@ -292,14 +346,17 @@ CREATE TABLE `tbl_keyclients` (
   `keyClientId` int(11) NOT NULL AUTO_INCREMENT,
   `clientName` varchar(50) DEFAULT NULL,
   `userId` int(11) DEFAULT NULL,
+  `searchId` int(11) DEFAULT NULL,
   PRIMARY KEY (`keyClientId`),
   KEY `userId` (`userId`),
-  CONSTRAINT `tbl_keyclients_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+  KEY `searchId` (`searchId`),
+  CONSTRAINT `tbl_keyclients_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`) ON DELETE SET NULL ON UPDATE SET NULL,
+  CONSTRAINT `tbl_keyclients_ibfk_2` FOREIGN KEY (`searchId`) REFERENCES `tbl_instituesearch` (`searchId`) ON DELETE SET NULL ON UPDATE SET NULL
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tbl_keyclients` */
 
-insert  into `tbl_keyclients`(`keyClientId`,`clientName`,`userId`) values (1,'Capegemini',70),(2,'TCS',70),(3,'Accenture',70),(4,'fsdfasdfsdf',99),(5,'sfsdaf',99),(6,'adsf',99),(7,'sdafdf',99);
+insert  into `tbl_keyclients`(`keyClientId`,`clientName`,`userId`,`searchId`) values (1,'sdfsdf asdfsdf fsfa LOAHR',86,1),(2,'sdfad sdfasfs',86,1),(7,'CHETAN LOHAR H',86,1),(8,'111',80,NULL),(9,'222',80,NULL),(10,'333',80,NULL),(11,'CL1',88,NULL),(12,'CL2',88,NULL),(13,'CL3',88,NULL),(14,'CL4',88,NULL);
 
 /*Table structure for table `tbl_locainfodetails` */
 
@@ -318,11 +375,11 @@ CREATE TABLE `tbl_locainfodetails` (
   KEY `userId` (`userId`),
   CONSTRAINT `tbl_locainfodetails_ibfk_1` FOREIGN KEY (`cityId`) REFERENCES `tbl_citymaster` (`cityId`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `tbl_locainfodetails_ibfk_2` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tbl_locainfodetails` */
 
-insert  into `tbl_locainfodetails`(`locDetialsId`,`buildingNo`,`street`,`landmark`,`pincode`,`cityId`,`userId`) values (6,'Sr No. 11/19','Hadapsar Bypass Road','ICICI Bank',411014,1,116),(7,'Sr No. 11/19','Hadapsar Bypass','ICICI Bank',411014,1,70),(8,'aaaaaa','aaaaaa','aaaaaa',411014,1,102),(9,'adasd','asdasd','asda',411014,5,107),(10,'Sr no. 11/19','Hadapsar Bypass Road','ICICI bank',411014,9,112);
+insert  into `tbl_locainfodetails`(`locDetialsId`,`buildingNo`,`street`,`landmark`,`pincode`,`cityId`,`userId`) values (1,'sr no. 11/19','Kharadi Bypass','ICICI bank javal',411014,1,82),(2,'11/19 adjfsdlkfj','KHaradi bypass','asjfslfj',411004,1,83),(3,'11/19','Kharadi Bypass','ICICI or SBI Bank',411014,1,81),(4,'asfsadf','asdfsdf','rwerwer',123123,1,86),(5,'11111','Karve Nagar','Karve Statue',411245,1,80),(6,'8B Jagdamba Hsg Society','Railway Station Road','Swami Samarth Temple',424001,4,88),(7,'8b Housing soci','safasdf','agsd',411014,1,89),(8,'11 54a asd sdfasf','asdfasf','awfasdff',411014,1,90);
 
 /*Table structure for table `tbl_phonedetails` */
 
@@ -333,17 +390,20 @@ CREATE TABLE `tbl_phonedetails` (
   `phnTypeId` int(11) DEFAULT NULL,
   `userId` int(11) DEFAULT NULL,
   `phoneValue` varchar(30) DEFAULT NULL,
+  `searchId` int(11) DEFAULT NULL,
   PRIMARY KEY (`phoneId`),
   UNIQUE KEY `phonevalue_unq` (`phoneValue`),
   KEY `phnTypeId` (`phnTypeId`),
   KEY `userId` (`userId`),
+  KEY `searchId` (`searchId`),
   CONSTRAINT `tbl_phonedetails_ibfk_1` FOREIGN KEY (`phnTypeId`) REFERENCES `tbl_phonetypemaster` (`phnTypeId`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `tbl_phonedetails_ibfk_2` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=latin1;
+  CONSTRAINT `tbl_phonedetails_ibfk_2` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `tbl_phonedetails_ibfk_3` FOREIGN KEY (`searchId`) REFERENCES `tbl_instituesearch` (`searchId`) ON DELETE SET NULL ON UPDATE SET NULL
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tbl_phonedetails` */
 
-insert  into `tbl_phonedetails`(`phoneId`,`phnTypeId`,`userId`,`phoneValue`) values (41,1,112,'3698521478'),(42,3,112,'9856321478'),(43,4,112,'02088888888'),(47,1,114,'8754213652'),(48,1,114,'02088888887'),(49,3,114,'89562314875'),(50,1,116,'8754213265'),(51,2,116,'02025874136');
+insert  into `tbl_phonedetails`(`phoneId`,`phnTypeId`,`userId`,`phoneValue`,`searchId`) values (32,NULL,79,'8754986587',NULL),(33,1,80,'9568658985',NULL),(34,3,81,'8446448344',NULL),(35,3,81,'8686232927',NULL),(36,3,82,'7796056555',NULL),(37,3,83,'9890115114',NULL),(38,4,83,'02077777777',NULL),(39,NULL,84,'9536624877',NULL),(40,NULL,85,'8521212121',NULL),(41,1,86,'5411154888',1),(42,2,86,'8521545454',1),(43,3,88,'8521214477',2),(44,2,88,'02562247901',2),(45,2,89,'8745544444',NULL),(46,3,90,'8744444444',NULL),(48,NULL,91,'5321234444',NULL);
 
 /*Table structure for table `tbl_phonetypemaster` */
 
@@ -367,14 +427,17 @@ CREATE TABLE `tbl_profesnlassociation` (
   `asscoId` int(11) NOT NULL AUTO_INCREMENT,
   `assocName` varchar(100) DEFAULT NULL,
   `userId` int(11) DEFAULT NULL,
+  `searchId` int(11) DEFAULT NULL,
   PRIMARY KEY (`asscoId`),
   KEY `userId` (`userId`),
-  CONSTRAINT `tbl_profesnlassociation_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`) ON DELETE SET NULL ON UPDATE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+  KEY `searchId` (`searchId`),
+  CONSTRAINT `tbl_profesnlassociation_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`) ON DELETE SET NULL ON UPDATE SET NULL,
+  CONSTRAINT `tbl_profesnlassociation_ibfk_2` FOREIGN KEY (`searchId`) REFERENCES `tbl_instituesearch` (`searchId`) ON DELETE SET NULL ON UPDATE SET NULL
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tbl_profesnlassociation` */
 
-insert  into `tbl_profesnlassociation`(`asscoId`,`assocName`,`userId`) values (1,'abc INC.',70),(2,'xyz Inc.',70),(3,'pqr INC',70),(4,'sdfsdf',99),(5,'safsdf',99),(6,'sdfasdf',99);
+insert  into `tbl_profesnlassociation`(`asscoId`,`assocName`,`userId`,`searchId`) values (1,'gdfdsfsdf',86,1),(2,'asfsdfasd',86,1),(3,'asfsadf sd  d fdgdfgf',86,1),(4,'TCS',80,NULL),(5,'Amdocs',80,NULL),(6,'Seed',80,NULL),(7,'Impetus',80,NULL),(8,'boston child',88,NULL),(9,'ssvps',88,NULL),(10,'rc patel',88,NULL),(11,'nothing',88,NULL);
 
 /*Table structure for table `tbl_rolemaster` */
 
@@ -430,20 +493,20 @@ DROP TABLE IF EXISTS `tbl_traineedetails`;
 
 CREATE TABLE `tbl_traineedetails` (
   `traineeId` int(11) NOT NULL AUTO_INCREMENT,
-  `fullName` varchar(50) DEFAULT NULL,
+  `fullName` varchar(50) NOT NULL,
   `organizationName` varchar(50) DEFAULT NULL,
-  `traineeType` varchar(20) DEFAULT NULL,
-  `emailid` varchar(100) DEFAULT NULL,
-  `phone` varchar(15) DEFAULT NULL,
+  `traineeType` varchar(20) NOT NULL,
+  `emailid` varchar(100) NOT NULL,
+  `phone` varchar(15) NOT NULL,
   `userId` int(11) DEFAULT NULL,
   PRIMARY KEY (`traineeId`),
-  KEY `userId` (`userId`),
-  CONSTRAINT `tbl_traineedetails_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`) ON DELETE SET NULL ON UPDATE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=latin1;
+  UNIQUE KEY `userid_unq` (`userId`),
+  CONSTRAINT `tbl_traineedetails_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tbl_traineedetails` */
 
-insert  into `tbl_traineedetails`(`traineeId`,`fullName`,`organizationName`,`traineeType`,`emailid`,`phone`,`userId`) values (4,'a','a','Corporate','a','a',NULL),(5,'Chetan Lohar','','Individual','c@h.com','8446448344',34),(6,'Chetan','Seed Infotech','Corporate','a','844644834',35),(7,'a b c','','Individual','a@b.com','88888888',36),(8,'Chetan Lohar','Seed Infotech','Corporate','a@b.com','8446448344',38),(9,'aaaaaaaaa','aaaaaaa','Corporate','a','a',42),(10,'aaaaaaaaa','aaaaaaa','Corporate','a','a',43),(11,'aaaaaaaaa','aaaaaaa','Corporate','a','a',44),(12,'aaaaaaaaaa','a','Corporate','a','a',45),(13,'aaaaaaaa','a','Corporate','a','a',46),(14,'aaaaaaaa','aaaaaaaa','Corporate','a','a',47),(15,'aaaaaa','aaaaaaa','Corporate','','a',48),(16,'aaaaaaa','aa','Corporate','a@b.com','a',49),(17,'aaaaaa','a','Corporate','abc@gmaill.com','a',50),(18,'aaaaa','aaaaa','Corporate','a@b.com','1231231211',51),(19,'aaaaaa','aaaaa','Corporate','a@b.com','1111111111',52),(20,'aaaaaa','aaaaa','Corporate','a@b.com','1111111111',53),(21,'aaaaaa','aaaaaa','Corporate','a@b.com','a',54),(22,'aaaaaa','aaaaaaa','Corporate','a@b.com','1234561231',55),(23,'aaaaaa','aaaaa','Corporate','a@b.com','1',56),(24,'aaaaaaa','','Individual','a@b.com','11111',57),(25,'aaaaaa','aaaaaa','Corporate','a@gmail.com','aaaaaa',58),(26,'aaaaaa','aaaaaa','Corporate','abc@gmail.com','1231231231',59),(27,'Chean H Lohar','Seed Infotech','Corporate','abcc@gmail.com','8446448344',71),(28,'Chetan','abc Inc','Corporate','abc@gmail.com','84464448344',73),(29,'chetan','abcde','Corporate','a@b.com','8484848484',75),(30,'fsdfsdf','dgdfgdfgsd','Corporate','abc@gmail.com','8446448344',76),(31,'Chetan','Seed','Corporate','abc@gmail.com','8446448344',77),(32,'abcabc','abcabcabc','Corporate','A@B.COM','8446448344',79),(33,'ateseta','abcabc','Corporate','abc@b.com','8446448344',81),(34,'Chetan Lohar','Seed Infotech','Corporate','a@b.com','8446448344',82),(35,'chetanloahr','seed infotech','Corporate','a@b.com','8446448344',83),(36,'aaaaaaa','','Individual','abc@gmail.com','7878787878',84),(37,'aaaaaa','','Individual','a@b.com','8787878787',85),(38,'aaaaaa','aaaaaaa','Corporate','a@b.com','1234567890',86),(39,'chetan h lohar','chetan h lohar','Corporate','a@b.com','8446448344',87),(40,'chetan h lohar','chetan h lohar','Corporate','a@b.com','8446448344',88),(41,'chetan h lohar','chetan h lohar','Corporate','a@b.com','8446448344',89),(42,'asdsad','dssdass','Corporate','a@b.com','1231321321',90),(43,'asdasd','sadsadad','Corporate','a@b.xi','1231231231',91),(44,'asdfsadf','asdfsdaf','Corporate','a@b.ct','1231231231',92),(45,'asdfsadf','asdfsadf','Corporate','a@b.co','1231231231',93),(46,'sdafsdf','asdfsdfa','Corporate','a@b.com','1231231231',94),(47,'asdfaa','asdf','Corporate','a@b.co','1231231213',95),(48,'dasfsdf','','Individual','a@c.om','1231231122',96),(49,'sadfsdafsdf','adfsafsd','Corporate','a@b.com','1231231231',97),(50,'Cehtan','abcadfs','Corporate','a@b.com','8446448344',98),(51,'asdfsdf','','Individual','a@b.com','1231231231',100),(52,'asfsafasf','adsfsdf','Corporate','a@b.com','3213213211',103),(53,'asdfsf','sadfsdf','Corporate','a@b.co','3213213211',104),(54,'afsadf','','Individual','a@b.com','1231231231',105),(55,'sdfsafsf','asdfsdf','Corporate','a@b.om','3213213211',106),(56,'sdfsdfsaf','sadfsdfaf','Corporate','a@b.com','1231231123',107),(57,'adsfsdf','sdafsfsadf','Corporate','a@b.com','1232123123',108),(58,'asdsadsad','dasdasdsad','Corporate','a@b.com','3213213211',110),(59,'sdfsafsdf','safsdfasd','Corporate','a@b.com','8754216369',111),(60,'adadfsdfsadf','asdfsdafsdf','Corporate','a@b.com','3698521478',112),(61,'sdfsadfsd','sadfsafdasdf','Corporate','a@b.com','8484848484',113),(62,'sadfsadf','seed infotech','Corporate','a@b.com','8754213652',114),(63,'fafsdfs','','Individual','a@b.com','8754213265',116);
+insert  into `tbl_traineedetails`(`traineeId`,`fullName`,`organizationName`,`traineeType`,`emailid`,`phone`,`userId`) values (1,'Chetan Lohar','','Individual','chetan@wewe.com','8745544444',89);
 
 /*Table structure for table `tbl_trainerregdetails` */
 
@@ -452,19 +515,41 @@ DROP TABLE IF EXISTS `tbl_trainerregdetails`;
 CREATE TABLE `tbl_trainerregdetails` (
   `trainer_id` int(11) NOT NULL AUTO_INCREMENT,
   `org_name` varchar(50) DEFAULT NULL,
-  `city` varchar(50) DEFAULT NULL,
+  `city` int(11) DEFAULT NULL,
   `contact` varchar(15) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
   `password` varchar(50) DEFAULT NULL,
   `userid` int(11) DEFAULT NULL,
   PRIMARY KEY (`trainer_id`),
   KEY `cons_trainerregdet_userid_fk` (`userid`),
-  CONSTRAINT `cons_trainerregdet_userid_fk` FOREIGN KEY (`userid`) REFERENCES `users` (`userId`) ON DELETE SET NULL ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=644 DEFAULT CHARSET=latin1;
+  KEY `city` (`city`),
+  CONSTRAINT `cons_trainerregdet_userid_fk` FOREIGN KEY (`userid`) REFERENCES `users` (`userId`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `tbl_trainerregdetails_ibfk_1` FOREIGN KEY (`city`) REFERENCES `tbl_citymaster` (`cityId`) ON DELETE SET NULL ON UPDATE SET NULL
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tbl_trainerregdetails` */
 
-insert  into `tbl_trainerregdetails`(`trainer_id`,`org_name`,`city`,`contact`,`email`,`password`,`userid`) values (609,'a','Pune','1','a','a',NULL),(610,'a','Pune','1','a','a',23),(611,'Seed Infotech','Pune','8446448344','a@b.com','123',24),(612,'abc','Pune','7878978983','swagatika.dwibedi@gmail.com','123456',25),(613,'swa','Pune','5456566567','swa@gmail.com','123456',26),(614,'abc','Pune','4444444444','abc@gmail.com','123',27),(615,'a','Pune','4554544554','swa@gmail.com','123456',28),(616,'Impetus','Pune','1231231231','a@b.com','123123',29),(617,'Impetus','Pune','1231231231','a@b.com','123123',30),(618,'abc','Pune','1231231231','a@b.com','123',31),(619,'ABC','Pune','1231231231','ABC@GMAIL.COM','123',32),(620,'abc tech','Pune','8446448344','a@b.com','123123',33),(621,'Seed Infotech','Pune','1234564569','abc@gmail.com','123123',37),(622,'aaaaaaa','Pune','1111111111','a@b.com','1231231',39),(623,'See INfotech','Pune','1234567897','abc@gmail.com','1234567',40),(624,'aaaaaa','Pune','1234567897','a@g.com','1231234',41),(625,'addfsdaf','Pune','1231231231','abc@gmail.com','123123',60),(626,'abcderf','Pune','1231231231','abc@gmail.com','123123',61),(627,'abcdedfer','Pune','5874698745','abc@gmail.com','123123',62),(628,'abcdefere','Pune','8745211147','abc@gmail.com','123456789',63),(629,'ieieieie','Pune','8787878787','a@b.com','787878',64),(630,'','Pune','','','',65),(631,'sdafsdfsd','Pune','8484848484','a@b.com','123123',66),(632,'abcabc','Pune','8446448344','abc@gmail.com','123123',67),(633,'abcabc','Pune','1231231231','abc@gmail.com','123123',68),(634,'abcabc','Pune','1234567897','abc@gmail.com','123123',69),(635,'abcabc','Pune','8585858585','ch@gmail.com','1231231',70),(636,'adfasfsdf','Pune','8787878787','abc@gmail.com','1231231',72),(637,'abcabc','Pune','8448448448','a@b.com','1231231',74),(638,'abcdeeref','Pune','8446448344','a@b.com','123123',78),(639,'Seed Infotech','Pune','8446448344','a@b.com','123123',80),(640,'asfsdfsdf','Pune','1231231231','a@b.com','123123',99),(641,'asdfsdf','Pune','1231231231','a@v.co','123123',101),(642,'adfsdfdfa','Pune','8446448344','abc@b.com','123123',102),(643,'qasdasdasd','Mumbai','1232131231','a@c.mi','123123',109);
+insert  into `tbl_trainerregdetails`(`trainer_id`,`org_name`,`city`,`contact`,`email`,`password`,`userid`) values (1,'Seed Infotech',1,'8754986587','info@seed.com','123456',79),(2,'MindScript Technologies',3,'9568658985','info@mind.com','123456',80),(3,'MindChips Techno',1,'9536624877','info@mindchips.com','chetan',84),(4,'Softinfology Vlt Ltx',1,'8521212121','soft@soft.com','chetan',85),(5,'Mzos Pvt ltd.',3,'5411154888','info@mzos.com','chetan',86),(6,'Impetus Pvt LTd',1,'8521545454','info@impetuss.com','chetan',87),(7,'Boston Pvt Ltd',1,'8521214477','info@boston.com','chetan',88),(8,'Training Techo cratz',3,'8744444444','chetan@iii.com','chetan',90),(9,'asfsdfs asdfs',1,'5321234444','iuiu@gmail.com','chetan',91);
+
+/*Table structure for table `tbl_trangcatdetails` */
+
+DROP TABLE IF EXISTS `tbl_trangcatdetails`;
+
+CREATE TABLE `tbl_trangcatdetails` (
+  `trngcatid` int(11) NOT NULL AUTO_INCREMENT,
+  `subcatid` int(11) DEFAULT NULL,
+  `exp` int(11) DEFAULT NULL,
+  `userId` int(11) DEFAULT NULL,
+  PRIMARY KEY (`trngcatid`),
+  UNIQUE KEY `subcatid` (`subcatid`),
+  KEY `userId` (`userId`),
+  CONSTRAINT `tbl_trangcatdetails_ibfk_1` FOREIGN KEY (`subcatid`) REFERENCES `tbl_trnsubcatmaster` (`trnIndstrSubCatId`) ON DELETE SET NULL ON UPDATE NO ACTION,
+  CONSTRAINT `tbl_trangcatdetails_ibfk_2` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`) ON DELETE SET NULL ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+/*Data for the table `tbl_trangcatdetails` */
+
+insert  into `tbl_trangcatdetails`(`trngcatid`,`subcatid`,`exp`,`userId`) values (1,3,5,86);
 
 /*Table structure for table `tbl_trngcalender` */
 
@@ -472,9 +557,8 @@ DROP TABLE IF EXISTS `tbl_trngcalender`;
 
 CREATE TABLE `tbl_trngcalender` (
   `trngId` int(11) NOT NULL AUTO_INCREMENT,
-  `code` varchar(100) DEFAULT NULL,
   `title` varchar(100) DEFAULT NULL,
-  `keywords` varchar(100) DEFAULT NULL,
+  `code` varchar(100) DEFAULT NULL,
   `start_date` date DEFAULT NULL,
   `end_date` date DEFAULT NULL,
   `price` double DEFAULT NULL,
@@ -485,37 +569,49 @@ CREATE TABLE `tbl_trngcalender` (
   `createdBy` varchar(30) DEFAULT 'SELF',
   `updatedOn` timestamp NULL DEFAULT '0000-00-00 00:00:00',
   `updatedBy` varchar(30) DEFAULT NULL,
-  `userId` int(11) DEFAULT NULL,
   `description` varchar(200) DEFAULT NULL,
   `contenttype` varchar(100) DEFAULT NULL,
+  `rank` int(11) DEFAULT NULL,
+  `vFlag` varchar(30) DEFAULT NULL,
+  `keyword` text,
+  `place` int(11) DEFAULT NULL,
+  `trnIndstrSubCatId` int(11) DEFAULT NULL,
+  `userId` int(11) DEFAULT NULL,
   PRIMARY KEY (`trngId`),
   KEY `userId` (`userId`),
-  CONSTRAINT `tbl_trngcalender_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+  KEY `trnIndstrSubCatId` (`trnIndstrSubCatId`),
+  KEY `place` (`place`),
+  CONSTRAINT `tbl_trngcalender_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`userId`),
+  CONSTRAINT `tbl_trngcalender_ibfk_2` FOREIGN KEY (`trnIndstrSubCatId`) REFERENCES `tbl_trnsubcatmaster` (`trnIndstrSubCatId`),
+  CONSTRAINT `tbl_trngcalender_ibfk_3` FOREIGN KEY (`place`) REFERENCES `tbl_citymaster` (`cityId`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tbl_trngcalender` */
 
-insert  into `tbl_trngcalender`(`trngId`,`code`,`title`,`keywords`,`start_date`,`end_date`,`price`,`brochure`,`type`,`status`,`createdOn`,`createdBy`,`updatedOn`,`updatedBy`,`userId`,`description`,`contenttype`) values (18,'aaa','Spring','Spring, Java, project','2015-05-25','2015-06-30',3000,'C:\\SearchMT\\Git SMT url.txt','Seminar','New','2015-05-21 18:04:12','aaa','2015-05-21 18:04:12','',115,'Industry Training','text/plain');
+insert  into `tbl_trngcalender`(`trngId`,`title`,`code`,`start_date`,`end_date`,`price`,`brochure`,`type`,`status`,`createdOn`,`createdBy`,`updatedOn`,`updatedBy`,`description`,`contenttype`,`rank`,`vFlag`,`keyword`,`place`,`trnIndstrSubCatId`,`userId`) values (6,'Core Java Training','keyCode','2015-07-01','2015-07-31',3000,'C:\\\\SearchMT\\\\ICDM07-prism.pdf','Seminar','New','2015-07-23 13:07:42','aaa','2015-06-29 16:05:18','','Core Java is a programming language to develope the Software','application/pdf',0,'Not Varified','java,core java,collections,oops,applet,multithreading',1,1,86),(7,'Advance Java Training','keyCode','2015-08-04','2015-08-31',3000,'C:\\\\SearchMT\\\\ICDM07-prism.pdf','Seminar','New','2015-07-23 13:07:43','aaa','2015-06-29 16:07:54','','Advance Java is a Programming language to develope web application','application/pdf',0,'Not Varified','java,advance java,jsp,servlet,web application',1,1,86),(8,'Spring Training','keyCode','2015-07-01','2015-07-28',3000,'C:\\\\SearchMT\\\\ICDM07-prism.pdf','Seminar','New','2015-07-23 13:07:44','aaa','2015-06-29 16:16:50','','Spring is a java framework','application/pdf',0,'Not Varified','java, spring,ioc,spring aop,spring boot,spring batch',1,1,86),(9,'Hibernate Training','keyCode','2015-07-07','2015-07-31',3000,'C:\\\\SearchMT\\\\ICDM07-prism.pdf','Seminar','New','2015-07-23 13:07:44','aaa','2015-06-29 16:35:18','','Hibernate is a ORM tool','application/pdf',0,'Not Varified','java,hibernate,orm tool,mapping,hql',1,1,86),(10,'Oracle Training','keyCode','2015-08-11','2015-08-31',7000,'C:\\\\SearchMT\\\\ICDM07-prism.pdf','Workshop','New','2015-07-23 13:07:47','aaa','2015-06-29 16:36:47','','Oracle is a Database to store the information','application/pdf',0,'Not Varified','oracle,database,dbms,rdbms,procedure,function,sql,plsql',3,1,86),(11,'Oracle DBMS Training','keyCode','2015-08-12','2015-08-31',4000,'C:\\\\SearchMT\\\\ICDM07-prism.pdf','Seminar','New','2015-07-16 12:50:46','aaa','2015-07-01 21:28:00','','Oracle is a RDBMS','application/pdf',0,'Not Varified','oracle,database,rdbms,sql,plsql,procedures,functions',1,1,80);
 
 /*Table structure for table `tbl_trngenquiry` */
 
 DROP TABLE IF EXISTS `tbl_trngenquiry`;
 
 CREATE TABLE `tbl_trngenquiry` (
-  `trngenqId` int(11) NOT NULL,
-  `fName` varchar(50) DEFAULT NULL,
-  `lName` varchar(50) DEFAULT NULL,
+  `trngenqId` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) DEFAULT NULL,
+  `companyName` varchar(50) DEFAULT NULL,
   `courseTitle` varchar(50) DEFAULT NULL,
   `cityId` int(11) DEFAULT NULL,
   `phone` varchar(30) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
   `trngNeed` varchar(50) DEFAULT NULL,
+  `noOfParticipents` int(6) DEFAULT NULL,
   PRIMARY KEY (`trngenqId`),
   KEY `cityId` (`cityId`),
   CONSTRAINT `tbl_trngenquiry_ibfk_1` FOREIGN KEY (`cityId`) REFERENCES `tbl_cntrymaster` (`countryId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tbl_trngenquiry` */
+
+insert  into `tbl_trngenquiry`(`trngenqId`,`name`,`companyName`,`courseTitle`,`cityId`,`phone`,`email`,`trngNeed`,`noOfParticipents`) values (1,'Chetan Lohar','Individual','Spring Training',2,'8754875487','chetan@gmail.com','fsdfaddfsf sdaff',1),(2,'dsdfsdf fsdfsafa','sdfasdfsdf ','safsafas',1,'3434343333','asdf@asd.com','asfasfasf',5),(3,'asdfsdf sadfsdfs','sfsdfasd','asdfsdf',1,'8754875555','ccc@gmail.com','sdfsdfff sdf sdf sdf sddd',5);
 
 /*Table structure for table `tbl_trngoffrddetails` */
 
@@ -601,7 +697,7 @@ CREATE TABLE `tbl_trnsubcatmaster` (
 
 /*Data for the table `tbl_trnsubcatmaster` */
 
-insert  into `tbl_trnsubcatmaster`(`trnIndstrSubCatId`,`indstrSubCatName`,`indstrSubCatDescrption`,`trnIndstrCatId`) values (1,'C','--',1),(2,'C++','--',1),(3,'Java','--',1),(4,'DOT NET','--',1),(5,'OTHER','--',1),(6,'Networking','--',2),(7,'Autocad','--',3),(8,'Corel Draw','--',3),(9,'2D','--',4),(10,'3D','--',4),(11,'Finance & Accounting','--',5),(12,'HR, Admin. IR','--',6),(13,'Sales & Marketing','--',7),(14,'Self Development','--',8),(15,'Strategy Management','--',9),(16,'Quality Management','--',10),(17,'Health & Safety','--',11),(18,'Music','--',12),(19,'Painting','--',13),(20,'Pottery','--',14),(21,'Acting','--',15),(22,'Sports','--',16),(23,'Six Sigma','--',17),(24,'Sedex','--',18),(25,'ISO 9001','--',19),(26,'MSCI','--',20);
+insert  into `tbl_trnsubcatmaster`(`trnIndstrSubCatId`,`indstrSubCatName`,`indstrSubCatDescrption`,`trnIndstrCatId`) values (1,'C','--',1),(2,'C++','--',1),(3,'Java','--',1),(4,'DOT NET','--',1),(5,'OTHER','--',1),(6,'Networking','--',2),(7,'Autocad','--',3),(8,'Corel Draw','--',3),(9,'2D','--',4),(10,'3D','--',4),(11,'Finance & Accounting','--',5),(12,'HR, Admin. IR','--',6),(13,'Sales & Marketing','--',7),(14,'Self Development','--',8),(15,'Strategy Management','--',9),(16,'Quality Management','--',10),(17,'Health & Safety','--',11),(18,'Music','--',12),(19,'Painting','--',13),(20,'Pottery','--',14),(21,'Acting','--',15),(22,'Sports','--',16),(23,'Six Sigma','--',17),(24,'Sedex','--',18),(25,'ISO 9001','--',19),(26,'MSCI','--',20),(27,'PHP','--',1);
 
 /*Table structure for table `tbl_unlistedtraining` */
 
@@ -657,6 +753,8 @@ CREATE TABLE `user_attempts` (
 
 /*Data for the table `user_attempts` */
 
+insert  into `user_attempts`(`USERID`,`ATTEMPTS`,`LASTMODIFIED`) values (80,0,'2015-07-23 13:02:25'),(86,0,'2015-08-05 18:25:13');
+
 /*Table structure for table `user_roles` */
 
 DROP TABLE IF EXISTS `user_roles`;
@@ -669,9 +767,11 @@ CREATE TABLE `user_roles` (
   UNIQUE KEY `UK1_USERNAME_ROLE` (`ROLE`,`USERID`),
   KEY `FK1_USER_ROLES` (`USERID`),
   CONSTRAINT `user_roles_ibfk_1` FOREIGN KEY (`USERID`) REFERENCES `users` (`userId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 /*Data for the table `user_roles` */
+
+insert  into `user_roles`(`USER_ROLE_ID`,`USERID`,`ROLE`) values (3,81,'TPF'),(4,82,'TPF'),(5,83,'TPF'),(1,79,'TPI'),(2,80,'TPI'),(6,84,'TPI'),(7,85,'TPI'),(8,86,'TPI'),(9,87,'TPI'),(10,88,'TPI'),(12,90,'TPI'),(13,91,'TPI'),(11,89,'TRAINEE');
 
 /*Table structure for table `users` */
 
@@ -679,8 +779,8 @@ DROP TABLE IF EXISTS `users`;
 
 CREATE TABLE `users` (
   `userId` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(100) DEFAULT NULL,
-  `password` varchar(200) DEFAULT NULL,
+  `username` varchar(100) NOT NULL,
+  `password` varchar(200) NOT NULL,
   `enabled` tinyint(4) NOT NULL DEFAULT '1',
   `accountNonExpired` tinyint(4) NOT NULL DEFAULT '1',
   `accountNonLocked` tinyint(4) NOT NULL DEFAULT '1',
@@ -690,14 +790,17 @@ CREATE TABLE `users` (
   `Modified_on` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `Modified_by` varchar(100) DEFAULT NULL,
   `statusId` int(11) DEFAULT NULL,
+  `emailVerified` tinyint(4) DEFAULT '0',
+  `uuid` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`userId`),
+  UNIQUE KEY `username_UNQ` (`username`),
   KEY `statusId` (`statusId`),
   CONSTRAINT `users_ibfk_1` FOREIGN KEY (`statusId`) REFERENCES `tbl_statusmaster` (`statusId`) ON DELETE SET NULL ON UPDATE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=117 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=92 DEFAULT CHARSET=latin1;
 
 /*Data for the table `users` */
 
-insert  into `users`(`userId`,`username`,`password`,`enabled`,`accountNonExpired`,`accountNonLocked`,`credentialsNonExpired`,`created_on`,`created_by`,`Modified_on`,`Modified_by`,`statusId`) values (23,'a','a',1,1,1,1,'2015-05-09 12:12:59','SELF','2015-05-09 12:12:59','SELF',1),(24,'a@b.com','123',1,1,1,1,'2015-05-09 16:13:36','SELF','2015-05-09 16:13:36','SELF',1),(25,'swagatika.dwibedi@gmail.com','123456',1,1,1,1,'2015-05-09 16:26:28','SELF','2015-05-09 16:26:28','SELF',1),(26,'swa@gmail.com','123456',1,1,1,1,'2015-05-09 16:31:15','SELF','2015-05-09 16:31:15','SELF',1),(27,'abc@gmail.com','123',1,1,1,1,'2015-05-09 16:40:04','SELF','2015-05-09 16:40:04','SELF',1),(28,'swa@gmail.com','123456',1,1,1,1,'2015-05-09 16:44:03','SELF','2015-05-09 16:44:03','SELF',1),(29,'a@b.com','123123',1,1,1,1,'2015-05-09 16:57:28','SELF','2015-05-09 16:57:28','SELF',1),(30,'a@b.com','123123',1,1,1,1,'2015-05-09 16:57:29','SELF','2015-05-09 16:57:29','SELF',1),(31,'a@b.com','123',1,1,1,1,'2015-05-09 17:01:30','SELF','2015-05-09 17:01:30','SELF',1),(32,'ABC@GMAIL.COM','123',1,1,1,1,'2015-05-09 17:04:21','SELF','2015-05-09 17:04:21','SELF',1),(33,'a@b.com','123123',1,1,1,1,'2015-05-11 11:02:49','SELF','2015-05-11 11:02:49','SELF',1),(34,'c@h.com','123',1,1,1,1,'2015-05-11 12:24:08','SELF','2015-05-11 12:24:08','SELF',1),(35,'a','123',1,1,1,1,'2015-05-11 12:26:54','SELF','2015-05-11 12:26:54','SELF',1),(36,'a@b.com','123',1,1,1,1,'2015-05-11 13:04:56','SELF','2015-05-11 13:04:56','SELF',1),(37,'abc@gmail.com','123123',1,1,1,1,'2015-05-11 16:34:56','SELF','2015-05-11 16:34:56','SELF',1),(38,'a@b.com','123',1,1,1,1,'2015-05-11 18:49:22','SELF','2015-05-11 18:49:22','SELF',1),(39,'a@b.com','1231231',1,1,1,1,'2015-05-11 19:44:11','SELF','2015-05-11 19:44:11','SELF',1),(40,'abc@gmail.com','1234567',1,1,1,1,'2015-05-11 21:09:07','SELF','2015-05-11 21:09:07','SELF',1),(41,'a@g.com','1231234',1,1,1,1,'2015-05-11 21:20:24','SELF','2015-05-11 21:20:24','SELF',1),(42,'a','a',1,1,1,1,'2015-05-12 16:03:11','SELF','2015-05-12 16:03:11','SELF',1),(43,'a','a',1,1,1,1,'2015-05-12 16:03:46','SELF','2015-05-12 16:03:46','SELF',1),(44,'a','a',1,1,1,1,'2015-05-12 16:03:52','SELF','2015-05-12 16:03:52','SELF',1),(45,'a','a',1,1,1,1,'2015-05-12 16:07:21','SELF','2015-05-12 16:07:21','SELF',1),(46,'a','a',1,1,1,1,'2015-05-12 16:12:14','SELF','2015-05-12 16:12:14','SELF',1),(47,'a','a',1,1,1,1,'2015-05-12 16:14:33','SELF','2015-05-12 16:14:33','SELF',1),(48,'','',1,1,1,1,'2015-05-12 18:43:02','SELF','2015-05-12 18:43:02','SELF',1),(49,'a@b.com','a',1,1,1,1,'2015-05-12 19:06:07','SELF','2015-05-12 19:06:07','SELF',1),(50,'abc@gmaill.com','123',1,1,1,1,'2015-05-12 19:13:11','SELF','2015-05-12 19:13:11','SELF',1),(51,'a@b.com','123',1,1,1,1,'2015-05-12 20:22:52','SELF','2015-05-12 20:22:52','SELF',1),(52,'a@b.com','123',1,1,1,1,'2015-05-12 21:09:14','SELF','2015-05-12 21:09:14','SELF',1),(53,'a@b.com','',1,1,1,1,'2015-05-12 21:10:04','SELF','2015-05-12 21:10:04','SELF',1),(54,'a@b.com','a',1,1,1,1,'2015-05-12 21:11:07','SELF','2015-05-12 21:11:07','SELF',1),(55,'a@b.com','1231',1,1,1,1,'2015-05-12 21:16:30','SELF','2015-05-12 21:16:30','SELF',1),(56,'a@b.com','123',1,1,1,1,'2015-05-12 21:27:57','SELF','2015-05-12 21:27:57','SELF',1),(57,'a@b.com','123',1,1,1,1,'2015-05-13 12:40:06','SELF','2015-05-13 12:40:06','SELF',1),(58,'a@gmail.com','123123123',1,1,1,1,'2015-05-13 13:03:55','SELF','2015-05-13 13:03:55','SELF',1),(59,'abc@gmail.com','123123',1,1,1,1,'2015-05-14 12:43:21','SELF','2015-05-14 12:43:21','SELF',1),(60,'abc@gmail.com','123123',1,1,1,1,'2015-05-14 16:59:01','SELF','2015-05-14 16:59:01','SELF',1),(61,'abc@gmail.com','123123',1,1,1,1,'2015-05-14 17:07:55','SELF','2015-05-14 17:07:55','SELF',1),(62,'abc@gmail.com','123123',1,1,1,1,'2015-05-14 17:11:14','SELF','2015-05-14 17:11:14','SELF',1),(63,'abc@gmail.com','123456789',1,1,1,1,'2015-05-14 17:12:39','SELF','2015-05-14 17:12:39','SELF',1),(64,'a@b.com','787878',1,1,1,1,'2015-05-14 17:13:47','SELF','2015-05-14 17:13:47','SELF',1),(65,'','',1,1,1,1,'2015-05-14 17:46:41','SELF','2015-05-14 17:46:41','SELF',1),(66,'a@b.com','123123',1,1,1,1,'2015-05-15 12:11:03','SELF','2015-05-15 12:11:03','SELF',1),(67,'abc@gmail.com','123123',1,1,1,1,'2015-05-15 13:10:38','SELF','2015-05-15 13:10:38','SELF',1),(68,'abc@gmail.com','123123',1,1,1,1,'2015-05-15 13:53:28','SELF','2015-05-15 13:53:28','SELF',1),(69,'abc@gmail.com','123123',1,1,1,1,'2015-05-15 13:54:18','SELF','2015-05-15 13:54:18','SELF',1),(70,'ch@gmail.com','1231231',1,1,1,1,'2015-05-15 14:24:20','SELF','2015-05-15 14:24:20','SELF',1),(71,'abcc@gmail.com','abcabc',1,1,1,1,'2015-05-15 19:17:00','SELF','2015-05-15 19:17:00','SELF',1),(72,'abc@gmail.com','1231231',1,1,1,1,'2015-05-15 19:31:38','SELF','2015-05-15 19:31:38','SELF',1),(73,'abc@gmail.com','chetan844',1,1,1,1,'2015-05-15 19:59:25','SELF','2015-05-15 19:59:25','SELF',1),(74,'a@b.com','1231231',1,1,1,1,'2015-05-16 09:20:00','SELF','2015-05-16 09:20:00','SELF',1),(75,'a@b.com','123',1,1,1,1,'2015-05-16 09:20:41','SELF','2015-05-16 09:20:41','SELF',1),(76,'abc@gmail.com','12312312',1,1,1,1,'2015-05-16 21:05:29','SELF','2015-05-16 21:05:29','SELF',1),(77,'abc@gmail.com','123123',1,1,1,1,'2015-05-18 09:10:48','SELF','2015-05-18 09:10:48','SELF',1),(78,'a@b.com','123123',1,1,1,1,'2015-05-18 09:42:33','SELF','2015-05-18 09:42:33','SELF',1),(79,'A@B.COM','123123',1,1,1,1,'2015-05-18 10:43:18','SELF','2015-05-18 10:43:18','SELF',1),(80,'a@b.com','123123',1,1,1,1,'2015-05-18 21:21:08','SELF','2015-05-18 21:21:08','SELF',1),(81,'abc@b.com','1231231',1,1,1,1,'2015-05-19 02:36:55','SELF','2015-05-19 02:36:55','SELF',1),(82,'a@b.com','123123',1,1,1,1,'2015-05-19 11:16:15','SELF','2015-05-19 11:16:15','SELF',1),(83,'a@b.com','1231231',1,1,1,1,'2015-05-19 16:47:32','SELF','2015-05-19 16:47:32','SELF',1),(84,'abc@gmail.com','1231231',1,1,1,1,'2015-05-19 17:04:02','SELF','2015-05-19 17:04:02','SELF',1),(85,'a@b.com','1231231',1,1,1,1,'2015-05-19 17:07:25','SELF','2015-05-19 17:07:25','SELF',1),(86,'a@b.com','123123',1,1,1,1,'2015-05-19 17:55:02','SELF','2015-05-19 17:55:02','SELF',1),(87,'a@b.com','123123',1,1,1,1,'2015-05-19 19:47:39','SELF','2015-05-19 19:47:39','SELF',1),(88,'a@b.com','123123',1,1,1,1,'2015-05-19 19:48:02','SELF','2015-05-19 19:48:02','SELF',1),(89,'a@b.com','123123',1,1,1,1,'2015-05-19 19:48:03','SELF','2015-05-19 19:48:03','SELF',1),(90,'a@b.com','123123',1,1,1,1,'2015-05-19 20:01:20','SELF','2015-05-19 20:01:20','SELF',1),(91,'a@b.xi','abcder',1,1,1,1,'2015-05-19 20:34:09','SELF','2015-05-19 20:34:09','SELF',1),(92,'a@b.ct','123123',1,1,1,1,'2015-05-19 20:37:04','SELF','2015-05-19 20:37:04','SELF',1),(93,'a@b.co','1231231',1,1,1,1,'2015-05-19 21:04:14','SELF','2015-05-19 21:04:14','SELF',1),(94,'a@b.com','1231231',1,1,1,1,'2015-05-19 21:12:26','SELF','2015-05-19 21:12:26','SELF',1),(95,'a@b.co','123123',1,1,1,1,'2015-05-19 21:17:04','SELF','2015-05-19 21:17:04','SELF',1),(96,'a@c.om','123123',1,1,1,1,'2015-05-19 21:18:22','SELF','2015-05-19 21:18:22','SELF',1),(97,'a@b.com','123123',1,1,1,1,'2015-05-19 22:34:07','SELF','2015-05-19 22:34:07','SELF',1),(98,'a@b.com','123123',1,1,1,1,'2015-05-20 13:31:53','SELF','2015-05-20 13:31:53','SELF',1),(99,'a@b.com','123123',1,1,1,1,'2015-05-20 17:46:27','SELF','2015-05-20 17:46:27','SELF',1),(100,'a@b.com','123123',1,1,1,1,'2015-05-20 19:28:53','SELF','2015-05-20 19:28:53','SELF',1),(101,'a@v.co','123123',1,1,1,1,'2015-05-20 19:29:34','SELF','2015-05-20 19:29:34','SELF',1),(102,'abc@b.com','123123',1,1,1,1,'2015-05-20 19:41:43','SELF','2015-05-20 19:41:43','SELF',1),(103,'a@b.com','123123',1,1,1,1,'2015-05-20 21:05:19','SELF','2015-05-20 21:05:19','SELF',1),(104,'a@b.co','1231231',1,1,1,1,'2015-05-20 21:19:45','SELF','2015-05-20 21:19:45','SELF',1),(105,'a@b.com','asdfasdf',1,1,1,1,'2015-05-20 21:32:47','SELF','2015-05-20 21:32:47','SELF',1),(106,'a@b.om','123123',1,1,1,1,'2015-05-20 21:44:22','SELF','2015-05-20 21:44:22','SELF',1),(107,'a@b.com','123123',1,1,1,1,'2015-05-20 21:55:23','SELF','2015-05-20 21:55:23','SELF',1),(108,'a@b.com','123123',1,1,1,1,'2015-05-21 09:25:47','SELF','2015-05-21 09:25:47','SELF',1),(109,'a@c.mi','123123',1,1,1,1,'2015-05-21 09:33:45','SELF','2015-05-21 09:33:45','SELF',1),(110,'a@b.com','123123',1,1,1,1,'2015-05-21 15:50:36','SELF','2015-05-21 15:50:36','SELF',1),(111,'a@b.com','123456',1,1,1,1,'2015-05-21 16:05:05','SELF','2015-05-21 16:05:05','SELF',1),(112,'a@b.com','123123',1,1,1,1,'2015-05-21 16:51:55','SELF','2015-05-21 16:51:55','SELF',1),(113,'a@b.com','123123',1,1,1,1,'2015-05-21 17:33:49','SELF','2015-05-21 17:33:49','SELF',1),(114,'a@b.com','1231231',1,1,1,1,'2015-05-21 17:49:39','SELF','2015-05-21 17:49:39','SELF',1),(115,'a@b.com','123123',1,1,1,1,'2015-05-21 18:03:11','SELF','2015-05-21 18:03:11','SELF',1),(116,'a@b.com','123123',1,1,1,1,'2015-05-21 18:27:28','SELF','2015-05-21 18:27:28','SELF',1);
+insert  into `users`(`userId`,`username`,`password`,`enabled`,`accountNonExpired`,`accountNonLocked`,`credentialsNonExpired`,`created_on`,`created_by`,`Modified_on`,`Modified_by`,`statusId`,`emailVerified`,`uuid`) values (79,'info@seed.com','$2a$10$aALqfEeXdiZB1UsjyjwuLu2ZCOqX7rY5Yrlon3yGWjO3Ss8jp6rl.',1,1,0,1,'2015-07-23 12:41:11','SELF','2015-07-16 12:47:29','SELF',1,0,NULL),(80,'info@mind.com','$2a$10$rryfrTKtSr3kkodwrRGZa.Zs67kh91edRI7Gpj3jRSpt8dfzYcYXC',1,1,1,1,'2015-07-16 12:49:05','SELF','2015-07-16 12:49:05','SELF',1,0,NULL),(81,'chetan@yahoo.com','$2a$10$lZdmuW1XDdqz/Si0mZETZ.m1qFqFkmw7yRN9Q/Mr35UH68hST55Q2',1,1,1,1,'2015-07-16 13:10:39','SELF','2015-07-16 13:10:39','SELF',1,0,NULL),(82,'harsh@gmail.com','$2a$10$kZipQLGLVN41u2bD08A4V.AIxEYjePlxJf/ALDFP2A3Fdxv9NiJsG',1,1,1,1,'2015-07-16 13:44:14','SELF','2015-07-16 13:44:14','SELF',1,0,NULL),(83,'ranjit@softinfology.com','$2a$10$FiuL764tvFJjTUfJnSKBeON4iIe2Y6i0pfIFaAEhmjqYndleLLMaS',1,1,1,1,'2015-07-16 20:33:20','SELF','2015-07-16 20:33:20','SELF',1,0,NULL),(84,'info@mindchips.com','$2a$10$hR.v38fV6mp4heuaXmVsquhXi1DFOuwXQd7U.BfGYw2uRFng/S/fa',1,1,1,1,'2015-07-17 12:42:19','SELF','2015-07-17 12:42:19','SELF',1,0,NULL),(85,'soft@soft.com','$2a$10$fOiiXvPY44/O8i3v9wcQ4enA.TO6qwBiR01oA/WOZyMeJm7cFoISO',1,1,1,1,'2015-07-17 18:08:16','SELF','2015-07-17 18:08:16','SELF',1,0,NULL),(86,'info@mzos.com','$2a$10$2bI3i726oIN6y6TuNCM4VOzsb73iI/QpRrxVKgDCFB4pMARoHERmS',1,1,1,1,'2015-07-17 18:52:24','SELF','2015-07-17 18:52:24','SELF',1,0,NULL),(87,'info@impetuss.com','$2a$10$Trst237HcQzfKsSLnA5sju7/zPLNokh2p6UTvCAVI92wf91smBE.K',1,1,1,1,'2015-07-22 20:00:35','SELF','2015-07-22 20:00:35','SELF',1,0,NULL),(88,'info@boston.com','$2a$10$UEx2qhyxLyFeaPsuqUGpr.01tzru79lTQ2G5LmvLx0ARwAzlRMkhu',1,1,1,1,'2015-07-24 13:46:16','SELF','2015-07-24 13:46:16','SELF',1,0,NULL),(89,'chetan@wewe.com','$2a$10$3WkvphjwnMZNIFf8s09CyuyDYZANTu2EcWYbNIPUFz794xmMqrzSy',1,1,1,1,'2015-07-24 20:20:38','SELF','2015-07-24 20:20:38','SELF',1,0,NULL),(90,'chetan@iii.com','$2a$10$cEO65K2TZhKGmMgFasu1ReScCMuHA9Z2sp7xQrUT2BEbobwsuLZdS',1,1,1,1,'2015-07-24 20:38:18','SELF','2015-07-24 20:38:18','SELF',1,0,NULL),(91,'iuiu@gmail.com','$2a$10$303.7NVdtrzIAFl.ek0I.OwvZ3Q78ZJ4OR/kcgqzvBRGFaxa7nALG',1,1,1,1,'2015-08-05 19:59:10','SELF','2015-08-05 19:59:10','SELF',1,NULL,NULL);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

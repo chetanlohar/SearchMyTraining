@@ -111,7 +111,7 @@ $(window).scroll(function(){
 	 else{
 		 $("#w-input-search").css('border','1px solid #ccc');
 		 $("#loc").css('border','1px solid #ccc');
-		 loadcalender(); 
+		 loadcalender();
 	 }
 	
  }
@@ -119,7 +119,7 @@ $(window).scroll(function(){
 	      
 		   	 var keyword=$('#w-input-search').val();
 		   	
-		   	 console.log("keyword :"+keyword);
+		   	 console.log("from loadcalender keyword :"+keyword);
 
 		   	$("#mid").load("./getCalendars",{inputkeyword:keyword},function(responseText, statusText, xhr) {
 		   					if (statusText == "success")
@@ -129,8 +129,7 @@ $(window).scroll(function(){
 		   									+ xhr.statusText);
 		   				});
 		
-	}
- 
+	} 
 </script>
 <script type="text/javascript">
 $(function(){

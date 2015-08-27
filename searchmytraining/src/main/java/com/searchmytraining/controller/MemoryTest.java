@@ -10,6 +10,7 @@ public class MemoryTest {
 		@RequestMapping("/getMemoryStatus")
 		public String getMemoryinMB(ModelMap model)
 		{
+
 			String unit = " MB";
 			int noofprocessors =Runtime.getRuntime().availableProcessors();
 			String totalheapsize=Runtime.getRuntime().totalMemory()/1048576 + unit;

@@ -8,4 +8,6 @@ public interface UserDAO {
 	public Integer getMaxUserId(String idcolumn);
 	public UserEntity getUser(Integer id);
 	public UserEntity getUser(String username);
+	public void updateUserUUID(String username,String uuid);
+	public boolean verifyEmail(String username, String uuid);
 }

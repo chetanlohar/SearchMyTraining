@@ -60,6 +60,25 @@ public class UserEntity implements Serializable{
 	@ManyToOne(fetch=FetchType.EAGER,targetEntity=StatusEntity.class)
 	@JoinColumn(name="statusId")
 	private StatusEntity status;
+	
+	@Column(name="emailVerified")
+	private Integer emailVerified;
+	
+	@Column(name="uuid")
+	private String uuid;
+	
+	public Integer getEmailVerified() {
+		return emailVerified;
+	}
+	public void setEmailVerified(Integer emailVerified) {
+		this.emailVerified = emailVerified;
+	}
+	public String getUuid() {
+		return uuid;
+	}
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
+	}
 	public Integer getUserId() {
 		return userId;
 	}

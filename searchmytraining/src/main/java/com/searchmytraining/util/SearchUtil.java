@@ -10,7 +10,6 @@ import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
 import org.apache.lucene.document.Field.Index;
 import org.apache.lucene.document.Field.Store;
-import org.apache.lucene.document.StoredField;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.index.IndexableField;
@@ -27,12 +26,15 @@ public class SearchUtil {
 	public WebApplicationContext context;
 	
 	public static String basePath;
+	public static String basePath1;
 	
 	public String getBasePath() {
 		return basePath;
 	}
+	public static String getBasePath1() {
+		return basePath1;
+	}
 	
-
 	public IndexWriter getIndexforCalenderEntities() throws Exception{
 		
 		File file = new File(basePath);
@@ -41,12 +43,21 @@ public class SearchUtil {
 		
 		Path path = Paths.get(basePath);
 		Directory dir = FSDirectory.open(path);
-		
-		
 		IndexWriterConfig conf = new IndexWriterConfig(new StopAnalyzer());
 		IndexWriter idx = new IndexWriter(dir,conf);
 		return idx;
 		
+	}
+	
+	public IndexWriter getIndexforinstituteEntities() throws IOException
+	{
+		/*File file = new File(basePath1);
+		file.delete();*/
+		Path path = Paths.get(basePath1);
+		Directory dir = FSDirectory.open(path);
+		IndexWriterConfig config = new IndexWriterConfig(new StopAnalyzer());
+		IndexWriter index = new IndexWriter(dir, config);
+		return index;
 	}
 	
 	@SuppressWarnings("deprecation")
@@ -77,40 +88,16 @@ public class SearchUtil {
 			IndexableField idxBasicSearch = new Field("BasicSearchString",cal.getTitle()+" "+cal.getDescription()+" "+cal.getKeyword()+" "+cal.getCity().getCityName()+" "+cal.getPrice().toString(),Store.NO,Index.ANALYZED);
 			doc.add(idxBasicSearch);
 			
-			/*IndexableField idxCalId = new StoredField("trngId",cal.getTrngId());
-			doc.add(idxCalId);
-			IndexableField idxKeyword = new StoredField("keyword",cal.getKeyword());
-			doc.add(idxKeyword);
-			IndexableField idxTitle = new StoredField("title", cal.getTitle());
-			doc.add(idxTitle);
-			IndexableField idxStartDate = new StoredField("start_date",cal.getStart_date());
-			doc.add(idxStartDate);
-			IndexableField idxEndDate = new StoredField("end_date",cal.getEnd_date());
-			doc.add(idxEndDate);
-			IndexableField idxPrice = new StoredField("price",cal.getPrice().toString());
-			doc.add(idxPrice);
-			IndexableField idxPlace = new StoredField("place",cal.getPlace());
-			doc.add(idxPlace);
-			IndexableField idxType = new StoredField("type",cal.getType());
-			doc.add(idxType);
-			IndexableField idxDesc = new StoredField("description",cal.getDescription());
-			doc.add(idxDesc);
-			IndexableField idxBasicSearch = new StoredField("BasicSearchString",cal.getTitle()+" "+cal.getDescription()+" "+cal.getKeyword()+" "+cal.getPlace()+" "+cal.getPrice().toString());
-			doc.add(idxBasicSearch);*/
-			
-			
 			idx.addDocument(doc);
 			
 			idx.close();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally{
 			if(idx != null && idx.isOpen()){
 				try {
 					idx.close();
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}

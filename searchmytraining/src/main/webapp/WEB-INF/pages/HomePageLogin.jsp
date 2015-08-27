@@ -28,7 +28,6 @@ $(document).ready(function(){
 </head>
 
 <body>
-
 <form id="hiddenform" action="./forgotpassword" method="POST" style="height:0px; ">
 	<input id="formemailid" type="hidden" name="username"/>
 </form>

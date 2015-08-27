@@ -9,5 +9,6 @@ public interface EmailNotificationService {
 	 * @param grouprequestentity
 	 */
 	public void sendGroupTrainingRequestNotification(GroupRequestEntity grouprequestentity);
+	public void sendVerificationLinkEmail(String email);
 
 }

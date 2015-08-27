@@ -5,7 +5,6 @@ import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.searchmytraining.dao.AbstractJpaDAO;
 import com.searchmytraining.dao.IContactInfoDAO;

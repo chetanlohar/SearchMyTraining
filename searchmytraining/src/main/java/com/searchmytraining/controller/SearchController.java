@@ -1,19 +1,13 @@
 package com.searchmytraining.controller;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.List;
-import java.util.Scanner;
 
-import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.FileSystemResource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,7 +18,9 @@ import org.springframework.web.context.WebApplicationContext;
 
 import com.searchmytraining.enquiry.training.SuggestTraining;
 import com.searchmytraining.entity.CalenderEntity;
+import com.searchmytraining.entity.InstituteSearchEntity;
 import com.searchmytraining.service.ICalenderService;
+import com.searchmytraining.service.SearchService;
 
 @Controller
 public class SearchController {
@@ -34,6 +30,9 @@ public class SearchController {
 	
 	@Autowired
 	public ICalenderService calendarservice;
+	
+	@Autowired
+	public SearchService searchservice;
 	
 	
 	@RequestMapping(value="/dosearch",method = RequestMethod.GET)
@@ -77,5 +76,14 @@ public class SearchController {
 		List<CalenderEntity> calendars =calendarservice.getCalendersByKeyword(keywords); 
 		model.addAttribute("calendars", calendars);
 		return "pages/CodePages/calenderdiv";
+	}
+	
+	@RequestMapping("/institutediv")
+	public String doAction3(@RequestParam("inputkeyword") String inputkeyword,@RequestParam("city") String city,ModelMap model) {
+		System.out.println("from /institutediv city:"+city);
+		List<InstituteSearchEntity> institutesearch = searchservice.getAllInstitutes();
+		model.addAttribute("institutesearch", institutesearch);
+		model.addAttribute("test", inputkeyword);
+		return "pages/CodePages/institutediv";
 	}
 }

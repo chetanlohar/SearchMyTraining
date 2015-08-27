@@ -18,7 +18,6 @@
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/LogIn.css"
 	media="all" type="text/css">
-
 <script type="text/javascript">
 	$(window).scroll(function() {
 		if ($(window).scrollTop() >= 10) {
@@ -28,34 +27,29 @@
 		}
 	});
 
-		  function randString(x){
-	             
-         	 var text = " ";
+	function randString(x) {
 
-         	    var charset = "QWERTYUIOPASDFGHJKLZXCVBNMabcdefghijklmnopqrstuvwxyz0123456789";
+		var text = " ";
 
-         	    for( var i=0; i < x; i++ )
-         	        text += charset.charAt(Math.floor(Math.random() * charset.length));
-         	    
-                    $(".Ccode").html(text);
-         	
-         		
-         	}
-		
-	
+		var charset = "QWERTYUIOPASDFGHJKLZXCVBNMabcdefghijklmnopqrstuvwxyz0123456789";
+
+		for (var i = 0; i < x; i++)
+			text += charset.charAt(Math.floor(Math.random() * charset.length));
+
+		$(".Ccode").html(text);
+
+	}
 </script>
 <script type="text/javascript">
-	function myfunc()
-	{
+	function myfunc() {
 		var email = $('#username').val();
 		$('#formemailid').val(email);
 		var email1 = $('#formemailid').val();
-		if(email == ""){
+		if (email == "") {
 			$("#username").focus();
-			$("#username").css('border-color','red');
+			$("#username").css('border-color', 'red');
 			$("#auth_error_div_emailreq").html('Email Id Required');
-		}
-		else{
+		} else {
 			$("#hiddenform").submit();
 		}
 	}
@@ -63,9 +57,11 @@
 </head>
 
 <body>
-<form id="hiddenform" action="${pageContext.request.contextPath}/forgotpassword" method="POST">
-	<input id="formemailid" type="hidden" name="username"/>
-</form>
+	<form id="hiddenform"
+		action="${pageContext.request.contextPath}/forgotpassword"
+		method="POST">
+		<input id="formemailid" type="hidden" name="username" />
+	</form>
 	<%@include file="../layouts/Header.jsp"%>
 
 	<div class="Log_container">
@@ -73,8 +69,6 @@
 			<div class="log_bar">
 				<div class="form_container ">
 					<h1>Sign In</h1>
-					
-				
 					<c:if test="${'true' eq param.logout}">
 						<div style="color: blue">
 							Logout successful!!!<br />
@@ -87,21 +81,22 @@
 
 						</div>
 					</c:if>
-					
-					
-					<form action="#">
+
+
+					<form id="#loginForm" action="#">
 						<div class="user">
 							<input id="username" type="email" name="username"
 								placeholder="  User or Email Address">
 
 						</div>
 						<div class="pass">
-							<input type="password" name="password" placeholder="  Password">
+							<input id="password1" type="password" name="password" placeholder="  Password">
 						</div>
 
 						<div class="submit">
-							<input type="submit" value="Sign In"> 
-							<a id="forgetpasslinkid1" href="#" onclick="myfunc();">Forgot Password </a>
+							<input id="login" type="button" value="Sign In" onclick="dologin();"> <a
+								id="forgetpasslinkid1" href="#" onclick="myfunc();">Forgot
+								Password </a>
 						</div>
 
 					</form>
@@ -122,32 +117,56 @@
 							<li><a href="#"><img alt="facebook"
 									src=" <%=request.getContextPath()%>/resources/images/social/yout.png"></a></li>
 						</ul>
-
 					</div>
-
-
 					<div class="Nuser">
 						<p>Not Account Yet ?</p>
 						<a href="#">Sign Up</a>
 					</div>
-
 				</div>
-
-
-
 			</div>
 			<div class="advertise"></div>
-
 		</div>
-
-
-
 	</div>
-
-
-
-
+	<form id="loginformhidden" style="display: hidden" method="POST">
+		<input type="hidden" id="url" name="username" value="" />
+	</form>
 	<%@include file="../layouts/footer.jsp"%>
-
 </body>
+<script type="text/javascript">
+function dologin()
+{
+	
+	var username = $("#username").val();
+	var pass = $("#password1").val();
+	
+	$.ajax({
+		url : "${ctx}/searchmytraining/j_spring_security_check",
+		type : "POST",
+		//contentType : "application/json",
+		beforeSend : function(xhr) {
+			xhr.withCredentials = true;
+		},
+		data : {username:$("#username").val(), password:pass},
+		success : function(data, status) {
+			if (data != null) {
+				if (data.success == false) {
+					$('#auth_error_mesg').html(data.message);
+					$("#auth_error_div").show();
+				} else if (data.success == true) {
+					$('#url').val(username);
+					$("#loginformhidden").attr("action",
+							"${ctx}/searchmytraining" + data.page);
+					$('#loginformhidden').submit();
+				}
+			}
+		},
+		error : loginFailed
+	});
+}
+	/* $("#login").click(
+			function(e) {
+				// e.preventDefault();
+				
+			}); */
+</script>
 </html>
