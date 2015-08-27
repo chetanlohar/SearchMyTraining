@@ -2438,6 +2438,12 @@ disabled checkbox
 		height: 30px;
 		margin-left: 15px;
 	}
+	#pop_up_box form select {
+		height: 30px;
+		width: 250px;
+		margin-left: 15px;
+		
+	}
 	#pop_up_box form textarea {
 		height: 80px;
 		width: 250px;
@@ -2459,11 +2465,11 @@ disabled checkbox
 	/* =========Group Training============= */
 	#pop_up_box_1 {
 		min-width: 350px;
-		min-height: 550px;
+		min-height: 590px;
 		margin-top: 30px;
 	}
 	#pop_up_box_1 .reg_form {
-		height: 550px;
+		height: 580px;
 		width: 350px;
 	}
 	#pop_up_box_1 form {
@@ -2482,11 +2488,26 @@ disabled checkbox
 		font-size: 14px;
 		margin-left: 15px;
 	}
+		#pop_up_box_1 form select {
+		height: 30px;
+		width: 250px;
+		margin-left: 15px;
+	}
 	#pop_up_box_1 form .req textarea {
 		height: 50px;
 		width: 250px;
 		font-size: 14px;
 		margin-left: 15px;
+	}
+	#pop_up_box_1 form .rcpatcha {
+		height: 30px;
+		width: 250px;
+		margin: 6px 23px 1px;
+	}
+	#pop_up_box_1 form .cpatcha {
+		height: 35px;
+		width: 250px;
+		margin: 15px 25px 10px;
 	}
 	#pop_up_box_1 .reg_form .head {
 		position: absolute;
