@@ -91,7 +91,7 @@
 					
 					<form action="#">
 						<div class="user">
-							<input id="username" type="text" name="username"
+							<input id="username" type="email" name="username"
 								placeholder="  User or Email Address">
 
 						</div>

@@ -28,12 +28,11 @@ $(document).ready(function(){
 </head>
 
 <body>
-<form id="hiddenform" action="./forgotpassword" method="POST">
+
+<form id="hiddenform" action="./forgotpassword" method="POST" style="height:0px; ">
 	<input id="formemailid" type="hidden" name="username"/>
 </form>
-	<div id="pop_up_box_5">
-		<a class="b-close"><img
-			src="<%=request.getContextPath()%>/resources/images/images.png"></a>
+
 		<div class="reg_form">
 			<div class="head">
 				<img src="<%=request.getContextPath()%>/resources/images/cust.png"
@@ -74,7 +73,7 @@ $(document).ready(function(){
 
 			</form>
 		</div>
-	</div>
+	
 </body>
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -133,7 +132,7 @@ $(document).ready(function(){
 			});
 	}
 </script>
-<form id="loginformhidden" style="display: hidden" method="POST">
-  <input type="hidden" id="url" name="username" value=""/>
+<form id="loginformhidden" style="display: hidden; height:0px; " method="POST" >
+  <input type="hidden" id="url" name="username" value="" style="height:0"/>
 </form>
 </html>

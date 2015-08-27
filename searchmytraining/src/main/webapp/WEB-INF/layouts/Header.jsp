@@ -10,6 +10,7 @@
 <link
 	href="<%=request.getContextPath()%>/resources/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css"> 
+	
 <script type="text/javascript">
 $(document).ready(function(){
 	
@@ -72,33 +73,88 @@ $(".my-button-new , .my-button").on('click',function(e){
 
 	
 })
+function randString(x){
+    
+	 var text = " ";
 
+	    var charset = "QWERTYUIOPASDFGHJKLZXCVBNMabcdefghijklmnopqrstuvwxyz0123456789";
+
+	    for( var i=0; i < x; i++ )
+	        text += charset.charAt(Math.floor(Math.random() * charset.length));
+	    
+           $(".Ccode").html(text);
 	
-})
-  function randString(x){
-	             
-         	 var text = " ";
+		
+	}
+	
+});
 
-         	    var charset = "QWERTYUIOPASDFGHJKLZXCVBNMabcdefghijklmnopqrstuvwxyz0123456789";
-
-         	    for( var i=0; i < x; i++ )
-         	        text += charset.charAt(Math.floor(Math.random() * charset.length));
-         	    
-                    $(".Ccode").html(text);
-         	
-         		
-         	}
 </script>
 </head>
 <body>
-<%@include file="../pages/Trainee/TraineeRegistration.jsp"%>
-	<%@include
-		file="../pages/TrainingProvider/TrainingProviderRegistration.jsp"%>
-	<%@include file="../pages/FreeLancer/FreelancerResistration.jsp"%>
-	<%@include file="../pages/TrainingEnquiry.jsp"%>
-	<%@include file="../pages/GroupTrainingRequest.jsp"%>
-	<%@include file="../pages/Sign-In.jsp"%>
-	<%@include file="../pages/AdvSearch.jsp"%>
+
+	
+	
+	
+	
+	<div id="pop_up_box_5">
+		<a class="b-close"><img
+			src="<%=request.getContextPath()%>/resources/images/images.png"></a>
+			<div class="logpag">
+			</div>
+			</div>
+	
+	<div id="pop_up_box_6">
+		<a class="b-close close1"><img
+			src="<%=request.getContextPath()%>/resources/images/images.png"
+			alt="cancel"></a>
+			<div class="signin">
+			
+			</div>
+			</div>
+	<div id="pop_up_box">
+	<a class="b-close p8"><img
+			src="<%=request.getContextPath()%>/resources/images/images.png"></a>
+	<div class="enquiryt">
+	
+	</div>
+	</div>
+	<div id="pop_up_box_1">
+	<a class="b-close p8"><img
+			src="<%=request.getContextPath()%>/resources/images/images.png"></a>
+	<div class="grouptraining">
+	
+	</div>
+	</div>
+	<div id="pop_up_box_2">
+	<a class="b-close p8"><img
+			src="<%=request.getContextPath()%>/resources/images/images.png"></a>
+	<div class="traineebox">
+	
+	</div>
+	</div>
+	<div id="pop_up_box_4">
+	<a class="b-close p8"><img
+			src="<%=request.getContextPath()%>/resources/images/images.png"></a>
+	<div class="tproviderbox">
+	
+	</div>
+	</div>
+	<div id="pop_up_box_8">
+	<a class="b-close p8"><img
+			src="<%=request.getContextPath()%>/resources/images/images.png"></a>
+	<div class="boxContaint">
+	
+	</div>
+	</div>
+	<div id="pop_up_box_9">
+		<a class="b-close close1"><img
+			src="<%=request.getContextPath()%>/resources/images/images.png"></a>
+			<div class="advances">
+			
+			</div>
+			</div>
+	
   <div class="header">
             <div class="special_link">
                 <div class="group">
@@ -139,7 +195,7 @@ $(".my-button-new , .my-button").on('click',function(e){
                     </li>
                     <li class='active has-sub'><a href='#'><span>Freelancer</span></a>
                         <ul >
-                            <li><a href="#" id="regi_pop3"><span>Registration</span></a></li>
+                            <li><a  href="#" id="regi_pop3"><span>Registration</span></a></li>
                             <li><a href='FLBenefit'><span>Benefits Of Registration</span></a></li>
                         </ul>
                     </li>

@@ -14,7 +14,7 @@ and open the template in the editor.
 	display: none;
 	padding: 10px;
 	min-width: 400px;
-	min-height: 550px;
+	min-height: 600px;
 	margin-top: 50px;
 	background: #ECF0F3;
 }
@@ -53,7 +53,7 @@ and open the template in the editor.
 	width: 80%;
 	height: 280px;
 	margin: 0px auto;
-	padding-top: 35px;
+	padding-top: 10px;
 }
 
 #pop_up_box form h2 {
@@ -125,6 +125,47 @@ and open the template in the editor.
 	-o-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
 	box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
 }
+#pop_up_box form select {
+	font-family: arial;
+	font-size: 17px;
+	width: 300px;
+	border: 1px solid #cccccc;
+	margin: 0px 4px 2px 5px;
+	color: #999;
+	height: 36px;
+	padding: 3px;
+	-webkit-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	-moz-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	-ms-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	-o-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+}
+
+#pop_up_box form .rcpatcha1 {
+  
+    margin: 5px auto;
+} 
+
+#pop_up_box form .cpatcha1 .Ccode {
+    width: 75%;
+    height: 100%;
+    background: url('../images/cp.png') no-repeat;
+    background-size: 100% 100%;
+    font-family: Snap ITC;
+    font-size: 28px;
+    line-height: 40px;
+    text-align: center;
+    float: left;
+    margin-left: 5px;
+}
+#pop_up_box form .cpatcha1 .refresh1 #refreshc {
+    width: 55px;
+    height: 40px;
+    background: url('../images/Refreshc.png') no-repeat;
+    background-size: 100% 100%;
+    border: none;
+    margin-top: 0px;
+}
 
 #pop_up_box form .sign input {
 	cursor: pointer;
@@ -135,7 +176,7 @@ and open the template in the editor.
 	height: 40px;
 	margin-top: 10px;
 	border: none;
-	margin-left: 15px;
+	margin-left: 40px;
 	border-radius: 5px;
 	color: #FFFFFF;
 	text-shadow: 0px -1px 0px rgba(0, 0, 0, .7);
@@ -204,7 +245,7 @@ and open the template in the editor.
 #pop_up_box_1 form {
 	width: 80%;
 	height: 280px;
-	margin: 30px auto;
+	margin: 20px auto;
 }
 
 #pop_up_box_1 form .name {
@@ -271,12 +312,12 @@ and open the template in the editor.
 	font-size: 15px;
 	padding: 10px 0px 0px 10px;
 	outline: none;
-	height: 100px;
+	height: 40px;
 	width: 300px;
 	background: none;
 	border: none;
 	border: 1px solid #C0C0C0;
-	margin: 7px 5px;
+	margin: 2px 5px;
 	border-radius: 3px;
 	resize: none;
 	font-family: arial;
@@ -290,6 +331,48 @@ and open the template in the editor.
 #pop_up_box_1 form h3 {
 	font-family: arial;
 	margin-left: 150px;
+}
+#pop_up_box_1 form select {
+	font-family: arial;
+	font-size: 17px;
+	width: 300px;
+	border: 1px solid #cccccc;
+	margin: 0px 4px 2px 5px;
+	color: #999;
+	height: 36px;
+	padding: 3px;
+	-webkit-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	-moz-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	-ms-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	-o-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+	box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+}
+
+
+#pop_up_box_1 form .rcpatcha1 {
+  
+    margin: 5px auto;
+} 
+
+#pop_up_box_1 form .cpatcha1 .Ccode {
+    width: 75%;
+    height: 100%;
+    background: url('../images/cp.png') no-repeat;
+    background-size: 100% 100%;
+    font-family: Snap ITC;
+    font-size: 28px;
+    line-height: 40px;
+    text-align: center;
+    float: left;
+    margin-left: 5px;
+}
+#pop_up_box_1 form .cpatcha1 .refresh1 #refreshc {
+    width: 55px;
+    height: 40px;
+    background: url('../images/Refreshc.png') no-repeat;
+    background-size: 100% 100%;
+    border: none;
+    margin-top: 0px;
 }
 
 #pop_up_box_1 form .sign input {

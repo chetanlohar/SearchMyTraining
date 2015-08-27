@@ -9,6 +9,11 @@
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/pop-up.css"
 	type="text/css">
+<%-- 	<script
+	src="<%=request.getContextPath()%>/resources/js/modernizr-1.5.min.js"></script>
+
+<script type="text/javascript"
+	src="<%=request.getContextPath()%>/resources/js/jquery/jquery-1.10.2.js"></script> --%>
 <script src="<%=request.getContextPath()%>/resources/js/pop-up.js"></script>
 <script src="<%=request.getContextPath()%>/resources/js/popup-box.js"></script>
 <script
@@ -74,10 +79,25 @@
 		});
 	}
 </script>
-<body>
-	<div id="pop_up_box_8">
-		<a class="b-close"><img
-			src="<%=request.getContextPath()%>/resources/images/images.png"></a>
+<script type="text/javascript">
+function randString(x){
+    
+	 var text = " ";
+
+	    var charset = "QWERTYUIOPASDFGHJKLZXCVBNMabcdefghijklmnopqrstuvwxyz0123456789";
+
+	    for( var i=0; i < x; i++ )
+	        text += charset.charAt(Math.floor(Math.random() * charset.length));
+	    
+          $(".Ccode").html(text);
+	
+		
+	}
+
+</script>
+<body onload='randString(5);'>
+
+		
 		<div class="reg_form">
 			<div class="head">
 				<img
@@ -155,8 +175,8 @@
 
 			</form>
 		</div>
-	</div>
-	<form id="loginformhidden" style="display: hidden" method="POST">
+	
+	<form id="loginformhidden" style="display: none" method="POST">
 		<input type="hidden" id="url" name="username" value="" />
 	</form>
 </body>

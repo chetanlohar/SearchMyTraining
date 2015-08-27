@@ -15,9 +15,7 @@
 <title>Advance Search</title>
 </head>
 <body>
-	<div id="pop_up_box_9">
-		<a class="b-close close1"><img
-			src="<%=request.getContextPath()%>/resources/images/images.png"></a>
+	
 		<div class="Advace_from">
 			<div class="head">
 				<img src="<%=request.getContextPath()%>/resources/images/search.jpg"
@@ -93,6 +91,6 @@
 			</form>
 
 		</div>
-	</div>
+
 </body>
 </html>

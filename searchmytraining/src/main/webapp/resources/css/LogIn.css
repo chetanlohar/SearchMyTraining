@@ -145,7 +145,7 @@ body {
 	background-size: 100% 100%;
 }
 
-.Log_container .Log_warapar .log_bar .form_container form input[type=text]
+.Log_container .Log_warapar .log_bar .form_container form input[type=email]
 	{
 	width: 300px;
 	padding: 12px 6px;
@@ -156,7 +156,7 @@ body {
 	margin-left: 30px;
 	color: #ccc;
 }
-.Log_container .Log_warapar .log_bar .form_container form input[type=text]:FOCUS{
+.Log_container .Log_warapar .log_bar .form_container form input[type=email]:FOCUS{
 	border: 1px solid #40A9DF;
 	box-shadow: 0 0 10px #40A9DF;
 	-webkit-box-shadow: 0 0 10px #40A9DF;
@@ -254,7 +254,7 @@ ForgotPassword Page
 }
 
 
-.Fpass_wrapar .Fpass_container form .email input[type="text"] {
+.Fpass_wrapar .Fpass_container form .email input[type="email"] {
 	width: 220px;
 	padding: 10px 10px;
 	border: 1px solid #c3c5c8;
@@ -262,7 +262,7 @@ ForgotPassword Page
 	color: #000;
 
 }
-.Fpass_wrapar .Fpass_container form .email input[type="text"]:FOCUS{
+.Fpass_wrapar .Fpass_container form .email input[type="email"]:FOCUS{
 	border: 1px solid #40A9DF;
 	box-shadow: 0 0 3px #40A9DF;
 	-webkit-box-shadow: 0 0 3px #40A9DF;
@@ -407,7 +407,7 @@ border: 1px solid #40A9DF;
 	
 }
 
-.Fpass_wrapar .Fpass_container form .Npass input[type="text"] {
+.Fpass_wrapar .Fpass_container form .Npass input[type="password"] {
 	width: 275px;
 	padding: 10px 10px;
 	border-radius: 0.2em;
@@ -415,7 +415,7 @@ border: 1px solid #40A9DF;
 	margin-left: 10px;
 	color: #000;
 }
-.Fpass_wrapar .Fpass_container form .Npass input[type="text"]:FOCUS{
+.Fpass_wrapar .Fpass_container form .Npass input[type="password"]:FOCUS{
 border: 1px solid #40A9DF;
 	box-shadow: 0 0 3px #40A9DF;
 	-webkit-box-shadow: 0 0 3px #40A9DF;

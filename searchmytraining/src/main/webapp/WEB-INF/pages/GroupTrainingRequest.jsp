@@ -13,11 +13,25 @@
 <script src="<%=request.getContextPath()%>/resources/js/popup-box.js"></script>
 <script src="<%=request.getContextPath()%>/resources/js/Validations/Gvalidation.js"></script>
 <script src="<%=request.getContextPath()%>/resources/js/work/trainingenquiry.js"></script>
+<script type="text/javascript">
+function randString(x){
+    
+	 var text = " ";
+
+	    var charset = "QWERTYUIOPASDFGHJKLZXCVBNMabcdefghijklmnopqrstuvwxyz0123456789";
+
+	    for( var i=0; i < x; i++ )
+	        text += charset.charAt(Math.floor(Math.random() * charset.length));
+	    
+          $(".Ccode").html(text);
+	
+		
+	}
+
+</script>
 </head>
-<body>
-	<div id="pop_up_box_1">
-		<a href="#" class="b-close close1"><img
-			src="<%=request.getContextPath()%>/resources/images/images.png"></a>
+<body onload="randString(5);">
+
 		<div class="reg_form">
 			<div class="head">
 				<img
@@ -59,8 +73,7 @@
 				</div>
 				<span id="error26" class="errorm"><text>.</text></span>
 				<div class="city">
-					<!-- <input type="text" id="city21" name="city" value=""
-						placeholder="City" > -->
+					
 					<select id="city21">
 						<option value="0" selected>--Select--</option>
 						<c:forEach var="city" items="${cities}">
@@ -72,7 +85,22 @@
 				<div class="req">
 					<textarea id="requirements21" name="requirements" class="require"
 						placeholder="Training Requirement Description"></textarea>
-						<h3> (Max 250 Characters)</h3>
+						
+				</div>
+				<div class="rcpatcha1">
+
+					<input  type="text" id="frcapch" name=""
+						placeholder="Enter Captch">
+
+				</div>
+				<div class="cpatcha1">
+
+					<div class="Ccode" id="captchf"></div>
+					<div class="refresh1">
+						<input type="button" id="refreshc" onclick='randString(5);' />
+
+					</div>
+
 				</div>
 				<div class="sign">
 					<input type="submit" name="Send" value="Send" onclick="groupEnquiry('${pageContext.request.contextPath}/request/trainingenquiry');"> 
@@ -80,6 +108,6 @@
 				</div>
 			</form>
 		</div>
-	</div>
+	
 </body>
 </html>

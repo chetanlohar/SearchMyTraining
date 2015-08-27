@@ -174,6 +174,36 @@ public class MyController {
 		return "searchcalender";
 	}
 	
+	@RequestMapping("/FLR")
+	public String FLR() {
+		return "pages/FreeLancer/FreelancerResistration";
+	}
+	@RequestMapping("/TR")
+	public String TR() {
+		return "pages/Trainee/TraineeRegistration";
+	}
+	@RequestMapping("/TPR")
+	public String TPR() {
+		return "pages/TrainingProvider/TrainingProviderRegistration";
+	}
+	@RequestMapping("/GTR")
+	public String GTR() {
+		return "pages/GroupTrainingRequest";
+	}
+	@RequestMapping("/TER")
+	public String TER() {
+		return "pages/TrainingEnquiry";
+	}
+	
+	@RequestMapping("/sign")
+	public String sign() {
+		return "pages/Sign-In";
+	}
+	@RequestMapping("/LoginH")
+	public String LoginH() {
+		return "pages/HomePageLogin";
+	}
+	
 	@RequestMapping("/forgotpassword")
 	public String forgotPass(@RequestParam String username,ModelMap model) {
 		System.out.println("username: "+username);

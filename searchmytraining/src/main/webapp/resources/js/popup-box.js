@@ -4,20 +4,21 @@
  * and open the template in the editor.
  */
 //    ===============================Enquiry form=========================================================
-
 ;
 (function($) {
-
     $(function() {
         $('.my-button').bind('click', function(e) {
             e.preventDefault();
             $('#pop_up_box').bPopup({
             	
-         
+            	contentContainer:'.enquiryt',
+                loadUrl: 'TER'
+          
             });
         });
     });
 })(jQuery);
+
 //    ===========================================Group Training=============================================
 ;
 (function($) {
@@ -26,7 +27,8 @@
             e.preventDefault();
             $('#pop_up_box_1').bPopup({
             	
-            	
+            	contentContainer:'.grouptraining',
+                loadUrl: 'GTR'
           
             });
         });
@@ -39,7 +41,8 @@
         $('#regi_pop').bind('click', function(e) {
             e.preventDefault();
             $('#pop_up_box_2').bPopup({
-            	
+            	contentContainer:'.traineebox',
+                loadUrl: 'TR'
             	
            
             } );
@@ -47,28 +50,10 @@
     });
 })(jQuery);
 //    ========================================================================================
-;
-(function($) {
-    $(function() {
-        $('#login_pop').bind('click', function(e) {
-            e.preventDefault();
-            $('#pop_up_box_3').bPopup(
-            );
-        });
-    });
-})(jQuery);
+
 
 //    ========================================================================================
-;
-(function($) {
-    $(function() {
-        $('#login_pop2').bind('click', function(e) {
-            e.preventDefault();
-            $('#pop_up_box_5').bPopup(
-            );
-        });
-    });
-})(jQuery);
+
 
  // ======================================Training Provider Registration==================================================
 
@@ -77,7 +62,8 @@
         $('#regi_pop2').bind('click', function(e) {
             e.preventDefault();
             $('#pop_up_box_4').bPopup({
-            	
+            	contentContainer:'.tproviderbox',
+                loadUrl: 'TPR'
            
             });
         });
@@ -90,7 +76,9 @@
             e.preventDefault();
             $('#pop_up_box_6').bPopup({
             	closeClass:'close1',
-                follow: [false, false]
+                follow: [false, false],           
+                 contentContainer:'.signin',
+                 loadUrl: 'sign'
            
             });
         });
@@ -102,19 +90,23 @@
         $('.login_pop').bind('click', function(e) {
             e.preventDefault();
             $('#pop_up_box_5').bPopup({
-           
+            	contentContainer:'.logpag',
+                loadUrl: 'LoginH'
+            	
             });
             $('#pop_up_box_6').hide();
         });
     });
 })(jQuery);
 //=========================================================================
-;(function($) {
+/*;(function($) {
     $(function() {
         $('.login_pop2').bind('click', function(e) {
             e.preventDefault();
-            $('#pop_up_box_5').bPopup(
-            );
+            $('#pop_up_box_5').bPopup({
+            	contentContainer:'.logpag',
+                loadUrl: 'LoginH'
+            });
             $('#pop_up_box_6').hide();
             
             
@@ -126,25 +118,31 @@
     $(function() {
         $('.login_pop3').bind('click', function(e) {
             e.preventDefault();
-            $('#pop_up_box_5').bPopup(
-            );
+            $('#pop_up_box_5').bPopup({
+            	
+            } );
             $('#pop_up_box_6').hide();
         });
     });
-})(jQuery);
+})(jQuery);*/
 
 //=========================================================================
+
 ;(function($) {
     $(function() {
         $('#regi_pop3').bind('click', function(e) {
             e.preventDefault();
             $('#pop_up_box_8').bPopup({
-            
+            	contentContainer:'.boxContaint',
+                loadUrl: 'FLR'
             
             } );
         });
     });
 })(jQuery);
+	
+
+
 
 //=================================Advance search========================================
 
@@ -153,7 +151,8 @@
         $('#advsearch1').bind('click', function(e) {
             e.preventDefault();
             $('#pop_up_box_9').bPopup({
-            	
+            	contentContainer:'.advances',
+                loadUrl: 'AdvSearch'
           
             } );
         });

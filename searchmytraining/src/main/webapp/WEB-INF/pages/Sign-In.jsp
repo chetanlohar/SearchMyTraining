@@ -13,11 +13,8 @@
 </head>
 <body>
 
-<%@include file="HomePageLogin.jsp" %>
-	<div id="pop_up_box_6">
-		<a class="b-close close1"><img
-			src="<%=request.getContextPath()%>/resources/images/images.png"
-			alt="cancel"></a>
+<%-- <%@include file="../pages/HomePageLogin.jsp" %> --%>
+	
 		<div class="reg_form">
 
 			<form action="#" name="myform" onsubmit="return (validation());">
@@ -34,14 +31,14 @@
 						</a>
 					</div>
 					<div class="sub-login">
-						<a href="#login_form2" class="login_pop2 close1">
+						<a href="#login_form2" class="login_pop close1">
 							<h2>Provider</h2> <img
 							src="<%=request.getContextPath()%>/resources/images/provider.png"
 							alt="provider" />
 						</a>
 					</div>
 					<div class="sub-login">
-					<a href="#" class="login_pop3 close1">
+					<a href="#" class="login_pop close1">
 						<h2>Freelancer</h2>
 						<img
 							src="<%=request.getContextPath()%>/resources/images/lancer.png"
@@ -54,6 +51,6 @@
 
 			</form>
 		</div>
-	</div>
+
 </body>
 </html>

@@ -45,7 +45,11 @@ and open the template in the editor.
 <script src="<%=request.getContextPath()%>/resources/js/jquery.tablesorter.min.js"></script>
 <script src="<%=request.getContextPath()%>/resources/js/jquery.tooltipster.min.js"></script>
 
-
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/css/pop-up.css"
+	type="text/css">
+<script src="<%=request.getContextPath()%>/resources/js/pop-up.js"></script>
+<script src="<%=request.getContextPath()%>/resources/js/popup-box.js"></script>
  
 <script
 	src="<%=request.getContextPath()%>/resources/js/work/calender.js"></script>
@@ -143,13 +147,29 @@ $(function(){
 
 
 })
+$(document).ready(function(){
+
+	function randString(x){
+	    
+		 var text = " ";
+
+		    var charset = "QWERTYUIOPASDFGHJKLZXCVBNMabcdefghijklmnopqrstuvwxyz0123456789";
+
+		    for( var i=0; i < x; i++ )
+		        text += charset.charAt(Math.floor(Math.random() * charset.length));
+		    
+	           $(".Ccode").html(text);
+		
+			
+		}
+});
 
 </script>
 
 </head>
 <body>
 	<%@include file="layouts/Header.jsp"%>
-	
+
 
 	<!--==============================================================================-->
 	<div class="search_wrapar">

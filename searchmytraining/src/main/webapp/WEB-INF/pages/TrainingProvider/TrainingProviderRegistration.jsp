@@ -94,13 +94,26 @@ function doLoginTP()
 		error : loginFailed
 	});
 }
+
+function randString(x){
+   
+	 var text = " ";
+
+	    var charset = "QWERTYUIOPASDFGHJKLZXCVBNMabcdefghijklmnopqrstuvwxyz0123456789";
+
+	    for( var i=0; i < x; i++ )
+	        text += charset.charAt(Math.floor(Math.random() * charset.length));
+	    
+          $(".Ccode").html(text);
+	
+		
+	}
+
 </script>
 </head>
 
 <body onload="randString(5);">
-	<div id="pop_up_box_4">
-		<a class="b-close"><img
-			src="<%=request.getContextPath()%>/resources/images/images.png"></a>
+
 		<div class="reg_form">
 			<div class="head">
 				<img
@@ -161,8 +174,8 @@ function doLoginTP()
 				</div>
 			</form>
 		</div>
-	</div>
-	<form id="loginformhidden" style="display: hidden" method="POST">
+
+	<form id="loginformhidden" style="display: none" method="POST">
 		<input type="hidden" id="url" name="username" value="" />
 	</form>
 </body>

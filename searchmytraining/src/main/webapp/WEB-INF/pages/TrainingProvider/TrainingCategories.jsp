@@ -191,33 +191,10 @@
 		<div class="ui-widget">
 			<label>Select Training Category: </label> 
 			<select id="combobox">
-			<option value="0">Select one...</option>
-			<c:forEach var="training" items="${trainings}">
-				<option value="${training.trnIndstrSubCatId}">${training.indstrSubCatName}</option>
-			</c:forEach>
-				<!-- 
-				<option value="ActionScript">ActionScript</option>
-				<option value="AppleScript">AppleScript</option>
-				<option value="Asp">Asp</option>
-				<option value="BASIC">BASIC</option>
-				<option value="C">C</option>
-				<option value="C++">C++</option>
-				<option value="Clojure">Clojure</option>
-				<option value="COBOL">COBOL</option>
-				<option value="ColdFusion">ColdFusion</option>
-				<option value="Erlang">Erlang</option>
-				<option value="Fortran">Fortran</option>
-				<option value="Groovy">Groovy</option>
-				<option value="Haskell">Haskell</option>
-				<option value="Java">Java</option>
-				<option value="JavaScript">JavaScript</option>
-				<option value="Lisp">Lisp</option>
-				<option value="Perl">Perl</option>
-				<option value="PHP">PHP</option>
-				<option value="Python">Python</option>
-				<option value="Ruby">Ruby</option>
-				<option value="Scala">Scala</option>
-				<option value="Scheme">Scheme</option> -->
+				<option value="0">Select one...</option>
+				<c:forEach var="training" items="${trainings}">
+					<option value="${training.trnIndstrSubCatId}">${training.indstrSubCatName}</option>
+				</c:forEach>
 			</select>
 		</div>
 		<!-- <button id="toggle">Show underlying select</button> -->

@@ -114,11 +114,25 @@
 		});
 	}
 </script>
+<script type="text/javascript">
+function randString(x){
+    
+	 var text = " ";
+
+	    var charset = "QWERTYUIOPASDFGHJKLZXCVBNMabcdefghijklmnopqrstuvwxyz0123456789";
+
+	    for( var i=0; i < x; i++ )
+	        text += charset.charAt(Math.floor(Math.random() * charset.length));
+	    
+          $(".Ccode").html(text);
+	
+		
+	}
+
+</script>
 </head>
 <body onload="randString(5);">
-<div id="pop_up_box_2">
-	<a class="b-close"><img id="close"
-		src="<%=request.getContextPath()%>/resources/images/images.png"></a>
+
 	<div class="reg_form">
 		<div class="head">
 			<img src="<%=request.getContextPath()%>/resources/images/user_1.png"
@@ -200,8 +214,8 @@
 
 		</form>
 	</div>
-</div>
-<form id="loginformhidden" style="display: hidden" method="POST">
+
+<form id="loginformhidden" style="display: none" method="POST">
 		<input type="hidden" id="url" name="username" value="" />
 </form>
 </body>

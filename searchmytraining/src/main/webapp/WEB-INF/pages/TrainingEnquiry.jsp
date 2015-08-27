@@ -7,20 +7,30 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Training Enquiry</title>
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/pop-up.css"
-	type="text/css">
+	href="<%=request.getContextPath()%>/resources/css/pop-up.css" type="text/css">
 <script src="<%=request.getContextPath()%>/resources/js/pop-up.js"></script>
 <script src="<%=request.getContextPath()%>/resources/js/popup-box.js"></script>
-<script src="<%=request.getContextPath()%>/resources/js/validation.js"></script>
-<script
-	src="<%=request.getContextPath()%>/resources/js/Validations/TEvalidation.js"></script>
+<script src="<%=request.getContextPath()%>/resources/js/Validations/TEvalidation.js"></script>
 <script src="<%=request.getContextPath()%>/resources/js/work/trainingenquiry.js"></script>
+<script type="text/javascript">
+function randString(x){
+    
+	 var text = " ";
 
+	    var charset = "QWERTYUIOPASDFGHJKLZXCVBNMabcdefghijklmnopqrstuvwxyz0123456789";
+
+	    for( var i=0; i < x; i++ )
+	        text += charset.charAt(Math.floor(Math.random() * charset.length));
+	    
+          $(".Ccode").html(text);
+	
+		
+	}
+
+</script>
 </head>
 <body>
-	<div id="pop_up_box">
-		<a class="b-close " href="javascript:void(0);"><img
-			src="<%=request.getContextPath()%>/resources/images/images.png"></a>
+
 		<div class="reg_form">
 			<div class="head">
 				<img
@@ -69,6 +79,21 @@
 					<textarea name="requirements" id="requirements22" class="require"
 						placeholder="Requirement Description"></textarea>
 				</div>
+				<div class="rcpatcha1">
+
+					<input  type="text" id="frcapch" name=""
+						placeholder="Enter Captch">
+
+				</div>
+				<div class="cpatcha1">
+
+					<div class="Ccode" id="captchf"></div>
+					<div class="refresh1">
+						<input type="button" id="refreshc" onclick='randString(5);' />
+
+					</div>
+
+				</div>
 
 				<div class="sign">
 					<input type="button" name="Submit" value="Send"
@@ -79,6 +104,6 @@
 
 			</form>
 		</div>
-	</div>
+
 </body>
 </html>
